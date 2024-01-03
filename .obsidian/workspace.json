@@ -13,8 +13,8 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/introduction/index.md",
-                "mode": "source",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
+                "mode": "preview",
                 "backlinks": true,
                 "source": false
               }
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/introduction/index.md",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/introduction/index.md",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/introduction/index.md"
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md"
               }
             }
           },
@@ -153,7 +153,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/introduction/index.md",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -200,8 +200,10 @@
   },
   "active": "4542c9f5c91e9ece",
   "lastOpenFiles": [
-    "abs/index.md",
+    "abs/introduction/shell-programming.md",
+    "abs/introduction/starting-off-with-a-sha-bang.md",
     "abs/introduction/index.md",
+    "abs/index.md",
     "abs/apendix",
     "abs/endnotes",
     "abs/advanced-topics",
@@ -232,7 +234,6 @@
     "abs/38.1. Author's Note.md",
     "abs/C.1. Sed.md",
     "abs/bibliography.md",
-    "abs/bash-ver4.md",
     "abs"
   ]
 }
