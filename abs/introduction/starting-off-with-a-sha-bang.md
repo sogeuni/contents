@@ -1,5 +1,5 @@
 ---
-title: Chapter 2. Starting Off With a Sha-Bang
+title: 2. Starting Off With a Sha-Bang
 ---
 > Shell programming is a 1950s juke box . . .
 >
