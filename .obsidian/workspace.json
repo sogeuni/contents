@@ -4,18 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "ce41c83dd98f67ea",
+        "id": "1230406e20415620",
         "type": "tabs",
         "children": [
           {
-            "id": "272d49d83f7c25d2",
+            "id": "83b23eea49166f43",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
-              "state": {
-                "staged": false,
-                "file": "index.md"
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -149,8 +146,10 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "272d49d83f7c25d2",
+  "active": "83b23eea49166f43",
   "lastOpenFiles": [
-    "index.md"
+    "abs/i.md",
+    "index.md",
+    "abs"
   ]
 }
