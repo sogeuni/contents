@@ -1,0 +1,2 @@
+- [git - Using GitHub Actions to automatically update the repo's submodules - Stack Overflow](https://stackoverflow.com/questions/64407333/using-github-actions-to-automatically-update-the-repos-submodules)
+- [Github Workflow로 블로그 배포 자동화하기 - ashrimp blog](https://blog.ashrimp.dev/posts/blog-deployment-automation-via-github-workflow/index.html)
