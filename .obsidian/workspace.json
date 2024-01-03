@@ -4,17 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "1230406e20415620",
+        "id": "7954550bf9b7c460",
         "type": "tabs",
         "children": [
           {
-            "id": "83b23eea49166f43",
+            "id": "4542c9f5c91e9ece",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/20.1. Using _exec_.md",
+                "file": "abs/introduction/index.md",
                 "mode": "source",
+                "backlinks": true,
                 "source": false
               }
             }
@@ -48,7 +49,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "part 1. intro",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,6 +79,7 @@
       {
         "id": "32f9c6e90e464116",
         "type": "tabs",
+        "dimension": 44.510978043912175,
         "children": [
           {
             "id": "ade310b5ef1a5481",
@@ -85,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/20.1. Using _exec_.md",
+                "file": "abs/introduction/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/20.1. Using _exec_.md",
+                "file": "abs/introduction/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/20.1. Using _exec_.md"
+                "file": "abs/introduction/index.md"
               }
             }
           },
@@ -139,10 +141,52 @@
           }
         ],
         "currentTab": 4
+      },
+      {
+        "id": "bcb36eecbba39704",
+        "type": "tabs",
+        "dimension": 55.489021956087825,
+        "children": [
+          {
+            "id": "4272eec0c40732e3",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "abs/introduction/index.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 0.3628873693012117,
+                  "close": true
+                }
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 438.5
+    "width": 310.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -154,18 +198,41 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "83b23eea49166f43",
+  "active": "4542c9f5c91e9ece",
   "lastOpenFiles": [
-    "abs/part4/Part 4. Commands.md",
-    "abs/part5/Part 5. Advanced Topics.md",
-    "abs/part3/index.md",
-    "abs/part2/index.md",
-    "abs/part1/why-shell.md",
-    "abs/part1/index.md",
-    "abs/part1/sha-bang/invoking.md",
-    "abs/part1/sha-bang/index.md",
-    "abs/i.md",
-    "index.md",
+    "abs/index.md",
+    "abs/introduction/index.md",
+    "abs/apendix",
+    "abs/endnotes",
+    "abs/advanced-topics",
+    "abs/commands",
+    "abs/beyond-the-basic",
+    "abs/basic",
+    "abs/introduction",
+    "무제 폴더",
+    "abs/basics.md",
+    "abs/basic-commands.md",
+    "abs/preliminary-exercises.md",
+    "abs/invoking-the-script.md",
+    "abs/starting-off-with-a-sha-bang.md",
+    "abs/shell-programming.md",
+    "abs/introduction.md",
+    "abs/shell-wrapper.md",
+    "abs/othertypesv.md",
+    "abs/restricted-sh.md",
+    "abs/G.2. Bash Command-Line Options.md",
+    "abs/extmisc.md",
+    "abs/external.md",
+    "abs/exitcodes.md",
+    "abs/exit-status.md",
+    "abs/exercises.md",
+    "abs/escapingsection.md",
+    "abs/devref1.md",
+    "abs/devproc.md",
+    "abs/38.1. Author's Note.md",
+    "abs/C.1. Sed.md",
+    "abs/bibliography.md",
+    "abs/bash-ver4.md",
     "abs"
   ]
 }

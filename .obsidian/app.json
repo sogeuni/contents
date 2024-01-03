@@ -1,1 +1,10 @@
-{}
+{
+  "showLineNumber": true,
+  "showIndentGuide": false,
+  "spellcheck": false,
+  "smartIndentList": true,
+  "useTab": false,
+  "trashOption": "local",
+  "showUnsupportedFiles": true,
+  "readableLineLength": false
+}
