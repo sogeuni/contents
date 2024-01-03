@@ -1,7 +1,5 @@
 ---
 title: Part 3. Beyond the Basics
-aliases:
-  - Part 3. Beyond the Basics
 ---
 
 **Table of Contents**

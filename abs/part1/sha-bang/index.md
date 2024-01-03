@@ -1,7 +1,5 @@
 ---
 title: Chapter 2. Starting Off With a Sha-Bang
-aliases:
-  - Chapter 2. Starting Off With a Sha-Bang
 ---
 
 

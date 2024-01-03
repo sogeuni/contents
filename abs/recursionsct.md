@@ -1,5 +1,8 @@
 ---
-draft: true# 36.4. Recursion: a script calling itself
+draft: true
+---
+
+# 36.4. Recursion: a script calling itself
 
 Can a script [[localvar#^RECURSIONREF|recursively]] call itself? Indeed.
 

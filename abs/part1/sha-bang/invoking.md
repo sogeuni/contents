@@ -1,7 +1,5 @@
 ---
 title: 2.1. Invoking the script
-aliases:
-  - 2.1. Invoking the script
 ---
 
 
