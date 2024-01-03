@@ -179,7 +179,9 @@ Note that the path given at the "sha-bang" must be correct, otherwise an error m
 > Many times, you will write a script that carries out one particular task. The first script in this chapter is an example. Later, it might occur to you to generalize the script to do other, similar tasks. Replacing the literal ("hard-wired") constants by variables is a step in that direction, as is replacing repetitive code blocks by [[functions#^FUNCTIONREF|functions]].|
 
 [^1]: More commonly seen in the literature as _she-bang_ or _sh-bang_. This derives from the concatenation of the tokens _sharp_ (#) and _bang_ (!).
+
 [^2]: Some flavors of UNIX (those based on 4.2 BSD) allegedly take a four-byte magic number, requiring a blank after the ! -- **#! /bin/sh**. [According to Sven Mascheck](http://www.in-ulm.de/~mascheck/various/shebang/#details) this is probably a myth.
+
 [^3]: The #! line in a shell script will be the first thing the command interpreter (**sh** or **bash**) sees. Since this line begins with a #, it will be correctly interpreted as a comment when the command interpreter finally executes the script. The line has already served its purpose - calling the command interpreter.
 
     If, in fact, the script includes an _extra_ #! line, then **bash** will interpret it as a comment.
@@ -196,6 +198,7 @@ Note that the path given at the "sha-bang" must be correct, otherwise an error m
     echo "Part 2 of script."
     echo $a  # Value of $a stays at 1.
     ```
+
 [^4]: This allows some cute tricks.
     
     ```bash
@@ -214,6 +217,9 @@ Note that the path given at the "sha-bang" must be correct, otherwise an error m
     ```
 
     Also, try starting a README file with a **#!/bin/more**, and making it executable. The result is a self-listing documentation file. (A [[here-docs#^HEREDOCREF|here document]] using [[basic-commands#^CATREF|cat]] is possibly a better alternative -- see [[here-docs#^EX71|Example 19-3]]).
+
 [^5]: **P**ortable **O**perating **S**ystem _I_nterface, an attempt to standardize UNI**X**-like OSes. The POSIX specifications are listed on the [Open Group site](http://www.opengroup.org/onlinepubs/007904975/toc.htm).
+
 [^6]: To avoid this possibility, a script may begin with a [[system#^ENVV2REF|#!/bin/env bash]] _sha-bang_ line. This may be useful on UNIX machines where _bash_ is not located in /bin
+
 [^7]: If _Bash_ is your default shell, then the #! isn't necessary at the beginning of a script. However, if launching a script from a different shell, such as _tcsh_, then you _will_ need the #!.

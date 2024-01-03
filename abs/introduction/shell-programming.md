@@ -52,7 +52,11 @@ Unless otherwise noted, [the author](mailto:thegrendel.abs@gmail.com) of this bo
 > --<cite>Edmund Spenser</cite>
 
 [^1]: These are referred to as [[internal#^BUILTINREF|builtins]], features internal to the shell.
+
 [^2]: Although [[localvar#^RECURSIONREF0|recursion _is_ possible in a shell script]], it tends to be slow and its implementation is often an [[recurnolocvar#^FIBOREF|ugly kludge]].
+
 [^3]: An _acronym_ is an _ersatz_ word formed by pasting together the initial letters of the words into a tongue-tripping phrase. This morally corrupt and pernicious practice deserves appropriately severe punishment. Public flogging suggests itself.
+
 [^4]: Many of the features of _ksh88_, and even a few from the updated _ksh93_ have been merged into Bash.
+
 [^5]: By convention, user-written shell scripts that are Bourne shell compliant generally take a name with a .sh extension. System scripts, such as those found in /etc/rc.d, do not necessarily conform to this nomenclature.
