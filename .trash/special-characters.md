@@ -756,7 +756,7 @@ cat *.lst \| sort \| uniq
 
 |   |
 |---|
-|A pipe, as a classic method of interprocess communication, sends the stdout of one [[special-chars#^PROCESSREF|process]] to the stdin of another. In a typical case, a command, such as [[basic#^CATREF|cat]] or [[internal#^ECHOREF|echo]], pipes a stream of data to a _filter_, a command that transforms its input for processing. [^7]
+|A pipe, as a classic method of interprocess communication, sends the stdout of one [[special-characters#^PROCESSREF|process]] to the stdin of another. In a typical case, a command, such as [[basic#^CATREF|cat]] or [[internal#^ECHOREF|echo]], pipes a stream of data to a _filter_, a command that transforms its input for processing. [^7]
 
 **cat $filename1 $filename2 \| grep $search_word**
 
@@ -1367,7 +1367,7 @@ echo <Ctl-V><Ctl-J>|
     
 - **Ctl-W**
     
-    When typing text on the console or in an xterm window, **Ctl-W** erases from the character under the cursor backwards to the first instance of [[special-chars#^WHITESPACEREF|whitespace]]. In some settings, **Ctl-W** erases backwards to first non-alphanumeric character.
+    When typing text on the console or in an xterm window, **Ctl-W** erases from the character under the cursor backwards to the first instance of [[special-characters#^WHITESPACEREF|whitespace]]. In some settings, **Ctl-W** erases backwards to first non-alphanumeric character.
     
 - **Ctl-X**
     
@@ -1400,16 +1400,16 @@ Blank lines have no effect on the action of a script, and are therefore useful f
 
 To preserve _whitespace_ within a string or in a variable, use [[quoting#^QUOTINGREF|quoting]].
 
-UNIX [[special-chars#^FILTERDEF|filters]] can target and operate on _whitespace_ using the [[x17129#^POSIXREF|POSIX]] character class [[x17129#^WSPOSIX|[:space:]]].
+UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whitespace_ using the [[x17129#^POSIXREF|POSIX]] character class [[x17129#^WSPOSIX|[:space:]]].
 
 [[ops#^AROPS1|^1]: An _operator_ is an agent that carries out an _operation_. Some examples are the common [arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of _operator_ and [[internal#^KEYWORDREF|keyword]].
 [^2]: This is more commonly known as the _ternary_ operator. Unfortunately, _ternary_ is an ugly word. It doesn't roll off the tongue, and it doesn't elucidate. It obfuscates. _Trinary_ is by far the more elegant usage.
 [^3]: **A**merican **S**tandard **C**ode for **I**nformation **I**nterchange. This is a system for encoding text characters (alphabetic, numeric, and a limited set of symbols) as 7-bit numbers that can be stored and manipulated by computers. Many of the ASCII characters are represented on a standard keyboard.
-|[[special-chars#^AEN1071|[4]]]|A _PID_, or _process ID_, is a number assigned to a running process. The _PID_s of running processes may be viewed with a [[system#^PPSSREF|ps]] command.
+|[[special-characters#^AEN1071|[4]]]|A _PID_, or _process ID_, is a number assigned to a running process. The _PID_s of running processes may be viewed with a [[system#^PPSSREF|ps]] command.
 
 **Definition:** A _process_ is a currently executing command (or program), sometimes referred to as a _job_.|
 [^5]: The shell does the _brace expansion_. The command itself acts upon the _result_ of the expansion.
-|[[special-chars#^AEN1199|[6]]]|Exception: a code block in braces as part of a pipe _may_ run as a [[subshells#^SUBSHELLSREF|subshell]].
+|[[special-characters#^AEN1199|[6]]]|Exception: a code block in braces as part of a pipe _may_ run as a [[subshells#^SUBSHELLSREF|subshell]].
 
 \|   \|
 \|---\|

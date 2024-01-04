@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/basic/special-variable-types.md",
+                "file": "abs/basic/quoting-variables.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/basic/special-variable-types.md",
+                "file": "abs/basic/quoting-variables.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/basic/special-variable-types.md",
+                "file": "abs/basic/quoting-variables.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/basic/special-variable-types.md"
+                "file": "abs/basic/quoting-variables.md"
               }
             }
           },
@@ -153,7 +153,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/basic/special-variable-types.md",
+                "file": "abs/basic/quoting-variables.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -200,15 +200,19 @@
   },
   "active": "4542c9f5c91e9ece",
   "lastOpenFiles": [
-    "abs/basic/bash-variables-are-untyped.md",
+    "abs/basic/quoting.md",
+    "abs/basic/quoting-variables.md",
+    "abs/basic/quotingvar.md",
+    "abs/basic/special-characters.md",
     "abs/basic/special-variable-types.md",
+    "abs/basic/Chapter 5. Quoting.md",
+    "abs/basic/bash-variables-are-untyped.md",
     "abs/basic/othertypesv.md",
     "abs/basic/variable-assignment.md",
     "abs/basic/variable-substitution.md",
     "abs/basic/varsubn.md",
     "abs/basic/variables-and-parameters.md",
     "abs/introduction/starting-off-with-a-sha-bang.md",
-    "abs/basic/special-characters.md",
     "abs/basic/index.md",
     "abs/introduction/preliminary-exercises.md",
     "abs/introduction/invoking-the-script.md",
@@ -230,10 +234,6 @@
     "abs/preliminary-exercises.md",
     "abs/invoking-the-script.md",
     "abs/starting-off-with-a-sha-bang.md",
-    "abs/shell-programming.md",
-    "abs/introduction.md",
-    "abs/shell-wrapper.md",
-    "abs/othertypesv.md",
     "abs"
   ]
 }

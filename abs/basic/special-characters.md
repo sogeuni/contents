@@ -752,7 +752,7 @@ cat *.lst | sort | uniq
 # Merges and sorts all ".lst" files, then deletes duplicate lines.
 ```
 
-> A pipe, as a classic method of interprocess communication, sends the stdout of one [[special-chars#^PROCESSREF|process]] to the stdin of another. In a typical case, a command, such as [[basic#^CATREF|cat]] or [[internal#^ECHOREF|echo]], pipes a stream of data to a _filter_, a command that transforms its input for processing. [^7]
+> A pipe, as a classic method of interprocess communication, sends the stdout of one [[special-characters#^PROCESSREF|process]] to the stdin of another. In a typical case, a command, such as [[basic#^CATREF|cat]] or [[internal#^ECHOREF|echo]], pipes a stream of data to a _filter_, a command that transforms its input for processing. [^7]
 >
 > `cat $filename1 $filename2 \| grep $search_word`
 >
@@ -1362,7 +1362,7 @@ echo <Ctl-V><Ctl-J>
     
 - **Ctl-W**
     
-    When typing text on the console or in an xterm window, **Ctl-W** erases from the character under the cursor backwards to the first instance of [[special-chars#^WHITESPACEREF|whitespace]]. In some settings, **Ctl-W** erases backwards to first non-alphanumeric character.
+    When typing text on the console or in an xterm window, **Ctl-W** erases from the character under the cursor backwards to the first instance of [[special-characters#^WHITESPACEREF|whitespace]]. In some settings, **Ctl-W** erases backwards to first non-alphanumeric character.
     
 - **Ctl-X**
     
@@ -1393,7 +1393,7 @@ Blank lines have no effect on the action of a script, and are therefore useful f
 
 To preserve _whitespace_ within a string or in a variable, use [[quoting#^QUOTINGREF|quoting]].
 
-UNIX [[special-chars#^FILTERDEF|filters]] can target and operate on _whitespace_ using the [[x17129#^POSIXREF|POSIX]] character class [[x17129#^WSPOSIX|[:space:]]].
+UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whitespace_ using the [[x17129#^POSIXREF|POSIX]] character class [[x17129#^WSPOSIX|[:space:]]].
 
 [^1]: An _operator_ is an agent that carries out an _operation_. Some examples are the common [[ops#^AROPS1|arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of _operator_ and [[internal#^KEYWORDREF|keyword]].
 

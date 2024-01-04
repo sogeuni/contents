@@ -4,14 +4,14 @@ title: 4.4. Special Variable Types
 
 ## _Local variables_
 
-Variables [[subshells#^SCOPEREF|visible]] only within a [[special-chars#^CODEBLOCKREF|code block]] or function (see also [[localvar#^LOCALREF|local variables]] in [[functions#^FUNCTIONREF|functions]])
+Variables [[subshells#^SCOPEREF|visible]] only within a [[special-characters#^CODEBLOCKREF|code block]] or function (see also [[localvar#^LOCALREF|local variables]] in [[functions#^FUNCTIONREF|functions]])
 
 ## _Environmental variables_
 
 Variables that affect the behavior of the shell and user interface
 
 > [!note]
-> In a more general context, each [[special-chars#^PROCESSREF|process]] has an "environment", that is, a group of variables that the process may reference. In this sense, the shell behaves like any other process.
+> In a more general context, each [[special-characters#^PROCESSREF|process]] has an "environment", that is, a group of variables that the process may reference. In this sense, the shell behaves like any other process.
 > 
 > Every time a shell starts, it creates shell variables that correspond to its own environmental variables. Updating or adding new environmental variables causes the shell to update its environment, and all the shell's _child processes_ (the commands it executes) inherit this environment.
 
@@ -32,7 +32,7 @@ Variables that affect the behavior of the shell and user interface
 If a script sets environmental variables, they need to be "exported," that is, reported to the _environment_ local to the script. This is the function of the [[internal#^EXPORTREF|export]] command.
 
 > [!note]
-> A script can **export** variables only to child [[special-chars#^PROCESSREF|processes]], that is, only to commands or processes which that particular script initiates. A script invoked from the command-line _cannot_ export variables back to the command-line environment. _[[internal#^FORKREF|Child processes]] cannot export variables back to the parent processes that spawned them._
+> A script can **export** variables only to child [[special-characters#^PROCESSREF|processes]], that is, only to commands or processes which that particular script initiates. A script invoked from the command-line _cannot_ export variables back to the command-line environment. _[[internal#^FORKREF|Child processes]] cannot export variables back to the parent processes that spawned them._
 >
 > **Definition:** A _child process_ is a subprocess launched by another process, its [[internal#^PARENTREF|parent]].|
 

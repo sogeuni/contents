@@ -39,7 +39,7 @@ For Anita, the source of all the magic
 [[abs/part1/sha-bang/index]]
 
 [[abs/part2/index|Part 2. Basics]]
-* [[special-chars]]
+* [[special-characters]]
 * [[variables]]
 * [[Chapter 5. Quoting]]
 * [[exit-status]]
@@ -160,13 +160,13 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 2-3. [[abs/part1/sha-bang/index#^EX2|_cleanup_: An enhanced and generalized version of above scripts.]]
 
-3-1. [[special-chars#^EX8|Code blocks and I/O redirection]]
+3-1. [[special-characters#^EX8|Code blocks and I/O redirection]]
 
-3-2. [[special-chars#^RPMCHECK|Saving the output of a code block to a file]]
+3-2. [[special-characters#^RPMCHECK|Saving the output of a code block to a file]]
 
-3-3. [[special-chars#^BGLOOP|Running a loop in the background]]
+3-3. [[special-characters#^BGLOOP|Running a loop in the background]]
 
-3-4. [[special-chars#^EX58|Backup of all files changed in last day]]
+3-4. [[special-characters#^EX58|Backup of all files changed in last day]]
 
 4-1. [[varsubn#^EX9|Variable assignment and substitution]]
 
@@ -182,7 +182,7 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 4-7. [[othertypesv#^EX19|Using _shift_]]
 
-5-1. [[quotingvar#^WEIRDVARS|Echoing Weird Variables]]
+5-1. [[quoting-variables#^WEIRDVARS|Echoing Weird Variables]]
 
 5-2. [[escapingsection#^ESCAPED|Escaped Characters]]
 
@@ -402,7 +402,7 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 16-2. [[basic#^HELLOL|Hello or Good-bye]]
 
-16-3. [[moreadv#^EX57|_Badname_, eliminate file names in current directory containing bad characters and]] [[special-chars#^WHITESPACEREF|whitespace]].
+16-3. [[moreadv#^EX57|_Badname_, eliminate file names in current directory containing bad characters and]] [[special-characters#^WHITESPACEREF|whitespace]].
 
 16-4. [[moreadv#^IDELETE|Deleting a file by its _inode_ number]]
 
