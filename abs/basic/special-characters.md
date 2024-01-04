@@ -2,6 +2,8 @@
 title: 3. Special Characters
 ---
 
+<script src="https://gist.github.com/suzaku/be6146c98a715d2e54aa6687a7feef0b.js"></script>
+
 What makes a character _special_? If it has a meaning beyond its _literal meaning_, a [[x17129#^METAMEANINGREF|meta-meaning]], then we refer to it as a _special character_. Along with commands and [[internal#^KEYWORDREF|keywords]], _special characters_ are building blocks of Bash scripts.
 
 ## Special Characters Found In Scripts and Elsewhere
@@ -213,16 +215,15 @@ This is also the division [[ops#^AROPS1|arithmetic operator]].
 
 **null command [[internal#^TRUEREF|colon].** This is the shell equivalent of a "NOP" (_no op_, a do-nothing operation). It may be considered a synonym for the shell builtin [true]]. The ":" command is itself a _Bash_ [[internal#^BUILTINREF|builtin]], and its [[exit-status#^EXITSTATUSREF|exit status]] is _true_ (0).
 
-|   |
-|---|
-|:
-echo $?   # 0|
+```bash
+:
+echo $?   # 0
+```
 
 Endless loop:
 
-|   |
-|---|
-|while :
+```bash
+while :
 do
    operation-1
    operation-2
@@ -234,75 +235,73 @@ done
 #    while true
 #    do
 #      ...
-#    done|
+#    done
+```
 
 Placeholder in if/then test:
 
-|   |
-|---|
-|if condition
+```bash
+if condition
 then :   # Do nothing and branch ahead
 else     # Or else ...
    take-some-action
-fi|
+fi
+```
 
 Provide a placeholder where a binary operation is expected, see [[ops#^ARITHOPS|Example 8-2]] and [[parameter-substitution#^DEFPARAM|default parameters]].
 
-|   |
-|---|
-|: ${username=`whoami`}
+```bash
+: ${username=`whoami`}
 # ${username=`whoami`}   Gives an error without the leading :
 #                        unless "username" is a command or builtin...
 
-: ${1?"Usage: $0 ARGUMENT"}     # From "usage-message.sh example script.|
+: ${1?"Usage: $0 ARGUMENT"}     # From "usage-message.sh example script.
+```
 
 Provide a placeholder where a command is expected in a [[here-docs#^HEREDOCREF|here document]]. See [[here-docs#^ANONHEREDOC|Example 19-10]].
 
 Evaluate string of variables using [[parameter-substitution#^PARAMSUBREF|parameter substitution]] (as in [[parameter-substitution#^EX6|Example 10-7]]).
 
-|   |
-|---|
-|: ${HOSTNAME?} ${USER?} ${MAIL?}
+```bash
+: ${HOSTNAME?} ${USER?} ${MAIL?}
 #  Prints error message
-#+ if one or more of essential environmental variables not set.|
+#+ if one or more of essential environmental variables not set.
+```
 
 **[[parameter-substitution#^EXPREPL1|Variable expansion / substring replacement]]**.
 
 In combination with the > [[io-redirection#^IOREDIRREF|redirection operator]], truncates a file to zero length, without changing its permissions. If the file did not previously exist, creates it.
 
-|   |
-|---|
-|: > data.xxx   # File "data.xxx" now empty.	      
+```bash
+: > data.xxx   # File "data.xxx" now empty.	      
 
 # Same effect as   cat /dev/null >data.xxx
-# However, this does not fork a new process, since ":" is a builtin.|
+# However, this does not fork a new process, since ":" is a builtin.
+```
 
 See also [[textproc#^EX12|Example 16-15]].
 
 In combination with the >> redirection operator, has no effect on a pre-existing target file (**: >> target_file**). If the file did not previously exist, creates it.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|This applies to regular files, not pipes, symlinks, and certain special files.|
+> [!note] This applies to regular files, not pipes, symlinks, and certain special files.
 
 May be used to begin a comment line, although this is not recommended. Using # for a comment turns off error checking for the remainder of that line, so almost anything may appear in a comment. However, this is not the case with :.
 
-|   |
-|---|
-|: This is a comment that generates an error, ( if [ $x -eq 3] ).|
+```bash
+: This is a comment that generates an error, ( if [ $x -eq 3] ).
+```
 
 The ":" serves as a [[special-characters#^FIELDREF|field]] separator, in [[files#^DATAFILESREF1|/etc/passwd]], and in the [[internalvariables#^PATHREF|$PATH]] variable.
 
-|   |
-|---|
-|bash$ **echo $PATH**
-/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/sbin:/usr/sbin:/usr/games|
+```bash
+bash$ echo $PATH
+/usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/sbin:/usr/sbin:/usr/games
+```
 
 A _colon_ is [[functions#^FSTRANGEREF|acceptable as a function name]].
 
-|   |
-|---|
-|:()
+```bash
+:()
 {
   echo "The name of this function is "$FUNCNAME" "
   # Why use a colon as a function name?
@@ -311,20 +310,21 @@ A _colon_ is [[functions#^FSTRANGEREF|acceptable as a function name]].
 
 :
 
-# The name of this function is :|
+# The name of this function is :
+```
 
 This is not [[portabilityissues|portable]] behavior, and therefore not a recommended practice. In fact, more recent releases of Bash do not permit this usage. An underscore **_** works, though.
 
 A _colon_ can serve as a placeholder in an otherwise empty function.
 
-|   |
-|---|
-|not_empty ()
+```bash
+not_empty ()
 {
   :
-} # Contains a : (null command), and so is not empty.|
+} # Contains a : (null command), and so is not empty.
+```
 
-!
+### !
 
 **reverse (or negate) the sense of a test or exit status [[exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[comparison-ops#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal#^KEYWORDREF|keyword]].
 
@@ -332,24 +332,25 @@ In a different context, the ! also appears in [[ivr#^IVRREF|indirect variable re
 
 In yet another context, from the _command line_, the ! invokes the Bash _history mechanism_ (see [[histcommands.html|Appendix L]]). Note that within a script, the history mechanism is disabled.
 
-*
+### *
 
 **wild card [[globbingref.html|asterisk].** The * character serves as a "wild card" for filename expansion in [globbing]]. By itself, it matches every filename in a given directory.
 
-|   |
-|---|
-|bash$ **echo ***
-abs-book.sgml add-drive.sh agram.sh alias.sh|
+```bash
+bash$ echo *
+abs-book.sgml add-drive.sh agram.sh alias.sh
+	      
+```
 
 The * also represents [[x17129#^ASTERISKREG|any number (or zero) characters]] in a [[regexp#^REGEXREF|regular expression]].
 
-*
+### *
 
 **[[ops#^AROPS1|arithmetic operator]].** In the context of arithmetic operations, the * denotes multiplication.
 
 ** A double asterisk can represent the [[ops#^EXPONENTIATIONREF|exponentiation]] operator or [[bash-ver4#^GLOBSTARREF|extended file-match]] _globbing_.
 
-?
+### ?
 
 **test operator.** Within certain expressions, the ? indicates a test for a condition.
 
@@ -357,9 +358,8 @@ In a [[dblparens.html|double-parentheses construct]], the ? can serve as an elem
 
 condition**?**result-if-true**:**result-if-false
 
-|   |
-|---|
-|(( var0 = var1<98?9:21 ))
+```bash
+(( var0 = var1<98?9:21 ))
 #                ^ ^
 
 # if [ "$var1" -lt 98 ]
@@ -367,87 +367,86 @@ condition**?**result-if-true**:**result-if-false
 #   var0=9
 # else
 #   var0=21
-# fi|
+# fi
+```
 
 In a [[parameter-substitution#^PARAMSUBREF|parameter substitution]] expression, the ? [[parameter-substitution#^QERRMSG|tests whether a variable has been set]].
 
-?
+### ?
 
 **wild card.** The ? character serves as a single-character "wild card" for filename expansion in [[globbingref.html|globbing]], as well as [[x17129#^QUEXREGEX|representing one character]] in an [[x17129#^EXTREGEX|extended regular expression]].
 
-$
+### $
 
 **[[varsubn.html|Variable substitution]] (contents of a variable).**
 
-|   |
-|---|
-|var1=5
+```bash
+var1=5
 var2=23skidoo
 
 echo $var1     # 5
-echo $var2     # 23skidoo|
+echo $var2     # 23skidoo
+```
 
 A $ prefixing a variable name indicates the _value_ the variable holds.
 
-$
+### $
 
 **end-of-line.** In a [[regexp#^REGEXREF|regular expression]], a "$" addresses the [[x17129#^DOLLARSIGNREF|end of a line]] of text.
 
-${}
+### ${}
 
 **[[parameter-substitution#^PARAMSUBREF|Parameter substitution]].**
 
-$' ... '
+### $' ... '
 
 **[[escapingsection#^STRQ|Quoted string expansion]].** This construct expands single or multiple escaped octal or hex values into ASCII [[bash-ver4#^UNICODEREF|^3] or [Unicode]] characters.
 
-$*, $@
+### $*, $@
 
 **[[internalvariables#^APPREF|positional parameters]].**
 
-$?
+### $?
 
 **exit status variable.** The [[exit-status#^EXSREF|$? variable]] holds the [[exit-status#^EXITSTATUSREF|exit status]] of a command, a [[functions#^FUNCTIONREF|function]], or of the script itself.
 
-$$
+### $$
 
 **process ID variable.** The [[internalvariables#^PROCCID|$$ variable]] holds the _process ID_ [^4] of the script in which it appears.
 
-()
+### ()
 
 **command group.**
 
-|   |
-|---|
-|(a=hello; echo $a)|
+```bash
+(a=hello; echo $a)
+```
 
-|   |   |
-|---|---|
-|![[../images/important.gif|Important]]|A listing of commands within _parentheses_ starts a [[subshells#^SUBSHELLSREF|subshell]].
-
-Variables inside parentheses, within the subshell, are not visible to the rest of the script. The parent process, the script, [[subshells#^PARVIS|cannot read variables created in the child process]], the subshell.
-
-\|   \|
-\|---\|
-\|a=123
-( a=321; )	      
-
-echo "a = $a"   # a = 123
-# "a" within parentheses acts like a local variable.\||
+> [!important]
+> A listing of commands within _parentheses_ starts a [[subshells#^SUBSHELLSREF|subshell]].
+>
+> Variables inside parentheses, within the subshell, are not visible to the rest of the script. The parent process, the script, [[subshells#^PARVIS|cannot read variables created in the child process]], the subshell.
+>
+> ```bash
+> a=123
+> ( a=321; )	      
+> 
+> echo "a = $a"   # a = 123
+> # "a" within parentheses acts like a local variable.
+> ```
 
 **array initialization.**
 
-|   |
-|---|
-|Array=(element1 element2 element3)|
+```bash
+Array=(element1 element2 element3)
+```
 
-{xxx,yyy,zzz,...}
+### {xxx,yyy,zzz,...}
 
 **Brace expansion.**
 
-|   |
-|---|
-|echo \"{These,words,are,quoted}\"   # " prefix and suffix
+```bash
+echo \"{These,words,are,quoted}\"   # " prefix and suffix
 # "These" "words" "are" "quoted"
 
 
@@ -455,25 +454,24 @@ cat {file1,file2,file3} > combined_file
 # Concatenates the files file1, file2, and file3 into combined_file.
 
 cp file22.{txt,backup}
-# Copies "file22.txt" to "file22.backup"|
+# Copies "file22.txt" to "file22.backup"
+```
 
-A command may act upon a comma-separated list of file specs within _braces_. [[globbingref.html|^5] Filename expansion ([globbing]]) applies to the file specs between the braces.
+A command may act upon a comma-separated list of file specs within _braces_. [^5] Filename expansion ([globbingref.html|[globbing]]) applies to the file specs between the braces.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|No spaces allowed within the braces _unless_ the spaces are quoted or escaped.
+> [!caution]
+> No spaces allowed within the braces _unless_ the spaces are quoted or escaped.
+>
+> `echo {file1,file2}\ :{\ A," B",' C'}`
+>
+> file1 : A file1 : B file1 : C file2 : A file2 : B file2 : C|
 
-**echo {file1,file2}\ :{\ A," B",' C'}**
-
-file1 : A file1 : B file1 : C file2 : A file2 : B file2 : C|
-
-{a..z}
+### {a..z}
 
 **Extended Brace expansion.**
 
-|   |
-|---|
-|echo {a..z} # a b c d e f g h i j k l m n o p q r s t u v w x y z
+```bash
+echo {a..z} # a b c d e f g h i j k l m n o p q r s t u v w x y z
 # Echoes characters between a and z.
 
 echo {0..3} # 0 1 2 3
@@ -482,36 +480,37 @@ echo {0..3} # 0 1 2 3
 
 base64_charset=( {A..Z} {a..z} {0..9} + / = )
 # Initializing an array, using extended brace expansion.
-# From vladz's "base64.sh" example script.|
+# From vladz's "base64.sh" example script.
+```
 
 The _{a..z}_ [[bashver3#^BRACEEXPREF3|extended brace expansion]] construction is a feature introduced in [[bashver3#^BASH3REF|version 3]] of _Bash_.
 
-{}
+### {}
 
-**Block of code [[functions#^FUNCTIONREF|curly brackets].** Also referred to as an _inline group_, this construct, in effect, creates an _anonymous function_ (a function without a name). However, unlike in a "standard" [function]], the variables inside a code block remain visible to the remainder of the script.
+**Block of code \[curly brackets].** Also referred to as an _inline group_, this construct, in effect, creates an _anonymous function_ (a function without a name). However, unlike in a "standard" [[functions#^FUNCTIONREF|function]], the variables inside a code block remain visible to the remainder of the script.
 
-|   |
-|---|
-|bash$ **{ local a;
-	      a=123; }**
+```bash
+bash$ { local a;
+	      a=123; }
 bash: local: can only be used in a
-function|
+function
+	      
+```
 
-|   |
-|---|
-|a=123
+```bash
+a=123
 { a=321; }
 echo "a = $a"   # a = 321   (value inside code block)
 
-# Thanks, S.C.|
+# Thanks, S.C.
+```
 
 The code block enclosed in braces may have [[io-redirection#^IOREDIRREF|I/O redirected]] to and from it.
 
 **Example 3-1. Code blocks and I/O redirection**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Reading lines in /etc/fstab.
 
 File=/etc/fstab
@@ -531,7 +530,8 @@ exit 0
 
 # Now, how do you parse the separate fields of each line?
 # Hint: use awk, or . . .
-# . . . Hans-Joerg Diers suggests using the "set" Bash builtin.|
+# . . . Hans-Joerg Diers suggests using the "set" Bash builtin.
+```
 
 **Example 3-2. Saving the output of a code block to a file**
 
