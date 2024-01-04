@@ -40,7 +40,7 @@ initial=( `cat "$startfile" | sed -e '/#/d' | tr -d '\n' |\
 > A command may not follow a comment on the same line. There is no method of terminating the comment, in order for "live code" to begin on the same line. Use a new line for the next command.
 
 > [!note]
-> Of course, a [[quoting#^QUOTINGREF|quoted]] or an [[escapingsection#^ESCP|escaped]] # in an [[internal#^ECHOREF|echo]] statement does _not_ begin a comment. Likewise, a # appears in [[parameter-substitution#^PSUB2|certain parameter-substitution constructs]] and in [[numerical-constants#^NUMCONSTANTS|numerical constant expressions]].
+> Of course, a [[quoting#^QUOTINGREF|quoted]] or an [[escaping#^ESCP|escaped]] # in an [[internal#^ECHOREF|echo]] statement does _not_ begin a comment. Likewise, a # appears in [[parameter-substitution#^PSUB2|certain parameter-substitution constructs]] and in [[numerical-constants#^NUMCONSTANTS|numerical constant expressions]].
 >
 > ```bash
 > echo "The # here does not begin a comment."
@@ -189,7 +189,7 @@ done
 
 \
 
-**[[escapingsection#^ESCP|escape]] [backslash].** A quoting mechanism for single characters.
+**[[escaping#^ESCP|escape]] [backslash].** A quoting mechanism for single characters.
 
 **\X** _escapes_ the character _X_. This has the effect of "quoting" _X_, equivalent to _'X'_. The \ may be used to quote " and ', so they are expressed literally.
 
@@ -395,7 +395,7 @@ ${}
 
 $' ... '
 
-**[[escapingsection#^STRQ|Quoted string expansion]].** This construct expands single or multiple escaped octal or hex values into ASCII [[bash-ver4#^UNICODEREF|^3] or [Unicode]] characters.
+**[[escaping#^STRQ|Quoted string expansion]].** This construct expands single or multiple escaped octal or hex values into ASCII [[bash-ver4#^UNICODEREF|^3] or [Unicode]] characters.
 
 $*, $@
 

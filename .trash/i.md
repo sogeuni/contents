@@ -184,9 +184,9 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 5-1. [[quoting-variables#^WEIRDVARS|Echoing Weird Variables]]
 
-5-2. [[escapingsection#^ESCAPED|Escaped Characters]]
+5-2. [[escaping#^ESCAPED|Escaped Characters]]
 
-5-3. [[escapingsection#^BASHEK|Detecting key-presses]]
+5-3. [[escaping#^BASHEK|Detecting key-presses]]
 
 6-1. [[exit-status#^EX5|exit / exit status]]
 

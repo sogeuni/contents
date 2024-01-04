@@ -198,8 +198,10 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "4542c9f5c91e9ece",
+  "active": "7c4dde10a3995f5d",
   "lastOpenFiles": [
+    "abs/basic/escaping.md",
+    "abs/basic/escapingsection.md",
     "abs/basic/quoting.md",
     "abs/basic/quoting-variables.md",
     "abs/basic/quotingvar.md",
@@ -232,8 +234,6 @@
     "abs/basics.md",
     "abs/basic-commands.md",
     "abs/preliminary-exercises.md",
-    "abs/invoking-the-script.md",
-    "abs/starting-off-with-a-sha-bang.md",
     "abs"
   ]
 }
