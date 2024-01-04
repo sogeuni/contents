@@ -149,11 +149,11 @@ Copy all the "junk" files to [[internalvariables#^PWDREF|$PWD]].
 
 ### "
 
-**[[varsubn#^DBLQUO|partial quoting]] [[quoting|double quote].** _"STRING"_ preserves (from interpretation) most of the special characters within _STRING_. See [Chapter 5]].
+**[[variable-substitution#^DBLQUO|partial quoting]] [[quoting|double quote].** _"STRING"_ preserves (from interpretation) most of the special characters within _STRING_. See [Chapter 5]].
 
 ### '
 
-**[[varsubn#^SNGLQUO|full quoting]] [[quoting|single quote].** _'STRING'_ preserves all special characters within _STRING_. This is a stronger form of quoting than _"STRING"_. See [Chapter 5]].
+**[[variable-substitution#^SNGLQUO|full quoting]] [[quoting|single quote].** _'STRING'_ preserves all special characters within _STRING_. This is a stronger form of quoting than _"STRING"_. See [Chapter 5]].
 
 ### ,
 
@@ -1101,7 +1101,7 @@ exit 0
 
 ### =
 
-**Equals.** [[varassignment#^EQREF|Assignment operator]]
+**Equals.** [[variable-assignment#^EQREF|Assignment operator]]
 
 ```bash
 a=28
