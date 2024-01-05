@@ -157,7 +157,7 @@ Copy all the "junk" files to [[internalvariables#^PWDREF|$PWD]].
 
 ### ,
 
-**[[ops#^COMMAOP|comma operator]].** The _comma operator_ [^1] links together a series of arithmetic operations. All are evaluated, but only the last one is returned.
+**[[operators#^COMMAOP|comma operator]].** The _comma operator_ [^1] links together a series of arithmetic operations. All are evaluated, but only the last one is returned.
 
 ```bash
 let "t2 = ((a = 9, 15 / 3))"
@@ -202,7 +202,7 @@ See [[Chapter 5. Quoting|Chapter 5]] for an in-depth explanation of escaped char
 
 **Filename path separator [forward slash].** Separates the components of a filename (as in /home/bozo/projects/Makefile).
 
-This is also the division [[ops#^AROPS1|arithmetic operator]].
+This is also the division [[operators#^AROPS1|arithmetic operator]].
 
 ### `
 
@@ -245,7 +245,7 @@ else     # Or else ...
 fi
 ```
 
-Provide a placeholder where a binary operation is expected, see [[ops#^ARITHOPS|Example 8-2]] and [[parameter-substitution#^DEFPARAM|default parameters]].
+Provide a placeholder where a binary operation is expected, see [[operators#^ARITHOPS|Example 8-2]] and [[parameter-substitution#^DEFPARAM|default parameters]].
 
 ```bash
 : ${username=`whoami`}
@@ -323,7 +323,7 @@ not_empty ()
 
 ### !
 
-**reverse (or negate) the sense of a test or exit status [[exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[comparison-ops#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal#^KEYWORDREF|keyword]].
+**reverse (or negate) the sense of a test or exit status [[exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[other-comparison-operators#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal#^KEYWORDREF|keyword]].
 
 In a different context, the ! also appears in [[ivr#^IVRREF|indirect variable references]].
 
@@ -343,15 +343,15 @@ The * also represents [[x17129#^ASTERISKREG|any number (or zero) characters]] in
 
 ### *
 
-**[[ops#^AROPS1|arithmetic operator]].** In the context of arithmetic operations, the * denotes multiplication.
+**[[operators#^AROPS1|arithmetic operator]].** In the context of arithmetic operations, the * denotes multiplication.
 
-** A double asterisk can represent the [[ops#^EXPONENTIATIONREF|exponentiation]] operator or [[bash-ver4#^GLOBSTARREF|extended file-match]] _globbing_.
+** A double asterisk can represent the [[operators#^EXPONENTIATIONREF|exponentiation]] operator or [[bash-ver4#^GLOBSTARREF|extended file-match]] _globbing_.
 
 ### ?
 
 **test operator.** Within certain expressions, the ? indicates a test for a condition.
 
-In a [[dblparens.html|double-parentheses construct]], the ? can serve as an element of a C-style _trinary_ operator. [^2]
+In a [[double-parentheses-construct.html|double-parentheses construct]], the ? can serve as an element of a C-style _trinary_ operator. [^2]
 
 condition**?**result-if-true**:**result-if-false
 
@@ -604,7 +604,7 @@ ls . | xargs -i -t cp ./{} $1
 
 **test.**
 
-[[tests#^IFTHEN|Test]] expression between **`[ ]`**. Note that **[** is part of the shell _builtin_ [[testconstructs#^TTESTREF|test]] (and a synonym for it), _not_ a link to the external command /usr/bin/test.
+[[tests#^IFTHEN|Test]] expression between **`[ ]`**. Note that **[** is part of the shell _builtin_ [[test-constructs#^TTESTREF|test]] (and a synonym for it), _not_ a link to the external command /usr/bin/test.
 
 ### \[\[ ]]
 
@@ -612,7 +612,7 @@ ls . | xargs -i -t cp ./{} $1
 
 Test expression between `[[[ ]]`. More flexible than the single-bracket [ ] test, this is a shell [internal#^KEYWORDREF|keyword]].
 
-See the discussion on the [[testconstructs#^DBLBRACKETS|`[[ ... ]]` construct]].
+See the discussion on the [[test-constructs#^DBLBRACKETS|`[[ ... ]]` construct]].
 
 ### \[ ]
 
@@ -645,7 +645,7 @@ echo $[$a+$b]   # 10
 echo $[$a*$b]   # 21
 ```
 
-Note that this usage is _deprecated_, and has been replaced by the [[dblparens.html|(( ... ))]] construct.
+Note that this usage is _deprecated_, and has been replaced by the [[double-parentheses-construct.html|(( ... ))]] construct.
 
 ### (( ))
 
@@ -653,7 +653,7 @@ Note that this usage is _deprecated_, and has been replaced by the [[dblparens.h
 
 Expand and evaluate integer expression between (( )).
 
-See the discussion on the [[dblparens.html|(( ... )) construct]].
+See the discussion on the [[double-parentheses-construct.html|(( ... )) construct]].
 
 ### > &> >& >> < <>
 
@@ -702,9 +702,9 @@ See the discussion on the [[dblparens.html|(( ... )) construct]].
 
 **<(command)**
 
-[[comparison-ops#^LTREF|In a different context]], the "<" and ">" characters act as [[comparison-ops#^SCOMPARISON1|string comparison operators]].
+[[other-comparison-operators#^LTREF|In a different context]], the "<" and ">" characters act as [[other-comparison-operators#^SCOMPARISON1|string comparison operators]].
 
-[[comparison-ops#^INTLT|In yet another context]], the "<" and ">" characters act as [[comparison-ops#^ICOMPARISON1|integer comparison operators]]. See also [[moreadv#^EX45|Example 16-9]].
+[[other-comparison-operators#^INTLT|In yet another context]], the "<" and ">" characters act as [[other-comparison-operators#^ICOMPARISON1|integer comparison operators]]. See also [[moreadv#^EX45|Example 16-9]].
 
 ### <<
 
@@ -716,7 +716,7 @@ See the discussion on the [[dblparens.html|(( ... )) construct]].
 
 ### <, >
 
-**[[comparison-ops#^LTREF|ASCII comparison]].**
+**[[other-comparison-operators#^LTREF|ASCII comparison]].**
 
 ```bash
 veg1=carrots
@@ -805,7 +805,7 @@ bash$ ls -l | ./uppercase.sh
 
 ### ||
 
-**[[ops#^ORREF|OR logical operator]].** In a [[testconstructs#^TESTCONSTRUCTS1|test construct]], the || operator causes a return of 0 (success) if _either_ of the linked test conditions is true.
+**[[operators#^ORREF|OR logical operator]].** In a [[test-constructs#^TESTCONSTRUCTS1|test construct]], the || operator causes a return of 0 (success) if _either_ of the linked test conditions is true.
 
 ### &
 
@@ -871,7 +871,7 @@ exit 0
 
 ### &&
 
-**[[ops#^LOGOPS1|AND logical operator]].** In a [[testconstructs#^TESTCONSTRUCTS1|test construct]], the && operator causes a return of 0 (success) only if _both_ the linked test conditions are true.
+**[[operators#^LOGOPS1|AND logical operator]].** In a [[test-constructs#^TESTCONSTRUCTS1|test construct]], the && operator causes a return of 0 (success) only if _both_ the linked test conditions are true.
 
 ### -
 
@@ -1097,7 +1097,7 @@ exit 0
 
 ### -
 
-**Minus.** Minus sign in an [[ops#^AROPS1|arithmetic operation]].
+**Minus.** Minus sign in an [[operators#^AROPS1|arithmetic operation]].
 
 ### =
 
@@ -1108,11 +1108,11 @@ a=28
 echo $a   # 28
 ```
 
-In a [[comparison-ops#^EQUALSIGNREF|different context]], the "=" is a [[comparison-ops#^SCOMPARISON1|string comparison]] operator.
+In a [[other-comparison-operators#^EQUALSIGNREF|different context]], the "=" is a [[other-comparison-operators#^SCOMPARISON1|string comparison]] operator.
 
 ### +
 
-**Plus.** Addition [[ops#^AROPS1|arithmetic operator]].
+**Plus.** Addition [[operators#^AROPS1|arithmetic operator]].
 
 In a [[x17129#^PLUSREF|different context]], the + is a [[regexp.html|Regular Expression]] operator.
 
@@ -1124,7 +1124,7 @@ Certain commands and [[internal#^BUILTINREF|builtins]] use the + to enable certa
 
 ### %
 
-**[[ops#^MODULOREF|modulo]].** Modulo (remainder of a division) [[ops#^AROPS1|arithmetic operation]].
+**[[operators#^MODULOREF|modulo]].** Modulo (remainder of a division) [[operators#^AROPS1|arithmetic operation]].
 
 ```bash
 let "z = 5 % 3"
@@ -1395,7 +1395,7 @@ To preserve _whitespace_ within a string or in a variable, use [[quoting#^QUOTIN
 
 UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whitespace_ using the [[x17129#^POSIXREF|POSIX]] character class [[x17129#^WSPOSIX|[:space:]]].
 
-[^1]: An _operator_ is an agent that carries out an _operation_. Some examples are the common [[ops#^AROPS1|arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of _operator_ and [[internal#^KEYWORDREF|keyword]].
+[^1]: An _operator_ is an agent that carries out an _operation_. Some examples are the common [[operators#^AROPS1|arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of _operator_ and [[internal#^KEYWORDREF|keyword]].
 
 [^2]: This is more commonly known as the _ternary_ operator. Unfortunately, _ternary_ is an ugly word. It doesn't roll off the tongue, and it doesn't elucidate. It obfuscates. _Trinary_ is by far the more elegant usage.
 

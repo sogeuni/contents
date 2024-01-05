@@ -6,7 +6,7 @@ title: 4.2. Variable Assignment
 the assignment operator (_no space before and after_)
 
 > [!caution]
-> Do not confuse this with [[comparison-ops#^EQUALSIGNREF|=]] and [[comparison-ops#^EQUALREF|-eq]], which [[tests#^IFTHEN|test]], rather than assign!
+> Do not confuse this with [[other-comparison-operators#^EQUALSIGNREF|=]] and [[other-comparison-operators#^EQUALREF|-eq]], which [[tests#^IFTHEN|test]], rather than assign!
 >
 > Note that = can be either an _assignment_ or a _test_ operator, depending on context.
 

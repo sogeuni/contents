@@ -44,7 +44,7 @@ For Anita, the source of all the magic
 * [[Chapter 5. Quoting]]
 * [[exit-status]]
 * [[tests]]
-* [[Chapter 8. Operations and Related Topics]]
+* [[operations-and-related-topics]]
 
 [[abs/part3/index|Part 3. Beyond the Basics]]
 * [[variables2]]
@@ -121,7 +121,7 @@ For Anita, the source of all the magic
 
 ## List of Tables
 
-* [[opprecedence#^1|8-1. Operator Precedence]]
+* [[operator-precedence#^1|8-1. Operator Precedence]]
 * 15-1. [[x9644#^JOBIDTABLE|Job identifiers]]
 
 33-1. [[options#^AEN19601|Bash options]]
@@ -192,29 +192,29 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 6-2. [[exit-status#^NEGCOND|Negating a condition using !]]
 
-7-1. [[testconstructs#^EX10|What is truth?]]
+7-1. [[test-constructs#^EX10|What is truth?]]
 
-7-2. [[testconstructs#^EX11|Equivalence of _test_, /usr/bin/test, [ ], and /usr/bin/[]]
+7-2. [[test-constructs#^EX11|Equivalence of _test_, /usr/bin/test, [ ], and /usr/bin/[]]
 
-7-3. [[testconstructs#^ARITHTESTS|Arithmetic Tests using (( ))]]
+7-3. [[test-constructs#^ARITHTESTS|Arithmetic Tests using (( ))]]
 
-7-4. [[fto#^BROKENLINK|Testing for broken links]]
+7-4. [[file-test-operators#^BROKENLINK|Testing for broken links]]
 
-7-5. [[comparison-ops#^EX13|Arithmetic and string comparisons]]
+7-5. [[other-comparison-operators#^EX13|Arithmetic and string comparisons]]
 
-7-6. [[comparison-ops#^STRTEST|Testing whether a string is _null_]]
+7-6. [[other-comparison-operators#^STRTEST|Testing whether a string is _null_]]
 
-7-7. [[comparison-ops#^EX14|_zmore_]]
+7-7. [[other-comparison-operators#^EX14|_zmore_]]
 
-8-1. [[ops#^GCD|Greatest common divisor]]
+8-1. [[operators#^GCD|Greatest common divisor]]
 
-8-2. [[ops#^ARITHOPS|Using Arithmetic Operations]]
+8-2. [[operators#^ARITHOPS|Using Arithmetic Operations]]
 
-8-3. [[ops#^ANDOR|Compound Condition Tests Using && and ||]]
+8-3. [[operators#^ANDOR|Compound Condition Tests Using && and ||]]
 
 8-4. [[numerical-constants#^NUMBERS|Representation of numerical constants]]
 
-8-5. [[dblparens#^CVARS|C-style manipulation of variables]]
+8-5. [[double-parentheses-construct#^CVARS|C-style manipulation of variables]]
 
 9-1. [[internalvariables#^IFSH|$IFS and whitespace]]
 

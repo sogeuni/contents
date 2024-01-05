@@ -18,7 +18,7 @@ bash$ echo $variable1
 23
 ```
 
-The only times a variable appears "naked" -- without the $ prefix -- is when declared or assigned, when _unset_, when [[internal#^EXPORTREF|exported]], in an arithmetic expression within [[dblparens.html|double parentheses (( ... ))]], or in the special case of a variable representing a [[debugging#^SIGNALD|signal]] (see [[debugging#^EX76|Example 32-5]]). Assignment may be with an = (as in _var1=27_), in a [[internal#^READREF|read]] statement, and at the head of a loop (_for var2 in 1 2 3_).
+The only times a variable appears "naked" -- without the $ prefix -- is when declared or assigned, when _unset_, when [[internal#^EXPORTREF|exported]], in an arithmetic expression within [[double-parentheses-construct.html|double parentheses (( ... ))]], or in the special case of a variable representing a [[debugging#^SIGNALD|signal]] (see [[debugging#^EX76|Example 32-5]]). Assignment may be with an = (as in _var1=27_), in a [[internal#^READREF|read]] statement, and at the head of a loop (_for var2 in 1 2 3_).
 
 Enclosing a referenced value in _double quotes_ (" ... ") does not interfere with variable substitution. This is called _partial quoting_, sometimes referred to as "weak quoting." Using single quotes (' ... ') causes the variable name to be used literally, and no substitution will take place. This is _full quoting_, sometimes referred to as 'strong quoting.' See [[Chapter 5. Quoting|Chapter 5]] for a detailed discussion.
 
