@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "abs/beyond-the-basic/typing-variables.md",
-                "mode": "source",
+                "mode": "preview",
                 "backlinks": true,
                 "source": false
               }
@@ -200,6 +200,8 @@
   },
   "active": "d549227d1cff6ac9",
   "lastOpenFiles": [
+    "abs/beyond-the-basic/generate-random-integer.md",
+    "abs/beyond-the-basic/randomvar.md",
     "abs/beyond-the-basic/internal-variables.md",
     "abs/beyond-the-basic/index.md",
     "abs/beyond-the-basic/another-look-at-variables.md",
@@ -224,8 +226,6 @@
     "abs/basic/test-constructs.md",
     "abs/basic/fto.md",
     "index.md",
-    "abs/basic/exit-status.md",
-    "abs/basic/testconstructs.md",
     "git",
     "abs/apendix",
     "abs/endnotes",

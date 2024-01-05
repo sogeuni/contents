@@ -236,19 +236,19 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 9-10. [[typing-variables#^EX20|Using _declare_ to type variables]]
 
-9-11. [[randomvar#^EX21|Generating random numbers]]
+9-11. [[generate-random-integer#^EX21|Generating random numbers]]
 
-9-12. [[randomvar#^PICKCARD|Picking a random card from a deck]]
+9-12. [[generate-random-integer#^PICKCARD|Picking a random card from a deck]]
 
-9-13. [[randomvar#^BROWNIAN|Brownian Motion Simulation]]
+9-13. [[generate-random-integer#^BROWNIAN|Brownian Motion Simulation]]
 
-9-14. [[randomvar#^RANDOMBETWEEN|Random between values]]
+9-14. [[generate-random-integer#^RANDOMBETWEEN|Random between values]]
 
-9-15. [[randomvar#^RANDOMTEST|Rolling a single die with RANDOM]]
+9-15. [[generate-random-integer#^RANDOMTEST|Rolling a single die with RANDOM]]
 
-9-16. [[randomvar#^SEEDINGRANDOM|Reseeding RANDOM]]
+9-16. [[generate-random-integer#^SEEDINGRANDOM|Reseeding RANDOM]]
 
-9-17. [[randomvar#^RANDOM2|Pseudorandom numbers, using]] [[C.2. Awk#^AWKREF|awk]]
+9-17. [[generate-random-integer#^RANDOM2|Pseudorandom numbers, using]] [[C.2. Awk#^AWKREF|awk]]
 
 10-1. [[string-manipulation#^PARAGRAPHSPACE|Inserting a blank line between paragraphs in a text file]]
 
