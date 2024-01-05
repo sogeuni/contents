@@ -138,7 +138,7 @@ The _dot_ often appears as the destination (directory) of a file movement comman
 |---|
 |bash$ **cp /home/bozo/current_work/junk/* .**|
 
-Copy all the "junk" files to [[internalvariables#^PWDREF|$PWD]].
+Copy all the "junk" files to [[internal-variables#^PWDREF|$PWD]].
 
 .
 
@@ -287,7 +287,7 @@ May be used to begin a comment line, although this is not recommended. Using # f
 |---|
 |: This is a comment that generates an error, ( if [ $x -eq 3] ).|
 
-The ":" serves as a [[special-characters#^FIELDREF|field]] separator, in [[files#^DATAFILESREF1|/etc/passwd]], and in the [[internalvariables#^PATHREF|$PATH]] variable.
+The ":" serves as a [[special-characters#^FIELDREF|field]] separator, in [[files#^DATAFILESREF1|/etc/passwd]], and in the [[internal-variables#^PATHREF|$PATH]] variable.
 
 |   |
 |---|
@@ -399,7 +399,7 @@ $' ... '
 
 $*, $@
 
-**[[internalvariables#^APPREF|positional parameters]].**
+**[[internal-variables#^APPREF|positional parameters]].**
 
 $?
 
@@ -407,7 +407,7 @@ $?
 
 $$
 
-**process ID variable.** The [[internalvariables#^PROCCID|$$ variable]] holds the _process ID_ [^4] of the script in which it appears.
+**process ID variable.** The [[internal-variables#^PROCCID|$$ variable]] holds the _process ID_ [^4] of the script in which it appears.
 
 ()
 
@@ -598,7 +598,7 @@ It is possible to [[loops1#^ITERATIONREF|iterate]] a code block using a [[loops1
 
 |   |
 |---|
-|Definition: A _pathname_ is a _filename_ that includes the complete [[internalvariables#^PATHREF|path]]. As an example, /home/bozo/Notes/Thursday/schedule.txt. This is sometimes referred to as the _absolute path_.|
+|Definition: A _pathname_ is a _filename_ that includes the complete [[internal-variables#^PATHREF|path]]. As an example, /home/bozo/Notes/Thursday/schedule.txt. This is sometimes referred to as the _absolute path_.|
 
 |   |   |
 |---|---|
@@ -1093,7 +1093,7 @@ echo $var
 
 -
 
-**previous working directory.** A **cd -** command changes to the previous working directory. This uses the [[internalvariables#^OLDPWD|$OLDPWD]] [[othertypesv#^ENVREF|environmental variable]].
+**previous working directory.** A **cd -** command changes to the previous working directory. This uses the [[internal-variables#^OLDPWD|$OLDPWD]] [[othertypesv#^ENVREF|environmental variable]].
 
 |   |   |
 |---|---|
@@ -1139,7 +1139,7 @@ In a [[parameter-substitution#^PCTPATREF|different context]], the % is a [[param
 
 ~
 
-**home directory [[internalvariables#^HOMEDIRREF|tilde].** This corresponds to the [$HOME]] internal variable. ~bozo is bozo's home directory, and **ls ~bozo** lists the contents of it. ~/ is the current user's home directory, and **ls ~/** lists the contents of it.
+**home directory [[internal-variables#^HOMEDIRREF|tilde].** This corresponds to the [$HOME]] internal variable. ~bozo is bozo's home directory, and **ls ~bozo** lists the contents of it. ~/ is the current user's home directory, and **ls ~/** lists the contents of it.
 
 |   |
 |---|
@@ -1160,11 +1160,11 @@ bash$ **echo ~nonexistent-user**
 
 ~+
 
-**current working directory.** This corresponds to the [[internalvariables#^PWDREF|$PWD]] internal variable.
+**current working directory.** This corresponds to the [[internal-variables#^PWDREF|$PWD]] internal variable.
 
 ~-
 
-**previous working directory.** This corresponds to the [[internalvariables#^OLDPWD|$OLDPWD]] internal variable.
+**previous working directory.** This corresponds to the [[internal-variables#^OLDPWD|$OLDPWD]] internal variable.
 
 =~
 
@@ -1392,7 +1392,7 @@ Whitespace
 
 Blank lines have no effect on the action of a script, and are therefore useful for visually separating functional sections.
 
-[[internalvariables#^IFSREF|$IFS]], the special variable separating _fields_ of input to certain commands. It defaults to whitespace.
+[[internal-variables#^IFSREF|$IFS]], the special variable separating _fields_ of input to certain commands. It defaults to whitespace.
 
 |   |
 |---|

@@ -22,4 +22,4 @@ As a final step, after testing and debugging, you would likely want to move it t
 
 [^2]: A script needs _read_, as well as execute permission for it to run, since the shell needs to be able to read it.
 
-[^3]: Why not simply invoke the script with **scriptname**? If the directory you are in ([[internalvariables#PWDREF|$PWD]]) is where scriptname is located, why doesn't this work? This fails because, for security reasons, the current directory (./) is not by default included in a user's [[internalvariables#PATHREF|$PATH]]. It is therefore necessary to explicitly invoke the script in the current directory with a **./scriptname**.
+[^3]: Why not simply invoke the script with **scriptname**? If the directory you are in ([[internal-variables#PWDREF|$PWD]]) is where scriptname is located, why doesn't this work? This fails because, for security reasons, the current directory (./) is not by default included in a user's [[internal-variables#PATHREF|$PATH]]. It is therefore necessary to explicitly invoke the script in the current directory with a **./scriptname**.

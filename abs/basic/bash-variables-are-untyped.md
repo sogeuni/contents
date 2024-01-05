@@ -74,4 +74,4 @@ exit $?
 
 Untyped variables are both a blessing and a curse. They permit more flexibility in scripting and make it easier to grind out lines of code (and give you enough rope to hang yourself!). However, they likewise permit subtle errors to creep in and encourage sloppy programming habits.
 
-To lighten the burden of keeping track of variable types in a script, Bash _does_ permit [[declareref.html|declaring]] variables.
+To lighten the burden of keeping track of variable types in a script, Bash _does_ permit [[typing-variables.html|declaring]] variables.

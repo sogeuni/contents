@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/basic/operator-precedence.md",
+                "file": "abs/beyond-the-basic/typing-variables.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/basic/operator-precedence.md",
+                "file": "abs/beyond-the-basic/typing-variables.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/basic/operator-precedence.md",
+                "file": "abs/beyond-the-basic/typing-variables.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/basic/operator-precedence.md"
+                "file": "abs/beyond-the-basic/typing-variables.md"
               }
             }
           },
@@ -153,7 +153,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/basic/operator-precedence.md",
+                "file": "abs/beyond-the-basic/typing-variables.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -200,7 +200,14 @@
   },
   "active": "d549227d1cff6ac9",
   "lastOpenFiles": [
+    "abs/beyond-the-basic/internal-variables.md",
+    "abs/beyond-the-basic/index.md",
+    "abs/beyond-the-basic/another-look-at-variables.md",
+    "abs/beyond-the-basic/typing-variables.md",
+    "abs/beyond-the-basic/declareref.md",
     "abs/basic/operator-precedence.md",
+    "abs/beyond-the-basic/internalvariables.md",
+    "abs/beyond-the-basic/variables2.md",
     "abs/basic/file-test-operators.md",
     "abs/basic/opprecedence.md",
     "abs/basic/double-parentheses-construct.md",
@@ -219,13 +226,6 @@
     "index.md",
     "abs/basic/exit-status.md",
     "abs/basic/testconstructs.md",
-    "abs/basic/tests.md",
-    "abs/basic/quoting-variables.md",
-    "abs/basic/escaping.md",
-    "abs/basic/escapingsection.md",
-    "abs/basic/quoting.md",
-    "abs/basic/quotingvar.md",
-    "abs/basic/special-characters.md",
     "git",
     "abs/apendix",
     "abs/endnotes",

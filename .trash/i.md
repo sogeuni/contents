@@ -47,7 +47,7 @@ For Anita, the source of all the magic
 * [[operations-and-related-topics]]
 
 [[abs/part3/index|Part 3. Beyond the Basics]]
-* [[variables2]]
+* [[another-look-at-variables]]
 * [[manipulatingvars]]
 * [[loops]]
 * [[commandsub]]
@@ -216,25 +216,25 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 8-5. [[double-parentheses-construct#^CVARS|C-style manipulation of variables]]
 
-9-1. [[internalvariables#^IFSH|$IFS and whitespace]]
+9-1. [[internal-variables#^IFSH|$IFS and whitespace]]
 
-9-2. [[internalvariables#^TMDIN|Timed Input]]
+9-2. [[internal-variables#^TMDIN|Timed Input]]
 
-9-3. [[internalvariables#^TIMEOUT|Once more, timed input]]
+9-3. [[internal-variables#^TIMEOUT|Once more, timed input]]
 
-9-4. [[internalvariables#^TOUT|Timed _read_]]
+9-4. [[internal-variables#^TOUT|Timed _read_]]
 
-9-5. [[internalvariables#^AMIROOT|Am I root?]]
+9-5. [[internal-variables#^AMIROOT|Am I root?]]
 
-9-6. [[internalvariables#^ARGLIST|_arglist_: Listing arguments with $* and $@]]
+9-6. [[internal-variables#^ARGLIST|_arglist_: Listing arguments with $* and $@]]
 
-9-7. [[internalvariables#^INCOMPAT|Inconsistent $* and $@ behavior]]
+9-7. [[internal-variables#^INCOMPAT|Inconsistent $* and $@ behavior]]
 
-9-8. [[internalvariables#^IFSEMPTY|$* and $@ when $IFS is empty]]
+9-8. [[internal-variables#^IFSEMPTY|$* and $@ when $IFS is empty]]
 
-9-9. [[internalvariables#^USCREF|Underscore variable]]
+9-9. [[internal-variables#^USCREF|Underscore variable]]
 
-9-10. [[declareref#^EX20|Using _declare_ to type variables]]
+9-10. [[typing-variables#^EX20|Using _declare_ to type variables]]
 
 9-11. [[randomvar#^EX21|Generating random numbers]]
 

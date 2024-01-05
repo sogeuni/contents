@@ -141,7 +141,7 @@ bash$ cp /home/bozo/current_work/junk/* .
 	        
 ```
 
-Copy all the "junk" files to [[internalvariables#^PWDREF|$PWD]].
+Copy all the "junk" files to [[internal-variables#^PWDREF|$PWD]].
 
 ### .
 
@@ -288,7 +288,7 @@ May be used to begin a comment line, although this is not recommended. Using # f
 : This is a comment that generates an error, ( if [ $x -eq 3] ).
 ```
 
-The ":" serves as a [[special-characters#^FIELDREF|field]] separator, in [[files#^DATAFILESREF1|/etc/passwd]], and in the [[internalvariables#^PATHREF|$PATH]] variable.
+The ":" serves as a [[special-characters#^FIELDREF|field]] separator, in [[files#^DATAFILESREF1|/etc/passwd]], and in the [[internal-variables#^PATHREF|$PATH]] variable.
 
 ```bash
 bash$ echo $PATH
@@ -401,7 +401,7 @@ A $ prefixing a variable name indicates the _value_ the variable holds.
 
 ### $*, $@
 
-**[[internalvariables#^APPREF|positional parameters]].**
+**[[internal-variables#^APPREF|positional parameters]].**
 
 ### $?
 
@@ -409,7 +409,7 @@ A $ prefixing a variable name indicates the _value_ the variable holds.
 
 ### $$
 
-**process ID variable.** The [[internalvariables#^PROCCID|$$ variable]] holds the _process ID_ [^4] of the script in which it appears.
+**process ID variable.** The [[internal-variables#^PROCCID|$$ variable]] holds the _process ID_ [^4] of the script in which it appears.
 
 ### ()
 
@@ -596,7 +596,7 @@ ls . | xargs -i -t cp ./{} $1
 
 **pathname.** Mostly used in [[moreadv#^FINDREF|find]] constructs. This is _not_ a shell [[internal#^BUILTINREF|builtin]].
 
-> Definition: A _pathname_ is a _filename_ that includes the complete [[internalvariables#^PATHREF|path]]. As an example, /home/bozo/Notes/Thursday/schedule.txt. This is sometimes referred to as the _absolute path_.
+> Definition: A _pathname_ is a _filename_ that includes the complete [[internal-variables#^PATHREF|path]]. As an example, /home/bozo/Notes/Thursday/schedule.txt. This is sometimes referred to as the _absolute path_.
 
 > [!note] The ";" ends the -exec option of a **find** command sequence. It needs to be escaped to protect it from interpretation by the shell.
 
@@ -1091,7 +1091,7 @@ exit 0
 
 ### -
 
-**previous working directory.** A **cd -** command changes to the previous working directory. This uses the [[internalvariables#^OLDPWD|$OLDPWD]] [[othertypesv#^ENVREF|environmental variable]].
+**previous working directory.** A **cd -** command changes to the previous working directory. This uses the [[internal-variables#^OLDPWD|$OLDPWD]] [[othertypesv#^ENVREF|environmental variable]].
 
 > [!caution] Do not confuse the "-" used in this sense with the "-" redirection operator just discussed. The interpretation of the "-" depends on the context in which it appears.
 
@@ -1135,7 +1135,7 @@ In a [[parameter-substitution#^PCTPATREF|different context]], the % is a [[param
 
 ### ~
 
-**home directory [[internalvariables#^HOMEDIRREF|tilde].** This corresponds to the [$HOME]] internal variable. ~bozo is bozo's home directory, and **ls ~bozo** lists the contents of it. ~/ is the current user's home directory, and **ls ~/** lists the contents of it.
+**home directory [[internal-variables#^HOMEDIRREF|tilde].** This corresponds to the [$HOME]] internal variable. ~bozo is bozo's home directory, and **ls ~bozo** lists the contents of it. ~/ is the current user's home directory, and **ls ~/** lists the contents of it.
 
 ```bash
 bash$ echo ~bozo
@@ -1157,11 +1157,11 @@ bash$ echo ~nonexistent-user
 
 ### ~+
 
-**current working directory.** This corresponds to the [[internalvariables#^PWDREF|$PWD]] internal variable.
+**current working directory.** This corresponds to the [[internal-variables#^PWDREF|$PWD]] internal variable.
 
 ### ~-
 
-**previous working directory.** This corresponds to the [[internalvariables#^OLDPWD|$OLDPWD]] internal variable.
+**previous working directory.** This corresponds to the [[internal-variables#^OLDPWD|$OLDPWD]] internal variable.
 
 ### =~
 
@@ -1387,7 +1387,7 @@ echo <Ctl-V><Ctl-J>
 
 Blank lines have no effect on the action of a script, and are therefore useful for visually separating functional sections.
 
-[[internalvariables#^IFSREF|$IFS]], the special variable separating _fields_ of input to certain commands. It defaults to whitespace.
+[[internal-variables#^IFSREF|$IFS]], the special variable separating _fields_ of input to certain commands. It defaults to whitespace.
 
 > **Definition:** A _field_ is a discrete chunk of data expressed as a string of consecutive characters. Separating each field from adjacent fields is either _whitespace_ or some other designated character (often determined by the $IFS). In some contexts, a field may be called a _record_.|
 
