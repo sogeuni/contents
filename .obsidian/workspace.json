@@ -4,17 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "7f88503f1291cf72",
+        "id": "a8b34976ced73f14",
         "type": "tabs",
         "children": [
           {
-            "id": "d549227d1cff6ac9",
+            "id": "81987b6bb7dc9979",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/beyond-the-basic/typing-variables.md",
-                "mode": "preview",
+                "file": "abs/beyond-the-basic/manipulating-strings.md",
+                "mode": "source",
                 "backlinks": true,
                 "source": false
               }
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/beyond-the-basic/typing-variables.md",
+                "file": "abs/beyond-the-basic/manipulating-strings.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/beyond-the-basic/typing-variables.md",
+                "file": "abs/beyond-the-basic/manipulating-strings.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/beyond-the-basic/typing-variables.md"
+                "file": "abs/beyond-the-basic/manipulating-strings.md"
               }
             }
           },
@@ -153,7 +153,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/beyond-the-basic/typing-variables.md",
+                "file": "abs/beyond-the-basic/manipulating-strings.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -198,34 +198,35 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "d549227d1cff6ac9",
+  "active": "81987b6bb7dc9979",
   "lastOpenFiles": [
-    "abs/beyond-the-basic/generate-random-integer.md",
-    "abs/beyond-the-basic/randomvar.md",
-    "abs/beyond-the-basic/internal-variables.md",
-    "abs/beyond-the-basic/index.md",
-    "abs/beyond-the-basic/another-look-at-variables.md",
-    "abs/beyond-the-basic/typing-variables.md",
-    "abs/beyond-the-basic/declareref.md",
-    "abs/basic/operator-precedence.md",
-    "abs/beyond-the-basic/internalvariables.md",
-    "abs/beyond-the-basic/variables2.md",
-    "abs/basic/file-test-operators.md",
-    "abs/basic/opprecedence.md",
-    "abs/basic/double-parentheses-construct.md",
-    "abs/basic/dblparens.md",
-    "abs/basic/numerical-constants.md",
-    "abs/basic/operators.md",
-    "abs/basic/ops.md",
-    "abs/basic/operations-and-related-topics.md",
-    "abs/basic/Chapter 8. Operations and Related Topics.md",
-    "abs/basic/testtest.md",
-    "abs/basic/nested-if-then-condition-tests.md",
-    "abs/basic/nestedifthen.md",
-    "abs/basic/comparison-ops.md",
-    "abs/basic/test-constructs.md",
-    "abs/basic/fto.md",
-    "index.md",
+    "_abs/xrefindex.md",
+    "_abs/x9644.md",
+    "_abs/x17974.md",
+    "_abs/x17837.md",
+    "_abs/x17129.md",
+    "_abs/writingscripts.md",
+    "_abs/winscript.md",
+    "_abs/unofficialst.md",
+    "_abs/todolist.md",
+    "_abs/timedate.md",
+    "_abs/textproc.md",
+    "_abs/testsandcomparisons.md",
+    "_abs/terminalccmds.md",
+    "_abs/tabexpansion.md",
+    "_abs/systemdirs.md",
+    "_abs/sysscripts.md",
+    "_abs/system.md",
+    "_abs/subshells.md",
+    "_abs/shell-wrapper.md",
+    "_abs/standard-options.md",
+    "_abs/securityissues.md",
+    "_abs/sample-bashrc.md",
+    "_abs/scrstyle.md",
+    "_abs/scriptanalysis.md",
+    "_abs/redirapps.md",
+    "_abs/revisionhistory.md",
+    "_abs",
     "git",
     "abs/apendix",
     "abs/endnotes",

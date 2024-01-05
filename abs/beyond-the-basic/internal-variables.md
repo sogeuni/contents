@@ -330,7 +330,7 @@ IFS="$(printf '\n\t')"   # Per David Wheeler.
 >
 > (Many thanks, Stéphane Chazelas, for clarification and above examples.)
 >
-> See also [[communications#^ISSPAMMER|Example 16-41]], [[loops1#^BINGREP|Example 11-8]], and [[x17837#^MAILBOXGREP|Example 19-14]] for instructive examples of using $IFS.
+> See also [[communications#^ISSPAMMER|Example 16-41]], [[loops#^BINGREP|Example 11-8]], and [[x17837#^MAILBOXGREP|Example 19-14]] for instructive examples of using $IFS.
 
 $IGNOREEOF
 

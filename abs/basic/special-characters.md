@@ -579,7 +579,7 @@ exit 0
 > [!note]
 > Unlike a command group within (parentheses), as above, a code block enclosed by {braces} will _not_ normally launch a [[subshells#^SUBSHELLSREF|subshell]]. [^6]
 >
-> It is possible to [[loops1#^ITERATIONREF|iterate]] a code block using a [[loops1#^NODODONE|non-standard _for-loop_]].
+> It is possible to [[loops#^ITERATIONREF|iterate]] a code block using a [[loops#^NODODONE|non-standard _for-loop_]].
 
 ### {}
 
@@ -818,7 +818,7 @@ bash$ sleep 10 &
 	      
 ```
 
-Within a script, commands and even [[loops1#^FORLOOPREF1|loops]] may run in the background.
+Within a script, commands and even [[loops#^FORLOOPREF1|loops]] may run in the background.
 
 **Example 3-3. Running a loop in the background**
 

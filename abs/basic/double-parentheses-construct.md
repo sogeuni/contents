@@ -69,4 +69,4 @@ echo
 exit
 ```
 
-See also [[loops1#^FORLOOPC|Example 11-13]] and [[numerical-constants#^NUMBERS|Example 8-4]].
+See also [[loops#^FORLOOPC|Example 11-13]] and [[numerical-constants#^NUMBERS|Example 8-4]].

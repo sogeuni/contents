@@ -222,7 +222,7 @@ done
 exit $?
 ```
 
-[[zeros#COOKIES|Example 31-1]], [[loops1#BINGREP|Example 11-8]], [[loops1#FILEINFO|Example 11-3]], [[zeros#RAMDISK|Example 31-3]], and [[contributed-scripts#MAILFORMAT|Example A-1]] also illustrate uses of the file test operators.
+[[zeros#COOKIES|Example 31-1]], [[loops#BINGREP|Example 11-8]], [[loops#FILEINFO|Example 11-3]], [[zeros#RAMDISK|Example 31-3]], and [[contributed-scripts#MAILFORMAT|Example A-1]] also illustrate uses of the file test operators.
 
 [^1]: Per the 1913 edition of _Webster's Dictionary_:
 

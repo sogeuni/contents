@@ -48,8 +48,8 @@ For Anita, the source of all the magic
 
 [[abs/part3/index|Part 3. Beyond the Basics]]
 * [[another-look-at-variables]]
-* [[manipulatingvars]]
-* [[loops]]
+* [[manipulating-variables]]
+* [[loops-and-branches]]
 * [[commandsub]]
 * [[Chapter 13. Arithmetic Expansion]]
 * [[recess-time]]
@@ -250,17 +250,17 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 9-17. [[generate-random-integer#^RANDOM2|Pseudorandom numbers, using]] [[C.2. Awk#^AWKREF|awk]]
 
-10-1. [[string-manipulation#^PARAGRAPHSPACE|Inserting a blank line between paragraphs in a text file]]
+10-1. [[manipulating-strings#^PARAGRAPHSPACE|Inserting a blank line between paragraphs in a text file]]
 
-10-2. [[string-manipulation#^RANDSTRING|Generating an 8-character "random" string]]
+10-2. [[manipulating-strings#^RANDSTRING|Generating an 8-character "random" string]]
 
-10-3. [[string-manipulation#^CVT|Converting graphic file formats, with filename change]]
+10-3. [[manipulating-strings#^CVT|Converting graphic file formats, with filename change]]
 
-10-4. [[string-manipulation#^RA2OGG|Converting streaming audio files to _ogg_]]
+10-4. [[manipulating-strings#^RA2OGG|Converting streaming audio files to _ogg_]]
 
-10-5. [[string-manipulation#^GETOPTSIMPLE|Emulating _getopt_]]
+10-5. [[manipulating-strings#^GETOPTSIMPLE|Emulating _getopt_]]
 
-10-6. [[string-manipulation#^SUBSTRINGEX|Alternate ways of extracting and locating substrings]]
+10-6. [[manipulating-strings#^SUBSTRINGEX|Alternate ways of extracting and locating substrings]]
 
 10-7. [[parameter-substitution#^EX6|Using parameter substitution and error messages]]
 
@@ -276,53 +276,53 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 10-13. [[parameter-substitution#^VARMATCH|Matching patterns at prefix or suffix of string]]
 
-11-1. [[loops1#^EX22|Simple _for_ loops]]
+11-1. [[loops#^EX22|Simple _for_ loops]]
 
-11-2. [[loops1#^EX22A|_for_ loop with two parameters in each [list] element]]
+11-2. [[loops#^EX22A|_for_ loop with two parameters in each [list] element]]
 
-11-3. [[loops1#^FILEINFO|_Fileinfo:_ operating on a file list contained in a variable]]
+11-3. [[loops#^FILEINFO|_Fileinfo:_ operating on a file list contained in a variable]]
 
-11-4. [[loops1#^FILEINFO01|Operating on a parameterized file list]]
+11-4. [[loops#^FILEINFO01|Operating on a parameterized file list]]
 
-11-5. [[loops1#^LISTGLOB|Operating on files with a _for_ loop]]
+11-5. [[loops#^LISTGLOB|Operating on files with a _for_ loop]]
 
-11-6. [[loops1#^EX23|Missing **in [list]** in a _for_ loop]]
+11-6. [[loops#^EX23|Missing **in [list]** in a _for_ loop]]
 
-11-7. [[loops1#^FORLOOPCMD|Generating the **[list]** in a _for_ loop with command substitution]]
+11-7. [[loops#^FORLOOPCMD|Generating the **[list]** in a _for_ loop with command substitution]]
 
-11-8. [[loops1#^BINGREP|A _grep_ replacement for binary files]]
+11-8. [[loops#^BINGREP|A _grep_ replacement for binary files]]
 
-11-9. [[loops1#^USERLIST|Listing all users on the system]]
+11-9. [[loops#^USERLIST|Listing all users on the system]]
 
-11-10. [[loops1#^FINDSTRING|Checking all the binaries in a directory for authorship]]
+11-10. [[loops#^FINDSTRING|Checking all the binaries in a directory for authorship]]
 
-11-11. [[loops1#^SYMLINKS|Listing the _symbolic links_ in a directory]]
+11-11. [[loops#^SYMLINKS|Listing the _symbolic links_ in a directory]]
 
-11-12. [[loops1#^SYMLINKS2|Symbolic links in a directory, saved to a file]]
+11-12. [[loops#^SYMLINKS2|Symbolic links in a directory, saved to a file]]
 
-11-13. [[loops1#^FORLOOPC|A C-style _for_ loop]]
+11-13. [[loops#^FORLOOPC|A C-style _for_ loop]]
 
-11-14. [[loops1#^EX24|Using _efax_ in batch mode]]
+11-14. [[loops#^EX24|Using _efax_ in batch mode]]
 
-11-15. [[loops1#^EX25|Simple _while_ loop]]
+11-15. [[loops#^EX25|Simple _while_ loop]]
 
-11-16. [[loops1#^EX26|Another _while_ loop]]
+11-16. [[loops#^EX26|Another _while_ loop]]
 
-11-17. [[loops1#^EX26A|_while_ loop with multiple conditions]]
+11-17. [[loops#^EX26A|_while_ loop with multiple conditions]]
 
-11-18. [[loops1#^WHLOOPC|C-style syntax in a _while_ loop]]
+11-18. [[loops#^WHLOOPC|C-style syntax in a _while_ loop]]
 
-11-19. [[loops1#^EX27|_until_ loop]]
+11-19. [[loops#^EX27|_until_ loop]]
 
-11-20. [[nestedloops#^NESTEDLOOP|Nested Loop]]
+11-20. [[nested-loops#^NESTEDLOOP|Nested Loop]]
 
-11-21. [[loopcontrol#^EX28|Effects of _break_ and **continue** in a loop]]
+11-21. [[loop-control#^EX28|Effects of _break_ and **continue** in a loop]]
 
-11-22. [[loopcontrol#^BREAKLEVELS|Breaking out of multiple loop levels]]
+11-22. [[loop-control#^BREAKLEVELS|Breaking out of multiple loop levels]]
 
-11-23. [[loopcontrol#^CONTINUELEVELS|Continuing at a higher loop level]]
+11-23. [[loop-control#^CONTINUELEVELS|Continuing at a higher loop level]]
 
-11-24. [[loopcontrol#^CONTINUENEX|Using _continue N_ in an actual task]]
+11-24. [[loop-control#^CONTINUENEX|Using _continue N_ in an actual task]]
 
 11-25. [[testbranch#^EX29|Using _case_]]
 
@@ -906,7 +906,7 @@ A-48. [[contributed-scripts#^HANOI2|_The Towers of Hanoi, graphic version_]]
 
 A-49. [[contributed-scripts#^HANOI2A|_The Towers of Hanoi, alternate graphic version_]]
 
-A-50. [[contributed-scripts#^USEGETOPT|An alternate version of the]] [[string-manipulation#^GETOPTSIMPLE|getopt-simple.sh]] script
+A-50. [[contributed-scripts#^USEGETOPT|An alternate version of the]] [[manipulating-strings#^GETOPTSIMPLE|getopt-simple.sh]] script
 
 A-51. [[contributed-scripts#^USEGETOPT2|The version of the _UseGetOpt.sh_ example used in the]] [[tabexpansion|Tab Expansion appendix]]
 

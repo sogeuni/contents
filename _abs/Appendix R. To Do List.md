@@ -1,0 +1,2 @@
+- A comprehensive survey of [[portabilityissues#^BASHCOMPAT|incompatibilities]] between Bash and the classic [[shell-programming#^BASHDEF|Bourne shell]].
+- Same as above, but for the Korn shell (_ksh_).

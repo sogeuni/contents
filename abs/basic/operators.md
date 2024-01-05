@@ -448,7 +448,7 @@ let "t2 = ((a = 9, 15 / 3))"      # Set "a" and calculate "t2".
 echo "t2 = $t2    a = $a"         # t2 = 5    a = 9
 ```
 
-The comma operator finds use mainly in [[loops1#FORLOOPREF1|for loops]]. See [[loops1.html#FORLOOPC|Example 11-13]].
+The comma operator finds use mainly in [[loops#FORLOOPREF1|for loops]]. See [[loops.html#FORLOOPC|Example 11-13]].
 
 [^1]: In a different context, **+=** can serve as a _string concatenation_ operator. This can be useful for [[bash-ver3#^PATHAPPEND|modifying _environmental variables_]].
 [^2]: _Side effects_ are, of course, unintended -- and usually undesirable -- consequences.
