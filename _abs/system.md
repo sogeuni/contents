@@ -1104,7 +1104,7 @@ root# **ps ax \| grep 2095 \| grep -v grep**
 
 **cron**
 
-Administrative program scheduler, performing such duties as cleaning up and deleting system log files and updating the slocate database. This is the _superuser_ version of [[timedate#^ATREF|at]] (although each user may have their own crontab file which can be changed with the **crontab** command). It runs as a [[communications#^DAEMONREF|daemon]] and executes scheduled entries from /etc/crontab.
+Administrative program scheduler, performing such duties as cleaning up and deleting system log files and updating the slocate database. This is the _superuser_ version of [[time-date-commands#^ATREF|at]] (although each user may have their own crontab file which can be changed with the **crontab** command). It runs as a [[communications#^DAEMONREF|daemon]] and executes scheduled entries from /etc/crontab.
 
 |   |   |
 |---|---|

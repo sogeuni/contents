@@ -50,7 +50,7 @@ Optional: you may use this as the basis of a _backup_ script.
 
 **Checking whether a process is still running**
 
-Given a [[special-characters#^PROCESSIDREF|process ID]] (_PID_) as an argument, this script will check, at user-specified intervals, whether the given process is still running. You may use the [[system#^PPSSREF|ps]] and [[timedate#^SLEEPREF|sleep]] commands.
+Given a [[special-characters#^PROCESSIDREF|process ID]] (_PID_) as an argument, this script will check, at user-specified intervals, whether the given process is still running. You may use the [[system#^PPSSREF|ps]] and [[time-date-commands#^SLEEPREF|sleep]] commands.
 
 **Primes**
 

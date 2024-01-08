@@ -642,4 +642,4 @@ LRFDATE=`expr "$LRFDATE" : '[[:space:]]*\(.*\)[[:space:]]*$'`
 
 See [[string-manipulation|Section 10.1]] for more on using **expr** in string operations.
 
-[^1]: And even when _xargs_ is not strictly necessary, it can speed up execution of a command involving [[timedate#^BATCHPROCREF|batch-processing]] of multiple files.
+[^1]: And even when _xargs_ is not strictly necessary, it can speed up execution of a command involving [[time-date-commands#^BATCHPROCREF|batch-processing]] of multiple files.

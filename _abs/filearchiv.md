@@ -258,7 +258,7 @@ A new high-efficiency compression tool, backward compatible with _lzma_, and wit
 
 A utility for identifying file types. The command **file file-name** will return a file specification for file-name, such as ascii text or data. It references the [[starting-off-with-a-sha-bang#^MAGNUMREF|magic numbers]] found in /usr/share/magic, /etc/magic, or /usr/lib/magic, depending on the Linux/UNIX distribution.
 
-The -f option causes **file** to run in [[timedate#^BATCHPROCREF|batch]] mode, to read from a designated file a list of filenames to analyze. The -z option, when used on a compressed target file, forces an attempt to analyze the uncompressed file type.
+The -f option causes **file** to run in [[time-date-commands#^BATCHPROCREF|batch]] mode, to read from a designated file a list of filenames to analyze. The -z option, when used on a compressed target file, forces an attempt to analyze the uncompressed file type.
 
 |   |
 |---|
@@ -1025,7 +1025,7 @@ exit 0|
 
 **mimencode**, **mmencode**
 
-The **mimencode** and **mmencode** commands process multimedia-encoded e-mail attachments. Although _mail user agents_ (such as _pine_ or _kmail_) normally handle this automatically, these particular utilities permit manipulating such attachments manually from the command-line or in [[timedate#^BATCHPROCREF|batch processing mode]] by means of a shell script.
+The **mimencode** and **mmencode** commands process multimedia-encoded e-mail attachments. Although _mail user agents_ (such as _pine_ or _kmail_) normally handle this automatically, these particular utilities permit manipulating such attachments manually from the command-line or in [[time-date-commands#^BATCHPROCREF|batch processing mode]] by means of a shell script.
 
 **crypt**
 

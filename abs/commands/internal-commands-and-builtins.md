@@ -1821,7 +1821,7 @@ exit: exit [n]
 
 [^1]: As Nathan Coulter points out, "while forking a process is a low-cost operation, executing a new program in the newly-forked child process adds more overhead."
 
-[^2]: An exception to this is the [[timedate#^TIMREF|time]] command, listed in the official Bash documentation as a keyword ("reserved word").
+[^2]: An exception to this is the [[time-date-commands#^TIMREF|time]] command, listed in the official Bash documentation as a keyword ("reserved word").
 
 [^3]: Note that _let_ [[gotchas#^LETBAD|cannot be used for setting _string_ variables.]]
 

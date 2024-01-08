@@ -653,7 +653,7 @@ rm -f "$TMPFILE"                 # Get rid of temp file.
 echo "$inner_variable"           # It's an ugly kludge, but it works.
 ```
 
-- The [[extmisc#^RUNPARTSREF|run-parts]] command is handy for running a set of command scripts in a particular sequence, especially in combination with [[system#^CRONREF|cron]] or [[timedate#^ATREF|at]].
+- The [[extmisc#^RUNPARTSREF|run-parts]] command is handy for running a set of command scripts in a particular sequence, especially in combination with [[system#^CRONREF|cron]] or [[time-date-commands#^ATREF|at]].
 
 - For doing multiple revisions on a complex script, use the _rcs_ Revision Control System package.
 

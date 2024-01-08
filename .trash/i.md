@@ -416,9 +416,9 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 16-9. [[complex-commands#^EX45|Using _expr_]]
 
-16-10. [[timedate#^EX51|Using _date_]]
+16-10. [[time-date-commands#^EX51|Using _date_]]
 
-16-11. [[timedate#^DATECALC|_Date_ calculations]]
+16-11. [[time-date-commands#^DATECALC|_Date_ calculations]]
 
 16-12. [[textproc#^WF|Word Frequency Analysis]]
 

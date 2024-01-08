@@ -706,7 +706,7 @@ exit 0
 > # 3) Same as exercise #2, above, but generate random integers this time.
 > ```
 >
-> The [[timedate#^DATEREF|date]] command also lends itself to [[timedate#^DATERANDREF|generating pseudorandom integer sequences]].
+> The [[time-date-commands#^DATEREF|date]] command also lends itself to [[time-date-commands#^DATERANDREF|generating pseudorandom integer sequences]].
 
 [^1]: True "randomness," insofar as it exists at all, can only be found in certain incompletely understood natural phenomena, such as radioactive decay. Computers only _simulate_ randomness, and computer-generated sequences of "random" numbers are therefore referred to as _pseudorandom_.
 

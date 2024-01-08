@@ -1,4 +1,6 @@
-# 16.3. Time / Date Commands
+---
+title: 16.3. Time / Date Commands
+---
 
 **Time/date and timing**
 
@@ -8,9 +10,8 @@ Simply invoked, **date** prints the date and time to stdout. Where this command 
 
 **Example 16-10. Using _date_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Exercising the 'date' command
 
 echo "The number of days since the year's beginning is `date +%j`."
@@ -30,25 +31,28 @@ echo "Temporary filename = $filename"
 
 # Read the 'date' man page for more formatting options.
 
-exit 0|
+exit 0
+```
 
 The -u option gives the UTC (Universal Coordinated Time).
 
-|   |
-|---|
-|bash$ **date**
+```bash
+bash$ date
 Fri Mar 29 21:07:39 MST 2002
 
-bash$ **date -u**
-Sat Mar 30 04:07:42 UTC 2002|
+
+
+bash$ date -u
+Sat Mar 30 04:07:42 UTC 2002
+	      
+```
 
 This option facilitates calculating the time between different dates.
 
 **Example 16-11. _Date_ calculations**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # date-calc.sh
 # Author: Nathan Coulter
 # Used in ABS Guide with permission (thanks!).
@@ -89,13 +93,13 @@ printf 'until Christmas Dinner!\n\n'
 #  Exercise:
 #  --------
 #  Rewrite the diff () function to accept passed parameters,
-#+ rather than using global variables.|
+#+ rather than using global variables.
+```
 
 The _date_ command has quite a number of _output_ options. For example %N gives the nanosecond portion of the current time. One interesting use for this is to generate random integers.
 
-|   |
-|---|
-|date +%N \| sed -e 's/000$//' -e 's/^0//'
+```bash
+date +%N | sed -e 's/000$//' -e 's/^0//'
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #  Strip off leading and trailing zeroes, if present.
 #  Length of generated integer depends on
@@ -103,13 +107,13 @@ The _date_ command has quite a number of _output_ options. For example %N gives 
 
 # 115281032
 # 63408725
-# 394504284|
+# 394504284
+```
 
 There are many more options (try **man date**).
 
-|   |
-|---|
-|date +%j
+```bash
+date +%j
 # Echoes day of the year (days elapsed since January 1).
 
 date +%k%M
@@ -125,18 +129,20 @@ TZ=EST date          # Mon Mar 28 23:42:16 EST 2005
 
 SixDaysAgo=$(date --date='6 days ago')
 OneMonthAgo=$(date --date='1 month ago')  # Four weeks back (not a month!)
-OneYearAgo=$(date --date='1 year ago')|
+OneYearAgo=$(date --date='1 year ago')
+```
 
-See also [Example 3-4](special-chars.html#EX58) and [Example A-43](contributed-scripts.html#STOPWATCH).
+See also [[special-chars#^EX58|Example 3-4]] and [[contributed-scripts#^STOPWATCH|Example A-43]].
 
 **zdump**
 
 Time zone dump: echoes the time in a specified time zone.
 
-|   |
-|---|
-|bash$ **zdump EST**
-EST  Tue Sep 18 22:09:22 2001 EST|
+```bash
+bash$ zdump EST
+EST  Tue Sep 18 22:09:22 2001 EST
+	    
+```
 
 **time**
 
@@ -144,52 +150,48 @@ Outputs verbose timing statistics for executing a command.
 
 **time ls -l /** gives something like this:
 
-|   |
-|---|
-|real    0m0.067s
+```bash
+real    0m0.067s
  user    0m0.004s
- sys     0m0.005s|
+ sys     0m0.005s
+```
 
-See also the very similar [times](x9644.html#TIMESREF) command in the previous section.
+See also the very similar [[x9644#^TIMESREF|times]] command in the previous section.
 
-|   |   |
-|---|---|
-|![Note](../images/note.gif)|As of [[bashver2^#BASH2REF|version 2.0]] of Bash, **time** became a shell reserved word, with slightly altered behavior in a pipeline.|
+> [!note]
+> As of [[bashver2^#BASH2REF|version 2.0]] of Bash, **time** became a shell reserved word, with slightly altered behavior in a pipeline.
 
 **touch**
 
 Utility for updating access/modification times of a file to current system time or other specified time, but also useful for creating a new file. The command **touch zzz** will create a new file of zero length, named zzz, assuming that zzz did not previously exist. Time-stamping empty files in this way is useful for storing date information, for example in keeping track of modification times on a project.
 
-|   |   |
-|---|---|
-|![Note](../images/note.gif)|The **touch** command is equivalent to **: >> newfile** or **>> newfile** (for ordinary files).|
+> [!note]
+> The **touch** command is equivalent to **: >> newfile** or **>> newfile** (for ordinary files).
 
-|   |   |
-|---|---|
-|![Tip](../images/tip.gif)|Before doing a [cp -u](basic.html#CPREF) (_copy/update_), use **touch** to update the time stamp of files you don't wish overwritten.
-
-As an example, if the directory /home/bozo/tax_audit contains the files spreadsheet-051606.data, spreadsheet-051706.data, and spreadsheet-051806.data, then doing a **touch spreadsheet*.data** will protect these files from being overwritten by files with the same names during a **cp -u /home/bozo/financial_info/spreadsheet*data /home/bozo/tax_audit**.|
+> [!tip]
+> Before doing a [[basic#^CPREF|cp -u]] (_copy/update_), use **touch** to update the time stamp of files you don't wish overwritten.
+>
+> As an example, if the directory /home/bozo/tax_audit contains the files spreadsheet-051606.data, spreadsheet-051706.data, and spreadsheet-051806.data, then doing a **touch spreadsheet*.data** will protect these files from being overwritten by files with the same names during a **cp -u /home/bozo/financial_info/spreadsheet*data /home/bozo/tax_audit**.
 
 **at**
 
-The **at** job control command executes a given set of commands at a specified time. Superficially, it resembles [cron](system.html#CRONREF), however, **at** is chiefly useful for one-time execution of a command set.
+The **at** job control command executes a given set of commands at a specified time. Superficially, it resembles [[system#^CRONREF|cron]], however, **at** is chiefly useful for one-time execution of a command set.
 
-**at 2pm January 15** prompts for a set of commands to execute at that time. These commands should be shell-script compatible, since, for all practical purposes, the user is typing in an executable shell script a line at a time. Input terminates with a [Ctl-D](special-chars.html#CTLDREF).
+**at 2pm January 15** prompts for a set of commands to execute at that time. These commands should be shell-script compatible, since, for all practical purposes, the user is typing in an executable shell script a line at a time. Input terminates with a [[special-chars#^CTLDREF|Ctl-D]].
 
-Using either the -f option or input redirection (<), **at** reads a command list from a file. This file is an executable shell script, though it should, of course, be non-interactive. Particularly clever is including the [run-parts](extmisc.html#RUNPARTSREF) command in the file to execute a different set of scripts.
+Using either the -f option or input redirection (<), **at** reads a command list from a file. This file is an executable shell script, though it should, of course, be non-interactive. Particularly clever is including the [[extmisc#^RUNPARTSREF|run-parts]] command in the file to execute a different set of scripts.
 
-|   |
-|---|
-|bash$ **at 2:30 am Friday < at-jobs.list**
-job 2 at 2000-10-27 02:30|
+```bash
+bash$ at 2:30 am Friday < at-jobs.list
+job 2 at 2000-10-27 02:30
+	     
+```
 
 **batch**
 
 The **batch** job control command is similar to **at**, but it runs a command list when the system load drops below .8. Like **at**, it can read commands from a file with the -f option.
 
-|   |
-|---|
-|The concept of _batch processing_ dates back to the era of mainframe computers. It means running a set of commands without user intervention.|
+> The concept of _batch processing_ dates back to the era of mainframe computers. It means running a set of commands without user intervention.
 
 **cal**
 
@@ -197,37 +199,34 @@ Prints a neatly formatted monthly calendar to stdout. Will do current year or a 
 
 **sleep**
 
-This is the shell equivalent of a _wait loop_. It pauses for a specified number of seconds, doing nothing. It can be useful for timing or in processes running in the background, checking for a specific event every so often (polling), as in [Example 32-6](debugging.html#ONLINE).
+This is the shell equivalent of a _wait loop_. It pauses for a specified number of seconds, doing nothing. It can be useful for timing or in processes running in the background, checking for a specific event every so often (polling), as in [[debugging#^ONLINE|Example 32-6]].
 
-|   |
-|---|
-|sleep 3     # Pauses 3 seconds.|
+```bash
+sleep 3     # Pauses 3 seconds.
+```
 
-|   |   |
-|---|---|
-|![Note](../images/note.gif)|The **sleep** command defaults to seconds, but minute, hours, or days may also be specified.
+> [!note]
+> The **sleep** command defaults to seconds, but minute, hours, or days may also be specified.
+>
+> ```bash
+> sleep 3 h   # Pauses 3 hours!
+> ```
 
-\|   \|
-\|---\|
-\|sleep 3 h   # Pauses 3 hours!\||
-
-|   |   |
-|---|---|
-|![Note](../images/note.gif)|The [watch](system.html#WATCHREF) command may be a better choice than **sleep** for running commands at timed intervals.|
+> [!note]
+> The [[system#^WATCHREF|watch]] command may be a better choice than **sleep** for running commands at timed intervals.
 
 **usleep**
 
 _Microsleep_ (the _u_ may be read as the Greek _mu_, or _micro-_ prefix). This is the same as **sleep**, above, but "sleeps" in microsecond intervals. It can be used for fine-grained timing, or for polling an ongoing process at very frequent intervals.
 
-|   |
-|---|
-|usleep 30     # Pauses 30 microseconds.|
+```bash
+usleep 30     # Pauses 30 microseconds.
+```
 
 This command is part of the Red Hat _initscripts / rc-scripts_ package.
 
-|   |   |
-|---|---|
-|![Caution](../images/caution.gif)|The **usleep** command does not provide particularly accurate timing, and is therefore unsuitable for critical timing loops.|
+> [!caution]
+> The **usleep** command does not provide particularly accurate timing, and is therefore unsuitable for critical timing loops.
 
 **hwclock**, **clock**
 

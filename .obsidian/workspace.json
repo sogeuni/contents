@@ -11,12 +11,10 @@
             "id": "81987b6bb7dc9979",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "diff-view",
               "state": {
-                "file": "abs/commands/job-control-commands.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
+                "file": "_abs/assorted-tips.md",
+                "staged": false
               }
             }
           }
@@ -87,7 +85,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/commands/job-control-commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +101,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/commands/job-control-commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,9 +122,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "abs/commands/job-control-commands.md"
-              }
+              "state": {}
             }
           },
           {
@@ -153,7 +147,6 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/commands/job-control-commands.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -200,6 +193,9 @@
   },
   "active": "81987b6bb7dc9979",
   "lastOpenFiles": [
+    "abs/commands/job-control-commands.md",
+    "abs/commands/time-date-commands.md",
+    "abs/commands/timedate.md",
     "abs/commands/complex-commands.md",
     "abs/commands/moreadv.md",
     "abs/commands/basic-commands.md",
@@ -208,7 +204,6 @@
     "abs/commands/internal-commands-and-builtins.md",
     "abs/commands/index.md",
     "abs/index.md",
-    "abs/commands/job-control-commands.md",
     "abs/commands/x9644.md",
     "abs/commands/internal.md",
     "abs/commands/part4.md",
@@ -224,8 +219,6 @@
     "_abs/x17974.md",
     "_abs/x17837.md",
     "_abs/x17129.md",
-    "_abs/writingscripts.md",
-    "_abs/winscript.md",
     "_abs",
     "git",
     "abs/apendix",

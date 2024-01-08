@@ -550,7 +550,7 @@ Backlight, [[system#^BACKLIGHT|setting the brightness]]
 
 [[Appendix N. Converting DOS Batch Files to Shell Scripts#^DOSBATCH1|Batch files]], _DOS_
 
-[[timedate#^BATCHPROCREF|Batch processing]]
+[[time-date-commands#^BATCHPROCREF|Batch processing]]
 
 [[mathc#^BCREF|bc]], calculator utility
 
@@ -756,7 +756,7 @@ Curly brackets {}
 
 [[communications#^DAEMONREF|Daemons]], in UNIX-type OS
 
-[[timedate#^DATEREF|date]]
+[[time-date-commands#^DATEREF|date]]
 
 [[mathc#^DCREF|dc]], calculator utility
 
@@ -1762,7 +1762,7 @@ Random numbers
     
 - [[generate-random-integer#^RANDOMVAR01|$RANDOM]], Bash function that returns a pseudorandom integer
     
-- [[timedate#^DATERANDREF|Random sequence generation]], using [[timedate#^DATEREF|date]] command
+- [[time-date-commands#^DATERANDREF|Random sequence generation]], using [[time-date-commands#^DATEREF|date]] command
     
 - [[extmisc#^JOTRANDOM|Random sequence generation]], using [[extmisc#^JOTREF|jot]]
     
@@ -2220,7 +2220,7 @@ Test operators
 
 [[textproc|Text and text file processing]]
 
-[[timedate|Time / Date]]
+[[time-date-commands|Time / Date]]
 
 Timed input
 

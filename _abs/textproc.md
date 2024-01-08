@@ -886,7 +886,7 @@ Scripting languages especially suited for parsing text files and command output.
 
 **[[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]]**
 
-Non-interactive "stream editor", permits using many **ex** commands in [[timedate#^BATCHPROCREF|batch]] mode. It finds many uses in shell scripts.
+Non-interactive "stream editor", permits using many **ex** commands in [[time-date-commands#^BATCHPROCREF|batch]] mode. It finds many uses in shell scripts.
 
 **[[C.2. Awk#^AWKREF|awk]]**
 

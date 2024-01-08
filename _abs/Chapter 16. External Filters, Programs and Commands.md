@@ -4,7 +4,7 @@
 
 16.2. [[complex-commands|Complex Commands]]
 
-16.3. [[timedate|Time / Date Commands]]
+16.3. [[time-date-commands|Time / Date Commands]]
 
 16.4. [[textproc|Text Processing Commands]]
 
