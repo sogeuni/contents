@@ -2,7 +2,7 @@
 title: 3. Special Characters
 ---
 
-What makes a character _special_? If it has a meaning beyond its _literal meaning_, a [[x17129#^METAMEANINGREF|meta-meaning]], then we refer to it as a _special character_. Along with commands and [[internal#^KEYWORDREF|keywords]], _special characters_ are building blocks of Bash scripts.
+What makes a character _special_? If it has a meaning beyond its _literal meaning_, a [[x17129#^METAMEANINGREF|meta-meaning]], then we refer to it as a _special character_. Along with commands and [[internal-commands-and-builtins#^KEYWORDREF|keywords]], _special characters_ are building blocks of Bash scripts.
 
 ## Special Characters Found In Scripts and Elsewhere
 
@@ -40,7 +40,7 @@ initial=( `cat "$startfile" | sed -e '/#/d' | tr -d '\n' |\
 > A command may not follow a comment on the same line. There is no method of terminating the comment, in order for "live code" to begin on the same line. Use a new line for the next command.
 
 > [!note]
-> Of course, a [[quoting#^QUOTINGREF|quoted]] or an [[escaping#^ESCP|escaped]] # in an [[internal#^ECHOREF|echo]] statement does _not_ begin a comment. Likewise, a # appears in [[parameter-substitution#^PSUB2|certain parameter-substitution constructs]] and in [[numerical-constants#^NUMCONSTANTS|numerical constant expressions]].
+> Of course, a [[quoting#^QUOTINGREF|quoted]] or an [[escaping#^ESCP|escaped]] # in an [[internal-commands-and-builtins#^ECHOREF|echo]] statement does _not_ begin a comment. Likewise, a # appears in [[parameter-substitution#^PSUB2|certain parameter-substitution constructs]] and in [[numerical-constants#^NUMCONSTANTS|numerical constant expressions]].
 >
 > ```bash
 > echo "The # here does not begin a comment."
@@ -74,11 +74,11 @@ else   #                       ^^
   echo "File $filename not found."; touch $filename
 fi; echo "File test complete."|
 
-Note that the ";" [[moreadv#^FINDREF0|sometimes needs to be _escaped_]].
+Note that the ";" [[complex-commands#^FINDREF0|sometimes needs to be _escaped_]].
 
 ;;
 
-**Terminator in a [[testbranch#^CASEESAC1|case]] option [double semicolon].**
+**Terminator in a [[testing-and-branching#^CASEESAC1|case]] option [double semicolon].**
 
 |   |
 |---|
@@ -93,7 +93,7 @@ esac|
 
 .
 
-**"dot" command [[internal#^SOURCEREF|period].** Equivalent to [source]] (see [[internal#^EX38|Example 15-22]]). This is a bash [[internal#^BUILTINREF|builtin]].
+**"dot" command [[internal-commands-and-builtins#^SOURCEREF|period].** Equivalent to [source]] (see [[internal-commands-and-builtins#^EX38|Example 15-22]]). This is a bash [[internal-commands-and-builtins#^BUILTINREF|builtin]].
 
 .
 
@@ -203,11 +203,11 @@ This is also the division [[operators#^AROPS1|arithmetic operator]].
 
 `
 
-**[[commandsub#^COMMANDSUBREF|command substitution]].** The **`command`** construct makes available the output of **command** for assignment to a variable. This is also known as [[commandsub#^BACKQUOTESREF|backquotes]] or backticks.
+**[[command-substitution#^COMMANDSUBREF|command substitution]].** The **`command`** construct makes available the output of **command** for assignment to a variable. This is also known as [[command-substitution#^BACKQUOTESREF|backquotes]] or backticks.
 
 :
 
-**null command [[internal#^TRUEREF|colon].** This is the shell equivalent of a "NOP" (_no op_, a do-nothing operation). It may be considered a synonym for the shell builtin [true]]. The ":" command is itself a _Bash_ [[internal#^BUILTINREF|builtin]], and its [[exit-status#^EXITSTATUSREF|exit status]] is _true_ (0).
+**null command [[internal-commands-and-builtins#^TRUEREF|colon].** This is the shell equivalent of a "NOP" (_no op_, a do-nothing operation). It may be considered a synonym for the shell builtin [true]]. The ":" command is itself a _Bash_ [[internal-commands-and-builtins#^BUILTINREF|builtin]], and its [[exit-status#^EXITSTATUSREF|exit status]] is _true_ (0).
 
 |   |
 |---|
@@ -322,7 +322,7 @@ A _colon_ can serve as a placeholder in an otherwise empty function.
 
 !
 
-**reverse (or negate) the sense of a test or exit status [[exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[other-comparison-operators#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal#^KEYWORDREF|keyword]].
+**reverse (or negate) the sense of a test or exit status [[exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[other-comparison-operators#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal-commands-and-builtins#^KEYWORDREF|keyword]].
 
 In a different context, the ! also appears in [[ivr#^IVRREF|indirect variable references]].
 
@@ -583,7 +583,7 @@ It is possible to [[loops#^ITERATIONREF|iterate]] a code block using a [[loops#^
 
 {}
 
-**placeholder for text.** Used after [[moreadv#^XARGSCURLYREF|xargs -i]] (_replace strings_ option). The {} double curly brackets are a placeholder for output text.
+**placeholder for text.** Used after [[complex-commands#^XARGSCURLYREF|xargs -i]] (_replace strings_ option). The {} double curly brackets are a placeholder for output text.
 
 |   |
 |---|
@@ -594,7 +594,7 @@ It is possible to [[loops#^ITERATIONREF|iterate]] a code block using a [[loops#^
 
 {} \;
 
-**pathname.** Mostly used in [[moreadv#^FINDREF|find]] constructs. This is _not_ a shell [[internal#^BUILTINREF|builtin]].
+**pathname.** Mostly used in [[complex-commands#^FINDREF|find]] constructs. This is _not_ a shell [[internal-commands-and-builtins#^BUILTINREF|builtin]].
 
 |   |
 |---|
@@ -614,7 +614,7 @@ It is possible to [[loops#^ITERATIONREF|iterate]] a code block using a [[loops#^
 
 **test.**
 
-Test expression between [[internal#^KEYWORDREF|[ ]]. More flexible than the single-bracket [ ] test, this is a shell [keyword]].
+Test expression between [[internal-commands-and-builtins#^KEYWORDREF|[ ]]. More flexible than the single-bracket [ ] test, this is a shell [keyword]].
 
 See the discussion on the [[test-constructs#^DBLBRACKETS|[[ ... ]] construct]].
 
@@ -706,7 +706,7 @@ command_test $cmd; echo $?   # 1\||
 
 [[other-comparison-operators#^LTREF|In a different context]], the "<" and ">" characters act as [[other-comparison-operators#^SCOMPARISON1|string comparison operators]].
 
-[[other-comparison-operators#^INTLT|In yet another context]], the "<" and ">" characters act as [[other-comparison-operators#^ICOMPARISON1|integer comparison operators]]. See also [[moreadv#^EX45|Example 16-9]].
+[[other-comparison-operators#^INTLT|In yet another context]], the "<" and ">" characters act as [[other-comparison-operators#^ICOMPARISON1|integer comparison operators]]. See also [[complex-commands#^EX45|Example 16-9]].
 
 <<
 
@@ -756,7 +756,7 @@ cat *.lst \| sort \| uniq
 
 |   |
 |---|
-|A pipe, as a classic method of interprocess communication, sends the stdout of one [[special-characters#^PROCESSREF|process]] to the stdin of another. In a typical case, a command, such as [[basic#^CATREF|cat]] or [[internal#^ECHOREF|echo]], pipes a stream of data to a _filter_, a command that transforms its input for processing. [^7]
+|A pipe, as a classic method of interprocess communication, sends the stdout of one [[special-characters#^PROCESSREF|process]] to the stdin of another. In a typical case, a command, such as [[basic#^CATREF|cat]] or [[internal-commands-and-builtins#^ECHOREF|echo]], pipes a stream of data to a _filter_, a command that transforms its input for processing. [^7]
 
 **cat $filename1 $filename2 \| grep $search_word**
 
@@ -872,7 +872,7 @@ exit 0
 
 |   |   |
 |---|---|
-|![[../images/caution.gif|Caution]]|A command run in the background within a script may cause the script to hang, waiting for a keystroke. Fortunately, there is a [[x9644#^WAITHANG|remedy]] for this.|
+|![[../images/caution.gif|Caution]]|A command run in the background within a script may cause the script to hang, waiting for a keystroke. Fortunately, there is a [[job-control-commands#^WAITHANG|remedy]] for this.|
 
 &&
 
@@ -915,7 +915,7 @@ The _double-dash_ -- prefixes _long_ (verbatim) options to commands.
 
 **sort --ignore-leading-blanks**
 
-Used with a [[internal#^BUILTINREF|Bash builtin]], it means the _end of options_ to that particular command.
+Used with a [[internal-commands-and-builtins#^BUILTINREF|Bash builtin]], it means the _end of options_ to that particular command.
 
 |   |   |
 |---|---|
@@ -931,9 +931,9 @@ bash$ **rm -- -badname**
 bash$ **ls -l**
 total 0\||
 
-The _double-dash_ is also used in conjunction with [[internal#^SETREF|set]].
+The _double-dash_ is also used in conjunction with [[internal-commands-and-builtins#^SETREF|set]].
 
-**set -- $variable** (as in [[internal#^SETPOS|Example 15-18]])
+**set -- $variable** (as in [[internal-commands-and-builtins#^SETPOS|Example 15-18]])
 
 -
 
@@ -1124,7 +1124,7 @@ In a [[x17129#^PLUSREF|different context]], the + is a [[regexp.html|Regular Exp
 
 **Option.** Option flag for a command or filter.
 
-Certain commands and [[internal#^BUILTINREF|builtins]] use the + to enable certain options and the - to disable them. In [[parameter-substitution#^PARAMSUBREF|parameter substitution]], the + prefixes an [[parameter-substitution#^PARAMALTV|alternate value]] that a variable expands to.
+Certain commands and [[internal-commands-and-builtins#^BUILTINREF|builtins]] use the + to enable certain options and the - to disable them. In [[parameter-substitution#^PARAMSUBREF|parameter substitution]], the + prefixes an [[parameter-substitution#^PARAMALTV|alternate value]] that a variable expands to.
 
 %
 
@@ -1402,7 +1402,7 @@ To preserve _whitespace_ within a string or in a variable, use [[quoting#^QUOTIN
 
 UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whitespace_ using the [[x17129#^POSIXREF|POSIX]] character class [[x17129#^WSPOSIX|[:space:]]].
 
-[[operators#^AROPS1|^1]: An _operator_ is an agent that carries out an _operation_. Some examples are the common [arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of _operator_ and [[internal#^KEYWORDREF|keyword]].
+[[operators#^AROPS1|^1]: An _operator_ is an agent that carries out an _operation_. Some examples are the common [arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of _operator_ and [[internal-commands-and-builtins#^KEYWORDREF|keyword]].
 [^2]: This is more commonly known as the _ternary_ operator. Unfortunately, _ternary_ is an ugly word. It doesn't roll off the tongue, and it doesn't elucidate. It obfuscates. _Trinary_ is by far the more elegant usage.
 [^3]: **A**merican **S**tandard **C**ode for **I**nformation **I**nterchange. This is a system for encoding text characters (alphabetic, numeric, and a limited set of symbols) as 7-bit numbers that can be stored and manipulated by computers. Many of the ASCII characters are represented on a standard keyboard.
 |[[special-characters#^AEN1071|[4]]]|A _PID_, or _process ID_, is a number assigned to a running process. The _PID_s of running processes may be viewed with a [[system#^PPSSREF|ps]] command.
@@ -1420,6 +1420,6 @@ echo "First line is $firstline; second line is $secondline"  # Won't work.
 
 # Thanks, S.C.\||
 [^7]: Even as in olden times a _philtre_ denoted a potion alleged to have magical transformative powers, so does a UNIX _filter_ transform its target in (roughly) analogous fashion. (The coder who comes up with a "love philtre" that runs on a Linux machine will likely win accolades and honors.)
-[[internal#^BUILTINREF|^8]: Bash stores a list of commands previously issued from the command-line in a _buffer_, or memory space, for recall with the [builtin]] _history_ commands.
+[[internal-commands-and-builtins#^BUILTINREF|^8]: Bash stores a list of commands previously issued from the command-line in a _buffer_, or memory space, for recall with the [builtin]] _history_ commands.
 [^9]: A linefeed (_newline_) is also a whitespace character. This explains why a _blank line_, consisting only of a linefeed, is considered whitespace.
 

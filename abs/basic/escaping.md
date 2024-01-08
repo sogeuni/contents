@@ -4,7 +4,7 @@ title: 5.2. Escaping
 
 _Escaping_ is a method of quoting single characters. The escape (\) preceding a character tells the shell to interpret that character literally.
 
-> [!caution] With certain commands and utilities, such as [[internal#^ECHOREF|echo]] and [[sedawk#^SEDREF|sed]], escaping a character may have the opposite effect - it can toggle on a special meaning for that character.
+> [!caution] With certain commands and utilities, such as [[internal-commands-and-builtins#^ECHOREF|echo]] and [[sedawk#^SEDREF|sed]], escaping a character may have the opposite effect - it can toggle on a special meaning for that character.
 
 **Special meanings of certain escaped characters**
 
@@ -283,7 +283,7 @@ echo '\'   # Results in \
 ```
 
 > [!note] 
-> The behavior of \ depends on whether it is escaped, [[varsubn#^SNGLQUO|strong-quoted]], [[varsubn#^DBLQUO|weak-quoted]], or appearing within [[commandsub#^COMMANDSUBREF|command substitution]] or a [[here-docs#^HEREDOCREF|here document]].
+> The behavior of \ depends on whether it is escaped, [[varsubn#^SNGLQUO|strong-quoted]], [[varsubn#^DBLQUO|weak-quoted]], or appearing within [[command-substitution#^COMMANDSUBREF|command substitution]] or a [[here-docs#^HEREDOCREF|here document]].
 >
 > ```bash
 >                       #  Simple escaping and quoting

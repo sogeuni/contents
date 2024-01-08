@@ -2,7 +2,7 @@
 title: "9.2. Typing variables: **declare** or **typeset**"
 ---
 
-The _declare_ or _typeset_ [[internal#^BUILTINREF|builtins]], which are exact synonyms, permit modifying the properties of variables. This is a very weak form of the _typing_ [^1] available in certain programming languages. The _declare_ command is specific to version 2 or later of Bash. The _typeset_ command also works in ksh scripts.
+The _declare_ or _typeset_ [[internal-commands-and-builtins#^BUILTINREF|builtins]], which are exact synonyms, permit modifying the properties of variables. This is a very weak form of the _typing_ [^1] available in certain programming languages. The _declare_ command is specific to version 2 or later of Bash. The _typeset_ command also works in ksh scripts.
 
 **declare/typeset options**
 
@@ -33,7 +33,7 @@ echo "Number = $number"     # Number = 0
 # Tries to evaluate the string "three" as an integer.
 ```
 
-Certain arithmetic operations are permitted for declared integer variables without the need for [[moreadv#^EXPRREF|expr]] or [[internal#^LETREF|let]].
+Certain arithmetic operations are permitted for declared integer variables without the need for [[complex-commands#^EXPRREF|expr]] or [[internal-commands-and-builtins#^LETREF|let]].
 
 ```bash
 n=6/3
@@ -66,7 +66,7 @@ declare -f function_name
 
 A **declare -f function_name** in a script lists just the function named.
 
--x [[internal#^EXPORTREF|export]]
+-x [[internal-commands-and-builtins#^EXPORTREF|export]]
 
 ```bash
 declare -x var3

@@ -61,7 +61,7 @@ echo; echo "Whoops! Pluto is no longer a planet!"
 exit 0
 ```
 
-Each **[list]** element may contain multiple parameters. This is useful when processing parameters in groups. In such cases, use the [[internal#SETREF|set]] command (see [[internal#EX34|Example 15-16]]) to force parsing of each **[list]** element and assignment of each component to the positional parameters.
+Each **[list]** element may contain multiple parameters. This is useful when processing parameters in groups. In such cases, use the [[internal-commands-and-builtins#SETREF|set]] command (see [[internal-commands-and-builtins#EX34|Example 15-16]]) to force parsing of each **[list]** element and assignment of each component to the positional parameters.
 
 **Example 11-2. _for_ loop with two parameters in each [list] element**
 
@@ -185,7 +185,7 @@ echo
 exit 0
 ```
 
-Omitting the **in [list]** part of a _for loop_ causes the loop to operate on $@ -- the [[internalvariables#POSPARAMREF|positional parameters]]. A particularly clever illustration of this is [[contributed-scripts#PRIMES|Example A-15]]. See also [[internal#REVPOSPARAMS|Example 15-17]].
+Omitting the **in [list]** part of a _for loop_ causes the loop to operate on $@ -- the [[internalvariables#POSPARAMREF|positional parameters]]. A particularly clever illustration of this is [[contributed-scripts#PRIMES|Example A-15]]. See also [[internal-commands-and-builtins#REVPOSPARAMS|Example 15-17]].
 
 **Example 11-6. Missing **in [list]** in a _for_ loop**
 
@@ -208,7 +208,7 @@ echo
 exit 0
 ```
 
-It is possible to use [[commandsub#COMMANDSUBREF|command substitution]] to generate the **[list]** in a _for loop_. See also [[extmisc#EX53|Example 16-54]], [[loops1#SYMLINKS|Example 11-11]] and [[mathc#BASE|Example 16-48]].
+It is possible to use [[command-substitution#COMMANDSUBREF|command substitution]] to generate the **[list]** in a _for loop_. See also [[extmisc#EX53|Example 16-54]], [[loops1#SYMLINKS|Example 11-11]] and [[mathc#BASE|Example 16-48]].
 
 **Example 11-7. Generating the **[list]** in a _for_ loop with command substitution**
 
@@ -576,7 +576,7 @@ exit $?   # Also, efax sends diagnostic messages to stdout.
 ```
 
 > [!note]
-> The [[internal#KEYWORDREF|keywords]] **do** and **done** delineate the _for-loop_ command block. However, these may, in certain contexts, be omitted by framing the command block within [[special-chars#CODEBLOCKREF|curly brackets]]
+> The [[internal-commands-and-builtins#KEYWORDREF|keywords]] **do** and **done** delineate the _for-loop_ command block. However, these may, in certain contexts, be omitted by framing the command block within [[special-chars#CODEBLOCKREF|curly brackets]]
 >
 > ```bash
 > for((n=1; n<=10; n++)) 
@@ -621,7 +621,7 @@ The bracket construct in a _while loop_ is nothing more than our old friend, the
 
 **while** [ _condition_ ] ; do
 
-Note that the _test brackets_ [[loops1#WHILENOBRACKETS|are _not_ mandatory]] in a _while_ loop. See, for example, the [[internal#GETOPTSX|getopts construct]].
+Note that the _test brackets_ [[loops1#WHILENOBRACKETS|are _not_ mandatory]] in a _while_ loop. See, for example, the [[internal-commands-and-builtins#GETOPTSX|getopts construct]].
 
 **Example 11-15. Simple _while_ loop**
 
@@ -776,7 +776,7 @@ done
 > done
 > ```
 
-By coupling the power of the [[internal#READREF|read]] command with a _while loop_, we get the handy [[internal#WHILEREADREF|while read]] construct, useful for reading and parsing files.
+By coupling the power of the [[internal-commands-and-builtins#READREF|read]] command with a _while loop_, we get the handy [[internal-commands-and-builtins#WHILEREADREF|while read]] construct, useful for reading and parsing files.
 
 ```bash
 cat $filename |   # Supply input from a file.
@@ -805,7 +805,7 @@ done
 > [!note]
 > A _while loop_ may have its stdin [[redircb#REDIRREF|redirected to a file]] by a < at its end.
 >
-> A _while loop_ may have its stdin [[internal#READPIPEREF|supplied by a pipe]].
+> A _while loop_ may have its stdin [[internal-commands-and-builtins#READPIPEREF|supplied by a pipe]].
 
 **until**
 

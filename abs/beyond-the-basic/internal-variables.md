@@ -3,7 +3,7 @@ title: 9.1. Internal Variables
 ---
 
 
-_[[internal#^BUILTINREF|Builtin]] variables:_
+_[[internal-commands-and-builtins#^BUILTINREF|Builtin]] variables:_
 
 variables affecting bash script behavior
 
@@ -102,7 +102,7 @@ Checking `$BASH_VERSION` is a good method of determining which shell is running.
 
 $CDPATH
 
-A colon-separated list of search paths available to the [[internal#^CDREF|cd]] command, similar in function to the [[internal-variables#^PATHREF|$PATH]] variable for binaries. The $CDPATH variable may be set in the local [[sample-bashrc#^BASHRC|~/.bashrc]] file.
+A colon-separated list of search paths available to the [[internal-commands-and-builtins#^CDREF|cd]] command, similar in function to the [[internal-variables#^PATHREF|$PATH]] variable for binaries. The $CDPATH variable may be set in the local [[sample-bashrc#^BASHRC|~/.bashrc]] file.
 
 ```bash
 bash$ cd bash-doc
@@ -121,9 +121,9 @@ bash$ echo $PWD
 
 $DIRSTACK
 
-The top value in the directory stack [^1] (affected by [[internal#^PUSHDREF|pushd]] and [[internal#^POPDREF|popd]])
+The top value in the directory stack [^1] (affected by [[internal-commands-and-builtins#^PUSHDREF|pushd]] and [[internal-commands-and-builtins#^POPDREF|popd]])
 
-This builtin variable corresponds to the [[internal#^DIRSD|dirs]] command, however **dirs** shows the entire contents of the directory stack.
+This builtin variable corresponds to the [[internal-commands-and-builtins#^DIRSD|dirs]] command, however **dirs** shows the entire contents of the directory stack.
 
 $EDITOR
 
@@ -493,7 +493,7 @@ The secondary prompt, seen when additional input is expected. It displays as ">"
 
 $PS3
 
-The tertiary prompt, displayed in a [[testbranch#^SELECTREF|select]] loop (see [[testbranch#^EX31|Example 11-30]]).
+The tertiary prompt, displayed in a [[testing-and-branching#^SELECTREF|select]] loop (see [[testing-and-branching#^EX31|Example 11-30]]).
 
 $PS4
 
@@ -512,7 +512,7 @@ $PWD
 
 Working directory (directory you are in at the time)
 
-This is the analog to the [[internal#^PWD2REF|pwd]] builtin command.
+This is the analog to the [[internal-commands-and-builtins#^PWD2REF|pwd]] builtin command.
 
 ```bash
 #!/bin/bash
@@ -559,7 +559,7 @@ exit $result
 
 $REPLY
 
-The default value when a variable is not supplied to [[internal#^READREF|read]]. Also applicable to [[testbranch#^SELECTREF|select]] menus, but only supplies the item number of the variable chosen, not the value of the variable itself.
+The default value when a variable is not supplied to [[internal-commands-and-builtins#^READREF|read]]. Also applicable to [[testing-and-branching#^SELECTREF|select]] menus, but only supplies the item number of the variable chosen, not the value of the variable itself.
 
 ```bash
 #!/bin/bash
@@ -643,7 +643,7 @@ $TMOUT
 
 If the _$TMOUT_ environmental variable is set to a non-zero value time, then the shell prompt will time out after $time seconds. This will cause a logout.
 
-As of version 2.05b of Bash, it is now possible to use _$TMOUT_ in a script in combination with [[internal#^READREF|read]].
+As of version 2.05b of Bash, it is now possible to use _$TMOUT_ in a script in combination with [[internal-commands-and-builtins#^READREF|read]].
 
 ```bash
 # Works in scripts for Bash, versions 2.05b and later.
@@ -775,7 +775,7 @@ echo
 exit 0
 ```
 
-Perhaps the simplest method is using the -t option to [[internal#^READREF|read]].
+Perhaps the simplest method is using the -t option to [[internal-commands-and-builtins#^READREF|read]].
 
 **Example 9-4. Timed _read_**
 
@@ -849,7 +849,7 @@ fi
 See also [[starting-off-with-a-sha-bang#^EX2|Example 2-3]].
 
 > [!note]
-> The variables $ENV, $LOGNAME, $MAIL, $TERM, $USER, and $USERNAME are _not_ Bash [[internal#^BUILTINREF|builtins]]. These are, however, often set as [[othertypesv#^ENVREF|environmental variables]] in one of the [[files#^FILESREF1|Bash]] or _login_ startup files. $SHELL, the name of the user's login shell, may be set from /etc/passwd or in an "init" script, and it is likewise not a Bash builtin.
+> The variables $ENV, $LOGNAME, $MAIL, $TERM, $USER, and $USERNAME are _not_ Bash [[internal-commands-and-builtins#^BUILTINREF|builtins]]. These are, however, often set as [[othertypesv#^ENVREF|environmental variables]] in one of the [[files#^FILESREF1|Bash]] or _login_ startup files. $SHELL, the name of the user's login shell, may be set from /etc/passwd or in an "init" script, and it is likewise not a Bash builtin.
 >
 > ```bash
 > tcsh% echo $LOGNAME
@@ -872,7 +872,7 @@ See also [[starting-off-with-a-sha-bang#^EX2|Example 2-3]].
 
 $0, $1, $2, etc.
 
-Positional parameters, passed from command line to script, passed to a function, or [[internal#^SETREF|set]] to a variable (see [[othertypesv#^EX17|Example 4-5]] and [[internal#^EX34|Example 15-16]])
+Positional parameters, passed from command line to script, passed to a function, or [[internal-commands-and-builtins#^SETREF|set]] to a variable (see [[othertypesv#^EX17|Example 4-5]] and [[internal-commands-and-builtins#^EX34|Example 15-16]])
 
 $#
 
@@ -1147,7 +1147,7 @@ exit
 
 $-
 
-Flags passed to script (using [[internal#^SETREF|set]]). See [[internal#^EX34|Example 15-16]].
+Flags passed to script (using [[internal-commands-and-builtins#^SETREF|set]]). See [[internal-commands-and-builtins#^EX34|Example 15-16]].
 
 > [!caution] This was originally a _ksh_ construct adopted into Bash, and unfortunately it does not seem to work reliably in Bash scripts. One possible use for it is to have a script [[intandnonint#^IITEST|self-test whether it is interactive]].
 
@@ -1261,7 +1261,7 @@ $?
 
 `$$`
 
-Process ID (_PID_) of the script itself. [[debugging#^ONLINE|^5] The $$ variable often finds use in scripts to construct "unique" temp file names (see [Example 32-6]], [[filearchiv#^DERPM|Example 16-31]], and [[x9644#^SELFDESTRUCT|Example 15-27]]). This is usually simpler than invoking [[filearchiv#^MKTEMPREF|mktemp]].
+Process ID (_PID_) of the script itself. [[debugging#^ONLINE|^5] The $$ variable often finds use in scripts to construct "unique" temp file names (see [Example 32-6]], [[filearchiv#^DERPM|Example 16-31]], and [[job-control-commands#^SELFDESTRUCT|Example 15-27]]). This is usually simpler than invoking [[filearchiv#^MKTEMPREF|mktemp]].
 
 [^1]: A _stack register_ is a set of consecutive memory locations, such that the values stored (_pushed_) are retrieved (_popped_) in _reverse_ order. The last value stored is the first retrieved. This is sometimes called a _LIFO_ (_last-in-first-out_) or _pushdown_ stack.
 

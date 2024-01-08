@@ -465,7 +465,7 @@ Broadcast message from bozo (pts/1) Sun Jul  8 13:53:27 2001...
 
 **uname**
 
-Output system specifications (OS, kernel version, etc.) to stdout. Invoked with the -a option, gives verbose system info (see [[moreadv#^EX41|Example 16-5]]). The -s option shows only the OS type.
+Output system specifications (OS, kernel version, etc.) to stdout. Invoked with the -a option, gives verbose system info (see [[complex-commands#^EX41|Example 16-5]]). The -s option shows only the OS type.
 
 |   |
 |---|
@@ -481,7 +481,7 @@ Linux iron.bozo 2.6.15-1.2054_FC5 #1 Tue Mar 14 15:48:33 EST 2006
 
 **arch**
 
-Show system architecture. Equivalent to **uname -m**. See [[testbranch#^CASECMD|Example 11-27]].
+Show system architecture. Equivalent to **uname -m**. See [[testing-and-branching#^CASECMD|Example 11-27]].
 
 |   |
 |---|
@@ -951,7 +951,7 @@ Adding an appropriate entry to /etc/logrotate.conf makes it possible to manage p
 
 **ps**
 
-_P_rocess _S_tatistics: lists currently executing processes by owner and PID (process ID). This is usually invoked with ax or aux options, and may be piped to [[textproc#^GREPREF|grep]] or [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]] to search for a specific process (see [[internal#^EX44|Example 15-14]] and [[procref1#^PIDID|Example 29-3]]).
+_P_rocess _S_tatistics: lists currently executing processes by owner and PID (process ID). This is usually invoked with ax or aux options, and may be piped to [[textproc#^GREPREF|grep]] or [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]] to search for a specific process (see [[internal-commands-and-builtins#^EX44|Example 15-14]] and [[procref1#^PIDID|Example 29-3]]).
 
 |   |
 |---|
@@ -962,7 +962,7 @@ To display system processes in graphical "tree" format: **ps afjx** or **ps ax -
 
 **pgrep**, **pkill**
 
-Combining the **ps** command with [[textproc#^GREPREF|grep]] or [[x9644#^KILLREF|kill]].
+Combining the **ps** command with [[textproc#^GREPREF|grep]] or [[job-control-commands#^KILLREF|kill]].
 
 |   |
 |---|
@@ -981,7 +981,7 @@ bash$ **pgrep mingetty**
  2215 mingetty
  2216 mingetty|
 
-Compare the action of **pkill** with [[x9644#^KILLALLREF|killall]].
+Compare the action of **pkill** with [[job-control-commands#^KILLALLREF|killall]].
 
 **pstree**
 
@@ -1008,15 +1008,15 @@ Continuously updated display of most cpu-intensive processes. The -b option disp
 
 **nice**
 
-Run a background job with an altered priority. Priorities run from 19 (lowest) to -20 (highest). Only _root_ may set the negative (higher) priorities. Related commands are **renice** and **snice**, which change the priority of a running process or processes, and **skill**, which sends a [[x9644#^KILLREF|kill]] signal to a process or processes.
+Run a background job with an altered priority. Priorities run from 19 (lowest) to -20 (highest). Only _root_ may set the negative (higher) priorities. Related commands are **renice** and **snice**, which change the priority of a running process or processes, and **skill**, which sends a [[job-control-commands#^KILLREF|kill]] signal to a process or processes.
 
 **nohup**
 
-Keeps a command running even after user logs off. The command will run as a foreground process unless followed by &. If you use **nohup** within a script, consider coupling it with a [[x9644#^WAITREF|wait]] to avoid creating an _orphan_ or [[x9644#^ZOMBIEREF|zombie]] process.
+Keeps a command running even after user logs off. The command will run as a foreground process unless followed by &. If you use **nohup** within a script, consider coupling it with a [[job-control-commands#^WAITREF|wait]] to avoid creating an _orphan_ or [[job-control-commands#^ZOMBIEREF|zombie]] process.
 
 **pidof**
 
-Identifies _process ID (PID)_ of a running job. Since job control commands, such as [[x9644#^KILLREF|kill]] and [[system#^NICE2REF|renice]] act on the _PID_ of a process (not its name), it is sometimes necessary to identify that _PID_. The **pidof** command is the approximate counterpart to the [[internal-variables#^PPIDREF|$PPID]] internal variable.
+Identifies _process ID (PID)_ of a running job. Since job control commands, such as [[job-control-commands#^KILLREF|kill]] and [[system#^NICE2REF|renice]] act on the _PID_ of a process (not its name), it is sometimes necessary to identify that _PID_. The **pidof** command is the approximate counterpart to the [[internal-variables#^PPIDREF|$PPID]] internal variable.
 
 |   |
 |---|
@@ -1114,7 +1114,7 @@ Administrative program scheduler, performing such duties as cleaning up and dele
 
 **init**
 
-The **init** command is the [[internal#^FORKREF|parent]] of all processes. Called in the final step of a bootup, **init** determines the runlevel of the system from /etc/inittab. Invoked by its alias **telinit**, and by _root_ only.
+The **init** command is the [[internal-commands-and-builtins#^FORKREF|parent]] of all processes. Called in the final step of a bootup, **init** determines the runlevel of the system from /etc/inittab. Invoked by its alias **telinit**, and by _root_ only.
 
 **telinit**
 

@@ -2,7 +2,7 @@
 title: 10.1. Manipulating Strings
 ---
 
-Bash supports a surprising number of string manipulation operations. Unfortunately, these tools lack a unified focus. Some are a subset of [[parameter-substitution#^PARAMSUBREF|parameter substitution]], and others fall under the functionality of the UNIX [[moreadv#^EXPRREF|expr]] command. This results in inconsistent command syntax and overlap of functionality, not to mention confusion.
+Bash supports a surprising number of string manipulation operations. Unfortunately, these tools lack a unified focus. Some are a subset of [[parameter-substitution#^PARAMSUBREF|parameter substitution]], and others fall under the functionality of the UNIX [[complex-commands#^EXPRREF|expr]] command. This results in inconsistent command syntax and overlap of functionality, not to mention confusion.
 
 **String Length**
 
@@ -576,11 +576,11 @@ exit 0
 
 ## 10.1.2. Further Reference
 
-For more on string manipulation in scripts, refer to [[parameter-substitution|Section 10.2]] and the [[moreadv#^EXPEXTRSUB|relevant section]] of the [[moreadv#^EXPRREF|expr]] command listing.
+For more on string manipulation in scripts, refer to [[parameter-substitution|Section 10.2]] and the [[complex-commands#^EXPEXTRSUB|relevant section]] of the [[complex-commands#^EXPRREF|expr]] command listing.
 
 Script examples:
 
-1. [[moreadv#^EX45|Example 16-9]]
+1. [[complex-commands#^EX45|Example 16-9]]
 2. [[parameter-substitution#^LENGTH|Example 10-9]]
 3. [[parameter-substitution#^PATTMATCHING|Example 10-10]]
 4. [[parameter-substitution#^RFE|Example 10-11]]

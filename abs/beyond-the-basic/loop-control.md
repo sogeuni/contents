@@ -203,4 +203,4 @@ done
 
 > [!caution] The **continue N** construct is difficult to understand and tricky to use in any meaningful context. It is probably best avoided.
 
-[^1]: These are shell [[internal#BUILTINREF|builtins]], whereas other loop commands, such as [[loops1#WHILELOOPREF|while]] and [[testbranch#CASEESAC1|case]], are [[internal.html#KEYWORDREF|keywords]].
+[^1]: These are shell [[internal-commands-and-builtins#^BUILTINREF|builtins]], whereas other loop commands, such as [[loops1#^WHILELOOPREF|while]] and [[testing-and-branching#^CASEESAC1|case]], are [[internal-commands-and-builtins#^KEYWORDREF|keywords]].

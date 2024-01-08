@@ -164,7 +164,7 @@ a+=Hello
 echo $a        # 15Hello
 ```
 
-Here, += functions as a _string concatenation_ operator. Note that its behavior in this particular context is different than within a [[internal#^LETREF|let]] construct.
+Here, += functions as a _string concatenation_ operator. Note that its behavior in this particular context is different than within a [[internal-commands-and-builtins#^LETREF|let]] construct.
 
 ```bash
 a=1

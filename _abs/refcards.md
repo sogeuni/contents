@@ -76,7 +76,7 @@ The following reference cards provide a useful _summary_ of certain scripting co
 |:--|:--|
 |${var}|Value of _var_ (same as _$var_)|
 |||
-|${var-$DEFAULT}|If _var_ not set, [[internal#^EVALREF|evaluate]] expression as _$DEFAULT_ *|
+|${var-$DEFAULT}|If _var_ not set, [[internal-commands-and-builtins#^EVALREF|evaluate]] expression as _$DEFAULT_ *|
 |${var:-$DEFAULT}|If _var_ not set or is empty, _evaluate_ expression as _$DEFAULT_ *|
 |||
 |${var=$DEFAULT}|If _var_ not set, evaluate expression as _$DEFAULT_ *|
@@ -143,13 +143,13 @@ The following reference cards provide a useful _summary_ of certain scripting co
 |{ command1; command2; . . . commandN; }|[[special-characters#^CODEBLOCKREF|Block of code]]|
 |{string1,string2,string3,...}|[[special-characters#^BRACEEXPREF|Brace expansion]]|
 |{a..z}|[[bashver3#^BRACEEXPREF3|Extended brace expansion]]|
-|{}|Text replacement, after [[moreadv#^CURLYBRACKETSREF|find]] and [[moreadv#^XARGSCURLYREF|xargs]]|
+|{}|Text replacement, after [[complex-commands#^CURLYBRACKETSREF|find]] and [[complex-commands#^XARGSCURLYREF|xargs]]|
 |||
 |||
 |[[special-characters#^PARENSREF|Parentheses]]||
 |( command1; command2 )|Command group executed within a [[subshells#^SUBSHELLSREF|subshell]]|
 |Array=(element1 element2 element3)|[[arrays#^ARRAYINIT0|Array initialization]]|
-|result=$(COMMAND)|[[commandsub#^CSPARENS|Command substitutio[Process substitution](Chapter%2023.%20Process%20Substitution.md#^PROCESSSUBREF)SUBREF|Process substitution]]|
+|result=$(COMMAND)|[[command-substitution#^CSPARENS|Command substitutio[Process substitution](Chapter%2023.%20Process%20Substitution.md#^PROCESSSUBREF)SUBREF|Process substitution]]|
 |<(COMMAND)|Process substitution|
 |||
 |[[double-parentheses-construct.html|Double Parentheses]]||
@@ -163,7 +163,7 @@ The following reference cards provide a useful _summary_ of certain scripting co
 |"$variable"|[[varsubn#^DBLQUO|"Weak" quoting]]|
 |'string'|[[varsubn#^SNGLQUO|'Strong' quoting]]|
 |||
-|[[commandsub#^BACKQUOTESREF|Back Quotes]]||
-|result=`COMMAND`|[[commandsub#^COMMANDSUBREF|Command substitution]], classic style|
+|[[command-substitution#^BACKQUOTESREF|Back Quotes]]||
+|result=`COMMAND`|[[command-substitution#^COMMANDSUBREF|Command substitution]], classic style|
 
 |Contributed Scripts||A Sed and Awk Micro-Primer|

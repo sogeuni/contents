@@ -44,7 +44,7 @@ Generate a "unique" 6-digit hexadecimal identifier for your computer. Do _not_ u
 
 **Backup**
 
-Archive as a "tarball" (*.tar.gz file) all the files in your home directory tree (/home/your-name) that have been modified in the last 24 hours. Hint: use [[moreadv#^FINDREF|find]].
+Archive as a "tarball" (*.tar.gz file) all the files in your home directory tree (/home/your-name) that have been modified in the last 24 hours. Hint: use [[complex-commands#^FINDREF|find]].
 
 Optional: you may use this as the basis of a _backup_ script.
 
@@ -54,7 +54,7 @@ Given a [[special-characters#^PROCESSIDREF|process ID]] (_PID_) as an argument, 
 
 **Primes**
 
-Print (to stdout) all prime numbers between 60000 and 63000. The output should be nicely formatted in columns (hint: use [[internal#^PRINTFREF|printf]]).
+Print (to stdout) all prime numbers between 60000 and 63000. The output should be nicely formatted in columns (hint: use [[internal-commands-and-builtins#^PRINTFREF|printf]]).
 
 **Lottery Numbers**
 
@@ -118,7 +118,7 @@ Hint: pipe the coefficients to [[mathc#^BCREF|bc]], using the well-known formula
 
 **Table of Logarithms**
 
-Using the [[mathc#^BCREF|bc]] and [[internal#^PRINTFREF|printf]] commands, print out a nicely-formatted table of eight-place natural logarithms in the interval between 0.00 and 100.00, in steps of .01.
+Using the [[mathc#^BCREF|bc]] and [[internal-commands-and-builtins#^PRINTFREF|printf]] commands, print out a nicely-formatted table of eight-place natural logarithms in the interval between 0.00 and 100.00, in steps of .01.
 
 Hint: _bc_ requires the -l option to load the math library.
 
@@ -126,7 +126,7 @@ Hint: _bc_ requires the -l option to load the math library.
 
 Using [[Appendix T. ASCII Table#^ASCIISH|Example T-1]] as a template, write a script that prints to a file a complete [[bash-ver4#^UNICODEREF|Unicode]] table.
 
-Hint: Use the -e option to [[internal#^ECHOREF|echo]]: **echo -e '\uXXXX'**, where _XXXX_ is the Unicode numerical character designation. This requires [[bash-ver4#^BASH42|version 4.2]] or later of Bash.
+Hint: Use the -e option to [[internal-commands-and-builtins#^ECHOREF|echo]]: **echo -e '\uXXXX'**, where _XXXX_ is the Unicode numerical character designation. This requires [[bash-ver4#^BASH42|version 4.2]] or later of Bash.
 
 **Sum of Matching Numbers**
 

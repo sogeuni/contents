@@ -122,18 +122,18 @@ exit $?
 
 For simpler examples of awk within shell scripts, see:
 
-1. [[internal#^EX44|Example 15-14]]
+1. [[internal-commands-and-builtins#^EX44|Example 15-14]]
 2. [[redircb#^REDIR4|Example 20-8]]
 3. [[filearchiv#^STRIPC|Example 16-32]]
 4. [[shell-wrapper#^COLTOTALER|Example 36-5]]
 5. [[ivr#^COLTOTALER2|Example 28-2]]
-6. [[internal#^COLTOTALER3|Example 15-20]]
+6. [[internal-commands-and-builtins#^COLTOTALER3|Example 15-20]]
 7. [[procref1#^PIDID|Example 29-3]]
 8. [[procref1#^CONSTAT|Example 29-4]]
 9. [[loops#^FILEINFO|Example 11-3]]
 10. [[extmisc#^BLOTOUT|Example 16-61]]
 11. [[generate-random-integer#^SEEDINGRANDOM|Example 9-16]]
-12. [[moreadv#^IDELETE|Example 16-4]]
+12. [[complex-commands#^IDELETE|Example 16-4]]
 13. [[manipulating-strings#^SUBSTRINGEX|Example 10-6]]
 14. [[assorted-tips#^SUMPRODUCT|Example 36-19]]
 15. [[loops#^USERLIST|Example 11-9]]

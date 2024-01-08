@@ -51,7 +51,7 @@ Unless otherwise noted, [the author](mailto:thegrendel.abs@gmail.com) of this bo
 >
 > --<cite>Edmund Spenser</cite>
 
-[^1]: These are referred to as [[internal#^BUILTINREF|builtins]], features internal to the shell.
+[^1]: These are referred to as [[internal-commands-and-builtins#^BUILTINREF|builtins]], features internal to the shell.
 
 [^2]: Although [[localvar#^RECURSIONREF0|recursion _is_ possible in a shell script]], it tends to be slow and its implementation is often an [[recurnolocvar#^FIBOREF|ugly kludge]].
 

@@ -18,7 +18,7 @@ bash$ echo $variable1
 23
 ```
 
-The only times a variable appears "naked" -- without the $ prefix -- is when declared or assigned, when _unset_, when [[internal#^EXPORTREF|exported]], in an arithmetic expression within [[double-parentheses-construct.html|double parentheses (( ... ))]], or in the special case of a variable representing a [[debugging#^SIGNALD|signal]] (see [[debugging#^EX76|Example 32-5]]). Assignment may be with an = (as in _var1=27_), in a [[internal#^READREF|read]] statement, and at the head of a loop (_for var2 in 1 2 3_).
+The only times a variable appears "naked" -- without the $ prefix -- is when declared or assigned, when _unset_, when [[internal-commands-and-builtins#^EXPORTREF|exported]], in an arithmetic expression within [[double-parentheses-construct.html|double parentheses (( ... ))]], or in the special case of a variable representing a [[debugging#^SIGNALD|signal]] (see [[debugging#^EX76|Example 32-5]]). Assignment may be with an = (as in _var1=27_), in a [[internal-commands-and-builtins#^READREF|read]] statement, and at the head of a loop (_for var2 in 1 2 3_).
 
 Enclosing a referenced value in _double quotes_ (" ... ") does not interfere with variable substitution. This is called _partial quoting_, sometimes referred to as "weak quoting." Using single quotes (' ... ') causes the variable name to be used literally, and no substitution will take place. This is _full quoting_, sometimes referred to as 'strong quoting.' See [[Chapter 5. Quoting|Chapter 5]] for a detailed discussion.
 
@@ -160,7 +160,7 @@ exit 0
 > #+ however it evaluates as 0 in an arithmetic operation.
 > ```
 >
-> See also [[internal#^SELFSOURCE|Example 15-23]].
+> See also [[internal-commands-and-builtins#^SELFSOURCE|Example 15-23]].
 
 [^1]: Technically, the _name_ of a variable is called an _lvalue_, meaning that it appears on the _left_ side of an assignment statment, as in **VARIABLE=23**. A variable's _value_ is an _rvalue_, meaning that it appears on the _right_ side of an assignment statement, as in **VAR2=$VARIABLE**.
 

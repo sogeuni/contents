@@ -1,26 +1,27 @@
-# 15.1. Job Control Commands
+---
+title: 15.1. Job Control Commands
+---
 
-Certain of the following job control commands take a _job identifier_ as an argument. See the [[x9644#^JOBIDTABLE|table]] at end of the chapter.
+Certain of the following job control commands take a _job identifier_ as an argument. See the [[job-control-commands#^JOBIDTABLE|table]] at end of the chapter.
 
 **jobs**
 
 Lists the jobs running in the background, giving the _job number_. Not as useful as [[system#^PPSSREF|ps]].
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|It is all too easy to confuse _jobs_ and _processes_. Certain [[internal#^BUILTINREF|builtins]], such as **kill**, **disown**, and **wait** accept either a job number or a process number as an argument. The [[x9644#^FGREF|fg]], [[x9644#^BGREF|bg]] and **jobs** commands accept only a job number.
-
-\|   \|
-\|---\|
-\|bash$ **sleep 100 &**
-[1] 1384
-
-bash $ **jobs**
-[1]+  Running                 sleep 100 &\|
-
-"1" is the job number (jobs are maintained by the current shell). "1384" is the [[internal-variables#^PPIDREF|PID]] or _process ID number_ (processes are maintained by the system). To kill this job/process, either a **kill %1** or a **kill 1384** works.
-
-_Thanks, S.C._|
+> [!note]
+> It is all too easy to confuse _jobs_ and _processes_. Certain [[internal-commands-and-builtins#^BUILTINREF|builtins]], such as **kill**, **disown**, and **wait** accept either a job number or a process number as an argument. The [[job-control-commands#^FGREF|fg]], [[job-control-commands#^BGREF|bg]] and **jobs** commands accept only a job number.
+>
+> ```bash
+> bash$ sleep 100 &
+> [1] 1384
+> 
+> bash $ jobs
+> [1]+  Running                 sleep 100 &
+> ```
+>
+> "1" is the job number (jobs are maintained by the current shell). "1384" is the [[internal-variables#^PPIDREF|PID]] or _process ID number_ (processes are maintained by the system). To kill this job/process, either a **kill %1** or a **kill 1384** works.
+>
+> _Thanks, S.C._
 
 **disown**
 
@@ -34,13 +35,12 @@ The **fg** command switches a job running in the background into the foreground.
 
 Suspend script execution until all jobs running in background have terminated, or until the job number or process ID specified as an option terminates. Returns the [[exit-status#^EXITSTATUSREF|exit status]] of waited-for command.
 
-You may use the **wait** command to prevent a script from exiting before a background job finishes executing (this would create a dreaded [[x9644#^ZOMBIEREF|orphan process]]).
+You may use the **wait** command to prevent a script from exiting before a background job finishes executing (this would create a dreaded [[job-control-commands#^ZOMBIEREF|orphan process]]).
 
 **Example 15-26. Waiting for a process to finish before proceeding**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 ROOT_UID=0   # Only users with $UID 0 have root privileges.
 E_NOTROOT=65
@@ -74,30 +74,28 @@ locate $1
 #+ the script would exit while 'updatedb' was still running,
 #+ leaving it as an orphan process.
 
-exit 0|
+exit 0
+```
 
-Optionally, **wait** can take a _job identifier_ as an argument, for example, _wait%1_ or _wait $PPID_. [[x9644#^JOBIDTABLE|^1] See the [job id table]].
+Optionally, **wait** can take a _job identifier_ as an argument, for example, _wait%1_ or _wait $PPID_. [^1] See the [[job-control-commands#^JOBIDTABLE|job id table]].
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|Within a script, running a command in the background with an ampersand (&) may cause the script to hang until **ENTER** is hit. This seems to occur with commands that write to stdout. It can be a major annoyance.
-
-\|   \|
-\|---\|
-\|#!/bin/bash
-# test.sh		  
-
-ls -l &
-echo "Done."\|
-
-\|   \|
-\|---\|
-\|bash$ **./test.sh**
-Done.
- [bozo@localhost test-scripts]$ total 1
- -rwxr-xr-x    1 bozo     bozo           34 Oct 11 15:09 test.sh
- _\|
-
+> [!tip]
+> Within a script, running a command in the background with an ampersand (&) may cause the script to hang until **ENTER** is hit. This seems to occur with commands that write to stdout. It can be a major annoyance.
+>
+> ```bash
+> #!/bin/bash
+> # test.sh		  
+> 
+> ls -l &
+> echo "Done."
+> bash$ ./test.sh
+> Done.
+>  [bozo@localhost test-scripts]$ total 1
+>  -rwxr-xr-x    1 bozo     bozo           34 Oct 11 15:09 test.sh
+>  _
+>                
+> ```
+>
 >     As Walter Brameld IV explains it:  
 >   
 >     As far as I can tell, such scripts don't actually hang. It just  
@@ -113,26 +111,24 @@ Done.
 >     5. Background command finishes.  
 >     6. User doesn't see a prompt at the bottom of the output, thinks script  
 >        is hanging.  
-
-Placing a **wait** after the background command seems to remedy this.
-
-\|   \|
-\|---\|
-\|#!/bin/bash
-# test.sh		  
-
-ls -l &
-echo "Done."
-wait\|
-
-\|   \|
-\|---\|
-\|bash$ **./test.sh**
-Done.
- [bozo@localhost test-scripts]$ total 1
- -rwxr-xr-x    1 bozo     bozo           34 Oct 11 15:09 test.sh\|
-
-[[io-redirection#^IOREDIRREF|Redirecting]] the output of the command to a file or even to /dev/null also takes care of this problem.|
+>
+> Placing a **wait** after the background command seems to remedy this.
+>
+> ```bash
+> #!/bin/bash
+> # test.sh		  
+> 
+> ls -l &
+> echo "Done."
+> wait
+> bash$ ./test.sh
+> Done.
+>  [bozo@localhost test-scripts]$ total 1
+>  -rwxr-xr-x    1 bozo     bozo           34 Oct 11 15:09 test.sh
+>                
+> ```
+>
+> [[io-redirection#^IOREDIRREF|Redirecting]] the output of the command to a file or even to /dev/null also takes care of this problem.|
 
 **suspend**
 
@@ -146,9 +142,9 @@ Exit a login shell, optionally specifying an [[exit-status#^EXITSTATUSREF|exit s
 
 Gives statistics on the system time elapsed when executing commands, in the following form:
 
-|   |
-|---|
-|0m0.020s 0m0.020s|
+```bash
+0m0.020s 0m0.020s
+```
 
 This capability is of relatively limited value, since it is not common to profile and benchmark shell scripts.
 
@@ -158,9 +154,8 @@ Forcibly terminate a process by sending it an appropriate _terminate_ signal (se
 
 **Example 15-27. A script that kills itself**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # self-destruct.sh
 
 kill $$  # Script kills its own process here.
@@ -179,41 +174,40 @@ exit 0   # Normal exit? No!
 # 143
 #
 # 143 = 128 + 15
-#             TERM signal|
+#             TERM signal
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|**kill -l** lists all the [[debugging#^SIGNALD|signals]] (as does the file /usr/include/asm/signal.h). A **kill -9** is a _sure kill_, which will usually terminate a process that stubbornly refuses to die with a plain **kill**. Sometimes, a **kill -15** works. A _zombie_ process, that is, a child process that has terminated, but that the [[internal#^FORKREF|parent process]] has not (yet) killed, cannot be killed by a logged-on user -- you can't kill something that is already dead -- but **init** will generally clean it up sooner or later.|
+> [!note]
+> **kill -l** lists all the [[debugging#^SIGNALD|signals]] (as does the file /usr/include/asm/signal.h). A **kill -9** is a _sure kill_, which will usually terminate a process that stubbornly refuses to die with a plain **kill**. Sometimes, a **kill -15** works. A _zombie_ process, that is, a child process that has terminated, but that the [[internal-commands-and-builtins#^FORKREF|parent process]] has not (yet) killed, cannot be killed by a logged-on user -- you can't kill something that is already dead -- but **init** will generally clean it up sooner or later.
 
 **killall**
 
 The **killall** command kills a running process by _name_, rather than by [[special-characters#^PROCESSIDREF|process ID]]. If there are multiple instances of a particular command running, then doing a _killall_ on that command will terminate them _all_.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|This refers to the **killall** command in /usr/bin, _not_ the [[sysscripts#^KILLALL2REF|killall script]] in /etc/rc.d/init.d.|
+> [!note]
+> This refers to the **killall** command in /usr/bin, _not_ the [[sysscripts#^KILLALL2REF|killall script]] in /etc/rc.d/init.d.
 
 **command**
 
 The **command** directive disables aliases and functions for the command immediately following it.
 
-|   |
-|---|
-|bash$ **command ls**|
+```bash
+bash$ command ls
+              
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|This is one of three shell directives that effect script command processing. The others are [[x9644#^BLTREF|builtin]] and [[x9644#^ENABLEREF|enable]].|
+> [!note]
+> This is one of three shell directives that effect script command processing. The others are [[job-control-commands#^BLTREF|builtin]] and [[job-control-commands#^ENABLEREF|enable]].
 
 **builtin**
 
-Invoking **builtin BUILTIN_COMMAND** runs the command _BUILTIN_COMMAND_ as a shell [[internal#^BUILTINREF|builtin]], temporarily disabling both functions and external system commands with the same name.
+Invoking **builtin BUILTIN_COMMAND** runs the command _BUILTIN_COMMAND_ as a shell [[internal-commands-and-builtins#^BUILTINREF|builtin]], temporarily disabling both functions and external system commands with the same name.
 
 **enable**
 
-This either enables or disables a shell builtin command. As an example, _enable -n kill_ disables the shell builtin [[x9644#^KILLREF|kill]], so that when Bash subsequently encounters _kill_, it invokes the external command /bin/kill.
+This either enables or disables a shell builtin command. As an example, _enable -n kill_ disables the shell builtin [[job-control-commands#^KILLREF|kill]], so that when Bash subsequently encounters _kill_, it invokes the external command /bin/kill.
 
-The -a option to _enable_ lists all the shell builtins, indicating whether or not they are enabled. The -f filename option lets _enable_ load a [[internal#^BUILTINREF|builtin]] as a shared library (DLL) module from a properly compiled object file. [^2].
+The -a option to _enable_ lists all the shell builtins, indicating whether or not they are enabled. The -f filename option lets _enable_ load a [[internal-commands-and-builtins#^BUILTINREF|builtin]] as a shared library (DLL) module from a properly compiled object file. [^2].
 
 **autoload**
 
@@ -222,6 +216,7 @@ This is a port to Bash of the _ksh_ autoloader. With **autoload** in place, a fu
 Note that _autoload_ is not a part of the core Bash installation. It needs to be loaded in with _enable -f_ (see above).
 
 ###### Table 15-1. Job identifiers
+
 |Notation|Meaning|
 |:--|:--|
 |%N|Job number [N]|
@@ -233,7 +228,9 @@ Note that _autoload_ is not a part of the core Bash installation. It needs to be
 |$!|Last background process|
 
 [^1]: This only applies to _child processes_, of course.
+
 [^2]: The C source for a number of loadable builtins is typically found in the /usr/share/doc/bash-?.??/functions directory.
 
     Note that the -f option to **enable** is not [[portabilityissues|portable]] to all systems.
+
 [^3]: The same effect as **autoload** can be achieved with [[typing-variables.html|typeset -fu]].

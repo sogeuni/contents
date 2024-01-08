@@ -184,7 +184,7 @@ echo
 
 exit 0|
     
-- Attempting to use [[internal#^LETREF|let]] to set string variables.
+- Attempting to use [[internal-commands-and-builtins#^LETREF|let]] to set string variables.
     
     |   |
     |---|
@@ -233,7 +233,7 @@ fi
     
 - Using undocumented features in Bash turns out to be a dangerous practice. In previous releases of this book there were several scripts that depended on the "feature" that, although the maximum value of an [[exit-status#^EXITSTATUSREF|exit]] or [[complexfunct#^RETURNREF|return]] value was 255, that limit did not apply to _negative_ integers. Unfortunately, in version 2.05b and later, that loophole disappeared. See [[complexfunct#^RETURNTEST|Example 24-9]].
     
-- In certain contexts, a misleading [[exit-status#^EXITSTATUSREF|exit status]] may be returned. This may occur when [[localvar#^EXITVALANOMALY01|setting a local variable within a function]] or when [[internal#^EXITVALANOMALY02|assigning an arithmetic value to a variable]].
+- In certain contexts, a misleading [[exit-status#^EXITSTATUSREF|exit status]] may be returned. This may occur when [[localvar#^EXITVALANOMALY01|setting a local variable within a function]] or when [[internal-commands-and-builtins#^EXITVALANOMALY02|assigning an arithmetic value to a variable]].
     
 - The [[test-constructs#^ARXS|exit status of an arithmetic expression]] is _not_ equivalent to an _error code_.
     
@@ -289,7 +289,7 @@ exit 0|
     
     This [[assortedtips#^RVTCAUTION|will not work]].
     
-- A script may not **export** variables back to its [[internal#^FORKREF|parent process]], the shell, or to the environment. Just as we learned in biology, a child process can inherit from a parent, but not vice versa.
+- A script may not **export** variables back to its [[internal-commands-and-builtins#^FORKREF|parent process]], the shell, or to the environment. Just as we learned in biology, a child process can inherit from a parent, but not vice versa.
     
     |   |
     |---|
@@ -345,7 +345,7 @@ exit 0
 # What happens if you uncomment lines 19 and 20?
 # Does it make a difference?|
     
-- [[special-characters#^PIPEREF|Piping]] **echo** output to a [[internal#^READREF|read]] may produce unexpected results. In this scenario, the **read** acts as if it were running in a subshell. Instead, use the [[internal#^SETREF|set]] command (as in [[internal#^SETPOS|Example 15-18]]).
+- [[special-characters#^PIPEREF|Piping]] **echo** output to a [[internal-commands-and-builtins#^READREF|read]] may produce unexpected results. In this scenario, the **read** acts as if it were running in a subshell. Instead, use the [[internal-commands-and-builtins#^SETREF|set]] command (as in [[internal-commands-and-builtins#^SETPOS|Example 15-18]]).
     
     **Example 34-3. Piping the output of _echo_ to a _read_**
     
@@ -496,7 +496,7 @@ find $HOME -type f -atime +30 -size 100k \| {
     
 - Using shell scripts for CGI programming may be problematic. Shell script variables are not "typesafe," and this can cause undesirable behavior as far as CGI is concerned. Moreover, it is difficult to "cracker-proof" shell scripts.
     
-- Bash does not handle the [[internal#^DOUBLESLASHREF|double slash (//) string]] correctly.
+- Bash does not handle the [[internal-commands-and-builtins#^DOUBLESLASHREF|double slash (//) string]] correctly.
     
 - Bash scripts written for Linux or BSD systems may need fixups to run on a commercial UNIX machine. Such scripts often employ the GNU set of commands and filters, which have greater functionality than their generic UNIX counterparts. This is particularly true of such text processing utilites as [[textproc#^TRREF|tr]].
     

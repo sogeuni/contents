@@ -393,7 +393,7 @@ fi
 
 exit 0|
 
-It is possible to set a variable from the output of a here document. This is actually a devious form of [[commandsub#^COMMANDSUBREF|command substitution]].
+It is possible to set a variable from the output of a here document. This is actually a devious form of [[command-substitution#^COMMANDSUBREF|command substitution]].
 
 |   |
 |---|

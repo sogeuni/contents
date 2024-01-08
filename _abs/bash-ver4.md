@@ -102,7 +102,7 @@ exit $?   # In this case, exit code = 99, since that is function return.|
 \|---\|
 \|address[   ]="Blank"   # Error!\||
     
-- Enhancements to the [[testbranch#^CASEESAC1|case]] construct: the _;;&_ and _;&_ terminators.
+- Enhancements to the [[testing-and-branching#^CASEESAC1|case]] construct: the _;;&_ and _;&_ terminators.
     
     **Example 37-7. Testing characters**
     
@@ -277,7 +277,7 @@ echo "${Arr2[@]}"  # Reads only first line of script into the array.
 
 exit|
     
-- The [[internal#^READREF|read]] builtin got a minor facelift. The -t [[internal#^READTIMED|timeout]] option now accepts (decimal) fractional values [^3] and the -i option permits preloading the edit buffer. [^4] Unfortunately, these enhancements are still a work in progress and not (yet) usable in scripts.
+- The [[internal-commands-and-builtins#^READREF|read]] builtin got a minor facelift. The -t [[internal-commands-and-builtins#^READTIMED|timeout]] option now accepts (decimal) fractional values [^3] and the -i option permits preloading the edit buffer. [^4] Unfortunately, these enhancements are still a work in progress and not (yet) usable in scripts.
     
 - [[parameter-substitution#^PARAMSUBREF|Parameter substitution]] gets _case-modification_ operators.
     
@@ -422,7 +422,7 @@ filelist.bash4|
     
 - The new [[internal-variables#^BASHPIDREF|$BASHPID]] internal variable.
     
-- There is a new [[internal#^BUILTINREF|builtin]] error-handling function named **command_not_found_handle**.
+- There is a new [[internal-commands-and-builtins#^BUILTINREF|builtin]] error-handling function named **command_not_found_handle**.
     
     |   |
     |---|
@@ -452,11 +452,11 @@ _Note to Chet Ramey:_ Please add only _essential_ features in future Bash releas
 
 Version 4.1 of Bash, released in May, 2010, was primarily a bugfix update.
 
-- The [[internal#^PRINTFREF|printf]] command now accepts a -v option for setting [[Chapter 27. Arrays#^ARRAYREF|array]] indices.
+- The [[internal-commands-and-builtins#^PRINTFREF|printf]] command now accepts a -v option for setting [[Chapter 27. Arrays#^ARRAYREF|array]] indices.
     
 - Within [[test-constructs#^DBLBRACKETS|double brackets]], the **>** and **<** string comparison operators now conform to the [[localization#^LOCALEREF|locale]]. Since the locale setting may affect the sorting order of string expressions, this has side-effects on comparison tests within _[[ ... ]]_ expressions.
     
-- The [[internal#^READREF|read]] builtin now takes a -N option (_read -N chars_), which causes the _read_ to terminate after _chars_ characters.
+- The [[internal-commands-and-builtins#^READREF|read]] builtin now takes a -N option (_read -N chars_), which causes the _read_ to terminate after _chars_ characters.
     
     **Example 37-8. Reading N characters**
     
@@ -580,7 +580,7 @@ echo|
     
 - When the _lastpipe_ shell option is set, the last command in a [[special-characters#^PIPEREF|pipe]] _doesn't run in a subshell_.
     
-    **Example 37-10. Piping input to a [[internal#^READREF|read]]**
+    **Example 37-10. Piping input to a [[internal-commands-and-builtins#^READREF|read]]**
     
     |   |
     |---|
@@ -605,7 +605,7 @@ echo "\$line = "$line""
 # Older Bash releases       $line =
 # Bash version 4.2          $line = #!/bin/bash|
     
-    This option offers possible "fixups" for these example scripts: [[gotchas#^BADREAD|Example 34-3]] and [[internal#^READPIPE|Example 15-8]].
+    This option offers possible "fixups" for these example scripts: [[gotchas#^BADREAD|Example 34-3]] and [[internal-commands-and-builtins#^READPIPE|Example 15-8]].
     
 - Negative [[Chapter 27. Arrays#^ARRAYREF|array]] indices permit counting backwards from the end of an array.
     
@@ -691,5 +691,5 @@ echo ${stringZ:3:-6}                         #    ABC123
 [^1]: To be more specific, Bash 4+ has _limited_ support for associative arrays. It's a bare-bones implementation, and it lacks the much of the functionality of such arrays in other programming languages. Note, however, that [[optimizations#^ASSOCARRTST|associative arrays in Bash seem to execute faster and more efficiently than numerically-indexed arrays]].
 [^2]: Copyright 1995-2009 by Chester Ramey.
 [^3]: This only works with [[special-characters#^PIPEREF|pipes]] and certain other _special_ files.
-[^4]: But only in conjunction with [[internal#^READLINEREF|readline]], i.e., from the command-line.
-[^5]: And while you're at it, consider fixing the notorious [[internal#^PIPEREADREF0|piped read]] problem.
+[^4]: But only in conjunction with [[internal-commands-and-builtins#^READLINEREF|readline]], i.e., from the command-line.
+[^5]: And while you're at it, consider fixing the notorious [[internal-commands-and-builtins#^PIPEREADREF0|piped read]] problem.

@@ -79,7 +79,7 @@ echo "$a"         # The quoted variable preserves whitespace.
 exit 0
 ```
 
-Variable assignment using the _$(...)_ mechanism (a newer method than [[commandsub#^BACKQUOTESREF|backquotes]]). This is likewise a form of [[commandsub#^COMMANDSUBREF|command substitution]].
+Variable assignment using the _$(...)_ mechanism (a newer method than [[command-substitution#^BACKQUOTESREF|backquotes]]). This is likewise a form of [[command-substitution#^COMMANDSUBREF|command substitution]].
 
 ```bash
 # From /etc/rc.d/rc.local

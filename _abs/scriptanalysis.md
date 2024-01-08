@@ -57,7 +57,7 @@ exit 0|
 
 ---
 
-Examine and explain the following script. For hints, you might refer to the listings for [[moreadv#^FINDREF|find]] and [[system#^STATREF|stat]].
+Examine and explain the following script. For hints, you might refer to the listings for [[complex-commands#^FINDREF|find]] and [[system#^STATREF|stat]].
 
 |   |
 |---|
@@ -99,7 +99,7 @@ Analyze the following "one-liner" (here split into two lines for clarity) contri
 |export SUM=0; for f in $(find src -name "*.java");
 do export SUM=$(($SUM + $(wc -l $f \| awk '{ print $1 }'))); done; echo $SUM|
 
-Hint: First, break the script up into bite-sized sections. Then, carefully examine its use of [[double-parentheses-construct.html|double-parentheses]] arithmetic, the [[internal#^EXPORTREF|export]] command, the [[moreadv#^FINDREF|find]] command, the [[textproc#^WCREF|wc]] command, and [[awk#^AWKREF|awk]].
+Hint: First, break the script up into bite-sized sections. Then, carefully examine its use of [[double-parentheses-construct.html|double-parentheses]] arithmetic, the [[internal-commands-and-builtins#^EXPORTREF|export]] command, the [[complex-commands#^FINDREF|find]] command, the [[textproc#^WCREF|wc]] command, and [[awk#^AWKREF|awk]].
 
 ---
 

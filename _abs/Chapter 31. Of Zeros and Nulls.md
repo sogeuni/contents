@@ -17,7 +17,7 @@ cat $filename >/dev/null
 # Contents of the file will not list to stdout.
 ```
 
-Suppressing stderr (from [[moreadv#^EX57|Example 16-3]]).
+Suppressing stderr (from [[complex-commands#^EX57|Example 16-3]]).
 
 ```
 rm $badname 2>/dev/null

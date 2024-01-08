@@ -1,61 +1,62 @@
-# Chapter 15. Internal Commands and Builtins
+---
+title: 15. Internal Commands and Builtins
+---
 
 A _builtin_ is a **command** contained within the Bash tool set, literally _built in_. This is either for performance reasons -- builtins execute faster than external commands, which usually require _forking off_ [^1] a separate process -- or because a particular builtin needs direct access to the shell internals.
 
-|   |
-|---|
-|When a command or the shell itself initiates (or _spawns_) a new subprocess to carry out a task, this is called _forking_. This new process is the _child_, and the process that _forked_ it off is the _parent_. While the _child process_ is doing its work, the _parent process_ is still executing.
-
-Note that while a _parent process_ gets the _process ID_ of the _child process_, and can thus pass arguments to it, _the reverse is not true_. [[gotchas#^PARCHILDPROBREF|This can create problems that are subtle and hard to track down.]]
-
-**Example 15-1. A script that spawns multiple instances of itself**
-
-\|   \|
-\|---\|
-\|#!/bin/bash
-# spawn.sh
-
-
-PIDS=$(pidof sh $0)  # Process IDs of the various instances of this script.
-P_array=( $PIDS )    # Put them in an array (why?).
-echo $PIDS           # Show process IDs of parent and child processes.
-let "instances = ${#P_array[*]} - 1"  # Count elements, less 1.
-                                      # Why subtract 1?
-echo "$instances instance(s) of this script running."
-echo "[Hit Ctl-C to exit.]"; echo
-
-
-sleep 1              # Wait.
-sh $0                # Play it again, Sam.
-
-exit 0               # Not necessary; script will never get to here.
-                     # Why not?
-
-#  After exiting with a Ctl-C,
-#+ do all the spawned instances of the script die?
-#  If so, why?
-
-# Note:
-# ----
-# Be careful not to run this script too long.
-# It will eventually eat up too many system resources.
-
-#  Is having a script spawn multiple instances of itself
-#+ an advisable scripting technique.
-#  Why or why not?\|
-
-Generally, a Bash _builtin_ does not fork a subprocess when it executes within a script. An external system command or filter in a script usually _will_ fork a subprocess.|
+> When a command or the shell itself initiates (or _spawns_) a new subprocess to carry out a task, this is called _forking_. This new process is the _child_, and the process that _forked_ it off is the _parent_. While the _child process_ is doing its work, the _parent process_ is still executing.
+>
+> Note that while a _parent process_ gets the _process ID_ of the _child process_, and can thus pass arguments to it, _the reverse is not true_. [[gotchas#^PARCHILDPROBREF|This can create problems that are subtle and hard to track down.]]
+>
+> **Example 15-1. A script that spawns multiple instances of itself**
+>
+> ```bash
+> 
+> #!/bin/bash
+> # spawn.sh
+> 
+> 
+> PIDS=$(pidof sh $0)  # Process IDs of the various instances of this script.
+> P_array=( $PIDS )    # Put them in an array (why?).
+> echo $PIDS           # Show process IDs of parent and child processes.
+> let "instances = ${#P_array[*]} - 1"  # Count elements, less 1.
+>                                       # Why subtract 1?
+> echo "$instances instance(s) of this script running."
+> echo "[Hit Ctl-C to exit.]"; echo
+> 
+> 
+> sleep 1              # Wait.
+> sh $0                # Play it again, Sam.
+> 
+> exit 0               # Not necessary; script will never get to here.
+>                      # Why not?
+> 
+> #  After exiting with a Ctl-C,
+> #+ do all the spawned instances of the script die?
+> #  If so, why?
+> 
+> # Note:
+> # ----
+> # Be careful not to run this script too long.
+> # It will eventually eat up too many system resources.
+> 
+> #  Is having a script spawn multiple instances of itself
+> #+ an advisable scripting technique.
+> #  Why or why not?
+> ```
+>
+> Generally, a Bash _builtin_ does not fork a subprocess when it executes within a script. An external system command or filter in a script usually _will_ fork a subprocess.
 
 A builtin may be a synonym to a system command of the same name, but Bash reimplements it internally. For example, the Bash **echo** command is not the same as /bin/echo, although their behavior is almost identical.
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 echo "This line uses the \"echo\" builtin."
-/bin/echo "This line uses the /bin/echo system command."|
+/bin/echo "This line uses the /bin/echo system command."
+```
 
-A _keyword_ is a _reserved_ word, token or operator. Keywords have a special meaning to the shell, and indeed are the building blocks of the shell's syntax. As examples, _for_, _while_, _do_, and _!_ are keywords. Similar to a [[internal#^BUILTINREF|builtin]], a keyword is hard-coded into Bash, but unlike a _builtin_, a keyword is not in itself a command, but _a subunit of a command construct_. [^2]
+A _keyword_ is a _reserved_ word, token or operator. Keywords have a special meaning to the shell, and indeed are the building blocks of the shell's syntax. As examples, _for_, _while_, _do_, and _!_ are keywords. Similar to a [[internal-commands-and-builtins#^BUILTINREF|builtin]], a keyword is hard-coded into Bash, but unlike a _builtin_, a keyword is not in itself a command, but _a subunit of a command construct_. [^2]
 
 **I/O**
 
@@ -63,52 +64,54 @@ A _keyword_ is a _reserved_ word, token or operator. Keywords have a special mea
 
 prints (to stdout) an expression or variable (see [[varsubn#^EX9|Example 4-1]]).
 
-|   |
-|---|
-|echo Hello
-echo $a|
+```bash
+echo Hello
+echo $a
+```
 
 An **echo** requires the -e option to print escaped characters. See [[escaping#^ESCAPED|Example 5-2]].
 
 Normally, each **echo** command prints a terminal newline, but the -n option suppresses this.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|An **echo** can be used to feed a sequence of commands down a pipe.
+> [!note]
+> An **echo** can be used to feed a sequence of commands down a pipe.
+>
+> ```bash
+> if echo "$VAR" | grep -q txt   # if [[ $VAR = *txt* ]]
+> then
+>   echo "$VAR contains the substring sequence \"txt\""
+> fi
+> ```
 
-\|   \|
-\|---\|
-\|if echo "$VAR" \\| grep -q txt   # if [[ $VAR = *txt* ]]
-then
-  echo "$VAR contains the substring sequence \"txt\""
-fi\||
-
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|An **echo**, in combination with [[commandsub#^COMMANDSUBREF|command substitution]] can set a variable.
-
-**a=`echo "HELLO" \| tr A-Z a-z`**
-
-See also [[textproc#^LOWERCASE|Example 16-22]], [[moreadv#^EX57|Example 16-3]], [[mathc#^MONTHLYPMT|Example 16-47]], and [[mathc#^BASE|Example 16-48]].|
+> [!note]
+> An **echo**, in combination with [[command-substitution#^COMMANDSUBREF|command substitution]] can set a variable.
+>
+> **a=`echo "HELLO" \| tr A-Z a-z`**
+>
+> See also [[textproc#^LOWERCASE|Example 16-22]], [[complex-commands#^EX57|Example 16-3]], [[mathc#^MONTHLYPMT|Example 16-47]], and [[mathc#^BASE|Example 16-48]].|
 
 Be aware that **echo `command`** deletes any linefeeds that the output of _command_ generates.
 
 The [[internal-variables#^IFSREF|$IFS]] (internal field separator) variable normally contains \n (linefeed) as one of its set of [[special-characters#^WHITESPACEREF|whitespace]] characters. Bash therefore splits the output of _command_ at linefeeds into arguments to **echo**. Then **echo** outputs these arguments, separated by spaces.
 
-|   |
-|---|
-|bash$ **ls -l /usr/share/apps/kjezz/sounds**
+```bash
+
+bash$ ls -l /usr/share/apps/kjezz/sounds
 -rw-r--r--    1 root     root         1407 Nov  7  2000 reflect.au
  -rw-r--r--    1 root     root          362 Nov  7  2000 seconds.au
 
-bash$ **echo `ls -l /usr/share/apps/kjezz/sounds`**
-total 40 -rw-r--r-- 1 root root 716 Nov 7 2000 reflect.au -rw-r--r-- 1 root root ...|
 
-So, how can we embed a linefeed within an [[internal#^ECHOREF|echoed]] character string?
 
-|   |
-|---|
-|# Embedding a linefeed?
+
+bash$ echo `ls -l /usr/share/apps/kjezz/sounds`
+total 40 -rw-r--r-- 1 root root 716 Nov 7 2000 reflect.au -rw-r--r-- 1 root root ...
+	      
+```
+
+So, how can we embed a linefeed within an [[internal-commands-and-builtins#^ECHOREF|echoed]] character string?
+
+```bash
+# Embedding a linefeed?
 echo "Why doesn't this string \n split on two lines?"
 # Doesn't split.
 
@@ -152,17 +155,18 @@ echo $string1
 #                                    ^
 # Linefeed becomes a space.
 
-# Thanks, Steve Parker, for pointing this out.|
+# Thanks, Steve Parker, for pointing this out.
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|This command is a shell builtin, and not the same as /bin/echo, although its behavior is similar.
+> [!note]
+> This command is a shell builtin, and not the same as /bin/echo, although its behavior is similar.
 
-\|   \|
-\|---\|
-\|bash$ **type -a echo**
+```bash
+bash$ type -a echo
 echo is a shell builtin
- echo is /bin/echo\||
+ echo is /bin/echo
+	      
+```
 
 **printf**
 
@@ -172,15 +176,13 @@ The **printf**, formatted print, command is an enhanced **echo**. It is a limite
 
 This is the Bash _builtin_ version of the /bin/printf or /usr/bin/printf command. See the **printf** [[basic-commands#^MANREF|manpage]] (of the system command) for in-depth coverage.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|Older versions of Bash may not support **printf**.|
+> [!caution]
+> Older versions of Bash may not support **printf**.
 
 **Example 15-2. _printf_ in action**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # printf demo
 
 declare -r PI=3.14159265358979     # Read-only variable, i.e., a constant.
@@ -220,13 +222,13 @@ echo $Msg; echo $Msg
 #+ as a loadable module to Bash,
 #+ but this is not portable.
 
-exit 0|
+exit 0
+```
 
 Formatting error messages is a useful application of **printf**
 
-|   |
-|---|
-|E_BADDIR=85
+```bash
+E_BADDIR=85
 
 var=nonexistent_directory
 
@@ -238,9 +240,10 @@ error()
   exit $E_BADDIR
 }
 
-cd $var \| error $"Can't cd to %s." "$var"
+cd $var || error $"Can't cd to %s." "$var"
 
-# Thanks, S.C.|
+# Thanks, S.C.
+```
 
 See also [[assorted-tips#^PROGRESSBAR|Example 36-17]].
 
@@ -250,9 +253,8 @@ See also [[assorted-tips#^PROGRESSBAR|Example 36-17]].
 
 **Example 15-3. Variable assignment, using _read_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # "Reading" variables.
 
 echo -n "Enter the value of variable 'var1': "
@@ -274,15 +276,15 @@ echo "var2 = $var2      var3 = $var3"
 #  If you input only one value,
 #+ the other variable(s) will remain unset (null).
 
-exit 0|
+exit 0
+```
 
 A **read** without an associated variable assigns its input to the dedicated variable [[internal-variables#^REPLYREF|$REPLY]].
 
 **Example 15-4. What happens when _read_ has no variable**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # read-novar.sh
 
 echo
@@ -330,15 +332,15 @@ echo            #   #!/bin/bash  line discarded.
 
 # See also the soundcard-on.sh script.
 
-exit 0|
+exit 0
+```
 
 Normally, inputting a **\** suppresses a newline during input to a **read**. The -r option causes an inputted **\** to be interpreted literally.
 
 **Example 15-5. Multi-line input to _read_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 echo
 
@@ -368,13 +370,13 @@ echo "var2 = $var2"
 
 echo 
 
-exit 0|
+exit 0
+```
 
 The **read** command has some interesting options that permit echoing a prompt and even reading keystrokes without hitting **ENTER**.
 
-|   |
-|---|
-|# Read a keypress without hitting ENTER.
+```bash
+# Read a keypress without hitting ENTER.
 
 read -s -n1 -p "Hit a key " keypress
 echo; echo "Keypress was "\"$keypress\""."
@@ -383,15 +385,15 @@ echo; echo "Keypress was "\"$keypress\""."
 # -n N option means accept only N characters of input.
 # -p option means echo the following prompt before reading input.
 
-# Using these options is tricky, since they need to be in the correct order.|
+# Using these options is tricky, since they need to be in the correct order.
+```
 
 The -n option to **read** also allows detection of the **arrow keys** and certain of the other unusual keys.
 
 **Example 15-6. Detecting the arrow keys**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # arrow-detect.sh: Detects the arrow keys, and a few more.
 # Thank you, Sandro Magi, for showing me how.
 
@@ -412,42 +414,42 @@ echo -n "Press a key...  "
 # May need to also press ENTER if a key not listed above pressed.
 read -n3 key                      # Read 3 characters.
 
-echo -n "$key" \| grep "$arrowup"  #Check if character code detected.
+echo -n "$key" | grep "$arrowup"  #Check if character code detected.
 if [ "$?" -eq $SUCCESS ]
 then
   echo "Up-arrow key pressed."
   exit $SUCCESS
 fi
 
-echo -n "$key" \| grep "$arrowdown"
+echo -n "$key" | grep "$arrowdown"
 if [ "$?" -eq $SUCCESS ]
 then
   echo "Down-arrow key pressed."
   exit $SUCCESS
 fi
 
-echo -n "$key" \| grep "$arrowrt"
+echo -n "$key" | grep "$arrowrt"
 if [ "$?" -eq $SUCCESS ]
 then
   echo "Right-arrow key pressed."
   exit $SUCCESS
 fi
 
-echo -n "$key" \| grep "$arrowleft"
+echo -n "$key" | grep "$arrowleft"
 if [ "$?" -eq $SUCCESS ]
 then
   echo "Left-arrow key pressed."
   exit $SUCCESS
 fi
 
-echo -n "$key" \| grep "$insert"
+echo -n "$key" | grep "$insert"
 if [ "$?" -eq $SUCCESS ]
 then
   echo "\"Insert\" key pressed."
   exit $SUCCESS
 fi
 
-echo -n "$key" \| grep "$delete"
+echo -n "$key" | grep "$delete"
 if [ "$?" -eq $SUCCESS ]
 then
   echo "\"Delete\" key pressed."
@@ -500,9 +502,9 @@ exit $?
 while true
 do
   read -sn1 a
-  test "$a" == `echo -en "\e"` \| continue
+  test "$a" == `echo -en "\e"` || continue
   read -sn1 a
-  test "$a" == "[" \| continue
+  test "$a" == "[" || continue
   read -sn1 a
   case "$a" in
     A)  echo "up";;
@@ -516,11 +518,11 @@ done
 
 #  Exercise:
 #  --------
-#  1) Add detection of the "Home," "End," "PgUp," and "PgDn" keys.|
+#  1) Add detection of the "Home," "End," "PgUp," and "PgDn" keys.
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|The -n option to **read** will not detect the **ENTER** (newline) key.|
+> [!note]
+> The -n option to **read** will not detect the **ENTER** (newline) key.
 
 The -t option to **read** permits timed input (see [[internal-variables#^TOUT|Example 9-4]] and [[contributed-scripts#^QKY|Example A-41]]).
 
@@ -530,9 +532,8 @@ The **read** command may also "read" its variable value from a file [[io-redirec
 
 **Example 15-7. Using _read_ with [[io-redirection#^IOREDIRREF|file redirection]]**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 read var1 <data-file
 echo "var1 = $var1"
@@ -588,83 +589,82 @@ done </etc/passwd   # I/O redirection.
 echo
 echo "\$IFS still $IFS"
 
-exit 0|
+exit 0
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|[[special-characters#^PIPEREF|Piping]] output to a _read_, using [[internal#^ECHOREF|echo]] to set variables [[gotchas#^BADREAD0|will fail]].
+> [!note]
+> [[special-characters#^PIPEREF|Piping]] output to a _read_, using [[internal-commands-and-builtins#^ECHOREF|echo]] to set variables [[gotchas#^BADREAD0|will fail]].
+>
+> Yet, piping the output of [[basic-commands#^CATREF|cat]] _seems_ to work.
+>
+> ```bash
+> cat file1 file2 |
+> while read line
+> do
+> echo $line
+> done
+> ```
+>
+> However, as Bjön Eriksson shows:
+>
+> **Example 15-8. Problems reading from a pipe**
+>
+> ```bash
+> #!/bin/sh
+> # readpipe.sh
+> # This example contributed by Bjon Eriksson.
+> 
+> ### shopt -s lastpipe
+> 
+> last="(null)"
+> cat $0 |
+> while read line
+> do
+>     echo "{$line}"
+>     last=$line
+> done
+> 
+> echo
+> echo "++++++++++++++++++++++"
+> printf "\nAll done, last: $last\n" #  The output of this line
+>                                    #+ changes if you uncomment line 5.
+>                                    #  (Bash, version -ge 4.2 required.)
+> 
+> exit 0  # End of code.
+>         # (Partial) output of script follows.
+>         # The 'echo' supplies extra brackets.
+> 
+> #############################################
+> 
+> ./readpipe.sh 
+> 
+> {#!/bin/sh}
+> {last="(null)"}
+> {cat $0 |}
+> {while read line}
+> {do}
+> {echo "{$line}"}
+> {last=$line}
+> {done}
+> {printf "nAll done, last: $lastn"}
+> 
+> 
+> All done, last: (null)
+> 
+> The variable (last) is set within the loop/subshell
+> but its value does not persist outside the loop.
+> ```
+>
+> The _gendiff_ script, usually found in /usr/bin on many Linux distros, pipes the output of [[complex-commands#^FINDREF|find]] to a _while read_ construct.
+>
+> ```bash
+> find $1 \( -name "*$2" -o -name ".*$2" \) -print |
+> while read f; do
+> . . .
+> ```
 
-Yet, piping the output of [[basic-commands#^CATREF|cat]] _seems_ to work.
-
-\|   \|
-\|---\|
-\|cat file1 file2 \\|
-while read line
-do
-echo $line
-done\|
-
-However, as Bj�n Eriksson shows:
-
-**Example 15-8. Problems reading from a pipe**
-
-\|   \|
-\|---\|
-\|#!/bin/sh
-# readpipe.sh
-# This example contributed by Bjon Eriksson.
-
-### shopt -s lastpipe
-
-last="(null)"
-cat $0 \\|
-while read line
-do
-    echo "{$line}"
-    last=$line
-done
-
-echo
-echo "++++++++++++++++++++++"
-printf "\nAll done, last: $last\n" #  The output of this line
-                                   #+ changes if you uncomment line 5.
-                                   #  (Bash, version -ge 4.2 required.)
-
-exit 0  # End of code.
-        # (Partial) output of script follows.
-        # The 'echo' supplies extra brackets.
-
-#############################################
-
-./readpipe.sh 
-
-{#!/bin/sh}
-{last="(null)"}
-{cat $0 \\|}
-{while read line}
-{do}
-{echo "{$line}"}
-{last=$line}
-{done}
-{printf "nAll done, last: $lastn"}
-
-
-All done, last: (null)
-
-The variable (last) is set within the loop/subshell
-but its value does not persist outside the loop.\|
-
-The _gendiff_ script, usually found in /usr/bin on many Linux distros, pipes the output of [[moreadv#^FINDREF|find]] to a _while read_ construct.
-
-\|   \|
-\|---\|
-\|find $1 \( -name "*$2" -o -name ".*$2" \) -print \\|
-while read f; do
-. . .\||
-
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|It is possible to _paste_ text into the input field of a _read_ (but _not_ multiple lines!). See [[contributed-scripts#^PADSW|Example A-38]].|
+> [!tip]
+> It is possible to _paste_ text into the input field of a _read_ (but _not_ multiple lines!). See [[contributed-scripts#^PADSW|Example A-38]].
 
 **Filesystem**
 
@@ -672,31 +672,31 @@ while read f; do
 
 The familiar **cd** change directory command finds use in scripts where execution of a command requires being in a specified directory.
 
-|   |
-|---|
-|(cd /source/directory && tar cf - . ) \| (cd /dest/directory && tar xpvf -)|
+```bash
+(cd /source/directory && tar cf - . ) | (cd /dest/directory && tar xpvf -)
+```
 
-[[special-characters#^COXEX|from the [previously cited]] example by Alan Cox]
+[from the [[special-characters#^COXEX|previously cited]] example by Alan Cox]
 
 The -P (physical) option to **cd** causes it to ignore symbolic links.
 
 **cd -** changes to [[internal-variables#^OLDPWD|$OLDPWD]], the previous working directory.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|The **cd** command does not function as expected when presented with two forward slashes.
-
-\|   \|
-\|---\|
-\|bash$ **cd //**
-bash$ **pwd**
-//\|
-
-The output should, of course, be /. This is a problem both from the command-line and in a script.|
+> [!caution]
+> The **cd** command does not function as expected when presented with two forward slashes.
+>
+> ```bash
+> bash$ cd //
+> bash$ pwd
+> //
+> 	
+> ```
+>
+> The output should, of course, be /. This is a problem both from the command-line and in a script.|
 
 **pwd**
 
-Print Working Directory. This gives the user's (or script's) current directory (see [[internal#^EX37|Example 15-9]]). The effect is identical to reading the value of the builtin variable [[internal-variables#^PWDREF|$PWD]].
+Print Working Directory. This gives the user's (or script's) current directory (see [[internal-commands-and-builtins#^EX37|Example 15-9]]). The effect is identical to reading the value of the builtin variable [[internal-variables#^PWDREF|$PWD]].
 
 **pushd**, **popd**, **dirs**
 
@@ -712,9 +712,8 @@ Scripts that require various changes to the current working directory without ha
 
 **Example 15-9. Changing the current working directory**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 dir1=/usr/local
 dir2=/var/spool
@@ -739,19 +738,19 @@ echo "Now back in original working directory `pwd`."
 exit 0
 
 # What happens if you don't 'popd' -- then exit the script?
-# Which directory do you end up in? Why?|
+# Which directory do you end up in? Why?
+```
 
 **Variables**
 
 **let**
 
-The **let** command carries out _arithmetic_ operations on variables. [[moreadv#^EXPRREF|^3] In many cases, it functions as a less complex version of [expr]].
+The **let** command carries out _arithmetic_ operations on variables. [^3] In many cases, it functions as a less complex version of [[complex-commands#^EXPRREF|expr]].
 
 **Example 15-10. Letting _let_ do arithmetic.**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 echo
 
@@ -799,40 +798,41 @@ let a++
 let "t = a<7?7:11"   # False
 echo $t  #     11
 
-exit|
+exit
+```
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|The _let_ command can, in certain contexts, return a surprising [[exit-status#^EXITSTATUSREF|exit status]].
+> [!caution]
+> The _let_ command can, in certain contexts, return a surprising [[exit-status#^EXITSTATUSREF|exit status]].
+>
+> ```bash
+> # Evgeniy Ivanov points out:
+> 
+> var=0
+> echo $?     # 0
+>             # As expected.
+> 
+> let var++
+> echo $?     # 1
+>             # The command was successful, so why isn't $?=0 ???
+>             # Anomaly!
+> 
+> let var++
+> echo $?     # 0
+>             # As expected.
+> 
+> 
+> # Likewise . . .
+> 
+> let var=0
+> echo $?     # 1
+>             # The command was successful, so why isn't $?=0 ???
+> 
+> #  However, as Jeff Gorak points out,
+> #+ this is part of the design spec for 'let' . . .
+> # "If the last ARG evaluates to 0, let returns 1;
+> #  let returns 0 otherwise." ['help let']
+> ```
 
-\|   \|
-\|---\|
-\|# Evgeniy Ivanov points out:
-
-var=0
-echo $?     # 0
-            # As expected.
-
-let var++
-echo $?     # 1
-            # The command was successful, so why isn't $?=0 ???
-            # Anomaly!
-
-let var++
-echo $?     # 0
-            # As expected.
-
-
-# Likewise . . .
-
-let var=0
-echo $?     # 1
-            # The command was successful, so why isn't $?=0 ???
-
-#  However, as Jeff Gorak points out,
-#+ this is part of the design spec for 'let' . . .
-# "If the last ARG evaluates to 0, let returns 1;
-#  let returns 0 otherwise." ['help let']\||
 
 **eval**
 
@@ -840,23 +840,22 @@ echo $?     # 1
 
 Combines the arguments in an expression or list of expressions and _evaluates_ them. Any variables within the expression are expanded. The net result is to **convert a string into a command**.
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|The **eval** command can be used for code generation from the command-line or within a script.|
+> [!tip]
+> The **eval** command can be used for code generation from the command-line or within a script.
 
-|   |
-|---|
-|bash$ **command_string="ps ax"**
-bash$ **process="ps ax"**
-bash$ **eval "$command_string" \| grep "$process"**
+```bash
+bash$ command_string="ps ax"
+bash$ process="ps ax"
+bash$ eval "$command_string" | grep "$process"
 26973 pts/3    R+     0:00 grep --color ps ax
- 26974 pts/3    R+     0:00 ps ax|
+ 26974 pts/3    R+     0:00 ps ax
+	      
+```
 
 Each invocation of _eval_ forces a re-_evaluation_ of its arguments.
 
-|   |
-|---|
-|a='$b'
+```bash
+a='$b'
 b='$c'
 c=d
 
@@ -867,13 +866,14 @@ eval echo $a        # $c
 eval eval echo $a   # d
                     # Third level.
 
-# Thank you, E. Choroba.|
+# Thank you, E. Choroba.
+```
 
 **Example 15-11. Showing the effect of _eval_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+
+#!/bin/bash
 # Exercising "eval" ...
 
 y=`eval ls -l`  #  Similar to y=`ls -l`
@@ -893,7 +893,7 @@ echo
 echo "==========================================================="
 echo
 
-eval "`seq 3 \| sed -e 's/.*/echo var&=ABCDEFGHIJ/'`"
+eval "`seq 3 | sed -e 's/.*/echo var&=ABCDEFGHIJ/'`"
 # var1=ABCDEFGHIJ
 # var2=ABCDEFGHIJ
 # var3=ABCDEFGHIJ
@@ -912,13 +912,13 @@ echo "version = $version"
 eval major=${version/./;minor=}     #  Replaces '.' in version by ';minor='
                                     #  The substitution yields '3; minor=4'
                                     #+ so eval does minor=4, major=3
-echo Major: $major, minor: $minor   #  Major: 3, minor: 4|
+echo Major: $major, minor: $minor   #  Major: 3, minor: 4
+```
 
 **Example 15-12. Using _eval_ to select among variables**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # arr-choice.sh
 
 #  Passing arguments to a function to select
@@ -952,13 +952,14 @@ array_number=3    # Null array (arr3 not allocated).
 element_number=4
 choose_array      # (null)
 
-# Thank you, Antonio Macchi, for pointing this out.|
+# Thank you, Antonio Macchi, for pointing this out.
+```
 
 **Example 15-13. _Echoing_ the _command-line parameters_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+
+#!/bin/bash
 # echo-params.sh
 
 # Call this script with a few command-line parameters.
@@ -996,13 +997,14 @@ Command-line parameter $1 = first
 Command-line parameter $2 = second
 Command-line parameter $3 = third
 Command-line parameter $4 = fourth
-Command-line parameter $5 = fifth|
+Command-line parameter $5 = fifth
+```
 
 **Example 15-14. Forcing a log-off**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+
+#!/bin/bash
 # Killing ppp to force a log-off.
 # For dialup connection, of course.
 
@@ -1014,7 +1016,7 @@ SERPORT=ttyS3
 #+ /dev/ttyS1 or /dev/ttyS2.
 
 
-killppp="eval kill -9 `ps ax \| awk '/ppp/ { print $1 }'`"
+killppp="eval kill -9 `ps ax | awk '/ppp/ { print $1 }'`"
 #                     -------- process ID of ppp -------  
 
 $killppp                     # This variable is now a command.
@@ -1036,20 +1038,20 @@ exit $?
 # 2) Do a check on whether the process to be killed
 #+   is actually running before attempting to kill it.   
 # 3) Write an alternate version of this script based on 'fuser':
-#+      if [ fuser -s /dev/modem ]; then . . .|
+#+      if [ fuser -s /dev/modem ]; then . . .
+```
 
 **Example 15-15. A version of _rot13_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # A version of "rot13" using 'eval'.
 # Compare to "rot13.sh" example.
 
 setvar_rot_13()              # "rot13" scrambling
 {
   local varname=$1 varvalue=$2
-  eval $varname='$(echo "$varvalue" \| tr a-z n-za-m)'
+  eval $varname='$(echo "$varvalue" | tr a-z n-za-m)'
 }
 
 
@@ -1063,29 +1065,28 @@ echo $var                    # foobar
 # This example by Stephane Chazelas.
 # Modified by document author.
 
-exit 0|
+exit 0
+```
 
-Here is another example of using _eval_ to _evaluate_ a complex expression, this one from an earlier version of YongYe's [[https://github.com/yongye/shell/blob/master/Tetris_Game.sh|Tetris game script]].
+Here is another example of using _eval_ to _evaluate_ a complex expression, this one from an earlier version of YongYe's [Tetris game script](https://github.com/yongye/shell/blob/master/Tetris_Game.sh).
 
-|   |
-|---|
-|eval ${1}+=\"${x} ${y} \"|
+```bash
+eval ${1}+=\"${x} ${y} \"
+```
 
 [[contributed-scripts#^SAMORSE|Example A-53]] uses _eval_ to convert [[Chapter 27. Arrays#^ARRAYREF|array]] elements into a command list.
 
 The _eval_ command occurs in the older version of [[ivr#^IVRREF|indirect referencing]].
 
-|   |
-|---|
-|eval var=\$$var|
+```bash
+eval var=\$$var
+```
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|The _eval_ command can be used to [[bashver3#^BRACEEXPREF3|parameterize _brace expansion_]].|
+> [!tip]
+> The _eval_ command can be used to [[bashver3#^BRACEEXPREF3|parameterize _brace expansion_]].
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|The **eval** command can be risky, and normally should be avoided when there exists a reasonable alternative. An **eval $COMMANDS** executes the contents of _COMMANDS_, which may contain such unpleasant surprises as **rm -rf ***. Running an **eval** on unfamiliar code written by persons unknown is living dangerously.|
+> [!caution]
+> The **eval** command can be risky, and normally should be avoided when there exists a reasonable alternative. An **eval $COMMANDS** executes the contents of _COMMANDS_, which may contain such unpleasant surprises as **rm -rf ***. Running an **eval** on unfamiliar code written by persons unknown is living dangerously.
 
 **set**
 
@@ -1093,9 +1094,8 @@ The **set** command changes the value of internal script variables/options. One 
 
 **Example 15-16. Using _set_ with positional parameters**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ex34.sh
 # Script "set-test"
 
@@ -1129,15 +1129,15 @@ echo \#\#\#
 echo $_        # ###
 echo
 
-exit 0|
+exit 0
+```
 
 More fun with positional parameters.
 
 **Example 15-17. Reversing the positional parameters**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # revposparams.sh: Reverse positional parameters.
 # Script by Dan Jacobson, with stylistic revisions by document author.
 
@@ -1201,13 +1201,13 @@ $ ./revposparams.sh
 
 d e
 c
-a b|
+a b
+```
 
 Invoking **set** without any options or arguments simply lists all the [[othertypesv#^ENVREF|environmental]] and other variables that have been initialized.
 
-|   |
-|---|
-|bash$ **set**
+```bash
+bash$ set
 AUTHORCOPY=/home/bozo/posts
  BASH=/bin/bash
  BASH_VERSION=$'2.05.8(1)-release'
@@ -1215,15 +1215,16 @@ AUTHORCOPY=/home/bozo/posts
  XAUTHORITY=/home/bozo/.Xauthority
  _=/etc/bashrc
  variable22=abc
- variable23=xzy|
+ variable23=xzy
+	      
+```
 
 Using **set** with the -- option explicitly assigns the contents of a variable to the positional parameters. If no variable follows the -- it _unsets_ the positional parameters.
 
 **Example 15-18. Reassigning the positional parameters**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 variable="one two three four five"
 
@@ -1260,7 +1261,8 @@ second_param=$2
 echo "first parameter = $first_param"             # (null value)
 echo "second parameter = $second_param"           # (null value)
 
-exit 0|
+exit 0
+```
 
 See also [[loops#^EX22A|Example 11-2]] and [[extmisc#^EX33A|Example 16-56]].
 
@@ -1268,19 +1270,18 @@ See also [[loops#^EX22A|Example 11-2]] and [[extmisc#^EX33A|Example 16-56]].
 
 The **unset** command deletes a shell variable, effectively setting it to _null_. Note that this command does not affect positional parameters.
 
-|   |
-|---|
-|bash$ **unset PATH**
+```bash
+bash$ unset PATH
 
-bash$ **echo $PATH**
+bash$ echo $PATH
 
-bash$|
+bash$ 
+```
 
 **Example 15-19. "Unsetting" a variable**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # unset.sh: Unsetting a variable.
 
 variable=hello                       #  Initialized.
@@ -1296,25 +1297,23 @@ then
   echo "\$variable has zero length."
 fi
 
-exit 0|
+exit 0
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|In most contexts, an _undeclared_ variable and one that has been _unset_ are equivalent. However, the [[parameter-substitution#^UNDDR|${parameter:-default}]] parameter substitution construct can distinguish between the two.|
+> [!note]
+> In most contexts, an _undeclared_ variable and one that has been _unset_ are equivalent. However, the [[parameter-substitution#^UNDDR|${parameter:-default}]] parameter substitution construct can distinguish between the two.
 
 **export**
 
-The **export** [[files#^FILESREF1|^4] command makes available variables to all child processes of the running script or shell. One important use of the **export** command is in [startup files]], to initialize and make accessible [[othertypesv#^ENVREF|environmental variables]] to subsequent user processes.
+The **export** [^4] command makes available variables to all child processes of the running script or shell. One important use of the **export** command is in [[files#^FILESREF1|startup files]], to initialize and make accessible [[othertypesv#^ENVREF|environmental variables]] to subsequent user processes.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|Unfortunately, [[gotchas#^PARCHILDPROBREF|there is no way to export variables back to the parent process]], to the process that called or invoked the script or shell.|
+> [!caution]
+> Unfortunately, [[gotchas#^PARCHILDPROBREF|there is no way to export variables back to the parent process]], to the process that called or invoked the script or shell.
 
 **Example 15-20. Using _export_ to pass a variable to an embedded _awk_ script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 #  Yet another version of the "column totaler" script (col-totaler.sh)
 #+ that adds up a specified column (of numbers) in the target file.
@@ -1351,25 +1350,27 @@ awk "$awkscript" "$filename"
 
 # Thanks, Stephane Chazelas.
 
-exit 0|
+exit 0
+```
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|It is possible to initialize and export variables in the same operation, as in **export var1=xxx**.
+> [!tip]
+> It is possible to initialize and export variables in the same operation, as in **export var1=xxx**.
+>
+> However, as Greg Keraunen points out, in certain situations this may have a different effect than setting a variable, then exporting it.
+>
+> ```bash
+> bash$ export var=(a b); echo ${var[0]}
+> (a b)
+> 
+> 
+> 
+> bash$ var=(a b); export var; echo ${var[0]}
+> a
+> 	      
+> ```
 
-However, as Greg Keraunen points out, in certain situations this may have a different effect than setting a variable, then exporting it.
-
-\|   \|
-\|---\|
-\|bash$ **export var=(a b); echo ${var[0]}**
-(a b)
-
-bash$ **var=(a b); export var; echo ${var[0]}**
-a\||
-
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|A variable to be exported may require special treatment. See [[sample-bashrc#^BASHPROF|Example M-2]].|
+> [!note]
+> A variable to be exported may require special treatment. See [[sample-bashrc#^BASHPROF|Example M-2]].
 
 **declare**, **typeset**
 
@@ -1387,17 +1388,14 @@ The **getopts** construct uses two implicit variables. $OPTIND is the argument p
 
 A **getopts** construct usually comes packaged in a [[loops#^WHILELOOPREF|while loop]], which processes the options and arguments one at a time, then increments the implicit $OPTIND variable to point to the next.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|1. The arguments passed from the command-line to the script must be preceded by a dash (-). It is the prefixed - that lets **getopts** recognize command-line arguments as _options_. In fact, **getopts** will not process arguments without the prefixed -, and will terminate option processing at the first argument encountered lacking them.
-    
-2. The **getopts** template differs slightly from the standard [[loops#^WHILELOOPREF|while loop]], in that it lacks condition brackets.
-    
-3. The **getopts** construct is a highly functional replacement for the traditional [[extmisc#^GETOPTY|getopt]] external command.|
+> [!note]
+>
+> 1. The arguments passed from the command-line to the script must be preceded by a dash (-). It is the prefixed - that lets **getopts** recognize command-line arguments as _options_. In fact, **getopts** will not process arguments without the prefixed -, and will terminate option processing at the first argument encountered lacking them.
+> 2. The **getopts** template differs slightly from the standard [[loops#^WHILELOOPREF|while loop]], in that it lacks condition brackets.
+> 3. The **getopts** construct is a highly functional replacement for the traditional [[extmisc#^GETOPTY|getopt]] external command.
 
-|   |
-|---|
-|while getopts ":abcde:fg" Option
+```bash
+while getopts ":abcde:fg" Option
 # Initial declaration.
 # a, b, c, d, e, f, and g are the options (flags) expected.
 # The : after option 'e' shows it will have an argument passed with it.
@@ -1415,13 +1413,13 @@ done
 shift $(($OPTIND - 1))
 # Move argument pointer to next.
 
-# All this is not nearly as complicated as it looks <grin>.|
+# All this is not nearly as complicated as it looks <grin>.
+```
 
 **Example 15-21. Using _getopts_ to read the options/arguments passed to a script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ex33.sh: Exercising getopts and OPTIND
 #          Script modified 10/09/03 at the suggestion of Bill Gradwohl.
 
@@ -1460,13 +1458,13 @@ while getopts ":mnopq:rs" Option
 do
   case $Option in
     m     ) echo "Scenario #1: option -m-   [OPTIND=${OPTIND}]";;
-    n \| o ) echo "Scenario #2: option -$Option-   [OPTIND=${OPTIND}]";;
+    n | o ) echo "Scenario #2: option -$Option-   [OPTIND=${OPTIND}]";;
     p     ) echo "Scenario #3: option -p-   [OPTIND=${OPTIND}]";;
     q     ) echo "Scenario #4: option -q-\
                   with argument \"$OPTARG\"   [OPTIND=${OPTIND}]";;
     #  Note that option 'q' must have an associated argument,
     #+ otherwise it falls through to the default.
-    r \| s ) echo "Scenario #5: option -$Option-";;
+    r | s ) echo "Scenario #5: option -$Option-";;
     *     ) echo "Unimplemented option chosen.";;   # Default.
   esac
 done
@@ -1482,7 +1480,8 @@ exit $?
 #  "The getopts mechanism allows one to specify:  scriptname -mnop -mnop
 #+  but there is no reliable way to differentiate what came
 #+ from where by using OPTIND."
-#  There are, however, workarounds.|
+#  There are, however, workarounds.
+```
 
 **Script Behavior**
 
@@ -1492,9 +1491,8 @@ This command, when invoked from the command-line, executes a script. Within a sc
 
 **Example 15-22. "Including" a data file**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #  Note that this example must be invoked with bash, i.e., bash ex38.sh
 #+ not  sh ex38.sh !
 
@@ -1518,13 +1516,13 @@ echo "message2 (from data-file) is \"$message2\""
 print_message This is the message-print function in the data-file.
 
 
-exit $?|
+exit $?
+```
 
-File data-file for [[internal#^EX38|Example 15-22]], above. Must be present in same directory.
+File data-file for [[internal-commands-and-builtins#^EX38|Example 15-22]], above. Must be present in same directory.
 
-|   |
-|---|
-|# This is a data file loaded by a script.
+```bash
+# This is a data file loaded by a script.
 # Files of this type may contain variables, functions, etc.
 # It loads with a 'source' or '.' command from a shell script.
 
@@ -1558,23 +1556,23 @@ print_message ()
   echo
 
   return 0
-}|
+}
+```
 
 If the _sourced_ file is itself an executable script, then it will run, then return control to the script that called it. A _sourced_ executable script may use a [[complexfunct#^RETURNREF|return]] for this purpose.
 
 Arguments may be (optionally) passed to the _sourced_ file as [[othertypesv#^POSPARAMREF1|positional parameters]].
 
-|   |
-|---|
-|source $filename $arg1 arg2|
+```bash
+source $filename $arg1 arg2
+```
 
 It is even possible for a script to _source_ itself, though this does not seem to have any practical applications.
 
 **Example 15-23. A (useless) script that sources itself**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # self-source.sh: a script sourcing itself "recursively."
 # From "Stupid Script Tricks," Volume II.
 
@@ -1613,29 +1611,27 @@ exit 0   # The net effect is counting from 1 to 100.
 
 # Exercise:
 # --------
-# Write a script that uses this trick to actually do something useful.|
+# Write a script that uses this trick to actually do something useful.
+```
 
 **exit**
 
-Unconditionally terminates a script. [[exit-status#^EXITSTATUSREF|^6] The **exit** command may optionally take an integer argument, which is returned to the shell as the [exit status]] of the script. It is good practice to end all but the simplest scripts with an **exit 0**, indicating a successful run.
+Unconditionally terminates a script. [^6] The **exit** command may optionally take an integer argument, which is returned to the shell as the [[exit-status#^EXITSTATUSREF|exit status]] of the script. It is good practice to end all but the simplest scripts with an **exit 0**, indicating a successful run.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|If a script terminates with an **exit** lacking an argument, the exit status of the script is the exit status of the last command executed in the script, not counting the **exit**. This is equivalent to an **exit $?**.|
+> [!note]
+> If a script terminates with an **exit** lacking an argument, the exit status of the script is the exit status of the last command executed in the script, not counting the **exit**. This is equivalent to an **exit $?**.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|An **exit** command may also be used to terminate a [[subshells#^SUBSHELLSREF|subshell]].|
+> [!note]
+> An **exit** command may also be used to terminate a [[subshells#^SUBSHELLSREF|subshell]].
 
 **exec**
 
-This shell builtin replaces the current process with a specified command. Normally, when the shell encounters a command, it [[internal#^FORKREF|forks off]] a child process to actually execute the command. Using the **exec** builtin, the shell does not fork, and the command _exec_'ed replaces the shell. When used in a script, therefore, it forces an exit from the script when the **exec**'ed command terminates. [^7]
+This shell builtin replaces the current process with a specified command. Normally, when the shell encounters a command, it [[internal-commands-and-builtins#^FORKREF|forks off]] a child process to actually execute the command. Using the **exec** builtin, the shell does not fork, and the command _exec_'ed replaces the shell. When used in a script, therefore, it forces an exit from the script when the **exec**'ed command terminates. [^7]
 
 **Example 15-24. Effects of _exec_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 exec echo "Exiting \"$0\" at line $LINENO."   # Exit from script here.
 # $LINENO is an internal Bash variable set to the line number it's on.
@@ -1648,13 +1644,13 @@ echo "This echo fails to echo."
 exit 99                       #  This script will not exit here.
                               #  Check exit value after script terminates
                               #+ with an 'echo $?'.
-                              #  It will *not* be 99.|
+                              #  It will *not* be 99.
+```
 
 **Example 15-25. A script that _exec's_ itself**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # self-exec.sh
 
 # Note: Set permissions on this script to 555 or 755,
@@ -1676,35 +1672,34 @@ exec $0   #  Spawns another instance of this same script
 echo "This line will never echo!"  # Why not?
 
 exit 99                            # Will not exit here!
-       [reassign file descriptors](x17974.md#^USINGEXECREF)be 99!|
+                                   # Exit code will not be 99!
+```
 
 An **exec** also serves to [[x17974#^USINGEXECREF|reassign file descriptors]]. For example, **exec <zzz-file** replaces stdin with the file zzz-file.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|The -exec option to [[moreadv#^FINDREF|find]] is _not_ the same as the **exec** shell builtin.|
+> [!note]
+> The -exec option to [[complex-commands#^FINDREF|find]] is _not_ the same as the **exec** shell builtin.
 
 **shopt**
 
 This command permits changing _shell options_ on the fly (see [[Chapter 25. Aliases#^AL|Example 25-1]] and [[Chapter 25. Aliases#^UNAL|Example 25-2]]). It often appears in the Bash [[files#^FILESREF1|startup files]], but also has its uses in scripts. Needs [[bash-ver2#^BASH2REF|version 2]] or later of Bash.
 
-|   |
-|---|
-|shopt -s cdspell
+```bash
+shopt -s cdspell
 # Allows minor misspelling of directory names with 'cd'
 # Option -s sets, -u unsets.
 
 cd /hpme  # Oops! Mistyped '/home'.
 pwd       # /home
-          # The shell corrected the misspelling.|
+          # The shell corrected the misspelling.
+```
 
 **caller**
 
 Putting a **caller** command inside a [[functions#^FUNCTIONREF|function]] echoes to stdout information about the _caller_ of that function.
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 function1 ()
 {
@@ -1719,9 +1714,10 @@ function1    # Line 9 of script.
 #   ^^^^            Invoked from "main" part of script.
 #        ^^^^^^^    Name of calling script.
 
-caller 0     # Has no effect because it's not inside a function.|
+caller 0     # Has no effect because it's not inside a function.
+```
 
-A **caller** command can also return _caller_ information from a script [[internal#^SOURCEREF|sourced]] within another script. Analogous to a function, this is a "subroutine call."
+A **caller** command can also return _caller_ information from a script [[internal-commands-and-builtins#^SOURCEREF|sourced]] within another script. Analogous to a function, this is a "subroutine call."
 
 You may find this command useful in debugging.
 
@@ -1731,15 +1727,15 @@ You may find this command useful in debugging.
 
 A command that returns a successful (zero) [[exit-status#^EXITSTATUSREF|exit status]], but does nothing else.
 
-|   |
-|---|
-|bash$ **true**
-bash$ **echo $?**
-0|
+```bash
+bash$ true
+bash$ echo $?
+0
+	      
+```
 
-|   |
-|---|
-|# Endless loop
+```bash
+# Endless loop
 while true   # alias for ":"
 do
    operation-1
@@ -1747,21 +1743,22 @@ do
    ...
    operation-n
    # Need a way to break out of loop or script will hang.
-done|
+done
+```
 
 **false**
 
 A command that returns an unsuccessful [[exit-status#^EXITSTATUSREF|exit status]], but does nothing else.
 
-|   |
-|---|
-|bash$ **false**
-bash$ **echo $?**
-1|
+```bash
+bash$ false
+bash$ echo $?
+1
+	      
+```
 
-|   |
-|---|
-|# Testing "false" 
+```bash
+# Testing "false" 
 if false
 then
   echo "false evaluates \"true\""
@@ -1780,28 +1777,31 @@ do
    ...
    operation-n
    # Nothing happens!
-done|
+done   
+```
 
 **type [cmd]**
 
 Similar to the [[filearchiv#^WHICHREF|which]] external command, **type cmd** identifies "cmd." Unlike **which**, **type** is a Bash builtin. The useful -a option to **type** identifies _keywords_ and _builtins_, and also locates system commands with identical names.
 
-|   |
-|---|
-|bash$ **type '['**
+```bash
+bash$ type '['
 [ is a shell builtin
-bash$ **type -a '['**
+bash$ type -a '['
 [ is a shell builtin
  [ is /usr/bin/[
 
-bash$ **type type**
-type is a shell builtin|
+
+bash$ type type
+type is a shell builtin
+	      
+```
 
 The **type** command can be useful for [[special-characters#^DEVNULLREDIRECT|testing whether a certain command exists]].
 
 **hash [cmds]**
 
-Records the _path_ name of specified commands -- in the shell _hash table_ [[internal-variables#^PATHREF|^8] -- so the shell or script will not need to search the [$PATH]] on subsequent calls to those commands. When **hash** is called with no arguments, it simply lists the commands that have been hashed. The -r option resets the hash table.
+Records the _path_ name of specified commands -- in the shell _hash table_ [^8] -- so the shell or script will not need to search the [[internal-variables#^PATHREF|$PATH]] on subsequent calls to those commands. When **hash** is called with no arguments, it simply lists the commands that have been hashed. The -r option resets the hash table.
 
 **bind**
 
@@ -1811,24 +1811,32 @@ The **bind** builtin displays or modifies _readline_ [^9] key bindings.
 
 Gets a short usage summary of a shell builtin. This is the counterpart to [[filearchiv#^WHATISREF|whatis]], but for builtins. The display of _help_ information got a much-needed update in the [[bash-ver4#^BASH4REF|version 4 release]] of Bash.
 
-|   |
-|---|
-|bash$ **help exit**
+```bash
+bash$ help exit
 exit: exit [n]
     Exit the shell with a status of N.  If N is omitted, the exit status
-    is that of the last command executed.|
+    is that of the last command executed.
+	      
+```
 
 [^1]: As Nathan Coulter points out, "while forking a process is a low-cost operation, executing a new program in the newly-forked child process adds more overhead."
-[[timedate#^TIMREF|^2]: An exception to this is the [time]] command, listed in the official Bash documentation as a keyword ("reserved word").
-[[gotchas#^LETBAD|^3]: Note that _let_ [cannot be used for setting _string_ variables.]]
-[[subshells#^SCOPEREF|^4]: To _Export_ information is to make it available in a more general context. See also [scope]].
+
+[^2]: An exception to this is the [[timedate#^TIMREF|time]] command, listed in the official Bash documentation as a keyword ("reserved word").
+
+[^3]: Note that _let_ [[gotchas#^LETBAD|cannot be used for setting _string_ variables.]]
+
+[^4]: To _Export_ information is to make it available in a more general context. See also [[subshells#^SCOPEREF|scope]].
+
 [^5]: An _option_ is an argument that acts as a flag, switching script behaviors on or off. The argument associated with a particular option indicates the behavior that the option (flag) switches on or off.
-[^6]: Technically, an **exit** only terminates the proc[reassign file descriptors](20.1.%20Using%20_exec_.md#^USINGEXECREF)_parent process_.
-[[x17974#^USINGEXECREF|^7]: Unless the **exec** is used to [reassign file descriptors]].
-|[[internal#^AEN9591|[8]]]|_Hashing_ is a method of creating lookup keys for data stored in a table. The _data items themselves_ are "scrambled" to create keys, using one of a number of simple mathematical _algorithms_ (methods, or recipes).
 
-An advantage of _hashing_ is that it is fast. A disadvantage is that _collisions_ -- where a single key maps to more than one data item -- are possible.
+[^6]: Technically, an **exit** only terminates the process (or shell) in which it is running _not the parent process_.
 
-For examples of hashing see [[contributed-scripts#^HASHLIB|Example A-20]] and [[contributed-scripts#^HASHEXAMPLE|Example A-21]].|
+[^7]: Unless the **exec** is used to [[x17974#^USINGEXECREF|reassign file descriptors]].
+
+[^8]: _Hashing_ is a method of creating lookup keys for data stored in a table. The _data items themselves_ are "scrambled" to create keys, using one of a number of simple mathematical _algorithms_ (methods, or recipes).
+
+    An advantage of _hashing_ is that it is fast. A disadvantage is that _collisions_ -- where a single key maps to more than one data item -- are possible.
+
+    For examples of hashing see [[contributed-scripts#^HASHLIB|Example A-20]] and [[contributed-scripts#^HASHEXAMPLE|Example A-21]].
+
 [^9]: The _readline_ library is what Bash uses for reading input in an interactive shell.
-

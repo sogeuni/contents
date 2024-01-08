@@ -36,7 +36,7 @@ bash$ **ls -l {b*,c*,*est*}**
  -rw-rw-r--    1 bozo  bozo         0 Aug  6 18:42 c.1
  -rw-rw-r--    1 bozo  bozo       758 Jul 30 09:02 test1.txt|
 
-Bash performs filename expansion on unquoted command-line arguments. The [[internal#^ECHOREF|echo]] command demonstrates this.
+Bash performs filename expansion on unquoted command-line arguments. The [[internal-commands-and-builtins#^ECHOREF|echo]] command demonstrates this.
 
 |   |
 |---|
@@ -51,7 +51,7 @@ t2.sh|
 
 |   |   |
 |---|---|
-|![[../images/note.gif|Note]]|It is possible to modify the way Bash interprets special characters in globbing. A **set -f** command disables globbing, and the nocaseglob and nullglob options to [[internal#^SHOPTREF|shopt]] change globbing behavior.|
+|![[../images/note.gif|Note]]|It is possible to modify the way Bash interprets special characters in globbing. A **set -f** command disables globbing, and the nocaseglob and nullglob options to [[internal-commands-and-builtins#^SHOPTREF|shopt]] change globbing behavior.|
 
 See also [[loops#^LISTGLOB|Example 11-5]].
 

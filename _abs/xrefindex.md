@@ -110,9 +110,9 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 - [[special-characters#^SEMICOLONREF|As command separator]]
     
-- **\;** [[moreadv#^FINDREF0|_Escaped_ semicolon]], terminates a [[moreadv#^FINDREF|find]] command
+- **\;** [[complex-commands#^FINDREF0|_Escaped_ semicolon]], terminates a [[complex-commands#^FINDREF|find]] command
     
-- **;;** [[special-characters#^DOUBLESEMICOLON|Double-semicolon]], terminator in a [[testbranch#^CASEESAC1|case]] option
+- **;;** [[special-characters#^DOUBLESEMICOLON|Double-semicolon]], terminator in a [[testing-and-branching#^CASEESAC1|case]] option
     
     Required when ...
     
@@ -127,7 +127,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 - **:> filename** [[io-redirection#^IOREDIRECTIONREF|Truncate file]] to zero length
     
-- [[special-characters#^NULLREF|_null_ command]], equivalent to the [[internal#^TRUEREF|true]] Bash builtin
+- [[special-characters#^NULLREF|_null_ command]], equivalent to the [[internal-commands-and-builtins#^TRUEREF|true]] Bash builtin
     
 - Used in an [[here-docs#^ANONHEREDOC0|anonymous here document]]
     
@@ -150,11 +150,11 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 - In a [[special-characters#^CSTRINARY|_C_-style Trinary operator]]
     
 
-**//** [[internal#^DOUBLESLASHREF|Double forward slash]], behavior of [[internal#^CDREF|cd]] command toward
+**//** [[internal-commands-and-builtins#^DOUBLESLASHREF|Double forward slash]], behavior of [[internal-commands-and-builtins#^CDREF|cd]] command toward
 
 **.** (dot / period)
 
-- **.** [[special-characters#^DOTREF|Load a file]] (into a script), equivalent to [[internal#^SOURCEREF|source]] command
+- **.** [[special-characters#^DOTREF|Load a file]] (into a script), equivalent to [[internal-commands-and-builtins#^SOURCEREF|source]] command
     
 - **.** [[x17129#^REGEXDOT|Match single character]], in a [[regexp#^REGEXREF|Regular Expression]]
     
@@ -193,7 +193,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
     **<( ... )** [[Chapter 23. Process Substitution#^PROCESSSUBREF|Process substitution]]
     
-- **... )** [[testbranch#^CASEPAREN|Terminates test-condition]] in _case_ construct
+- **... )** [[testing-and-branching#^CASEPAREN|Terminates test-condition]] in _case_ construct
     
 - **(( ... ))** [[double-parentheses-construct#^DBLPARENSREF|Double parentheses]], in arithmetic expansion
     
@@ -217,7 +217,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 **$( ... )** [[varassignment#^COMMANDSUBREF0|Command substitution]], setting a variable with output of a command, using parentheses notation
 
-**` ... `** [[commandsub#^BACKQUOTESREF|Command substitution]], using [[special-characters#^BACKTICKSREF|backquotes]] notation
+**` ... `** [[command-substitution#^BACKQUOTESREF|Command substitution]], using [[special-characters#^BACKTICKSREF|backquotes]] notation
 
 **$[[special-characters#^BRACKETARITH| ... ]** [Integer expansion]] (deprecated)
 
@@ -290,7 +290,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
 - **\{ N \}** [[x17129#^ESCPCB|"Curly" brackets]], _escaped_, number of character sets to match in an [[x17129#^EXTREGEX|Extended RE]]
     
-- **\;** [[moreadv#^FINDREF0|_Semicolon_]], _escaped_, terminates a [[moreadv#^FINDREF|find]] command
+- **\;** [[complex-commands#^FINDREF0|_Semicolon_]], _escaped_, terminates a [[complex-commands#^FINDREF|find]] command
     
 - **\$$** [[ivr#^IVRREF|Indirect reverencing of a variable]], old-style notation
     
@@ -361,7 +361,7 @@ _Shell Variables_
 
 **$_** [[internal-variables#^UNDERSCOREREF|Last argument to previous command]]
 
-**$-** [[internal-variables#^FLPREF|Flags passed to script]], using [[internal#^SETREF|set]]
+**$-** [[internal-variables#^FLPREF|Flags passed to script]], using [[internal-commands-and-builtins#^SETREF|set]]
 
 **$!** [[internal-variables#^PIDVARREF|_Process ID_ of last background job]]
 
@@ -387,7 +387,7 @@ _Shell Variables_
 
 **-a** [[other-comparison-operators#^COMPOUNDAND|Logical AND]] compound comparison test
 
-Address database, [[testbranch#^EX30|script example]]
+Address database, [[testing-and-branching#^EX30|script example]]
 
 _Advanced Bash Scripting Guide_, [[mirrorsites#^WHERE_TARBALL|where to download]]
 
@@ -396,7 +396,7 @@ _Advanced Bash Scripting Guide_, [[mirrorsites#^WHERE_TARBALL|where to download]
 - [[Chapter 25. Aliases#^UNALIASREF|Removing an _alias_]], using _unalias_
     
 
-[[commandsub#^AGRAM2|Anagramming]]
+[[command-substitution#^AGRAM2|Anagramming]]
 
 [[list-cons#^LCONS1|_And_ list]]
 
@@ -416,11 +416,11 @@ _Advanced Bash Scripting Guide_, [[mirrorsites#^WHERE_TARBALL|where to download]
 - [[filearchiv#^TARREF|tar]]
     
 
-[[Chapter 13. Arithmetic Expansion#^ARITHEXPREF|Arithmetic expansion]]
+[[arithmetic-expansion#^ARITHEXPREF|Arithmetic expansion]]
 
 - [[test-constructs#^ARXS|_exit status_ of]]
     
-- [[Chapter 13. Arithmetic Expansion#^ARITHEXPVAR1|variations of]]
+- [[arithmetic-expansion#^ARITHEXPVAR1|variations of]]
     
 
 [[operators#^AROPS1|Arithmetic operators]]
@@ -491,7 +491,7 @@ _Advanced Bash Scripting Guide_, [[mirrorsites#^WHERE_TARBALL|where to download]
 - [[Chapter 27. Arrays#^ARRAYUNSET|_unset_ deletes array elements]]
     
 
-[[internal#^READARROW|Arrow keys]], detecting
+[[internal-commands-and-builtins#^READARROW|Arrow keys]], detecting
 
 ASCII
 
@@ -506,14 +506,14 @@ ASCII
     
 - [[manipulating-strings#^AWKSTRINGMANIP2|String manipulation]]
     
-- [[internal#^EXPORTAWK|Using _export_]] to pass a variable to an embedded _awk_ script
+- [[internal-commands-and-builtins#^EXPORTAWK|Using _export_]] to pass a variable to an embedded _awk_ script
     
 
 * * *
 
 Backlight, [[system#^BACKLIGHT|setting the brightness]]
 
-[[special-characters#^BACKTICKSREF|Backquotes]], used in [[commandsub#^BACKQUOTESREF|command substitution]]
+[[special-characters#^BACKTICKSREF|Backquotes]], used in [[command-substitution#^BACKQUOTESREF|command substitution]]
 
 [[mathc#^BASE0|Base conversion]], _example script_
 
@@ -606,13 +606,13 @@ Brackets, _curly_, **{}**, used in
 
 - [[special-characters#^CODEBLOCKREF|Code block]]
     
-- [[moreadv#^CURLYBRACKETSREF|_find_]]
+- [[complex-commands#^CURLYBRACKETSREF|_find_]]
     
 - [[x17129#^ESCPCB|_Extended Regular Expressions_]]
     
 - [[othertypesv#^BRACKETNOTATION|_Positional parameters_]]
     
-- [[moreadv#^XARGSCURLYREF|_xargs_]]
+- [[complex-commands#^XARGSCURLYREF|_xargs_]]
     
 
 [[loop-control#^BRKCONT1|break]] _loop_ control command
@@ -620,18 +620,18 @@ Brackets, _curly_, **{}**, used in
 - [[loop-control#^BREAKPARAM|Parameter]] (optional)
     
 
-[[internal#^BUILTINREF|Builtins]] in _Bash_
+[[internal-commands-and-builtins#^BUILTINREF|Builtins]] in _Bash_
 
-- [[internal#^BLTINFRK|Do not fork a subprocess]]
+- [[internal-commands-and-builtins#^BLTINFRK|Do not fork a subprocess]]
     
 
 * * *
 
-[[testbranch#^CASEESAC1|_case_ construct]]
+[[testing-and-branching#^CASEESAC1|_case_ construct]]
 
-- [[testbranch#^CASECL|Command-line parameters]], handling
+- [[testing-and-branching#^CASECL|Command-line parameters]], handling
     
-- [[testbranch#^CSGLOB|Globbing]], filtering strings with
+- [[testing-and-branching#^CSGLOB|Globbing]], filtering strings with
     
 
 [[basic-commands#^CATREF|cat]], con_cat_entate file(s)
@@ -642,7 +642,7 @@ Brackets, _curly_, **{}**, used in
     
 - [[basic-commands#^CATLESSEFF|Less efficient than redirecting stdin]]
     
-- [[internal#^READPIPEREF|Piping the output of]], to a [[internal#^READREF|read]]
+- [[internal-commands-and-builtins#^READPIPEREF|Piping the output of]], to a [[internal-commands-and-builtins#^READREF|read]]
     
 - [[basic-commands#^CATUSES|Uses of]]
     
@@ -656,7 +656,7 @@ Brackets, _curly_, **{}**, used in
 
 [[othertypesv#^CHILDREF|Child processes]]
 
-[[special-characters#^NULLREF|Colon]], **:** , equivalent to the [[internal#^TRUEREF|true]] Bash builtin
+[[special-characters#^NULLREF|Colon]], **:** , equivalent to the [[internal-commands-and-builtins#^TRUEREF|true]] Bash builtin
 
 [[colorizing#^COLORIZINGREF|Colorizing scripts]]
 
@@ -673,23 +673,23 @@ Brackets, _curly_, **{}**, used in
 
 [[bash-ver4#^CNFH|command_not_found_handle ()]] _builtin_ error-handling function ([[bash-ver4#^BASH4REF|version 4+]] of Bash)
 
-[[commandsub#^COMMANDSUBREF|Command substitution]]
+[[command-substitution#^COMMANDSUBREF|Command substitution]]
 
-- [[commandsub#^CSPARENS|**$( ... )**]], preferred notation
+- [[command-substitution#^CSPARENS|**$( ... )**]], preferred notation
     
-- [[commandsub#^BACKQUOTESREF|_Backquotes_]]
+- [[command-substitution#^BACKQUOTESREF|_Backquotes_]]
     
-- [[commandsub#^CSTOOLSET|Extending the _Bash_ toolset]]
+- [[command-substitution#^CSTOOLSET|Extending the _Bash_ toolset]]
     
-- [[commandsub#^CSSUBSH|Invokes a _subshell_]]
+- [[command-substitution#^CSSUBSH|Invokes a _subshell_]]
     
-- [[commandsub#^CSNEST|Nesting]]
+- [[command-substitution#^CSNEST|Nesting]]
     
-- [[commandsub#^CSTRNL|Removes trailing newlines]]
+- [[command-substitution#^CSTRNL|Removes trailing newlines]]
     
-- [[commandsub#^CSVL|Setting variable from loop output]]
+- [[command-substitution#^CSVL|Setting variable from loop output]]
     
-- [[commandsub#^CSWS|Word splitting]]
+- [[command-substitution#^CSWS|Word splitting]]
     
 
 [[assorted-tips#^COMMENTH|Comment headers]], special purpose
@@ -745,11 +745,11 @@ Commenting out blocks of code
 
 Curly brackets {}
 
-- [[moreadv#^CURLYBRACKETSREF|in _find_ command]]
+- [[complex-commands#^CURLYBRACKETSREF|in _find_ command]]
     
 - [[x17129#^ESCPCB|in an _Extended Regular Expression_]]
     
-- [[moreadv#^XARGSCURLYREF|in _xargs_]]
+- [[complex-commands#^XARGSCURLYREF|in _xargs_]]
     
 
 * * *
@@ -846,13 +846,13 @@ Curly brackets {}
 
 **-e** [[file-test-operators#^RTIF|File exists]] test
 
-[[internal#^ECHOREF|echo]]
+[[internal-commands-and-builtins#^ECHOREF|echo]]
 
-- [[internal#^ECHOGREPREF|Feeding commands down a _pipe_]]
+- [[internal-commands-and-builtins#^ECHOGREPREF|Feeding commands down a _pipe_]]
     
-- [[internal#^ECHOCS|Setting a variable]] using [[commandsub#^COMMANDSUBREF|command substitution]]
+- [[internal-commands-and-builtins#^ECHOCS|Setting a variable]] using [[command-substitution#^COMMANDSUBREF|command substitution]]
     
-- [[internal#^BINECHO|/bin/echo]], external _echo_ command
+- [[internal-commands-and-builtins#^BINECHO|/bin/echo]], external _echo_ command
     
 
 [[test-constructs#^ELIFREF1|elif]], Contraction of _else_ and [[tests#^IFTHEN|if]]
@@ -861,7 +861,7 @@ Curly brackets {}
 
 Encrypting files, using [[filearchiv#^OPENSSLREF|openssl]]
 
-[[testbranch#^CASEESAC1|esac]], keyword terminating _case_ construct
+[[testing-and-branching#^CASEESAC1|esac]], keyword terminating _case_ construct
 
 [[othertypesv#^ENVREF|_Environmental_ variables]]
 
@@ -882,19 +882,19 @@ Encrypting files, using [[filearchiv#^OPENSSLREF|openssl]]
 
 [[internal-variables#^EUIDREF|$EUID]], _Effective user ID_
 
-[[internal#^EVALREF|eval]], Combine and _evaluate_ expression(s), with variable expansion
+[[internal-commands-and-builtins#^EVALREF|eval]], Combine and _evaluate_ expression(s), with variable expansion
 
-- [[internal#^EVALEFF|Effects of]], _Example script_
+- [[internal-commands-and-builtins#^EVALEFF|Effects of]], _Example script_
     
-- [[internal#^EVALFORCED|Forces _reevaluation_]] of arguments
+- [[internal-commands-and-builtins#^EVALFORCED|Forces _reevaluation_]] of arguments
     
 - And [[ivr#^EVALINDREF|indirect references]]
     
-- [[internal#^EVALRISK|Risk of using]]
+- [[internal-commands-and-builtins#^EVALRISK|Risk of using]]
     
 - [[contributed-scripts#^SAMORSE|Using _eval_ to convert _array_ elements into a command list]]
     
-- [[internal#^ARRCHOICE0|Using _eval_ to select among variables]]
+- [[internal-commands-and-builtins#^ARRCHOICE0|Using _eval_ to select among variables]]
     
 
 [[test-constructs#^DBLBRAEV|Evaluation of _octal/hex_ constants within [[ ... ]]]]
@@ -924,14 +924,14 @@ Exit and Exit status
     [[exitcodes#^SYSEXITSREF|/usr/include/sysexits.h]], system file listing C/C++ standard exit codes
     
 
-[[internal#^EXPORTREF2|Export]], to make available variables to [[othertypesv#^CHILDREF|child processes]]
+[[internal-commands-and-builtins#^EXPORTREF2|Export]], to make available variables to [[othertypesv#^CHILDREF|child processes]]
 
-- [[internal#^EXPORTAWK|Passing a variable to an embedded _awk_ script]]
+- [[internal-commands-and-builtins#^EXPORTAWK|Passing a variable to an embedded _awk_ script]]
     
 
-[[moreadv#^EXPRREF|expr]], _Expression_ evaluator
+[[complex-commands#^EXPRREF|expr]], _Expression_ evaluator
 
-- [[moreadv#^EXPEXTRSUB|Substring extraction]]
+- [[complex-commands#^EXPEXTRSUB|Substring extraction]]
     
 - [[manipulating-strings#^SUBSTRINGINDEX2|Substring _index_ (numerical position in string)]]
     
@@ -956,7 +956,7 @@ Exit and Exit status
 - Application: [[mathc#^PRIMES2|Generating prime numbers]]
     
 
-[[internal#^FALSEREF|false]], returns _unsuccessful_ (1) [[exit-status#^EXITSTATUSREF|exit status]]
+[[internal-commands-and-builtins#^FALSEREF|false]], returns _unsuccessful_ (1) [[exit-status#^EXITSTATUSREF|exit status]]
 
 [[special-characters#^FIELDREF|Field]], a group of characters that comprises an item of data
 
@@ -979,11 +979,11 @@ Exit and Exit status
 
 [[filearchiv#^OPENSSLREF|File encryption]]
 
-[[moreadv#^FINDREF|find]]
+[[complex-commands#^FINDREF|find]]
 
-- **{}** [[moreadv#^CURLYBRACKETSREF|Curly brackets]]
+- **{}** [[complex-commands#^CURLYBRACKETSREF|Curly brackets]]
     
-- **\;** [[moreadv#^FINDREF0|_Escaped_ semicolon]]
+- **\;** [[complex-commands#^FINDREF0|_Escaped_ semicolon]]
     
 
 [[special-characters#^FILTERDEF|Filter]]
@@ -997,7 +997,7 @@ Exit and Exit status
 
 [[textproc#^FOLDREF|fold]], a filter to wrap lines of text
 
-[[internal#^FORKREF|Forking]] a _child_ process
+[[internal-commands-and-builtins#^FORKREF|Forking]] a _child_ process
 
 [[loops#^FORLOOPREF1|_for_ loops]]
 
@@ -1005,7 +1005,7 @@ Exit and Exit status
 
 - [[complexfunct#^PASSEDARGS|Arguments passed]] referred to by position
     
-- [[complexfunct#^CAPTURERETVAL|Capturing the return value]] of a function using [[internal#^ECHOREF|echo]]
+- [[complexfunct#^CAPTURERETVAL|Capturing the return value]] of a function using [[internal-commands-and-builtins#^ECHOREF|echo]]
     
 - [[special-characters#^COLONFNAME|_Colon_]] as function name
     
@@ -1046,7 +1046,7 @@ Games and amusements
 
 - [[assorted-tips#^AGRAM|Anagrams]]
     
-- [[commandsub#^AGRAM2|Anagrams]], again
+- [[command-substitution#^AGRAM2|Anagrams]], again
     
 - [[contributed-scripts#^BINGO|Bingo Number Generator]]
     
@@ -1094,9 +1094,9 @@ Games and amusements
 - [[manipulating-strings#^GETOPTSIMPLE1|Emulated in a script]]
     
 
-[[internal#^GETOPTSX|getopts]], Bash _builtin_ for parsing script _command-line_ arguments
+[[internal-commands-and-builtins#^GETOPTSX|getopts]], Bash _builtin_ for parsing script _command-line_ arguments
 
-- [[internal#^GETOPTSOPT|$OPTIND / $OPTARG]]
+- [[internal-commands-and-builtins#^GETOPTSOPT|$OPTIND / $OPTARG]]
     
 
 [[subshells#^SCOPEREF|Global]] variable
@@ -1126,14 +1126,14 @@ Games and amusements
 
 * * *
 
-[[internal#^HASHREF|Hashing]], creating lookup keys in a table
+[[internal-commands-and-builtins#^HASHREF|Hashing]], creating lookup keys in a table
 
 - [[contributed-scripts#^HASHEX2_0|_Example script_]]
     
 
 [[textproc#^HEADREF|head]], _echo_ to stdout lines at the beginning of a text file
 
-[[internal#^HELPREF|help]], gives usage summary of a Bash [[internal#^BUILTINREF|builtin]]
+[[internal-commands-and-builtins#^HELPREF|help]], gives usage summary of a Bash [[internal-commands-and-builtins#^BUILTINREF|builtin]]
 
 [[here-docs#^HEREDOCREF|_Here_ documents]]
 
@@ -1236,7 +1236,7 @@ Games and amusements
 
 * * *
 
-[[x9644#^JOBIDTABLE0|Job IDs]], table
+[[job-control-commands#^JOBIDTABLE0|Job IDs]], table
 
 [[extmisc#^JOTREF|jot]], Emit a sequence of integers. Equivalent to [[extmisc#^SEQREF|seq]].
 
@@ -1247,17 +1247,17 @@ Games and amusements
 
 * * *
 
-[[internal#^KEYWORDREF|Keywords]]
+[[internal-commands-and-builtins#^KEYWORDREF|Keywords]]
 
 - [[debugging#^MISSINGKEYWORD|error]], if missing
     
 
-[[x9644#^KILLREF|kill]], terminate a process by [[special-characters#^PROCESSIDDEF|process ID]]
+[[job-control-commands#^KILLREF|kill]], terminate a process by [[special-characters#^PROCESSIDDEF|process ID]]
 
-- [[x9644#^ZOMBIEREF|Options]] (-l, -9)
+- [[job-control-commands#^ZOMBIEREF|Options]] (-l, -9)
     
 
-[[x9644#^KILLALLREF|killall]], terminate a process _by name_
+[[job-control-commands#^KILLALLREF|killall]], terminate a process _by name_
 
 [[sysscripts#^KILLALL2REF|_killall script_]] in /etc/rc.d/init.d
 
@@ -1267,9 +1267,9 @@ Games and amusements
 
 [[other-comparison-operators#^LE0REF|-le]] , _less-than or equal_ [[other-comparison-operators#^ICOMPARISON1|integer comparison]] test
 
-[[internal#^LETREF|let]], setting and carrying out arithmetic operations on variables
+[[internal-commands-and-builtins#^LETREF|let]], setting and carrying out arithmetic operations on variables
 
-- _C-style_ [[internal#^EX46|increment and decrement operators]]
+- _C-style_ [[internal-commands-and-builtins#^EX46|increment and decrement operators]]
     
 
 [[here-docs#^LIMITSTRINGREF|Limit string]], in a [[here-docs#^HEREDOCREF|here document]]
@@ -1462,7 +1462,7 @@ Operator
 - [[operator-precedence#^OPPRECEDENCE1|Precedence]]
     
 
-[[options#^OPTIONSREF|Options]], passed to shell or script on command line or by [[internal#^SETREF|set]] command
+[[options#^OPTIONSREF|Options]], passed to shell or script on command line or by [[internal-commands-and-builtins#^SETREF|set]] command
 
 [[list-cons#^ORLISTREF|_Or_ list]]
 
@@ -1509,7 +1509,7 @@ Operator
 - [[refcards#^PARSUBTAB|**Table**]] of _parameter substitution_
     
 
-[[gotchas#^PARCHILDPROBREF|Parent / child process problem]], a _child_ process cannot [[internal#^EXPORTREF|export]] variables to a [[internal#^FORKREF|parent process]]
+[[gotchas#^PARCHILDPROBREF|Parent / child process problem]], a _child_ process cannot [[internal-commands-and-builtins#^EXPORTREF|export]] variables to a [[internal-commands-and-builtins#^FORKREF|parent process]]
 
 Parentheses
 
@@ -1564,7 +1564,7 @@ Parentheses
 
 - [[gotchas#^DASHNREDR|**-** (dash) is _not_ redirection operator]]
     
-- [[internal#^DOUBLESLASHREF|**//** (double forward slash)]], behavior of [[internal#^CDREF|cd]] command toward
+- [[internal-commands-and-builtins#^DOUBLESLASHREF|**//** (double forward slash)]], behavior of [[internal-commands-and-builtins#^CDREF|cd]] command toward
     
 - [[gotchas#^BINSH|#!/bin/sh]] script header disables [[portabilityissues#^BASHCOMPAT|extended _Bash_ features]]
     
@@ -1578,7 +1578,7 @@ Parentheses
     
 - [[quoting-variables#^QUOTINGBSL|_Double-quoting_ the _backslash_ (**\**) character]]
     
-- [[internal#^EVALRISK|eval]], risk of using
+- [[internal-commands-and-builtins#^EVALRISK|eval]], risk of using
     
 - [[gotchas#^EXECPERM|Execute permission lacking]] for commands within a script
     
@@ -1686,7 +1686,7 @@ Prime numbers
 - Sieve of Eratosthenes, [[Chapter 27. Arrays#^PRIMES0|example script]]
     
 
-[[internal#^PRINTFREF|printf]], _formatted print_ command
+[[internal-commands-and-builtins#^PRINTFREF|printf]], _formatted print_ command
 
 [[procref1#^PROCREF2|/proc]] directory
 
@@ -1699,7 +1699,7 @@ Prime numbers
 
 - [[othertypesv#^CHILDREF2|Child process]]
     
-- [[internal#^PARENTREF|Parent process]]
+- [[internal-commands-and-builtins#^PARENTREF|Parent process]]
     
 - [[special-characters#^PROCESSIDDEF|Process ID]] (PID)
     
@@ -1776,28 +1776,28 @@ Raspberry Pi (single-board computer)
 
 [[assorted-tips#^RCSREF|rcs]]
 
-[[internal#^READREF|read]], set value of a variable from [[ioredirintro#^STDINOUTDEF|stdin]]
+[[internal-commands-and-builtins#^READREF|read]], set value of a variable from [[ioredirintro#^STDINOUTDEF|stdin]]
 
-- [[internal#^READARROW|Detecting _arrow_ keys]]
+- [[internal-commands-and-builtins#^READARROW|Detecting _arrow_ keys]]
     
-- [[internal#^READOPTIONS|Options]]
+- [[internal-commands-and-builtins#^READOPTIONS|Options]]
     
-- [[internal#^READPIPEREF|Piping output of _cat_]] to _read_
+- [[internal-commands-and-builtins#^READPIPEREF|Piping output of _cat_]] to _read_
     
 - [[x17837#^HSREAD|"Prepending" text]]
     
 - [[gotchas#^BADREAD0|Problems piping _echo_]] to _read_
     
-- [[internal#^READREDIR0|Redirection from a file]] to _read_
+- [[internal-commands-and-builtins#^READREDIR0|Redirection from a file]] to _read_
     
 - [[internal-variables#^REPLYREF|$REPLY]], default _read_ variable
     
-- [[internal#^READTIMED|Timed input]]
+- [[internal-commands-and-builtins#^READTIMED|Timed input]]
     
 - [[loops#^WHILEREADREF2|_while read_]] construct
     
 
-[[internal#^READLINEREF|readline]] library
+[[internal-commands-and-builtins#^READLINEREF|readline]] library
 
 [[localvar#^RECURSIONREF|Recursion]]
 
@@ -1828,7 +1828,7 @@ Redirection
     
     <>filename
     
-- [[internal#^READREDIR0|_read_ input redirected]] from a file
+- [[internal-commands-and-builtins#^READREDIR0|_read_ input redirected]] from a file
     
 - [[io-redirection#^IOREDIRECTIONREF1|stderr to stdout]]
     
@@ -1903,7 +1903,7 @@ Redirection
     **[[x17129#^POSIXREF|: :]** [POSIX character classes]]
     
 
-[[internal-variables#^REPLYREF|$REPLY]], Default value associated with [[internal#^READREF|read]] command
+[[internal-variables#^REPLYREF|$REPLY]], Default value associated with [[internal-commands-and-builtins#^READREF|read]] command
 
 [[restricted-sh#^RESTRICTEDSHREF|Restricted shell]], shell (or script) with certain commands disabled
 
@@ -1944,9 +1944,9 @@ Redirection
 - [[C.1. Sed#^SEDOPTABLE|**Table**]], examples of operators
     
 
-[[testbranch#^SELECTREF|select]], construct for menu building
+[[testing-and-branching#^SELECTREF|select]], construct for menu building
 
-- [[testbranch#^INLISTOMIT|**in _list_** omitted]]
+- [[testing-and-branching#^INLISTOMIT|**in _list_** omitted]]
     
 
 [[system#^SEMAPHOREREF|Semaphore]]
@@ -1958,7 +1958,7 @@ Redirection
 
 [[extmisc#^SEQREF|seq]], Emit a sequence of integers. Equivalent to [[extmisc#^JOTREF|jot]].
 
-[[internal#^SETREF|set]], Change value of internal script variables
+[[internal-commands-and-builtins#^SETREF|set]], Change value of internal script variables
 
 - [[debugging#^UNDVARERR|set -u]], Abort script with error message if attempting to use an _undeclared_ variable.
     
@@ -1971,7 +1971,7 @@ Redirection
 
 [[internal-variables#^SHLVLREF|$SHLVL]], _shell level_, depth to which the shell (or script) is nested
 
-[[internal#^SHOPTREF|shopt]], change _shell options_
+[[internal-commands-and-builtins#^SHOPTREF|shopt]], change _shell options_
 
 [[debugging#^SIGNALD|Signal]], a message sent to a process
 
@@ -2001,9 +2001,9 @@ Sorting
 - [[contributed-scripts#^INSERTIONSORT0|Insertion sort]]
     
 
-[[internal#^SOURCEREF|source]], execute a script or, within a script, import a file
+[[internal-commands-and-builtins#^SOURCEREF|source]], execute a script or, within a script, import a file
 
-- [[internal#^SOURCEPARAMS|Passing positional parameters]]
+- [[internal-commands-and-builtins#^SOURCEPARAMS|Passing positional parameters]]
     
 
 _Spam_, dealing with
@@ -2066,11 +2066,11 @@ Strings
     
     [[manipulating-strings#^SUBSTREXTR02|${string:position:length}]]
     
-    [[moreadv#^EXPEXTRSUB|Using _expr_]]
+    [[complex-commands#^EXPEXTRSUB|Using _expr_]]
     
 - [[manipulating-strings#^SUBSTRINGINDEX2|Substring _index_]] (numerical position in string)
     
-- [[manipulating-strings#^EXPRPAREN|Substring _matching_]], using [[moreadv#^EXPRREF|expr]]
+- [[manipulating-strings#^EXPRPAREN|Substring _matching_]], using [[complex-commands#^EXPRREF|expr]]
     
 - [[parameter-substitution#^PSOREX1|Substring _removal_]]
     
@@ -2224,7 +2224,7 @@ Test operators
 
 Timed input
 
-- [[internal#^READTIMED|Using _read -t_]]
+- [[internal-commands-and-builtins#^READTIMED|Using _read -t_]]
     
 - [[internal-variables#^STTYTO|Using _stty_]]
     
@@ -2299,7 +2299,7 @@ Timed input
     
 - [[assorted-tips#^INTPARAM|Testing a variable]] to see if it contains only digits
     
-- [[special-characters#^DEVNULLREDIRECT|Testing whether a command exists]], using [[internal#^TYPEREF|type]]
+- [[special-characters#^DEVNULLREDIRECT|Testing whether a command exists]], using [[internal-commands-and-builtins#^TYPEREF|type]]
     
 - [[assorted-tips#^TRACKINGSCR|Tracking script usage]]
     
@@ -2310,7 +2310,7 @@ Timed input
 
 [[internal-variables#^TMOUTREF|$TMOUT]], Timeout interval
 
-[[test-constructs#^TOKENREF|Token]], a symbol that may expand to a [[internal#^KEYWORDREF|keyword]] or command
+[[test-constructs#^TOKENREF|Token]], a symbol that may expand to a [[internal-commands-and-builtins#^KEYWORDREF|keyword]] or command
 
 [[terminalccmds#^TPUTREF|tput]], terminal-control command
 
@@ -2331,10 +2331,10 @@ _Trinary (ternary)_ operator, _C_-style, **var>10?88:99**
 
 - [[special-characters#^CSTRINARY|in _double-parentheses_ construct]]
     
-- [[internal#^EX46|in _let_ construct]]
+- [[internal-commands-and-builtins#^EX46|in _let_ construct]]
     
 
-[[internal#^TRUEREF|true]], returns _successful_ (0) [[exit-status#^EXITSTATUSREF|exit status]]
+[[internal-commands-and-builtins#^TRUEREF|true]], returns _successful_ (0) [[exit-status#^EXITSTATUSREF|exit status]]
 
 [[typing-variables#^DECLARE1REF|typeset]] builtin
 
@@ -2358,7 +2358,7 @@ _Trinary (ternary)_ operator, _C_-style, **var>10?88:99**
 
 [[textproc#^UNIQREF|uniq]], filter to remove duplicate lines from a sorted file
 
-[[internal#^UNSETREF|unset]], delete a shell variable
+[[internal-commands-and-builtins#^UNSETREF|unset]], delete a shell variable
 
 [[loops#^UNTILLOOPREF|until]] loop
 
@@ -2384,11 +2384,11 @@ _Variables_
     
 - _C-style_ [[double-parentheses-construct#^PLUSPLUSREF|increment/decrement/trinary operations]]
     
-- [[internal#^SETREF|Change value of internal script variables]] using _set_
+- [[internal-commands-and-builtins#^SETREF|Change value of internal script variables]] using _set_
     
 - [[typing-variables#^DECLARE1REF|declare]], to modify the properties of variables
     
-- [[internal#^UNSETREF|Deleting a shell variable]] using _unset_
+- [[internal-commands-and-builtins#^UNSETREF|Deleting a shell variable]] using _unset_
     
 - [[othertypesv#^ENVREF|Environmental]]
     
@@ -2442,16 +2442,16 @@ _Variables_
     
 - [[quoting-variables#^VARSPLITTING|Unquoted variable]], _splitting_
     
-- [[internal#^UNSETREF|Unsetting]]
+- [[internal-commands-and-builtins#^UNSETREF|Unsetting]]
     
 - [[untyped#^BVUNTYPED|Untyped]]
     
 
 * * *
 
-[[x9644#^WAITREF|wait]], suspend script execution
+[[job-control-commands#^WAITREF|wait]], suspend script execution
 
-- [[x9644#^WAITHANG|To remedy script hang]]
+- [[job-control-commands#^WAITHANG|To remedy script hang]]
     
 
 [[varsubn#^DBLQUO|_Weak_ quoting]] **" ... "**
@@ -2514,24 +2514,24 @@ Word splitting
 
 - [[quoting-variables#^WSPLITREF|Definition]]
     
-- [[commandsub#^CSWS|Resulting from _command substitution_]]
+- [[command-substitution#^CSWS|Resulting from _command substitution_]]
     
 
 [[shell-wrapper#^SHWRAPPER|Wrapper]], shell
 
 * * *
 
-[[moreadv#^XARGSREF|xargs]], Filter for grouping arguments
+[[complex-commands#^XARGSREF|xargs]], Filter for grouping arguments
 
-- [[moreadv#^XARGSCURLYREF|Curly brackets]]
+- [[complex-commands#^XARGSCURLYREF|Curly brackets]]
     
-- [[moreadv#^XARGSLIMARGS|Limiting arguments passed]]
+- [[complex-commands#^XARGSLIMARGS|Limiting arguments passed]]
     
-- [[moreadv#^XARGSLIMARGS|Options]]
+- [[complex-commands#^XARGSLIMARGS|Options]]
     
-- Processes arguments [[moreadv#^XARGSONEATATIME|one at a time]]
+- Processes arguments [[complex-commands#^XARGSONEATATIME|one at a time]]
     
-- [[moreadv#^XARGSWS|Whitespace]], handling
+- [[complex-commands#^XARGSWS|Whitespace]], handling
     
 
 * * *
@@ -2545,6 +2545,6 @@ Word splitting
 
 **-z** [[other-comparison-operators#^STRINGNULL|String is _null_]]
 
-[[x9644#^ZOMBIEREF|_Zombie_]], a process that has terminated, but not yet been [[x9644#^KILLREF|killed]] by its [[internal#^PARENTREF|parent]]
+[[job-control-commands#^ZOMBIEREF|_Zombie_]], a process that has terminated, but not yet been [[job-control-commands#^KILLREF|killed]] by its [[internal-commands-and-builtins#^PARENTREF|parent]]
 
 |ASCII Table|||

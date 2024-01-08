@@ -1,10 +1,6 @@
-|Advanced Bash-Scripting Guide:|   |   |
-|:-:|:-:|:-:|
-|[Prev](basic.html)|Chapter 16. External Filters, Programs and Commands|[Next](timedate.html)|
-
 ---
-
-# 16.2. Complex Commands
+title: 16.2. Complex Commands
+---
 
 **Commands for more advanced users**
 
@@ -12,25 +8,25 @@
 
 -exec _COMMAND_ \;
 
-Carries out _COMMAND_ on each file that **find** matches. The command sequence terminates with ; (the ";" is [escaped](escapingsection.html#ESCP) to make certain the shell passes it to **find** literally, without interpreting it as a special character).
+Carries out _COMMAND_ on each file that **find** matches. The command sequence terminates with ; (the ";" is [[escapingsection#^ESCP|escaped]] to make certain the shell passes it to **find** literally, without interpreting it as a special character).
 
-|   |
-|---|
-|bash$ **find ~/ -name '*.txt'**
+```bash
+bash$ find ~/ -name '*.txt'
 /home/bozo/.kde/share/apps/karm/karmdata.txt
  /home/bozo/misc/irmeyc.txt
- /home/bozo/test-scripts/1.txt|
+ /home/bozo/test-scripts/1.txt
+	      
+```
 
 If _COMMAND_ contains {}, then **find** substitutes the full path name of the selected file for "{}".
 
-|   |
-|---|
-|find ~/ -name 'core*' -exec rm {} \;
-# Removes all core dump files from user's home directory.|
+```bash
+find ~/ -name 'core*' -exec rm {} \;
+# Removes all core dump files from user's home directory.
+```
 
-|   |
-|---|
-|find /home/bozo/projects -mtime -1
+```bash
+find /home/bozo/projects -mtime -1
 #                               ^   Note minus sign!
 #  Lists all files in /home/bozo/projects directory tree
 #+ that were modified within the last day (current_day - 1).
@@ -55,42 +51,41 @@ find "$DIR" -type f -atime +5 -exec rm {} \;
 #  d = directory
 #  l = symbolic link, etc.
 #
-#  (The 'find' manpage and info page have complete option listings.)|
+#  (The 'find' manpage and info page have complete option listings.)
+```
 
-|   |
-|---|
-|find /etc -exec grep '[0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*' {} \;
+```bash
+find /etc -exec grep '[0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*[.][0-9][0-9]*' {} \;
 
 # Finds all IP addresses (xxx.xxx.xxx.xxx) in /etc directory files.
 # There a few extraneous hits. Can they be filtered out?
 
 # Possibly by:
 
-find /etc -type f -exec cat '{}' \; \| tr -c '.[:digit:]' '\n' \
-\| grep '^[^.][^.]*\.[^.][^.]*\.[^.][^.]*\.[^.][^.]*$'
+find /etc -type f -exec cat '{}' \; | tr -c '.[:digit:]' '\n' \
+| grep '^[^.][^.]*\.[^.][^.]*\.[^.][^.]*\.[^.][^.]*$'
 #
 #  [:digit:] is one of the character classes
 #+ introduced with the POSIX 1003.2 standard. 
 
-# Thanks, St�phane Chazelas.|
+# Thanks, Stéphane Chazelas. 
+```
 
-|   |   |
-|---|---|
-|![Note](../images/note.gif)|The -exec option to **find** should not be confused with the [exec](internal.html#EXECREF) shell builtin.|
+> [!note]
+> The -exec option to **find** should not be confused with the [[internal#^EXECREF|exec]] shell builtin.
 
-**Example 16-3. _Badname_, eliminate file names in current directory containing bad characters and [whitespace](special-chars.html#WHITESPACEREF).**
+**Example 16-3. _Badname_, eliminate file names in current directory containing bad characters and [[special-chars#^WHITESPACEREF|whitespace]].**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # badname.sh
 # Delete filenames in current directory containing bad characters.
 
 for filename in *
 do
-  badname=`echo "$filename" \| sed -n /[\+\{\;\"\\\=\?~\(\)\<\>\&\*\\|\$]/p`
-# badname=`echo "$filename" \| sed -n '/[+{;"\=?~()<>&*\|$]/p'`  also works.
-# Deletes files containing these nasties:     + { ; " \ = ? ~ ( ) < > & * \| $
+  badname=`echo "$filename" | sed -n /[\+\{\;\"\\\=\?~\(\)\<\>\&\*\|\$]/p`
+# badname=`echo "$filename" | sed -n '/[+{;"\=?~()<>&*|$]/p'`  also works.
+# Deletes files containing these nasties:     + { ; " \ = ? ~ ( ) < > & * | $
 #
   rm $badname 2>/dev/null
 #             ^^^^^^^^^^^ Error messages deep-sixed.
@@ -107,18 +102,18 @@ exit 0
 # Commands below this line will not execute because of _exit_ command.
 
 # An alternative to the above script:
-find . -name '*[+{;"\\=?~()<>&*\|$ ]*' -maxdepth 0 \
+find . -name '*[+{;"\\=?~()<>&*|$ ]*' -maxdepth 0 \
 -exec rm -f '{}' \;
 #  The "-maxdepth 0" option ensures that _find_ will not search
 #+ subdirectories below $PWD.
 
-# (Thanks, S.C.)|
+# (Thanks, S.C.)
+```
 
 **Example 16-4. Deleting a file by its _inode_ number**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # idelete.sh: Deleting a file by its inode number.
 
 #  This is useful when a filename starts with an illegal character,
@@ -141,7 +136,7 @@ then
   exit $E_FILE_NOT_EXIST
 fi  
 
-inum=`ls -i \| grep "$1" \| awk '{print $1}'`
+inum=`ls -i | grep "$1" | awk '{print $1}'`
 # inum = inode (index node) number of file
 # -----------------------------------------------------------------------
 # Every file has an inode, a record that holds its physical address info.
@@ -163,13 +158,13 @@ find . -inum $inum -exec rm {} \;
 #+       for text output by "find."
 echo "File "\"$1"\" deleted!"
 
-exit 0|
+exit 0
+```
 
 The **find** command also works without the -exec option.
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #  Find suid root files.
 #  A strange suid file might indicate a security hole,
 #+ or even a system intrusion.
@@ -182,96 +177,97 @@ permissions="+4000"  # suid root (dangerous!)
 for file in $( find "$directory" -perm "$permissions" )
 do
   ls -ltF --author "$file"
-done|
+done
+```
 
-See [Example 16-30](filearchiv.html#EX48), [Example 3-4](special-chars.html#EX58), and [Example 11-10](loops1.html#FINDSTRING) for scripts using **find**. Its [manpage](basic.html#MANREF) provides more detail on this complex and powerful command.
+See [[filearchiv#^EX48|Example 16-30]], [[special-chars#^EX58|Example 3-4]], and [[loops1#^FINDSTRING|Example 11-10]] for scripts using **find**. Its [[basic#^MANREF|manpage]] provides more detail on this complex and powerful command.
 
 **xargs**
 
-A filter for feeding arguments to a command, and also a tool for assembling the commands themselves. It breaks a data stream into small enough chunks for filters and commands to process. Consider it as a powerful replacement for [backquotes](commandsub.html#BACKQUOTESREF). In situations where [command substitution](commandsub.html#COMMANDSUBREF) fails with a too many arguments error, substituting **xargs** often works. [[1]](#FTN.AEN10465) Normally, **xargs** reads from stdin or from a pipe, but it can also be given the output of a file.
+A filter for feeding arguments to a command, and also a tool for assembling the commands themselves. It breaks a data stream into small enough chunks for filters and commands to process. Consider it as a powerful replacement for [[commandsub#^BACKQUOTESREF|backquotes]]. In situations where [[commandsub#^COMMANDSUBREF|command substitution]] fails with a too many arguments error, substituting **xargs** often works. [^1] Normally, **xargs** reads from stdin or from a pipe, but it can also be given the output of a file.
 
-The default command for **xargs** is [echo](internal.html#ECHOREF). This means that input piped to **xargs** may have linefeeds and other whitespace characters stripped out.
+The default command for **xargs** is [[internal#^ECHOREF|echo]]. This means that input piped to **xargs** may have linefeeds and other whitespace characters stripped out.
 
-|   |
-|---|
-|bash$ **ls -l**
+```bash
+bash$ ls -l
 total 0
  -rw-rw-r--    1 bozo  bozo         0 Jan 29 23:58 file1
  -rw-rw-r--    1 bozo  bozo         0 Jan 29 23:58 file2
 
-bash$ **ls -l \| xargs**
+
+
+bash$ ls -l | xargs
 total 0 -rw-rw-r-- 1 bozo bozo 0 Jan 29 23:58 file1 -rw-rw-r-- 1 bozo bozo 0 Jan...
 
-bash$ **find ~/mail -type f \| xargs grep "Linux"**
+
+
+bash$ find ~/mail -type f | xargs grep "Linux"
 ./misc:User-Agent: slrn/0.9.8.1 (Linux)
  ./sent-mail-jul-2005: hosted by the Linux Documentation Project.
  ./sent-mail-jul-2005: (Linux Documentation Project Site, rtf version)
  ./sent-mail-jul-2005: Subject: Criticism of Bozo's Windows/Linux article
  ./sent-mail-jul-2005: while mentioning that the Linux ext2/ext3 filesystem
- . . .|
+ . . .
+	      
+```
 
-**ls | xargs -p -l gzip** [gzips](filearchiv.html#GZIPREF) every file in current directory, one at a time, prompting before each operation.
+**ls | xargs -p -l gzip** [[filearchiv#^GZIPREF|gzips]] every file in current directory, one at a time, prompting before each operation.
 
-|   |   |
-|---|---|
-|![Note](../images/note.gif)|Note that _xargs_ processes the arguments passed to it sequentially, _one at a time_.
+> [!note]
+> Note that _xargs_ processes the arguments passed to it sequentially, _one at a time_.
+>
+> ```bash
+> bash$ find /usr/bin | xargs file
+> /usr/bin:          directory
+>  /usr/bin/foomatic-ppd-options:          perl script text executable
+>  . . .
+> 	      
+> ```
 
-\|   \|
-\|---\|
-\|bash$ **find /usr/bin \\| xargs file**
-/usr/bin:          directory
- /usr/bin/foomatic-ppd-options:          perl script text executable
- . . .\||
+> [!tip] An interesting _xargs_ option is -n _NN_, which limits to _NN_ the number of arguments passed.
+>
+> **ls \| xargs -n 8 echo** lists the files in the current directory in 8 columns.
 
-|   |   |
-|---|---|
-|![Tip](../images/tip.gif)|An interesting _xargs_ option is -n _NN_, which limits to _NN_ the number of arguments passed.
+> [!tip]
+> Another useful option is -0, in combination with **find -print0** or **grep -lZ**. This allows handling arguments containing whitespace or quotes.
+>
+> **find / -type f -print0 \| xargs -0 grep -liwZ GUI \| xargs -0 rm -f**
+>
+> **grep -rliwZ GUI / \| xargs -0 rm -f**
+>
+> Either of the above will remove any file containing "GUI". _(Thanks, S.C.)_
+>
+> Or:
+>
+> ```bash
+> cat /proc/"$pid"/"$OPTION" | xargs -0 echo
+> #  Formats output:         ^^^^^^^^^^^^^^^
+> #  From Han Holl's fixup of "get-commandline.sh"
+> #+ script in "/dev and /proc" chapter.
+> ```
 
-**ls \| xargs -n 8 echo** lists the files in the current directory in 8 columns.|
-
-|   |   |
-|---|---|
-|![Tip](../images/tip.gif)|Another useful option is -0, in combination with **find -print0** or **grep -lZ**. This allows handling arguments containing whitespace or quotes.
-
-**find / -type f -print0 \| xargs -0 grep -liwZ GUI \| xargs -0 rm -f**
-
-**grep -rliwZ GUI / \| xargs -0 rm -f**
-
-Either of the above will remove any file containing "GUI". _(Thanks, S.C.)_
-
-Or:
-
-\|   \|
-\|---\|
-\|cat /proc/"$pid"/"$OPTION" \\| xargs -0 echo
-#  Formats output:         ^^^^^^^^^^^^^^^
-#  From Han Holl's fixup of "get-commandline.sh"
-#+ script in "/dev and /proc" chapter.\||
-
-|   |   |
-|---|---|
-|![Tip](../images/tip.gif)|The -P option to _xargs_ permits running processes in parallel. This speeds up execution in a machine with a multicore CPU.
-
-\|   \|
-\|---\|
-\|#!/bin/bash
-
-ls *gif \\| xargs -t -n1 -P2 gif2png
-# Converts all the gif images in current directory to png.
-
-# Options:
-# =======
-# -t    Print command to stderr.
-# -n1   At most 1 argument per command line.
-# -P2   Run up to 2 processes simultaneously.
-
-# Thank you, Roberto Polli, for the inspiration.\||
+> [!tip]
+> The -P option to _xargs_ permits running processes in parallel. This speeds up execution in a machine with a multicore CPU.
+>
+> ```bash
+> #!/bin/bash
+> 
+> ls *gif | xargs -t -n1 -P2 gif2png
+> # Converts all the gif images in current directory to png.
+> 
+> # Options:
+> # =======
+> # -t    Print command to stderr.
+> # -n1   At most 1 argument per command line.
+> # -P2   Run up to 2 processes simultaneously.
+> 
+> # Thank you, Roberto Polli, for the inspiration.
+> ```
 
 **Example 16-5. Logfile: Using _xargs_ to monitor system log**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # Generates a log file in current directory
 # from the tail end of /var/log/messages.
@@ -285,7 +281,7 @@ LINES=5
 ( date; uname -a ) >>logfile
 # Time and machine name
 echo ---------------------------------------------------------- >>logfile
-tail -n $LINES /var/log/messages \| xargs \| fmt -s >>logfile
+tail -n $LINES /var/log/messages | xargs | fmt -s >>logfile
 echo >>logfile
 echo >>logfile
 
@@ -298,7 +294,7 @@ exit 0
 #+ may give xargs indigestion.
 #
 #  He suggests the following substitution for line 15:
-#  tail -n $LINES /var/log/messages \| tr -d "\"'" \| xargs \| fmt -s >>logfile
+#  tail -n $LINES /var/log/messages | tr -d "\"'" | xargs | fmt -s >>logfile
 
 
 
@@ -306,15 +302,15 @@ exit 0
 #  --------
 #  Modify this script to track changes in /var/log/messages at intervals
 #+ of 20 minutes.
-#  Hint: Use the "watch" command.|
+#  Hint: Use the "watch" command. 
+```
 
-[As in **find**](moreadv.html#CURLYBRACKETSREF), a curly bracket pair serves as a placeholder for replacement text.
+[[moreadv#^CURLYBRACKETSREF|As in **find**]], a curly bracket pair serves as a placeholder for replacement text.
 
 **Example 16-6. Copying files in current directory to another**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # copydir.sh
 
 #  Copy (verbose) all files in current directory ($PWD)
@@ -328,7 +324,7 @@ then
   exit $E_NOARGS
 fi  
 
-ls . \| xargs -i -t cp ./{} $1
+ls . | xargs -i -t cp ./{} $1
 #            ^^ ^^      ^^
 #  -t is "verbose" (output command-line to stderr) option.
 #  -i is "replace strings" option.
@@ -343,13 +339,13 @@ ls . \| xargs -i -t cp ./{} $1
 #+   cp * $1
 #+ unless any of the filenames has embedded "whitespace" characters.
 
-exit 0|
+exit 0
+```
 
 **Example 16-7. Killing processes by name**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # kill-byname.sh: Killing processes by name.
 # Compare this script with kill-process.sh.
 
@@ -373,7 +369,7 @@ fi
 
 
 PROCESS_NAME="$1"
-ps ax \| grep "$PROCESS_NAME" \| awk '{print $1}' \| xargs -i kill {} 2&>/dev/null
+ps ax | grep "$PROCESS_NAME" | awk '{print $1}' | xargs -i kill {} 2&>/dev/null
 #                                                       ^^      ^^
 
 # ---------------------------------------------------------------
@@ -388,13 +384,13 @@ ps ax \| grep "$PROCESS_NAME" \| awk '{print $1}' \| xargs -i kill {} 2&>/dev/nu
 exit $?
 
 #  The "killall" command has the same effect as this script,
-#+ but using it is not quite as educational.|
+#+ but using it is not quite as educational.
+```
 
 **Example 16-8. Word frequency analysis using _xargs_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # wf2.sh: Crude word frequency analysis on a text file.
 
 # Uses 'xargs' to decompose lines of text into single words.
@@ -422,15 +418,15 @@ fi
 
 
 #####################################################
-cat "$1" \| xargs -n1 \| \
+cat "$1" | xargs -n1 | \
 #  List the file, one word per line. 
-tr A-Z a-z \| \
+tr A-Z a-z | \
 #  Shift characters to lowercase.
 sed -e 's/\.//g'  -e 's/\,//g' -e 's/ /\
-/g' \| \
+/g' | \
 #  Filter out periods and commas, and
 #+ change space between words to linefeed,
-sort \| uniq -c \| sort -nr
+sort | uniq -c | sort -nr
 #  Finally remove duplicates, prefix occurrence count
 #+ and sort numerically.
 #####################################################
@@ -438,7 +434,8 @@ sort \| uniq -c \| sort -nr
 #  This does the same job as the "wf.sh" example,
 #+ but a bit more ponderously, and it runs more slowly (why?).
 
-exit $?|
+exit $?
+```
 
 **expr**
 
@@ -466,7 +463,7 @@ The multiplication operator must be escaped when used in an arithmetic expressio
 
 **y=`expr $y + 1`**
 
-Increment a variable, with the same effect as **let y=y+1** and **y=$(($y+1))**. This is an example of [[Chapter 13. Arithmetic Expansion#^ARITHEXPREF|arithmetic expansion]].
+Increment a variable, with the same effect as **let y=y+1** and **y=$(($y+1))**. This is an example of [[arithmetic-expansion#^ARITHEXPREF|arithmetic expansion]].
 
 **z=`expr substr $string $position $length`**
 
@@ -474,9 +471,8 @@ Extract substring of $length characters, starting at $position.
 
 **Example 16-9. Using _expr_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # Demonstrating some of the uses of 'expr'
 # =======================================
@@ -579,71 +575,71 @@ echo "The digits at the beginning of \"$a\" are \"$b\"."
 
 echo
 
-exit 0|
+exit 0
+```
 
-|   |   |
-|---|---|
-|![Important](../images/important.gif)|The [: (_null_)](special-chars.html#NULLREF) operator can substitute for **match**. For example, **b=`expr $a : [0-9]*`** is the exact equivalent of **b=`expr match $a [0-9]*`** in the above listing.
+> [!important]
+> The [[special-chars#^NULLREF|: (_null_)]] operator can substitute for **match**. For example, **b=`expr $a : [0-9]*`** is the exact equivalent of **b=`expr match $a [0-9]*`** in the above listing.
+>
+> ```bash
+> #!/bin/bash
+> 
+> echo
+> echo "String operations using \"expr \$string : \" construct"
+> echo "==================================================="
+> echo
+> 
+> a=1234zipper5FLIPPER43231
+> 
+> echo "The string being operated upon is \"`expr "$a" : '\(.*\)'`\"."
+> #     Escaped parentheses grouping operator.            ==  ==
+> 
+> #       ***************************
+> #+          Escaped parentheses
+> #+           match a substring
+> #       ***************************
+> 
+> 
+> #  If no escaped parentheses ...
+> #+ then 'expr' converts the string operand to an integer.
+> 
+> echo "Length of \"$a\" is `expr "$a" : '.*'`."   # Length of string
+> 
+> echo "Number of digits at the beginning of \"$a\" is `expr "$a" : '[0-9]*'`."
+> 
+> # ------------------------------------------------------------------------- #
+> 
+> echo
+> 
+> echo "The digits at the beginning of \"$a\" are `expr "$a" : '\([0-9]*\)'`."
+> #                                                             ==      ==
+> echo "The first 7 characters of \"$a\" are `expr "$a" : '\(.......\)'`."
+> #         =====                                          ==       ==
+> # Again, escaped parentheses force a substring match.
+> #
+> echo "The last 7 characters of \"$a\" are `expr "$a" : '.*\(.......\)'`."
+> #         ====                  end of string operator  ^^
+> #  (In fact, means skip over one or more of any characters until specified
+> #+  substring found.)
+> 
+> echo
+> 
+> exit 0
+> ```
 
-\|   \|
-\|---\|
-\|#!/bin/bash
+The above script illustrates how **expr** uses the _escaped parentheses -- \( ... \) --_ grouping operator in tandem with [[regexp#^REGEXREF|regular expression]] parsing to match a substring. Here is a another example, this time from "real life."
 
-echo
-echo "String operations using \"expr \$string : \" construct"
-echo "==================================================="
-echo
-
-a=1234zipper5FLIPPER43231
-
-echo "The string being operated upon is \"`expr "$a" : '\(.*\)'`\"."
-#     Escaped parentheses grouping operator.            ==  ==
-
-#       ***************************
-#+          Escaped parentheses
-#+           match a substring
-#       ***************************
-
-
-#  If no escaped parentheses ...
-#+ then 'expr' converts the string operand to an integer.
-
-echo "Length of \"$a\" is `expr "$a" : '.*'`."   # Length of string
-
-echo "Number of digits at the beginning of \"$a\" is `expr "$a" : '[0-9]*'`."
-
-# ------------------------------------------------------------------------- #
-
-echo
-
-echo "The digits at the beginning of \"$a\" are `expr "$a" : '\([0-9]*\)'`."
-#                                                             ==      ==
-echo "The first 7 characters of \"$a\" are `expr "$a" : '\(.......\)'`."
-#         =====                                          ==       ==
-# Again, escaped parentheses force a substring match.
-#
-echo "The last 7 characters of \"$a\" are `expr "$a" : '.*\(.......\)'`."
-#         ====                  end of string operator  ^^
-#  (In fact, means skip over one or more of any characters until specified
-#+  substring found.)
-
-echo
-
-exit 0\||
-
-The above script illustrates how **expr** uses the _escaped parentheses -- \( ... \) --_ grouping operator in tandem with [regular expression](regexp.html#REGEXREF) parsing to match a substring. Here is a another example, this time from "real life."
-
-|   |
-|---|
-|# Strip the whitespace from the beginning and end.
+```bash
+# Strip the whitespace from the beginning and end.
 LRFDATE=`expr "$LRFDATE" : '[[:space:]]*\(.*\)[[:space:]]*$'`
 
 #  From Peter Knowles' "booklistgen.sh" script
 #+ for converting files to Sony Librie/PRS-50X format.
-#  (http://booklistgensh.peterknowles.com)|
+#  (http://booklistgensh.peterknowles.com)
+```
 
-[Perl](wrapper.html#PERLREF), [sed](sedawk.html#SEDREF), and [awk](awk.html#AWKREF) have far superior string parsing facilities. A short **sed** or **awk** "subroutine" within a script (see [Section 36.2](wrapper.html)) is an attractive alternative to **expr**.
+[[wrapper#^PERLREF|Perl]], [[sedawk#^SEDREF|sed]], and [[awk#^AWKREF|awk]] have far superior string parsing facilities. A short **sed** or **awk** "subroutine" within a script (see [[wrapper|Section 36.2]]) is an attractive alternative to **expr**.
 
-See [Section 10.1](string-manipulation.html) for more on using **expr** in string operations.
+See [[string-manipulation|Section 10.1]] for more on using **expr** in string operations.
 
-[^1]: And even when _xargs_ is not strictly necessary, it can speed up execution of a command involving [batch-processing](timedate.html#BATCHPROCREF) of multiple files.
+[^1]: And even when _xargs_ is not strictly necessary, it can speed up execution of a command involving [[timedate#^BATCHPROCREF|batch-processing]] of multiple files.

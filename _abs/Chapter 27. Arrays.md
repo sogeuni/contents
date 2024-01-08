@@ -333,7 +333,7 @@ exit 0
 #  Bash is more powerful than you think!
 ```
 
-[[commandsub#^COMMANDSUBREF|Command substitution]] can construct the individual elements of an array.
+[[command-substitution#^COMMANDSUBREF|Command substitution]] can construct the individual elements of an array.
 
 **Example 27-5. Loading the contents of a script into an array**
 
@@ -369,7 +369,7 @@ exit 0
 #+ complete with whitespace, line breaks, etc.
 ```
 
-In an array context, some Bash [[internal#^BUILTINREF|builtins]] have a slightly altered meaning. For example, [[internal#^UNSETREF|unset]] deletes array elements, or even an entire array.
+In an array context, some Bash [[internal-commands-and-builtins#^BUILTINREF|builtins]] have a slightly altered meaning. For example, [[internal-commands-and-builtins#^UNSETREF|unset]] deletes array elements, or even an entire array.
 
 **Example 27-6. Some special properties of arrays**
 
@@ -635,7 +635,7 @@ array[${#array[*]}]="new element"
 ```
 
 > [!tip]
-> The **array=( element1 element2 ... elementN )** initialization operation, with the help of [[commandsub#^COMMANDSUBREF|command substitution]], makes it possible to load the contents of a text file into an array.
+> The **array=( element1 element2 ... elementN )** initialization operation, with the help of [[command-substitution#^COMMANDSUBREF|command substitution]], makes it possible to load the contents of a text file into an array.
 >
 > ```
 > #!/bin/bash
@@ -1709,7 +1709,7 @@ For an even more elaborate example of simulating a two-dimensional array, see [[
 
 For more interesting scripts using arrays, see:
 
-- [[commandsub#^AGRAM2|Example 12-3]]
+- [[command-substitution#^AGRAM2|Example 12-3]]
 - [[mathc#^PRIMES2|Example 16-46]]
 - [[contributed-scripts#^HASHEX2|Example A-22]]
 - [[contributed-scripts#^HOMEWORK|Example A-44]]

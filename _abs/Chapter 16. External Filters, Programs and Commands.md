@@ -2,7 +2,7 @@
 
 16.1. [[basic-commands|Basic Commands]]
 
-16.2. [[moreadv|Complex Commands]]
+16.2. [[complex-commands|Complex Commands]]
 
 16.3. [[timedate|Time / Date Commands]]
 

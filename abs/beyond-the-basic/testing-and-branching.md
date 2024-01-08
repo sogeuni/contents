@@ -1,4 +1,6 @@
-# 11.4. Testing and Branching
+---
+title: 11.4. Testing and Branching
+---
 
 The **case** and **select** constructs are technically not loops, since they do not iterate the execution of a code block. Like loops, however, they direct program flow according to conditions at the top or bottom of the block.
 
@@ -8,36 +10,30 @@ The **case** and **select** constructs are technically not loops, since they do 
 
 The **case** construct is the shell scripting analog to _switch_ in **C/C++**. It permits branching to one of a number of code blocks, depending on condition tests. It serves as a kind of shorthand for multiple if/then/else statements and is an appropriate tool for creating menus.
 
-**case** "$_variable_" in  
-  
-�"$_condition1_" )  
-�_command_...  
-�;;  
-  
-�"$_condition2_" )  
-�_command_...  
-�;;  
+case "$variable" in
+
+ "$condition1" )
+ command...
+ ;;
+
+ "$condition2" )
+ command...
+ ;;
   
   
 **esac**
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|- Quoting the variables is not mandatory, since word splitting does not take place.
-    
-- Each test line ends with a right paren **)**. [^1]
-    
-- Each condition block ends with a _double_ semicolon ;;.
-    
-- If a condition tests _true_, then the associated commands execute and the **case** block terminates.
-    
-- The entire **case** block ends with an **esac** (_case_ spelled backwards).|
+> [!note]
+> - Quoting the variables is not mandatory, since word splitting does not take place.
+> - Each test line ends with a right paren **)**. [^1]
+> - Each condition block ends with a _double_ semicolon ;;.
+> - If a condition tests _true_, then the associated commands execute and the **case** block terminates.
+> - The entire **case** block ends with an **esac** (_case_ spelled backwards).|
 
 **Example 11-25. Using _case_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Testing ranges of characters.
 
 echo; echo "Hit a key, then hit return."
@@ -65,13 +61,13 @@ esac      #  Allows ranges of characters in [square brackets],
 #+ reports on each keystroke, and terminates only when "X" is hit.
 #  Hint: enclose everything in a "while" loop.
 
-exit 0|
+exit 0
+```
 
 **Example 11-26. Creating menus using _case_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # Crude address database
 
@@ -92,7 +88,7 @@ read person
 case "$person" in
 # Note variable is quoted.
 
-  "E" \| "e" )
+  "E" | "e" )
   # Accept upper or lowercase input.
   echo
   echo "Roland Evans"
@@ -105,7 +101,7 @@ case "$person" in
   ;;
 # Note double semicolon to terminate each option.
 
-  "J" \| "j" )
+  "J" | "j" )
   echo
   echo "Mildred Jones"
   echo "249 E. 7th St., Apt. 19"
@@ -135,13 +131,13 @@ echo
 #  Change the script so it accepts multiple inputs,
 #+ instead of terminating after displaying just one address.
 
-exit 0|
+exit 0
+```
 
 An exceptionally clever use of **case** involves testing for command-line parameters.
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 
 case "$1" in
   "") echo "Usage: ${0##*/} <filename>"; exit $E_PARAM;;
@@ -157,22 +153,22 @@ case "$1" in
                       #+ as an option.
 
   * ) FILENAME=$1;;     # Otherwise, $1.
-esac|
+esac
+```
 
 Here is a more straightforward example of command-line parameter handling:
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 
 
 while [ $# -gt 0 ]; do    # Until you run out of parameters . . .
   case "$1" in
-    -d\|--debug)
+    -d|--debug)
               # "-d" or "--debug" parameter?
               DEBUG=1
               ;;
-    -c\|--conf)
+    -c|--conf)
               CONFFILE="$2"
               shift
               if [ ! -f $CONFFILE ]; then
@@ -186,13 +182,13 @@ done
 
 #  From Stefano Falsetto's "Log2Rot" script,
 #+ part of his "rottlog" package.
-#  Used with permission.|
+#  Used with permission.
+```
 
 **Example 11-27. Using _command substitution_ to generate the _case_ variable**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # case-cmd.sh: Using command substitution to generate a "case" variable.
 
 case $( arch ) in   # $( arch ) returns machine architecture.
@@ -204,15 +200,16 @@ case $( arch ) in   # $( arch ) returns machine architecture.
   *    ) echo "Other type of machine";;
 esac
 
-exit 0|
+exit 0
+```
 
 A **case** construct can filter strings for [[globbingref.html|globbing]] patterns.
 
 **Example 11-28. Simple string matching**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+
+#!/bin/bash
 # match-string.sh: Simple string matching
 #                  using a 'case' construct.
 
@@ -223,7 +220,7 @@ match_string ()
   PARAMS=2     # Function requires 2 arguments.
   E_BAD_PARAMS=91
 
-  [ $# -eq $PARAMS ] \| return $E_BAD_PARAMS
+  [ $# -eq $PARAMS ] || return $E_BAD_PARAMS
 
   case "$1" in
   "$2") return $MATCH;;
@@ -249,13 +246,13 @@ match_string $b $d  # match
 echo $?             # 0
 
 
-exit 0|
+exit 0		    
+```
 
 **Example 11-29. Checking for alphabetic input**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # isalpha.sh: Using a "case" structure to filter a string.
 
 SUCCESS=0
@@ -278,20 +275,20 @@ esac
 
 isalpha2 ()   # Tests whether *entire string* is alphabetic.
 {
-  [ $# -eq 1 ] \| return $FAILURE
+  [ $# -eq 1 ] || return $FAILURE
 
   case $1 in
-  *[!a-zA-Z]*\|"") return $FAILURE;;
+  *[!a-zA-Z]*|"") return $FAILURE;;
                *) return $SUCCESS;;
   esac
 }
 
 isdigit ()    # Tests whether *entire string* is numerical.
 {             # In other words, tests for integer variable.
-  [ $# -eq 1 ] \| return $FAILURE
+  [ $# -eq 1 ] || return $FAILURE
 
   case $1 in
-    *[!0-9]*\|"") return $FAILURE;;
+    *[!0-9]*|"") return $FAILURE;;
               *) return $SUCCESS;;
   esac
 }
@@ -360,25 +357,25 @@ exit 0        # Script improved by S.C.
 # --------
 #  Write an 'isfloat ()' function that tests for floating point numbers.
 #  Hint: The function duplicates 'isdigit ()',
-#+ but adds a test for a mandatory decimal point.|
+#+ but adds a test for a mandatory decimal point.
+```
 
 **select**
 
 The **select** construct, adopted from the Korn Shell, is yet another tool for building menus.
 
-**select** _variable_ [in _list_]  
-do  
-�_command_...  
-�break  
+select variable [in list]
+do
+ command...
+ break
 done
 
 This prompts the user to enter one of the choices presented in the variable list. Note that **select** uses the $PS3 prompt (#? ) by default, but this may be changed.
 
 **Example 11-30. Creating menus using _select_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 PS3='Choose your favorite vegetable: ' # Sets the prompt string.
                                        # Otherwise it defaults to #? .
@@ -401,7 +398,8 @@ exit
 #  Fix this script to accept user input not specified in
 #+ the "select" statement.
 #  For example, if the user inputs "peas,"
-#+ the script would respond "Sorry. That is not on the menu."|
+#+ the script would respond "Sorry. That is not on the menu."
+```
 
 If **in _list_** is omitted, then **select** uses the list of command line arguments ($@) passed to the script or the function containing the **select** construct.
 
@@ -413,9 +411,8 @@ construct with the **in _list_** omitted.
 
 **Example 11-31. Creating menus using _select_ in a function**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 PS3='Choose your favorite vegetable: '
 
@@ -438,20 +435,20 @@ choice_of beans rice carrots radishes rutabaga spinach
 #         $1    $2   $3      $4       $5       $6
 #         passed to choice_of() function
 
-exit 0|
+exit 0
+```
 
 See also [[bash-ver2#^RESISTOR|Example 37-3]].
 
-|[[testbranch#^AEN7087|[1]]]|Pattern-match lines may also _start_ with a **(** left paren to give the layout a more structured appearance.
+[^1]: Pattern-match lines may also _start_ with a **(** left paren to give the layout a more structured appearance.
 
-\|   \|
-\|---\|
-\|case $( arch ) in   # $( arch ) returns machine architecture.
-  ( i386 ) echo "80386-based machine";;
-# ^      ^
-  ( i486 ) echo "80486-based machine";;
-  ( i586 ) echo "Pentium-based machine";;
-  ( i686 ) echo "Pentium2+-based machine";;
-  (    * ) echo "Other type of machine";;
-esac\||
-
+    ```bash
+    case $( arch ) in   # $( arch ) returns machine architecture.
+      ( i386 ) echo "80386-based machine";;
+    # ^      ^
+      ( i486 ) echo "80486-based machine";;
+      ( i586 ) echo "Pentium-based machine";;
+      ( i686 ) echo "Pentium2+-based machine";;
+      (    * ) echo "Other type of machine";;
+    esac
+    ```

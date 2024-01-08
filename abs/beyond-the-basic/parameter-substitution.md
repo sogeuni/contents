@@ -251,7 +251,7 @@ exit 0  # Will exit here only if command-line parameter present.
 # If not, then "$?" is 1.
 ```
 
-**Parameter substitution and/or expansion.** The following expressions are the complement to the **match** _in_ **expr** string operations (see [[moreadv#^EX45|Example 16-9]]). These particular ones are used mostly in parsing file path names.
+**Parameter substitution and/or expansion.** The following expressions are the complement to the **match** _in_ **expr** string operations (see [[complex-commands#^EX45|Example 16-9]]). These particular ones are used mostly in parsing file path names.
 
 **Variable length / Substring removal**
 

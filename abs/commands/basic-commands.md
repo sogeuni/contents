@@ -1,14 +1,15 @@
-# 16.1. Basic Commands
+---
+title: 16.1. Basic Commands
+---
 
 **The first commands a novice learns**
 
 **ls**
 
-The basic file "list" command. It is all too easy to underestimate the power of this humble command. For example, using the -R, recursive option, **ls** provides a tree-like listing of a directory structure. Other useful options are -S, sort listing by file size, -t, sort by file modification time, -v, sort by (numerical) version numbers embedded in the filenames, [^1] -b, show escape characters, and -i, show file inodes (see [[moreadv#^IDELETE|Example 16-4]]).
+The basic file "list" command. It is all too easy to underestimate the power of this humble command. For example, using the -R, recursive option, **ls** provides a tree-like listing of a directory structure. Other useful options are -S, sort listing by file size, -t, sort by file modification time, -v, sort by (numerical) version numbers embedded in the filenames, [^1] -b, show escape characters, and -i, show file inodes (see [[complex-commands#^IDELETE|Example 16-4]]).
 
-|   |
-|---|
-|bash$ **ls -l**
+```bash
+bash$ ls -l
 -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:44 chapter10.txt
  -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:44 chapter11.txt
  -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:44 chapter12.txt
@@ -18,7 +19,8 @@ The basic file "list" command. It is all too easy to underestimate the power of 
  -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:49 Chapter_headings.txt
  -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:49 Preface.txt
 
-bash$ **ls -lv**
+
+bash$ ls -lv
  total 0
  -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:49 Chapter_headings.txt
  -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:49 Preface.txt
@@ -27,25 +29,25 @@ bash$ **ls -lv**
  -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:44 chapter3.txt
  -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:44 chapter10.txt
  -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:44 chapter11.txt
- -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:44 chapter12.txt|
+ -rw-rw-r-- 1 bozo bozo 0 Sep 14 18:44 chapter12.txt
+```
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|The _ls_ command returns a non-zero [[exit-status#^EXITSTATUSREF|exit status]] when attempting to list a non-existent file.
-
-\|   \|
-\|---\|
-\|bash$ **ls abc**
-ls: abc: No such file or directory
-
-bash$ **echo $?**
-2\||
+> [!tip]
+> The _ls_ command returns a non-zero [[exit-status#^EXITSTATUSREF|exit status]] when attempting to list a non-existent file.
+>
+> ```bash
+> bash$ ls abc
+> ls: abc: No such file or directory
+> 
+> 
+> bash$ echo $?
+> 2
+> ```
 
 **Example 16-1. Using _ls_ to create a table of contents for burning a CDR disk**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ex40.sh (burn-cd.sh)
 # Script to automate burning a CDR.
 
@@ -94,33 +96,33 @@ wodim -v -isosize dev=$DEVICE $IMAGEFILE
 exitcode=$?
 echo "Exit code = $exitcode"
 
-exit $exitcode|
+exit $exitcode
+```
 
 **cat**, **tac**
 
 **cat**, an acronym for _concatenate_, lists a file to stdout. When combined with redirection (> or >>), it is commonly used to concatenate files.
 
-|   |
-|---|
-|# Uses of 'cat'
+```bash
+# Uses of 'cat'
 cat filename                          # Lists the file.
 
-cat file.1 file.2 file.3 > file.123   # Combines three files into one.|
+cat file.1 file.2 file.3 > file.123   # Combines three files into one.
+```
 
 The -n option to **cat** inserts consecutive numbers before all lines of the target file(s). The -b option numbers only the non-blank lines. The -v option echoes nonprintable characters, using ^ notation. The -s option squeezes multiple consecutive blank lines into a single blank line.
 
 See also [[textproc#^LNUM|Example 16-28]] and [[textproc#^ROT13|Example 16-24]].
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|In a [[special-characters#^PIPEREF|pipe]], it may be more efficient to [[io-redirection#^IOREDIRREF|redirect]] the stdin to a file, rather than to **cat** the file.
-
-\|   \|
-\|---\|
-\|cat filename \\| tr a-z A-Z
-
-tr a-z A-Z < filename   #  Same effect, but starts one less process,
-                        #+ and also dispenses with the pipe.\||
+> [!note]
+> In a [[special-characters#^PIPEREF|pipe]], it may be more efficient to [[io-redirection#^IOREDIRREF|redirect]] the stdin to a file, rather than to **cat** the file.
+>
+> ```bash
+> cat filename | tr a-z A-Z
+> 
+> tr a-z A-Z < filename   #  Same effect, but starts one less process,
+>                         #+ and also dispenses with the pipe.
+> ```
 
 **tac**, is the inverse of _cat_, listing a file backwards from its end.
 
@@ -128,81 +130,81 @@ tr a-z A-Z < filename   #  Same effect, but starts one less process,
 
 reverses each line of a file, and outputs to stdout. This does not have the same effect as **tac**, as it preserves the order of the lines, but flips each one around (mirror image).
 
-|   |
-|---|
-|bash$ **cat file1.txt**
+```bash
+bash$ cat file1.txt
 This is line 1.
  This is line 2.
 
-bash$ **tac file1.txt**
+
+bash$ tac file1.txt
 This is line 2.
  This is line 1.
 
-bash$ **rev file1.txt**
+
+bash$ rev file1.txt
 .1 enil si sihT
- .2 enil si sihT|
+ .2 enil si sihT
+	      
+```
 
 **cp**
 
-This is the file copy command. **cp file1 file2** copies file1 to file2, overwriting file2 if it already exists (see [[moreadv#^EX42|Example 16-6]]).
+This is the file copy command. **cp file1 file2** copies file1 to file2, overwriting file2 if it already exists (see [[complex-commands#^EX42|Example 16-6]]).
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|Particularly useful are the -a archive flag (for copying an entire directory tree), the -u update flag (which prevents overwriting identically-named newer files), and the -r and -R recursive flags.
-
-\|   \|
-\|---\|
-\|cp -u source_dir/* dest_dir
-#  "Synchronize" dest_dir to source_dir
-#+  by copying over all newer and not previously existing files.\||
+> [!tip]
+> Particularly useful are the -a archive flag (for copying an entire directory tree), the -u update flag (which prevents overwriting identically-named newer files), and the -r and -R recursive flags.
+>
+> ```bash
+> cp -u source_dir/* dest_dir
+> #  "Synchronize" dest_dir to source_dir
+> #+  by copying over all newer and not previously existing files.
+> ```
 
 **mv**
 
 This is the file _move_ command. It is equivalent to a combination of **cp** and **rm**. It may be used to move multiple files to a directory, or even to rename a directory. For some examples of using **mv** in a script, see [[parameter-substitution#^RFE|Example 10-11]] and [[contributed-scripts#^RN|Example A-2]].
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|When used in a non-interactive script, **mv** takes the -f (_force_) option to bypass user input.
-
-When a directory is moved to a preexisting directory, it becomes a subdirectory of the destination directory.
-
-\|   \|
-\|---\|
-\|bash$ **mv source_directory target_directory**
-
-bash$ **ls -lF target_directory**
-total 1
- drwxrwxr-x    2 bozo  bozo      1024 May 28 19:20 source_directory/\||
+> [!note]
+> When used in a non-interactive script, **mv** takes the -f (_force_) option to bypass user input.
+>
+> When a directory is moved to a preexisting directory, it becomes a subdirectory of the destination directory.
+>
+> ```bash
+> bash$ mv source_directory target_directory
+> 
+> bash$ ls -lF target_directory
+> total 1
+>  drwxrwxr-x    2 bozo  bozo      1024 May 28 19:20 source_directory/
+> 	      
+> ```
 
 **rm**
 
 Delete (remove) a file or files. The -f option forces removal of even readonly files, and is useful for bypassing user input in a script.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|The _rm_ command will, by itself, fail to remove filenames beginning with a dash. Why? Because _rm_ sees a dash-prefixed filename as an _option_.
+> [!note]
+> The _rm_ command will, by itself, fail to remove filenames beginning with a dash. Why? Because _rm_ sees a dash-prefixed filename as an _option_.
+>
+> ```bash
+> bash$ rm -badname
+> rm: invalid option -- b
+>  Try `rm --help' for more information.
+> ```
+>
+> One clever workaround is to precede the filename with a " -- " (the _end-of-options_ flag).
+>
+> ```bash
+> bash$ rm -- -badname
+> ```
+>
+> Another method to is to preface the filename to be removed with a dot-slash .
+>
+> ```bash
+> bash$ rm ./-badname
+> ```
 
-\|   \|
-\|---\|
-\|bash$ **rm -badname**
-rm: invalid option -- b
- Try `rm --help' for more information.\|
-
-One clever workaround is to precede the filename with a " -- " (the _end-of-options_ flag).
-
-\|   \|
-\|---\|
-\|bash$ **rm -- -badname**\|
-
-Another method to is to preface the filename to be removed with a dot-slash .
-
-\|   \|
-\|---\|
-\|bash$ **rm ./-badname**\||
-
-|   |   |
-|---|---|
-|![[../images/warning.gif|Warning]]|When used with the recursive flag -r, this command removes files all the way down the directory tree from the current directory. A careless **rm -rf *** can wipe out a big chunk of a directory structure.|
+> [!warning]
+> When used with the recursive flag -r, this command removes files all the way down the directory tree from the current directory. A careless **rm -rf *** can wipe out a big chunk of a directory structure.
 
 **rmdir**
 
@@ -214,21 +216,20 @@ Make directory, creates a new directory. For example, **mkdir -p project/program
 
 **chmod**
 
-Changes the attributes of an existing file or directory (see [[internal#^EX44|Example 15-14]]).
+Changes the attributes of an existing file or directory (see [[internal-commands-and-builtins#^EX44|Example 15-14]]).
 
-|   |
-|---|
-|chmod +x filename
+```bash
+chmod +x filename
 # Makes "filename" executable for all users.
 
 chmod u+s filename
 # Sets "suid" bit on "filename" permissions.
 # An ordinary user may execute "filename" with same privileges as the file's owner.
-# (This does not apply to shell scripts.)|
+# (This does not apply to shell scripts.)
+```
 
-|   |
-|---|
-|chmod 644 filename
+```bash
+chmod 644 filename
 #  Makes "filename" readable/writable to owner, readable to others
 #+ (octal mode).
 
@@ -238,11 +239,11 @@ chmod 444 filename
 #+ not allowed for a user who does not own the file (except for root),
 #+ and even the file owner must force a file-save
 #+ if she modifies the file.
-#  Same restrictions apply for deleting the file.|
+#  Same restrictions apply for deleting the file.
+```
 
-|   |
-|---|
-|chmod 1777 directory-name
+```bash
+chmod 1777 directory-name
 #  Gives everyone read, write, and execute permission in directory,
 #+ however also sets the "sticky bit".
 #  This means that only the owner of the directory,
@@ -265,7 +266,8 @@ chmod 000 directory-name
 #+ or delete it (rmdir) if it is empty.
 #  You can even symlink to files in the directory,
 #+ but you can't read, write, or execute the symlinks.
-#  These restrictions do not apply to root.|
+#  These restrictions do not apply to root.
+```
 
 **chattr**
 
@@ -273,14 +275,16 @@ chmod 000 directory-name
 
 One particularly interesting **chattr** option is i. A **chattr +i filename** marks the file as immutable. The file cannot be modified, linked to, or deleted, _not even by root_. This file attribute can be set or removed only by _root_. In a similar fashion, the a option marks the file as append only.
 
-|   |
-|---|
-|root# **chattr +i file1.txt**
+```bash
+root# chattr +i file1.txt
 
-root# **rm file1.txt**
+
+root# rm file1.txt
 
 rm: remove write-protected regular file `file1.txt'? y
- rm: cannot remove `file1.txt': Operation not permitted|
+ rm: cannot remove `file1.txt': Operation not permitted
+	      
+```
 
 If a file has the s (secure) attribute set, then when it is deleted its block is overwritten with binary zeroes. [^3]
 
@@ -288,9 +292,8 @@ If a file has the u (undelete) attribute set, then when it is deleted, its conte
 
 If a file has the c (compress) attribute set, then it will automatically be compressed on writes to disk, and uncompressed on reads.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|The file attributes set with **chattr** do not show in a file listing (**ls -l**).|
+> [!note]
+> The file attributes set with **chattr** do not show in a file listing (**ls -l**).
 
 **ln**
 
@@ -302,25 +305,21 @@ The **ln** command is most often used with the -s, symbolic or "soft" link flag.
 
 The syntax of the command is a bit tricky. For example: **ln -s oldfile newfile** links the previously existing oldfile to the newly created link, newfile.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|If a file named newfile has previously existed, an error message will result.|
+> [!caution]
+> If a file named newfile has previously existed, an error message will result.
 
-|   |
-|---|
-|**Which type of link to use?**
-
-As John Macdonald explains it:
-
-Both of these [types of links] provide a certain measure of dual reference -- if you edit the contents of the file using any name, your changes will affect both the original name and either a hard or soft new name. The differences between them occurs when you work at a higher level. The advantage of a hard link is that the new name is totally independent of the old name -- if you remove or rename the old name, that does not affect the hard link, which continues to point to the data while it would leave a soft link hanging pointing to the old name which is no longer there. The advantage of a soft link is that it can refer to a different file system (since it is just a reference to a file name, not to actual data). And, unlike a hard link, a symbolic link can refer to a directory.|
+> **Which type of link to use?**
+>
+> As John Macdonald explains it:
+>
+> Both of these [types of links] provide a certain measure of dual reference -- if you edit the contents of the file using any name, your changes will affect both the original name and either a hard or soft new name. The differences between them occurs when you work at a higher level. The advantage of a hard link is that the new name is totally independent of the old name -- if you remove or rename the old name, that does not affect the hard link, which continues to point to the data while it would leave a soft link hanging pointing to the old name which is no longer there. The advantage of a soft link is that it can refer to a different file system (since it is just a reference to a file name, not to actual data). And, unlike a hard link, a symbolic link can refer to a directory.
 
 Links give the ability to invoke a script (or any other type of executable) with multiple names, and having that script behave according to how it was invoked.
 
 **Example 16-2. Hello or Good-bye**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # hello.sh: Saying "hello" or "goodbye"
 #+          depending on how script is invoked.
 
@@ -343,7 +342,8 @@ fi
 
 echo "Hello!"
 # Some other hello-type commands, as appropriate.
-exit $HELLO_CALL|
+exit $HELLO_CALL
+```
 
 **man**, **info**
 
@@ -352,5 +352,7 @@ These commands access the manual and information pages on system commands and in
 There have been various attempts at "automating" the writing of _man pages_. For a script that makes a tentative first step in that direction, see [[contributed-scripts#^MANED|Example A-39]].
 
 [^1]: The -v option also orders the sort by _upper- and lowercase prefixed_ filenames.
+
 [^2]: _Dotfiles_ are files whose names begin with a _dot_, such as ~/.Xdefaults. Such filenames do not appear in a normal **ls** listing (although an **ls -a** will show them), and they cannot be deleted by an accidental **rm -rf ***. Dotfiles are generally used as setup and configuration files in a user's home directory.
+
 [^3]: This particular feature may not yet be implemented in the version of the ext2/ext3 filesystem installed on your system. Check the documentation for your Linux distro.

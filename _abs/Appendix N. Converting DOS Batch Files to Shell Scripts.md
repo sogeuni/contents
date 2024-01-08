@@ -78,7 +78,7 @@ Batch files usually contain DOS commands. These must be translated into their UN
 |XCOPY|cp|(extended) file copy|
 
 > [!note]
-> Virtually all UNIX and shell operators and commands have many more options and enhancements than their DOS and batch file counterparts. Many DOS batch files rely on auxiliary utilities, such as **ask.com**, a crippled counterpart to [[internal#^READREF|read]].
+> Virtually all UNIX and shell operators and commands have many more options and enhancements than their DOS and batch file counterparts. Many DOS batch files rely on auxiliary utilities, such as **ask.com**, a crippled counterpart to [[internal-commands-and-builtins#^READREF|read]].
 >
 > DOS supports only a very limited and incompatible subset of filename [[globbingref|wild-card expansion]], recognizing just the * and ? characters.
 

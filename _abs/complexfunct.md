@@ -372,7 +372,7 @@ echo
 
 exit|
 
-See also [[testbranch#^ISALPHA|Example 11-29]].
+See also [[testing-and-branching#^ISALPHA|Example 11-29]].
 
 |   |   |
 |---|---|
@@ -441,7 +441,7 @@ echo "return value = $Return_Val"    # 257
 alt_return_test 25701
 echo "return value = $Return_Val"    #25701\|
 
-A more elegant method is to have the function **echo** its "return value to stdout," and then capture it by [[commandsub#^COMMANDSUBREF|command substitution]]. See the [[assorted-tips#^RVT|discussion of this]] in [[assorted-tips|Section 36.7]].
+A more elegant method is to have the function **echo** its "return value to stdout," and then capture it by [[command-substitution#^COMMANDSUBREF|command substitution]]. See the [[assorted-tips#^RVT|discussion of this]] in [[assorted-tips|Section 36.7]].
 
 **Example 24-10. Comparing two large integers**
 
@@ -635,5 +635,5 @@ Function ()  # This doesn't work.
 |---|---|
 |![[../images/note.gif|Note]]|Emmanuel Rouat's [[sample-bashrc.html|sample bashrc file]] contains some instructive examples of functions.|
 
-[[internal#^BUILTINREF|^1]: The **return** command is a Bash [builtin]].
+[[internal-commands-and-builtins#^BUILTINREF|^1]: The **return** command is a Bash [builtin]].
 

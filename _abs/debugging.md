@@ -39,7 +39,7 @@ Output from script:
 
 What's wrong with the above script? Hint: after the _if_.
 
-**Example 32-2. Missing [[internal#^KEYWORDREF|keyword]]**
+**Example 32-2. Missing [[internal-commands-and-builtins#^KEYWORDREF|keyword]]**
 
 |   |
 |---|
@@ -115,7 +115,7 @@ Summarizing the symptoms of a buggy script,
 
 Tools for debugging non-working scripts include
 
-1. Inserting [[internal#^ECHOREF|echo]] statements at critical points in the script to trace the variables, and otherwise give a snapshot of what is going on.
+1. Inserting [[internal-commands-and-builtins#^ECHOREF|echo]] statements at critical points in the script to trace the variables, and otherwise give a snapshot of what is going on.
     
     |   |   |
     |---|---|
@@ -223,11 +223,11 @@ echo "This statement echoes only if the \"assert\" does not fail."
 
 exit $?|
     
-5. Using the [[internal-variables#^LINENOREF|$LINENO]] variable and the [[internal#^CALLERREF|caller]] builtin.
+5. Using the [[internal-variables#^LINENOREF|$LINENO]] variable and the [[internal-commands-and-builtins#^CALLERREF|caller]] builtin.
     
 6. Trapping at exit.
     
-    The [[internal#^EXITREF|exit]] command in a script triggers a signal 0, terminating the process, that is, the script itself. [^1] It is often useful to trap the _exit_, forcing a "printout" of variables, for example. The _trap_ must be the first command in the script.
+    The [[internal-commands-and-builtins#^EXITREF|exit]] command in a script triggers a signal 0, terminating the process, that is, the script itself. [^1] It is often useful to trap the _exit_, forcing a "printout" of variables, for example. The _trap_ must be the first command in the script.
     
 
 **Trapping signals**

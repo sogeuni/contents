@@ -3,10 +3,10 @@ title: 7.1. Test Constructs
 ---
 
 - An **if/then** construct tests whether the [[exit-status#^EXITSTATUSREF|exit status]] of a list of commands is 0 (since 0 means "success" by UNIX convention), and if so, executes one or more commands.
-- There exists a dedicated command called **[[special-characters#^LEFTBRACKET|** ([left bracket]] special character). It is a synonym for **test**, and a [[internal#^BUILTINREF|builtin]] for efficiency reasons. This command considers its arguments as comparison expressions or file tests and returns an exit status corresponding to the result of the comparison (0 for true, 1 for false).
-- With version 2.02, Bash introduced the [[test-constructs#^DBLBRACKETS|[[ ... ]]]] _extended test command_, which performs comparisons in a manner more familiar to programmers from other languages. Note that **[[internal#^KEYWORDREF|[** is a [keyword]], not a command.
+- There exists a dedicated command called **[[special-characters#^LEFTBRACKET|** ([left bracket]] special character). It is a synonym for **test**, and a [[internal-commands-and-builtins#^BUILTINREF|builtin]] for efficiency reasons. This command considers its arguments as comparison expressions or file tests and returns an exit status corresponding to the result of the comparison (0 for true, 1 for false).
+- With version 2.02, Bash introduced the [[test-constructs#^DBLBRACKETS|[[ ... ]]]] _extended test command_, which performs comparisons in a manner more familiar to programmers from other languages. Note that **[[internal-commands-and-builtins#^KEYWORDREF|[** is a [keyword]], not a command.
     Bash sees **[[ $a -lt $b ]]** as a single element, which returns an exit status.
-- The [[double-parentheses-construct.html|(( ... ))]] and [[internal#^LETREF|let ...]] constructs return an [[exit-status#^EXITSTATUSREF|exit status]], _according to whether the arithmetic expressions they evaluate expand to a non-zero value_. These [[Chapter 13. Arithmetic Expansion#^ARITHEXPREF|arithmetic-expansion]] constructs may therefore be used to perform [[other-comparison-operators#^ICOMPARISON1|arithmetic comparisons]].
+- The [[double-parentheses-construct.html|(( ... ))]] and [[internal-commands-and-builtins#^LETREF|let ...]] constructs return an [[exit-status#^EXITSTATUSREF|exit status]], _according to whether the arithmetic expressions they evaluate expand to a non-zero value_. These [[arithmetic-expansion#^ARITHEXPREF|arithmetic-expansion]] constructs may therefore be used to perform [[other-comparison-operators#^ICOMPARISON1|arithmetic comparisons]].
 
 ```bash
 (( 0 && 1 ))                 # Logical AND
@@ -227,7 +227,7 @@ fi
 ```
 
 > [!note] 
-> When _if_ and _then_ are on same line in a condition test, a semicolon must terminate the _if_ statement. Both _if_ and _then_ are [[internal#^KEYWORDREF|keywords]]. Keywords (or commands) begin statements, and before a new statement on the same line begins, the old one must terminate.
+> When _if_ and _then_ are on same line in a condition test, a semicolon must terminate the _if_ statement. Both _if_ and _then_ are [[internal-commands-and-builtins#^KEYWORDREF|keywords]]. Keywords (or commands) begin statements, and before a new statement on the same line begins, the old one must terminate.
 >
 > ```bash
 > if [ -x "$filename" ]; then
@@ -258,7 +258,7 @@ fi
 The **if test condition-true** construct is the exact equivalent of **if [ condition-true ]**. As it happens, the left bracket, **[** , is a _token_ [^1] which invokes the **test** command. The closing right bracket, **]** , in an if/test should not therefore be strictly necessary, however newer versions of Bash require it.
 
 > [!note] 
-> The **test** command is a Bash [[internal#^BUILTINREF|builtin]] which tests file types and compares strings. Therefore, in a Bash script, **test** does _not_ call the external /usr/bin/test binary, which is part of the _sh-utils_ package. Likewise, **[** does not call /usr/bin/[, which is linked to /usr/bin/test.
+> The **test** command is a Bash [[internal-commands-and-builtins#^BUILTINREF|builtin]] which tests file types and compares strings. Therefore, in a Bash script, **test** does _not_ call the external /usr/bin/test binary, which is part of the _sh-utils_ package. Likewise, **[** does not call /usr/bin/[, which is linked to /usr/bin/test.
 >
 > ```bash
 > bash$ type test

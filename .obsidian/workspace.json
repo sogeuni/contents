@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/beyond-the-basic/manipulating-strings.md",
+                "file": "abs/commands/job-control-commands.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/beyond-the-basic/manipulating-strings.md",
+                "file": "abs/commands/job-control-commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/beyond-the-basic/manipulating-strings.md",
+                "file": "abs/commands/job-control-commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/beyond-the-basic/manipulating-strings.md"
+                "file": "abs/commands/job-control-commands.md"
               }
             }
           },
@@ -153,7 +153,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/beyond-the-basic/manipulating-strings.md",
+                "file": "abs/commands/job-control-commands.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -200,6 +200,25 @@
   },
   "active": "81987b6bb7dc9979",
   "lastOpenFiles": [
+    "abs/commands/complex-commands.md",
+    "abs/commands/moreadv.md",
+    "abs/commands/basic-commands.md",
+    "abs/commands/external-filters-programs-and-commands.md",
+    "abs/commands/external.md",
+    "abs/commands/internal-commands-and-builtins.md",
+    "abs/commands/index.md",
+    "abs/index.md",
+    "abs/commands/job-control-commands.md",
+    "abs/commands/x9644.md",
+    "abs/commands/internal.md",
+    "abs/commands/part4.md",
+    "abs/beyond-the-basic/recess-time.md",
+    "abs/beyond-the-basic/arithmetic-expansion.md",
+    "abs/beyond-the-basic/Chapter 13. Arithmetic Expansion.md",
+    "abs/beyond-the-basic/command-substitution.md",
+    "abs/beyond-the-basic/commandsub.md",
+    "abs/beyond-the-basic/testing-and-branching.md",
+    "abs/beyond-the-basic/manipulating-strings.md",
     "_abs/xrefindex.md",
     "_abs/x9644.md",
     "_abs/x17974.md",
@@ -207,25 +226,6 @@
     "_abs/x17129.md",
     "_abs/writingscripts.md",
     "_abs/winscript.md",
-    "_abs/unofficialst.md",
-    "_abs/todolist.md",
-    "_abs/timedate.md",
-    "_abs/textproc.md",
-    "_abs/testsandcomparisons.md",
-    "_abs/terminalccmds.md",
-    "_abs/tabexpansion.md",
-    "_abs/systemdirs.md",
-    "_abs/sysscripts.md",
-    "_abs/system.md",
-    "_abs/subshells.md",
-    "_abs/shell-wrapper.md",
-    "_abs/standard-options.md",
-    "_abs/securityissues.md",
-    "_abs/sample-bashrc.md",
-    "_abs/scrstyle.md",
-    "_abs/scriptanalysis.md",
-    "_abs/redirapps.md",
-    "_abs/revisionhistory.md",
     "_abs",
     "git",
     "abs/apendix",

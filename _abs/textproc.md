@@ -424,7 +424,7 @@ To set a variable to a given block of a text file:
 |---|---|
 |![[../images/note.gif|Note]]|Newer implementations of **tail** deprecate the older **tail -$LINES filename** usage. The standard **tail -n $LINES filename** is correct.|
 
-See also [[moreadv#^EX41|Example 16-5]], [[filearchiv#^EX52|Example 16-39]] and [[debugging#^ONLINE|Example 32-6]].
+See also [[complex-commands#^EX41|Example 16-5]], [[filearchiv#^EX52|Example 16-39]] and [[debugging#^ONLINE|Example 32-6]].
 
 **grep**
 
@@ -1220,7 +1220,7 @@ echo $b \| fmt -w $WIDTH
  
 exit 0|
 
-See also [[moreadv#^EX41|Example 16-5]].
+See also [[complex-commands#^EX41|Example 16-5]].
 
 |   |   |
 |---|---|

@@ -20,7 +20,7 @@ On a commercial UNIX machine, scripts using GNU-specific features of standard co
 Bash has certain features that the traditional [[shell-programming#^BASHDEF|Bourne shell]] lacks. Among these are:
 
 - Certain extended [[options#^INVOCATIONOPTIONSREF|invocation options]]
-- [[commandsub#^COMMANDSUBREF|Command substitution]] using **$( )** notation
+- [[command-substitution#^COMMANDSUBREF|Command substitution]] using **$( )** notation
 - [[bash-ver3#^BRACEEXPREF3|Brace expansion]]
 - Certain [[Chapter 27. Arrays#^ARRAYREF|array]] operations, and [[bash-ver4#^ASSOCARR|associative arrays]]
 - The [[test-constructs#^DBLBRACKETS|double brackets]] extended test construct
@@ -28,7 +28,7 @@ Bash has certain features that the traditional [[shell-programming#^BASHDEF|Bour
 - Certain [[manipulating-strings#^STRINGMANIP|string manipulation]] operations
 - [[Chapter 23. Process Substitution#^PROCESSSUBREF|Process substitution]]
 - A Regular Expression [[bash-ver3#^REGEXMATCHREF|matching operator]]
-- Bash-specific [[internal#^BUILTINREF|builtins]]
+- Bash-specific [[internal-commands-and-builtins#^BUILTINREF|builtins]]
 - [[bash-ver4#^COPROCREF|Coprocesses]]
 
 See the [[ftp://ftp.cwru.edu/pub/bash/FAQ|Bash F.A.Q.]] for a complete listing.

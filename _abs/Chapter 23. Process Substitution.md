@@ -42,7 +42,7 @@ bash$ wc <(grep script /usr/share/dict/linux.words)
 
 |   |   |
 |---|---|
-|![[../images/note.gif|Note]]|Bash creates a pipe with two [[io-redirection#^FDREF|file descriptors]], --fIn and fOut--. The stdin of [[internal#^TRUEREF|true]] connects to fOut (dup2(fOut, 0)), then Bash passes a /dev/fd/fIn argument to **echo**. On systems lacking /dev/fd/<n> files, Bash may use temporary files. (Thanks, S.C.)|
+|![[../images/note.gif|Note]]|Bash creates a pipe with two [[io-redirection#^FDREF|file descriptors]], --fIn and fOut--. The stdin of [[internal-commands-and-builtins#^TRUEREF|true]] connects to fOut (dup2(fOut, 0)), then Bash passes a /dev/fd/fIn argument to **echo**. On systems lacking /dev/fd/<n> files, Bash may use temporary files. (Thanks, S.C.)|
 
 Process substitution can compare the output of two different commands, or even the output of different options to the same command.
 

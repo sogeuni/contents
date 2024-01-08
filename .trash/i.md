@@ -50,12 +50,12 @@ For Anita, the source of all the magic
 * [[another-look-at-variables]]
 * [[manipulating-variables]]
 * [[loops-and-branches]]
-* [[commandsub]]
-* [[Chapter 13. Arithmetic Expansion]]
+* [[command-substitution]]
+* [[arithmetic-expansion]]
 * [[recess-time]]
 
 [[Part 4. Commands]]
-* [[internal|Internal Commands and Builtins]]
+* [[internal-commands-and-builtins|Internal Commands and Builtins]]
 * [[Chapter 16. External Filters, Programs and Commands|External Filters, Programs and Commands]]
 * [[system|System and Administrative Commands]]
 
@@ -122,7 +122,7 @@ For Anita, the source of all the magic
 ## List of Tables
 
 * [[operator-precedence#^1|8-1. Operator Precedence]]
-* 15-1. [[x9644#^JOBIDTABLE|Job identifiers]]
+* 15-1. [[job-control-commands#^JOBIDTABLE|Job identifiers]]
 
 33-1. [[options#^AEN19601|Bash options]]
 
@@ -324,97 +324,97 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 11-24. [[loop-control#^CONTINUENEX|Using _continue N_ in an actual task]]
 
-11-25. [[testbranch#^EX29|Using _case_]]
+11-25. [[testing-and-branching#^EX29|Using _case_]]
 
-11-26. [[testbranch#^EX30|Creating menus using _case_]]
+11-26. [[testing-and-branching#^EX30|Creating menus using _case_]]
 
-11-27. [[testbranch#^CASECMD|Using _command substitution_ to generate the _case_ variable]]
+11-27. [[testing-and-branching#^CASECMD|Using _command substitution_ to generate the _case_ variable]]
 
-11-28. [[testbranch#^MATCHSTRING|Simple string matching]]
+11-28. [[testing-and-branching#^MATCHSTRING|Simple string matching]]
 
-11-29. [[testbranch#^ISALPHA|Checking for alphabetic input]]
+11-29. [[testing-and-branching#^ISALPHA|Checking for alphabetic input]]
 
-11-30. [[testbranch#^EX31|Creating menus using _select_]]
+11-30. [[testing-and-branching#^EX31|Creating menus using _select_]]
 
-11-31. [[testbranch#^EX32|Creating menus using _select_ in a function]]
+11-31. [[testing-and-branching#^EX32|Creating menus using _select_ in a function]]
 
-12-1. [[commandsub#^STUPSCR|Stupid script tricks]]
+12-1. [[command-substitution#^STUPSCR|Stupid script tricks]]
 
-12-2. [[commandsub#^CSUBLOOP|Generating a variable from a loop]]
+12-2. [[command-substitution#^CSUBLOOP|Generating a variable from a loop]]
 
-12-3. [[commandsub#^AGRAM2|Finding anagrams]]
+12-3. [[command-substitution#^AGRAM2|Finding anagrams]]
 
-15-1. [[internal#^SPAWNSCR|A script that spawns multiple instances of itself]]
+15-1. [[internal-commands-and-builtins#^SPAWNSCR|A script that spawns multiple instances of itself]]
 
-15-2. [[internal#^EX47|_printf_ in action]]
+15-2. [[internal-commands-and-builtins#^EX47|_printf_ in action]]
 
-15-3. [[internal#^EX36|Variable assignment, using _read_]]
+15-3. [[internal-commands-and-builtins#^EX36|Variable assignment, using _read_]]
 
-15-4. [[internal#^READNOVAR|What happens when _read_ has no variable]]
+15-4. [[internal-commands-and-builtins#^READNOVAR|What happens when _read_ has no variable]]
 
-15-5. [[internal#^READR|Multi-line input to _read_]]
+15-5. [[internal-commands-and-builtins#^READR|Multi-line input to _read_]]
 
-15-6. [[internal#^ARROWDETECT|Detecting the arrow keys]]
+15-6. [[internal-commands-and-builtins#^ARROWDETECT|Detecting the arrow keys]]
 
-15-7. [[internal#^READREDIR|Using _read_ with]] [[io-redirection#^IOREDIRREF|file redirection]]
+15-7. [[internal-commands-and-builtins#^READREDIR|Using _read_ with]] [[io-redirection#^IOREDIRREF|file redirection]]
 
-15-8. [[internal#^READPIPE|Problems reading from a pipe]]
+15-8. [[internal-commands-and-builtins#^READPIPE|Problems reading from a pipe]]
 
-15-9. [[internal#^EX37|Changing the current working directory]]
+15-9. [[internal-commands-and-builtins#^EX37|Changing the current working directory]]
 
-15-10. [[internal#^EX46|Letting _let_ do arithmetic.]]
+15-10. [[internal-commands-and-builtins#^EX46|Letting _let_ do arithmetic.]]
 
-15-11. [[internal#^EX43|Showing the effect of _eval_]]
+15-11. [[internal-commands-and-builtins#^EX43|Showing the effect of _eval_]]
 
-15-12. [[internal#^ARRCHOICE|Using _eval_ to select among variables]]
+15-12. [[internal-commands-and-builtins#^ARRCHOICE|Using _eval_ to select among variables]]
 
-15-13. [[internal#^ECHOPARAMS|_Echoing_ the _command-line parameters_]]
+15-13. [[internal-commands-and-builtins#^ECHOPARAMS|_Echoing_ the _command-line parameters_]]
 
-15-14. [[internal#^EX44|Forcing a log-off]]
+15-14. [[internal-commands-and-builtins#^EX44|Forcing a log-off]]
 
-15-15. [[internal#^ROT14|A version of _rot13_]]
+15-15. [[internal-commands-and-builtins#^ROT14|A version of _rot13_]]
 
-15-16. [[internal#^EX34|Using _set_ with positional parameters]]
+15-16. [[internal-commands-and-builtins#^EX34|Using _set_ with positional parameters]]
 
-15-17. [[internal#^REVPOSPARAMS|Reversing the positional parameters]]
+15-17. [[internal-commands-and-builtins#^REVPOSPARAMS|Reversing the positional parameters]]
 
-15-18. [[internal#^SETPOS|Reassigning the positional parameters]]
+15-18. [[internal-commands-and-builtins#^SETPOS|Reassigning the positional parameters]]
 
-15-19. [[internal#^UNS|"Unsetting" a variable]]
+15-19. [[internal-commands-and-builtins#^UNS|"Unsetting" a variable]]
 
-15-20. [[internal#^COLTOTALER3|Using _export_ to pass a variable to an embedded _awk_ script]]
+15-20. [[internal-commands-and-builtins#^COLTOTALER3|Using _export_ to pass a variable to an embedded _awk_ script]]
 
-15-21. [[internal#^EX33|Using _getopts_ to read the options/arguments passed to a script]]
+15-21. [[internal-commands-and-builtins#^EX33|Using _getopts_ to read the options/arguments passed to a script]]
 
-15-22. [[internal#^EX38|"Including" a data file]]
+15-22. [[internal-commands-and-builtins#^EX38|"Including" a data file]]
 
-15-23. [[internal#^SELFSOURCE|A (useless) script that sources itself]]
+15-23. [[internal-commands-and-builtins#^SELFSOURCE|A (useless) script that sources itself]]
 
-15-24. [[internal#^EX54|Effects of _exec_]]
+15-24. [[internal-commands-and-builtins#^EX54|Effects of _exec_]]
 
-15-25. [[internal#^SELFEXEC|A script that _exec's_ itself]]
+15-25. [[internal-commands-and-builtins#^SELFEXEC|A script that _exec's_ itself]]
 
-15-26. [[x9644#^EX39|Waiting for a process to finish before proceeding]]
+15-26. [[job-control-commands#^EX39|Waiting for a process to finish before proceeding]]
 
-15-27. [[x9644#^SELFDESTRUCT|A script that kills itself]]
+15-27. [[job-control-commands#^SELFDESTRUCT|A script that kills itself]]
 
 16-1. [[basic#^EX40|Using _ls_ to create a table of contents for burning a CDR disk]]
 
 16-2. [[basic#^HELLOL|Hello or Good-bye]]
 
-16-3. [[moreadv#^EX57|_Badname_, eliminate file names in current directory containing bad characters and]] [[special-characters#^WHITESPACEREF|whitespace]].
+16-3. [[complex-commands#^EX57|_Badname_, eliminate file names in current directory containing bad characters and]] [[special-characters#^WHITESPACEREF|whitespace]].
 
-16-4. [[moreadv#^IDELETE|Deleting a file by its _inode_ number]]
+16-4. [[complex-commands#^IDELETE|Deleting a file by its _inode_ number]]
 
-16-5. [[moreadv#^EX41|Logfile: Using _xargs_ to monitor system log]]
+16-5. [[complex-commands#^EX41|Logfile: Using _xargs_ to monitor system log]]
 
-16-6. [[moreadv#^EX42|Copying files in current directory to another]]
+16-6. [[complex-commands#^EX42|Copying files in current directory to another]]
 
-16-7. [[moreadv#^KILLBYNAME|Killing processes by name]]
+16-7. [[complex-commands#^KILLBYNAME|Killing processes by name]]
 
-16-8. [[moreadv#^WF2|Word frequency analysis using _xargs_]]
+16-8. [[complex-commands#^WF2|Word frequency analysis using _xargs_]]
 
-16-9. [[moreadv#^EX45|Using _expr_]]
+16-9. [[complex-commands#^EX45|Using _expr_]]
 
 16-10. [[timedate#^EX51|Using _date_]]
 
@@ -716,7 +716,7 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 32-1. [[debugging#^EX74|A buggy script]]
 
-32-2. [[debugging#^MISSINGKEYWORD|Missing]] [[internal#^KEYWORDREF|keyword]]
+32-2. [[debugging#^MISSINGKEYWORD|Missing]] [[internal-commands-and-builtins#^KEYWORDREF|keyword]]
 
 32-3. [[debugging#^EX75|_test24_: another buggy script]]
 
@@ -802,7 +802,7 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 37-9. [[bashver4#^HERECOMMSUB|Using a _here document_ to set a variable]]
 
-37-10. [[bashver4#^LASTPIPEOPT|Piping input to a]] [[internal#^READREF|read]]
+37-10. [[bashver4#^LASTPIPEOPT|Piping input to a]] [[internal-commands-and-builtins#^READREF|read]]
 
 37-11. [[bashver4#^NEGARRAY|Negative array indices]]
 

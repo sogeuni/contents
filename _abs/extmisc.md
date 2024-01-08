@@ -171,7 +171,7 @@ Unlike _seq_, **jot** can generate a sequence of random numbers, using the -r op
 
 **getopt**
 
-The **getopt** command parses command-line options preceded by a [[special-characters#^DASHREF|dash]]. This external command corresponds to the [[internal#^GETOPTSX|getopts]] Bash builtin. Using **getopt** permits handling long options by means of the -l flag, and this also allows parameter reshuffling.
+The **getopt** command parses command-line options preceded by a [[special-characters#^DASHREF|dash]]. This external command corresponds to the [[internal-commands-and-builtins#^GETOPTSX|getopts]] Bash builtin. Using **getopt** permits handling long options by means of the -l flag, and this also allows parameter reshuffling.
 
 **Example 16-56. Using _getopt_ to parse command-line options**
 
@@ -227,7 +227,7 @@ exit 0|
 |---|---|
 |![[../images/note.gif|Note]]|As _Peggy Russell_ points out:
 
-It is often necessary to include an [[internal#^EVALREF|eval]] to correctly process [[special-characters#^WHITESPACEREF|whitespace]] and _quotes_.
+It is often necessary to include an [[internal-commands-and-builtins#^EVALREF|eval]] to correctly process [[special-characters#^WHITESPACEREF|whitespace]] and _quotes_.
 
 \|   \|
 \|---\|
@@ -824,7 +824,7 @@ exit 0
 
 **m4**
 
-A hidden treasure, **m4** is a powerful macro [[internal#^EVALREF|^6] processing filter, virtually a complete language. Although originally written as a pre-processor for _RatFor_, **m4** turned out to be useful as a stand-alone utility. In fact, **m4** combines some of the functionality of [eval]], [[textproc#^TRREF|tr]], and [[C.2. Awk#^AWKREF|awk]], in addition to its extensive macro expansion facilities.
+A hidden treasure, **m4** is a powerful macro [[internal-commands-and-builtins#^EVALREF|^6] processing filter, virtually a complete language. Although originally written as a pre-processor for _RatFor_, **m4** turned out to be useful as a stand-alone utility. In fact, **m4** combines some of the functionality of [eval]], [[textproc#^TRREF|tr]], and [[C.2. Awk#^AWKREF|awk]], in addition to its extensive macro expansion facilities.
 
 The April, 2002 issue of [[http://www.linuxjournal.com|_Linux Journal_]] has a very nice article on **m4** and its uses.
 
@@ -850,7 +850,7 @@ exit|
 
 **xmessage**
 
-This X-based variant of [[internal#^ECHOREF|echo]] pops up a message/query window on the desktop.
+This X-based variant of [[internal-commands-and-builtins#^ECHOREF|echo]] pops up a message/query window on the desktop.
 
 |   |
 |---|

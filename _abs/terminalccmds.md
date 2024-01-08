@@ -63,7 +63,7 @@ Reset terminal parameters and clear text screen. As with **clear**, the cursor a
 
 **clear**
 
-The **clear** command simply clears the text screen at the console or in an _xterm_. The prompt and cursor reappear at the upper lefthand corner of the screen or xterm window. This command may be used either at the command line or in a script. See [[testbranch#^EX30|Example 11-26]].
+The **clear** command simply clears the text screen at the console or in an _xterm_. The prompt and cursor reappear at the upper lefthand corner of the screen or xterm window. This command may be used either at the command line or in a script. See [[testing-and-branching#^EX30|Example 11-26]].
 
 **resize**
 

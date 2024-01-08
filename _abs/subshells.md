@@ -6,7 +6,7 @@ Running a shell script launches a new process, a _subshell_.
 |---|
 |**Definition:** A _subshell_ is a [[othertypesv#^CHILDREF2|child process]] launched by a shell (or _shell script_).|
 
-A subshell is a separate instance of the command processor -- the _shell_ that gives you the prompt at the console or in an _xterm_ window. Just as your commands are interpreted at the command-line prompt, similarly does a script [[timedate#^BATCHPROCREF|batch-process]] a list of commands. Each shell script running is, in effect, a subprocess (_child process_) of the [[internal#^FORKREF|parent]] shell.
+A subshell is a separate instance of the command processor -- the _shell_ that gives you the prompt at the console or in an _xterm_ window. Just as your commands are interpreted at the command-line prompt, similarly does a script [[timedate#^BATCHPROCREF|batch-process]] a list of commands. Each shell script running is, in effect, a subprocess (_child process_) of the [[internal-commands-and-builtins#^FORKREF|parent]] shell.
 
 A shell script can itself launch subprocesses. These _subshells_ let the script do parallel processing, in effect executing multiple subtasks simultaneously.
 
@@ -48,7 +48,7 @@ PID 2698, the script, launched PID 2699, the subshell.
 Note: The "UID ..." line would be filtered out by the "grep" command,
 but is shown here for illustrative purposes.|
 
-In general, an [[external#^EXTERNALREF|external command]] in a script [[internal#^FORKREF|forks off]] a subprocess, [[internal#^BUILTINREF|^1] whereas a Bash [builtin]] does not. For this reason, builtins execute more quickly and use fewer system resources than their external command equivalents.
+In general, an [[external-filters-programs-and-commands#^EXTERNALREF|external command]] in a script [[internal-commands-and-builtins#^FORKREF|forks off]] a subprocess, [[internal-commands-and-builtins#^BUILTINREF|^1] whereas a Bash [builtin]] does not. For this reason, builtins execute more quickly and use fewer system resources than their external command equivalents.
 
 **Command List within Parentheses**
 
@@ -56,7 +56,7 @@ In general, an [[external#^EXTERNALREF|external command]] in a script [[internal
 
 A command list embedded between _parentheses_ runs as a subshell.
 
-Variables in a subshell are _not_ visible outside the block of code in the subshell. They are not accessible to the [[internal#^FORKREF|parent process]], to the shell that launched the subshell. These are, in effect, variables [[localvar#^LOCALREF|local]] to the _child process_.
+Variables in a subshell are _not_ visible outside the block of code in the subshell. They are not accessible to the [[internal-commands-and-builtins#^FORKREF|parent process]], to the shell that launched the subshell. These are, in effect, variables [[localvar#^LOCALREF|local]] to the _child process_.
 
 **Example 21-1. Variable scope in a subshell**
 
@@ -201,7 +201,7 @@ COMMAND3
 COMMAND6
 COMMAND7|
 
-As seen here, the [[internal#^EXITREF|exit]] command only terminates the subshell in which it is running, _not_ the parent shell or script.
+As seen here, the [[internal-commands-and-builtins#^EXITREF|exit]] command only terminates the subshell in which it is running, _not_ the parent shell or script.
 
 One application of such a "dedicated environment" is testing whether a variable is defined.
 
@@ -271,5 +271,5 @@ echo "$var1"   # 23
 { var1=76; }
 echo "$var1"   # 76\||
 
-[[internal#^EXECREF|^1]: An external command invoked with an [exec]] does _not_ (usually) fork off a subprocess / subshell.
+[[internal-commands-and-builtins#^EXECREF|^1]: An external command invoked with an [exec]] does _not_ (usually) fork off a subprocess / subshell.
 

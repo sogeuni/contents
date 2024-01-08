@@ -1,9 +1,9 @@
-# Chapter 14. Recess Time
+---
+title: 14. Recess Time
+---
 
 _This bizarre little intermission gives the reader a chance to relax and maybe laugh a bit._
 
->     
->   
 >   Fellow Linux user, greetings! You are reading something which  
 >   will bring you luck and good fortune. Just e-mail a copy of  
 >   this document to 10 of your friends. Before making the copies,  
@@ -23,7 +23,5 @@ _This bizarre little intermission gives the reader a chance to relax and maybe l
 >   documentation for MS Windows.  
 >   
 >   Don't break the chain!  Send out your ten copies today!  
->   
 
 _Courtesy 'NIX "fortune cookies", with some alterations and many apologies_
-

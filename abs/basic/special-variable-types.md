@@ -29,12 +29,12 @@ Variables that affect the behavior of the shell and user interface
 >
 > (Thank you, Stéphane Chazelas for the clarification, and for providing the above example.)
 
-If a script sets environmental variables, they need to be "exported," that is, reported to the _environment_ local to the script. This is the function of the [[internal#^EXPORTREF|export]] command.
+If a script sets environmental variables, they need to be "exported," that is, reported to the _environment_ local to the script. This is the function of the [[internal-commands-and-builtins#^EXPORTREF|export]] command.
 
 > [!note]
-> A script can **export** variables only to child [[special-characters#^PROCESSREF|processes]], that is, only to commands or processes which that particular script initiates. A script invoked from the command-line _cannot_ export variables back to the command-line environment. _[[internal#^FORKREF|Child processes]] cannot export variables back to the parent processes that spawned them._
+> A script can **export** variables only to child [[special-characters#^PROCESSREF|processes]], that is, only to commands or processes which that particular script initiates. A script invoked from the command-line _cannot_ export variables back to the command-line environment. _[[internal-commands-and-builtins#^FORKREF|Child processes]] cannot export variables back to the parent processes that spawned them._
 >
-> **Definition:** A _child process_ is a subprocess launched by another process, its [[internal#^PARENTREF|parent]].|
+> **Definition:** A _child process_ is a subprocess launched by another process, its [[internal-commands-and-builtins#^PARENTREF|parent]].|
 
 ## _Positional parameters_
 
@@ -277,4 +277,4 @@ $ sh shift-past.sh 1 2 3 4 5
     tcsh
     ```
 
-[^3]: If the the script is [[internal#^SOURCEREF|sourced]] or [[basic-commands#^SYMLINKREF|symlinked]], then this will not work. It is safer to check [[debugging#^BASHSOURCEREF|$BASH_Source]].
+[^3]: If the the script is [[internal-commands-and-builtins#^SOURCEREF|sourced]] or [[basic-commands#^SYMLINKREF|symlinked]], then this will not work. It is safer to check [[debugging#^BASHSOURCEREF|$BASH_Source]].

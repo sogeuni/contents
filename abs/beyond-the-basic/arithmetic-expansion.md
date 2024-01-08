@@ -1,18 +1,22 @@
+---
+title: 13. Arithmetic Expansion
+---
+
 Arithmetic expansion provides a powerful tool for performing (integer) arithmetic operations in scripts. Translating a string into a numerical expression is relatively straightforward using _backticks_, _double parentheses_, or _let_. ^ARITHEXPREF
 
 **Variations**
 
-Arithmetic expansion with [[commandsub#^BACKQUOTESREF|backticks]] (often used in conjunction with [[moreadv#^EXPRREF|expr]])
+Arithmetic expansion with [[command-substitution#^BACKQUOTESREF|backticks]] (often used in conjunction with [[complex-commands#^EXPRREF|expr]])
 
-```
+```bash
 z=`expr $z + 3`          # The 'expr' command performs the expansion.
 ```
 
-Arithmetic expansion with [[double-parentheses-construct|double parentheses]], and using [[internal#^LETREF|let]]
+Arithmetic expansion with [[double-parentheses-construct|double parentheses]], and using [[internal-commands-and-builtins#^LETREF|let]]
 
-The use of _backticks_ (_backquotes_) in arithmetic expansion has been superseded by _double parentheses_ -- **((...))** and **$((...))** -- and also by the very convenient [[internal#^LETREF|let]] construction.
+The use of _backticks_ (_backquotes_) in arithmetic expansion has been superseded by _double parentheses_ -- **((...))** and **$((...))** -- and also by the very convenient [[internal-commands-and-builtins#^LETREF|let]] construction.
 
-```
+```bash
 z=$(($z+3))
 z=$((z+3))                                  #  Also correct.
                                             #  Within double parentheses,
@@ -42,7 +46,7 @@ let "z += 3"  #  Quotes permit the use of spaces in variable assignment.
 
 Examples of arithmetic expansion in scripts:
 
-1. [[moreadv#^EX45|Example 16-9]]
+1. [[complex-commands#^EX45|Example 16-9]]
 2. [[loops#^EX25|Example 11-15]]
 3. [[Chapter 27. Arrays#^EX66|Example 27-1]]
 4. [[Chapter 27. Arrays#^BUBBLE|Example 27-11]]

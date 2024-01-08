@@ -70,9 +70,9 @@ This is a simplified variant of the [[x17837#^PREPENDEX|Example 19-13]] script g
 
 - A shell script may act as an embedded command inside another shell script, a _Tcl_ or _wish_ script, or even a [[filearchiv#^MAKEFILEREF|Makefile]]. It can be invoked as an external shell command in a C program using the _system()_ call, i.e., _system("script_name");_.
 
-- Setting a variable to the contents of an embedded _sed_ or _awk_ script increases the readability of the surrounding [[shell-wrapper#^SHWRAPPER|shell wrapper]]. See [[contributed-scripts#^MAILFORMAT|Example A-1]] and [[internal#^COLTOTALER3|Example 15-20]].
+- Setting a variable to the contents of an embedded _sed_ or _awk_ script increases the readability of the surrounding [[shell-wrapper#^SHWRAPPER|shell wrapper]]. See [[contributed-scripts#^MAILFORMAT|Example A-1]] and [[internal-commands-and-builtins#^COLTOTALER3|Example 15-20]].
 
-- Put together files containing your favorite and most useful definitions and functions. As necessary, "include" one or more of these "library files" in scripts with either the [[special-characters#^DOTREF|dot]] (**.**) or [[internal#^SOURCEREF|source]] command.
+- Put together files containing your favorite and most useful definitions and functions. As necessary, "include" one or more of these "library files" in scripts with either the [[special-characters#^DOTREF|dot]] (**.**) or [[internal-commands-and-builtins#^SOURCEREF|source]] command.
 
 ```bash
 # SCRIPT LIBRARY
@@ -318,7 +318,7 @@ echo "Sum = $sum"
 exit 0
 ```
 
-- The 0 - 255 range for function return values is a severe limitation. Global variables and other workarounds are often problematic. An alternative method for a function to communicate a value back to the main body of the script is to have the function write to stdout (usually with [[internal#^ECHOREF|echo]]) the "return value," and assign this to a variable. This is actually a variant of [[commandsub#^COMMANDSUBREF|command substitution.]]
+- The 0 - 255 range for function return values is a severe limitation. Global variables and other workarounds are often problematic. An alternative method for a function to communicate a value back to the main body of the script is to have the function write to stdout (usually with [[internal-commands-and-builtins#^ECHOREF|echo]]) the "return value," and assign this to a variable. This is actually a variant of [[command-substitution#^COMMANDSUBREF|command substitution.]]
 
     **Example 36-18. Return value trickery**
 
@@ -429,7 +429,7 @@ exit 0
 
 - Next in our bag of tricks are techniques for passing an [[Chapter 27. Arrays#^ARRAYREF|array]] to a [[functions#^FUNCTIONREF|function]], then "returning" an array back to the main body of the script.
 
-    Passing an array involves loading the space-separated elements of the array into a variable with [[commandsub#^COMMANDSUBREF|command substitution]]. Getting an array back as the "return value" from a function uses the previously mentioned strategem of [[internal#^ECHOREF|echoing]] the array in the function, then invoking command substitution and the **( ... )** operator to assign it to an array.
+    Passing an array involves loading the space-separated elements of the array into a variable with [[command-substitution#^COMMANDSUBREF|command substitution]]. Getting an array back as the "return value" from a function uses the previously mentioned strategem of [[internal-commands-and-builtins#^ECHOREF|echoing]] the array in the function, then invoking command substitution and the **( ... )** operator to assign it to an array.
 
     **Example 36-20. Passing and returning arrays**
     

@@ -2355,7 +2355,7 @@ exit 0|
 
 St�phane Chazelas demonstrates object-oriented programming in a Bash script.
 
-Mariusz Gniazdowski contributed a [[internal#^HASHREF|hash]] library for use in scripts.
+Mariusz Gniazdowski contributed a [[internal-commands-and-builtins#^HASHREF|hash]] library for use in scripts.
 
 **Example A-20. Library of hash functions**
 

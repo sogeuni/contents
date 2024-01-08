@@ -1,6 +1,6 @@
 # 20.3. Applications
 
-Clever use of I/O redirection permits parsing and stitching together snippets of command output (see [[internal#^READREDIR|Example 15-7]]). This permits generating report and log files.
+Clever use of I/O redirection permits parsing and stitching together snippets of command output (see [[internal-commands-and-builtins#^READREDIR|Example 15-7]]). This permits generating report and log files.
 
 **Example 20-12. Logging events**
 

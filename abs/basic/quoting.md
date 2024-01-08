@@ -25,7 +25,7 @@ file1.txt:This is the first line of file1.txt.
 
 Note that the unquoted **grep \[Ff]irst \*.txt** works under the Bash shell. [^1]
 
-Quoting can also suppress [[internal#^ECHOREF|echo's]] "appetite" for newlines.
+Quoting can also suppress [[internal-commands-and-builtins#^ECHOREF|echo's]] "appetite" for newlines.
 
 ```bash
 bash$ echo $(ls -l)
