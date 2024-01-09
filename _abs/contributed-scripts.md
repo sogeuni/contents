@@ -61,7 +61,7 @@ exit $?|
 
 **Example A-2. _rn_: A simple-minded file renaming utility**
 
-This script is a modification of [[textproc#^LOWERCASE|Example 16-22]].
+This script is a modification of [[text-processing-commands#^LOWERCASE|Example 16-22]].
 
 |   |
 |---|

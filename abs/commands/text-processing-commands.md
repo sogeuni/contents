@@ -1,4 +1,6 @@
-# 16.4. Text Processing Commands
+---
+title: 16.4. Text Processing Commands
+---
 
 **Commands affecting text and text files**
 
@@ -14,21 +16,20 @@ The results of a _tsort_ will usually differ markedly from those of the standard
 
 **uniq**
 
-This filter removes duplicate lines from a sorted file. It is often seen in a pipe coupled with [[textproc#^SORTREF|sort]].
+This filter removes duplicate lines from a sorted file. It is often seen in a pipe coupled with [[text-processing-commands#^SORTREF|sort]].
 
-|   |
-|---|
-|cat list-1 list-2 list-3 \| sort \| uniq > final.list
+```bash
+cat list-1 list-2 list-3 | sort | uniq > final.list
 # Concatenates the list files,
 # sorts them,
 # removes duplicate lines,
-# and finally writes the result to an output file.|
+# and finally writes the result to an output file.
+```
 
 The useful -c option prefixes each line of the input file with its number of occurrences.
 
-|   |
-|---|
-|bash$ **cat testfile**
+```bash
+bash$ cat testfile
 This line occurs only once.
  This line occurs twice.
  This line occurs twice.
@@ -36,23 +37,26 @@ This line occurs only once.
  This line occurs three times.
  This line occurs three times.
 
-bash$ **uniq -c testfile**
+
+bash$ uniq -c testfile
       1 This line occurs only once.
        2 This line occurs twice.
        3 This line occurs three times.
 
-bash$ **sort testfile \| uniq -c \| sort -nr**
+
+bash$ sort testfile | uniq -c | sort -nr
       3 This line occurs three times.
        2 This line occurs twice.
-       1 This line occurs only once.|
+       1 This line occurs only once.
+	      
+```
 
 The **sort INPUTFILE | uniq -c | sort -nr** command string produces a _frequency of occurrence_ listing on the INPUTFILE file (the -nr options to **sort** cause a reverse numerical sort). This template finds use in analysis of log files and dictionary lists, and wherever the lexical structure of a document needs to be examined.
 
 **Example 16-12. Word Frequency Analysis**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # wf.sh: Crude word frequency analysis on a text file.
 # This is a more efficient version of the "wf2.sh" script.
 
@@ -79,7 +83,7 @@ fi
 ########################################################
 # main ()
 sed -e 's/\.//g'  -e 's/\,//g' -e 's/ /\
-/g' "$1" \| tr 'A-Z' 'a-z' \| sort \| uniq -c \| sort -nr
+/g' "$1" | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr
 #                           =========================
 #                            Frequency of occurrence
 
@@ -89,7 +93,7 @@ sed -e 's/\.//g'  -e 's/\,//g' -e 's/ /\
 #+ finally prefix occurrence count and sort numerically.
 
 #  Arun Giridhar suggests modifying the above to:
-#  . . . \| sort \| uniq -c \| sort +1 [-f] \| sort +0 -nr
+#  . . . | sort | uniq -c | sort +1 [-f] | sort +0 -nr
 #  This adds a secondary sort key, so instances of
 #+ equal occurrence are sorted alphabetically.
 #  As he explains it:
@@ -99,9 +103,9 @@ sed -e 's/\.//g'  -e 's/\,//g' -e 's/ /\
 #+ and last on the most significant column (frequency)."
 #
 #  As Frank Wang explains, the above is equivalent to
-#+       . . . \| sort \| uniq -c \| sort +0 -nr
+#+       . . . | sort | uniq -c | sort +0 -nr
 #+ and the following also works:
-#+       . . . \| sort \| uniq -c \| sort -k1nr -k
+#+       . . . | sort | uniq -c | sort -k1nr -k
 ########################################################
 
 exit 0
@@ -111,11 +115,11 @@ exit 0
 # 1) Add 'sed' commands to filter out other punctuation,
 #+   such as semicolons.
 # 2) Modify the script to also filter out multiple spaces and
-#+   other whitespace.|
+#+   other whitespace.
+```
 
-|   |
-|---|
-|bash$ **cat testfile**
+```bash
+bash$ cat testfile
 This line occurs only once.
  This line occurs twice.
  This line occurs twice.
@@ -123,7 +127,8 @@ This line occurs only once.
  This line occurs three times.
  This line occurs three times.
 
-bash$ **./wf.sh testfile**
+
+bash$ ./wf.sh testfile
       6 this
        6 occurs
        6 line
@@ -131,7 +136,9 @@ bash$ **./wf.sh testfile**
        3 three
        2 twice
        1 only
-       1 once|
+       1 once
+	       
+```
 
 **expand**, **unexpand**
 
@@ -145,31 +152,30 @@ A tool for extracting [[special-characters#^FIELDREF|fields]] from files. It is 
 
 Using **cut** to obtain a listing of the mounted filesystems:
 
-|   |
-|---|
-|cut -d ' ' -f1,2 /etc/mtab|
+```bash
+cut -d ' ' -f1,2 /etc/mtab
+```
 
 Using **cut** to list the OS and kernel version:
 
-|   |
-|---|
-|uname -a \| cut -d" " -f1,3,11,12|
+```bash
+uname -a \| cut -d" " -f1,3,11,12
+```
 
 Using **cut** to extract message headers from an e-mail folder:
 
-|   |
-|---|
-|bash$ **grep '^Subject:' read-messages \| cut -c10-80**
+```bash
+bash$ grep '^Subject:' read-messages | cut -c10-80
 Re: Linux suitable for mission-critical apps?
  MAKE MILLIONS WORKING AT HOME!!!
  Spam complaint
- Re: Spam complaint|
+ Re: Spam complaint
+```
 
 Using **cut** to parse a file:
 
-|   |
-|---|
-|# List all the users in /etc/passwd.
+```bash
+# List all the users in /etc/passwd.
 
 FILENAME=/etc/passwd
 
@@ -178,46 +184,47 @@ do
   echo $user
 done
 
-# Thanks, Oleg Philon for suggesting this.|
+# Thanks, Oleg Philon for suggesting this.
+```
 
 **cut -d ' ' -f2,3 filename** is equivalent to **awk -F'[ ]' '{ print $2, $3 }' filename**
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|It is even possible to specify a linefeed as a delimiter. The trick is to actually embed a linefeed (**RETURN**) in the command sequence.
-
-\|   \|
-\|---\|
-\|bash$ **cut -d'
- ' -f3,7,19 testfile**
-This is line 3 of testfile.
- This is line 7 of testfile.
- This is line 19 of testfile.\|
-
-Thank you, Jaka Kranjc, for pointing this out.|
+> [!note]
+> It is even possible to specify a linefeed as a delimiter. The trick is to actually embed a linefeed (**RETURN**) in the command sequence.
+>
+> ```bash
+> bash$ cut -d'
+>  ' -f3,7,19 testfile
+> This is line 3 of testfile.
+>  This is line 7 of testfile.
+>  This is line 19 of testfile.
+> 	   
+> ```
+>
+> Thank you, Jaka Kranjc, for pointing this out.|
 
 See also [[mathc#^BASE|Example 16-48]].
 
 **paste**
 
-Tool for merging together different files into a single, multi-column file. In combination with [[textproc#^CUTREF|cut]], useful for creating system log files.
+Tool for merging together different files into a single, multi-column file. In combination with [[text-processing-commands#^CUTREF|cut]], useful for creating system log files.
 
-|   |
-|---|
-|bash$ **cat items**
+```bash
+bash$ cat items
 alphabet blocks
  building blocks
  cables
 
-bash$ **cat prices**
+bash$ cat prices
 $1.00/dozen
  $2.50 ea.
  $3.75
 
-bash$ **paste items prices**
+bash$ paste items prices
 alphabet blocks $1.00/dozen
  building blocks $2.50 ea.
- cables  $3.75|
+ cables  $3.75
+```
 
 **join**
 
@@ -225,34 +232,34 @@ Consider this a special-purpose cousin of **paste**. This powerful utility allow
 
 The **join** command operates on exactly two files, but pastes together only those lines with a common tagged [[special-characters#^FIELDREF|field]] (usually a numerical label), and writes the result to stdout. The files to be joined should be sorted according to the tagged field for the matchups to work properly.
 
-|   |
-|---|
-|File: 1.data
+```bash
+File: 1.data
 
 100 Shoes
 200 Laces
-300 Socks|
+300 Socks
+```
 
-|   |
-|---|
-|File: 2.data
+```bash
+File: 2.data
 
 100 $40.00
 200 $1.00
-300 $2.00|
+300 $2.00
+```
 
-|   |
-|---|
-|bash$ **join 1.data 2.data**
+```bash
+bash$ join 1.data 2.data
 File: 1.data 2.data
 
  100 Shoes $40.00
  200 Laces $1.00
- 300 Socks $2.00|
+ 300 Socks $2.00
+	      
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|The tagged field appears only once in the output.|
+> [!note]
+> The tagged field appears only once in the output.
 
 **head**
 
@@ -260,9 +267,8 @@ lists the beginning of a file to stdout. The default is 10 lines, but a differen
 
 **Example 16-13. Which files are scripts?**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # script-detector.sh: Detects scripts within a directory.
 
 TESTCHARS=2    # Test first 2 characters.
@@ -291,18 +297,18 @@ exit 0
 #
 #  2) As it stands, this script gives "false positives" for
 #+    Perl, awk, and other scripting language scripts.
-#     Correct this.|
+#     Correct this.
+```
 
 **Example 16-14. Generating 10-digit random numbers**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # rnd.sh: Outputs a 10-digit random number
 
 # Script by Stephane Chazelas.
 
-head -c4 /dev/urandom \| od -N4 -tu4 \| sed -ne '1s/.* //p'
+head -c4 /dev/urandom | od -N4 -tu4 | sed -ne '1s/.* //p'
 
 
 # =================================================================== #
@@ -325,10 +331,10 @@ head -c4 /dev/urandom \| od -N4 -tu4 \| sed -ne '1s/.* //p'
 
 # The author of this script explains the action of 'sed', as follows.
 
-# head -c4 /dev/urandom \| od -N4 -tu4 \| sed -ne '1s/.* //p'
-# ----------------------------------> \|
+# head -c4 /dev/urandom | od -N4 -tu4 | sed -ne '1s/.* //p'
+# ----------------------------------> |
 
-# Assume output up to "sed" --------> \|
+# Assume output up to "sed" --------> |
 # is 0000000 1198195154\n
 
 #  sed begins reading characters: 0000000 1198195154\n.
@@ -376,9 +382,10 @@ head -c4 /dev/urandom \| od -N4 -tu4 \| sed -ne '1s/.* //p'
 # =================================================================== #
 
 # An even simpler altenative to the above one-line script would be:
-#           head -c4 /dev/urandom\| od -An -tu4
+#           head -c4 /dev/urandom| od -An -tu4
 
-exit|
+exit
+```
 
 See also [[filearchiv#^EX52|Example 16-39]].
 
@@ -388,9 +395,8 @@ lists the (tail) end of a file to stdout. The default is 10 lines, but this can 
 
 **Example 16-15. Using _tail_ to monitor the system log**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 filename=sys.log
 
@@ -404,25 +410,24 @@ tail /var/log/messages > $filename
 
 echo "$filename contains tail end of system log."
 
-exit 0|
+exit 0
+```
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|To list a specific line of a text file, [[special-characters#^PIPEREF|pipe]] the output of **head** to **tail -n 1**. For example **head -n 8 database.txt \| tail -n 1** lists the 8th line of the file database.txt.
+> [!tip]
+> To list a specific line of a text file, [[special-characters#^PIPEREF|pipe]] the output of **head** to **tail -n 1**. For example **head -n 8 database.txt \| tail -n 1** lists the 8th line of the file database.txt.
+>
+> To set a variable to a given block of a text file:
+>
+> ```bash
+> var=$(head -n $m $filename | tail -n $n)
+> 
+> # filename = name of file
+> # m = from beginning of file, number of lines to end of block
+> # n = number of lines to set variable to (trim from end of block)
+> ```
 
-To set a variable to a given block of a text file:
-
-\|   \|
-\|---\|
-\|var=$(head -n $m $filename \\| tail -n $n)
-
-# filename = name of file
-# m = from beginning of file, number of lines to end of block
-# n = number of lines to set variable to (trim from end of block)\||
-
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Newer implementations of **tail** deprecate the older **tail -$LINES filename** usage. The standard **tail -n $LINES filename** is correct.|
+> [!note]
+> Newer implementations of **tail** deprecate the older **tail -$LINES filename** usage. The standard **tail -n $LINES filename** is correct.
 
 See also [[complex-commands#^EX41|Example 16-5]], [[filearchiv#^EX52|Example 16-39]] and [[debugging#^ONLINE|Example 32-6]].
 
@@ -434,18 +439,20 @@ A multi-purpose file search tool that uses [[regexp#^REGEXREF|Regular Expression
 
 Search the target file(s) for occurrences of _pattern_, where _pattern_ may be literal text or a Regular Expression.
 
-|   |
-|---|
-|bash$ **grep '[rst]ystem.$' osinfo.txt**
-The GPL governs the distribution of the Linux operating system.|
+```bash
+bash$ grep '[rst]ystem.$' osinfo.txt
+The GPL governs the distribution of the Linux operating system.
+	      
+```
 
 If no target file(s) specified, **grep** works as a filter on stdout, as in a [[special-characters#^PIPEREF|pipe]].
 
-|   |
-|---|
-|bash$ **ps ax \| grep clock**
+```bash
+bash$ ps ax | grep clock
 765 tty1     S      0:00 xclock
- 901 pts/1    S      0:00 grep clock|
+ 901 pts/1    S      0:00 grep clock
+	      
+```
 
 The -i option causes a case-insensitive search.
 
@@ -457,26 +464,26 @@ The -r (recursive) option searches files in the current working directory and al
 
 The -n option lists the matching lines, together with line numbers.
 
-|   |
-|---|
-|bash$ **grep -n Linux osinfo.txt**
+```bash
+bash$ grep -n Linux osinfo.txt
 2:This is a file containing information about Linux.
- 6:The GPL governs the distribution of the Linux operating system.|
+ 6:The GPL governs the distribution of the Linux operating system.
+	      
+```
 
 The -v (or --invert-match) option _filters out_ matches.
 
-|   |
-|---|
-|grep pattern1 *.txt \| grep -v pattern2
+```bash
+grep pattern1 *.txt \| grep -v pattern2
 
 # Matches all lines in "*.txt" files containing "pattern1",
-# but ***not*** "pattern2".|
+# but ***not*** "pattern2".
+```
 
 The -c (--count) option gives a numerical count of matches, rather than actually listing the matches.
 
-|   |
-|---|
-|grep -c txt *.sgml   # (number of occurrences of "txt" in "*.sgml" files)
+```bash
+grep -c txt *.sgml   # (number of occurrences of "txt" in "*.sgml" files)
 
 
 #   grep -cz .
@@ -494,15 +501,15 @@ printf 'a b\nc  d\n\n\n\n\n\000\n\000e\000\000\nf' \| grep -c '$'    # 9
 # Note that the -z option is GNU "grep" specific.
 
 
-# Thanks, S.C.|
+# Thanks, S.C.
+```
 
 The --color (or --colour) option marks the matching string in color (on the console or in an _xterm_ window). Since _grep_ prints out each entire line containing the matching pattern, this lets you see exactly _what_ is being matched. See also the -o option, which shows only the matching portion of the line(s).
 
 **Example 16-16. Printing out the _From_ lines in stored e-mail messages**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # from.sh
 
 #  Emulates the useful 'from' utility in Solaris, BSD, etc.
@@ -526,32 +533,31 @@ done
 exit $?
 
 #  You might wish to pipe the output of this script to 'more'
-#+ or redirect it to a file . . .|
+#+ or redirect it to a file . . .
+```
 
 When invoked with more than one target file given, **grep** specifies which file contains matches.
 
-|   |
-|---|
-|bash$ **grep Linux osinfo.txt misc.txt**
+```bash
+bash$ grep Linux osinfo.txt misc.txt
 osinfo.txt:This is a file containing information about Linux.
  osinfo.txt:The GPL governs the distribution of the Linux operating system.
- misc.txt:The Linux operating system is steadily gaining in popularity.|
+ misc.txt:The Linux operating system is steadily gaining in popularity.
+```
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|To force **grep** to show the filename when searching only one target file, simply give /dev/null as the second file.
-
-\|   \|
-\|---\|
-\|bash$ **grep Linux osinfo.txt /dev/null**
-osinfo.txt:This is a file containing information about Linux.
- osinfo.txt:The GPL governs the distribution of the Linux operating system.\||
+> [!tip]
+> To force **grep** to show the filename when searching only one target file, simply give /dev/null as the second file.
+>
+> ```bash
+> bash$ grep Linux osinfo.txt /dev/null
+> osinfo.txt:This is a file containing information about Linux.
+>  osinfo.txt:The GPL governs the distribution of the Linux operating system.
+> ```
 
 If there is a successful match, **grep** returns an [[exit-status#^EXITSTATUSREF|exit status]] of 0, which makes it useful in a condition test in a script, especially in combination with the -q option to suppress output.
 
-|   |
-|---|
-|SUCCESS=0                      # if grep lookup succeeds
+```bash
+SUCCESS=0                      # if grep lookup succeeds
 word=Linux
 filename=data.file
 
@@ -563,15 +569,15 @@ then
   echo "$word found in $filename"
 else
   echo "$word not found in $filename"
-fi|
+fi
+```
 
 [[debugging#^ONLINE|Example 32-6]] demonstrates how to use **grep** to search for a word pattern in a system logfile.
 
 **Example 16-17. Emulating _grep_ in a script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # grp.sh: Rudimentary reimplementation of grep.
 
 E_BADARGS=85
@@ -604,7 +610,8 @@ exit 0
 # Exercises:
 # ---------
 # 1) Add newlines to output, if more than one match in any given file.
-# 2) Add features.|
+# 2) Add features.
+```
 
 How can **grep** search for two (or more) separate patterns? What if you want **grep** to display all lines in a file or files that contain both "pattern1" _and_ "pattern2"?
 
@@ -612,38 +619,37 @@ One method is to [[special-characters#^PIPEREF|pipe]] the result of **grep patte
 
 For example, given the following file:
 
-|   |
-|---|
-|# Filename: tstfile
+```bash
+# Filename: tstfile
 
 This is a sample file.
 This is an ordinary text file.
 This file does not contain any unusual text.
 This file is not unusual.
-Here is some text.|
+Here is some text.
+```
 
 Now, let's search this file for lines containing _both_ "file" and "text" . . .
 
-|   |
-|---|
-|bash$ **grep file tstfile**
+```bash
+bash$ grep file tstfile
 # Filename: tstfile
  This is a sample file.
  This is an ordinary text file.
  This file does not contain any unusual text.
  This file is not unusual.
 
-bash$ **grep file tstfile \| grep text**
+bash$ grep file tstfile | grep text
 This is an ordinary text file.
- This file does not contain any unusual text.|
+ This file does not contain any unusual text.
+```
 
 Now, for an interesting recreational use of _grep_ . . .
 
 **Example 16-18. Crossword puzzle solver**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # cw-solver.sh
 # This is actually a wrapper around a one-liner (line 46).
 
@@ -708,28 +714,28 @@ $ sh cw-solver.sh w...i....n
 
 wellington
 workingman
-workingmen|
+workingmen
+```
 
 **egrep** -- _extended grep_ -- is the same as **grep -E**. This uses a somewhat different, extended set of [[regexp#^REGEXREF|Regular Expressions]], which can make the search a bit more flexible. It also allows the boolean | (_or_) operator.
 
-|   |
-|---|
-|bash $ **egrep 'matches\|Matches' file.txt**
+```bash
+bash $ egrep 'matches|Matches' file.txt
 Line 1 matches.
  Line 3 Matches.
- Line 4 contains matches, but also Matches|
+ Line 4 contains matches, but also Matches
+              
+```
 
 **fgrep** -- _fast grep_ -- is the same as **grep -F**. It does a literal string search (no [[regexp#^REGEXREF|Regular Expressions]]), which generally speeds things up a bit.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|On some Linux distros, **egrep** and **fgrep** are symbolic links to, or aliases for **grep**, but invoked with the -E and -F options, respectively.|
+> [!note]
+> On some Linux distros, **egrep** and **fgrep** are symbolic links to, or aliases for **grep**, but invoked with the -E and -F options, respectively.
 
 **Example 16-19. Looking up definitions in _Webster's 1913 Dictionary_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # dict-lookup.sh
 
 #  This script looks up definitions in the 1913 Webster's Dictionary.
@@ -758,7 +764,7 @@ DEFAULT_DICTFILE="/usr/share/dict/webster1913-dict.txt"
 
 
 
-if [[ -z $(echo "$1" \| sed -n '/^[A-Z]/p') ]]
+if [[ -z $(echo "$1" | sed -n '/^[A-Z]/p') ]]
 #  Must at least specify word to look up, and
 #+ it must start with an uppercase letter.
 then
@@ -790,11 +796,11 @@ Definition=$(fgrep -A $MAXCONTEXTLINES "$1 \\" "$dictfile")
 
 # Now, snip out just the definition block.
 
-echo "$Definition" \|
-sed -n '1,/^[A-Z]/p' \|
+echo "$Definition" |
+sed -n '1,/^[A-Z]/p' |
 #  Print from first line of output
 #+ to the first line of the next entry.
-sed '$d' \| sed '$d'
+sed '$d' | sed '$d'
 #  Delete last two lines of output
 #+ (blank line and first line of next entry).
 # ---------------------------------------------------------
@@ -813,19 +819,18 @@ exit $?
 #   + from the command-line.
 #
 # 3)  Modify the script to parse one of the other available
-#   + Public Domain Dictionaries, such as the U.S. Census Bureau Gazetteer.|
+#   + Public Domain Dictionaries, such as the U.S. Census Bureau Gazetteer.
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|See also [[contributed-scripts#^QKY|Example A-41]] for an example of speedy _fgrep_ lookup on a large text file.|
+> [!note]
+> See also [[contributed-scripts#^QKY|Example A-41]] for an example of speedy _fgrep_ lookup on a large text file.
 
 **agrep** (_approximate grep_) extends the capabilities of **grep** to approximate matching. The search string may differ by a specified number of characters from the resulting matches. This utility is not part of the core Linux distribution.
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|To search compressed files, use **zgrep**, **zegrep**, or **zfgrep**. These also work on non-compressed files, though slower than plain **grep**, **egrep**, **fgrep**. They are handy for searching through a mixed set of files, some compressed, some not.
-
-To search [[filearchiv#^BZIPREF|bzipped]] files, use **bzgrep**.|
+> [!tip]
+> To search compressed files, use **zgrep**, **zegrep**, or **zfgrep**. These also work on non-compressed files, though slower than plain **grep**, **egrep**, **fgrep**. They are handy for searching through a mixed set of files, some compressed, some not.
+>
+> To search [[filearchiv#^BZIPREF|bzipped]] files, use **bzgrep**.
 
 **look**
 
@@ -833,9 +838,8 @@ The command **look** works like **grep**, but does a lookup on a "dictionary," a
 
 **Example 16-20. Checking words in a list for validity**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # lookup: Does a dictionary lookup on each word in a data file.
 
 file=words.data  # Data file from which to read words to test.
@@ -878,7 +882,8 @@ do if look "$word" > /dev/null
    fi
 done <"$file"
 
-exit 0|
+exit 0
+```
 
 **sed**, **awk**
 
@@ -896,11 +901,11 @@ Programmable file extractor and formatter, good for manipulating and/or extracti
 
 _wc_ gives a "word count" on a file or I/O stream:
 
-|   |
-|---|
-|bash $ **wc /usr/share/doc/sed-4.1.2/README**
+```bash
+bash $ wc /usr/share/doc/sed-4.1.2/README
 13  70  447 README
-[13 lines  70 words  447 characters]|
+[13 lines  70 words  447 characters]
+```
 
 **wc -w** gives only the word count.
 
@@ -914,93 +919,91 @@ _wc_ gives a "word count" on a file or I/O stream:
 
 Using **wc** to count how many .txt files are in current working directory:
 
-|   |
-|---|
-|$ ls *.txt \| wc -l
+```bash
+$ ls *.txt | wc -l
 #  Will work as long as none of the "*.txt" files
 #+ have a linefeed embedded in their name.
 
 #  Alternative ways of doing this are:
-#      find . -maxdepth 1 -name \*.txt -print0 \| grep -cz .
+#      find . -maxdepth 1 -name \*.txt -print0 | grep -cz .
 #      (shopt -s nullglob; set -- *.txt; echo $#)
 
-#  Thanks, S.C.|
+#  Thanks, S.C.
+```
 
 Using **wc** to total up the size of all the files whose names begin with letters in the range d - h
 
-|   |
-|---|
-|bash$ **wc [d-h]* \| grep total \| awk '{print $3}'**
-71832|
+```bash
+bash$ wc [d-h]* | grep total | awk '{print $3}'
+71832
+```
 
 Using **wc** to count the instances of the word "Linux" in the main source file for this book.
 
-|   |
-|---|
-|bash$ **grep Linux abs-book.sgml \| wc -l**
-138|
+```bash
+bash$ grep Linux abs-book.sgml | wc -l
+138
+```
 
 See also [[filearchiv#^EX52|Example 16-39]] and [[redircb#^REDIR4|Example 20-8]].
 
 Certain commands include some of the functionality of **wc** as options.
 
-|   |
-|---|
-|... \| grep foo \| wc -l
+```bash
+... | grep foo | wc -l
 # This frequently used construct can be more concisely rendered.
 
-... \| grep -c foo
+... | grep -c foo
 # Just use the "-c" (or "--count") option of grep.
 
-# Thanks, S.C.|
+# Thanks, S.C.
+```
 
 **tr**
 
 character translation filter.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|[[special-characters#^UCREF|Must use quoting and/or brackets]], as appropriate. Quotes prevent the shell from reinterpreting the special characters in **tr** command sequences. Brackets should be quoted to prevent expansion by the shell.|
+> [!caution]
+> [[special-characters#^UCREF|Must use quoting and/or brackets]], as appropriate. Quotes prevent the shell from reinterpreting the special characters in **tr** command sequences. Brackets should be quoted to prevent expansion by the shell.
 
 Either **tr "A-Z" "*" <filename** or **tr A-Z \* <filename** changes all the uppercase letters in filename to asterisks (writes to stdout). On some systems this may not work, but **tr A-Z '[**]'** will.
 
 The -d option deletes a range of characters.
 
-|   |
-|---|
-|echo "abcdef"                 # abcdef
-echo "abcdef" \| tr -d b-d     # aef
+```bash
+echo "abcdef"                 # abcdef
+echo "abcdef" | tr -d b-d     # aef
 
 
 tr -d 0-9 <filename
-# Deletes all digits from the file "filename".|
+# Deletes all digits from the file "filename".
+```
 
 The --squeeze-repeats (or -s) option deletes all but the first instance of a string of consecutive characters. This option is useful for removing excess [[special-characters#^WHITESPACEREF|whitespace]].
 
-|   |
-|---|
-|bash$ **echo "XXXXX" \| tr --squeeze-repeats 'X'**
-X|
+```bash
+bash$ echo "XXXXX" | tr --squeeze-repeats 'X'
+X
+```
 
 The -c "complement" option _inverts_ the character set to match. With this option, **tr** acts only upon those characters _not_ matching the specified set.
 
-|   |
-|---|
-|bash$ **echo "acfdeb123" \| tr -c b-d +**
-+c+d+b++++|
+```bash
+bash$ echo "acfdeb123" | tr -c b-d +
++c+d+b++++
+```
 
 Note that **tr** recognizes [[x17129#^POSIXREF|POSIX character classes]]. [^1]
 
-|   |
-|---|
-|bash$ **echo "abcd2ef1" \| tr '[:alpha:]' -**
-----2--1|
+```bash
+bash$ echo "abcd2ef1" | tr '[:alpha:]' -
+----2--1
+```
 
 **Example 16-21. _toupper_: Transforms a file to all uppercase.**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Changes a file to all uppercase.
 
 E_BADARGS=85
@@ -1018,7 +1021,7 @@ tr a-z A-Z <"$1"
 # Thanks, S.C.
 
 #     Or even . . .
-#     cat "$1" \| tr a-z A-Z
+#     cat "$1" | tr a-z A-Z
 #     Or dozens of other ways . . .
 
 exit 0
@@ -1026,13 +1029,13 @@ exit 0
 #  Exercise:
 #  Rewrite this script to give the option of changing a file
 #+ to *either* upper or lowercase.
-#  Hint: Use either the "case" or "select" command.|
+#  Hint: Use either the "case" or "select" command.
+```
 
 **Example 16-22. _lowercase_: Changes all filenames in working directory to lowercase.**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #
 #  Changes every filename in working directory to all lowercase.
 #
@@ -1044,7 +1047,7 @@ exit 0
 for filename in *                # Traverse all files in directory.
 do
    fname=`basename $filename`
-   n=`echo $fname \| tr A-Z a-z`  # Change name to lowercase.
+   n=`echo $fname | tr A-Z a-z`  # Change name to lowercase.
    if [ "$fname" != "$n" ]       # Rename only files not already lowercase.
    then
      mv $fname $n
@@ -1064,23 +1067,23 @@ exit $?
 
 for filename in *    # Not necessary to use basename,
                      # since "*" won't return any file containing "/".
-do n=`echo "$filename/" \| tr '[:upper:]' '[:lower:]'`
+do n=`echo "$filename/" | tr '[:upper:]' '[:lower:]'`
 #                             POSIX char set notation.
 #                    Slash added so that trailing newlines are not
 #                    removed by command substitution.
    # Variable substitution:
    n=${n%/}          # Removes trailing slash, added above, from filename.
-   [[ $filename == $n ]] \| mv "$filename" "$n"
+   [[ $filename == $n ]] | mv "$filename" "$n"
                      # Checks if filename already lowercase.
 done
 
-exit $?|
+exit $?
+```
 
 **Example 16-23. _du_: DOS to UNIX text file conversion.**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Du.sh: DOS to UNIX text file converter.
 
 E_WRONGARGS=85
@@ -1108,13 +1111,13 @@ exit 0
 
 # Exercise:
 # --------
-# Change the above script to convert from UNIX to DOS.|
+# Change the above script to convert from UNIX to DOS.
+```
 
 **Example 16-24. _rot13_: ultra-weak encryption.**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # rot13.sh: Classic rot13 algorithm,
 #           encryption that might fool a 3-year old
 #           for about 10 minutes.
@@ -1123,17 +1126,17 @@ exit 0
 # or     ./rot13.sh <filename
 # or     ./rot13.sh and supply keyboard input (stdin)
 
-cat "$@" \| tr 'a-zA-Z' 'n-za-mN-ZA-M'   # "a" goes to "n", "b" to "o" ...
+cat "$@" | tr 'a-zA-Z' 'n-za-mN-ZA-M'   # "a" goes to "n", "b" to "o" ...
 #  The   cat "$@"   construct
 #+ permits input either from stdin or from files.
 
-exit 0|
+exit 0
+```
 
 **Example 16-25. Generating "Crypto-Quote" Puzzles**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # crypto-quote.sh: Encrypt quotes
 
 #  Will encrypt famous quotes in a simple monoalphabetic substitution.
@@ -1149,8 +1152,8 @@ key=ETAOINSHRDLUBCFGJMQPVWZYXK
 # If using stdin, terminate input with a Control-D.
 # Otherwise, specify filename as command-line parameter.
 
-cat "$@" \| tr "a-z" "A-Z" \| tr "A-Z" "$key"
-#        \|  to uppercase  \|     encrypt       
+cat "$@" | tr "a-z" "A-Z" | tr "A-Z" "$key"
+#        |  to uppercase  |     encrypt       
 # Will work on lowercase, uppercase, or mixed-case quotes.
 # Passes non-alphabetic characters through unchanged.
 
@@ -1164,7 +1167,7 @@ cat "$@" \| tr "a-z" "A-Z" \| tr "A-Z" "$key"
 # --BEML PZERC
 
 # To reverse the encryption:
-# cat "$@" \| tr "$key" "A-Z"
+# cat "$@" | tr "$key" "A-Z"
 
 
 #  This simple-minded cipher can be broken by an average 12-year old
@@ -1175,29 +1178,28 @@ exit 0
 #  Exercise:
 #  --------
 #  Modify the script so that it will either encrypt or decrypt,
-#+ depending on command-line argument(s).|
+#+ depending on command-line argument(s).
+```
 
 Of course, _tr_ lends itself to _code obfuscation_.
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # jabh.sh
 
 x="wftedskaebjgdBstbdbsmnjgz"
-echo $x \| tr "a-z" 'oh, turtleneck Phrase Jar!'
+echo $x | tr "a-z" 'oh, turtleneck Phrase Jar!'
 
-# Based on the Wikipedia "Just another Perl hacker" article.|
+# Based on the Wikipedia "Just another Perl hacker" article.
+```
 
-|   |
-|---|
-|**_tr_ variants**
-
-The **tr** utility has two historic variants. The BSD version does not use brackets (**tr a-z A-Z**), but the SysV one does (**tr '[a-z]' '[A-Z]'**). The GNU version of **tr** resembles the BSD one.|
+> **_tr_ variants**
+>
+> The **tr** utility has two historic variants. The BSD version does not use brackets (**tr a-z A-Z**), but the SysV one does (**tr '[a-z]' '[A-Z]'**). The GNU version of **tr** resembles the BSD one.
 
 **fold**
 
-A filter that wraps lines of input to a specified width. This is especially useful with the -s option, which breaks lines at word spaces (see [[textproc#^EX50|Example 16-26]] and [[contributed-scripts#^MAILFORMAT|Example A-1]]).
+A filter that wraps lines of input to a specified width. This is especially useful with the -s option, which breaks lines at word spaces (see [[text-processing-commands#^EX50|Example 16-26]] and [[contributed-scripts#^MAILFORMAT|Example A-1]]).
 
 **fmt**
 
@@ -1205,26 +1207,25 @@ Simple-minded file formatter, used as a filter in a pipe to "wrap" long lines of
 
 **Example 16-26. Formatted file listing.**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 WIDTH=40                    # 40 columns wide.
 
 b=`ls /usr/local/bin`       # Get a file listing...
 
-echo $b \| fmt -w $WIDTH
+echo $b | fmt -w $WIDTH
 
 # Could also have been done by
-#    echo $b \| fold - -s -w $WIDTH
+#    echo $b | fold - -s -w $WIDTH
  
-exit 0|
+exit 0
+```
 
 See also [[complex-commands#^EX41|Example 16-5]].
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|A powerful alternative to **fmt** is Kamil Toman's **par** utility, available from [[http://www.cs.berkeley.edu/~amc/Par/|http://www.cs.berkeley.edu/~amc/Par/]].|
+> [!tip]
+> A powerful alternative to **fmt** is Kamil Toman's **par** utility, available from [http://www.cs.berkeley.edu/~amc/Par/](http://www.cs.berkeley.edu/~amc/Par/).
 
 **col**
 
@@ -1236,15 +1237,14 @@ Column formatter. This filter transforms list-type text output into a "pretty-pr
 
 **Example 16-27. Using _column_ to format a directory listing**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # colms.sh
 # A minor modification of the example file in the "column" man page.
 
 
 (printf "PERMISSIONS LINKS OWNER GROUP SIZE MONTH DAY HH:MM PROG-NAME\n" \
-; ls -l \| sed 1d) \| column -t
+; ls -l | sed 1d) | column -t
 #         ^^^^^^           ^^
 
 #  The "sed 1d" in the pipe deletes the first line of output,
@@ -1253,15 +1253,15 @@ Column formatter. This filter transforms list-type text output into a "pretty-pr
 
 # The -t option to "column" pretty-prints a table.
 
-exit 0|
+exit 0
+```
 
 **colrm**
 
 Column removal filter. This removes columns (characters) from a file and writes the file, lacking the range of specified columns, back to stdout. **colrm 2 4 <filename** removes the second through fourth characters from each line of the text file filename.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|If the file contains tabs or nonprintable characters, this may cause unpredictable behavior. In such cases, consider using [[textproc#^EXPANDREF|expand]] and **unexpand** in a pipe preceding **colrm**.|
+> [!caution]
+> If the file contains tabs or nonprintable characters, this may cause unpredictable behavior. In such cases, consider using [[text-processing-commands#^EXPANDREF|expand]] and **unexpand** in a pipe preceding **colrm**.
 
 **nl**
 
@@ -1271,9 +1271,8 @@ The output of **nl** is very similar to **cat -b**, since, by default **nl** doe
 
 **Example 16-28. _nl_: A self-numbering script.**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # line-number.sh
 
 # This script echoes itself twice to stdout with its lines numbered.
@@ -1291,7 +1290,8 @@ cat -n `basename $0`
 # Note that 'nl -ba' will also do so.
 
 exit 0
-# -----------------------------------------------------------------|
+# -----------------------------------------------------------------
+```
 
 **pr**
 
@@ -1303,31 +1303,31 @@ A particularly useful option is -d, forcing double-spacing (same effect as **sed
 
 **gettext**
 
-The GNU **gettext** package is a set of utilities for [[localization.html|localizing]] and translating the text output of programs into foreign languages. While originally intended for C programs, it now supports quite a number of programming and scripting languages.
+The GNU **gettext** package is a set of utilities for [[localization|localizing]] and translating the text output of programs into foreign languages. While originally intended for C programs, it now supports quite a number of programming and scripting languages.
 
 The **gettext** _program_ works on shell scripts. See the _info page_.
 
 **msgfmt**
 
-A program for generating binary message catalogs. It is used for [[localization.html|localization]].
+A program for generating binary message catalogs. It is used for [[localization|localization]].
 
 **iconv**
 
-A utility for converting file(s) to a different encoding (character set). Its chief use is for [[localization.html|localization]].
+A utility for converting file(s) to a different encoding (character set). Its chief use is for [[localization|localization]].
 
-|   |
-|---|
-|# Convert a string from UTF-8 to UTF-16 and print to the BookList
+```bash
+# Convert a string from UTF-8 to UTF-16 and print to the BookList
 function write_utf8_string {
     STRING=$1
     BOOKLIST=$2
-    echo -n "$STRING" \| iconv -f UTF8 -t UTF16 \| \
-    cut -b 3- \| tr -d \\n >> "$BOOKLIST"
+    echo -n "$STRING" | iconv -f UTF8 -t UTF16 | \
+    cut -b 3- | tr -d \\n >> "$BOOKLIST"
 }
 
 #  From Peter Knowles' "booklistgen.sh" script
 #+ for converting files to Sony Librie/PRS-50X format.
-#  (http://booklistgensh.peterknowles.com)|
+#  (http://booklistgensh.peterknowles.com)
+```
 
 **recode**
 
@@ -1345,14 +1345,14 @@ _Ghostscript_ (**gs**) is a GPL-ed Postscript interpreter.
 
 Utility for processing _TeX_ and _pdf_ files. Found in /usr/bin on many Linux distros, it is actually a [[shell-wrapper#^SHWRAPPER|shell wrapper]] that calls [[shell-wrapper#^PERLREF|Perl]] to invoke _Tex_.
 
-|   |
-|---|
-|texexec --pdfarrange --result=Concatenated.pdf *pdf
+```bash
+texexec --pdfarrange --result=Concatenated.pdf *pdf
 
 #  Concatenates all the pdf files in the current working directory
 #+ into the merged file, Concatenated.pdf . . .
 #  (The --pdfarrange option repaginates a pdf file. See also --pdfcombine.)
-#  The above command-line could be parameterized and put into a shell script.|
+#  The above command-line could be parameterized and put into a shell script.
+```
 
 **enscript**
 
@@ -1370,9 +1370,8 @@ The **eqn** equation processing utility is likewise part of **groff**, and its f
 
 **Example 16-29. _manview_: Viewing formatted manpages**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # manview.sh: Formats the source of a man page for viewing.
 
 #  This script is useful when writing man page source.
@@ -1388,7 +1387,7 @@ then
 fi
 
 # ---------------------------
-groff -Tascii -man $1 \| less
+groff -Tascii -man $1 | less
 # From the man page for groff.
 # ---------------------------
 
@@ -1396,11 +1395,12 @@ groff -Tascii -man $1 \| less
 #+ then the above code will barf.
 #  The following line can handle such cases.
 #
-#   gtbl < "$1" \| geqn -Tlatin1 \| groff -Tlatin1 -mtty-char -man
+#   gtbl < "$1" | geqn -Tlatin1 | groff -Tlatin1 -mtty-char -man
 #
 #   Thanks, S.C.
 
-exit $?   # See also the "maned.sh" script.|
+exit $?   # See also the "maned.sh" script.
+```
 
 See also [[contributed-scripts#^MANED|Example A-39]].
 
@@ -1411,4 +1411,3 @@ The **lex** lexical analyzer produces programs for pattern matching. This has be
 The **yacc** utility creates a parser based on a set of specifications. This has been replaced by the nonproprietary **bison** on Linux systems.
 
 [^1]: This is only true of the GNU version of **tr**, not the generic version often found on commercial UNIX systems.
-

@@ -113,7 +113,7 @@ bozo|
 
 **w**
 
-Show all logged on users and the processes belonging to them. This is an extended version of **who**. The output of **w** may be piped to [[textproc#^GREPREF|grep]] to find a specific user and/or process.
+Show all logged on users and the processes belonging to them. This is an extended version of **who**. The output of **w** may be piped to [[text-processing-commands#^GREPREF|grep]] to find a specific user and/or process.
 
 |   |
 |---|
@@ -517,7 +517,7 @@ root          tty1                      Fri Dec  7 18:43:21 -0700 2001|
 
 **lsof**
 
-List open files. This command outputs a detailed table of all currently open files and gives information about their owner, size, the processes associated with them, and more. Of course, **lsof** may be piped to [[textproc#^GREPREF|grep]] and/or [[C.2. Awk#^AWKREF|awk]] to parse and analyze its results.
+List open files. This command outputs a detailed table of all currently open files and gives information about their owner, size, the processes associated with them, and more. Of course, **lsof** may be piped to [[text-processing-commands#^GREPREF|grep]] and/or [[C.2. Awk#^AWKREF|awk]] to parse and analyze its results.
 
 |   |
 |---|
@@ -661,7 +661,7 @@ And, of course, there's Dr. Andrew Tridgell's notorious one-line script in the B
 
 **free**
 
-Shows memory and cache usage in tabular form. The output of this command lends itself to parsing, using [[textproc#^GREPREF|grep]], [[C.2. Awk#^AWKREF|awk]] or **Perl**. The **procinfo** command shows all the information that **free** does, and much more.
+Shows memory and cache usage in tabular form. The output of this command lends itself to parsing, using [[text-processing-commands#^GREPREF|grep]], [[C.2. Awk#^AWKREF|awk]] or **Perl**. The **procinfo** command shows all the information that **free** does, and much more.
 
 |   |
 |---|
@@ -731,7 +731,7 @@ Filesystem           1k-blocks      Used Available Use% Mounted on
 
 **dmesg**
 
-Lists all system bootup messages to stdout. Handy for debugging and ascertaining which device drivers were installed and which system interrupts in use. The output of **dmesg** may, of course, be parsed with [[textproc#^GREPREF|grep]], [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]], or [[C.2. Awk#^AWKREF|awk]] from within a script.
+Lists all system bootup messages to stdout. Handy for debugging and ascertaining which device drivers were installed and which system interrupts in use. The output of **dmesg** may, of course, be parsed with [[text-processing-commands#^GREPREF|grep]], [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]], or [[C.2. Awk#^AWKREF|awk]] from within a script.
 
 |   |
 |---|
@@ -951,7 +951,7 @@ Adding an appropriate entry to /etc/logrotate.conf makes it possible to manage p
 
 **ps**
 
-_P_rocess _S_tatistics: lists currently executing processes by owner and PID (process ID). This is usually invoked with ax or aux options, and may be piped to [[textproc#^GREPREF|grep]] or [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]] to search for a specific process (see [[internal-commands-and-builtins#^EX44|Example 15-14]] and [[procref1#^PIDID|Example 29-3]]).
+_P_rocess _S_tatistics: lists currently executing processes by owner and PID (process ID). This is usually invoked with ax or aux options, and may be piped to [[text-processing-commands#^GREPREF|grep]] or [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]] to search for a specific process (see [[internal-commands-and-builtins#^EX44|Example 15-14]] and [[procref1#^PIDID|Example 29-3]]).
 
 |   |
 |---|
@@ -962,7 +962,7 @@ To display system processes in graphical "tree" format: **ps afjx** or **ps ax -
 
 **pgrep**, **pkill**
 
-Combining the **ps** command with [[textproc#^GREPREF|grep]] or [[job-control-commands#^KILLREF|kill]].
+Combining the **ps** command with [[text-processing-commands#^GREPREF|grep]] or [[job-control-commands#^KILLREF|kill]].
 
 |   |
 |---|
@@ -1334,7 +1334,7 @@ Dump ip packet traffic between hosts _bozoville_ and _caduceus_:
 |---|
 |bash$ **tcpdump ip host bozoville and caduceus**|
 
-Of course, the output of **tcpdump** can be parsed with certain of the previously discussed [[textproc#^TPCOMMANDLISTING1|text processing utilities]].
+Of course, the output of **tcpdump** can be parsed with certain of the previously discussed [[text-processing-commands#^TPCOMMANDLISTING1|text processing utilities]].
 
 **Filesystem**
 
@@ -1839,7 +1839,7 @@ The default is two-second intervals, but this may be changed with the -n option.
 
 |   |   |
 |---|---|
-|![[../images/note.gif|Note]]|Unfortunately, [[special-characters#^PIPEREF|piping]] the output of **watch command** to [[textproc#^GREPREF|grep]] does not work.|
+|![[../images/note.gif|Note]]|Unfortunately, [[special-characters#^PIPEREF|piping]] the output of **watch command** to [[text-processing-commands#^GREPREF|grep]] does not work.|
 
 **strip**
 

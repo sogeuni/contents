@@ -112,7 +112,7 @@ cat file.1 file.2 file.3 > file.123   # Combines three files into one.
 
 The -n option to **cat** inserts consecutive numbers before all lines of the target file(s). The -b option numbers only the non-blank lines. The -v option echoes nonprintable characters, using ^ notation. The -s option squeezes multiple consecutive blank lines into a single blank line.
 
-See also [[textproc#^LNUM|Example 16-28]] and [[textproc#^ROT13|Example 16-24]].
+See also [[text-processing-commands#^LNUM|Example 16-28]] and [[text-processing-commands#^ROT13|Example 16-24]].
 
 > [!note]
 > In a [[special-characters#^PIPEREF|pipe]], it may be more efficient to [[io-redirection#^IOREDIRREF|redirect]] the stdin to a file, rather than to **cat** the file.

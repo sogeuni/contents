@@ -561,7 +561,7 @@ Backlight, [[system#^BACKLIGHT|setting the brightness]]
 
 [[bibliography|bibliography]]
 
-[[textproc#^BISONREF|Bison]] utility
+[[text-processing-commands#^BISONREF|Bison]] utility
 
 [[operators#^BITWSOPS1|Bitwise operators]]
 
@@ -739,7 +739,7 @@ Commenting out blocks of code
 
 [[assorted-tips#^CSTYLE|_C_-style syntax]] , for handling variables
 
-[[textproc#^CWSOLVER|Crossword puzzle solver]]
+[[text-processing-commands#^CWSOLVER|Crossword puzzle solver]]
 
 [[contributed-scripts#^GRONSFELD|Cryptography]]
 
@@ -995,7 +995,7 @@ Exit and Exit status
 
 [[operators#^NOFLOATINGPOINT|Floating point numbers]], Bash does not recognize
 
-[[textproc#^FOLDREF|fold]], a filter to wrap lines of text
+[[text-processing-commands#^FOLDREF|fold]], a filter to wrap lines of text
 
 [[internal-commands-and-builtins#^FORKREF|Forking]] a _child_ process
 
@@ -1050,9 +1050,9 @@ Games and amusements
     
 - [[contributed-scripts#^BINGO|Bingo Number Generator]]
     
-- [[textproc#^CWSOLVER|Crossword puzzle solver]]
+- [[text-processing-commands#^CWSOLVER|Crossword puzzle solver]]
     
-- [[textproc#^CRYPTOQUOTE|Crypto-Quotes]]
+- [[text-processing-commands#^CRYPTOQUOTE|Crypto-Quotes]]
     
 - [[bash-ver2#^CARDS|Dealing a deck of cards]]
     
@@ -1116,7 +1116,7 @@ Games and amusements
 
 [[other-comparison-operators#^GT0REF|-gt]] , _greater-than_ [[other-comparison-operators#^ICOMPARISON1|integer comparison]] test
 
-[[textproc#^GROFFREF|_groff_]], text markup and formatting language
+[[text-processing-commands#^GROFFREF|_groff_]], text markup and formatting language
 
 [[contributed-scripts#^GRONSFELD|Gronsfeld cipher]]
 
@@ -1131,7 +1131,7 @@ Games and amusements
 - [[contributed-scripts#^HASHEX2_0|_Example script_]]
     
 
-[[textproc#^HEADREF|head]], _echo_ to stdout lines at the beginning of a text file
+[[text-processing-commands#^HEADREF|head]], _echo_ to stdout lines at the beginning of a text file
 
 [[internal-commands-and-builtins#^HELPREF|help]], gives usage summary of a Bash [[internal-commands-and-builtins#^BUILTINREF|builtin]]
 
@@ -1198,7 +1198,7 @@ Games and amusements
 
 [[tests#^IFTHEN|if [ condition ]; then ...]] _test_ construct
 
-- [[test-constructs#^IFGREPREF|if-grep]], _if_ and [[textproc#^GREPREF|grep]] in combination
+- [[test-constructs#^IFGREPREF|if-grep]], _if_ and [[text-processing-commands#^GREPREF|grep]] in combination
     
     [[assorted-tips#^IFGREPFIX|Fixup]] for _if-grep_ test
     
@@ -1243,7 +1243,7 @@ Games and amusements
 - [[extmisc#^JOTRANDOM|Random sequence generation]]
     
 
-[[textproc#^JABH|Just another Bash hacker!]]
+[[text-processing-commands#^JABH|Just another Bash hacker!]]
 
 * * *
 
@@ -1426,7 +1426,7 @@ Loopback devices
 
 [[networkprogramming|Network programming]]
 
-[[textproc#^NLREF|nl]], a filter to number lines of text
+[[text-processing-commands#^NLREF|nl]], a filter to number lines of text
 
 [[options#^NOCLOBBERREF|_Noclobber_]], -C option to Bash to prevent overwriting of files
 
@@ -1444,7 +1444,7 @@ Obfuscation
     
 - [[contributed-scripts#^HOMEWORK|Homework assignment]]
     
-- [[textproc#^JABH|Just another Bash hacker!]]
+- [[text-processing-commands#^JABH|Just another Bash hacker!]]
     
 
 [[escaping#^OCTALREF|octal]], base-8 numbers
@@ -2131,7 +2131,7 @@ Strings
 
 Table lookup, [[bash-ver2#^RESISTOR|script example]]
 
-[[textproc#^TAILREF|tail]], _echo_ to stdout lines at the (tail) end of a text file
+[[text-processing-commands#^TAILREF|tail]], _echo_ to stdout lines at the (tail) end of a text file
 
 [[filearchiv#^TARREF|tar]], archiving utility
 
@@ -2218,7 +2218,7 @@ Test operators
     [[refcards#^FILESTAB|File]]
     
 
-[[textproc|Text and text file processing]]
+[[text-processing-commands|Text and text file processing]]
 
 [[time-date-commands|Time / Date]]
 
@@ -2314,15 +2314,15 @@ Timed input
 
 [[terminalccmds#^TPUTREF|tput]], terminal-control command
 
-[[textproc#^TRREF|tr]], character translation filter
+[[text-processing-commands#^TRREF|tr]], character translation filter
 
-- [[textproc#^TRD2U|DOS to Unix text file conversion]]
+- [[text-processing-commands#^TRD2U|DOS to Unix text file conversion]]
     
-- [[textproc#^TROPTIONS|Options]]
+- [[text-processing-commands#^TROPTIONS|Options]]
     
 - [[contributed-scripts#^SOUNDEX0|Soundex]], _example script_
     
-- [[textproc#^TRVARIANTS|Variants]]
+- [[text-processing-commands#^TRVARIANTS|Variants]]
     
 
 [[debugging#^TRAPREF1|_Trap_]], specifying an action upon receipt of a [[debugging#^SIGNALD|signal]]
@@ -2356,7 +2356,7 @@ _Trinary (ternary)_ operator, _C_-style, **var>10?88:99**
 
 [[gotchas#^UNINITVAR|Uninitialized variables]]
 
-[[textproc#^UNIQREF|uniq]], filter to remove duplicate lines from a sorted file
+[[text-processing-commands#^UNIQREF|uniq]], filter to remove duplicate lines from a sorted file
 
 [[internal-commands-and-builtins#^UNSETREF|unset]], delete a shell variable
 

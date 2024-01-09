@@ -13,7 +13,7 @@
             "state": {
               "type": "diff-view",
               "state": {
-                "file": "_abs/assorted-tips.md",
+                "file": ".obsidian/workspace.json",
                 "staged": false
               }
             }
@@ -169,7 +169,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.3628873693012117,
+                  "scale": 0.7132754626224427,
                   "close": true
                 }
               }
@@ -179,7 +179,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 310.5
+    "width": 550.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -193,12 +193,14 @@
   },
   "active": "81987b6bb7dc9979",
   "lastOpenFiles": [
+    "abs/commands/text-processing-commands.md",
+    "abs/commands/textproc.md",
+    "abs/commands/basic-commands.md",
     "abs/commands/job-control-commands.md",
     "abs/commands/time-date-commands.md",
     "abs/commands/timedate.md",
     "abs/commands/complex-commands.md",
     "abs/commands/moreadv.md",
-    "abs/commands/basic-commands.md",
     "abs/commands/external-filters-programs-and-commands.md",
     "abs/commands/external.md",
     "abs/commands/internal-commands-and-builtins.md",
@@ -217,8 +219,6 @@
     "_abs/xrefindex.md",
     "_abs/x9644.md",
     "_abs/x17974.md",
-    "_abs/x17837.md",
-    "_abs/x17129.md",
     "_abs",
     "git",
     "abs/apendix",

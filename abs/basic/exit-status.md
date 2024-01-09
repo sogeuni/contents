@@ -84,7 +84,7 @@ exit 113   # Will return 113 to shell.
 #  See the "Exit Codes With Special Meanings" appendix.
 ```
 
-[[internal-variables#^XSTATVARREF|$?]] is especially useful for testing the result of a command in a script (see [[filearchiv#^FILECOMP|Example 16-35]] and [[textproc#^LOOKUP|Example 16-20]]).
+[[internal-variables#^XSTATVARREF|$?]] is especially useful for testing the result of a command in a script (see [[filearchiv#^FILECOMP|Example 16-35]] and [[text-processing-commands#^LOOKUP|Example 16-20]]).
 
 > [!note] The [[special-characters#^NOTREF|!]], the _logical not_ qualifier, reverses the outcome of a test or command, and this affects its [[exit-status#^EXITSTATUSREF|exit status]].
 >

@@ -592,7 +592,7 @@ exit $?|
 
 **diff**, **patch**
 
-**diff**: flexible file comparison utility. It compares the target files line-by-line sequentially. In some applications, such as comparing word dictionaries, it may be helpful to filter the files through [[textproc#^SORTREF|sort]] and **uniq** before piping them to **diff**. **diff file-1 file-2** outputs the lines in the files that differ, with carets showing which file each particular line belongs to.
+**diff**: flexible file comparison utility. It compares the target files line-by-line sequentially. In some applications, such as comparing word dictionaries, it may be helpful to filter the files through [[text-processing-commands#^SORTREF|sort]] and **uniq** before piping them to **diff**. **diff file-1 file-2** outputs the lines in the files that differ, with carets showing which file each particular line belongs to.
 
 The --side-by-side option to **diff** outputs each compared file, line by line, in separate columns, with non-matching lines marked. The -c and -u options likewise make the output of the command easier to interpret.
 
@@ -1021,7 +1021,7 @@ exit 0|
 
 |   |   |
 |---|---|
-|![[../images/tip.gif|Tip]]|The [[textproc#^FOLDREF|fold -s]] command may be useful (possibly in a pipe) to process long uudecoded text messages downloaded from Usenet newsgroups.|
+|![[../images/tip.gif|Tip]]|The [[text-processing-commands#^FOLDREF|fold -s]] command may be useful (possibly in a pipe) to process long uudecoded text messages downloaded from Usenet newsgroups.|
 
 **mimencode**, **mmencode**
 

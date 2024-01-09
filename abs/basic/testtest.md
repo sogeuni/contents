@@ -20,4 +20,4 @@ else
 fi
 ```
 
-Explain the _test_ constructs in the above snippet, then examine an updated version of the file, /etc/X11/xinit/xinitrc, and analyze the _if/then_ test constructs there. You may need to refer ahead to the discussions of [[textproc#^GREPREF|grep]], [[sedawk#^SEDREF|sed]], and [[regexp#^REGEXREF|regular expressions]].
+Explain the _test_ constructs in the above snippet, then examine an updated version of the file, /etc/X11/xinit/xinitrc, and analyze the _if/then_ test constructs there. You may need to refer ahead to the discussions of [[text-processing-commands#^GREPREF|grep]], [[sedawk#^SEDREF|sed]], and [[regexp#^REGEXREF|regular expressions]].

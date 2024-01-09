@@ -420,41 +420,41 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 16-11. [[time-date-commands#^DATECALC|_Date_ calculations]]
 
-16-12. [[textproc#^WF|Word Frequency Analysis]]
+16-12. [[text-processing-commands#^WF|Word Frequency Analysis]]
 
-16-13. [[textproc#^SCRIPTDETECTOR|Which files are scripts?]]
+16-13. [[text-processing-commands#^SCRIPTDETECTOR|Which files are scripts?]]
 
-16-14. [[textproc#^RND|Generating 10-digit random numbers]]
+16-14. [[text-processing-commands#^RND|Generating 10-digit random numbers]]
 
-16-15. [[textproc#^EX12|Using _tail_ to monitor the system log]]
+16-15. [[text-processing-commands#^EX12|Using _tail_ to monitor the system log]]
 
-16-16. [[textproc#^FROMSH|Printing out the _From_ lines in stored e-mail messages]]
+16-16. [[text-processing-commands#^FROMSH|Printing out the _From_ lines in stored e-mail messages]]
 
-16-17. [[textproc#^GRP|Emulating _grep_ in a script]]
+16-17. [[text-processing-commands#^GRP|Emulating _grep_ in a script]]
 
-16-18. [[textproc#^CWSOLVER|Crossword puzzle solver]]
+16-18. [[text-processing-commands#^CWSOLVER|Crossword puzzle solver]]
 
-16-19. [[textproc#^DICTLOOKUP|Looking up definitions in Webster's 1913 Dictionary]]
+16-19. [[text-processing-commands#^DICTLOOKUP|Looking up definitions in Webster's 1913 Dictionary]]
 
-16-20. [[textproc#^LOOKUP|Checking words in a list for validity]]
+16-20. [[text-processing-commands#^LOOKUP|Checking words in a list for validity]]
 
-16-21. [[textproc#^EX49|_toupper_: Transforms a file to all uppercase.]]
+16-21. [[text-processing-commands#^EX49|_toupper_: Transforms a file to all uppercase.]]
 
-16-22. [[textproc#^LOWERCASE|_lowercase_: Changes all filenames in working directory to lowercase.]]
+16-22. [[text-processing-commands#^LOWERCASE|_lowercase_: Changes all filenames in working directory to lowercase.]]
 
-16-23. [[textproc#^DU|_du_: DOS to UNIX text file conversion.]]
+16-23. [[text-processing-commands#^DU|_du_: DOS to UNIX text file conversion.]]
 
-16-24. [[textproc#^ROT13|_rot13_: ultra-weak encryption.]]
+16-24. [[text-processing-commands#^ROT13|_rot13_: ultra-weak encryption.]]
 
-16-25. [[textproc#^CRYPTOQUOTE|Generating "Crypto-Quote" Puzzles]]
+16-25. [[text-processing-commands#^CRYPTOQUOTE|Generating "Crypto-Quote" Puzzles]]
 
-16-26. [[textproc#^EX50|Formatted file listing.]]
+16-26. [[text-processing-commands#^EX50|Formatted file listing.]]
 
-16-27. [[textproc#^COL|Using _column_ to format a directory listing]]
+16-27. [[text-processing-commands#^COL|Using _column_ to format a directory listing]]
 
-16-28. [[textproc#^LNUM|_nl_: A self-numbering script.]]
+16-28. [[text-processing-commands#^LNUM|_nl_: A self-numbering script.]]
 
-16-29. [[textproc#^MANVIEW|_manview_: Viewing formatted manpages]]
+16-29. [[text-processing-commands#^MANVIEW|_manview_: Viewing formatted manpages]]
 
 16-30. [[filearchiv#^EX48|Using _cpio_ to move a directory tree]]
 

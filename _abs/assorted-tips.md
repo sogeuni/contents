@@ -528,7 +528,7 @@ umask 022   # Files that the script creates will have 755 permission.
 # Thanks to Ian D. Allen, for this tip.
 ```
 
-- A useful scripting technique is to _repeatedly_ feed the output of a filter (by piping) back to the _same filter_, but with a different set of arguments and/or options. Especially suitable for this are [[textproc#^TRREF|tr]] and [[textproc#^GREPREF|grep]].
+- A useful scripting technique is to _repeatedly_ feed the output of a filter (by piping) back to the _same filter_, but with a different set of arguments and/or options. Especially suitable for this are [[text-processing-commands#^TRREF|tr]] and [[text-processing-commands#^GREPREF|grep]].
 
 ```bash
 # From "wstrings.sh" example.
@@ -581,7 +581,7 @@ isotheral
 #+ see the agram2.sh script.
 ```
     
-See also [[procref1#^CONSTAT|Example 29-4]], [[textproc#^CRYPTOQUOTE|Example 16-25]], and [[contributed-scripts#^SOUNDEX|Example A-9]].
+See also [[procref1#^CONSTAT|Example 29-4]], [[text-processing-commands#^CRYPTOQUOTE|Example 16-25]], and [[contributed-scripts#^SOUNDEX|Example A-9]].
 
 - Use "[[here-docs#^ANONHEREDOC0|anonymous here documents]]" to comment out blocks of code, to save having to individually comment out each line with a #. See [[here-docs#^COMMENTBLOCK|Example 19-11]].
 

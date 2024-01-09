@@ -230,7 +230,7 @@ This exercise tests mastery of [[regexp#^REGEXREF|Regular Expressions]].
 
 **Cross Reference**
 
-Write a script that generates a _cross-reference_ (_concordance_) on a target file. The output will be a listing of all word occurrences in the target file, along with the line numbers in which each word occurs. Traditionally, _linked list_ constructs would be used in such applications. Therefore, you should investigate [[Chapter 27. Arrays#^ARRAYREF|arrays]] in the course of this exercise. [[textproc#^WF|Example 16-12]] is probably _not_ a good place to start.
+Write a script that generates a _cross-reference_ (_concordance_) on a target file. The output will be a listing of all word occurrences in the target file, along with the line numbers in which each word occurs. Traditionally, _linked list_ constructs would be used in such applications. Therefore, you should investigate [[Chapter 27. Arrays#^ARRAYREF|arrays]] in the course of this exercise. [[text-processing-commands#^WF|Example 16-12]] is probably _not_ a good place to start.
 
 **Square Root**
 
@@ -325,7 +325,7 @@ Optional: Write a script that searches through a list of e-mail messages and del
 
 Write a script that automates the process of creating [[basic-commands#^MANREF|man pages]].
 
-Given a text file which contains information to be formatted into a _man page_, the script will read the file, then invoke the appropriate [[textproc#^GROFFREF|groff]] commands to output the corresponding _man page_ to stdout. The text file contains blocks of information under the standard _man page_ headings, i.e., NAME, SYNOPSIS, DESCRIPTION, etc.
+Given a text file which contains information to be formatted into a _man page_, the script will read the file, then invoke the appropriate [[text-processing-commands#^GROFFREF|groff]] commands to output the corresponding _man page_ to stdout. The text file contains blocks of information under the standard _man page_ headings, i.e., NAME, SYNOPSIS, DESCRIPTION, etc.
 
 [[contributed-scripts#^MANED|Example A-39]] is an instructive first step.
 

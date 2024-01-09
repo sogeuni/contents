@@ -16,4 +16,4 @@ _|
 
 18.2. [[globbingref.html|Globbing]]
 
-To fully utilize the power of shell scripting, you need to master Regular Expressions. Certain commands and utilities commonly used in scripts, such as [[textproc#^GREPREF|grep]], [[complex-commands#^EXPRREF|expr]], [[sedawk#^SEDREF|sed]] and [[awk#^AWKREF|awk]], interpret and use REs. As of [[bashver3#^BASH3REF|version 3]], Bash has acquired its own [[bashver3#^REGEXMATCHREF|RE-match operator]]|RE-match operator]]: **=~**.
+To fully utilize the power of shell scripting, you need to master Regular Expressions. Certain commands and utilities commonly used in scripts, such as [[text-processing-commands#^GREPREF|grep]], [[complex-commands#^EXPRREF|expr]], [[sedawk#^SEDREF|sed]] and [[awk#^AWKREF|awk]], interpret and use REs. As of [[bashver3#^BASH3REF|version 3]], Bash has acquired its own [[bashver3#^REGEXMATCHREF|RE-match operator]]|RE-match operator]]: **=~**.

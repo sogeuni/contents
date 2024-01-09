@@ -6,7 +6,7 @@
 
 16.3. [[time-date-commands|Time / Date Commands]]
 
-16.4. [[textproc|Text Processing Commands]]
+16.4. [[text-processing-commands|Text Processing Commands]]
 
 16.5. [[filearchiv|File and Archiving Commands]]
 

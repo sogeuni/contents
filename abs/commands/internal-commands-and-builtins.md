@@ -88,7 +88,7 @@ Normally, each **echo** command prints a terminal newline, but the -n option sup
 >
 > **a=`echo "HELLO" \| tr A-Z a-z`**
 >
-> See also [[textproc#^LOWERCASE|Example 16-22]], [[complex-commands#^EX57|Example 16-3]], [[mathc#^MONTHLYPMT|Example 16-47]], and [[mathc#^BASE|Example 16-48]].|
+> See also [[text-processing-commands#^LOWERCASE|Example 16-22]], [[complex-commands#^EX57|Example 16-3]], [[mathc#^MONTHLYPMT|Example 16-47]], and [[mathc#^BASE|Example 16-48]].|
 
 Be aware that **echo `command`** deletes any linefeeds that the output of _command_ generates.
 

@@ -276,7 +276,7 @@ In combination with the > [[io-redirection#^IOREDIRREF|redirection operator]], t
 # However, this does not fork a new process, since ":" is a builtin.
 ```
 
-See also [[textproc#^EX12|Example 16-15]].
+See also [[text-processing-commands#^EX12|Example 16-15]].
 
 In combination with the >> redirection operator, has no effect on a pre-existing target file (**: >> target_file**). If the file did not previously exist, creates it.
 

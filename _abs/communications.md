@@ -270,7 +270,7 @@ For a much more elaborate version of the above script, see [[contributed-scripts
 
 **traceroute**
 
-Trace the route taken by packets sent to a remote host. This command works within a LAN, WAN, or over the Internet. The remote host may be specified by an IP address. The output of this command may be filtered by [[textproc#^GREPREF|grep]] [sed](Appendix%20C.%20A%20Sed%20and%20Awk%20Micro-Primer.md#^SEDREF)ed]] in a pipe.
+Trace the route taken by packets sent to a remote host. This command works within a LAN, WAN, or over the Internet. The remote host may be specified by an IP address. The output of this command may be filtered by [[text-processing-commands#^GREPREF|grep]] [sed](Appendix%20C.%20A%20Sed%20and%20Awk%20Micro-Primer.md#^SEDREF)ed]] in a pipe.
 
 |   |
 |---|

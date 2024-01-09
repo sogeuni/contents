@@ -453,7 +453,7 @@ The members of the $PIPESTATUS array hold the exit status of each respective com
 > 
 > ```
 >
-> Chet Ramey attributes the above output to the behavior of [[basic-commands#^LSREF|ls]]. If _ls_ writes to a _pipe_ whose output is not read, then _SIGPIPE_ kills it, and its [[exit-status#^EXITSTATUSREF|exit status]] is 141. Otherwise its exit status is 0, as expected. This likewise is the case for [[textproc#^TRREF|tr]].
+> Chet Ramey attributes the above output to the behavior of [[basic-commands#^LSREF|ls]]. If _ls_ writes to a _pipe_ whose output is not read, then _SIGPIPE_ kills it, and its [[exit-status#^EXITSTATUSREF|exit status]] is 141. Otherwise its exit status is 0, as expected. This likewise is the case for [[text-processing-commands#^TRREF|tr]].
 
 > [!note]
 > $PIPESTATUS is a "volatile" variable. It needs to be captured immediately after the pipe in question, before any other command intervenes.
@@ -961,7 +961,7 @@ echo "$@"    # 3 4 5
 # "$@" then contains the remaining parameters.
 ```
 
-The $@ special parameter finds use as a tool for filtering input into shell scripts. The **cat "$@"** construction accepts input to a script either from stdin or from files given as parameters to the script. See [[textproc#^ROT13|Example 16-24]] and [[textproc#^CRYPTOQUOTE|Example 16-25]].
+The $@ special parameter finds use as a tool for filtering input into shell scripts. The **cat "$@"** construction accepts input to a script either from stdin or from files given as parameters to the script. See [[text-processing-commands#^ROT13|Example 16-24]] and [[text-processing-commands#^CRYPTOQUOTE|Example 16-25]].
 
 > [!caution] The $* and $@ parameters sometimes display inconsistent and puzzling behavior, depending on the setting of [[internal-variables#^IFSREF|$IFS]].
 
