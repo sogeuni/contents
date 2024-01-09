@@ -1,4 +1,6 @@
-# 16.6. Communications Commands
+---
+title: 16.6. Communications Commands
+---
 
 Certain of the following commands find use in network data transfer and analysis, as well as in [[writingscripts#^CSPAMMERS|chasing spammers]].
 
@@ -8,19 +10,19 @@ Certain of the following commands find use in network data transfer and analysis
 
 Searches for information about an Internet host by name or IP address, using DNS.
 
-|   |
-|---|
-|bash$ **host surfacemail.com**
-surfacemail.com. has address 202.92.42.236|
+```bash
+bash$ host surfacemail.com
+surfacemail.com. has address 202.92.42.236
+```
 
 **ipcalc**
 
 Displays IP information for a host. With the -h option, **ipcalc** does a reverse DNS lookup, finding the name of the host (server) from the IP address.
 
-|   |
-|---|
-|bash$ **ipcalc -h 202.92.42.236**
-HOSTNAME=surfacemail.com|
+```bash
+bash$ ipcalc -h 202.92.42.236
+HOSTNAME=surfacemail.com
+```
 
 **nslookup**
 
@@ -28,15 +30,15 @@ Do an Internet "name server lookup" on a host by IP address. This is essentially
 
 The **nslookup** command has allegedly been "deprecated," but it is still useful.
 
-|   |
-|---|
-|bash$ **nslookup -sil 66.97.104.180**
+```bash
+bash$ nslookup -sil 66.97.104.180
 nslookup kuhleersparnis.ch
  Server:         135.116.137.2
  Address:        135.116.137.2#53
 
  Non-authoritative answer:
- Name:   kuhleersparnis.ch|
+ Name:   kuhleersparnis.ch
+```
 
 **dig**
 
@@ -46,9 +48,8 @@ Some interesting options to _dig_ are +time=N for setting a query timeout to _N_
 
 Compare the output of **dig -x** with **ipcalc -h** and **nslookup**.
 
-|   |
-|---|
-|bash$ **dig -x 81.9.6.2**
+```bash
+bash$ dig -x 81.9.6.2
 ;; Got answer:
  ;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 11649
  ;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 0
@@ -63,13 +64,13 @@ Compare the output of **dig -x** with **ipcalc -h** and **nslookup**.
  ;; Query time: 537 msec
  ;; SERVER: 135.116.137.2#53(135.116.137.2)
  ;; WHEN: Wed Jun 26 08:35:24 2002
- ;; MSG SIZE  rcvd: 91|
+ ;; MSG SIZE  rcvd: 91
+```
 
 **Example 16-40. Finding out where to report a spammer**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # spam-lookup.sh: Look up abuse contact to report a spammer.
 # Thanks, Michael Zick.
 
@@ -113,13 +114,13 @@ exit $?
 
 
 #  For a more elaborate version of this script,
-#+ see the SpamViz home page, http://www.spamviz.net/index.html.|
+#+ see the SpamViz home page, http://www.spamviz.net/index.html.
+```
 
 **Example 16-41. Analyzing a spam domain**
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 # is-spammer.sh: Identifying spam domains
 
 # $Id: is-spammer, v 1.4 2004/09/01 19:37:52 mszick Exp $
@@ -264,43 +265,43 @@ exit 0
 # 3) Substitute generic variables for "hard-coded" BHL domains.
 
 # 4) Set a time-out for the script using the "+time=" option
-     to the 'dig' command.|
+     to the 'dig' command.
+```
 
 For a much more elaborate version of the above script, see [[contributed-scripts#^ISSPAMMER2|Example A-28]].
 
 **traceroute**
 
-Trace the route taken by packets sent to a remote host. This command works within a LAN, WAN, or over the Internet. The remote host may be specified by an IP address. The output of this command may be filtered by [[text-processing-commands#^GREPREF|grep]] [sed](Appendix%20C.%20A%20Sed%20and%20Awk%20Micro-Primer.md#^SEDREF)ed]] in a pipe.
+Trace the route taken by packets sent to a remote host. This command works within a LAN, WAN, or over the Internet. The remote host may be specified by an IP address. The output of this command may be filtered by [[text-processing-commands#^GREPREF|grep]] or [[Appendix%20C.%20A%20Sed%20and%20Awk%20Micro-Primer.md#^SEDREF|sed]] in a pipe.
 
-|   |
-|---|
-|bash$ **traceroute 81.9.6.2**
+```bash
+bash$ traceroute 81.9.6.2
 traceroute to 81.9.6.2 (81.9.6.2), 30 hops max, 38 byte packets
  1  tc43.xjbnnbrb.com (136.30.178.8)  191.303 ms  179.400 ms  179.767 ms
  2  or0.xjbnnbrb.com (136.30.178.1)  179.536 ms  179.534 ms  169.685 ms
  3  192.168.11.101 (192.168.11.101)  189.471 ms  189.556 ms *
- ...|
+ ...
+```
 
 **ping**
 
 Broadcast an _ICMP ECHO_REQUEST_ packet to another machine, either on a local or remote network. This is a diagnostic tool for testing network connections, and it should be used with caution.
 
-|   |
-|---|
-|bash$ **ping localhost**
+```bash
+bash$ ping localhost
 PING localhost.localdomain (127.0.0.1) from 127.0.0.1 : 56(84) bytes of data.
  64 bytes from localhost.localdomain (127.0.0.1): icmp_seq=0 ttl=255 time=709 usec
  64 bytes from localhost.localdomain (127.0.0.1): icmp_seq=1 ttl=255 time=286 usec
 
  --- localhost.localdomain ping statistics ---
  2 packets transmitted, 2 packets received, 0% packet loss
- round-trip min/avg/max/mdev = 0.286/0.497/0.709/0.212 ms|
+ round-trip min/avg/max/mdev = 0.286/0.497/0.709/0.212 ms
+```
 
 A successful _ping_ returns an [[exit-status#^EXITSTATUSREF|exit status]] of 0. This can be tested for in a script.
 
-|   |
-|---|
-|HNAME=news-15.net  # Notorious spammer.
+```bash
+HNAME=news-15.net  # Notorious spammer.
 # HNAME=$HOST     # Debug: test for localhost.
   count=2  # Send only two pings.
 
@@ -309,19 +310,19 @@ then
   echo ""$HNAME" still up and broadcasting spam your way."
 else
   echo ""$HNAME" seems to be down. Pity."
-fi|
+fi
+```
 
 **whois**
 
-Perform a DNS (Domain Name System) lookup. The -h option permits specifying which particular _whois_ server to query. See [[othertypesv#^EX18|Example 4-6]] and [[communications#^SPAMLOOKUP|Example 16-40]].
+Perform a DNS (Domain Name System) lookup. The -h option permits specifying which particular _whois_ server to query. See [[othertypesv#^EX18|Example 4-6]] and [[communications-commands#^SPAMLOOKUP|Example 16-40]].
 
 **finger**
 
 Retrieve information about users on a network. Optionally, this command can display a user's ~/.plan, ~/.project, and ~/.forward files, if present.
 
-|   |
-|---|
-|bash$ **finger**
+```bash
+bash$ finger
 Login  Name           Tty      Idle  Login Time   Office     Office Phone
  bozo   Bozo Bozeman   tty1        8  Jun 25 16:59                (:0)
  bozo   Bozo Bozeman   ttyp0          Jun 25 16:59                (:0.0)
@@ -336,7 +337,8 @@ Login: bozo                             Name: Bozo Bozeman
  On since Fri Aug 31 20:13 (MST) on pts/1
  On since Fri Aug 31 20:31 (MST) on pts/2   1 hour 16 minutes idle
  Mail last read Tue Jul  3 10:08 2007 (MST) 
- No Plan.|
+ No Plan.
+```
 
 Out of security considerations, many networks disable **finger** and its associated daemon. [^1]
 
@@ -370,29 +372,23 @@ Utility and protocol for uploading / downloading files to or from a remote host.
 
 Since the advent of the Internet and e-mail, **uucp** seems to have faded into obscurity, but it still exists and remains perfectly workable in situations where an Internet connection is not available or appropriate. The advantage of **uucp** is that it is fault-tolerant, so even if there is a service interruption the copy operation will resume where it left off when the connection is restored.
 
----
+> **uux**: _UNIX to UNIX execute_. Execute a command on a remote system. This command is part of the **uucp** package.
 
-**uux**: _UNIX to UNIX execute_. Execute a command on a remote system. This command is part of the **uucp** package.
-
----
-
-**cu**: **C**all **U**p a remote system and connect as a simple terminal. It is a sort of dumbed-down version of [[communications#^TELNETREF|telnet]]. This command is part of the **uucp** package.
+**cu**: **C**all **U**p a remote system and connect as a simple terminal. It is a sort of dumbed-down version of [[communications-commands#^TELNETREF|telnet]]. This command is part of the **uucp** package.
 
 **telnet**
 
 Utility and protocol for connecting to a remote host.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|The _telnet_ protocol contains security holes and should therefore probably be avoided. Its use within a shell script is _not_ recommended.|
+> [!caution]
+> The _telnet_ protocol contains security holes and should therefore probably be avoided. Its use within a shell script is _not_ recommended.
 
 **wget**
 
 The **wget** utility _noninteractively_ retrieves or downloads files from a Web or ftp site. It works well in a script.
 
-|   |
-|---|
-|wget -p http://www.xyz23.com/file01.html
+```bash
+wget -p http://www.xyz23.com/file01.html
 #  The -p or --page-requisite option causes wget to fetch all files
 #+ required to display the specified page.
 
@@ -402,13 +398,13 @@ wget -r ftp://ftp.xyz24.net/~bozo/project_files/ -O $SAVEFILE
 
 wget -c ftp://ftp.xyz25.net/bozofiles/filename.tar.bz2
 #  The -c option lets wget resume an interrupted download.
-#  This works with ftp servers and many HTTP sites.|
+#  This works with ftp servers and many HTTP sites.
+```
 
 **Example 16-42. Getting a stock quote**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # quote-fetch.sh: Download a stock quote.
 
 
@@ -447,7 +443,8 @@ exit $?
 #    (Hint: parse the output of 'ps -ax' for "ppp" or "connect."
 #
 # 2) Modify this script to fetch the local weather report,
-#+   taking the user's zip code as an argument.|
+#+   taking the user's zip code as an argument.
+```
 
 See also [[contributed-scripts#^WGETTER2|Example A-30]] and [[contributed-scripts#^BASHPODDER|Example A-31]].
 
@@ -455,15 +452,15 @@ See also [[contributed-scripts#^WGETTER2|Example A-30]] and [[contributed-script
 
 The **lynx** Web and file browser can be used inside a script (with the -dump option) to retrieve a file from a Web or ftp site noninteractively.
 
-|   |
-|---|
-|lynx -dump http://www.xyz23.com/file01.html >$SAVEFILE|
+```bash
+lynx -dump http://www.xyz23.com/file01.html >$SAVEFILE
+```
 
 With the -traversal option, **lynx** starts at the HTTP URL specified as an argument, then "crawls" through all links located on that particular server. Used together with the -crawl option, outputs page text to a log file.
 
 **rlogin**
 
-_Remote login_, initates a session on a remote host. This command has security issues, so use [[communications#^SSHREF|ssh]] instead.
+_Remote login_, initates a session on a remote host. This command has security issues, so use [[communications-commands#^SSHREF|ssh]] instead.
 
 **rsh**
 
@@ -477,15 +474,14 @@ _Remote copy_, copies files between two different networked machines.
 
 _Remote synchronize_, updates (synchronizes) files between two different networked machines.
 
-|   |
-|---|
-|bash$ **rsync -a ~/sourcedir/*txt /node1/subdirectory/**|
+```bash
+bash$ rsync -a ~/sourcedir/*txt /node1/subdirectory/
+```
 
 **Example 16-43. Updating FC4**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # fc4upd.sh
 
 # Script author: Frank Wang.
@@ -593,7 +589,7 @@ set_range () {
 
 # Retrieve and refine rsync update list.
 get_list () {
-    echo $$ > $PID_FILE \| {
+    echo $$ > $PID_FILE | {
         echo "Can't write to pid file $PID_FILE"
         exit $E_RETURN
     }
@@ -607,22 +603,22 @@ get_list () {
     pre_file=
     pre_date=0
     eval /bin/nice /usr/bin/rsync \
-        -r $include $exclude $URL \| \
-        egrep '^dr.x\|^-r' \| \
-        awk '{print $3, $4, $5}' \| \
-        sort -k3 \| \
+        -r $include $exclude $URL | \
+        egrep '^dr.x|^-r' | \
+        awk '{print $3, $4, $5}' | \
+        sort -k3 | \
         { while read line; do
             # Get seconds since epoch, to filter out obsolete pkgs.
-            cur_date=$(date -d "$(echo $line \| awk '{print $1, $2}')" +%s)
+            cur_date=$(date -d "$(echo $line | awk '{print $1, $2}')" +%s)
             #  echo $cur_date
 
             # Get file name.
-            cur_file=$(echo $line \| awk '{print $3}')
+            cur_file=$(echo $line | awk '{print $3}')
             #  echo $cur_file
 
             # Get rpm pkg name from file name, if possible.
             if [[ $cur_file == *rpm ]]; then
-                pkg_name=$(echo $cur_file \| sed -r -e \
+                pkg_name=$(echo $cur_file | sed -r -e \
                     's/(^([^_-]+[_-])+)[[:digit:]]+\..*[_-].*$/\1/')
             else
                 pkg_name=
@@ -668,7 +664,7 @@ get_file () {
         --filter "merge,+/ $TMP" \
         --exclude '*'  \
         $URL $DEST     \
-        \| /usr/bin/tee $LOG
+        | /usr/bin/tee $LOG
 
     RET=$?
 
@@ -701,13 +697,13 @@ else
     "Fedora update mirrored with failure code: $RET"
 fi
 
-exit $RET|
+exit $RET
+```
 
 See also [[contributed-scripts#^NIGHTLYBACKUP|Example A-32]].
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Using [[communications#^RCPREF|rcp]], [[communications#^RSYNCREF|rsync]], and similar utilities with security implications in a shell script may not be advisable. Consider, instead, using **ssh**, [[communications#^SCPREF|scp]], or an **expect** script.|
+> [!note]
+> Using [[communications-commands#^RCPREF|rcp]], [[communications-commands#^RSYNCREF|rsync]], and similar utilities with security implications in a shell script may not be advisable. Consider, instead, using **ssh**, [[communications-commands#^SCPREF|scp]], or an **expect** script.
 
 **ssh**
 
@@ -715,9 +711,8 @@ _Secure shell_, logs onto a remote host and executes commands there. This secure
 
 **Example 16-44. Using _ssh_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # remote.bash: Using ssh.
 
 # This example by Michael Zick.
@@ -785,13 +780,13 @@ ssh -l ${USER} ${HOST} " ls -l "
 #+    man ssh-keygen
 #+    man sshd_config.
 
-exit 0|
+exit 0
+```
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|Within a loop, **ssh** may cause unexpected behavior. According to a [[http://groups-beta.google.com/group/comp.unix.shell/msg/dcb446b5fff7d230|Usenet post]] in the comp.unix shell archives, **ssh** inherits the loop's stdin. To remedy this, pass **ssh** either the -n or -f option.
-
-Thanks, Jason Bechtel, for pointing this out.|
+> [!caution]
+> Within a loop, **ssh** may cause unexpected behavior. According to a [Usenet post](http://groups-beta.google.com/group/comp.unix.shell/msg/dcb446b5fff7d230) in the comp.unix shell archives, **ssh** inherits the loop's stdin. To remedy this, pass **ssh** either the -n or -f option.
+>
+> Thanks, Jason Bechtel, for pointing this out.
 
 **scp**
 
@@ -819,9 +814,8 @@ This stripped-down command-line mail client works fine as a command embedded in 
 
 **Example 16-45. A script that mails itself**
 
-|   |
-|---|
-|#!/bin/sh
+```bash
+#!/bin/sh
 # self-mailer.sh: Self-mailing script
 
 adr=${1:-`whoami`}     # Default to current user, if not specified.
@@ -835,7 +829,7 @@ adr=${1:-`whoami`}     # Default to current user, if not specified.
 #+ of the "Variables Revisited" chapter.
 
 # ============================================================================
-  cat $0 \| mail -s "Script \"`basename $0`\" has mailed itself to you." "$adr"
+  cat $0 | mail -s "Script \"`basename $0`\" has mailed itself to you." "$adr"
 # ============================================================================
 
 # --------------------------------------------
@@ -851,7 +845,8 @@ echo "At `date`, script \"`basename $0`\" mailed to "$adr"."
 exit 0
 
 #  Note that the "mailx" command (in "send" mode) may be substituted
-#+ for "mail" ... but with somewhat different options.|
+#+ for "mail" ... but with somewhat different options.
+```
 
 **mailto**
 
@@ -861,22 +856,22 @@ Similar to the **mail** command, **mailto** sends e-mail messages from the comma
 
 Show _mail statistics_. This command may be invoked only by _root_.
 
-|   |
-|---|
-|root# **mailstats**
+```bash
+root# mailstats
 Statistics from Tue Jan  1 20:32:08 2008
   M   msgsfr  bytes_from   msgsto    bytes_to  msgsrej msgsdis msgsqur  Mailer
   4     1682      24118K        0          0K        0       0       0  esmtp
   9      212        640K     1894      25131K        0       0       0  local
  =====================================================================
   T     1894      24758K     1894      25131K        0       0       0
-  C      414                    0|
+  C      414                    0
+```
 
 **vacation**
 
 This utility automatically replies to e-mails that the intended recipient is on vacation and temporarily unavailable. It runs on a network, in conjunction with **sendmail**, and is not applicable to a dial-up POPmail account.
 
-|[[communications#^AEN13320|[1]]]|A _daemon_ is a background process not attached to a terminal session. Daemons perform designated services either at specified times or explicitly triggered by certain events.
-
-The word "daemon" means ghost in Greek, and there is certainly something mysterious, almost supernatural, about the way UNIX daemons wander about behind the scenes, silently carrying out their appointed tasks.|
+[^1]: A _daemon_ is a background process not attached to a terminal session. Daemons perform designated services either at specified times or explicitly triggered by certain events.
+    
+    The word "daemon" means ghost in Greek, and there is certainly something mysterious, almost supernatural, about the way UNIX daemons wander about behind the scenes, silently carrying out their appointed tasks.
 

@@ -10,7 +10,7 @@ _--Aldous Huxley, _Island__
 
 _|
 
-A _here document_ is a special-purpose code block. It uses a form of [[io-redirection#^IOREDIRREF|I/O redirection]] to feed a command list to an interactive program or a command, such as [[communications#^FTPREF|ftp]], [[basic-commands#^CATREF|cat]], or the _ex_ text editor.
+A _here document_ is a special-purpose code block. It uses a form of [[io-redirection#^IOREDIRREF|I/O redirection]] to feed a command list to an interactive program or a command, such as [[communications-commands#^FTPREF|ftp]], [[basic-commands#^CATREF|cat]], or the _ex_ text editor.
 
 |   |
 |---|

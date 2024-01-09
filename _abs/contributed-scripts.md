@@ -1798,7 +1798,7 @@ echo
 
 exit 0|
 
-Michael Zick's complex array example uses the [[filearchiv#^MD5SUMREF|md5sum]] check sum command to encode directory information.
+Michael Zick's complex array example uses the [[file-and-archiving-commands#^MD5SUMREF|md5sum]] check sum command to encode directory information.
 
 **Example A-19. Directory information**
 
@@ -5886,7 +5886,7 @@ exit 0
 #@+ by Walter Dnes.
 #@  Thank you!|
 
-"Little Monster's" front end to [[communications#^WGETREF|wget]].
+"Little Monster's" front end to [[communications-commands#^WGETREF|wget]].
 
 **Example A-30. Making _wget_ easier to use**
 

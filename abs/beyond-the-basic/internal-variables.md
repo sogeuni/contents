@@ -330,7 +330,7 @@ IFS="$(printf '\n\t')"   # Per David Wheeler.
 >
 > (Many thanks, Stéphane Chazelas, for clarification and above examples.)
 >
-> See also [[communications#^ISSPAMMER|Example 16-41]], [[loops#^BINGREP|Example 11-8]], and [[x17837#^MAILBOXGREP|Example 19-14]] for instructive examples of using $IFS.
+> See also [[communications-commands#^ISSPAMMER|Example 16-41]], [[loops#^BINGREP|Example 11-8]], and [[x17837#^MAILBOXGREP|Example 19-14]] for instructive examples of using $IFS.
 
 $IGNOREEOF
 
@@ -1261,7 +1261,7 @@ $?
 
 `$$`
 
-Process ID (_PID_) of the script itself. [[debugging#^ONLINE|^5] The $$ variable often finds use in scripts to construct "unique" temp file names (see [Example 32-6]], [[filearchiv#^DERPM|Example 16-31]], and [[job-control-commands#^SELFDESTRUCT|Example 15-27]]). This is usually simpler than invoking [[filearchiv#^MKTEMPREF|mktemp]].
+Process ID (_PID_) of the script itself. [[debugging#^ONLINE|^5] The $$ variable often finds use in scripts to construct "unique" temp file names (see [Example 32-6]], [[file-and-archiving-commands#^DERPM|Example 16-31]], and [[job-control-commands#^SELFDESTRUCT|Example 15-27]]). This is usually simpler than invoking [[file-and-archiving-commands#^MKTEMPREF|mktemp]].
 
 [^1]: A _stack register_ is a set of consecutive memory locations, such that the values stored (_pushed_) are retrieved (_popped_) in _reverse_ order. The last value stored is the first retrieved. This is sometimes called a _LIFO_ (_last-in-first-out_) or _pushdown_ stack.
 

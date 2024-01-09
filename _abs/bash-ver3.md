@@ -140,7 +140,7 @@ For additional examples of using the **=~** operator, see [[contributed-scripts#
 
 - The new `set -o pipefail` option is useful for debugging [[special-characters#^PIPEREF|pipes]]. If this option is set, then the [[exit-status#^EXITSTATUSREF|exit status]] of a pipe is the exit status of the last command in the pipe to _fail_ (return a non-zero value), rather than the actual final command in the pipe.
 
-    See [[communications#^FC4UPD|Example 16-43]].
+    See [[communications-commands#^FC4UPD|Example 16-43]].
 
 > [!caution]
 > The update to version 3 of Bash breaks a few scripts that worked under earlier versions. _Test critical legacy scripts to make sure they still work!_

@@ -68,7 +68,7 @@ echo $title | cat - $file >$file.new
 
 This is a simplified variant of the [[x17837#^PREPENDEX|Example 19-13]] script given earlier. And, of course, [[sedawk#^SEDREF|sed]] can also do this.
 
-- A shell script may act as an embedded command inside another shell script, a _Tcl_ or _wish_ script, or even a [[filearchiv#^MAKEFILEREF|Makefile]]. It can be invoked as an external shell command in a C program using the _system()_ call, i.e., _system("script_name");_.
+- A shell script may act as an embedded command inside another shell script, a _Tcl_ or _wish_ script, or even a [[file-and-archiving-commands#^MAKEFILEREF|Makefile]]. It can be invoked as an external shell command in a C program using the _system()_ call, i.e., _system("script_name");_.
 
 - Setting a variable to the contents of an embedded _sed_ or _awk_ script increases the readability of the surrounding [[shell-wrapper#^SHWRAPPER|shell wrapper]]. See [[contributed-scripts#^MAILFORMAT|Example A-1]] and [[internal-commands-and-builtins#^COLTOTALER3|Example 15-20]].
 
@@ -585,7 +585,7 @@ See also [[procref1#^CONSTAT|Example 29-4]], [[text-processing-commands#^CRYPTOQ
 
 - Use "[[here-docs#^ANONHEREDOC0|anonymous here documents]]" to comment out blocks of code, to save having to individually comment out each line with a #. See [[here-docs#^COMMENTBLOCK|Example 19-11]].
 
-- Running a script on a machine that relies on a command that might not be installed is dangerous. Use [[filearchiv#^WHATISREF|whatis]] to avoid potential problems with this.
+- Running a script on a machine that relies on a command that might not be installed is dangerous. Use [[file-and-archiving-commands#^WHATISREF|whatis]] to avoid potential problems with this.
 
 ```bash
 CMD=command1                 # First choice.
@@ -668,7 +668,7 @@ echo "$inner_variable"           # It's an ugly kludge, but it works.
 It would be nice to be able to invoke X-Windows widgets from a shell script. There happen to exist several packages that purport to do so, namely _Xscript_, _Xmenu_, and _widtools_. The first two of these no longer seem to be maintained. Fortunately, it is still possible to obtain _widtools_ [here](http://www.batse.msfc.nasa.gov/~mallozzi/home/software/xforms/src/widtools-2.0.tgz).
 
 > [!caution]
-> The _widtools_ (widget tools) package requires the _XForms_ library to be installed. Additionally, the [[filearchiv#^MAKEFILEREF|Makefile]] needs some judicious editing before the package will build on a typical Linux system. Finally, three of the six widgets offered do not work (and, in fact, segfault).
+> The _widtools_ (widget tools) package requires the _XForms_ library to be installed. Additionally, the [[file-and-archiving-commands#^MAKEFILEREF|Makefile]] needs some judicious editing before the package will build on a typical Linux system. Finally, three of the six widgets offered do not work (and, in fact, segfault).
 
 The _dialog_ family of tools offers a method of calling "dialog" widgets from a shell script. The original _dialog_ utility works in a text console, but its successors, _gdialog_, _Xdialog_, and _kdialog_ use X-Windows-based widget sets.
 

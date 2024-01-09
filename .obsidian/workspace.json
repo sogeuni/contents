@@ -11,10 +11,12 @@
             "id": "81987b6bb7dc9979",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": ".obsidian/workspace.json",
-                "staged": false
+                "file": "abs/commands/internal-commands-and-builtins.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -85,6 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "abs/commands/internal-commands-and-builtins.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,6 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "abs/commands/internal-commands-and-builtins.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -122,7 +126,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "abs/commands/internal-commands-and-builtins.md"
+              }
             }
           },
           {
@@ -147,6 +153,7 @@
             "state": {
               "type": "localgraph",
               "state": {
+                "file": "abs/commands/internal-commands-and-builtins.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -193,6 +200,15 @@
   },
   "active": "81987b6bb7dc9979",
   "lastOpenFiles": [
+    "abs/commands/extmisc.md",
+    "abs/commands/math-commands.md",
+    "abs/commands/mathc.md",
+    "abs/commands/terminal-control-commands.md",
+    "abs/commands/terminalccmds.md",
+    "abs/commands/communications-commands.md",
+    "abs/commands/communications.md",
+    "abs/commands/file-and-archiving-commands.md",
+    "abs/commands/filearchiv.md",
     "abs/commands/text-processing-commands.md",
     "abs/commands/textproc.md",
     "abs/commands/basic-commands.md",
@@ -210,15 +226,6 @@
     "abs/commands/internal.md",
     "abs/commands/part4.md",
     "abs/beyond-the-basic/recess-time.md",
-    "abs/beyond-the-basic/arithmetic-expansion.md",
-    "abs/beyond-the-basic/Chapter 13. Arithmetic Expansion.md",
-    "abs/beyond-the-basic/command-substitution.md",
-    "abs/beyond-the-basic/commandsub.md",
-    "abs/beyond-the-basic/testing-and-branching.md",
-    "abs/beyond-the-basic/manipulating-strings.md",
-    "_abs/xrefindex.md",
-    "_abs/x9644.md",
-    "_abs/x17974.md",
     "_abs",
     "git",
     "abs/apendix",

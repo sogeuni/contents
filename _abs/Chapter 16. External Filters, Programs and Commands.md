@@ -8,13 +8,13 @@
 
 16.4. [[text-processing-commands|Text Processing Commands]]
 
-16.5. [[filearchiv|File and Archiving Commands]]
+16.5. [[file-and-archiving-commands|File and Archiving Commands]]
 
-16.6. [[communications|Communications Commands]]
+16.6. [[communications-commands|Communications Commands]]
 
-16.7. [[terminalccmds|Terminal Control Commands]]
+16.7. [[terminal-control-commands|Terminal Control Commands]]
 
-16.8. [[mathc|Math Commands]]
+16.8. [[math-commands|Math Commands]]
 
 16.9. [[extmisc|Miscellaneous Commands]]
 

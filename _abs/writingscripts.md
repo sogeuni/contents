@@ -36,11 +36,11 @@ Write a script that echoes itself to stdout, but _backwards_.
 
 **Automatically Decompressing Files**
 
-Given a list of filenames as input, this script queries each target file (parsing the output of the [[filearchiv#^FILEREF|file]] command) for the type of compression used on it. Then the script automatically invokes the appropriate decompression command (**gunzip**, **bunzip2**, **unzip**, **uncompress**, or whatever). If a target file is not compressed, the script emits a warning message, but takes no other action on that particular file.
+Given a list of filenames as input, this script queries each target file (parsing the output of the [[file-and-archiving-commands#^FILEREF|file]] command) for the type of compression used on it. Then the script automatically invokes the appropriate decompression command (**gunzip**, **bunzip2**, **unzip**, **uncompress**, or whatever). If a target file is not compressed, the script emits a warning message, but takes no other action on that particular file.
 
 **Unique System ID**
 
-Generate a "unique" 6-digit hexadecimal identifier for your computer. Do _not_ use the flawed [[system#^HOSTIDREF|hostid]] command. Hint: **[[filearchiv#^MD5SUMREF|md5sum]] [[files#^DATAFILESREF1|/etc/passwd]]**, then select the first 6 digits of output.
+Generate a "unique" 6-digit hexadecimal identifier for your computer. Do _not_ use the flawed [[system#^HOSTIDREF|hostid]] command. Hint: **[[file-and-archiving-commands#^MD5SUMREF|md5sum]] [[files#^DATAFILESREF1|/etc/passwd]]**, then select the first 6 digits of output.
 
 **Backup**
 
@@ -90,7 +90,7 @@ Inactive accounts on a network server waste disk space and may become a security
 
 Write a script for a multi-user system that checks users' disk usage. If a user surpasses a preset limit (500 MB, for example) in her /home/username directory, then the script automatically sends her a "pigout" warning e-mail.
 
-The script will use the [[system#^DUREF|du]] and [[communications#^COMMMAIL1|mail]] commands. As an option, it will allow setting and enforcing quotas using the [[system#^QUOTAREF|quota]] and [[system#^SETQUOTAREF|setquota]] commands.
+The script will use the [[system#^DUREF|du]] and [[communications-commands#^COMMMAIL1|mail]] commands. As an option, it will allow setting and enforcing quotas using the [[system#^QUOTAREF|quota]] and [[system#^SETQUOTAREF|setquota]] commands.
 
 **Logged in User Information**
 
@@ -100,7 +100,7 @@ Hint: use [[system#^WHOREF|who]], [[system#^LASTLOGREF|lastlog]], and parse [[fi
 
 **Safe Delete**
 
-Implement, as a script, a "safe" delete command, sdel.sh. Filenames passed as command-line arguments to this script are not deleted, but instead [[filearchiv#^GZIPREF|gzipped]] if not already compressed (use [[filearchiv#^FILEREF|file]] to check), then moved to a ~/TRASH directory. Upon invocation, the script checks the ~/TRASH directory for files older than 48 hours and [[basic-commands#^RMREF|permanently deletes]] them. (An better alternative might be to have a second script handle this, periodically invoked by the [[system#^CRONREF|cron daemon]].)
+Implement, as a script, a "safe" delete command, sdel.sh. Filenames passed as command-line arguments to this script are not deleted, but instead [[file-and-archiving-commands#^GZIPREF|gzipped]] if not already compressed (use [[file-and-archiving-commands#^FILEREF|file]] to check), then moved to a ~/TRASH directory. Upon invocation, the script checks the ~/TRASH directory for files older than 48 hours and [[basic-commands#^RMREF|permanently deletes]] them. (An better alternative might be to have a second script handle this, periodically invoked by the [[system#^CRONREF|cron daemon]].)
 
 _Extra credit:_ Write the script so it can handle files and directories [[basic-commands#^RMRECURS|recursively]]. This would give it the capability of "safely deleting" entire directory structures.
 
@@ -114,11 +114,11 @@ Given any arbitrary command-line input in dollars and cents ($*.??), calculate t
 
 Solve a _quadratic_ equation of the form _Ax^2 + Bx + C = 0_. Have a script take as arguments the coefficients, **A**, **B**, and **C**, and return the solutions to five decimal places.
 
-Hint: pipe the coefficients to [[mathc#^BCREF|bc]], using the well-known formula, _x = ( -B +/- sqrt( B^2 - 4AC ) ) / 2A_.
+Hint: pipe the coefficients to [[math-commands#^BCREF|bc]], using the well-known formula, _x = ( -B +/- sqrt( B^2 - 4AC ) ) / 2A_.
 
 **Table of Logarithms**
 
-Using the [[mathc#^BCREF|bc]] and [[internal-commands-and-builtins#^PRINTFREF|printf]] commands, print out a nicely-formatted table of eight-place natural logarithms in the interval between 0.00 and 100.00, in steps of .01.
+Using the [[math-commands#^BCREF|bc]] and [[internal-commands-and-builtins#^PRINTFREF|printf]] commands, print out a nicely-formatted table of eight-place natural logarithms in the interval between 0.00 and 100.00, in steps of .01.
 
 Hint: _bc_ requires the -l option to load the math library.
 
@@ -188,7 +188,7 @@ Given ASCII text input either from stdin or a file, adjust the word spacing to r
 
 **Mailing List**
 
-Using the [[communications#^COMMMAIL1|mail]] command, write a script that manages a simple mailing list. The script automatically e-mails the monthly company newsletter, read from a specified text file, and sends it to all the addresses on the mailing list, which the script reads from another specified file.
+Using the [[communications-commands#^COMMMAIL1|mail]] command, write a script that manages a simple mailing list. The script automatically e-mails the monthly company newsletter, read from a specified text file, and sends it to all the addresses on the mailing list, which the script reads from another specified file.
 
 **Generating Passwords**
 
@@ -202,7 +202,7 @@ You may use [[system#^LASTREF|last]], [[system#^LASTLOGREF|lastlog]], and [[syst
 
 **Checking for Broken Links**
 
-Using [[communications#^LYNXREF|lynx]] with the -traversal option, write a script that checks a Web site for broken links.
+Using [[communications-commands#^LYNXREF|lynx]] with the -traversal option, write a script that checks a Web site for broken links.
 
 **DIFFICULT**
 
@@ -287,7 +287,7 @@ do
    (( loopcnt++ ))     # Update loop counter.
 done|
 
-It's a simple enough recipe, and _seems_ at first glance easy enough to convert into a working Bash script. The problem, though, is that Bash has [[operators#^NOFLOATINGPOINT|no native support for floating point numbers]]. So, the script writer needs to use [[mathc#^BCREF|bc]] or possibly [[C.2. Awk#^AWKREF|awk]] to convert the numbers and do the calculations. It could get rather messy . . .
+It's a simple enough recipe, and _seems_ at first glance easy enough to convert into a working Bash script. The problem, though, is that Bash has [[operators#^NOFLOATINGPOINT|no native support for floating point numbers]]. So, the script writer needs to use [[math-commands#^BCREF|bc]] or possibly [[C.2. Awk#^AWKREF|awk]] to convert the numbers and do the calculations. It could get rather messy . . .
 
 **Logging File Accesses**
 
@@ -315,9 +315,9 @@ Optional: A script that converts Docbook/SGML to XML.
 
 Write a script that analyzes a spam e-mail by doing DNS lookups on the IP addresses in the headers to identify the relay hosts as well as the originating ISP. The script will forward the unaltered spam message to the responsible ISPs. Of course, it will be necessary to filter out _your own ISP's IP address_, so you don't end up complaining about yourself.
 
-As necessary, use the appropriate [[communications#^COMMUNINFO1|network analysis commands]].
+As necessary, use the appropriate [[communications-commands#^COMMUNINFO1|network analysis commands]].
 
-For some ideas, see [[communications#^ISSPAMMER|Example 16-41]] and [[contributed-scripts#^ISSPAMMER2|Example A-28]].
+For some ideas, see [[communications-commands#^ISSPAMMER|Example 16-41]] and [[contributed-scripts#^ISSPAMMER2|Example A-28]].
 
 Optional: Write a script that searches through a list of e-mail messages and deletes the spam according to specified filters.
 
@@ -397,9 +397,9 @@ A strict interpretation of the Gunning fog index does not count compound words a
 
 The Eighteenth Century French mathematician de Buffon came up with a novel experiment. Repeatedly drop a needle of length _n_ onto a wooden floor composed of long and narrow parallel boards. The cracks separating the equal-width floorboards are a fixed distance _d_ apart. Keep track of the total drops and the number of times the needle intersects a crack on the floor. The ratio of these two quantities turns out to be a fractional multiple of PI.
 
-In the spirit of [[mathc#^CANNON|Example 16-50]], write a script that runs a Monte Carlo simulation of _Buffon's Needle_. To simplify matters, set the needle length equal to the distance between the cracks, _n = d_.
+In the spirit of [[math-commands#^CANNON|Example 16-50]], write a script that runs a Monte Carlo simulation of _Buffon's Needle_. To simplify matters, set the needle length equal to the distance between the cracks, _n = d_.
 
-Hint: there are actually two critical variables: the distance from the center of the needle to the nearest crack, and the inclination angle of the needle to that crack. You may use [[mathc#^BCREF|bc]] to handle the calculations.
+Hint: there are actually two critical variables: the distance from the center of the needle to the nearest crack, and the inclination angle of the needle to that crack. You may use [[math-commands#^BCREF|bc]] to handle the calculations.
 
 **Playfair Cipher**
 

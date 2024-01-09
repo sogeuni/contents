@@ -343,13 +343,13 @@ Examples of command substitution in shell scripts:
 7. [[extmisc#^EX53|Example 16-54]]
 8. [[loops#^EX24|Example 11-14]]
 9. [[loops#^SYMLINKS|Example 11-11]]
-10. [[filearchiv#^STRIPC|Example 16-32]]
+10. [[file-and-archiving-commands#^STRIPC|Example 16-32]]
 11. [[redircb#^REDIR4|Example 20-8]]
 12. [[contributed-scripts#^TREE|Example A-16]]
 13. [[procref1#^PIDID|Example 29-3]]
-14. [[mathc#^MONTHLYPMT|Example 16-47]]
-15. [[mathc#^BASE|Example 16-48]]
-16. [[mathc#^ALTBC|Example 16-49]]
+14. [[math-commands#^MONTHLYPMT|Example 16-47]]
+15. [[math-commands#^BASE|Example 16-48]]
+16. [[math-commands#^ALTBC|Example 16-49]]
 
 [^1]: For purposes of _command substitution_, a **command** may be an external system command, an internal scripting [[internal-commands-and-builtins#^BUILTINREF|builtin]], or even [[assorted-tips#^RVT|a script function]].
 

@@ -203,7 +203,7 @@ done
 >
 > Thank you, Jaka Kranjc, for pointing this out.|
 
-See also [[mathc#^BASE|Example 16-48]].
+See also [[math-commands#^BASE|Example 16-48]].
 
 **paste**
 
@@ -387,7 +387,7 @@ head -c4 /dev/urandom | od -N4 -tu4 | sed -ne '1s/.* //p'
 exit
 ```
 
-See also [[filearchiv#^EX52|Example 16-39]].
+See also [[file-and-archiving-commands#^EX52|Example 16-39]].
 
 **tail**
 
@@ -429,7 +429,7 @@ exit 0
 > [!note]
 > Newer implementations of **tail** deprecate the older **tail -$LINES filename** usage. The standard **tail -n $LINES filename** is correct.
 
-See also [[complex-commands#^EX41|Example 16-5]], [[filearchiv#^EX52|Example 16-39]] and [[debugging#^ONLINE|Example 32-6]].
+See also [[complex-commands#^EX41|Example 16-5]], [[file-and-archiving-commands#^EX52|Example 16-39]] and [[debugging#^ONLINE|Example 32-6]].
 
 **grep**
 
@@ -830,7 +830,7 @@ exit $?
 > [!tip]
 > To search compressed files, use **zgrep**, **zegrep**, or **zfgrep**. These also work on non-compressed files, though slower than plain **grep**, **egrep**, **fgrep**. They are handy for searching through a mixed set of files, some compressed, some not.
 >
-> To search [[filearchiv#^BZIPREF|bzipped]] files, use **bzgrep**.
+> To search [[file-and-archiving-commands#^BZIPREF|bzipped]] files, use **bzgrep**.
 
 **look**
 
@@ -945,7 +945,7 @@ bash$ grep Linux abs-book.sgml | wc -l
 138
 ```
 
-See also [[filearchiv#^EX52|Example 16-39]] and [[redircb#^REDIR4|Example 20-8]].
+See also [[file-and-archiving-commands#^EX52|Example 16-39]] and [[redircb#^REDIR4|Example 20-8]].
 
 Certain commands include some of the functionality of **wc** as options.
 

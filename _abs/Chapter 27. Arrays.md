@@ -1352,7 +1352,7 @@ echo; echo
 exit $?
 ```
 
-Compare these array-based prime number generators with alternatives that do not use arrays, [[contributed-scripts#^PRIMES|Example A-15]], and [[mathc#^PRIMES2|Example 16-46]].
+Compare these array-based prime number generators with alternatives that do not use arrays, [[contributed-scripts#^PRIMES|Example A-15]], and [[math-commands#^PRIMES2|Example 16-46]].
 
 --
 
@@ -1710,7 +1710,7 @@ For an even more elaborate example of simulating a two-dimensional array, see [[
 For more interesting scripts using arrays, see:
 
 - [[command-substitution#^AGRAM2|Example 12-3]]
-- [[mathc#^PRIMES2|Example 16-46]]
+- [[math-commands#^PRIMES2|Example 16-46]]
 - [[contributed-scripts#^HASHEX2|Example A-22]]
 - [[contributed-scripts#^HOMEWORK|Example A-44]]
 - [[contributed-scripts#^QKY|Example A-41]]

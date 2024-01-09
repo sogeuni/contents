@@ -241,7 +241,7 @@ Fritz Mehner has written a [bash-support plugin](http://vim.sourceforge.net/scri
 
 _Penguin Pete_ has quite a number of shell scripting tips and hints on [his superb site](http://www.penguinpetes.com). Highly recommended.
 
-The excellent _Bash Reference Manual_, by Chet Ramey and Brian Fox, distributed as part of the _bash-2-doc_ package (available as an [[filearchiv#^RPMREF|rpm]]). See especially the instructive example scripts in this package.
+The excellent _Bash Reference Manual_, by Chet Ramey and Brian Fox, distributed as part of the _bash-2-doc_ package (available as an [[file-and-archiving-commands#^RPMREF|rpm]]). See especially the instructive example scripts in this package.
 
 John Lion's classic, [_A Commentary on the Sixth Edition UNIX Operating System_](http://www.lemis.com/grog/Documentation/Lions/index.html).
 
@@ -253,7 +253,7 @@ The [comp.os.unix.shell FAQ](http://www.newsville.com/cgi-bin/getfaq?file=comp.u
 
 Assorted comp.os.unix [FAQs](http://www.faqs.org/faqs/by-newsgroup/comp/comp.unix.shell.html).
 
-The [_Wikipedia_ article](http://en.wikipedia.org/wiki/Dc_(Unix)) covering [[mathc#^DCREF|dc]].
+The [_Wikipedia_ article](http://en.wikipedia.org/wiki/Dc_(Unix)) covering [[math-commands#^DCREF|dc]].
 
 The [[basic-commands#^MANREF|manpages]] for **bash** and **bash2**, **date**, **expect**, **expr**, **find**, **grep**, **gzip**, **ln**, **patch**, **tar**, **tr**, **bc**, **xargs**. The _texinfo_ documentation on **bash**, **dd**, **m4**, **gawk**, and **sed**.
 

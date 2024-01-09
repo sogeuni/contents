@@ -124,7 +124,7 @@ For simpler examples of awk within shell scripts, see:
 
 1. [[internal-commands-and-builtins#^EX44|Example 15-14]]
 2. [[redircb#^REDIR4|Example 20-8]]
-3. [[filearchiv#^STRIPC|Example 16-32]]
+3. [[file-and-archiving-commands#^STRIPC|Example 16-32]]
 4. [[shell-wrapper#^COLTOTALER|Example 36-5]]
 5. [[ivr#^COLTOTALER2|Example 28-2]]
 6. [[internal-commands-and-builtins#^COLTOTALER3|Example 15-20]]
@@ -138,7 +138,7 @@ For simpler examples of awk within shell scripts, see:
 14. [[assorted-tips#^SUMPRODUCT|Example 36-19]]
 15. [[loops#^USERLIST|Example 11-9]]
 16. [[shell-wrapper#^PRASC|Example 36-4]]
-17. [[mathc#^HYPOT|Example 16-53]]
+17. [[math-commands#^HYPOT|Example 16-53]]
 18. [[Appendix T. ASCII Table#^ASCII3SH|Example T-3]]
 
 That's all the awk we'll cover here, folks, but there's lots more to learn. See the appropriate references in the [[bibliography|_Bibliography_]].

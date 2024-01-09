@@ -5,7 +5,7 @@
 |Exit Code Number|Meaning|Example|Comments|
 |:--|:--|:--|:--|
 |1|Catchall for general errors|let "var1 = 1/0"|Miscellaneous errors, such as "divide by zero" and other impermissible operations|
-|2|Misuse of shell builtins (according to Bash documentation)|empty_function() {}|[[debugging#^MISSINGKEYWORD|Missing keyword]] or command, or permission problem (and [[filearchiv#^DIFFERR2|_diff_ return code on a failed binary file comparison]]).|
+|2|Misuse of shell builtins (according to Bash documentation)|empty_function() {}|[[debugging#^MISSINGKEYWORD|Missing keyword]] or command, or permission problem (and [[file-and-archiving-commands#^DIFFERR2|_diff_ return code on a failed binary file comparison]]).|
 |126|Command invoked cannot execute|/dev/null|Permission problem or command is not an executable|
 |127|"command not found"|illegal_command|Possible problem with $PATH or a typo|
 |128|Invalid argument to [[exit-status.md#^EXITCOMMANDREF|exit]]|exit 3.14159|**exit** takes only integer args in the range 0 - 255 (see first footnote)|

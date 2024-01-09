@@ -260,7 +260,7 @@ exit 0
 > echo "b = $b"       # b=1
 > ```
 >
-> Use [[mathc#BCREF|bc]] in scripts that that need floating point calculations or math library functions.
+> Use [[math-commands#BCREF|bc]] in scripts that that need floating point calculations or math library functions.
 
 **bitwise operators.** The bitwise operators seldom make an appearance in shell scripts. Their chief use seems to be manipulating and testing values read from ports or [[devref1#SOCKETREF|sockets]]. "Bit flipping" is more relevant to compiled languages, such as C and C++, which provide direct access to system hardware. However, see _vladz's_ ingenious use of bitwise operators in his _base64.sh_ ([[contributed-scripts#BASE64|Example A-54]]) script.
 

@@ -1,4 +1,6 @@
-# 16.9. Miscellaneous Commands
+---
+title: 16.9. Miscellaneous Commands
+---
 
 **Command that fit in no special category**
 
@@ -8,25 +10,24 @@ These utilities emit a sequence of integers, with a user-selectable increment.
 
 The default separator character between each integer is a newline, but this can be changed with the -s option.
 
-|   |
-|---|
-|bash$ **seq 5**
+```bash
+bash$ seq 5
 1
  2
  3
  4
  5
 
-bash$ **seq -s : 5**
-1:2:3:4:5|
+bash$ seq -s : 5
+1:2:3:4:5
+```
 
 Both **jot** and **seq** come in handy in a [[loops#^FORLOOPREF1|for loop]].
 
 **Example 16-54. Using _seq_ to generate loop arguments**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Using "seq"
 
 echo
@@ -78,13 +79,13 @@ done      # 45 50 55 60 65 70 75 80
 
 echo; echo
 
-exit 0|
+exit 0
+```
 
 A simpler example:
 
-|   |
-|---|
-|#  Create a set of 10 files,
+```bash
+#  Create a set of 10 files,
 #+ named file.1, file.2 . . . file.10.
 COUNT=10
 PREFIX=file
@@ -94,13 +95,13 @@ do
   touch $PREFIX.$filename
   #  Or, can do other operations,
   #+ such as rm, grep, etc.
-done|
+done
+```
 
 **Example 16-55. Letter Count"**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # letter-count.sh: Counting letter occurrences in a text file.
 # Written by Stefano Palmeri.
 # Used in ABS Guide with permission.
@@ -143,8 +144,8 @@ fi
 # Counts letter occurrences .
 for n in `seq $LETTERS`; do
       shift
-      if [[ `echo -n "$1" \| wc -c` -eq 1 ]]; then             #  Checks arg.
-             echo "$1" -\> `cat $FILE \| tr -cd  "$1" \| wc -c` #  Counting.
+      if [[ `echo -n "$1" | wc -c` -eq 1 ]]; then             #  Checks arg.
+             echo "$1" -\> `cat $FILE | tr -cd  "$1" | wc -c` #  Counting.
       else
              echo "$1 is not a  single char."
       fi  
@@ -154,17 +155,16 @@ exit $?
 
 #  This script has exactly the same functionality as letter-count2.sh,
 #+ but executes faster.
-#  Why?|
+#  Why?
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Somewhat more capable than _seq_, **jot** is a classic UNIX utility that is not normally included in a standard Linux distro. However, the source _rpm_ is available for download from the [[http://www.mit.edu/afs/athena/system/rhlinux/athena-9.0/free/SRPMS/athena-jot-9.0-3.src.rpm|MIT repository]].
-
-Unlike _seq_, **jot** can generate a sequence of random numbers, using the -r option.
-
-\|   \|
-\|---\|
-\|bash$ **jot -r 3 999**
+> [!note]
+> Somewhat more capable than _seq_, **jot** is a classic UNIX utility that is not normally included in a standard Linux distro. However, the source _rpm_ is available for download from the [MIT repository](http://www.mit.edu/afs/athena/system/rhlinux/athena-9.0/free/SRPMS/athena-jot-9.0-3.src.rpm).
+>
+> Unlike _seq_, **jot** can generate a sequence of random numbers, using the -r option.
+>
+> ```bash
+> bash$ jot -r 3 999
 1069
  1272
  1428\||
@@ -240,7 +240,7 @@ See [[manipulating-strings#^GETOPTSIMPLE|Example 10-5]] for a simplified emulati
 
 The **run-parts** command [^1] executes all the scripts in a target directory, sequentially in ASCII-sorted filename order. Of course, the scripts need to have execute permission.
 
-The [[system#^CRONREF|cron]] [[communications#^DAEMONREF|daemon]] invokes **run-parts** to run the scripts in the /etc/cron.* directories.
+The [[system#^CRONREF|cron]] [[communications-commands#^DAEMONREF|daemon]] invokes **run-parts** to run the scripts in the /etc/cron.* directories.
 
 **yes**
 
@@ -711,7 +711,7 @@ See also [[generate-random-integer#^SEEDINGRANDOM|Example 9-16]] and [[contribut
 
 **hexdump**
 
-Performs a hexadecimal, octal, decimal, or ASCII dump of a binary file. This command is the rough equivalent of **od**, above, but not nearly as useful. May be used to view the contents of a binary file, in combination with [[extmisc#^DDREF|dd]] and [[filearchiv#^LESSREF|less]].
+Performs a hexadecimal, octal, decimal, or ASCII dump of a binary file. This command is the rough equivalent of **od**, above, but not nearly as useful. May be used to view the contents of a binary file, in combination with [[extmisc#^DDREF|dd]] and [[file-and-archiving-commands#^LESSREF|less]].
 
 |   |
 |---|
@@ -742,7 +742,7 @@ This command generates a "magic cookie," a 128-bit (32-character) pseudorandom h
 |---|
 |random000=$(mcookie)|
 
-Of course, a script could use [[filearchiv#^MD5SUMREF|md5sum]] for the same purpose.
+Of course, a script could use [[file-and-archiving-commands#^MD5SUMREF|md5sum]] for the same purpose.
 
 |   |
 |---|

@@ -149,7 +149,7 @@ Multiple instances of input and output redirection and/or pipes can be combined 
 
 command1 \| command2 \| command3 > output-file|
 
-See [[filearchiv#^DERPM|Example 16-31]] and [[contributed-scripts#^FIFO|Example A-14]].
+See [[file-and-archiving-commands#^DERPM|Example 16-31]] and [[contributed-scripts#^FIFO|Example A-14]].
 
 Multiple output streams may be redirected to one file.
 

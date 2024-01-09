@@ -1,51 +1,35 @@
-# 16.5. File and Archiving Commands
+---
+title: "16.5. File and Archiving Commands"
+---
 
 **Archiving**
 
 **tar**
 
-The standard UNIX archiving utility. [[special-characters#^EX58|^1] Originally a _Tape ARchiving_ program, it has developed into a general purpose package that can handle all manner of archiving with all types of destination devices, ranging from tape drives to regular files to even stdout (see [Example 3-4]]). GNU _tar_ has been patched to accept various compression filters, for example: **tar czvf archive_name.tar.gz ***, which recursively archives and [[filearchiv#^GZIPREF|gzips]] all files in a directory tree except [[basic-commands#^DOTFILESREF|dotfiles]] in the current working directory ([[internal-variables#^PWDREF|$PWD]]). [^2]
+The standard UNIX archiving utility. [^1] Originally a _Tape ARchiving_ program, it has developed into a general purpose package that can handle all manner of archiving with all types of destination devices, ranging from tape drives to regular files to even stdout (see [[special-characters#^EX58|Example 3-4]]). GNU _tar_ has been patched to accept various compression filters, for example: **tar czvf archive_name.tar.gz ***, which recursively archives and [[file-and-archiving-commands#^GZIPREF|gzips]] all files in a directory tree except [[basic-commands#^DOTFILESREF|dotfiles]] in the current working directory ([[internal-variables#^PWDREF|$PWD]]). [^2]
 
 Some useful **tar** options:
 
 1. -c create (a new archive)
-    
 2. -x extract (files from existing archive)
-    
 3. --delete delete (files from existing archive)
-    
-    |   |   |
-    |---|---|
-    |![[../images/caution.gif|Caution]]|This option will not work on magnetic tape devices.|
-    
+    > [!caution] This option will not work on magnetic tape devices.
 4. -r append (files to existing archive)
-    
 5. -A append (_tar_ files to existing archive)
-    
 6. -t list (contents of existing archive)
-    
 7. -u update archive
-    
 8. -d compare archive with specified filesystem
-    
 9. --after-date only process files with a date stamp _after_ specified date
-    
-10. -z [[filearchiv#^GZIPREF|gzip]] the archive
-    
+10. -z [[file-and-archiving-commands#^GZIPREF|gzip]] the archive
     (compress or uncompress, depending on whether combined with the -c or -x) option
-    
-11. -j [[filearchiv#^BZIPREF|bzip2]] the archive
-    
-
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|It may be difficult to recover data from a corrupted _gzipped_ tar archive. When archiving important files, make multiple backups.|
+11. -j [[file-and-archiving-commands#^BZIPREF|bzip2]] the archive
+    > [!caution] It may be difficult to recover data from a corrupted _gzipped_ tar archive. When archiving important files, make multiple backups.
 
 **shar**
 
 _Shell archiving_ utility. The text and/or binary files in a shell archive are concatenated without compression, and the resultant archive is essentially a shell script, complete with #!/bin/sh header, containing all the necessary unarchiving commands, as well as the files themselves. Unprintable binary characters in the target file(s) are converted to printable ASCII characters in the output _shar_ file. _Shar archives_ still show up in Usenet newsgroups, but otherwise **shar** has been replaced by **tar**/**gzip**. The **unshar** command unpacks _shar_ archives.
 
-The **mailshar** command is a Bash script that uses **shar** to concatenate multiple files into a single one for e-mailing. This script supports compression and [[filearchiv#^UUENCODEREF|uuencoding]].
+The **mailshar** command is a Bash script that uses **shar** to concatenate multiple files into a single one for e-mailing. This script supports compression and [[file-and-archiving-commands#^UUENCODEREF|uuencoding]].
 
 **ar**
 
@@ -57,44 +41,42 @@ The _Red Hat Package Manager_, or **rpm** utility provides a wrapper for source 
 
 A simple **rpm -i package_name.rpm** usually suffices to install a package, though there are many more options available.
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|**rpm -qf** identifies which package a file originates from.
+> [!tip]
+> **rpm -qf** identifies which package a file originates from.
+>
+> ```bash
+> bash$ rpm -qf /bin/ls
+> coreutils-5.2.1-31
+> ```
 
-\|   \|
-\|---\|
-\|bash$ **rpm -qf /bin/ls**
-coreutils-5.2.1-31\||
-
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|**rpm -qa** gives a complete list of all installed _rpm_ packages on a given system. An **rpm -qa package_name** lists only the package(s) corresponding to package_name.
-
-\|   \|
-\|---\|
-\|bash$ **rpm -qa**
-redhat-logos-1.1.3-1
- glibc-2.2.4-13
- cracklib-2.7-12
- dosfstools-2.7-1
- gdbm-1.8.0-10
- ksymoops-2.4.1-1
- mktemp-1.5-11
- perl-5.6.0-17
- reiserfs-utils-3.x.0j-2
- ...
-
-bash$ **rpm -qa docbook-utils**
-docbook-utils-0.6.9-2
-
-bash$ **rpm -qa docbook \\| grep docbook**
-docbook-dtd31-sgml-1.0-10
- docbook-style-dsssl-1.64-3
- docbook-dtd30-sgml-1.0-10
- docbook-dtd40-sgml-1.0-11
- docbook-utils-pdf-0.6.9-2
- docbook-dtd41-sgml-1.0-10
- docbook-utils-0.6.9-2\||
+> [!tip]
+> **rpm -qa** gives a complete list of all installed _rpm_ packages on a given system. An **rpm -qa package_name** lists only the package(s) corresponding to package_name.
+>
+> ```bash
+> bash$ rpm -qa
+> redhat-logos-1.1.3-1
+>  glibc-2.2.4-13
+>  cracklib-2.7-12
+>  dosfstools-2.7-1
+>  gdbm-1.8.0-10
+>  ksymoops-2.4.1-1
+>  mktemp-1.5-11
+>  perl-5.6.0-17
+>  reiserfs-utils-3.x.0j-2
+>  ...
+> 
+> bash$ **rpm -qa docbook-utils**
+> docbook-utils-0.6.9-2
+> 
+> bash$ rpm -qa docbook | grep docbook
+> docbook-dtd31-sgml-1.0-10
+>  docbook-style-dsssl-1.64-3
+>  docbook-dtd30-sgml-1.0-10
+>  docbook-dtd40-sgml-1.0-11
+>  docbook-utils-pdf-0.6.9-2
+>  docbook-dtd41-sgml-1.0-10
+>  docbook-utils-0.6.9-2
+> ```
 
 **cpio**
 
@@ -102,9 +84,8 @@ This specialized archiving copy command (**c**o**p**y **i**nput and **o**utput) 
 
 **Example 16-30. Using _cpio_ to move a directory tree**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # Copying a directory tree using cpio.
 
@@ -126,7 +107,7 @@ source="$1"
 destination="$2"
 
 ###################################################################
-find "$source" -depth \| cpio -admvp "$destination"
+find "$source" -depth | cpio -admvp "$destination"
 #               ^^^^^         ^^^^^
 #  Read the 'find' and 'cpio' info pages to decipher these options.
 #  The above works only relative to $PWD (current directory) . . .
@@ -137,20 +118,20 @@ find "$source" -depth \| cpio -admvp "$destination"
 # Exercise:
 # --------
 
-#  Add code to check the exit status ($?) of the 'find \| cpio' pipe
+#  Add code to check the exit status ($?) of the 'find | cpio' pipe
 #+ and output appropriate error messages if anything went wrong.
 
-exit $?|
+exit $?
+```
 
 **rpm2cpio**
 
-This command extracts a **cpio** archive from an [[filearchiv#^RPMREF|rpm]] one.
+This command extracts a **cpio** archive from an [[file-and-archiving-commands#^RPMREF|rpm]] one.
 
 **Example 16-31. Unpacking an _rpm_ archive**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # de-rpm.sh: Unpack an 'rpm' archive
 
 : ${1?"Usage: `basename $0` target-file"}
@@ -170,15 +151,15 @@ exit 0
 #  Exercise:
 #  Add check for whether 1) "target-file" exists and
 #+                       2) it is an rpm archive.
-#  Hint:                    Parse output of 'file' command.|
+#  Hint:                    Parse output of 'file' command.
+```
 
 **pax**
 
-The _pax_ **p**ortable **a**rchive e**x**change toolkit facilitates periodic file backups and is designed to be cross-compatible between various flavors of UNIX. It was designed to replace [[filearchiv#^TARREF|tar]] and [[filearchiv#^CPIOREF|cpio]].
+The _pax_ **p**ortable **a**rchive e**x**change toolkit facilitates periodic file backups and is designed to be cross-compatible between various flavors of UNIX. It was designed to replace [[file-and-archiving-commands#^TARREF|tar]] and [[file-and-archiving-commands#^CPIOREF|cpio]].
 
-|   |
-|---|
-|pax -wf daily_backup.pax ~/linux-server/files 
+```bash
+pax -wf daily_backup.pax ~/linux-server/files 
 #  Creates a tar archive of all files in the target directory.
 #  Note that the options to pax must be in the correct order --
 #+ pax -fw     has an entirely different effect.
@@ -188,7 +169,8 @@ pax -f daily_backup.pax
 
 pax -rf daily_backup.pax ~/bsd-server/files
 #  Restores the backed-up files from the Linux machine
-#+ onto a BSD one.|
+#+ onto a BSD one.
+```
 
 Note that _pax_ handles many of the standard archiving and compression commands.
 
@@ -198,15 +180,13 @@ Note that _pax_ handles many of the standard archiving and compression commands.
 
 The standard GNU/UNIX compression utility, replacing the inferior and proprietary **compress**. The corresponding decompression command is **gunzip**, which is the equivalent of **gzip -d**.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|The -c option sends the output of **gzip** to stdout. This is useful when [[special-characters#^PIPEREF|piping]] to other commands.|
+> [!note]
+> The -c option sends the output of **gzip** to stdout. This is useful when [[special-characters#^PIPEREF|piping]] to other commands.
 
-The **zcat** filter decompresses a _gzipped_ file to stdout, as possible input to a pipe or redirection. This is, in effect, a **cat** command that works on compressed files (including files processed with the older [[filearchiv#^COMPRESSREF|compress]] utility). The **zcat** command is equivalent to **gzip -dc**.
+The **zcat** filter decompresses a _gzipped_ file to stdout, as possible input to a pipe or redirection. This is, in effect, a **cat** command that works on compressed files (including files processed with the older [[file-and-archiving-commands#^COMPRESSREF|compress]] utility). The **zcat** command is equivalent to **gzip -dc**.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|On some commercial UNIX systems, **zcat** is a synonym for **uncompress -c**, and will not work on _gzipped_ files.|
+> [!caution]
+> On some commercial UNIX systems, **zcat** is a synonym for **uncompress -c**, and will not work on _gzipped_ files.
 
 See also [[other-comparison-operators#^EX14|Example 7-7]].
 
@@ -216,25 +196,22 @@ An alternate compression utility, usually more efficient (but slower) than **gzi
 
 Similar to the **zcat** command, **bzcat** decompresses a _bzipped2-ed_ file to stdout.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Newer versions of [[filearchiv#^TARREF|tar]] have been patched with **bzip2** support.|
+> [!note]
+> Newer versions of [[file-and-archiving-commands#^TARREF|tar]] have been patched with **bzip2** support.
 
 **compress**, **uncompress**
 
 This is an older, proprietary compression utility found in commercial UNIX distributions. The more efficient **gzip** has largely replaced it. Linux distributions generally include a **compress** workalike for compatibility, although **gunzip** can unarchive files treated with **compress**.
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|The **znew** command transforms _compressed_ files into _gzipped_ ones.|
+> [!tip]
+> The **znew** command transforms _compressed_ files into _gzipped_ ones.
 
 **sq**
 
-Yet another compression (**sq**ueeze) utility, a filter that works only on sorted [[special-characters#^ASCIIDEF|ASCII]] word lists. It uses the standard invocation syntax for a filter, **sq < input-file > output-file**. Fast, but not nearly as efficient as [[filearchiv#^GZIPREF|gzip]]. The corresponding uncompression filter is **unsq**, invoked like **sq**.
+Yet another compression (**sq**ueeze) utility, a filter that works only on sorted [[special-characters#^ASCIIDEF|ASCII]] word lists. It uses the standard invocation syntax for a filter, **sq < input-file > output-file**. Fast, but not nearly as efficient as [[file-and-archiving-commands#^GZIPREF|gzip]]. The corresponding uncompression filter is **unsq**, invoked like **sq**.
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|The output of **sq** may be piped to **gzip** for further compression.|
+> [!tip]
+> The output of **sq** may be piped to **gzip** for further compression.
 
 **zip**, **unzip**
 
@@ -246,11 +223,11 @@ These Linux utilities permit unpacking archives compressed with the DOS _arc.exe
 
 **lzma**, **unlzma**, **lzcat**
 
-Highly efficient Lempel-Ziv-Markov compression. The syntax of _lzma_ is similar to that of _gzip_. The [[http://www.7-zip.org/sdk.html|7-zip Website]] has more information.
+Highly efficient Lempel-Ziv-Markov compression. The syntax of _lzma_ is similar to that of _gzip_. The [7-zip Website](http://www.7-zip.org/sdk.html) has more information.
 
 **xz**, **unxz**, **xzcat**
 
-A new high-efficiency compression tool, backward compatible with _lzma_, and with an invocation syntax similar to _gzip_. For more information, see the [[http://en.wikipedia.org/wiki/Xz|Wikipedia entry]].
+A new high-efficiency compression tool, backward compatible with _lzma_, and with an invocation syntax similar to _gzip_. For more information, see the [Wikipedia entry](http://en.wikipedia.org/wiki/Xz).
 
 **File Information**
 
@@ -260,25 +237,24 @@ A utility for identifying file types. The command **file file-name** will return
 
 The -f option causes **file** to run in [[time-date-commands#^BATCHPROCREF|batch]] mode, to read from a designated file a list of filenames to analyze. The -z option, when used on a compressed target file, forces an attempt to analyze the uncompressed file type.
 
-|   |
-|---|
-|bash$ **file test.tar.gz**
+```bash
+bash$ file test.tar.gz
 test.tar.gz: gzip compressed data, deflated,
  last modified: Sun Sep 16 13:34:51 2001, os: Unix
 
-bash **file -z test.tar.gz**
+bash file -z test.tar.gz
 test.tar.gz: GNU tar archive (gzip compressed data, deflated,
- last modified: Sun Sep 16 13:34:51 2001, os: Unix)|
+ last modified: Sun Sep 16 13:34:51 2001, os: Unix)
+```
 
-|   |
-|---|
-|# Find sh and Bash scripts in a given directory:
+```bash
+# Find sh and Bash scripts in a given directory:
 
 DIRECTORY=/usr/local/bin
 KEYWORD=Bourne
 # Bourne and Bourne-Again shell scripts
 
-file $DIRECTORY/* \| fgrep $KEYWORD
+file $DIRECTORY/* | fgrep $KEYWORD
 
 # Output:
 
@@ -286,13 +262,13 @@ file $DIRECTORY/* \| fgrep $KEYWORD
 # /usr/local/bin/burnit:           Bourne-Again shell script text executable
 # /usr/local/bin/cassette.sh:      Bourne shell script text executable
 # /usr/local/bin/copy-cd:          Bourne-Again shell script text executable
-# . . .|
+# . . .
+```
 
 **Example 16-32. Stripping comments from C program files**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # strip-comment.sh: Strips out the comments (/* COMMENT */) in a C program.
 
 E_NOARGS=0
@@ -306,7 +282,7 @@ then
 fi  
 
 # Test for correct file type.
-type=`file $1 \| awk '{ print $2, $3, $4, $5 }'`
+type=`file $1 | awk '{ print $2, $3, $4, $5 }'`
 # "file $1" echoes file type . . .
 # Then awk removes the first field, the filename . . .
 # Then the result is fed into the variable "type."
@@ -352,12 +328,12 @@ usage() {
 }
 
 WEIRD=`echo -n -e '\377'`   # or WEIRD=$'\377'
-[[ $# -eq 1 ]] \| usage
+[[ $# -eq 1 ]] | usage
 case `file "$1"` in
   *"C program text"*) sed -e "s%/\*%${WEIRD}%g;s%\*/%${WEIRD}%g" "$1" \
-     \| tr '\377\n' '\n\377' \
-     \| sed -ne 'p;n' \
-     \| tr -d '\n' \| tr '\377' '\n';;
+     | tr '\377\n' '\n\377' \
+     | sed -ne 'p;n' \
+     | tr -d '\n' | tr '\377' '\n';;
   *) usage;;
 esac
 
@@ -370,7 +346,8 @@ esac
 #+ where there is a \", \\" ...),
 #+ the only way is to write a C parser (using lex or yacc perhaps?).
 
-exit 0|
+exit 0
+```
 
 **which**
 
@@ -378,9 +355,9 @@ exit 0|
 
 **$bash which rm**
 
-|   |
-|---|
-|/usr/bin/rm|
+```bash
+/usr/bin/rm
+```
 
 For an interesting use of this command, see [[colorizing#^HORSERACE|Example 36-16]].
 
@@ -390,9 +367,9 @@ Similar to **which**, above, **whereis command** gives the full path to "command
 
 **$bash whereis rm**
 
-|   |
-|---|
-|rm: /bin/rm /usr/share/man/man1/rm.1.bz2|
+```bash
+rm: /bin/rm /usr/share/man/man1/rm.1.bz2
+```
 
 **whatis**
 
@@ -400,15 +377,14 @@ Similar to **which**, above, **whereis command** gives the full path to "command
 
 **$bash whatis whatis**
 
-|   |
-|---|
-|whatis               (1)  - search the whatis database for complete words|
+```bash
+whatis               (1)  - search the whatis database for complete words
+```
 
 **Example 16-33. Exploring /usr/X11R6/bin**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # What are all those mysterious binaries in /usr/X11R6/bin?
 
@@ -427,7 +403,8 @@ exit 0
 #  You may wish to redirect output of this script, like so:
 #    ./what.sh >>whatis.db
 #  or view it a page at a time on stdout,
-#    ./what.sh \| less|
+#    ./what.sh | less
+```
 
 See also [[loops#^FILEINFO|Example 11-3]].
 
@@ -437,19 +414,19 @@ Show a detailed directory listing. The effect is similar to [[basic-commands#^LS
 
 This is one of the GNU _fileutils_.
 
-|   |
-|---|
-|bash$ **vdir**
+```bash
+bash$ vdir
 total 10
  -rw-r--r--    1 bozo  bozo      4034 Jul 18 22:04 data1.xrolo
  -rw-r--r--    1 bozo  bozo      4602 May 25 13:58 data1.xrolo.bak
  -rw-r--r--    1 bozo  bozo       877 Dec 17  2000 employment.xrolo
 
-bash **ls -l**
+bash ls -l
 total 10
  -rw-r--r--    1 bozo  bozo      4034 Jul 18 22:04 data1.xrolo
  -rw-r--r--    1 bozo  bozo      4602 May 25 13:58 data1.xrolo.bak
- -rw-r--r--    1 bozo  bozo       877 Dec 17  2000 employment.xrolo|
+ -rw-r--r--    1 bozo  bozo       877 Dec 17  2000 employment.xrolo
+```
 
 **locate**, **slocate**
 
@@ -457,17 +434,16 @@ The **locate** command searches for files using a database stored for just that 
 
 **$bash locate hickson**
 
-|   |
-|---|
-|/usr/lib/xephem/catalogs/hickson.edb|
+```bash
+/usr/lib/xephem/catalogs/hickson.edb
+```
 
 **getfacl**, **setfacl**
 
 These commands _retrieve_ or _set_ the **f**ile **a**ccess **c**ontrol **l**ist -- the _owner_, _group_, and file permissions.
 
-|   |
-|---|
-|bash$ **getfacl ***
+```bash
+bash$ getfacl *
 # file: test1.txt
  # owner: bozo
  # group: bozgrp
@@ -494,26 +470,26 @@ bash$ **getfacl yearly_budget.csv**
  user:accountant:rw-
  group::rw-
  mask::rw-
- other::r--|
+ other::r--
+```
 
 **readlink**
 
 Disclose the file that a symbolic link points to.
 
-|   |
-|---|
-|bash$ **readlink /usr/bin/awk**
-../../bin/gawk|
+```bash
+bash$ readlink /usr/bin/awk
+../../bin/gawk
+```
 
 **strings**
 
-Use the **strings** command to find printable strings in a binary or data file. It will list sequences of printable characters found in the target file. This might be handy for a quick 'n dirty examination of a core dump or for looking at an unknown graphic image file (**strings image-file | more** might show something like _JFIF_, which would identify the file as a _jpeg_ graphic). In a script, you would probably parse the output of **strings** w[sed](Appendix%20C.%20A%20Sed%20and%20Awk%20Micro-Primer.md#^SEDREF)EF|grep]] or [[sedawk#^SEDREF|sed]]. See [[loops#^BINGREP|Example 11-8]] and [[loops#^FINDSTRING|Example 11-10]].
+Use the **strings** command to find printable strings in a binary or data file. It will list sequences of printable characters found in the target file. This might be handy for a quick 'n dirty examination of a core dump or for looking at an unknown graphic image file (**strings image-file | more** might show something like _JFIF_, which would identify the file as a _jpeg_ graphic). In a script, you would probably parse the output of **strings** with [[textproc#^GREPREF|grep]] or [[sedawk#^SEDREF|sed]]. See [[loops#^BINGREP|Example 11-8]] and [[loops#^FINDSTRING|Example 11-10]].
 
 **Example 16-34. An "improved" _strings_ command**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # wstrings.sh: "word-strings" (enhanced "strings" command)
 #
 #  This script filters the output of "strings" by checking it
@@ -549,8 +525,8 @@ WORDFILE=/usr/share/dict/linux.words  #  Dictionary file.
 #  http://bash.deta.in/yawl-0.3.2.tar.gz
 
 
-wlist=`strings "$1" \| tr A-Z a-z \| tr '[:space:]' Z \| \
-       tr -cs '[:alpha:]' Z \| tr -s '\173-\377' Z \| tr Z ' '`
+wlist=`strings "$1" | tr A-Z a-z | tr '[:space:]' Z | \
+       tr -cs '[:alpha:]' Z | tr -s '\173-\377' Z | tr Z ' '`
 
 # Translate output of 'strings' command with multiple passes of 'tr'.
 #  "tr A-Z a-z"  converts to lowercase.
@@ -586,7 +562,8 @@ do
                                       #+ "whole words" options. 
 done  
 
-exit $?|
+exit $?
+```
 
 **Comparison**
 
@@ -598,64 +575,60 @@ The --side-by-side option to **diff** outputs each compared file, line by line, 
 
 There are available various fancy frontends for **diff**, such as **sdiff**, **wdiff**, **xdiff**, and **mgdiff**.
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|The **diff** command returns an exit status of 0 if the compared files are identical, and 1 if they differ (or 2 when _binary_ files are being compared). This permits use of **diff** in a test construct within a shell script (see below).|
+> [!tip]
+> The **diff** command returns an exit status of 0 if the compared files are identical, and 1 if they differ (or 2 when _binary_ files are being compared). This permits use of **diff** in a test construct within a shell script (see below).
 
 A common use for **diff** is generating difference files to be used with **patch** The -e option outputs files suitable for **ed** or **ex** scripts.
 
 **patch**: flexible versioning utility. Given a difference file generated by **diff**, **patch** can upgrade a previous version of a package to a newer version. It is much more convenient to distribute a relatively small "diff" file than the entire body of a newly revised package. Kernel "patches" have become the preferred method of distributing the frequent releases of the Linux kernel.
 
-|   |
-|---|
-|patch -p1 <patch-file
+```bash
+patch -p1 <patch-file
 # Takes all the changes listed in 'patch-file'
 # and applies them to the files referenced therein.
-# This upgrades to a newer version of the package.|
+# This upgrades to a newer version of the package.
+```
 
 Patching the kernel:
 
-|   |
-|---|
-|cd /usr/src
-gzip -cd patchXX.gz \| patch -p0
+```bash
+cd /usr/src
+gzip -cd patchXX.gz | patch -p0
 # Upgrading kernel source using 'patch'.
 # From the Linux kernel docs "README",
-# by anonymous author (Alan Cox?).|
+# by anonymous author (Alan Cox?).
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|The **diff** command can also recursively compare directories (for the filenames present).
+> [!note]
+> The **diff** command can also recursively compare directories (for the filenames present).
+>
+> ```bash
+> bash$ diff -r ~/notes1 ~/notes2
+> Only in /home/bozo/notes1: file02
+>  Only in /home/bozo/notes1: file03
+>  Only in /home/bozo/notes2: file04
+> ```
 
-\|   \|
-\|---\|
-\|bash$ **diff -r ~/notes1 ~/notes2**
-Only in /home/bozo/notes1: file02
- Only in /home/bozo/notes1: file03
- Only in /home/bozo/notes2: file04\||
+> [!tip]
+> Use **zdiff** to compare _gzipped_ files.
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|Use **zdiff** to compare _gzipped_ files.|
-
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|Use **diffstat** to create a histogram (point-distribution graph) of output from **diff**.|
+> [!tip]
+> Use **diffstat** to create a histogram (point-distribution graph) of output from **diff**.
 
 **diff3**, **merge**
 
 An extended version of **diff** that compares three files at a time. This command returns an exit value of 0 upon successful execution, but unfortunately this gives no information about the results of the comparison.
 
-|   |
-|---|
-|bash$ **diff3 file-1 file-2 file-3**
+```bash
+bash$ diff3 file-1 file-2 file-3
 ====
  1:1c
    This is line 1 of "file-1".
  2:1c
    This is line 1 of "file-2".
  3:1c
-   This is line 1 of "file-3"|
+   This is line 1 of "file-3"
+```
 
 The **merge** (3-way file merge) command is an interesting adjunct to _diff3_. Its syntax is **merge Mergefile file1 file2**. The result is to output to Mergefile the changes that lead from file1 to file2. Consider this command a stripped-down version of _patch_.
 
@@ -667,15 +640,13 @@ Compare and/or edit two files in order to merge them into an output file. Becaus
 
 The **cmp** command is a simpler version of **diff**, above. Whereas **diff** reports the differences between two files, **cmp** merely shows at what point they differ.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Like **diff**, **cmp** returns an exit status of 0 if the compared files are identical, and 1 if they differ. This permits use in a test construct within a shell script.|
+> [!note]
+> Like **diff**, **cmp** returns an exit status of 0 if the compared files are identical, and 1 if they differ. This permits use in a test construct within a shell script.
 
 **Example 16-35. Using _cmp_ to compare two files within a script.**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # file-comparison.sh
 
 ARGS=2  # Two args to script expected.
@@ -688,7 +659,7 @@ then
   exit $E_BADARGS
 fi
 
-if [[ ! -r "$1" \| ! -r "$2" ]]
+if [[ ! -r "$1" | ! -r "$2" ]]
 then
   echo "Both files to be compared must exist and be readable."
   exit $E_UNREADABLE
@@ -709,11 +680,11 @@ else
   echo "File \"$1\" differs from file \"$2\"."
 fi
 
-exit 0|
+exit 0
+```
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|Use **zcmp** on _gzipped_ files.|
+> [!tip]
+> Use **zcmp** on _gzipped_ files.
 
 **comm**
 
@@ -724,22 +695,15 @@ Versatile file comparison utility. The files must be sorted for this to be usefu
 **comm file-1 file-2** outputs three columns:
 
 - column 1 = lines unique to file-1
-    
 - column 2 = lines unique to file-2
-    
 - column 3 = lines common to both.
-    
 
 The options allow suppressing output of one or more columns.
 
 - -1 suppresses column 1
-    
 - -2 suppresses column 2
-    
 - -3 suppresses column 3
-    
 - -12 suppresses both columns 1 and 2, etc.
-    
 
 This command is useful for comparing "dictionaries" or _word lists_ -- sorted text files with one word per line.
 
@@ -749,23 +713,21 @@ This command is useful for comparing "dictionaries" or _word lists_ -- sorted te
 
 Strips the path information from a file name, printing only the file name. The construction **basename $0** lets the script know its name, that is, the name it was invoked by. This can be used for "usage" messages if, for example a script is called with missing arguments:
 
-|   |
-|---|
-|echo "Usage: `basename $0` arg1 arg2 ... argn"|
+```bash
+echo "Usage: `basename $0` arg1 arg2 ... argn"
+```
 
 **dirname**
 
 Strips the **basename** from a filename, printing only the path information.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|**basename** and **dirname** can operate on any arbitrary string. The argument does not need to refer to an existing file, or even be a filename for that matter (see [[contributed-scripts#^DAYSBETWEEN|Example A-7]]).|
+> [!note]
+> **basename** and **dirname** can operate on any arbitrary string. The argument does not need to refer to an existing file, or even be a filename for that matter (see [[contributed-scripts#^DAYSBETWEEN|Example A-7]]).
 
 **Example 16-36. _basename_ and _dirname_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 address=/home/bozo/daily-journal.txt
 
@@ -775,7 +737,8 @@ echo
 echo "My own home is `basename ~/`."         # `basename ~` also works.
 echo "The home of my home is `dirname ~/`."  # `dirname ~`  also works.
 
-exit 0|
+exit 0
+```
 
 **split**, **csplit**
 
@@ -785,9 +748,8 @@ The **csplit** command splits a file according to _context_, the split occuring 
 
 **Example 16-37. A script that copies itself in sections**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # splitcopy.sh
 
 #  A script that splits itself into chunks,
@@ -811,7 +773,8 @@ csplit "$0" "$CHUNKSIZE"
 cat "$OUTPREFIX"* > "$0.copy"  # Concatenate the chunks.
 rm "$OUTPREFIX"*               # Get rid of the chunks.
 
-exit $?|
+exit $?
+```
 
 **Encoding and Encryption**
 
@@ -819,31 +782,29 @@ exit $?|
 
 These are utilities for generating _checksums_. A _checksum_ is a number [^3] mathematically calculated from the contents of a file, for the purpose of checking its integrity. A script might refer to a list of checksums for security purposes, such as ensuring that the contents of key system files have not been altered or corrupted. For security applications, use the **md5sum** (**m**essage **d**igest **5** check**sum**) command, or better yet, the newer **sha1sum** (Secure Hash Algorithm). [^4]
 
-|   |
-|---|
-|bash$ **cksum /boot/vmlinuz**
+```bash
+bash$ cksum /boot/vmlinuz
 1670054224 804083 /boot/vmlinuz
 
-bash$ **echo -n "Top Secret" \| cksum**
+bash$ echo -n "Top Secret" | cksum
 3391003827 10
 
-bash$ **md5sum /boot/vmlinuz**
+bash$ md5sum /boot/vmlinuz
 0f43eccea8f09e0a0b2b5cf1dcf333ba  /boot/vmlinuz
 
-bash$ **echo -n "Top Secret" \| md5sum**
-8babc97a6f62a4649716f4df8d61728f  -|
+bash$ echo -n "Top Secret" | md5sum
+8babc97a6f62a4649716f4df8d61728f  -
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|The **cksum** command shows the size, in bytes, of its target, whether file or stdout.
-
-The **md5sum** and **sha1sum** commands display a [[special-characters#^DASHREF2|dash]] when they receive their input from stdout.|
+> [!note]
+> The **cksum** command shows the size, in bytes, of its target, whether file or stdout.
+>
+> The **md5sum** and **sha1sum** commands display a [[special-characters#^DASHREF2|dash]] when they receive their input from stdout.
 
 **Example 16-38. Checking file integrity**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # file-integrity.sh: Checking whether files in a given directory
 #                    have been tampered with.
 
@@ -892,7 +853,7 @@ check_database ()
 
     if [ "$n" -gt 0 ]   # Not directory name.
     then
-      filename[n]=$( echo ${record[$n]} \| awk '{ print $2 }' )
+      filename[n]=$( echo ${record[$n]} | awk '{ print $2 }' )
       #  md5sum writes records backwards,
       #+ checksum first, then filename.
       checksum[n]=$( md5sum "${filename[n]}" )
@@ -957,21 +918,21 @@ exit 0
 
 #  For a much more thorough file integrity check,
 #+ consider the "Tripwire" package,
-#+ http://sourceforge.net/projects/tripwire/.|
+#+ http://sourceforge.net/projects/tripwire/.
+```
 
 Also see [[contributed-scripts#^DIRECTORYINFO|Example A-19]], [[colorizing#^HORSERACE|Example 36-16]], and [[manipulating-strings#^RANDSTRING|Example 10-2]] for creative uses of the **md5sum** command.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|There have been reports that the 128-bit **md5sum** can be cracked, so the more secure 160-bit **sha1sum** is a welcome new addition to the checksum toolkit.
-
-\|   \|
-\|---\|
-\|bash$ **md5sum testfile**
-e181e2c8720c60522c4c4c981108e367  testfile
-
-bash$ **sha1sum testfile**
-5d7425a9c08a66c3177f1e31286fa40986ffc996  testfile\||
+> [!note]
+> There have been reports that the 128-bit **md5sum** can be cracked, so the more secure 160-bit **sha1sum** is a welcome new addition to the checksum toolkit.
+>
+> ```bash
+> bash$ md5sum testfile
+> e181e2c8720c60522c4c4c981108e367  testfile
+> 
+> bash$ sha1sum testfile
+> 5d7425a9c08a66c3177f1e31286fa40986ffc996  testfile
+> ```
 
 Security consultants have demonstrated that even **sha1sum** can be compromised. Fortunately, newer Linux distros include longer bit-length **sha224sum**, **sha256sum**, **sha384sum**, and **sha512sum** commands.
 
@@ -985,17 +946,16 @@ This reverses the encoding, decoding _uuencoded_ files back into the original bi
 
 **Example 16-39. Uudecoding encoded files**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Uudecodes all uuencoded files in current working directory.
 
 lines=35        # Allow 35 lines for the header (very generous).
 
 for File in *   # Test all the files in $PWD.
 do
-  search1=`head -n $lines $File \| grep begin \| wc -w`
-  search2=`tail -n $lines $File \| grep end \| wc -w`
+  search1=`head -n $lines $File | grep begin | wc -w`
+  search2=`tail -n $lines $File | grep end | wc -w`
   #  Uuencoded files have a "begin" near the beginning,
   #+ and an "end" near the end.
   if [ "$search1" -gt 0 ]
@@ -1017,11 +977,11 @@ done
 #  Modify this script to check each file for a newsgroup header,
 #+ and skip to next if not found.
 
-exit 0|
+exit 0
+```
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|The [[text-processing-commands#^FOLDREF|fold -s]] command may be useful (possibly in a pipe) to process long uudecoded text messages downloaded from Usenet newsgroups.|
+> [!tip]
+> The [[text-processing-commands#^FOLDREF|fold -s]] command may be useful (possibly in a pipe) to process long uudecoded text messages downloaded from Usenet newsgroups.
 
 **mimencode**, **mmencode**
 
@@ -1029,15 +989,14 @@ The **mimencode** and **mmencode** commands process multimedia-encoded e-mail at
 
 **crypt**
 
-At one time, this was the standard UNIX file encryption utility. [[ftp://metalab.unc.edu/pub/Linux/utils/file/cruft-0.2.tar.gz|^5] Politically-motivated government regulations prohibiting the export of encryption software resulted in the disappearance of **crypt** from much of the UNIX world, and it is still missing from most Linux distributions. Fortunately, programmers have come up with a number of decent alternatives to it, among them the author's very own [cruft]] (see [[contributed-scripts#^ENCRYPTEDPW|Example A-4]]).
+At one time, this was the standard UNIX file encryption utility. [^5] Politically-motivated government regulations prohibiting the export of encryption software resulted in the disappearance of **crypt** from much of the UNIX world, and it is still missing from most Linux distributions. Fortunately, programmers have come up with a number of decent alternatives to it, among them the author's very own [cruft](ftp://metalab.unc.edu/pub/Linux/utils/file/cruft-0.2.tar.gz) (see [[contributed-scripts#^ENCRYPTEDPW|Example A-4]]).
 
 **openssl**
 
 This is an Open Source implementation of _Secure Sockets Layer_ encryption.
 
-|   |
-|---|
-|# To encrypt a file:
+```bash
+# To encrypt a file:
 openssl aes-128-ecb -salt -in file.txt -out file.encrypted \
 -pass pass:my_password
 #          ^^^^^^^^^^^   User-selected password.
@@ -1046,27 +1005,28 @@ openssl aes-128-ecb -salt -in file.txt -out file.encrypted \
 # To decrypt an openssl-encrypted file:
 openssl aes-128-ecb -d -salt -in file.encrypted -out file.txt \
 -pass pass:my_password
-#          ^^^^^^^^^^^   User-selected password.|
+#          ^^^^^^^^^^^   User-selected password.
+```
 
-[[special-characters#^PIPEREF|Piping]] _openssl_ to/from [[filearchiv#^TARREF|tar]] makes it possible to encrypt an entire directory tree.
+[[special-characters#^PIPEREF|Piping]] _openssl_ to/from [[file-and-archiving-commands#^TARREF|tar]] makes it possible to encrypt an entire directory tree.
 
-|   |
-|---|
-|# To encrypt a directory:
+```bash
+# To encrypt a directory:
 
 sourcedir="/home/bozo/testfiles"
 encrfile="encr-dir.tar.gz"
 password=my_secret_password
 
-tar czvf - "$sourcedir" \|
+tar czvf - "$sourcedir" |
 openssl des3 -salt -out "$encrfile" -pass pass:"$password"
 #       ^^^^   Uses des3 encryption.
 # Writes encrypted file "encr-dir.tar.gz" in current working directory.
 
 # To decrypt the resulting tarball:
-openssl des3 -d -salt -in "$encrfile" -pass pass:"$password" \|
+openssl des3 -d -salt -in "$encrfile" -pass pass:"$password" |
 tar -xzv
-# Decrypts and unpacks into current working directory.|
+# Decrypts and unpacks into current working directory.
+```
 
 Of course, _openssl_ has many other uses, such as obtaining signed _certificates_ for Web sites. See the [[basic-commands#^INFOREF|info]] page.
 
@@ -1076,9 +1036,8 @@ Securely erase a file by overwriting it multiple times with random bit patterns 
 
 This is one of the GNU _fileutils_.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|Advanced forensic technology may still be able to recover the contents of a file, even after application of **shred**.|
+> [!caution]
+> Advanced forensic technology may still be able to recover the contents of a file, even after application of **shred**.
 
 **Miscellaneous**
 
@@ -1086,14 +1045,13 @@ This is one of the GNU _fileutils_.
 
 Create a _temporary file_ [^6] with a "unique" filename. When invoked from the command-line without additional arguments, it creates a zero-length file in the /tmp directory.
 
-|   |
-|---|
-|bash$ **mktemp**
-/tmp/tmp.zzsvql3154|
+```bash
+bash$ mktemp
+/tmp/tmp.zzsvql3154
+```
 
-|   |
-|---|
-|PREFIX=filename
+```bash
+PREFIX=filename
 tempfile=`mktemp $PREFIX.XXXXXX`
 #                        ^^^^^^ Need at least 6 placeholders
 #+                              in the filename template.
@@ -1107,7 +1065,8 @@ echo "tempfile name = $tempfile"
 #  Creates a file of that name in the current working directory
 #+ with 600 file permissions.
 #  A "umask 177" is therefore unnecessary,
-#+ but it's good programming practice nevertheless.|
+#+ but it's good programming practice nevertheless.
+```
 
 **make**
 
@@ -1115,7 +1074,7 @@ Utility for building and compiling binary packages. This can also be used for an
 
 The _make_ command checks a Makefile, a list of file dependencies and operations to be carried out.
 
-The _make_ utility is, in effect, a powerful scripting language similar in many ways to _Bash_, but with the capability of recognizing _dependencies_. For in-depth coverage of this useful tool set, see the [[http://www.gnu.org/manual/manual.html|GNU software documentation site]].
+The _make_ utility is, in effect, a powerful scripting language similar in many ways to _Bash_, but with the capability of recognizing _dependencies_. For in-depth coverage of this useful tool set, see the [GNU software documentation site](http://www.gnu.org/manual/manual.html).
 
 **install**
 
@@ -1135,21 +1094,25 @@ Pagers that display a text file or stream to stdout, one screenful at a time. Th
 
 An interesting application of _more_ is to "test drive" a command sequence, to forestall potentially unpleasant consequences.
 
-|   |
-|---|
-|ls /home/bozo \| awk '{print "rm -rf " $1}' \| more
+```bash
+ls /home/bozo | awk '{print "rm -rf " $1}' | more
 #                                            ^^^^
 		 
 # Testing the effect of the following (disastrous) command-line:
-#      ls /home/bozo \| awk '{print "rm -rf " $1}' \| sh
-#      Hand off to the shell to execute . . .       ^^|
+#      ls /home/bozo | awk '{print "rm -rf " $1}' | sh
+#      Hand off to the shell to execute . . .       ^^
+```
 
 The _less_ pager has the interesting property of doing a formatted display of _man page_ source. See [[contributed-scripts#^MANED|Example A-39]].
 
 [^1]: An _archive_, in the sense discussed here, is simply a set of related files stored in a single location.
-[^2]: A _tar czvf ArchiveName.tar.gz *_ _will_ include dotfiles in subdirectories _below_ the current working directory. This is an undocumented GNU **tar** "feature."
-[^3]: The checksum may be expressed as a _hexadecimal_ number, or to some other base.
-[^4]: For even _better_ security, use the _sha256sum_, _sha512_, and _sha1pass_ commands.
-[^5]: This is a symmetric block cipher, used to encrypt files on a single system or local network, as opposed to the _public key_ cipher class, of which _pgp_ is a well-known example.
-[^6]: Creates a temporary _directory_ when invoked with the -d option.
 
+[^2]: A _tar czvf ArchiveName.tar.gz *_ _will_ include dotfiles in subdirectories _below_ the current working directory. This is an undocumented GNU **tar** "feature."
+
+[^3]: The checksum may be expressed as a _hexadecimal_ number, or to some other base.
+
+[^4]: For even _better_ security, use the _sha256sum_, _sha512_, and _sha1pass_ commands.
+
+[^5]: This is a symmetric block cipher, used to encrypt files on a single system or local network, as opposed to the _public key_ cipher class, of which _pgp_ is a well-known example.
+
+[^6]: Creates a temporary _directory_ when invoked with the -d option.

@@ -1017,7 +1017,7 @@ Where a filename is expected, _-_ redirects output to stdout (sometimes seen wit
 |bash$ **file**
 Usage: file [-bciknvzL] [-f namefile] [-m magicfiles] file...|
 
-By itself on the command-line, [[filearchiv#^FILEREF|file]] fails with an error message.
+By itself on the command-line, [[file-and-archiving-commands#^FILEREF|file]] fails with an error message.
 
 Add a "-" for a more useful result. This causes the shell to await user input.
 
@@ -1035,11 +1035,11 @@ Now the command accepts input from stdin and analyzes it.
 
 The "-" can be used to pipe stdout to other commands. This permits such stunts as [[assortedtips#^PREPENDREF|prepending lines to a file]].
 
-Using [[filearchiv#^DIFFREF|diff]] to compare a file with a _section_ of another:
+Using [[file-and-archiving-commands#^DIFFREF|diff]] to compare a file with a _section_ of another:
 
 **grep Linux file1 | diff file2 -**
 
-Finally, a real-world example using _-_ with [[filearchiv#^TARREF|tar]].
+Finally, a real-world example using _-_ with [[file-and-archiving-commands#^TARREF|tar]].
 
 **Example 3-4. Backup of all files changed in last day**
 
@@ -1270,7 +1270,7 @@ sleep 2|
     
 - **Ctl-L**
     
-    **Formfeed** (clear the terminal screen). In a terminal, this has the same effect as the [[terminalccmds#^CLEARREF|clear]] command. When sent to a printer, a **Ctl-L** causes an advance to end of the paper sheet.
+    **Formfeed** (clear the terminal screen). In a terminal, this has the same effect as the [[terminal-control-commands#^CLEARREF|clear]] command. When sent to a printer, a **Ctl-L** causes an advance to end of the paper sheet.
     
 - **Ctl-M**
     

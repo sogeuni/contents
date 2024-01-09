@@ -440,7 +440,7 @@ The initialization process for a terminal uses **getty** or **agetty** to set it
 
 **mesg**
 
-Enables or disables write access to the current user's terminal. Disabling access would prevent another user on the network to [[communications#^WRITEREF|write]] to the terminal.
+Enables or disables write access to the current user's terminal. Disabling access would prevent another user on the network to [[communications-commands#^WRITEREF|write]] to the terminal.
 
 |   |   |
 |---|---|
@@ -448,7 +448,7 @@ Enables or disables write access to the current user's terminal. Disabling acces
 
 **wall**
 
-This is an acronym for "[[communications#^WRITEREF|write]] all," i.e., sending a message to all users at every terminal logged into the network. It is primarily a system administrator's tool, useful, for example, when warning everyone that the system will shortly go down due to a problem (see [[here-docs#^EX70|Example 19-1]]).
+This is an acronym for "[[communications-commands#^WRITEREF|write]] all," i.e., sending a message to all users at every terminal logged into the network. It is primarily a system administrator's tool, useful, for example, when warning everyone that the system will shortly go down due to a problem (see [[here-docs#^EX70|Example 19-1]]).
 
 |   |
 |---|
@@ -1104,7 +1104,7 @@ root# **ps ax \| grep 2095 \| grep -v grep**
 
 **cron**
 
-Administrative program scheduler, performing such duties as cleaning up and deleting system log files and updating the slocate database. This is the _superuser_ version of [[time-date-commands#^ATREF|at]] (although each user may have their own crontab file which can be changed with the **crontab** command). It runs as a [[communications#^DAEMONREF|daemon]] and executes scheduled entries from /etc/crontab.
+Administrative program scheduler, performing such duties as cleaning up and deleting system log files and updating the slocate database. This is the _superuser_ version of [[time-date-commands#^ATREF|at]] (although each user may have their own crontab file which can be changed with the **crontab** command). It runs as a [[communications-commands#^DAEMONREF|daemon]] and executes scheduled entries from /etc/crontab.
 
 |   |   |
 |---|---|
@@ -1586,11 +1586,11 @@ Creates an _ISO9660_ filesystem suitable for a CDR image.
 
 **chroot**
 
-CHange ROOT directory. Normally commands are fetched from [[internal-variables#^PATHREF|$PATH]], relative to /, the default _root directory_. This changes the _root_ directory to a different one (and also changes the working directory to there). This is useful for security purposes, for instance when the system administrator wishes to restrict certain users, such as those [[communications#^TELNETREF|telnetting]] in, to a secured portion of the filesystem (this is sometimes referred to as confining a guest user to a "chroot jail"). Note that after a **chroot**, the execution path for system binaries is no longer valid.
+CHange ROOT directory. Normally commands are fetched from [[internal-variables#^PATHREF|$PATH]], relative to /, the default _root directory_. This changes the _root_ directory to a different one (and also changes the working directory to there). This is useful for security purposes, for instance when the system administrator wishes to restrict certain users, such as those [[communications-commands#^TELNETREF|telnetting]] in, to a secured portion of the filesystem (this is sometimes referred to as confining a guest user to a "chroot jail"). Note that after a **chroot**, the execution path for system binaries is no longer valid.
 
 A **chroot /opt** would cause references to /usr/bin to be translated to /opt/usr/bin. Likewise, **chroot /aaa/bbb /bin/ls** would redirect future instances of **ls** to /aaa/bbb as the base directory, rather than / as is normally the case. An **alias XX 'chroot /aaa/bbb ls'** in a user's [[sample-bashrc.html|~/.bashrc]] effectively restricts which portion of the filesystem she may run command "XX" on.
 
-The **chroot** command is also handy when running from an emergency boot floppy (**chroot** to /dev/fd0), or as an option to **lilo** when recovering from a system crash. Other uses include installation from a different filesystem (an [[filearchiv#^RPMREF|rpm]] option) or running a readonly filesystem from a CD ROM. Invoke only as _root_, and use with care.
+The **chroot** command is also handy when running from an emergency boot floppy (**chroot** to /dev/fd0), or as an option to **lilo** when recovering from a system crash. Other uses include installation from a different filesystem (an [[file-and-archiving-commands#^RPMREF|rpm]] option) or running a readonly filesystem from a CD ROM. Invoke only as _root_, and use with care.
 
 |   |   |
 |---|---|
@@ -1845,7 +1845,7 @@ The default is two-second intervals, but this may be changed with the -n option.
 
 Remove the debugging symbolic references from an executable binary. This decreases its size, but makes debugging it impossible.
 
-This command often occurs in a [[filearchiv#^MAKEFILEREF|Makefile]], but rarely in a shell script.
+This command often occurs in a [[file-and-archiving-commands#^MAKEFILEREF|Makefile]], but rarely in a shell script.
 
 **nm**
 

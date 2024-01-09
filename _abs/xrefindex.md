@@ -409,11 +409,11 @@ _Advanced Bash Scripting Guide_, [[mirrorsites#^WHERE_TARBALL|where to download]
 
 [[here-docs#^ANONHEREDOC0|Anonymous _here document_]], using **:**
 
-[[filearchiv#^FAARCHIVING1|Archiving]]
+[[file-and-archiving-commands#^FAARCHIVING1|Archiving]]
 
-- [[filearchiv#^RPMREF|rpm]]
+- [[file-and-archiving-commands#^RPMREF|rpm]]
     
-- [[filearchiv#^TARREF|tar]]
+- [[file-and-archiving-commands#^TARREF|tar]]
     
 
 [[arithmetic-expansion#^ARITHEXPREF|Arithmetic expansion]]
@@ -515,7 +515,7 @@ Backlight, [[system#^BACKLIGHT|setting the brightness]]
 
 [[special-characters#^BACKTICKSREF|Backquotes]], used in [[command-substitution#^BACKQUOTESREF|command substitution]]
 
-[[mathc#^BASE0|Base conversion]], _example script_
+[[math-commands#^BASE0|Base conversion]], _example script_
 
 [[shell-programming#^BASHDEF|Bash]]
 
@@ -552,11 +552,11 @@ Backlight, [[system#^BACKLIGHT|setting the brightness]]
 
 [[time-date-commands#^BATCHPROCREF|Batch processing]]
 
-[[mathc#^BCREF|bc]], calculator utility
+[[math-commands#^BCREF|bc]], calculator utility
 
-- [[mathc#^BCHEREDOC|In a _here document_]]
+- [[math-commands#^BCHEREDOC|In a _here document_]]
     
-- [[mathc#^BCTEMPLATE|Template]] for calculating a script variable
+- [[math-commands#^BCTEMPLATE|Template]] for calculating a script variable
     
 
 [[bibliography|bibliography]]
@@ -652,7 +652,7 @@ Brackets, _curly_, **{}**, used in
 - [[file-test-operators#^CHARDEVTEST|testing for]]
     
 
-[[filearchiv#^CHECKSUMREF|Checksum]]
+[[file-and-archiving-commands#^CHECKSUMREF|Checksum]]
 
 [[othertypesv#^CHILDREF|Child processes]]
 
@@ -701,19 +701,19 @@ Commenting out blocks of code
 - Using an [[assorted-tips#^COMOUTBL|_if-then_ construct]]
     
 
-[[communications|Communications and hosts]]
+[[communications-commands|Communications and hosts]]
 
 [[other-comparison-operators#^CCOMPARISON1|Compound comparison]] operators
 
-[[filearchiv#^FACOMPRESSION1|Compression utilities]]
+[[file-and-archiving-commands#^FACOMPRESSION1|Compression utilities]]
 
-- [[filearchiv#^BZIPREF|bzip2]]
+- [[file-and-archiving-commands#^BZIPREF|bzip2]]
     
-- [[filearchiv#^COMPRESSREF|compress]]
+- [[file-and-archiving-commands#^COMPRESSREF|compress]]
     
-- [[filearchiv#^GZIPREF|gzip]]
+- [[file-and-archiving-commands#^GZIPREF|gzip]]
     
-- [[filearchiv#^ZIPREF|zip]]
+- [[file-and-archiving-commands#^ZIPREF|zip]]
     
 
 [[loop-control#^BRKCONT1|continue]] loop control command
@@ -754,11 +754,11 @@ Curly brackets {}
 
 * * *
 
-[[communications#^DAEMONREF|Daemons]], in UNIX-type OS
+[[communications-commands#^DAEMONREF|Daemons]], in UNIX-type OS
 
 [[time-date-commands#^DATEREF|date]]
 
-[[mathc#^DCREF|dc]], calculator utility
+[[math-commands#^DCREF|dc]], calculator utility
 
 [[extmisc#^DDREF|dd]], _data duplicator_ command
 
@@ -859,7 +859,7 @@ Curly brackets {}
 
 [[test-constructs#^ELSEREF|else]]
 
-Encrypting files, using [[filearchiv#^OPENSSLREF|openssl]]
+Encrypting files, using [[file-and-archiving-commands#^OPENSSLREF|openssl]]
 
 [[testing-and-branching#^CASEESAC1|esac]], keyword terminating _case_ construct
 
@@ -951,16 +951,16 @@ Exit and Exit status
 
 * * *
 
-[[mathc#^FACTORREF|factor]], decomposes an integer into its prime factors
+[[math-commands#^FACTORREF|factor]], decomposes an integer into its prime factors
 
-- Application: [[mathc#^PRIMES2|Generating prime numbers]]
+- Application: [[math-commands#^PRIMES2|Generating prime numbers]]
     
 
 [[internal-commands-and-builtins#^FALSEREF|false]], returns _unsuccessful_ (1) [[exit-status#^EXITSTATUSREF|exit status]]
 
 [[special-characters#^FIELDREF|Field]], a group of characters that comprises an item of data
 
-[[filearchiv|Files / Archiving]]
+[[file-and-archiving-commands|Files / Archiving]]
 
 [[io-redirection#^FDREF|File descriptors]]
 
@@ -977,7 +977,7 @@ Exit and Exit status
 - [[io-redirection#^FDREF1|File handles in _C_]], similarity to
     
 
-[[filearchiv#^OPENSSLREF|File encryption]]
+[[file-and-archiving-commands#^OPENSSLREF|File encryption]]
 
 [[complex-commands#^FINDREF|find]]
 
@@ -1110,7 +1110,7 @@ Games and amusements
 - [[globbingref#^WDOTFILEWC|Will not match dot files]]
     
 
-[[mathc#^GOLDENRATIO|Golden Ratio]] (_Phi_)
+[[math-commands#^GOLDENRATIO|Golden Ratio]] (_Phi_)
 
 [[other-comparison-operators#^GE0REF|-ge]] , _greater-than or equal_ [[other-comparison-operators#^ICOMPARISON1|integer comparison]] test
 
@@ -1122,7 +1122,7 @@ Games and amusements
 
 [[internal-variables#^GROUPSREF|$GROUPS]], _Groups_ user belongs to
 
-[[filearchiv#^GZIPREF|gzip]], compression utility
+[[file-and-archiving-commands#^GZIPREF|gzip]], compression utility
 
 * * *
 
@@ -1143,7 +1143,7 @@ Games and amusements
     
     [[here-docs#^HSELFDOC|Self-documenting]] scripts
     
-- [[mathc#^BCHEREDOC|_bc_ in a _here document_]]
+- [[math-commands#^BCHEREDOC|_bc_ in a _here document_]]
     
 - [[here-docs#^CATSCRIPTREF|_cat_ scripts]]
     
@@ -1155,7 +1155,7 @@ Games and amusements
     
 - [[x17837#^HERESTRINGSREF|_Here_ strings]]
     
-    Calculating the [[mathc#^GOLDENRATIO|Golden Ratio]]
+    Calculating the [[math-commands#^GOLDENRATIO|Golden Ratio]]
     
     [[x17837#^HSPRE|Prepending text]]
     
@@ -1385,7 +1385,7 @@ Loopback devices
 
 [[starting-off-with-a-sha-bang#^MAGNUMREF|Magic number]], marker at the head of a file indicating the file type
 
-[[filearchiv#^MAKEFILEREF|Makefile]], file containing the list of dependencies used by [[filearchiv#^MAKEREF|make]] command
+[[file-and-archiving-commands#^MAKEFILEREF|Makefile]], file containing the list of dependencies used by [[file-and-archiving-commands#^MAKEREF|make]] command
 
 [[basic-commands#^MANREF|man]], _manual page_ (lookup)
 
@@ -1394,7 +1394,7 @@ Loopback devices
 
 [[bash-ver4#^MAPFILEREF|mapfile]] builtin, loads an array with a text file
 
-[[mathc|Math commands]]
+[[math-commands|Math commands]]
 
 [[x17129#^METAMEANINGREF|Meta-meaning]]
 
@@ -1405,7 +1405,7 @@ Loopback devices
 - Application: [[contributed-scripts#^PRIMES1|Generating prime numbers]]
     
 
-[[mathc#^MONTHLYPMT0|Mortgage calculations]], _example script_
+[[math-commands#^MONTHLYPMT0|Mortgage calculations]], _example script_
 
 * * *
 
@@ -1453,7 +1453,7 @@ Obfuscation
 
 [[internal-variables#^OLDPWD|$OLDPWD]] Previous working directory
 
-[[filearchiv#^OPENSSLREF|openssl]] encryption utility
+[[file-and-archiving-commands#^OPENSSLREF|openssl]] encryption utility
 
 Operator
 
@@ -1679,7 +1679,7 @@ Pointers
 
 Prime numbers
 
-- Generating primes [[mathc#^PRIMES2|using the _factor_ command]]
+- Generating primes [[math-commands#^PRIMES2|using the _factor_ command]]
     
 - Generating primes [[contributed-scripts#^PRIMES1|using the _modulo_ operator]]
     
@@ -1985,7 +1985,7 @@ Simulations
     
 - [[contributed-scripts#^LIFEREF|_Life_]], game of
     
-- [[mathc#^CANNONREF|PI]], approximating by firing cannonballs
+- [[math-commands#^CANNONREF|PI]], approximating by firing cannonballs
     
 - [[Chapter 27. Arrays#^STACKEX0|Pushdown _stack_]]
     
@@ -2008,9 +2008,9 @@ Sorting
 
 _Spam_, dealing with
 
-- [[communications#^SPAMLOOKUP_0|_Example script_]]
+- [[communications-commands#^SPAMLOOKUP_0|_Example script_]]
     
-- [[communications#^ISSPAMMER_0|_Example script_]]
+- [[communications-commands#^ISSPAMMER_0|_Example script_]]
     
 - [[contributed-scripts#^ISSPAMMER2_0|_Example script_]]
     
@@ -2058,7 +2058,7 @@ Strings
     
 - _strlen()_, [[manipulating-strings#^STRLEN|equivalent of]]
     
-- [[filearchiv#^STRINGSREF|strings]] command, find printable strings in a binary or data file
+- [[file-and-archiving-commands#^STRINGSREF|strings]] command, find printable strings in a binary or data file
     
 - Substring extraction
     
@@ -2133,7 +2133,7 @@ Table lookup, [[bash-ver2#^RESISTOR|script example]]
 
 [[text-processing-commands#^TAILREF|tail]], _echo_ to stdout lines at the (tail) end of a text file
 
-[[filearchiv#^TARREF|tar]], archiving utility
+[[file-and-archiving-commands#^TARREF|tar]], archiving utility
 
 [[extmisc#^TEEREF|tee]], redirect to a file output of command(s) partway through a [[special-characters#^PIPEREF|pipe]]
 
@@ -2145,7 +2145,7 @@ Table lookup, [[bash-ver2#^RESISTOR|script example]]
     
 - [[system#^STTYREF|stty]]
     
-- [[terminalccmds#^TPUTREF|tput]]
+- [[terminal-control-commands#^TPUTREF|tput]]
     
 - [[system#^WALLREF|wall]]
     
@@ -2312,7 +2312,7 @@ Timed input
 
 [[test-constructs#^TOKENREF|Token]], a symbol that may expand to a [[internal-commands-and-builtins#^KEYWORDREF|keyword]] or command
 
-[[terminalccmds#^TPUTREF|tput]], terminal-control command
+[[terminal-control-commands#^TPUTREF|tput]], terminal-control command
 
 [[text-processing-commands#^TRREF|tr]], character translation filter
 

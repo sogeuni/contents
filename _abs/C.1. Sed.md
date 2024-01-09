@@ -104,7 +104,7 @@ An address range followed by one or more operations may require open and closed 
 This deletes only the first of each set of consecutive blank lines. That might be useful for single-spacing a text file, but retaining the blank line(s) between paragraphs.
 
 > [!note]
-> The usual delimiter that _sed_ uses is /. However, _sed_ allows other delimiters, such as %. This is useful when / is part of a replacement string, as in a file pathname. See [[loops#^FINDSTRING|Example 11-10]] and [[filearchiv#^STRIPC|Example 16-32]].
+> The usual delimiter that _sed_ uses is /. However, _sed_ allows other delimiters, such as %. This is useful when / is part of a replacement string, as in a file pathname. See [[loops#^FINDSTRING|Example 11-10]] and [[file-and-archiving-commands#^STRIPC|Example 16-32]].
 
 > [!tip]
 > A quick way to double-space a text file is **sed G filename**.
@@ -120,9 +120,9 @@ For illustrative examples of sed within shell scripts, see:
 7. [[contributed-scripts#^BEHEAD|Example A-12]]
 8. [[contributed-scripts#^TREE|Example A-16]]
 9. [[contributed-scripts#^TREE2|Example A-17]]
-10. [[filearchiv#^STRIPC|Example 16-32]]
+10. [[file-and-archiving-commands#^STRIPC|Example 16-32]]
 11. [[loops#^FINDSTRING|Example 11-10]]
-12. [[mathc#^BASE|Example 16-48]]
+12. [[math-commands#^BASE|Example 16-48]]
 13. [[contributed-scripts#^MAILFORMAT|Example A-1]]
 14. [[text-processing-commands#^RND|Example 16-14]]
 15. [[text-processing-commands#^WF|Example 16-12]]

@@ -155,9 +155,9 @@ See also the [networking commands](system.html#NETWORKSYS1) in the [System and A
     
 3. [[system#^IPSCRIPT0|A GRE tunnel]]
     
-4. [[communications#^PING0|Checking if an Internet server is up]]
+4. [[communications-commands#^PING0|Checking if an Internet server is up]]
     
-5. [[communications#^ISSPAMMER|Example 16-41]]
+5. [[communications-commands#^ISSPAMMER|Example 16-41]]
     
 6. [[contributed-scripts#^ISSPAMMER2|Example A-28]]
     
@@ -166,4 +166,4 @@ See also the [networking commands](system.html#NETWORKSYS1) in the [System and A
 8. [[devref1#^DEVTCP|Example 29-1]]
     
 
-See also the [[system#^NETWORKSYS1|networking commands]] in the [[system.html|System and Administrative Commands]] chapter and the [[communications.html|communications commands]] in the [[external-filters-programs-and-commands|External Filters, Programs and Commands]] chapter.
+See also the [[system#^NETWORKSYS1|networking commands]] in the [[system.html|System and Administrative Commands]] chapter and the [[communications-commands.html|communications commands]] in the [[external-filters-programs-and-commands|External Filters, Programs and Commands]] chapter.

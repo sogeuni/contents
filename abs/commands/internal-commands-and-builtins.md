@@ -88,7 +88,7 @@ Normally, each **echo** command prints a terminal newline, but the -n option sup
 >
 > **a=`echo "HELLO" \| tr A-Z a-z`**
 >
-> See also [[text-processing-commands#^LOWERCASE|Example 16-22]], [[complex-commands#^EX57|Example 16-3]], [[mathc#^MONTHLYPMT|Example 16-47]], and [[mathc#^BASE|Example 16-48]].|
+> See also [[text-processing-commands#^LOWERCASE|Example 16-22]], [[complex-commands#^EX57|Example 16-3]], [[math-commands#^MONTHLYPMT|Example 16-47]], and [[math-commands#^BASE|Example 16-48]].|
 
 Be aware that **echo `command`** deletes any linefeeds that the output of _command_ generates.
 
@@ -1487,7 +1487,7 @@ exit $?
 
 **source**, . ([[special-characters#^DOTREF|dot]] command)
 
-This command, when invoked from the command-line, executes a script. Within a script, a **source file-name** loads the file file-name. _Sourcing_ a file (dot-command) _imports_ code into the script, appending to the script (same effect as the **#include** directive in a _C_ program). The net result is the same as if the "sourced" lines of code were physically present in the body of the script. This is useful in situations when multiple scripts use a common data file or function library.
+This command, when invoked from the command-line, executes a script. Within a script, a **source file-name** loads the file file-name. _Sourcing_ a file (dot-command) _imports_ code into the script, appending to the script (same effect as the `#include` directive in a _C_ program). The net result is the same as if the "sourced" lines of code were physically present in the body of the script. This is useful in situations when multiple scripts use a common data file or function library.
 
 **Example 15-22. "Including" a data file**
 
@@ -1782,7 +1782,7 @@ done
 
 **type [cmd]**
 
-Similar to the [[filearchiv#^WHICHREF|which]] external command, **type cmd** identifies "cmd." Unlike **which**, **type** is a Bash builtin. The useful -a option to **type** identifies _keywords_ and _builtins_, and also locates system commands with identical names.
+Similar to the [[file-and-archiving-commands#^WHICHREF|which]] external command, **type cmd** identifies "cmd." Unlike **which**, **type** is a Bash builtin. The useful -a option to **type** identifies _keywords_ and _builtins_, and also locates system commands with identical names.
 
 ```bash
 bash$ type '['
@@ -1809,7 +1809,7 @@ The **bind** builtin displays or modifies _readline_ [^9] key bindings.
 
 **help**
 
-Gets a short usage summary of a shell builtin. This is the counterpart to [[filearchiv#^WHATISREF|whatis]], but for builtins. The display of _help_ information got a much-needed update in the [[bash-ver4#^BASH4REF|version 4 release]] of Bash.
+Gets a short usage summary of a shell builtin. This is the counterpart to [[file-and-archiving-commands#^WHATISREF|whatis]], but for builtins. The display of _help_ information got a much-needed update in the [[bash-ver4#^BASH4REF|version 4 release]] of Bash.
 
 ```bash
 bash$ help exit

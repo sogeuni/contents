@@ -456,53 +456,53 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 16-29. [[text-processing-commands#^MANVIEW|_manview_: Viewing formatted manpages]]
 
-16-30. [[filearchiv#^EX48|Using _cpio_ to move a directory tree]]
+16-30. [[file-and-archiving-commands#^EX48|Using _cpio_ to move a directory tree]]
 
-16-31. [[filearchiv#^DERPM|Unpacking an _rpm_ archive]]
+16-31. [[file-and-archiving-commands#^DERPM|Unpacking an _rpm_ archive]]
 
-16-32. [[filearchiv#^STRIPC|Stripping comments from C program files]]
+16-32. [[file-and-archiving-commands#^STRIPC|Stripping comments from C program files]]
 
-16-33. [[filearchiv#^WHAT|Exploring /usr/X11R6/bin]]
+16-33. [[file-and-archiving-commands#^WHAT|Exploring /usr/X11R6/bin]]
 
-16-34. [[filearchiv#^WSTRINGS|An "improved" _strings_ command]]
+16-34. [[file-and-archiving-commands#^WSTRINGS|An "improved" _strings_ command]]
 
-16-35. [[filearchiv#^FILECOMP|Using _cmp_ to compare two files within a script.]]
+16-35. [[file-and-archiving-commands#^FILECOMP|Using _cmp_ to compare two files within a script.]]
 
-16-36. [[filearchiv#^EX35|_basename_ and _dirname_]]
+16-36. [[file-and-archiving-commands#^EX35|_basename_ and _dirname_]]
 
-16-37. [[filearchiv#^SPLITCOPY|A script that copies itself in sections]]
+16-37. [[file-and-archiving-commands#^SPLITCOPY|A script that copies itself in sections]]
 
-16-38. [[filearchiv#^FILEINTEGRITY|Checking file integrity]]
+16-38. [[file-and-archiving-commands#^FILEINTEGRITY|Checking file integrity]]
 
-16-39. [[filearchiv#^EX52|Uudecoding encoded files]]
+16-39. [[file-and-archiving-commands#^EX52|Uudecoding encoded files]]
 
-16-40. [[communications#^SPAMLOOKUP|Finding out where to report a spammer]]
+16-40. [[communications-commands#^SPAMLOOKUP|Finding out where to report a spammer]]
 
-16-41. [[communications#^ISSPAMMER|Analyzing a spam domain]]
+16-41. [[communications-commands#^ISSPAMMER|Analyzing a spam domain]]
 
-16-42. [[communications#^QUOTEFETCH|Getting a stock quote]]
+16-42. [[communications-commands#^QUOTEFETCH|Getting a stock quote]]
 
-16-43. [[communications#^FC4UPD|Updating FC4]]
+16-43. [[communications-commands#^FC4UPD|Updating FC4]]
 
-16-44. [[communications#^REMOTE|Using _ssh_]]
+16-44. [[communications-commands#^REMOTE|Using _ssh_]]
 
-16-45. [[communications#^SELFMAILER|A script that mails itself]]
+16-45. [[communications-commands#^SELFMAILER|A script that mails itself]]
 
-16-46. [[mathc#^PRIMES2|Generating prime numbers]]
+16-46. [[math-commands#^PRIMES2|Generating prime numbers]]
 
-16-47. [[mathc#^MONTHLYPMT|Monthly Payment on a Mortgage]]
+16-47. [[math-commands#^MONTHLYPMT|Monthly Payment on a Mortgage]]
 
-16-48. [[mathc#^BASE|Base Conversion]]
+16-48. [[math-commands#^BASE|Base Conversion]]
 
-16-49. [[mathc#^ALTBC|Invoking _bc_ using a _here document_]]
+16-49. [[math-commands#^ALTBC|Invoking _bc_ using a _here document_]]
 
-16-50. [[mathc#^CANNON|Calculating PI]]
+16-50. [[math-commands#^CANNON|Calculating PI]]
 
-16-51. [[mathc#^HEXCONVERT|Converting a decimal number to hexadecimal]]
+16-51. [[math-commands#^HEXCONVERT|Converting a decimal number to hexadecimal]]
 
-16-52. [[mathc#^FACTR|Factoring]]
+16-52. [[math-commands#^FACTR|Factoring]]
 
-16-53. [[mathc#^HYPOT|Calculating the hypotenuse of a triangle]]
+16-53. [[math-commands#^HYPOT|Calculating the hypotenuse of a triangle]]
 
 16-54. [[extmisc#^EX53|Using _seq_ to generate loop arguments]]
 

@@ -180,7 +180,7 @@ do
 done
 ```
 
-See [[filearchiv#^EX48|Example 16-30]], [[special-chars#^EX58|Example 3-4]], and [[loops1#^FINDSTRING|Example 11-10]] for scripts using **find**. Its [[basic#^MANREF|manpage]] provides more detail on this complex and powerful command.
+See [[file-and-archiving-commands#^EX48|Example 16-30]], [[special-chars#^EX58|Example 3-4]], and [[loops1#^FINDSTRING|Example 11-10]] for scripts using **find**. Its [[basic#^MANREF|manpage]] provides more detail on this complex and powerful command.
 
 **xargs**
 
@@ -211,7 +211,7 @@ bash$ find ~/mail -type f | xargs grep "Linux"
 	      
 ```
 
-**ls | xargs -p -l gzip** [[filearchiv#^GZIPREF|gzips]] every file in current directory, one at a time, prompting before each operation.
+**ls | xargs -p -l gzip** [[file-and-archiving-commands#^GZIPREF|gzips]] every file in current directory, one at a time, prompting before each operation.
 
 > [!note]
 > Note that _xargs_ processes the arguments passed to it sequentially, _one at a time_.
