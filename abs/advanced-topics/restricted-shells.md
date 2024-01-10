@@ -1,4 +1,6 @@
-# Chapter 22. Restricted Shells
+---
+title: 22. Restricted Shells
+---
 
 **Disabled commands in restricted shells**
 

@@ -1,4 +1,6 @@
-# Chapter 18. Regular Expressions
+---
+title: 18. Regular Expressions
+---
 
 > . . . the intellectual activity associated with software development is largely one of gaining insight.
 >
