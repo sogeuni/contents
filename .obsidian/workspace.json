@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/commands/internal-commands-and-builtins.md",
+                "file": "abs/commands/time-date-commands.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/commands/internal-commands-and-builtins.md",
+                "file": "abs/commands/time-date-commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/commands/internal-commands-and-builtins.md",
+                "file": "abs/commands/time-date-commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/commands/internal-commands-and-builtins.md"
+                "file": "abs/commands/time-date-commands.md"
               }
             }
           },
@@ -153,7 +153,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/commands/internal-commands-and-builtins.md",
+                "file": "abs/commands/time-date-commands.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -198,8 +198,9 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "7c4dde10a3995f5d",
+  "active": "81987b6bb7dc9979",
   "lastOpenFiles": [
+    "abs/commands/internal-commands-and-builtins.md",
     "abs/commands/system-and-administrative-commands.md",
     "abs/commands/system.md",
     "abs/commands/miscellaneous-commands.md",
@@ -222,7 +223,6 @@
     "abs/commands/moreadv.md",
     "abs/commands/external-filters-programs-and-commands.md",
     "abs/commands/external.md",
-    "abs/commands/internal-commands-and-builtins.md",
     "abs/commands/index.md",
     "abs/index.md",
     "abs/commands/x9644.md",

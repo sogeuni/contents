@@ -1,7 +1,6 @@
 ---
 title: 16.3. Time / Date Commands
 ---
-
 **Time/date and timing**
 
 **date**
