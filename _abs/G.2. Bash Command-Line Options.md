@@ -11,7 +11,7 @@ _Bash_ itself has a number of command-line options. Here are some of the more us
 - -r
     --restricted
 
-    _Runs the shell, or a script, in [[restricted-sh#^RESTRICTEDSHREF|restricted mode]]._
+    _Runs the shell, or a script, in [[restricted-shells#^RESTRICTEDSHREF|restricted mode]]._
 
 - --posix
 

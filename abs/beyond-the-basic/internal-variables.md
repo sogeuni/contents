@@ -157,7 +157,7 @@ See also [[contributed-scripts#^USEGETOPT|Example A-50]].
 
 $GLOBIGNORE
 
-A list of filename patterns to be excluded from matching in [[globbingref.html|globbing]].
+A list of filename patterns to be excluded from matching in [[globbing.html|globbing]].
 
 $GROUPS
 
@@ -330,7 +330,7 @@ IFS="$(printf '\n\t')"   # Per David Wheeler.
 >
 > (Many thanks, Stéphane Chazelas, for clarification and above examples.)
 >
-> See also [[communications-commands#^ISSPAMMER|Example 16-41]], [[loops#^BINGREP|Example 11-8]], and [[x17837#^MAILBOXGREP|Example 19-14]] for instructive examples of using $IFS.
+> See also [[communications-commands#^ISSPAMMER|Example 16-41]], [[loops#^BINGREP|Example 11-8]], and [[here-strings#^MAILBOXGREP|Example 19-14]] for instructive examples of using $IFS.
 
 $IGNOREEOF
 
@@ -338,14 +338,14 @@ Ignore EOF: how many end-of-files (control-D) the shell will ignore before loggi
 
 $LC_COLLATE
 
-Often set in the [[sample-bashrc|.bashrc]] or /etc/profile files, this variable controls collation order in filename expansion and pattern matching. If mishandled, LC_COLLATE can cause unexpected results in [[globbingref|filename globbing]].
+Often set in the [[sample-bashrc|.bashrc]] or /etc/profile files, this variable controls collation order in filename expansion and pattern matching. If mishandled, LC_COLLATE can cause unexpected results in [[globbing|filename globbing]].
 
 > [!note]
 > As of version 2.05 of Bash, filename globbing no longer distinguishes between lowercase and uppercase letters in a character range between brackets. For example, **ls [A-M]*** would match both File1.txt and file1.txt. To revert to the customary behavior of bracket matching, set LC_COLLATE to C by an **export LC_COLLATE=C** in /etc/profile and/or ~/.bashrc.
 
 $LC_CTYPE
 
-This internal variable controls character interpretation in [[globbingref.html|globbing]] and pattern matching.
+This internal variable controls character interpretation in [[globbing.html|globbing]] and pattern matching.
 
 $LINENO
 

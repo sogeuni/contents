@@ -185,7 +185,7 @@ exit 0   # Normal exit? No!
 The **killall** command kills a running process by _name_, rather than by [[special-characters#^PROCESSIDREF|process ID]]. If there are multiple instances of a particular command running, then doing a _killall_ on that command will terminate them _all_.
 
 > [!note]
-> This refers to the **killall** command in /usr/bin, _not_ the [[sysscripts#^KILLALL2REF|killall script]] in /etc/rc.d/init.d.
+> This refers to the **killall** command in /usr/bin, _not_ the [[analyzing-a-system-script#^KILLALL2REF|killall script]] in /etc/rc.d/init.d.
 
 **command**
 

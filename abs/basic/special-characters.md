@@ -1,7 +1,7 @@
 ---
 title: 3. Special Characters
 ---
-What makes a character _special_? If it has a meaning beyond its _literal meaning_, a [[x17129#^METAMEANINGREF|meta-meaning]], then we refer to it as a _special character_. Along with commands and [[internal-commands-and-builtins#^KEYWORDREF|keywords]], _special characters_ are building blocks of Bash scripts.
+What makes a character _special_? If it has a meaning beyond its _literal meaning_, a [[brief-introduction-to-regular-expressions#^METAMEANINGREF|meta-meaning]], then we refer to it as a _special character_. Along with commands and [[internal-commands-and-builtins#^KEYWORDREF|keywords]], _special characters_ are building blocks of Bash scripts.
 
 ## Special Characters Found In Scripts and Elsewhere
 
@@ -145,7 +145,7 @@ Copy all the "junk" files to [[internal-variables#^PWDREF|$PWD]].
 
 ### .
 
-**"dot" character match.** When [[x17129#^REGEXDOT|matching characters]], as part of a [[regexp#^REGEXREF|regular expression]], a "dot" [[x17129#^REGEXDOT|matches a single character]].
+**"dot" character match.** When [[brief-introduction-to-regular-expressions#^REGEXDOT|matching characters]], as part of a [[regexp#^REGEXREF|regular expression]], a "dot" [[brief-introduction-to-regular-expressions#^REGEXDOT|matches a single character]].
 
 ### "
 
@@ -255,7 +255,7 @@ Provide a placeholder where a binary operation is expected, see [[operators#^ARI
 : ${1?"Usage: $0 ARGUMENT"}     # From "usage-message.sh example script.
 ```
 
-Provide a placeholder where a command is expected in a [[here-docs#^HEREDOCREF|here document]]. See [[here-docs#^ANONHEREDOC|Example 19-10]].
+Provide a placeholder where a command is expected in a [[here-documents#^HEREDOCREF|here document]]. See [[here-documents#^ANONHEREDOC|Example 19-10]].
 
 Evaluate string of variables using [[parameter-substitution#^PARAMSUBREF|parameter substitution]] (as in [[parameter-substitution#^EX6|Example 10-7]]).
 
@@ -331,7 +331,7 @@ In yet another context, from the _command line_, the ! invokes the Bash _history
 
 ### *
 
-**wild card [[globbingref.html|asterisk].** The * character serves as a "wild card" for filename expansion in [globbing]]. By itself, it matches every filename in a given directory.
+**wild card [[globbing.html|asterisk].** The * character serves as a "wild card" for filename expansion in [globbing]]. By itself, it matches every filename in a given directory.
 
 ```bash
 bash$ echo *
@@ -339,7 +339,7 @@ abs-book.sgml add-drive.sh agram.sh alias.sh
 	      
 ```
 
-The * also represents [[x17129#^ASTERISKREG|any number (or zero) characters]] in a [[regexp#^REGEXREF|regular expression]].
+The * also represents [[brief-introduction-to-regular-expressions#^ASTERISKREG|any number (or zero) characters]] in a [[regexp#^REGEXREF|regular expression]].
 
 ### *
 
@@ -371,7 +371,7 @@ In a [[parameter-substitution#^PARAMSUBREF|parameter substitution]] expression, 
 
 ### ?
 
-**wild card.** The ? character serves as a single-character "wild card" for filename expansion in [[globbingref.html|globbing]], as well as [[x17129#^QUEXREGEX|representing one character]] in an [[x17129#^EXTREGEX|extended regular expression]].
+**wild card.** The ? character serves as a single-character "wild card" for filename expansion in [[globbing.html|globbing]], as well as [[brief-introduction-to-regular-expressions#^QUEXREGEX|representing one character]] in an [[brief-introduction-to-regular-expressions#^EXTREGEX|extended regular expression]].
 
 ### $
 
@@ -389,7 +389,7 @@ A $ prefixing a variable name indicates the _value_ the variable holds.
 
 ### $
 
-**end-of-line.** In a [[regexp#^REGEXREF|regular expression]], a "$" addresses the [[x17129#^DOLLARSIGNREF|end of a line]] of text.
+**end-of-line.** In a [[regexp#^REGEXREF|regular expression]], a "$" addresses the [[brief-introduction-to-regular-expressions#^DOLLARSIGNREF|end of a line]] of text.
 
 ### ${}
 
@@ -629,7 +629,7 @@ echo ${Array[1]}
 
 **range of characters.**
 
-As part of a [[regexp#^REGEXREF|regular expression]], brackets delineate a [[x17129#^BRACKETSREF|range of characters]] to match.
+As part of a [[regexp#^REGEXREF|regular expression]], brackets delineate a [[brief-introduction-to-regular-expressions#^BRACKETSREF|range of characters]] to match.
 
 ### $[ ... ]
 
@@ -708,11 +708,11 @@ See the discussion on the [[double-parentheses-construct.html|(( ... )) construc
 
 ### <<
 
-**redirection used in a [[here-docs#^HEREDOCREF|here document]].**
+**redirection used in a [[here-documents#^HEREDOCREF|here document]].**
 
 ### <<<
 
-**redirection used in a [[x17837#^HERESTRINGSREF|here string]].**
+**redirection used in a [[here-strings#^HERESTRINGSREF|here string]].**
 
 ### <, >
 
@@ -734,7 +734,7 @@ fi
 
 ### \<, \>
 
-**[[x17129#^ANGLEBRAC|word boundary]] in a [[regexp#^REGEXREF|regular expression]].**
+**[[brief-introduction-to-regular-expressions#^ANGLEBRAC|word boundary]] in a [[regexp#^REGEXREF|regular expression]].**
 
 `bash$ **grep '\<the\>' textfile**`
 
@@ -1114,7 +1114,7 @@ In a [[other-comparison-operators#^EQUALSIGNREF|different context]], the "=" is 
 
 **Plus.** Addition [[operators#^AROPS1|arithmetic operator]].
 
-In a [[x17129#^PLUSREF|different context]], the + is a [[regexp.html|Regular Expression]] operator.
+In a [[brief-introduction-to-regular-expressions#^PLUSREF|different context]], the + is a [[regexp.html|Regular Expression]] operator.
 
 ### +
 
@@ -1169,7 +1169,7 @@ bash$ echo ~nonexistent-user
 
 ### ^
 
-**beginning-of-line.** In a [[regexp#^REGEXREF|regular expression]], a "^" addresses the [[x17129#^CARETREF|beginning of a line]] of text.
+**beginning-of-line.** In a [[regexp#^REGEXREF|regular expression]], a "^" addresses the [[brief-introduction-to-regular-expressions#^CARETREF|beginning of a line]] of text.
 
 ### ^, ^^
 
@@ -1393,7 +1393,7 @@ Blank lines have no effect on the action of a script, and are therefore useful f
 
 To preserve _whitespace_ within a string or in a variable, use [[quoting#^QUOTINGREF|quoting]].
 
-UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whitespace_ using the [[x17129#^POSIXREF|POSIX]] character class [[x17129#^WSPOSIX|[:space:]]].
+UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whitespace_ using the [[brief-introduction-to-regular-expressions#^POSIXREF|POSIX]] character class [[brief-introduction-to-regular-expressions#^WSPOSIX|[:space:]]].
 
 [^1]: An _operator_ is an agent that carries out an _operation_. Some examples are the common [[operators#^AROPS1|arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of _operator_ and [[internal-commands-and-builtins#^KEYWORDREF|keyword]].
 

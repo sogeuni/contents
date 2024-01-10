@@ -123,7 +123,7 @@ exit $?
 For simpler examples of awk within shell scripts, see:
 
 1. [[internal-commands-and-builtins#^EX44|Example 15-14]]
-2. [[redircb#^REDIR4|Example 20-8]]
+2. [[redirecting-code-blocks#^REDIR4|Example 20-8]]
 3. [[file-and-archiving-commands#^STRIPC|Example 16-32]]
 4. [[shell-wrapper#^COLTOTALER|Example 36-5]]
 5. [[ivr#^COLTOTALER2|Example 28-2]]

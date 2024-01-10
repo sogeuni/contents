@@ -452,7 +452,7 @@ Enables or disables write access to the current user's terminal. Disabling acces
 
 **wall**
 
-This is an acronym for "[[communications-commands#^WRITEREF|write]] all," i.e., sending a message to all users at every terminal logged into the network. It is primarily a system administrator's tool, useful, for example, when warning everyone that the system will shortly go down due to a problem (see [[here-docs#^EX70|Example 19-1]]).
+This is an acronym for "[[communications-commands#^WRITEREF|write]] all," i.e., sending a message to all users at every terminal logged into the network. It is primarily a system administrator's tool, useful, for example, when warning everyone that the system will shortly go down due to a problem (see [[here-documents#^EX70|Example 19-1]]).
 
 ```bash
 bash$ wall System going down for maintenance in 5 minutes!

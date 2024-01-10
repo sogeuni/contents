@@ -289,7 +289,7 @@ fi
 exit
 ```
 
-An alternate method of invoking **bc** involves using a [[here-docs#^HEREDOCREF|here document]] embedded within a [[commandsub#^COMMANDSUBREF|command substitution]] block. This is especially appropriate when a script needs to pass a list of options and commands to **bc**.
+An alternate method of invoking **bc** involves using a [[here-documents#^HEREDOCREF|here document]] embedded within a [[commandsub#^COMMANDSUBREF|command substitution]] block. This is especially appropriate when a script needs to pass a list of options and commands to **bc**.
 
 ```bash
 variable=`bc << LIMIT_STRING

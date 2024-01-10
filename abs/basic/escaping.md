@@ -283,7 +283,7 @@ echo '\'   # Results in \
 ```
 
 > [!note] 
-> The behavior of \ depends on whether it is escaped, [[varsubn#^SNGLQUO|strong-quoted]], [[varsubn#^DBLQUO|weak-quoted]], or appearing within [[command-substitution#^COMMANDSUBREF|command substitution]] or a [[here-docs#^HEREDOCREF|here document]].
+> The behavior of \ depends on whether it is escaped, [[varsubn#^SNGLQUO|strong-quoted]], [[varsubn#^DBLQUO|weak-quoted]], or appearing within [[command-substitution#^COMMANDSUBREF|command substitution]] or a [[here-documents#^HEREDOCREF|here document]].
 >
 > ```bash
 >                       #  Simple escaping and quoting

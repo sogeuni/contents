@@ -1,14 +1,12 @@
 ---
 title: 20.1. Using _exec_
-aliases:
-  - 20.1. Using _exec_
 ---
 
 An **exec <filename** command redirects stdin to a file. From that point on, all stdin comes from that file, rather than its normal source (usually keyboard input). This provides a method of reading a file line by line and possibly parsing each line of input using [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]] and/or [[C.2. Awk#^AWKREF|awk]].
 
 **Example 20-1. Redirecting stdin using _exec_**
 
-```
+```bash
 #!/bin/bash
 # Redirecting stdin using 'exec'.
 
@@ -57,7 +55,7 @@ Similarly, an **exec >filename** command redirects stdout to a designated file. 
 
 **Example 20-2. Redirecting stdout using _exec_**
 
-```
+```bash
 #!/bin/bash
 # reassign-stdout.sh
 
@@ -99,7 +97,7 @@ exit 0
 
 **Example 20-3. Redirecting both stdin and stdout in the same script with _exec_**
 
-```
+```bash
 #!/bin/bash
 # upperconv.sh
 # Converts a specified input file to uppercase.
@@ -150,8 +148,8 @@ I/O redirection is a clever way of avoiding the dreaded [[subshells#^PARVIS|inac
 
 **Example 20-4. Avoiding a subshell**
 
-```
-****#!/bin/bash
+```bash
+#!/bin/bash
 # avoid-subshell.sh
 # Suggested by Matthew Walker.
 

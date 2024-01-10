@@ -1675,7 +1675,7 @@ exit 99                            # Will not exit here!
                                    # Exit code will not be 99!
 ```
 
-An **exec** also serves to [[x17974#^USINGEXECREF|reassign file descriptors]]. For example, **exec <zzz-file** replaces stdin with the file zzz-file.
+An **exec** also serves to [[using-exec#^USINGEXECREF|reassign file descriptors]]. For example, **exec <zzz-file** replaces stdin with the file zzz-file.
 
 > [!note]
 > The -exec option to [[complex-commands#^FINDREF|find]] is _not_ the same as the **exec** shell builtin.
@@ -1831,7 +1831,7 @@ exit: exit [n]
 
 [^6]: Technically, an **exit** only terminates the process (or shell) in which it is running _not the parent process_.
 
-[^7]: Unless the **exec** is used to [[x17974#^USINGEXECREF|reassign file descriptors]].
+[^7]: Unless the **exec** is used to [[using-exec#^USINGEXECREF|reassign file descriptors]].
 
 [^8]: _Hashing_ is a method of creating lookup keys for data stored in a table. The _data items themselves_ are "scrambled" to create keys, using one of a number of simple mathematical _algorithms_ (methods, or recipes).
 

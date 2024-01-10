@@ -374,7 +374,7 @@ echo ${@:0}
 
 # $0                $1  $2  $3|
     
-- The new ** [[globbingref.html|globbing]] operator matches filenames and directories [[localvar#^RECURSIONREF0|recursively]].
+- The new ** [[globbing.html|globbing]] operator matches filenames and directories [[localvar#^RECURSIONREF0|recursively]].
     
     |   |
     |---|
@@ -478,7 +478,7 @@ exit
 
 num_chars=61|
     
-- [[here-docs#^HEREDOCREF|Here documents]] embedded in [[varassignment#^COMMANDSUBREF0|**$( ... )** command substitution]] constructs may terminate with a simple **)**.
+- [[here-documents#^HEREDOCREF|Here documents]] embedded in [[varassignment#^COMMANDSUBREF0|**$( ... )** command substitution]] constructs may terminate with a simple **)**.
     
     **Example 37-9. Using a _here document_ to set a variable**
     

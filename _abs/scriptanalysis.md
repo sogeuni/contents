@@ -88,7 +88,7 @@ do
   echo $LINE
 done < `tail -f /var/log/messages`|
 
-He wished to write a script tracking changes to the system log file, /var/log/messages. Unfortunately, the above code block hangs and does nothing useful. Why? Fix this so it does work. (Hint: rather than [[redircb#^REDIRREF|redirecting the stdin of the loop]], try a [[special-characters#^PIPEREF|pipe]].)
+He wished to write a script tracking changes to the system log file, /var/log/messages. Unfortunately, the above code block hangs and does nothing useful. Why? Fix this so it does work. (Hint: rather than [[redirecting-code-blocks#^REDIRREF|redirecting the stdin of the loop]], try a [[special-characters#^PIPEREF|pipe]].)
 
 ---
 

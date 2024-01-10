@@ -7,27 +7,18 @@
 The following commands and actions are disabled:
 
 - Using _cd_ to change the working directory.
-    
 - Changing the values of the _$PATH_, _$SHELL_, _$BASH_ENV_, or _$ENV_ [[othertypesv#^ENVREF|environmental variables]].
-    
 - Reading or changing the _$SHELLOPTS_, shell environmental options.
-    
 - Output redirection.
-    
 - Invoking commands containing one or more /'s.
-    
 - Invoking [[internal-commands-and-builtins#^EXECREF|exec]] to substitute a different process for the shell.
-    
 - Various other commands that would enable monkeying with or attempting to subvert the script for an unintended purpose.
-    
 - Getting out of restricted mode within the script.
-    
 
 **Example 22-1. Running a script in restricted mode**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 #  Starting the script with "#!/bin/bash -r"
 #+ runs entire script in restricted mode.
@@ -73,5 +64,5 @@ ls -l bin.files    # Try to list attempted file creation effort.
 
 echo
 
-exit 0|
-
+exit 0
+```

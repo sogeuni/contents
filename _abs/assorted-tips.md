@@ -66,7 +66,7 @@ echo $title | cat - $file >$file.new
 #+ to write a new file with $title appended at *beginning*.
 ```
 
-This is a simplified variant of the [[x17837#^PREPENDEX|Example 19-13]] script given earlier. And, of course, [[sedawk#^SEDREF|sed]] can also do this.
+This is a simplified variant of the [[here-strings#^PREPENDEX|Example 19-13]] script given earlier. And, of course, [[sedawk#^SEDREF|sed]] can also do this.
 
 - A shell script may act as an embedded command inside another shell script, a _Tcl_ or _wish_ script, or even a [[file-and-archiving-commands#^MAKEFILEREF|Makefile]]. It can be invoked as an external shell command in a C program using the _system()_ call, i.e., _system("script_name");_.
 
@@ -290,7 +290,7 @@ echo "No more comments, please."
 exit 0
 ```
 
-Compare this with [[here-docs#^CBLOCK1|using here documents to comment out code blocks]].
+Compare this with [[here-documents#^CBLOCK1|using here documents to comment out code blocks]].
 
 - Using the [[internal-variables#^XSTATVARREF|$? exit status variable]], a script may test if a parameter contains only digits, so it can be treated as an integer.
 
@@ -583,7 +583,7 @@ isotheral
     
 See also [[procref1#^CONSTAT|Example 29-4]], [[text-processing-commands#^CRYPTOQUOTE|Example 16-25]], and [[contributed-scripts#^SOUNDEX|Example A-9]].
 
-- Use "[[here-docs#^ANONHEREDOC0|anonymous here documents]]" to comment out blocks of code, to save having to individually comment out each line with a #. See [[here-docs#^COMMENTBLOCK|Example 19-11]].
+- Use "[[here-documents#^ANONHEREDOC0|anonymous here documents]]" to comment out blocks of code, to save having to individually comment out each line with a #. See [[here-documents#^COMMENTBLOCK|Example 19-11]].
 
 - Running a script on a machine that relies on a command that might not be installed is dangerous. Use [[file-and-archiving-commands#^WHATISREF|whatis]] to avoid potential problems with this.
 

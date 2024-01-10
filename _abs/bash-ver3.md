@@ -136,7 +136,7 @@ else
 fi
 ```
 
-For additional examples of using the **=~** operator, see [[contributed-scripts#^WHX|Example A-29]], [[x17837#^MAILBOXGREP|Example 19-14]], [[contributed-scripts#^FINDSPLIT|Example A-35]], and [[contributed-scripts#^TOHTML|Example A-24]].
+For additional examples of using the **=~** operator, see [[contributed-scripts#^WHX|Example A-29]], [[here-strings#^MAILBOXGREP|Example 19-14]], [[contributed-scripts#^FINDSPLIT|Example A-35]], and [[contributed-scripts#^TOHTML|Example A-24]].
 
 - The new `set -o pipefail` option is useful for debugging [[special-characters#^PIPEREF|pipes]]. If this option is set, then the [[exit-status#^EXITSTATUSREF|exit status]] of a pipe is the exit status of the last command in the pipe to _fail_ (return a non-zero value), rather than the actual final command in the pipe.
 

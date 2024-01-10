@@ -203,7 +203,7 @@ esac
 exit 0
 ```
 
-A **case** construct can filter strings for [[globbingref.html|globbing]] patterns.
+A **case** construct can filter strings for [[globbing.html|globbing]] patterns.
 
 **Example 11-28. Simple string matching**
 

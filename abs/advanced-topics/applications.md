@@ -1,12 +1,13 @@
-# 20.3. Applications
+---
+title: 20.3. Applications
+---
 
 Clever use of I/O redirection permits parsing and stitching together snippets of command output (see [[internal-commands-and-builtins#^READREDIR|Example 15-7]]). This permits generating report and log files.
 
 **Example 20-12. Logging events**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # logevents.sh
 # Author: Stephane Chazelas.
 # Used in ABS Guide with permission.
@@ -76,5 +77,5 @@ echo "sending mail" >&${FD_LOGEVENTS}
 # Writes "sending mail" to file descriptor #7.
 
 
-exit 0|
-
+exit 0
+```

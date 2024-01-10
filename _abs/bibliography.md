@@ -193,7 +193,7 @@ The [_Pixelbeat_ command-line reference](http://www.pixelbeat.org/cmdline.html).
 
 Very nice **sed**, **awk**, and regular expression tutorials at [The UNIX Grymoire](http://www.grymoire.com/Unix/index.html).
 
-The GNU [sed](http://www.gnu.org/software/sed/manual/) and [gawk](http://www.gnu.org/software/gawk/manual/) manuals. As you recall, [[x17129#^GNUGAWK|gawk]] is the enhanced GNU version of **awk**.
+The GNU [sed](http://www.gnu.org/software/sed/manual/) and [gawk](http://www.gnu.org/software/gawk/manual/) manuals. As you recall, [[brief-introduction-to-regular-expressions#^GNUGAWK|gawk]] is the enhanced GNU version of **awk**.
 
 Many interesting sed scripts at the [seder's grab bag](http://sed.sourceforge.net/grabbag/).
 

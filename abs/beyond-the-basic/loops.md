@@ -147,7 +147,7 @@ do
 done
 ```
 
-If the **[list]** in a _for loop_ contains wild cards (* and ?) used in filename expansion, then [[globbingref|globbing]] takes place.
+If the **[list]** in a _for loop_ contains wild cards (* and ?) used in filename expansion, then [[globbing|globbing]] takes place.
 
 **Example 11-5. Operating on files with a _for_ loop**
 
@@ -803,7 +803,7 @@ done
 ```
 
 > [!note]
-> A _while loop_ may have its stdin [[redircb#REDIRREF|redirected to a file]] by a < at its end.
+> A _while loop_ may have its stdin [[redirecting-code-blocks#REDIRREF|redirected to a file]] by a < at its end.
 >
 > A _while loop_ may have its stdin [[internal-commands-and-builtins#READPIPEREF|supplied by a pipe]].
 

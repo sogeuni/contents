@@ -1,12 +1,13 @@
-# 20.2. Redirecting Code Blocks
+---
+title: 20.2. Redirecting Code Blocks
+---
 
 Blocks of code, such as [[loops#^WHILELOOPREF|while]], [[loops#^UNTILLOOPREF|until]], and [[loops#^FORLOOPREF1|for]] loops, even [[tests#^IFTHEN|if/then]] test blocks can also incorporate redirection of stdin. Even a function may use this form of redirection (see [[complexfunct#^REALNAME|Example 24-11]]). The < operator at the end of the code block accomplishes this.
 
 **Example 20-5. Redirected _while_ loop**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # redir2.sh
 
 if [ -z "$1" ]
@@ -46,7 +47,7 @@ exit 0
 #+ as distinct from a REDIRECTED "while" loop.
 
 abc=hi
-echo -e "1\n2\n3" \| while read l
+echo -e "1\n2\n3" | while read l
      do abc="$l"
         echo $abc
      done
@@ -54,13 +55,13 @@ echo $abc
 
 #  Thanks, Bruno de Oliveira Schneider, for demonstrating this
 #+ with the above snippet of code.
-#  And, thanks, Brian Onn, for correcting an annotation error.|
+#  And, thanks, Brian Onn, for correcting an annotation error.
+```
 
 **Example 20-6. Alternate form of redirected _while_ loop**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # This is an alternate form of the preceding script.
 
@@ -104,13 +105,13 @@ exec 3<&-                 # Close temporary fd 3.
 
 echo; echo "$count names read"; echo
 
-exit 0|
+exit 0
+```
 
 **Example 20-7. Redirected _until_ loop**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Same as previous example, but with "until" loop.
 
 if [ -z "$1" ]
@@ -130,13 +131,13 @@ done <"$Filename"             # Redirects stdin to file $Filename.
 
 # Same results as with "while" loop in previous example.
 
-exit 0|
+exit 0
+```
 
 **Example 20-8. Redirected _for_ loop**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 if [ -z "$1" ]
 then
@@ -145,7 +146,7 @@ else
   Filename=$1
 fi  
 
-line_count=`wc $Filename \| awk '{ print $1 }'`
+line_count=`wc $Filename | awk '{ print $1 }'`
 #           Number of lines in target file.
 #
 #  Very contrived and kludgy, nevertheless shows that
@@ -167,15 +168,15 @@ do
 done <"$Filename"              # Redirects stdin to file $Filename. 
 #    ^^^^^^^^^^^^
 
-exit 0|
+exit 0
+```
 
 We can modify the previous example to also redirect the output of the loop.
 
 **Example 20-9. Redirected _for_ loop (both stdin and stdout redirected)**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 if [ -z "$1" ]
 then
@@ -187,7 +188,7 @@ fi
 Savefile=$Filename.new         # Filename to save results in.
 FinalName=Jonah                # Name to terminate "read" on.
 
-line_count=`wc $Filename \| awk '{ print $1 }'`  # Number of lines in target file.
+line_count=`wc $Filename | awk '{ print $1 }'`  # Number of lines in target file.
 
 
 for name in `seq $line_count`
@@ -201,13 +202,13 @@ do
 done < "$Filename" > "$Savefile"     # Redirects stdin to file $Filename,
 #    ^^^^^^^^^^^^^^^^^^^^^^^^^^^       and saves it to backup file.
 
-exit 0|
+exit 0
+```
 
 **Example 20-10. Redirected _if/then_ test**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 if [ -z "$1" ]
 then
@@ -228,13 +229,13 @@ fi <"$Filename"
 # Reads only first line of file.
 # An "if/then" test has no way of iterating unless embedded in a loop.
 
-exit 0|
+exit 0
+```
 
 **Example 20-11. Data file _names.data_ for above examples**
 
-|   |
-|---|
-|Aristotle
+```bash
+Aristotle
 Arrhenius
 Belisarius
 Capablanca
@@ -258,22 +259,22 @@ Warshawski
 Znosko-Borowski
 
 #  This is a data file for
-#+ "redir2.sh", "redir3.sh", "redir4.sh", "redir4a.sh", "redir5.sh".|
+#+ "redir2.sh", "redir3.sh", "redir4.sh", "redir4a.sh", "redir5.sh".
+```
 
 Redirecting the stdout of a code block has the effect of saving its output to a file. See [[special-characters#^RPMCHECK|Example 3-2]].
 
-[[here-docs#^HEREDOCREF|Here documents]] are a special case of redirected code blocks. That being the case, it should be possible to feed the output of a _here document_ into the stdin for a _while loop_.
+[[here-documents#^HEREDOCREF|Here documents]] are a special case of redirected code blocks. That being the case, it should be possible to feed the output of a _here document_ into the stdin for a _while loop_.
 
-|   |
-|---|
-|# This example by Albert Siersema
+```bash
+# This example by Albert Siersema
 # Used with permission (thanks!).
 
 function doesOutput()
  # Could be an external command too, of course.
  # Here we show you can use a function as well.
 {
-  ls -al *.jpg \| awk '{print $5,$9}'
+  ls -al *.jpg | awk '{print $5,$9}'
 }
 
 
@@ -288,5 +289,5 @@ done<<EOF
 $(doesOutput)
 EOF
 
-echo "$nr files totaling $totalSize bytes"|
-
+echo "$nr files totaling $totalSize bytes"
+```

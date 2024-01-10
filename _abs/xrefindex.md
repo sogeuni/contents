@@ -129,7 +129,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
 - [[special-characters#^NULLREF|_null_ command]], equivalent to the [[internal-commands-and-builtins#^TRUEREF|true]] Bash builtin
     
-- Used in an [[here-docs#^ANONHEREDOC0|anonymous here document]]
+- Used in an [[here-documents#^ANONHEREDOC0|anonymous here document]]
     
 - Used in an [[special-characters#^COLONINFUNCTION|otherwise empty function]]
     
@@ -143,9 +143,9 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 **?** (question mark)
 
-- [[x17129#^QUEXREGEX|Match zero or one characters]], in an [[x17129#^EXTREGEX|Extended Regular Expression]]
+- [[brief-introduction-to-regular-expressions#^QUEXREGEX|Match zero or one characters]], in an [[brief-introduction-to-regular-expressions#^EXTREGEX|Extended Regular Expression]]
     
-- [[special-characters#^QUEXWC|Single-character _wild card_]], in [[globbingref|globbing]]
+- [[special-characters#^QUEXWC|Single-character _wild card_]], in [[globbing|globbing]]
     
 - In a [[special-characters#^CSTRINARY|_C_-style Trinary operator]]
     
@@ -156,7 +156,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 - **.** [[special-characters#^DOTREF|Load a file]] (into a script), equivalent to [[internal-commands-and-builtins#^SOURCEREF|source]] command
     
-- **.** [[x17129#^REGEXDOT|Match single character]], in a [[regexp#^REGEXREF|Regular Expression]]
+- **.** [[brief-introduction-to-regular-expressions#^REGEXDOT|Match single character]], in a [[regexp#^REGEXREF|Regular Expression]]
     
 - **.** [[special-characters#^DOTDIRECTORY|Current working directory]]
     
@@ -187,7 +187,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 - **( ... )** [[special-characters#^PARENSREF|Command group]]; starts a [[subshells#^SUBSHELLSREF|subshell]]
     
-- **( ... )** [[x17129#^PARENGRPS|Enclose group]] of _Extended Regular Expressions_
+- **( ... )** [[brief-introduction-to-regular-expressions#^PARENGRPS|Enclose group]] of _Extended Regular Expressions_
     
 - **>( ... )**
     
@@ -204,14 +204,14 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 - [[Chapter 27. Arrays#^BRACKARRAY|_Array_ element]]
     
-- [[x17129#^BRACKETSREF|Enclose character set to match]] in a _Regular Expression_
+- [[brief-introduction-to-regular-expressions#^BRACKETSREF|Enclose character set to match]] in a _Regular Expression_
     
 - [[special-characters#^BRACKTEST|_Test_ construct]]
     
 
 **[[test-constructs#^DBLBRACKETS|[ ... ]]** [Double brackets]], extended _test_ construct
 
-**$** [[x17129#^DOLLARSIGNREF|_Anchor_]], in a [[regexp#^REGEXREF|Regular Expression]]
+**$** [[brief-introduction-to-regular-expressions#^DOLLARSIGNREF|_Anchor_]], in a [[regexp#^REGEXREF|Regular Expression]]
 
 **$** [[varsubn|Prefix to a variable name]]
 
@@ -286,9 +286,9 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 **\** [[escaping#^ESCP|Escape]] the character following
 
-- **\< ... \>** [[x17129#^ANGLEBRAC|Angle brackets]], _escaped_, word boundary in a [[regexp#^REGEXREF|Regular Expression]]
+- **\< ... \>** [[brief-introduction-to-regular-expressions#^ANGLEBRAC|Angle brackets]], _escaped_, word boundary in a [[regexp#^REGEXREF|Regular Expression]]
     
-- **\{ N \}** [[x17129#^ESCPCB|"Curly" brackets]], _escaped_, number of character sets to match in an [[x17129#^EXTREGEX|Extended RE]]
+- **\{ N \}** [[brief-introduction-to-regular-expressions#^ESCPCB|"Curly" brackets]], _escaped_, number of character sets to match in an [[brief-introduction-to-regular-expressions#^EXTREGEX|Extended RE]]
     
 - **\;** [[complex-commands#^FINDREF0|_Semicolon_]], _escaped_, terminates a [[complex-commands#^FINDREF|find]] command
     
@@ -330,7 +330,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 ***** Asterisk
 
-- [[special-characters#^ASTERISKREF|_Wild card_]], in [[globbingref|globbing]]
+- [[special-characters#^ASTERISKREF|_Wild card_]], in [[globbing|globbing]]
     
 - [[special-characters#^ASTERISKREF2|Any number of characters]] in a [[regexp#^REGEXREF|Regular Expression]]
     
@@ -348,7 +348,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 **+** Plus sign
 
-- [[x17129#^PLUSREF|_Character match_]], in an [[x17129#^EXTREGEX|extended Regular Expression]]
+- [[brief-introduction-to-regular-expressions#^PLUSREF|_Character match_]], in an [[brief-introduction-to-regular-expressions#^EXTREGEX|extended Regular Expression]]
     
 - [[parameter-substitution#^PARAMALTV|Prefix to _alternate parameter_]], in _parameter substitution_
     
@@ -405,9 +405,9 @@ _Advanced Bash Scripting Guide_, [[mirrorsites#^WHERE_TARBALL|where to download]
 
 [[operators#^LOGOPS1|_And_ logical operator]] **&&**
 
-[[x17129#^ANGLEBRAC|Angle brackets]], _escaped_, **\< . . . \>** word boundary in a [[regexp#^REGEXREF|Regular Expression]]
+[[brief-introduction-to-regular-expressions#^ANGLEBRAC|Angle brackets]], _escaped_, **\< . . . \>** word boundary in a [[regexp#^REGEXREF|Regular Expression]]
 
-[[here-docs#^ANONHEREDOC0|Anonymous _here document_]], using **:**
+[[here-documents#^ANONHEREDOC0|Anonymous _here document_]], using **:**
 
 [[file-and-archiving-commands#^FAARCHIVING1|Archiving]]
 
@@ -597,7 +597,7 @@ Brackets, **[ ]**
 
 - [[Chapter 27. Arrays#^BRACKARRAY|_Array_ element]]
     
-- [[x17129#^BRACKETSREF|Enclose character set to match]] in a _Regular Expression_
+- [[brief-introduction-to-regular-expressions#^BRACKETSREF|Enclose character set to match]] in a _Regular Expression_
     
 - [[special-characters#^BRACKTEST|_Test_ construct]]
     
@@ -608,7 +608,7 @@ Brackets, _curly_, **{}**, used in
     
 - [[complex-commands#^CURLYBRACKETSREF|_find_]]
     
-- [[x17129#^ESCPCB|_Extended Regular Expressions_]]
+- [[brief-introduction-to-regular-expressions#^ESCPCB|_Extended Regular Expressions_]]
     
 - [[othertypesv#^BRACKETNOTATION|_Positional parameters_]]
     
@@ -638,7 +638,7 @@ Brackets, _curly_, **{}**, used in
 
 - [[optimizations#^CATABUSE|Abuse of]]
     
-- [[here-docs#^CATSCRIPTREF|_cat_ scripts]]
+- [[here-documents#^CATSCRIPTREF|_cat_ scripts]]
     
 - [[basic-commands#^CATLESSEFF|Less efficient than redirecting stdin]]
     
@@ -696,7 +696,7 @@ Brackets, _curly_, **{}**, used in
 
 Commenting out blocks of code
 
-- Using an [[here-docs#^CBLOCK1|_anonymous_ here document]]
+- Using an [[here-documents#^CBLOCK1|_anonymous_ here document]]
     
 - Using an [[assorted-tips#^COMOUTBL|_if-then_ construct]]
     
@@ -747,7 +747,7 @@ Curly brackets {}
 
 - [[complex-commands#^CURLYBRACKETSREF|in _find_ command]]
     
-- [[x17129#^ESCPCB|in an _Extended Regular Expression_]]
+- [[brief-introduction-to-regular-expressions#^ESCPCB|in an _Extended Regular Expression_]]
     
 - [[complex-commands#^XARGSCURLYREF|in _xargs_]]
     
@@ -816,7 +816,7 @@ Curly brackets {}
 
 [[internal-variables#^DIRSTACKREF|$DIRSTACK]] _directory stack_
 
-[[restricted-sh#^DISABLEDCOMMREF|Disabled commands]], in _restricted shells_
+[[restricted-shells#^DISABLEDCOMMREF|Disabled commands]], in _restricted shells_
 
 [[loops#^DOINREF|do]] keyword, begins execution of commands within a [[loops-and-branches#^LOOPREF00|loop]]
 
@@ -899,7 +899,7 @@ Encrypting files, using [[file-and-archiving-commands#^OPENSSLREF|openssl]]
 
 [[test-constructs#^DBLBRAEV|Evaluation of _octal/hex_ constants within [[ ... ]]]]
 
-[[x17974#^USINGEXECREF|exec]] command, using in [[io-redirection#^IOREDIRREF|redirection]]
+[[using-exec#^USINGEXECREF|exec]] command, using in [[io-redirection#^IOREDIRREF|redirection]]
 
 [[exercises|Exercises]]
 
@@ -938,15 +938,15 @@ Exit and Exit status
 - [[manipulating-strings#^EXPRMATCH|Substring matching]]
     
 
-[[x17129#^EXTREGEX|Extended _Regular Expressions_]]
+[[brief-introduction-to-regular-expressions#^EXTREGEX|Extended _Regular Expressions_]]
 
-- **?** (question mark) [[x17129#^QUEXREGEX|Match zero / one characters]]
+- **?** (question mark) [[brief-introduction-to-regular-expressions#^QUEXREGEX|Match zero / one characters]]
     
-- **( ... )** [[x17129#^PARENGRPS|Group of expressions]]
+- **( ... )** [[brief-introduction-to-regular-expressions#^PARENGRPS|Group of expressions]]
     
-- **\{ N \}** [[x17129#^ESCPCB|"Curly" brackets]], _escaped_, number of character sets to match
+- **\{ N \}** [[brief-introduction-to-regular-expressions#^ESCPCB|"Curly" brackets]], _escaped_, number of character sets to match
     
-- **+** [[x17129#^PLUSREF|_Character match_]]
+- **+** [[brief-introduction-to-regular-expressions#^PLUSREF|_Character match_]]
     
 
 * * *
@@ -1101,13 +1101,13 @@ Games and amusements
 
 [[subshells#^SCOPEREF|Global]] variable
 
-[[globbingref#^GLOBBINGREF2|Globbing]], filename expansion
+[[globbing#^GLOBBINGREF2|Globbing]], filename expansion
 
-- [[globbingref#^HANDLINGFNAMES|Handling filenames correctly]]
+- [[globbing#^HANDLINGFNAMES|Handling filenames correctly]]
     
 - [[special-characters#^ASTERISKREF|_Wild cards_]]
     
-- [[globbingref#^WDOTFILEWC|Will not match dot files]]
+- [[globbing#^WDOTFILEWC|Will not match dot files]]
     
 
 [[math-commands#^GOLDENRATIO|Golden Ratio]] (_Phi_)
@@ -1135,53 +1135,53 @@ Games and amusements
 
 [[internal-commands-and-builtins#^HELPREF|help]], gives usage summary of a Bash [[internal-commands-and-builtins#^BUILTINREF|builtin]]
 
-[[here-docs#^HEREDOCREF|_Here_ documents]]
+[[here-documents#^HEREDOCREF|_Here_ documents]]
 
-- [[here-docs#^ANONHEREDOC0|_Anonymous_ here documents]], using **:**
+- [[here-documents#^ANONHEREDOC0|_Anonymous_ here documents]], using **:**
     
-    [[here-docs#^CBLOCK1|Commenting out]] blocks of code
+    [[here-documents#^CBLOCK1|Commenting out]] blocks of code
     
-    [[here-docs#^HSELFDOC|Self-documenting]] scripts
+    [[here-documents#^HSELFDOC|Self-documenting]] scripts
     
 - [[math-commands#^BCHEREDOC|_bc_ in a _here document_]]
     
-- [[here-docs#^CATSCRIPTREF|_cat_ scripts]]
+- [[here-documents#^CATSCRIPTREF|_cat_ scripts]]
     
-- [[here-docs#^HERECS|Command substitution]]
+- [[here-documents#^HERECS|Command substitution]]
     
-- [[here-docs#^EXSCRIPTREF|_ex_ scripts]]
+- [[here-documents#^EXSCRIPTREF|_ex_ scripts]]
     
-- [[here-docs#^HEREFUNC|_Function_]], supplying input to
+- [[here-documents#^HEREFUNC|_Function_]], supplying input to
     
-- [[x17837#^HERESTRINGSREF|_Here_ strings]]
+- [[here-strings#^HERESTRINGSREF|_Here_ strings]]
     
     Calculating the [[math-commands#^GOLDENRATIO|Golden Ratio]]
     
-    [[x17837#^HSPRE|Prepending text]]
+    [[here-strings#^HSPRE|Prepending text]]
     
-    [[x17837#^HSLOOP|As the stdin of a _loop_]]
+    [[here-strings#^HSLOOP|As the stdin of a _loop_]]
     
-    [[x17837#^HSREAD|Using _read_]]
+    [[here-strings#^HSREAD|Using _read_]]
     
-- [[here-docs#^LIMITSTRINGREF|_Limit_ string]]
+- [[here-documents#^LIMITSTRINGREF|_Limit_ string]]
     
-    [[here-docs#^EXCLLS|! as a _limit string_]]
+    [[here-documents#^EXCLLS|! as a _limit string_]]
     
-    [[here-docs#^INDENTEDLS|Closing _limit string_]] may not be indented
+    [[here-documents#^INDENTEDLS|Closing _limit string_]] may not be indented
     
-    [[here-docs#^LIMITSTRDASH|Dash option]] to limit string, <<-LimitString
+    [[here-documents#^LIMITSTRDASH|Dash option]] to limit string, <<-LimitString
     
-- [[here-docs#^HERELIT|Literal text output]], for generating program code
+- [[here-documents#^HERELIT|Literal text output]], for generating program code
     
-- [[here-docs#^HEREPARAMSUB|Parameter substitution]]
+- [[here-documents#^HEREPARAMSUB|Parameter substitution]]
     
-    [[here-docs#^HEREESC|Disabling]] _parameter substitution_
+    [[here-documents#^HEREESC|Disabling]] _parameter substitution_
     
-- [[here-docs#^HEREPASSP|Passing parameters]]
+- [[here-documents#^HEREPASSP|Passing parameters]]
     
-- [[here-docs#^HERETEMP|Temporary files]]
+- [[here-documents#^HERETEMP|Temporary files]]
     
-- [[here-docs#^VIHERE|Using _vi_ non-interactively]]
+- [[here-documents#^VIHERE|Using _vi_ non-interactively]]
     
 
 [[histcommands|History commands]]
@@ -1259,7 +1259,7 @@ Games and amusements
 
 [[job-control-commands#^KILLALLREF|killall]], terminate a process _by name_
 
-[[sysscripts#^KILLALL2REF|_killall script_]] in /etc/rc.d/init.d
+[[analyzing-a-system-script#^KILLALL2REF|_killall script_]] in /etc/rc.d/init.d
 
 * * *
 
@@ -1272,7 +1272,7 @@ Games and amusements
 - _C-style_ [[internal-commands-and-builtins#^EX46|increment and decrement operators]]
     
 
-[[here-docs#^LIMITSTRINGREF|Limit string]], in a [[here-docs#^HEREDOCREF|here document]]
+[[here-documents#^LIMITSTRINGREF|Limit string]], in a [[here-documents#^HEREDOCREF|here document]]
 
 [[internal-variables#^LINENOREF|$LINENO]], variable indicating the _line number_ where it appears in a script
 
@@ -1396,7 +1396,7 @@ Loopback devices
 
 [[math-commands|Math commands]]
 
-[[x17129#^METAMEANINGREF|Meta-meaning]]
+[[brief-introduction-to-regular-expressions#^METAMEANINGREF|Meta-meaning]]
 
 [[contributed-scripts#^SAMORSE|Morse code training]] script
 
@@ -1515,7 +1515,7 @@ Parentheses
 
 - [[special-characters#^PARENSREF|Command group]]
     
-- [[x17129#^PARENGRPS|Enclose group]] of _Extended Regular Expressions_
+- [[brief-introduction-to-regular-expressions#^PARENGRPS|Enclose group]] of _Extended Regular Expressions_
     
 - [[double-parentheses-construct#^DBLPARENSREF|Double parentheses]], in arithmetic expansion
     
@@ -1572,7 +1572,7 @@ Parentheses
     
 - [[gotchas#^CGIREF|_CGI_ programming]], using scripts for
     
-- Closing _limit string_ in a _here document_, [[here-docs#^INDENTEDLS|indenting]]
+- Closing _limit string_ in a _here document_, [[here-documents#^INDENTEDLS|indenting]]
     
 - [[gotchas#^DOSNEWLINES|DOS-type newlines (\r\n)]] crash a script
     
@@ -1668,7 +1668,7 @@ Pointers
     
 - [[portabilityissues#^POSIX3REF|1003.2 standard]]
     
-- [[x17129#^POSIXREF|Character classes]]
+- [[brief-introduction-to-regular-expressions#^POSIXREF|Character classes]]
     
 
 [[internal-variables#^PPIDREF|$PPID]], _process ID_ of parent process
@@ -1734,9 +1734,9 @@ Prompt
 
 Question mark, **?**
 
-- [[x17129#^QUEXREGEX|Character match]] in an Extended _Regular Expression_
+- [[brief-introduction-to-regular-expressions#^QUEXREGEX|Character match]] in an Extended _Regular Expression_
     
-- [[special-characters#^QUEXWC|Single-character _wild card_]], in [[globbingref|globbing]]
+- [[special-characters#^QUEXWC|Single-character _wild card_]], in [[globbing|globbing]]
     
 - In a [[special-characters#^CSTRINARY|_C_-style Trinary (ternary) operator]]
     
@@ -1784,7 +1784,7 @@ Raspberry Pi (single-board computer)
     
 - [[internal-commands-and-builtins#^READPIPEREF|Piping output of _cat_]] to _read_
     
-- [[x17837#^HSREAD|"Prepending" text]]
+- [[here-strings#^HSREAD|"Prepending" text]]
     
 - [[gotchas#^BADREAD0|Problems piping _echo_]] to _read_
     
@@ -1816,9 +1816,9 @@ Raspberry Pi (single-board computer)
 
 Redirection
 
-- [[redircb#^REDIRREF|Code blocks]]
+- [[redirecting-code-blocks#^REDIRREF|Code blocks]]
     
-- [[x17974#^USINGEXECREF|exec <filename]],
+- [[using-exec#^USINGEXECREF|exec <filename]],
     
     to reassign [[io-redirection#^FDREF|file descriptors]]
     
@@ -1882,30 +1882,30 @@ Redirection
 
 - **^** (caret) [[special-characters#^BEGLINEREF|Beginning-of-line]]
     
-- **$** (dollar sign) [[x17129#^DOLLARSIGNREF|_Anchor_]]
+- **$** (dollar sign) [[brief-introduction-to-regular-expressions#^DOLLARSIGNREF|_Anchor_]]
     
-- **.** (dot) [[x17129#^REGEXDOT|Match single character]]
+- **.** (dot) [[brief-introduction-to-regular-expressions#^REGEXDOT|Match single character]]
     
 - ***** (asterisk) [[special-characters#^ASTERISKREF2|Any number of characters]]
     
-- **[[x17129#^BRACKETSREF| ]** (brackets) [Enclose character set to match]]
+- **[[brief-introduction-to-regular-expressions#^BRACKETSREF| ]** (brackets) [Enclose character set to match]]
     
-- **\** (backslash) [[x17129#^REGEXBS|Escape]], interpret following character literally
+- **\** (backslash) [[brief-introduction-to-regular-expressions#^REGEXBS|Escape]], interpret following character literally
     
-- **\< ... \>** (angle brackets, _escaped_) [[x17129#^ANGLEBRAC|Word boundary]]
+- **\< ... \>** (angle brackets, _escaped_) [[brief-introduction-to-regular-expressions#^ANGLEBRAC|Word boundary]]
     
-- [[x17129#^EXTREGEX|Extended]] REs
+- [[brief-introduction-to-regular-expressions#^EXTREGEX|Extended]] REs
     
-    **+** [[x17129#^PLUSREF|_Character match_]]
+    **+** [[brief-introduction-to-regular-expressions#^PLUSREF|_Character match_]]
     
-    **\{ \}** [[x17129#^ESCPCB|Escaped "curly" brackets]]
+    **\{ \}** [[brief-introduction-to-regular-expressions#^ESCPCB|Escaped "curly" brackets]]
     
-    **[[x17129#^POSIXREF|: :]** [POSIX character classes]]
+    **[[brief-introduction-to-regular-expressions#^POSIXREF|: :]** [POSIX character classes]]
     
 
 [[internal-variables#^REPLYREF|$REPLY]], Default value associated with [[internal-commands-and-builtins#^READREF|read]] command
 
-[[restricted-sh#^RESTRICTEDSHREF|Restricted shell]], shell (or script) with certain commands disabled
+[[restricted-shells#^RESTRICTEDSHREF|Restricted shell]], shell (or script) with certain commands disabled
 
 [[complexfunct#^RETURNREF|return]], command that terminates a [[functions#^FUNCTIONREF|function]]
 
@@ -2245,7 +2245,7 @@ Timed input
     
 - Comment blocks
     
-    Using [[here-docs#^CBLOCK1|_anonymous here documents_]]
+    Using [[here-documents#^CBLOCK1|_anonymous here documents_]]
     
     Using [[assorted-tips#^COMOUTBL|_if-then_ constructs]]
     
@@ -2479,13 +2479,13 @@ _while [ condition ]; do_
     
 - [[gotchas#^WSBAD|Inappropriate use of]]
     
-- [[here-docs#^INDENTEDLS|Preceding closing _limit string_]] in a _here document_, error
+- [[here-documents#^INDENTEDLS|Preceding closing _limit string_]] in a _here document_, error
     
 - [[special-characters#^WSBCOMM|Preceding script comments]]
     
 - [[quoting-variables#^WSQUO|_Quoting_]], to preserve _whitespace_ within strings or variables
     
-- [[x17129#^WSPOSIX|[:space:]]], _POSIX_ character class
+- [[brief-introduction-to-regular-expressions#^WSPOSIX|[:space:]]], _POSIX_ character class
     
 
 [[system-and-administrative-commands#^WHOREF|who]], information about logged on users
@@ -2499,7 +2499,7 @@ _while [ condition ]; do_
 
 [[assorted-tips#^WIDGETREF|Widgets]]
 
-[[globbingref#^WILDCARDDEF|Wild card]] characters
+[[globbing#^WILDCARDDEF|Wild card]] characters
 
 - [[special-characters#^ASTERISKREF|Asterisk *]]
     
@@ -2507,7 +2507,7 @@ _while [ condition ]; do_
     
 - [[special-characters#^WILDCARDQU|Question mark ?]]
     
-- [[globbingref#^WDOTFILEWC|Will not match dot files]]
+- [[globbing#^WDOTFILEWC|Will not match dot files]]
     
 
 Word splitting

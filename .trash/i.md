@@ -61,10 +61,10 @@ For Anita, the source of all the magic
 
 [[Part 5. Advanced Topics]]
 * [[regexp]]
-* [[here-docs]]
+* [[here-documents]]
 * [[io-redirection]]
 * [[subshells]]
-* [[restricted-sh]]
+* [[restricted-shells]]
 * [[Chapter 23. Process Substitution]]
 * [[functions]]
 * [[Chapter 25. Aliases]]
@@ -548,35 +548,35 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 17-11. [[system-and-administrative-commands#^BACKLIGHT|_Backlight_: changes the brightness of the (laptop) screen backlight]]
 
-17-12. [[sysscripts#^EX55|_killall_, from /etc/rc.d/init.d]]
+17-12. [[analyzing-a-system-script#^EX55|_killall_, from /etc/rc.d/init.d]]
 
-19-1. [[here-docs#^EX70|_broadcast_: Sends message to everyone logged in]]
+19-1. [[here-documents#^EX70|_broadcast_: Sends message to everyone logged in]]
 
-19-2. [[here-docs#^EX69|_dummyfile_: Creates a 2-line dummy file]]
+19-2. [[here-documents#^EX69|_dummyfile_: Creates a 2-line dummy file]]
 
-19-3. [[here-docs#^EX71|Multi-line message using _cat_]]
+19-3. [[here-documents#^EX71|Multi-line message using _cat_]]
 
-19-4. [[here-docs#^EX71A|Multi-line message, with tabs suppressed]]
+19-4. [[here-documents#^EX71A|Multi-line message, with tabs suppressed]]
 
-19-5. [[here-docs#^EX71B|Here document with replaceable parameters]]
+19-5. [[here-documents#^EX71B|Here document with replaceable parameters]]
 
-19-6. [[here-docs#^EX72|Upload a file pair to _Sunsite_ incoming directory]]
+19-6. [[here-documents#^EX72|Upload a file pair to _Sunsite_ incoming directory]]
 
-19-7. [[here-docs#^EX71C|Parameter substitution turned off]]
+19-7. [[here-documents#^EX71C|Parameter substitution turned off]]
 
-19-8. [[here-docs#^GENERATESCRIPT|A script that generates another script]]
+19-8. [[here-documents#^GENERATESCRIPT|A script that generates another script]]
 
-19-9. [[here-docs#^HF|Here documents and functions]]
+19-9. [[here-documents#^HF|Here documents and functions]]
 
-19-10. [[here-docs#^ANONHEREDOC|"Anonymous" Here Document]]
+19-10. [[here-documents#^ANONHEREDOC|"Anonymous" Here Document]]
 
-19-11. [[here-docs#^COMMENTBLOCK|Commenting out a block of code]]
+19-11. [[here-documents#^COMMENTBLOCK|Commenting out a block of code]]
 
-19-12. [[here-docs#^SELFDOCUMENT|A self-documenting script]]
+19-12. [[here-documents#^SELFDOCUMENT|A self-documenting script]]
 
-19-13. [[x17837#^PREPENDEX|Prepending a line to a file]]
+19-13. [[here-strings#^PREPENDEX|Prepending a line to a file]]
 
-19-14. [[x17837#^MAILBOXGREP|Parsing a mailbox]]
+19-14. [[here-strings#^MAILBOXGREP|Parsing a mailbox]]
 
 20-1. [[20.1. Using _exec_#^REDIR1|Redirecting stdin using _exec_]]
 
@@ -586,21 +586,21 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 20-4. [[20.1. Using _exec_#^AVOIDSUBSHELL|Avoiding a subshell]]
 
-20-5. [[redircb#^REDIR2|Redirected _while_ loop]]
+20-5. [[redirecting-code-blocks#^REDIR2|Redirected _while_ loop]]
 
-20-6. [[redircb#^REDIR2A|Alternate form of redirected _while_ loop]]
+20-6. [[redirecting-code-blocks#^REDIR2A|Alternate form of redirected _while_ loop]]
 
-20-7. [[redircb#^REDIR3|Redirected _until_ loop]]
+20-7. [[redirecting-code-blocks#^REDIR3|Redirected _until_ loop]]
 
-20-8. [[redircb#^REDIR4|Redirected _for_ loop]]
+20-8. [[redirecting-code-blocks#^REDIR4|Redirected _for_ loop]]
 
-20-9. [[redircb#^REDIR4A|Redirected _for_ loop (both stdin and stdout redirected)]]
+20-9. [[redirecting-code-blocks#^REDIR4A|Redirected _for_ loop (both stdin and stdout redirected)]]
 
-20-10. [[redircb#^REDIR5|Redirected _if/then_ test]]
+20-10. [[redirecting-code-blocks#^REDIR5|Redirected _if/then_ test]]
 
-20-11. [[redircb#^NAMESDATA|Data file _names.data_ for above examples]]
+20-11. [[redirecting-code-blocks#^NAMESDATA|Data file _names.data_ for above examples]]
 
-20-12. [[redirapps#^LOGEVENTS|Logging events]]
+20-12. [[applications#^LOGEVENTS|Logging events]]
 
 21-1. [[subshells#^SUBSHELL|Variable scope in a subshell]]
 
@@ -608,7 +608,7 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 21-3. [[subshells#^PARALLEL-PROCESSES|Running parallel processes in subshells]]
 
-22-1. [[restricted-sh#^RESTRICTED|Running a script in restricted mode]]
+22-1. [[restricted-shells#^RESTRICTED|Running a script in restricted mode]]
 
 23-1. [[Chapter 23. Process Substitution#^WRPS|Code block redirection without forking]]
 

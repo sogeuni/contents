@@ -344,7 +344,7 @@ Examples of command substitution in shell scripts:
 8. [[loops#^EX24|Example 11-14]]
 9. [[loops#^SYMLINKS|Example 11-11]]
 10. [[file-and-archiving-commands#^STRIPC|Example 16-32]]
-11. [[redircb#^REDIR4|Example 20-8]]
+11. [[redirecting-code-blocks#^REDIR4|Example 20-8]]
 12. [[contributed-scripts#^TREE|Example A-16]]
 13. [[procref1#^PIDID|Example 29-3]]
 14. [[math-commands#^MONTHLYPMT|Example 16-47]]

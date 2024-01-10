@@ -1,16 +1,16 @@
-# 19.1. Here Strings
+---
+title: 19.1. Here Strings
+---
 
-> A _here string_ can be considered as a stripped-down form of a _here document_.  
-> It consists of nothing more than **COMMAND <<< $WORD**,  
-> where $WORD is expanded and fed to the stdin of **COMMAND**.  
->      
+> A _here string_ can be considered as a stripped-down form of a _here document_.  
+> It consists of nothing more than **COMMAND <<< $WORD**,  
+> where $WORD is expanded and fed to the stdin of **COMMAND**.
 
 As a simple example, consider this alternative to the [[internal-commands-and-builtins#^ECHOGREPREF|echo-grep]] construction.
 
-|   |
-|---|
-|# Instead of:
-if echo "$VAR" \| grep -q txt   # if [[ $VAR = *txt* ]]
+```bash
+# Instead of:
+if echo "$VAR" | grep -q txt   # if [[ $VAR = *txt* ]]
 # etc.
 
 # Try:
@@ -18,13 +18,13 @@ if grep -q "txt" <<< "$VAR"
 then   #         ^^^
    echo "$VAR contains the substring sequence \"txt\""
 fi
-# Thank you, Sebastian Kaminski, for the suggestion.|
+# Thank you, Sebastian Kaminski, for the suggestion.
+```
 
 Or, in combination with [[internal-commands-and-builtins#^READREF|read]]:
 
-|   |
-|---|
-|String="This is a string of words."
+```bash
+String="This is a string of words."
 
 read -r -a Words <<< "$String"
 #  The -a option to "read"
@@ -39,13 +39,13 @@ echo "Sixth word in String is:    ${Words[5]}"   # words.
 echo "Seventh word in String is:  ${Words[6]}"   # (null)
                                                  # Past end of $String.
 
-# Thank you, Francisco Lobo, for the suggestion.|
+# Thank you, Francisco Lobo, for the suggestion.
+```
 
 It is, of course, possible to feed the output of a _here string_ into the stdin of a [[loops-and-branches#^LOOPREF00|loop]].
 
-|   |
-|---|
-|# As Seamus points out . . .
+```bash
+# As Seamus points out . . .
 
 ArrayVar=( element0 element1 element2 {A..D} )
 
@@ -53,13 +53,13 @@ while read element ; do
   echo "$element" 1>&2
 done <<< $(echo ${ArrayVar[*]})
 
-# element0 element1 element2 A B C D|
+# element0 element1 element2 A B C D
+```
 
 **Example 19-13. Prepending a line to a file**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # prepend.sh: Add text at beginning of file.
 #
 #  Example contributed by Kenny Stauffer,
@@ -93,13 +93,13 @@ exit  # Ends script execution.
 
   Of course, the following also works:
    sed -e '1i\
-   Title: ' $file|
+   Title: ' $file
+```
 
 **Example 19-14. Parsing a mailbox**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #  Script by Francisco Lobo,
 #+ and slightly modified and commented by ABS Guide author.
 #  Used in ABS Guide with permission. (Thank you!)
@@ -183,7 +183,7 @@ exit $?
 
 $ mailbox_grep.sh scam_mail
   MESSAGE of Thu, 5 Jan 2006 08:00:56 -0500 (EST) 
-  IP address of sender: 196.3.62.4|
+  IP address of sender: 196.3.62.4
+```
 
 Exercise: Find other uses for _here strings_, such as, for example, [[math-commands#^GOLDENRATIO|feeding input to _dc_]].
-

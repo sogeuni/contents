@@ -15,7 +15,7 @@ cat: standard output: Bad file descriptor|
 
 For example, when **xterm** runs, it first initializes itself. Before running the user's shell, **xterm** opens the terminal device (/dev/pts/<n> or something similar) three times.
 
-At this point, Bash inherits these three file descriptors, and each command (child process) run by Bash inherits them in turn, except when you redirect the command. [[io-redirection#^IOREDIRREF|Redirection]] means reassigning one of the file descriptors to another file (or a pipe, or anything permissible). File descriptors may be reassigned locally (for a command, a command group, a [[subshells#^SUBSHELLSREF|subshell]], a [[redircb#^REDIRREF|while or if or case or for loop]]...), or globally, for the remainder of the shell (using [[internal-commands-and-builtins#^EXECREF|exec]]).
+At this point, Bash inherits these three file descriptors, and each command (child process) run by Bash inherits them in turn, except when you redirect the command. [[io-redirection#^IOREDIRREF|Redirection]] means reassigning one of the file descriptors to another file (or a pipe, or anything permissible). File descriptors may be reassigned locally (for a command, a command group, a [[subshells#^SUBSHELLSREF|subshell]], a [[redirecting-code-blocks#^REDIRREF|while or if or case or for loop]]...), or globally, for the remainder of the shell (using [[internal-commands-and-builtins#^EXECREF|exec]]).
 
 **ls > /dev/null** means running **ls** with its fd 1 connected to /dev/null.
 

@@ -1,12 +1,13 @@
-# 17.1. Analyzing a System Script
+---
+title: 17.1. Analyzing a System Script
+---
 
 Using our knowledge of administrative commands, let us examine a system script. One of the shortest and simplest to understand scripts is "killall," [^1] used to suspend running processes at system shutdown.
 
 **Example 17-12. _killall_, from /etc/rc.d/init.d**
 
-|   |
-|---|
-|#!/bin/sh
+```bash
+#!/bin/sh
 
 # --> Comments added by the author of this document marked by "# -->".
 
@@ -47,7 +48,8 @@ for i in /var/lock/subsys/*; do
         # -->  Note that "stop" is a positional parameter,
         # -->+ not a shell builtin.
         fi
-done|
+done
+```
 
 That wasn't so bad. Aside from a little fancy footwork with variable matching, there is no new material there.
 
@@ -55,5 +57,4 @@ That wasn't so bad. Aside from a little fancy footwork with variable matching, t
 
 **Exercise 2.** Look at some of the more complex scripts in /etc/rc.d/init.d. Try to understand at least portions of them. Follow the above procedure to analyze them. For some additional insight, you might also examine the file sysvinitfiles in /usr/share/doc/initscripts-?.??, which is part of the "initscripts" documentation.
 
-[[job-control-commands#^KILLALLREF|^1]: The _killall_ system script should not be confused with the [killall]] command in /usr/bin.
-
+[^1]: The _killall_ system script should not be confused with the [[job-control-commands#^KILLALLREF|killall]] command in /usr/bin.

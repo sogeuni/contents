@@ -216,7 +216,7 @@ Note that the path given at the "sha-bang" must be correct, otherwise an error m
                     # You'll get a 0, not a 85.
     ```
 
-    Also, try starting a README file with a **#!/bin/more**, and making it executable. The result is a self-listing documentation file. (A [[here-docs#^HEREDOCREF|here document]] using [[basic-commands#^CATREF|cat]] is possibly a better alternative -- see [[here-docs#^EX71|Example 19-3]]).
+    Also, try starting a README file with a **#!/bin/more**, and making it executable. The result is a self-listing documentation file. (A [[here-documents#^HEREDOCREF|here document]] using [[basic-commands#^CATREF|cat]] is possibly a better alternative -- see [[here-documents#^EX71|Example 19-3]]).
 
 [^5]: **P**ortable **O**perating **S**ystem _I_nterface, an attempt to standardize UNI**X**-like OSes. The POSIX specifications are listed on the [Open Group site](http://www.opengroup.org/onlinepubs/007904975/toc.htm).
 

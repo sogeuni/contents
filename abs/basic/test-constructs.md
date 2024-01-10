@@ -465,4 +465,4 @@ fi     # 5 is greater than 4
 exit 0
 ```
 
-[^1]: A _token_ is a symbol or short string with a special meaning attached to it (a [[x17129#^METAMEANINGREF|meta-meaning]]). In Bash, certain tokens, such as **[[special-characters#^DOTREF|** and [. (dot-command)]], may expand to _keywords_ and commands.
+[^1]: A _token_ is a symbol or short string with a special meaning attached to it (a [[brief-introduction-to-regular-expressions#^METAMEANINGREF|meta-meaning]]). In Bash, certain tokens, such as **[[special-characters#^DOTREF|** and [. (dot-command)]], may expand to _keywords_ and commands.

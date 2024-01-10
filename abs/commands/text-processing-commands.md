@@ -945,7 +945,7 @@ bash$ grep Linux abs-book.sgml | wc -l
 138
 ```
 
-See also [[file-and-archiving-commands#^EX52|Example 16-39]] and [[redircb#^REDIR4|Example 20-8]].
+See also [[file-and-archiving-commands#^EX52|Example 16-39]] and [[redirecting-code-blocks#^REDIR4|Example 20-8]].
 
 Certain commands include some of the functionality of **wc** as options.
 
@@ -993,7 +993,7 @@ bash$ echo "acfdeb123" | tr -c b-d +
 +c+d+b++++
 ```
 
-Note that **tr** recognizes [[x17129#^POSIXREF|POSIX character classes]]. [^1]
+Note that **tr** recognizes [[brief-introduction-to-regular-expressions#^POSIXREF|POSIX character classes]]. [^1]
 
 ```bash
 bash$ echo "abcd2ef1" | tr '[:alpha:]' -

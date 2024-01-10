@@ -191,7 +191,7 @@ exit 0|
     |let "a = hello, you"
 echo "$a"   # 0|
     
-- Sometimes variables within "test" brackets ([[other-comparison-operators#^STRTEST| ]) need to be quoted (double quotes). Failure to do so may cause unexpected behavior. See [Example 7-6]], [[redircb#^REDIR2|Example 20-5]], and [[internal-variables#^ARGLIST|Example 9-6]].
+- Sometimes variables within "test" brackets ([[other-comparison-operators#^STRTEST| ]) need to be quoted (double quotes). Failure to do so may cause unexpected behavior. See [Example 7-6]], [[redirecting-code-blocks#^REDIR2|Example 20-5]], and [[internal-variables#^ARGLIST|Example 9-6]].
     
 - Quoting a variable containing whitespace [[quoting-variables#^WSQUO|prevents splitting]]. Sometimes this produces [[quoting-variables#^VARSPLITTING|unintended consequences]].
     
@@ -265,7 +265,7 @@ exit 0|
     
 - A shell script headed by **#!/bin/sh** will not run in full Bash-compatibility mode. Some Bash-specific functions might be disabled. Scripts that need complete access to all the Bash-specific extensions should start with **#!/bin/bash**.
     
-- [[here-docs#^INDENTEDLS|Putting whitespace in front of the terminating limit string]] of a [[here-docs#^HEREDOCREF|here document]] will cause unexpected behavior in a script.
+- [[here-documents#^INDENTEDLS|Putting whitespace in front of the terminating limit string]] of a [[here-documents#^HEREDOCREF|here document]] will cause unexpected behavior in a script.
     
 - Putting more than one _echo_ statement in a function [[assorted-tips#^RVT|whose output is captured]].
     

@@ -24,7 +24,7 @@ Let us consider an _interactive_ script to be one that requires input from the u
 
 Init and startup scripts are necessarily non-interactive, since they must run without human intervention. Many administrative and system maintenance scripts are likewise non-interactive. Unvarying repetitive tasks cry out for automation by non-interactive scripts.
 
-Non-interactive scripts can run in the background, but interactive ones hang, waiting for input that never comes. Handle that difficulty by having an **expect** script or embedded [[here-docs#^HEREDOCREF|here document]] feed input to an interactive script running as a background job. In the simplest case, redirect a file to supply input to a **read** statement (**read variable <file**). These particular workarounds make possible general purpose scripts that run in either interactive or non-interactive modes.
+Non-interactive scripts can run in the background, but interactive ones hang, waiting for input that never comes. Handle that difficulty by having an **expect** script or embedded [[here-documents#^HEREDOCREF|here document]] feed input to an interactive script running as a background job. In the simplest case, redirect a file to supply input to a **read** statement (**read variable <file**). These particular workarounds make possible general purpose scripts that run in either interactive or non-interactive modes.
 
 If a script needs to test whether it is running in an interactive shell, it is simply a matter of finding whether the _prompt_ variable, [[internal-variables#^PS1REF|$PS1]] is set. (If the user is being prompted for input, then the script needs to display a prompt.)
 

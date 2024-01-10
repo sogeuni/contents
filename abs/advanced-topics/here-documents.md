@@ -1,42 +1,38 @@
-# Chapter 19. Here Documents
+---
+title: 19. Here Documents
+---
 
-|   |   |
-|---|---|
-||_
-
-_Here and now, boys._
-
-_--Aldous Huxley, _Island__
-
-_|
+> Here and now, boys.
+>
+>--<cite>Aldous Huxley, _Island_</cite>
 
 A _here document_ is a special-purpose code block. It uses a form of [[io-redirection#^IOREDIRREF|I/O redirection]] to feed a command list to an interactive program or a command, such as [[communications-commands#^FTPREF|ftp]], [[basic-commands#^CATREF|cat]], or the _ex_ text editor.
 
-|   |
-|---|
-|COMMAND <<InputComesFromHERE
+```bash
+COMMAND <<InputComesFromHERE
 ...
 ...
 ...
-InputComesFromHERE|
+InputComesFromHERE
+```
 
 A _limit string_ delineates (frames) the command list. The special symbol << precedes the limit string. This has the effect of redirecting the output of a command block into the stdin of the program or command. It is similar to **interactive-program < command-file**, where command-file contains
 
-|   |
-|---|
-|command #1
-command #2
-...|
-
-The _here document_ equivalent looks like this:
-
-|   |
-|---|
-|interactive-program <<LimitString
+```bash
 command #1
 command #2
 ...
-LimitString|
+```
+
+The _here document_ equivalent looks like this:
+
+```bash
+interactive-program <<LimitString
+command #1
+command #2
+...
+LimitString
+```
 
 Choose a _limit string_ sufficiently unusual that it will not occur anywhere in the command list and confuse matters.
 
@@ -44,9 +40,8 @@ Note that _here documents_ may sometimes be used to good effect with non-interac
 
 **Example 19-1. _broadcast_: Sends message to everyone logged in**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 wall <<zzz23EndOfMessagezzz23
 E-mail your noontime orders for pizza to the system administrator.
@@ -60,15 +55,15 @@ zzz23EndOfMessagezzz23
 #  However, embedding the message template in a script
 #+ is a quick-and-dirty one-off solution.
 
-exit|
+exit
+```
 
 Even such unlikely candidates as the _vi_ text editor lend themselves to _here documents_.
 
 **Example 19-2. _dummyfile_: Creates a 2-line dummy file**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # Noninteractive use of 'vi' to edit a file.
 # Emulates 'sed'.
@@ -100,13 +95,13 @@ x23LimitStringx23
 #  Bram Moolenaar points out that this may not work with 'vim'
 #+ because of possible problems with terminal interaction.
 
-exit|
+exit
+```
 
 The above script could just as effectively have been implemented with **ex**, rather than **vi**. _Here documents_ containing a list of **ex** commands are common enough to form their own category, known as _ex scripts_.
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #  Replace all instances of "Smith" with "Jones"
 #+ in files with a ".txt" filename suffix. 
 
@@ -123,15 +118,15 @@ EOF
   # :%s is the "ex" substitution command.
   # :wq is write-and-quit.
   # -------------------------------------
-done|
+done
+```
 
 Analogous to "ex scripts" are _cat scripts_.
 
 **Example 19-3. Multi-line message using _cat_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 #  'echo' is fine for printing single line messages,
 #+  but somewhat problematic for for message blocks.
@@ -166,15 +161,15 @@ This is line 3 of the message.
 This is line 4 of the message.
 This is the last line of the message.
 -------------------------------------"
-# However, text may not include double quotes unless they are escaped.|
+# However, text may not include double quotes unless they are escaped.
+```
 
 The - option to mark a here document limit string (**<<-LimitString**) suppresses leading tabs (but not spaces) in the output. This may be useful in making a script more readable.
 
 **Example 19-4. Multi-line message, with tabs suppressed**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Same as previous example, but...
 
 #  The - option to a here document <<-
@@ -196,15 +191,15 @@ ENDOFMESSAGE
 
 # Note that this option has no effect on *embedded* tabs.
 
-exit 0|
+exit 0
+```
 
 A _here document_ supports parameter and command substitution. It is therefore possible to pass different parameters to the body of the here document, changing its output accordingly.
 
 **Example 19-5. Here document with replaceable parameters**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Another 'cat' here document, using parameter substitution.
 
 # Try it with no command-line parameters,   ./scriptname
@@ -237,15 +232,15 @@ Endofmessage
 # Note that the blank lines show up in the output.
 # So does the comment.
 
-exit|
+exit
+```
 
 This is a useful script containing a _here document_ with parameter substitution.
 
 **Example 19-6. Upload a file pair to _Sunsite_ incoming directory**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # upload.sh
 
 #  Upload file pair (Filename.lsm, Filename.tar.gz)
@@ -286,15 +281,15 @@ put "$Filename.tar.gz"
 bye
 End-Of-Session
 
-exit 0|
+exit 0
+```
 
 Quoting or escaping the "limit string" at the head of a here document disables parameter substitution within its body. The reason for this is that _quoting/escaping the limit string_ effectively [[escaping#^ESCP|escapes]] the $, `, and \ [[special-characters#^SCHARLIST|special characters]], and causes them to be interpreted literally. (Thank you, Allen Halsey, for pointing this out.)
 
 **Example 19-7. Parameter substitution turned off**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #  A 'cat' here-document, but with parameter substitution disabled.
 
 NAME="John Doe"
@@ -334,15 +329,15 @@ if limit string were not quoted.
 SpecialCharTest
 
 
-exit|
+exit
+```
 
 Disabling parameter substitution permits outputting literal text. Generating scripts or even program code is one use for this.
 
 **Example 19-8. A script that generates another script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # generate-script.sh
 # Based on an idea by Albert Reiner.
 
@@ -391,27 +386,27 @@ fi
 #+ C programs, Perl programs, Python programs, Makefiles,
 #+ and the like.
 
-exit 0|
+exit 0
+```
 
 It is possible to set a variable from the output of a here document. This is actually a devious form of [[command-substitution#^COMMANDSUBREF|command substitution]].
 
-|   |
-|---|
-|variable=$(cat <<SETVAR
+```bash
+variable=$(cat <<SETVAR
 This variable
 runs over multiple lines.
 SETVAR
 )
 
-echo "$variable"|
+echo "$variable"
+```
 
 A here document can supply input to a function in the same script.
 
 **Example 19-9. Here documents and functions**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # here-function.sh
 
 GetPersonalData ()
@@ -442,31 +437,30 @@ echo "$address"
 echo "$city, $state $zipcode"
 echo
 
-exit 0|
+exit 0
+```
 
 It is possible to use : as a dummy command accepting output from a here document. This, in effect, creates an "anonymous" here document.
 
 **Example 19-10. "Anonymous" Here Document**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 : <<TESTVARIABLES
 ${HOSTNAME?}${USER?}${MAIL?}  # Print error message if one of the variables not set.
 TESTVARIABLES
 
-exit $?|
+exit $?
+```
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|A variation of the above technique permits "commenting out" blocks of code.|
+> [!tip]
+> A variation of the above technique permits "commenting out" blocks of code.
 
 **Example 19-11. Commenting out a block of code**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # commentblock.sh
 
 : <<COMMENTBLOCK
@@ -531,17 +525,16 @@ commented-bad.sh: line 3: foo_bar_bazz: parameter null or not set
 
   : <<'COMMENTBLOCK'
 
-# Thank you, Kurt Pfeifle, for pointing this out.|
+# Thank you, Kurt Pfeifle, for pointing this out.
+```
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|Yet another twist of this nifty trick makes "self-documenting" scripts possible.|
+> [!tip]
+> Yet another twist of this nifty trick makes "self-documenting" scripts possible.
 
 **Example 19-12. A self-documenting script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # self-document.sh: self-documenting script
 # Modification of "colm.sh".
 
@@ -550,7 +543,7 @@ DOC_REQUEST=70
 if [ "$1" = "-h"  -o "$1" = "--help" ]     # Request help.
 then
   echo; echo "Usage: $0 [directory-name]"; echo
-  sed --silent -e '/DOCUMENTATIONXX$/,/^DOCUMENTATIONXX$/p' "$0" \|
+  sed --silent -e '/DOCUMENTATIONXX$/,/^DOCUMENTATIONXX$/p' "$0" |
   sed -e '/DOCUMENTATIONXX$/d'; exit $DOC_REQUEST; fi
 
 
@@ -572,15 +565,15 @@ fi
 
 echo "Listing of "$directory":"; echo
 (printf "PERMISSIONS LINKS OWNER GROUP SIZE MONTH DAY HH:MM PROG-NAME\n" \
-; ls -l "$directory" \| sed 1d) \| column -t
+; ls -l "$directory" | sed 1d) | column -t
 
-exit 0|
+exit 0
+```
 
-Using a [[here-docs#^CATSCRIPTREF|cat script]] is an alternate way of accomplishing this.
+Using a [[here-documents#^CATSCRIPTREF|cat script]] is an alternate way of accomplishing this.
 
-|   |
-|---|
-|DOC_REQUEST=70
+```bash
+DOC_REQUEST=70
 
 if [ "$1" = "-h"  -o "$1" = "--help" ]     # Request help.
 then                                       # Use a "cat script" . . .
@@ -593,83 +586,79 @@ then list the current working directory.
 
 DOCUMENTATIONXX
 exit $DOC_REQUEST
-fi|
+fi
+```
 
 See also [[contributed-scripts#^ISSPAMMER2|Example A-28]], [[contributed-scripts#^PETALS|Example A-40]], [[contributed-scripts#^QKY|Example A-41]], and [[contributed-scripts#^NIM|Example A-42]] for more examples of self-documenting scripts.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Here documents create temporary files, but these files are deleted after opening and are not accessible to any other process.
+> [!note]
+> Here documents create temporary files, but these files are deleted after opening and are not accessible to any other process.
+>
+> ```bash
+> bash$ bash -c 'lsof -a -p $$ -d0' << EOF
+> EOF
+> lsof    1213 bozo    0r   REG    3,5    0 30386 /tmp/t1213-0-sh (deleted)
+> ```
 
-\|   \|
-\|---\|
-\|bash$ **bash -c 'lsof -a -p $$ -d0' << EOF**
-> **EOF**
-lsof    1213 bozo    0r   REG    3,5    0 30386 /tmp/t1213-0-sh (deleted)\||
+> [!caution]
+> Some utilities will not work inside a _here document_.
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|Some utilities will not work inside a _here document_.|
+> [!warning]
+> The closing _limit string_, on the final line of a here document, must start in the _first_ character position. There can be _no leading whitespace_. Trailing whitespace after the limit string likewise causes unexpected behavior. The whitespace prevents the limit string from being recognized. [^1]
+>
+> ```bash
+> #!/bin/bash
+> 
+> echo "----------------------------------------------------------------------"
+> 
+> cat <<LimitString
+> echo "This is line 1 of the message inside the here document."
+> echo "This is line 2 of the message inside the here document."
+> echo "This is the final line of the message inside the here document."
+>      LimitString
+> #^^^^Indented limit string. Error! This script will not behave as expected.
+> 
+> echo "----------------------------------------------------------------------"
+> 
+> #  These comments are outside the 'here document',
+> #+ and should not echo.
+> 
+> echo "Outside the here document."
+> 
+> exit 0
+> 
+> echo "This line had better not echo."  # Follows an 'exit' command.
+> ```
 
-|   |   |
-|---|---|
-|![[../images/warning.gif|Warning]]|The closing _limit string_, on the final line of a here document, must start in the _first_ character position. There can be _no leading whitespace_. Trailing whitespace after the limit string likewise causes unexpected behavior. The whitespace prevents the limit string from being recognized. [^1]
-
-\|   \|
-\|---\|
-\|#!/bin/bash
-
-echo "----------------------------------------------------------------------"
-
-cat <<LimitString
-echo "This is line 1 of the message inside the here document."
-echo "This is line 2 of the message inside the here document."
-echo "This is the final line of the message inside the here document."
-     LimitString
-#^^^^Indented limit string. Error! This script will not behave as expected.
-
-echo "----------------------------------------------------------------------"
-
-#  These comments are outside the 'here document',
-#+ and should not echo.
-
-echo "Outside the here document."
-
-exit 0
-
-echo "This line had better not echo."  # Follows an 'exit' command.\||
-
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|Some people very cleverly use a single ! as a limit string. But, that's not necessarily a good idea.
-
-\|   \|
-\|---\|
-\|# This works.
-cat <<!
-Hello!
-! Three more exclamations !!!
-!
-
-
-# But . . .
-cat <<!
-Hello!
-Single exclamation point follows!
-!
-!
-# Crashes with an error message.
-
-
-# However, the following will work.
-cat <<EOF
-Hello!
-Single exclamation point follows!
-!
-EOF
-# It's safer to use a multi-character limit string.\||
+> [!caution]
+> Some people very cleverly use a single ! as a limit string. But, that's not necessarily a good idea.
+>
+> ```bash
+> # This works.
+> cat <<!
+> Hello!
+> ! Three more exclamations !!!
+> !
+> 
+> 
+> # But . . .
+> cat <<!
+> Hello!
+> Single exclamation point follows!
+> !
+> !
+> # Crashes with an error message.
+> 
+> 
+> # However, the following will work.
+> cat <<EOF
+> Hello!
+> Single exclamation point follows!
+> !
+> EOF
+> # It's safer to use a multi-character limit string.
+> ```
 
 For those tasks too complex for a _here document_, consider using the _expect_ scripting language, which was specifically designed for feeding input into interactive programs.
 
-[[here-docs#^LIMITSTRDASH|^1]: Except, as Dennis Benzinger points out, if [using **<<-** to suppress tabs]].
-
+[^1]: Except, as Dennis Benzinger points out, if [[here-documents#^LIMITSTRDASH|using **<<-** to suppress tabs]].

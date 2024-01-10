@@ -364,7 +364,7 @@ The **sz** and **rz** command set serves to transfer files to and from a remote 
 
 **ftp**
 
-Utility and protocol for uploading / downloading files to or from a remote host. An ftp session can be automated in a script (see [[here-docs#^EX72|Example 19-6]] and [[contributed-scripts#^ENCRYPTEDPW|Example A-4]]).
+Utility and protocol for uploading / downloading files to or from a remote host. An ftp session can be automated in a script (see [[here-documents#^EX72|Example 19-6]] and [[contributed-scripts#^ENCRYPTEDPW|Example A-4]]).
 
 **uucp**, **uux**, **cu**
 

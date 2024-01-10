@@ -127,7 +127,7 @@ For illustrative examples of sed within shell scripts, see:
 14. [[text-processing-commands#^RND|Example 16-14]]
 15. [[text-processing-commands#^WF|Example 16-12]]
 16. [[contributed-scripts#^LIFESLOW|Example A-10]]
-17. [[here-docs#^SELFDOCUMENT|Example 19-12]]
+17. [[here-documents#^SELFDOCUMENT|Example 19-12]]
 18. [[text-processing-commands#^DICTLOOKUP|Example 16-19]]
 19. [[contributed-scripts#^WHX|Example A-29]]
 20. [[contributed-scripts#^BASHPODDER|Example A-31]]

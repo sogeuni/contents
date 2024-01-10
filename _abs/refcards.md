@@ -131,11 +131,11 @@ The following reference cards provide a useful _summary_ of certain scripting co
 |Expression|Interpretation|
 |:--|:--|
 |||
-|[[x17129#^BRACKETSREF|Brackets]]||
+|[[brief-introduction-to-regular-expressions#^BRACKETSREF|Brackets]]||
 |if [[special-characters#^LEFTBRACKET| CONDITION ]|[Test construct]]|
 |if [[test-constructs#^DBLBRACKETS|[ CONDITION ]]|[Extended test construct]]|
 |Array[[arrays#^ARRAYREF|1]=element1|[Array initialization]]|
-|[[x17129#^BRACKETSREF|a-z]|[Range of characters]] within a [[regexp#^REGEXREF|Regular Expression]]|
+|[[brief-introduction-to-regular-expressions#^BRACKETSREF|a-z]|[Range of characters]] within a [[regexp#^REGEXREF|Regular Expression]]|
 |||
 |Curly Brackets||
 |${variable}|[[parameter-substitution#^PARAMSUBREF|Parameter substitution]]|

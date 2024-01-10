@@ -1,7 +1,7 @@
 ---
 title: 5. Quoting
 ---
-Quoting means just that, bracketing a string in quotes. This has the effect of protecting [[special-characters|special characters]] in the string from reinterpretation or expansion by the shell or shell script. (A character is "special" if it has an interpretation other than its literal meaning. For example, the [[special-characters#^ASTERISKREF|asterisk *]] represents a _wild card_ character in [[globbingref|globbing]] and [[regexp#^REGEXREF|Regular Expressions]]).
+Quoting means just that, bracketing a string in quotes. This has the effect of protecting [[special-characters|special characters]] in the string from reinterpretation or expansion by the shell or shell script. (A character is "special" if it has an interpretation other than its literal meaning. For example, the [[special-characters#^ASTERISKREF|asterisk *]] represents a _wild card_ character in [[globbing|globbing]] and [[regexp#^REGEXREF|Regular Expressions]]).
 
 ```bash
 bash$ ls -l [Vv]*
