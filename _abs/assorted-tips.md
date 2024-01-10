@@ -518,7 +518,7 @@ For a more elaborate example of passing arrays to functions, see [[contributed-s
 
 - Using the [[double-parentheses-construct|double-parentheses construct]], it is possible to use C-style syntax for setting and incrementing/decrementing variables and in [[loops#^FORLOOPREF1|for]] and [[loops#^WHILELOOPREF|while]] loops. See [[loops#^FORLOOPC|Example 11-13]] and [[loops#^WHLOOPC|Example 11-18]].
 
-- Setting the [[internal-variables#^PATHREF|path]] and [[system#^UMASKREF|umask]] at the beginning of a script makes it more [[portabilityissues|portable]] -- more likely to run on a "foreign" machine whose user may have bollixed up the $PATH and **umask**.
+- Setting the [[internal-variables#^PATHREF|path]] and [[system-and-administrative-commands#^UMASKREF|umask]] at the beginning of a script makes it more [[portabilityissues|portable]] -- more likely to run on a "foreign" machine whose user may have bollixed up the $PATH and **umask**.
 
 ```bash
 #!/bin/bash
@@ -653,7 +653,7 @@ rm -f "$TMPFILE"                 # Get rid of temp file.
 echo "$inner_variable"           # It's an ugly kludge, but it works.
 ```
 
-- The [[extmisc#^RUNPARTSREF|run-parts]] command is handy for running a set of command scripts in a particular sequence, especially in combination with [[system#^CRONREF|cron]] or [[time-date-commands#^ATREF|at]].
+- The [[miscellaneous-commands#^RUNPARTSREF|run-parts]] command is handy for running a set of command scripts in a particular sequence, especially in combination with [[system-and-administrative-commands#^CRONREF|cron]] or [[time-date-commands#^ATREF|at]].
 
 - For doing multiple revisions on a complex script, use the _rcs_ Revision Control System package.
 
@@ -734,13 +734,13 @@ exit $?
 # Exercise: Rewrite this script using the 'zenity' widget set.
 ```
 
-The [[extmisc#^XMESSAGEREF|xmessage]] command is a simple method of popping up a message/query window. For example:
+The [[miscellaneous-commands#^XMESSAGEREF|xmessage]] command is a simple method of popping up a message/query window. For example:
 
 ```bash
 xmessage Fatal error in script! -button exit
 ```
 
-The latest entry in the widget sweepstakes is [[extmisc#^ZENITYREF|zenity]]. This utility pops up _GTK+_ dialog widgets-and-windows, and it works very nicely within a script.
+The latest entry in the widget sweepstakes is [[miscellaneous-commands#^ZENITYREF|zenity]]. This utility pops up _GTK+_ dialog widgets-and-windows, and it works very nicely within a script.
 
 ```bash
 get_info ()

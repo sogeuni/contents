@@ -23,4 +23,4 @@ then
 fi
 ```
 
-[[bash-ver2#^CARDS|Example 37-4]] and [[system#BACKLIGHT|Example 17-11]] demonstrate nested _if/then_ condition tests.
+[[bash-ver2#^CARDS|Example 37-4]] and [[system-and-administrative-commands#BACKLIGHT|Example 17-11]] demonstrate nested _if/then_ condition tests.

@@ -175,11 +175,11 @@ Utility for updating access/modification times of a file to current system time 
 
 **at**
 
-The **at** job control command executes a given set of commands at a specified time. Superficially, it resembles [[system#^CRONREF|cron]], however, **at** is chiefly useful for one-time execution of a command set.
+The **at** job control command executes a given set of commands at a specified time. Superficially, it resembles [[system-and-administrative-commands#^CRONREF|cron]], however, **at** is chiefly useful for one-time execution of a command set.
 
 **at 2pm January 15** prompts for a set of commands to execute at that time. These commands should be shell-script compatible, since, for all practical purposes, the user is typing in an executable shell script a line at a time. Input terminates with a [[special-chars#^CTLDREF|Ctl-D]].
 
-Using either the -f option or input redirection (<), **at** reads a command list from a file. This file is an executable shell script, though it should, of course, be non-interactive. Particularly clever is including the [[extmisc#^RUNPARTSREF|run-parts]] command in the file to execute a different set of scripts.
+Using either the -f option or input redirection (<), **at** reads a command list from a file. This file is an executable shell script, though it should, of course, be non-interactive. Particularly clever is including the [[miscellaneous-commands#^RUNPARTSREF|run-parts]] command in the file to execute a different set of scripts.
 
 ```bash
 bash$ at 2:30 am Friday < at-jobs.list
@@ -213,7 +213,7 @@ sleep 3     # Pauses 3 seconds.
 > ```
 
 > [!note]
-> The [[system#^WATCHREF|watch]] command may be a better choice than **sleep** for running commands at timed intervals.
+> The [[system-and-administrative-commands#^WATCHREF|watch]] command may be a better choice than **sleep** for running commands at timed intervals.
 
 **usleep**
 

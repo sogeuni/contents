@@ -1401,7 +1401,7 @@ UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whites
 
 [^3]: **A**merican **S**tandard **C**ode for **I**nformation **I**nterchange. This is a system for encoding text characters (alphabetic, numeric, and a limited set of symbols) as 7-bit numbers that can be stored and manipulated by computers. Many of the ASCII characters are represented on a standard keyboard.
 
-[^4]: A _PID_, or _process ID_, is a number assigned to a running process. The _PID_s of running processes may be viewed with a [[system#^PPSSREF|ps]] command.
+[^4]: A _PID_, or _process ID_, is a number assigned to a running process. The _PID_s of running processes may be viewed with a [[system-and-administrative-commands#^PPSSREF|ps]] command.
 
     **Definition:** A _process_ is a currently executing command (or program), sometimes referred to as a _job_.
 

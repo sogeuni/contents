@@ -208,7 +208,7 @@ echo
 exit 0
 ```
 
-It is possible to use [[command-substitution#COMMANDSUBREF|command substitution]] to generate the **[list]** in a _for loop_. See also [[extmisc#EX53|Example 16-54]], [[loops1#SYMLINKS|Example 11-11]] and [[math-commands#BASE|Example 16-48]].
+It is possible to use [[command-substitution#COMMANDSUBREF|command substitution]] to generate the **[list]** in a _for loop_. See also [[miscellaneous-commands#EX53|Example 16-54]], [[loops1#SYMLINKS|Example 11-11]] and [[math-commands#BASE|Example 16-48]].
 
 **Example 11-7. Generating the **[list]** in a _for_ loop with command substitution**
 

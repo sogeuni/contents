@@ -12,7 +12,7 @@ Hint: Use the [[basic-commands#^CATREF|cat]] command and the appropriate [[other
 
 **Home Directory Listing**
 
-Perform a recursive directory listing on the user's home directory and save the information to a file. Compress the file, have the script prompt the user to insert a USB flash drive, then press **ENTER**. Finally, save the file to the flash drive after making certain the flash drive has properly mounted by parsing the output of [[system#^DFREF|df]]. Note that the flash drive must be _unmounted_ before it is removed.
+Perform a recursive directory listing on the user's home directory and save the information to a file. Compress the file, have the script prompt the user to insert a USB flash drive, then press **ENTER**. Finally, save the file to the flash drive after making certain the flash drive has properly mounted by parsing the output of [[system-and-administrative-commands#^DFREF|df]]. Note that the flash drive must be _unmounted_ before it is removed.
 
 **Converting [[loops#^FORLOOPREF1|for]] loops to [[loops#^WHILELOOPREF|while]] and [[loops#^UNTILLOOPREF|until]] loops**
 
@@ -40,7 +40,7 @@ Given a list of filenames as input, this script queries each target file (parsin
 
 **Unique System ID**
 
-Generate a "unique" 6-digit hexadecimal identifier for your computer. Do _not_ use the flawed [[system#^HOSTIDREF|hostid]] command. Hint: **[[file-and-archiving-commands#^MD5SUMREF|md5sum]] [[files#^DATAFILESREF1|/etc/passwd]]**, then select the first 6 digits of output.
+Generate a "unique" 6-digit hexadecimal identifier for your computer. Do _not_ use the flawed [[system-and-administrative-commands#^HOSTIDREF|hostid]] command. Hint: **[[file-and-archiving-commands#^MD5SUMREF|md5sum]] [[files#^DATAFILESREF1|/etc/passwd]]**, then select the first 6 digits of output.
 
 **Backup**
 
@@ -50,7 +50,7 @@ Optional: you may use this as the basis of a _backup_ script.
 
 **Checking whether a process is still running**
 
-Given a [[special-characters#^PROCESSIDREF|process ID]] (_PID_) as an argument, this script will check, at user-specified intervals, whether the given process is still running. You may use the [[system#^PPSSREF|ps]] and [[time-date-commands#^SLEEPREF|sleep]] commands.
+Given a [[special-characters#^PROCESSIDREF|process ID]] (_PID_) as an argument, this script will check, at user-specified intervals, whether the given process is still running. You may use the [[system-and-administrative-commands#^PPSSREF|ps]] and [[time-date-commands#^SLEEPREF|sleep]] commands.
 
 **Primes**
 
@@ -80,27 +80,27 @@ List, one at a time, all files larger than 100K in the /home/username directory 
 
 **Banner**
 
-Simulate the functionality of the deprecated [[extmisc#^BANNERREF|banner]] command in a script.
+Simulate the functionality of the deprecated [[miscellaneous-commands#^BANNERREF|banner]] command in a script.
 
 **Removing Inactive Accounts**
 
-Inactive accounts on a network server waste disk space and may become a security risk. Write an administrative script (to be invoked by _root_ or the [[system#^CRONREF|cron daemon]]) that checks for and deletes user accounts that have not been accessed within the last 90 days.
+Inactive accounts on a network server waste disk space and may become a security risk. Write an administrative script (to be invoked by _root_ or the [[system-and-administrative-commands#^CRONREF|cron daemon]]) that checks for and deletes user accounts that have not been accessed within the last 90 days.
 
 **Enforcing Disk Quotas**
 
 Write a script for a multi-user system that checks users' disk usage. If a user surpasses a preset limit (500 MB, for example) in her /home/username directory, then the script automatically sends her a "pigout" warning e-mail.
 
-The script will use the [[system#^DUREF|du]] and [[communications-commands#^COMMMAIL1|mail]] commands. As an option, it will allow setting and enforcing quotas using the [[system#^QUOTAREF|quota]] and [[system#^SETQUOTAREF|setquota]] commands.
+The script will use the [[system-and-administrative-commands#^DUREF|du]] and [[communications-commands#^COMMMAIL1|mail]] commands. As an option, it will allow setting and enforcing quotas using the [[system-and-administrative-commands#^QUOTAREF|quota]] and [[system-and-administrative-commands#^SETQUOTAREF|setquota]] commands.
 
 **Logged in User Information**
 
 For all logged in users, show their real names and the time and date of their last login.
 
-Hint: use [[system#^WHOREF|who]], [[system#^LASTLOGREF|lastlog]], and parse [[files#^DATAFILESREF1|/etc/passwd]].
+Hint: use [[system-and-administrative-commands#^WHOREF|who]], [[system-and-administrative-commands#^LASTLOGREF|lastlog]], and parse [[files#^DATAFILESREF1|/etc/passwd]].
 
 **Safe Delete**
 
-Implement, as a script, a "safe" delete command, sdel.sh. Filenames passed as command-line arguments to this script are not deleted, but instead [[file-and-archiving-commands#^GZIPREF|gzipped]] if not already compressed (use [[file-and-archiving-commands#^FILEREF|file]] to check), then moved to a ~/TRASH directory. Upon invocation, the script checks the ~/TRASH directory for files older than 48 hours and [[basic-commands#^RMREF|permanently deletes]] them. (An better alternative might be to have a second script handle this, periodically invoked by the [[system#^CRONREF|cron daemon]].)
+Implement, as a script, a "safe" delete command, sdel.sh. Filenames passed as command-line arguments to this script are not deleted, but instead [[file-and-archiving-commands#^GZIPREF|gzipped]] if not already compressed (use [[file-and-archiving-commands#^FILEREF|file]] to check), then moved to a ~/TRASH directory. Upon invocation, the script checks the ~/TRASH directory for files older than 48 hours and [[basic-commands#^RMREF|permanently deletes]] them. (An better alternative might be to have a second script handle this, periodically invoked by the [[system-and-administrative-commands#^CRONREF|cron daemon]].)
 
 _Extra credit:_ Write the script so it can handle files and directories [[basic-commands#^RMRECURS|recursively]]. This would give it the capability of "safely deleting" entire directory structures.
 
@@ -198,7 +198,7 @@ Generate pseudorandom 8-character passwords, using characters in the ranges [0-9
 
 You suspect that one particular user on the network has been abusing her privileges and possibly attempting to hack the system. Write a script to automatically monitor and log her activities when she's signed on. The log file will save entries for the previous week, and delete those entries more than seven days old.
 
-You may use [[system#^LASTREF|last]], [[system#^LASTLOGREF|lastlog]], and [[system#^LASTCOMMREF|lastcomm]] to aid your surveillance of the suspected fiend.
+You may use [[system-and-administrative-commands#^LASTREF|last]], [[system-and-administrative-commands#^LASTLOGREF|lastlog]], and [[system-and-administrative-commands#^LASTCOMMREF|lastcomm]] to aid your surveillance of the suspected fiend.
 
 **Checking for Broken Links**
 

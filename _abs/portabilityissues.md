@@ -102,4 +102,4 @@ echo
 exit $?
 ```
 
-[^1]: Or, better yet, [[system#^ENVV2REF|#!/bin/env sh]].
+[^1]: Or, better yet, [[system-and-administrative-commands#^ENVV2REF|#!/bin/env sh]].

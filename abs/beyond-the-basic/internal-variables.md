@@ -133,7 +133,7 @@ $EUID
 
 "effective" user ID number
 
-Identification number of whatever identity the current user has assumed, perhaps by means of [[system#^SUREF|su]].
+Identification number of whatever identity the current user has assumed, perhaps by means of [[system-and-administrative-commands#^SUREF|su]].
 
 > [!caution] The `$EUID` is not necessarily the same as the [[internal-variables#^UIDREF|$UID]].
 
@@ -185,7 +185,7 @@ Home directory of the user, usually /home/username (see [[parameter-substitution
 
 $HOSTNAME
 
-The [[system#^HNAMEREF|hostname]] command assigns the system host name at bootup in an init script. However, the gethostname() function sets the Bash internal variable $HOSTNAME. See also [[parameter-substitution#^EX6|Example 10-7]].
+The [[system-and-administrative-commands#^HNAMEREF|hostname]] command assigns the system host name at bootup in an init script. However, the gethostname() function sets the Bash internal variable $HOSTNAME. See also [[parameter-substitution#^EX6|Example 10-7]].
 
 $HOSTTYPE
 
@@ -477,7 +477,7 @@ $PPID
 
 The $PPID of a process is the process ID (pid) of its parent process. [^2]
 
-Compare this with the [[system#^PIDOFREF|pidof]] command.
+Compare this with the [[system-and-administrative-commands#^PIDOFREF|pidof]] command.
 
 $PROMPT_COMMAND
 
@@ -728,7 +728,7 @@ PrintAnswer
 exit 0
 ```
 
-An alternative is using [[system#^STTYREF|stty]].
+An alternative is using [[system-and-administrative-commands#^STTYREF|stty]].
 
 **Example 9-3. Once more, timed input**
 
@@ -810,7 +810,7 @@ User ID number
 
 Current user's user identification number, as recorded in [[files#^DATAFILESREF1|/etc/passwd]]
 
-This is the current user's real id, even if she has temporarily assumed another identity through [[system#^SUREF|su]]. $UID is a readonly variable, not subject to change from the command line or within a script, and is the counterpart to the [[system#^IDREF|id]] builtin.
+This is the current user's real id, even if she has temporarily assumed another identity through [[system-and-administrative-commands#^SUREF|su]]. $UID is a readonly variable, not subject to change from the command line or within a script, and is the counterpart to the [[system-and-administrative-commands#^IDREF|id]] builtin.
 
 **Example 9-5. Am I root?**
 

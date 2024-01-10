@@ -424,7 +424,7 @@ exit $?
 #+ and convert them on the fly.
 ```
 
-A simple emulation of [[extmisc#^GETOPTY|getopt]] using substring-extraction constructs.
+A simple emulation of [[miscellaneous-commands#^GETOPTY|getopt]] using substring-extraction constructs.
 
 **Example 10-5. Emulating _getopt_**
 

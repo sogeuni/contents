@@ -1032,7 +1032,7 @@ Of course, _openssl_ has many other uses, such as obtaining signed _certificates
 
 **shred**
 
-Securely erase a file by overwriting it multiple times with random bit patterns before deleting it. This command has the same effect as [[extmisc#^BLOTOUT|Example 16-61]], but does it in a more thorough and elegant manner.
+Securely erase a file by overwriting it multiple times with random bit patterns before deleting it. This command has the same effect as [[miscellaneous-commands#^BLOTOUT|Example 16-61]], but does it in a more thorough and elegant manner.
 
 This is one of the GNU _fileutils_.
 

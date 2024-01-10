@@ -796,7 +796,7 @@ _Secure copy_, similar in function to **rcp**, copies files between two differen
 
 **write**
 
-This is a utility for terminal-to-terminal communication. It allows sending lines from your terminal (console or _xterm_) to that of another user. The [[system#^MESGREF|mesg]] command may, of course, be used to disable write access to a terminal
+This is a utility for terminal-to-terminal communication. It allows sending lines from your terminal (console or _xterm_) to that of another user. The [[system-and-administrative-commands#^MESGREF|mesg]] command may, of course, be used to disable write access to a terminal
 
 Since **write** is interactive, it would not normally find use in a script.
 

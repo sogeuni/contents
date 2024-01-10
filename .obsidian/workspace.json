@@ -198,8 +198,11 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "81987b6bb7dc9979",
+  "active": "7c4dde10a3995f5d",
   "lastOpenFiles": [
+    "abs/commands/system-and-administrative-commands.md",
+    "abs/commands/system.md",
+    "abs/commands/miscellaneous-commands.md",
     "abs/commands/extmisc.md",
     "abs/commands/math-commands.md",
     "abs/commands/mathc.md",
@@ -223,9 +226,6 @@
     "abs/commands/index.md",
     "abs/index.md",
     "abs/commands/x9644.md",
-    "abs/commands/internal.md",
-    "abs/commands/part4.md",
-    "abs/beyond-the-basic/recess-time.md",
     "_abs",
     "git",
     "abs/apendix",

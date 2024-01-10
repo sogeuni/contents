@@ -324,5 +324,5 @@ exit 0
 |---|---|
 |![[../images/warning.gif|Warning]]|In general, it is dangerous to _write_ to the files in /proc, as this can corrupt the filesystem or crash the machine.|
 
-[[system#^PROCINFOREF|^1]: Certain system commands, such as [procinfo]], [[system#^FREEREF|free]], [[system#^VMSTATREF|vmstat]], [[system#^LSDEVREF|lsdev]], and [[system#^UPTIMEREF|uptime]] do this as well.
+[[system-and-administrative-commands#^PROCINFOREF|^1]: Certain system commands, such as [procinfo]], [[system-and-administrative-commands#^FREEREF|free]], [[system-and-administrative-commands#^VMSTATREF|vmstat]], [[system-and-administrative-commands#^LSDEVREF|lsdev]], and [[system-and-administrative-commands#^UPTIMEREF|uptime]] do this as well.
 

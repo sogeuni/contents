@@ -284,4 +284,4 @@ x=x < <(:)
 # That is, in effect, what the original SuSE code fragment does.
 ```
 
-[^1]: This has the same effect as a [[extmisc#^NAMEDPIPEREF|named pipe]] (temp file), and, in fact, named pipes were at one time used in process substitution.
+[^1]: This has the same effect as a [[miscellaneous-commands#^NAMEDPIPEREF|named pipe]] (temp file), and, in fact, named pipes were at one time used in process substitution.

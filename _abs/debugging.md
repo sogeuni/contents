@@ -140,7 +140,7 @@ DEBUG=
 Whatever=notwhat
 debecho $Whatever   # (Will not echo.)\||
     
-2. Using the [[extmisc#^TEEREF|tee]] filter to check processes or data flows at critical points.
+2. Using the [[miscellaneous-commands#^TEEREF|tee]] filter to check processes or data flows at critical points.
     
 3. Setting option flags -n -v -x
     

@@ -26,7 +26,7 @@ Sysadmins and anyone else writing administrative scripts should be intimately fa
     
     _Et cetera_. Systemwide configuration scripts.
     
-    Of particular interest are the [[system#^FSTABREF|/etc/fstab]] (filesystem table), /etc/mtab (mounted filesystem table), and the [[system#^INITTABREF|/etc/inittab]] files.
+    Of particular interest are the [[system-and-administrative-commands#^FSTABREF|/etc/fstab]] (filesystem table), /etc/mtab (mounted filesystem table), and the [[system-and-administrative-commands#^INITTABREF|/etc/inittab]] files.
     
 - /etc/rc.d
     

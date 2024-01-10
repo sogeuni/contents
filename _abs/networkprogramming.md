@@ -153,7 +153,7 @@ See also the [networking commands](system.html#NETWORKSYS1) in the [System and A
     
 2. [[devref1#^NW001|Downloading a URL]]
     
-3. [[system#^IPSCRIPT0|A GRE tunnel]]
+3. [[system-and-administrative-commands#^IPSCRIPT0|A GRE tunnel]]
     
 4. [[communications-commands#^PING0|Checking if an Internet server is up]]
     
@@ -166,4 +166,4 @@ See also the [networking commands](system.html#NETWORKSYS1) in the [System and A
 8. [[devref1#^DEVTCP|Example 29-1]]
     
 
-See also the [[system#^NETWORKSYS1|networking commands]] in the [[system.html|System and Administrative Commands]] chapter and the [[communications-commands.html|communications commands]] in the [[external-filters-programs-and-commands|External Filters, Programs and Commands]] chapter.
+See also the [[system-and-administrative-commands#^NETWORKSYS1|networking commands]] in the [[system.html|System and Administrative Commands]] chapter and the [[communications-commands.html|communications commands]] in the [[external-filters-programs-and-commands|External Filters, Programs and Commands]] chapter.

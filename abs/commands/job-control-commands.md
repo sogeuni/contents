@@ -6,7 +6,7 @@ Certain of the following job control commands take a _job identifier_ as an argu
 
 **jobs**
 
-Lists the jobs running in the background, giving the _job number_. Not as useful as [[system#^PPSSREF|ps]].
+Lists the jobs running in the background, giving the _job number_. Not as useful as [[system-and-administrative-commands#^PPSSREF|ps]].
 
 > [!note]
 > It is all too easy to confuse _jobs_ and _processes_. Certain [[internal-commands-and-builtins#^BUILTINREF|builtins]], such as **kill**, **disown**, and **wait** accept either a job number or a process number as an argument. The [[job-control-commands#^FGREF|fg]], [[job-control-commands#^BGREF|bg]] and **jobs** commands accept only a job number.
@@ -150,7 +150,7 @@ This capability is of relatively limited value, since it is not common to profil
 
 **kill**
 
-Forcibly terminate a process by sending it an appropriate _terminate_ signal (see [[system#^KILLPROCESS|Example 17-6]]).
+Forcibly terminate a process by sending it an appropriate _terminate_ signal (see [[system-and-administrative-commands#^KILLPROCESS|Example 17-6]]).
 
 **Example 15-27. A script that kills itself**
 

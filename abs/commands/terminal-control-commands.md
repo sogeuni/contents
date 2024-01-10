@@ -30,7 +30,7 @@ Example scripts using _tput_:
 4. [[contributed-scripts#^NIM|Example A-42]]
 5. [[arrays#^POEM|Example 27-2]]
 
-Note that [[system#^STTYREF|stty]] offers a more powerful command set for controlling a terminal.
+Note that [[system-and-administrative-commands#^STTYREF|stty]] offers a more powerful command set for controlling a terminal.
 
 **infocmp**
 

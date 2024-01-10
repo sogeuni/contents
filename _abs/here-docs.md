@@ -40,7 +40,7 @@ LimitString|
 
 Choose a _limit string_ sufficiently unusual that it will not occur anywhere in the command list and confuse matters.
 
-Note that _here documents_ may sometimes be used to good effect with non-interactive utilities and commands, such as, for example, [[system#^WALLREF|wall]].
+Note that _here documents_ may sometimes be used to good effect with non-interactive utilities and commands, such as, for example, [[system-and-administrative-commands#^WALLREF|wall]].
 
 **Example 19-1. _broadcast_: Sends message to everyone logged in**
 

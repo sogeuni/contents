@@ -1,6 +1,6 @@
 # 29.1. /dev
 
-The /dev directory contains entries for the _physical devices_ that may or may not be present in the hardware. [^1] Appropriately enough, these are called _device files_. As an example, the hard drive partitions containing the mounted filesystem(s) have entries in /dev, as [[system#^DFREF|df]] shows.
+The /dev directory contains entries for the _physical devices_ that may or may not be present in the hardware. [^1] Appropriately enough, these are called _device files_. As an example, the hard drive partitions containing the mounted filesystem(s) have entries in /dev, as [[system-and-administrative-commands#^DFREF|df]] shows.
 
 ```
 bash$ df
@@ -13,13 +13,13 @@ Filesystem           1k-blocks      Used Available Use%
 	      
 ```
 
-Among other things, the /dev directory contains _loopback_ devices, such as /dev/loop0. A loopback device is a gimmick that allows an ordinary file to be accessed as if it were a block device. [^2] This permits mounting an entire filesystem within a single large file. See [[system#^CREATEFS|Example 17-8]] and [[system#^ISOMOUNTREF|Example 17-7]].
+Among other things, the /dev directory contains _loopback_ devices, such as /dev/loop0. A loopback device is a gimmick that allows an ordinary file to be accessed as if it were a block device. [^2] This permits mounting an entire filesystem within a single large file. See [[system-and-administrative-commands#^CREATEFS|Example 17-8]] and [[system-and-administrative-commands#^ISOMOUNTREF|Example 17-7]].
 
 A few of the pseudo-devices in /dev have other specialized uses, such as [[Chapter 31. Of Zeros and Nulls#^ZEROSREF|/dev/null]], [[Chapter 31. Of Zeros and Nulls#^ZEROSREF1|/dev/zero]], [[generate-random-integer#^URANDOMREF|/dev/urandom]], /dev/sda1 (hard drive partition), /dev/udp (_User Datagram Packet_ port), and [[devref1#^DEVTCP|/dev/tcp]].
 
 For instance:
 
-To manually [[system#^MOUNTREF|mount]] a USB flash drive, append the following line to [[system#^FSTABREF|/etc/fstab]]. [^3]
+To manually [[system-and-administrative-commands#^MOUNTREF|mount]] a USB flash drive, append the following line to [[system-and-administrative-commands#^FSTABREF|/etc/fstab]]. [^3]
 
 ```
 /dev/sda1    /mnt/flashdrive    auto    noauto,user,noatime    0 0

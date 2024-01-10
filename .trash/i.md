@@ -57,7 +57,7 @@ For Anita, the source of all the magic
 [[Part 4. Commands]]
 * [[internal-commands-and-builtins|Internal Commands and Builtins]]
 * [[Chapter 16. External Filters, Programs and Commands|External Filters, Programs and Commands]]
-* [[system|System and Administrative Commands]]
+* [[system-and-administrative-commands|System and Administrative Commands]]
 
 [[Part 5. Advanced Topics]]
 * [[regexp]]
@@ -504,49 +504,49 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 16-53. [[math-commands#^HYPOT|Calculating the hypotenuse of a triangle]]
 
-16-54. [[extmisc#^EX53|Using _seq_ to generate loop arguments]]
+16-54. [[miscellaneous-commands#^EX53|Using _seq_ to generate loop arguments]]
 
-16-55. [[extmisc#^LETTERCOUNT|Letter Count"]]
+16-55. [[miscellaneous-commands#^LETTERCOUNT|Letter Count"]]
 
-16-56. [[extmisc#^EX33A|Using _getopt_ to parse command-line options]]
+16-56. [[miscellaneous-commands#^EX33A|Using _getopt_ to parse command-line options]]
 
-16-57. [[extmisc#^SELFCOPY|A script that copies itself]]
+16-57. [[miscellaneous-commands#^SELFCOPY|A script that copies itself]]
 
-16-58. [[extmisc#^EXERCISINGDD|Exercising _dd_]]
+16-58. [[miscellaneous-commands#^EXERCISINGDD|Exercising _dd_]]
 
-16-59. [[extmisc#^DDKEYPRESS|Capturing Keystrokes]]
+16-59. [[miscellaneous-commands#^DDKEYPRESS|Capturing Keystrokes]]
 
-16-60. [[extmisc#^RPSDCARD|Preparing a bootable SD card for the _Raspberry Pi_]]
+16-60. [[miscellaneous-commands#^RPSDCARD|Preparing a bootable SD card for the _Raspberry Pi_]]
 
-16-61. [[extmisc#^BLOTOUT|Securely deleting a file]]
+16-61. [[miscellaneous-commands#^BLOTOUT|Securely deleting a file]]
 
-16-62. [[extmisc#^TEMPFILENAME|Filename generator]]
+16-62. [[miscellaneous-commands#^TEMPFILENAME|Filename generator]]
 
-16-63. [[extmisc#^UNITCONVERSION|Converting meters to miles]]
+16-63. [[miscellaneous-commands#^UNITCONVERSION|Converting meters to miles]]
 
-16-64. [[extmisc#^M4|Using _m4_]]
+16-64. [[miscellaneous-commands#^M4|Using _m4_]]
 
-17-1. [[system#^SETNEWPW|Setting a new password]]
+17-1. [[system-and-administrative-commands#^SETNEWPW|Setting a new password]]
 
-17-2. [[system#^ERASE|Setting an _erase_ character]]
+17-2. [[system-and-administrative-commands#^ERASE|Setting an _erase_ character]]
 
-17-3. [[system#^SECRETPW|_secret password_: Turning off terminal echoing]]
+17-3. [[system-and-administrative-commands#^SECRETPW|_secret password_: Turning off terminal echoing]]
 
-17-4. [[system#^KEYPRESS|Keypress detection]]
+17-4. [[system-and-administrative-commands#^KEYPRESS|Keypress detection]]
 
-17-5. [[system#^ISCAN|Checking a remote server for _identd_]]
+17-5. [[system-and-administrative-commands#^ISCAN|Checking a remote server for _identd_]]
 
-17-6. [[system#^KILLPROCESS|_pidof_ helps kill a process]]
+17-6. [[system-and-administrative-commands#^KILLPROCESS|_pidof_ helps kill a process]]
 
-17-7. [[system#^ISOMOUNTREF|Checking a CD image]]
+17-7. [[system-and-administrative-commands#^ISOMOUNTREF|Checking a CD image]]
 
-17-8. [[system#^CREATEFS|Creating a filesystem in a file]]
+17-8. [[system-and-administrative-commands#^CREATEFS|Creating a filesystem in a file]]
 
-17-9. [[system#^ADDDRV|Adding a new hard drive]]
+17-9. [[system-and-administrative-commands#^ADDDRV|Adding a new hard drive]]
 
-17-10. [[system#^ROT13A|Using _umask_ to hide an output file from prying eyes]]
+17-10. [[system-and-administrative-commands#^ROT13A|Using _umask_ to hide an output file from prying eyes]]
 
-17-11. [[system#^BACKLIGHT|_Backlight_: changes the brightness of the (laptop) screen backlight]]
+17-11. [[system-and-administrative-commands#^BACKLIGHT|_Backlight_: changes the brightness of the (laptop) screen backlight]]
 
 17-12. [[sysscripts#^EX55|_killall_, from /etc/rc.d/init.d]]
 

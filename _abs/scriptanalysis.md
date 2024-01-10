@@ -57,7 +57,7 @@ exit 0|
 
 ---
 
-Examine and explain the following script. For hints, you might refer to the listings for [[complex-commands#^FINDREF|find]] and [[system#^STATREF|stat]].
+Examine and explain the following script. For hints, you might refer to the listings for [[complex-commands#^FINDREF|find]] and [[system-and-administrative-commands#^STATREF|stat]].
 
 |   |
 |---|

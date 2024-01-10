@@ -340,7 +340,7 @@ Examples of command substitution in shell scripts:
 4. [[complex-commands#^EX57|Example 16-3]]
 5. [[text-processing-commands#^LOWERCASE|Example 16-22]]
 6. [[text-processing-commands#^GRP|Example 16-17]]
-7. [[extmisc#^EX53|Example 16-54]]
+7. [[miscellaneous-commands#^EX53|Example 16-54]]
 8. [[loops#^EX24|Example 11-14]]
 9. [[loops#^SYMLINKS|Example 11-11]]
 10. [[file-and-archiving-commands#^STRIPC|Example 16-32]]

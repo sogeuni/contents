@@ -511,7 +511,7 @@ ASCII
 
 * * *
 
-Backlight, [[system#^BACKLIGHT|setting the brightness]]
+Backlight, [[system-and-administrative-commands#^BACKLIGHT|setting the brightness]]
 
 [[special-characters#^BACKTICKSREF|Backquotes]], used in [[command-substitution#^BACKQUOTESREF|command substitution]]
 
@@ -582,7 +582,7 @@ Backlight, [[system#^BACKLIGHT|setting the brightness]]
     _Script example_: [[special-characters#^BLOCKIO2|Redirecting output of a a code block]]
     
 
-[[extmisc#^BFS|Bootable flash drives]], creating
+[[miscellaneous-commands#^BFS|Bootable flash drives]], creating
 
 [[special-characters#^BRACEEXPREF|Brace expansion]]
 
@@ -735,7 +735,7 @@ Commenting out blocks of code
 
 [[bash-ver4#^COPROCREF|Coprocesses]]
 
-[[system#^CRONREF|cron]], scheduling _daemon_
+[[system-and-administrative-commands#^CRONREF|cron]], scheduling _daemon_
 
 [[assorted-tips#^CSTYLE|_C_-style syntax]] , for handling variables
 
@@ -760,23 +760,23 @@ Curly brackets {}
 
 [[math-commands#^DCREF|dc]], calculator utility
 
-[[extmisc#^DDREF|dd]], _data duplicator_ command
+[[miscellaneous-commands#^DDREF|dd]], _data duplicator_ command
 
-- [[extmisc#^DDCONVERSIONS|Conversions]]
+- [[miscellaneous-commands#^DDCONVERSIONS|Conversions]]
     
-- [[extmisc#^DDCOPY|Copying raw data]] to/from devices
+- [[miscellaneous-commands#^DDCOPY|Copying raw data]] to/from devices
     
-- [[extmisc#^DDFDEL|File deletion]], _secure_
+- [[miscellaneous-commands#^DDFDEL|File deletion]], _secure_
     
-- [[extmisc#^DDKEYSTROKES|Keystrokes]], capturing
+- [[miscellaneous-commands#^DDKEYSTROKES|Keystrokes]], capturing
     
-- [[extmisc#^DDOPTIONS|Options]]
+- [[miscellaneous-commands#^DDOPTIONS|Options]]
     
-- [[extmisc#^DDRANDOM|Random access]] on a data stream
+- [[miscellaneous-commands#^DDRANDOM|Random access]] on a data stream
     
-- _Raspberry Pi_, [[extmisc#^RPSDCARD01|script for preparing a bootable SD card]]
+- _Raspberry Pi_, [[miscellaneous-commands#^RPSDCARD01|script for preparing a bootable SD card]]
     
-- [[extmisc#^DDSWAP|Swapfiles]], initializing
+- [[miscellaneous-commands#^DDSWAP|Swapfiles]], initializing
     
 - [[bibliography#^DDLINK|Thread on _www.linuxquestions.org_]]
     
@@ -876,7 +876,7 @@ Encrypting files, using [[file-and-archiving-commands#^OPENSSLREF|openssl]]
 - [[bash-ver4#^UNICODEREF2|Used with _Unicode_ characters]]
     
 
-[[system#^FSTABREF|/etc/fstab]] (filesystem mount) file
+[[system-and-administrative-commands#^FSTABREF|/etc/fstab]] (filesystem mount) file
 
 [[files#^DATAFILESREF1|/etc/passwd]] (user account) file
 
@@ -1089,7 +1089,7 @@ Games and amusements
     [[contributed-scripts#^HANOI2A|Alternate graphic version]]
     
 
-[[extmisc#^GETOPTY|getopt]], _external_ command for parsing script _command-line_ arguments
+[[miscellaneous-commands#^GETOPTY|getopt]], _external_ command for parsing script _command-line_ arguments
 
 - [[manipulating-strings#^GETOPTSIMPLE1|Emulated in a script]]
     
@@ -1212,7 +1212,7 @@ Games and amusements
 
 [[loops#^DOINREF|in]], _keyword_ preceding [list] in a _for_ loop
 
-[[system#^INITTABREF|Initialization table]], /etc/inittab
+[[system-and-administrative-commands#^INITTABREF|Initialization table]], /etc/inittab
 
 [[special-characters#^CODEBLOCKREF|Inline group]], i.e., code block
 
@@ -1225,9 +1225,9 @@ Games and amusements
 - [[ivr#^IVR2|New notation]], introduced in [[bash-ver2#^BASH2REF|version 2]] of Bash ( [[bash-ver2#^VARREFNEW|example script]])
     
 
-[[system#^IPTABLESREF|iptables]], packet filtering and firewall utility
+[[system-and-administrative-commands#^IPTABLESREF|iptables]], packet filtering and firewall utility
 
-- [[system#^IPTABLES01|Usage example]]
+- [[system-and-administrative-commands#^IPTABLES01|Usage example]]
     
 - [[networkprogramming#^IPTABLES02|Example script]]
     
@@ -1238,9 +1238,9 @@ Games and amusements
 
 [[job-control-commands#^JOBIDTABLE0|Job IDs]], table
 
-[[extmisc#^JOTREF|jot]], Emit a sequence of integers. Equivalent to [[extmisc#^SEQREF|seq]].
+[[miscellaneous-commands#^JOTREF|jot]], Emit a sequence of integers. Equivalent to [[miscellaneous-commands#^SEQREF|seq]].
 
-- [[extmisc#^JOTRANDOM|Random sequence generation]]
+- [[miscellaneous-commands#^JOTRANDOM|Random sequence generation]]
     
 
 [[text-processing-commands#^JABH|Just another Bash hacker!]]
@@ -1301,7 +1301,7 @@ Games and amusements
 
 [[files#^LOGOUTFILEREF1|Logout file]], the ~/.bash_logout file
 
-[[system#^ISOMOUNTREF0|Loopback device]], mounting a file on a [[devref1#^BLOCKDEVREF|block device]]
+[[system-and-administrative-commands#^ISOMOUNTREF0|Loopback device]], mounting a file on a [[devref1#^BLOCKDEVREF|block device]]
 
 [[loops|Loops]]
 
@@ -1372,14 +1372,14 @@ Loopback devices
 
 - [[devref1#^LOOPBACKREF|In /dev directory]]
     
-- [[system#^ISOMOUNTREF0|Mounting an ISO image]]
+- [[system-and-administrative-commands#^ISOMOUNTREF0|Mounting an ISO image]]
     
 
 [[other-comparison-operators#^LT0REF|-lt]] , _less-than_ [[other-comparison-operators#^ICOMPARISON1|integer comparison]] test
 
 * * *
 
-[[extmisc#^M4REF|m4]], macro processing language
+[[miscellaneous-commands#^M4REF|m4]], macro processing language
 
 [[internal-variables#^MACHTYPEREF|$MACHTYPE]], _Machine type_
 
@@ -1411,18 +1411,18 @@ Loopback devices
 
 **-n** [[other-comparison-operators#^STRINGNOTNULL|String not _null_]] test
 
-[[extmisc#^NAMEDPIPEREF|Named pipe]], a temporary FIFO buffer
+[[miscellaneous-commands#^NAMEDPIPEREF|Named pipe]], a temporary FIFO buffer
 
 - [[contributed-scripts#^ZFIFO|_Example script_]]
     
 
-[[system#^NCREF|nc]], _netcat_, a network toolkit for TCP and UDP ports
+[[system-and-administrative-commands#^NCREF|nc]], _netcat_, a network toolkit for TCP and UDP ports
 
 [[other-comparison-operators#^NEQUALREF|-ne]], _not-equal-to_ [[other-comparison-operators#^ICOMPARISON1|integer comparison]] test
 
 [[special-characters#^NOTREF|Negation operator]], **!**, reverses the sense of a [[tests#^IFTHEN|test]]
 
-[[system#^NETSTATREF|netstat]], Network statistics
+[[system-and-administrative-commands#^NETSTATREF|netstat]], Network statistics
 
 [[networkprogramming|Network programming]]
 
@@ -1449,7 +1449,7 @@ Obfuscation
 
 [[escaping#^OCTALREF|octal]], base-8 numbers
 
-[[extmisc#^ODREF|od]], _octal dump_
+[[miscellaneous-commands#^ODREF|od]], _octal dump_
 
 [[internal-variables#^OLDPWD|$OLDPWD]] Previous working directory
 
@@ -1764,14 +1764,14 @@ Random numbers
     
 - [[time-date-commands#^DATERANDREF|Random sequence generation]], using [[time-date-commands#^DATEREF|date]] command
     
-- [[extmisc#^JOTRANDOM|Random sequence generation]], using [[extmisc#^JOTREF|jot]]
+- [[miscellaneous-commands#^JOTRANDOM|Random sequence generation]], using [[miscellaneous-commands#^JOTREF|jot]]
     
 - [[manipulating-strings#^RANDSTRING0|Random string]], generating
     
 
 Raspberry Pi (single-board computer)
 
-- [[extmisc#^RPSDCARD01|Script for preparing a bootable SD card]]
+- [[miscellaneous-commands#^RPSDCARD01|Script for preparing a bootable SD card]]
     
 
 [[assorted-tips#^RCSREF|rcs]]
@@ -1858,7 +1858,7 @@ Redirection
     
     &>
     
-- [[extmisc#^TEEREF|tee]], redirect to a file output of command(s) partway through a [[special-characters#^PIPEREF|pipe]]
+- [[miscellaneous-commands#^TEEREF|tee]], redirect to a file output of command(s) partway through a [[special-characters#^PIPEREF|pipe]]
     
 
 [[refcards|Reference Cards]]
@@ -1909,7 +1909,7 @@ Redirection
 
 [[complexfunct#^RETURNREF|return]], command that terminates a [[functions#^FUNCTIONREF|function]]
 
-[[extmisc#^RUNPARTSREF|run-parts]]
+[[miscellaneous-commands#^RUNPARTSREF|run-parts]]
 
 - [[assorted-tips#^RUNPARTSREF2|Running scripts in sequence]], without user intervention
     
@@ -1926,9 +1926,9 @@ Redirection
 
 [[securityissues|Security issues]]
 
-- [[system#^NMAPREF|nmap]], _network mapper_ / port scanner
+- [[system-and-administrative-commands#^NMAPREF|nmap]], _network mapper_ / port scanner
     
-- [[system#^SUDOREF|sudo]]
+- [[system-and-administrative-commands#^SUDOREF|sudo]]
     
 - [[gotchas#^SUIDSCR|_suid_ commands inside a script]]
     
@@ -1949,14 +1949,14 @@ Redirection
 - [[testing-and-branching#^INLISTOMIT|**in _list_** omitted]]
     
 
-[[system#^SEMAPHOREREF|Semaphore]]
+[[system-and-administrative-commands#^SEMAPHOREREF|Semaphore]]
 
 [[loops#^NEEDSEMICOLON|Semicolon required]], when [[loops#^DOINREF|do]] _keyword_ is on first line of [[loops#^FORLOOPREF1|loop]]
 
 - [[gotchas#^OMITSEMICOLON|When terminating _curly-bracketed_ code block]]
     
 
-[[extmisc#^SEQREF|seq]], Emit a sequence of integers. Equivalent to [[extmisc#^JOTREF|jot]].
+[[miscellaneous-commands#^SEQREF|seq]], Emit a sequence of integers. Equivalent to [[miscellaneous-commands#^JOTREF|jot]].
 
 [[internal-commands-and-builtins#^SETREF|set]], Change value of internal script variables
 
@@ -2114,7 +2114,7 @@ Strings
     ... [[assorted-tips#^SUBSHTMP|can be accessed outside the subshell?]]
     
 
-[[system#^SUREF|su]] _Substitute user_, log on as a different user or as _root_
+[[system-and-administrative-commands#^SUREF|su]] _Substitute user_, log on as a different user or as _root_
 
 [[file-test-operators#^SUIDREF|suid]] (_set user id_) file flag
 
@@ -2135,19 +2135,19 @@ Table lookup, [[bash-ver2#^RESISTOR|script example]]
 
 [[file-and-archiving-commands#^TARREF|tar]], archiving utility
 
-[[extmisc#^TEEREF|tee]], redirect to a file output of command(s) partway through a [[special-characters#^PIPEREF|pipe]]
+[[miscellaneous-commands#^TEEREF|tee]], redirect to a file output of command(s) partway through a [[special-characters#^PIPEREF|pipe]]
 
-[[system#^TERMINALSSYS1|Terminals]]
+[[system-and-administrative-commands#^TERMINALSSYS1|Terminals]]
 
-- [[system#^SETSERIALREF|setserial]]
+- [[system-and-administrative-commands#^SETSERIALREF|setserial]]
     
-- [[system#^SETTERMREF|setterm]]
+- [[system-and-administrative-commands#^SETTERMREF|setterm]]
     
-- [[system#^STTYREF|stty]]
+- [[system-and-administrative-commands#^STTYREF|stty]]
     
 - [[terminal-control-commands#^TPUTREF|tput]]
     
-- [[system#^WALLREF|wall]]
+- [[system-and-administrative-commands#^WALLREF|wall]]
     
 
 _test_ command
@@ -2281,7 +2281,7 @@ Timed input
     
 - [[special-characters#^DEVNULLREDIRECT|Redirecting a _test_ to /dev/null]] to suppress output
     
-- [[assorted-tips#^RUNPARTSREF2|Running scripts in sequence]] without user intervention, using [[extmisc#^RUNPARTSREF|run-parts]]
+- [[assorted-tips#^RUNPARTSREF2|Running scripts in sequence]] without user intervention, using [[miscellaneous-commands#^RUNPARTSREF|run-parts]]
     
 - Script [[assorted-tips#^SCRIPTASEMB|as embedded command]]
     
@@ -2347,7 +2347,7 @@ _Trinary (ternary)_ operator, _C_-style, **var>10?88:99**
 
 [[Chapter 25. Aliases#^UNALIASREF|unalias]], to remove an [[Chapter 25. Aliases#^ALIASREF|alias]]
 
-[[system#^UNAMEREF|uname]], output system information
+[[system-and-administrative-commands#^UNAMEREF|uname]], output system information
 
 [[bash-ver4#^UNICODEREF|Unicode]], encoding standard for representing letters and symbols
 
@@ -2488,13 +2488,13 @@ _while [ condition ]; do_
 - [[x17129#^WSPOSIX|[:space:]]], _POSIX_ character class
     
 
-[[system#^WHOREF|who]], information about logged on users
+[[system-and-administrative-commands#^WHOREF|who]], information about logged on users
 
-- [[system#^WREF|w]]
+- [[system-and-administrative-commands#^WREF|w]]
     
-- [[system#^WHOAMIREF|whoami]]
+- [[system-and-administrative-commands#^WHOAMIREF|whoami]]
     
-- [[system#^LOGNAMEREF|logname]]
+- [[system-and-administrative-commands#^LOGNAMEREF|logname]]
     
 
 [[assorted-tips#^WIDGETREF|Widgets]]
@@ -2536,9 +2536,9 @@ Word splitting
 
 * * *
 
-[[extmisc#^YESREF|yes]]
+[[miscellaneous-commands#^YESREF|yes]]
 
-- [[extmisc#^YESEMU|Emulation]]
+- [[miscellaneous-commands#^YESEMU|Emulation]]
     
 
 * * *

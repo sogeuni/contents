@@ -220,6 +220,6 @@ Note that the path given at the "sha-bang" must be correct, otherwise an error m
 
 [^5]: **P**ortable **O**perating **S**ystem _I_nterface, an attempt to standardize UNI**X**-like OSes. The POSIX specifications are listed on the [Open Group site](http://www.opengroup.org/onlinepubs/007904975/toc.htm).
 
-[^6]: To avoid this possibility, a script may begin with a [[system#^ENVV2REF|#!/bin/env bash]] _sha-bang_ line. This may be useful on UNIX machines where _bash_ is not located in /bin
+[^6]: To avoid this possibility, a script may begin with a [[system-and-administrative-commands#^ENVV2REF|#!/bin/env bash]] _sha-bang_ line. This may be useful on UNIX machines where _bash_ is not located in /bin
 
 [^7]: If _Bash_ is your default shell, then the #! isn't necessary at the beginning of a script. However, if launching a script from a different shell, such as _tcsh_, then you _will_ need the #!.

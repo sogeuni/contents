@@ -16,6 +16,6 @@
 
 16.8. [[math-commands|Math Commands]]
 
-16.9. [[extmisc|Miscellaneous Commands]]
+16.9. [[miscellaneous-commands|Miscellaneous Commands]]
 
 Standard UNIX commands make shell scripts more versatile. The power of scripts comes from coupling system commands and shell directives with simple programming constructs.

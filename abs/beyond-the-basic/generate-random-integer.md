@@ -668,7 +668,7 @@ exit 0
 ```
 
 > [!note]
-> The /dev/urandom pseudo-device file provides a method of generating much more "random" pseudorandom numbers than the $RANDOM variable. **dd if=/dev/urandom of=targetfile bs=1 count=XX** creates a file of well-scattered pseudorandom numbers. However, assigning these numbers to a variable in a script requires a workaround, such as filtering through [[extmisc#^ODREF|od]] (as in above example, [[text-processing-commands#^RND|Example 16-14]], and [[contributed-scripts#^INSERTIONSORT|Example A-36]]), or even piping to [[file-and-archiving-commands#^MD5SUMREF|md5sum]] (see [[colorizing#^HORSERACE|Example 36-16]]).
+> The /dev/urandom pseudo-device file provides a method of generating much more "random" pseudorandom numbers than the $RANDOM variable. **dd if=/dev/urandom of=targetfile bs=1 count=XX** creates a file of well-scattered pseudorandom numbers. However, assigning these numbers to a variable in a script requires a workaround, such as filtering through [[miscellaneous-commands#^ODREF|od]] (as in above example, [[text-processing-commands#^RND|Example 16-14]], and [[contributed-scripts#^INSERTIONSORT|Example A-36]]), or even piping to [[file-and-archiving-commands#^MD5SUMREF|md5sum]] (see [[colorizing#^HORSERACE|Example 36-16]]).
 >
 > There are also other ways to generate pseudorandom numbers in a script. **Awk** provides a convenient means of doing this.
 >

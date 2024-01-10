@@ -1264,7 +1264,7 @@ echo "second parameter = $second_param"           # (null value)
 exit 0
 ```
 
-See also [[loops#^EX22A|Example 11-2]] and [[extmisc#^EX33A|Example 16-56]].
+See also [[loops#^EX22A|Example 11-2]] and [[miscellaneous-commands#^EX33A|Example 16-56]].
 
 **unset**
 
@@ -1382,7 +1382,7 @@ Same as [[typing-variables.html|declare -r]], sets a variable as read-only, or, 
 
 **getopts**
 
-This powerful tool parses command-line arguments passed to the script. This is the Bash analog of the [[extmisc#^GETOPTY|getopt]] external command and the _getopt_ library function familiar to _C_ programmers. It permits passing and concatenating multiple options [^5] and associated arguments to a script (for example **scriptname -abc -e /usr/local**).
+This powerful tool parses command-line arguments passed to the script. This is the Bash analog of the [[miscellaneous-commands#^GETOPTY|getopt]] external command and the _getopt_ library function familiar to _C_ programmers. It permits passing and concatenating multiple options [^5] and associated arguments to a script (for example **scriptname -abc -e /usr/local**).
 
 The **getopts** construct uses two implicit variables. $OPTIND is the argument pointer (_OPTion INDex_) and $OPTARG (_OPTion ARGument_) the (optional) argument attached to an option. A colon following the option name in the declaration tags that option as having an associated argument.
 
@@ -1392,7 +1392,7 @@ A **getopts** construct usually comes packaged in a [[loops#^WHILELOOPREF|while 
 >
 > 1. The arguments passed from the command-line to the script must be preceded by a dash (-). It is the prefixed - that lets **getopts** recognize command-line arguments as _options_. In fact, **getopts** will not process arguments without the prefixed -, and will terminate option processing at the first argument encountered lacking them.
 > 2. The **getopts** template differs slightly from the standard [[loops#^WHILELOOPREF|while loop]], in that it lacks condition brackets.
-> 3. The **getopts** construct is a highly functional replacement for the traditional [[extmisc#^GETOPTY|getopt]] external command.
+> 3. The **getopts** construct is a highly functional replacement for the traditional [[miscellaneous-commands#^GETOPTY|getopt]] external command.
 
 ```bash
 while getopts ":abcde:fg" Option
