@@ -1,16 +1,13 @@
 ---
-draft: true
+title: "36.4. Recursion: a script calling itself"
 ---
-
-# 36.4. Recursion: a script calling itself
 
 Can a script [[local-variables#^RECURSIONREF|recursively]] call itself? Indeed.
 
 **Example 36-10. A (useless) script that recursively calls itself**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # recurse.sh
 
 #  Can a script recursively call itself?
@@ -39,13 +36,13 @@ exit 0
 # ----
 # This script must have execute permission for it to work properly.
 # This is the case even if it is invoked by an "sh" command.
-# Explain why.|
+# Explain why.
+```
 
 **Example 36-11. A (useful) script that recursively calls itself**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # pb.sh: phone book
 
 # Written by Rick Boivie, and used with permission.
@@ -68,7 +65,7 @@ if [ $# -eq $MINARGS ]; then
       grep $1 "$DATAFILE"
       # 'grep' prints an error message if $DATAFILE not present.
 else
-      ( shift; "$PROGNAME" $* ) \| grep $1
+      ( shift; "$PROGNAME" $* ) | grep $1
       # Script recursively calls itself.
 fi
 
@@ -94,13 +91,13 @@ $bash pb.sh Roe Sam
 Sam Roe         956 E. 8th St., New York, NY 10009          (212) 444-5678
 
 #  When more than one argument is passed to this script,
-#+ it prints *only* the line(s) containing all the arguments.|
+#+ it prints *only* the line(s) containing all the arguments.
+```
 
 **Example 36-12. Another (useful) script that recursively calls itself**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # usrmnt.sh, written by Anthony Richardson
 # Used in ABS Guide with permission.
 
@@ -153,9 +150,8 @@ exit 0
 #    about who you allow access.
 #    You can get finer control over which access can be mounted
 #    by using this same technique in separate mntfloppy, mntcdrom,
-#    and mntsamba scripts.|
+#    and mntsamba scripts.
+```
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|Too many levels of recursion can exhaust the script's stack space, causing a segfault.|
-
+> [!caution]
+> Too many levels of recursion can exhaust the script's stack space, causing a segfault.

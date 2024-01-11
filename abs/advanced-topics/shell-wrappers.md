@@ -1,15 +1,14 @@
 ---
 title: 36.2. Shell Wrappers
 ---
-A _wrapper_ is a shell script that embeds a system command or utility, that accepts and passes a set of parameters to that command. [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|^1] Wrapping a script around a complex command-line simplifies invoking it. This is expecially useful with [sed]] and [[C.2. Awk#^AWKREF|awk]].
+A _wrapper_ is a shell script that embeds a system command or utility, that accepts and passes a set of parameters to that command. [^1] Wrapping a script around a complex command-line simplifies invoking it. This is expecially useful with [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]] and [[C.2. Awk#^AWKREF|awk]].
 
 A **sed** or **awk** script would normally be invoked from the command-line by a **sed -e _'commands'_** or **awk _'commands'_**. Embedding such a script in a Bash script permits calling it more simply, and makes it _reusable_. This also enables combining the functionality of _sed_ and _awk_, for example [[special-characters#^PIPEREF|piping]] the output of a set of _sed_ commands to _awk_. As a saved executable file, you can then repeatedly invoke it in its original form or modified, without the inconvenience of retyping it on the command-line.
 
 **Example 36-1. _shell wrapper_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # This simple script removes blank lines from a file.
 # No argument checking.
@@ -42,13 +41,13 @@ sed -e /^$/d "$1"
 #  Note that this script doesn't actually change the target file.
 #  If you need to do that, redirect its output.
 
-exit|
+exit
+```
 
 **Example 36-2. A slightly more complex _shell wrapper_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 #  subst.sh: a script that substitutes one pattern for
 #+ another in a file,
@@ -87,13 +86,13 @@ sed -e "s/$old_pattern/$new_pattern/g" $file_name
 #+ occurence of $old_pattern on each line, not just the first.
 #  Read the 'sed' docs for an in-depth explanation.
 
-exit $?  # Redirect the output of this script to write to a file.|
+exit $?  # Redirect the output of this script to write to a file.
+```
 
 **Example 36-3. A generic _shell wrapper_ that writes to a logfile**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #  logging-wrapper.sh
 #  Generic shell wrapper that performs an operation
 #+ and logs it.
@@ -138,7 +137,7 @@ echo " -------   ---     ---------"
 
 for ((i=START; i<=END; i++))
 do
-  echo $i \| awk '{printf("  %3d       %2x         %c\n", $1, $1, $1)}'
+  echo $i | awk '{printf("  %3d       %2x         %c\n", $1, $1, $1)}'
 # The Bash printf builtin will not work in this context:
 #     printf "%c" "$i"
 done
@@ -157,18 +156,18 @@ exit 0
 #
 #   122       7a         z
 #   123       7b         {
-#   124       7c         \|
+#   124       7c         |
 #   125       7d         }
 
 
 #  Redirect the output of this script to a file
-#+ or pipe it to "more":  sh pr-asc.sh \| more|
+#+ or pipe it to "more":  sh pr-asc.sh | more
+```
 
 **Example 36-5. A _shell wrapper_ around another awk script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # Adds up a specified column (of numbers) in the target file.
 # Floating-point (decimal) numbers okay, because awk can handle them.
@@ -228,15 +227,15 @@ END {
 #   ---------------------------------------
 
 
-exit 0|
+exit 0
+```
 
 For those scripts needing a single do-it-all tool, a Swiss army knife, there is _Perl_. Perl combines the capabilities of [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]] and [[C.2. Awk#^AWKREF|awk]], and throws in a large subset of **C**, to boot. It is modular and contains support for everything ranging from object-oriented programming up to and including the kitchen sink. Short Perl scripts lend themselves to embedding within shell scripts, and there may be some substance to the claim that Perl can totally replace shell scripting (though the author of the _ABS Guide_ remains skeptical). ^PERLREF
 
 **Example 36-6. Perl embedded in a _Bash_ script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # Shell commands may precede the Perl script.
 echo "This precedes the embedded Perl script within \"$0\"."
@@ -248,15 +247,15 @@ perl -e 'print "This line prints from an embedded Perl script.\n";'
 echo "==============================================================="
 echo "However, the script may also contain shell and system commands."
 
-exit 0|
+exit 0
+```
 
 It is even possible to combine a Bash script and Perl script within the same file. Depending on how the script is invoked, either the Bash part or the Perl part will execute.
 
 **Example 36-7. Bash and Perl scripts combined**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # bashandperl.sh
 
 echo "Greetings from the Bash part of the script, $0."
@@ -275,23 +274,23 @@ print "Greetings from the Perl part of the script, $0.\n";
 #      Perl doesn't seem to like "echo" ...
 # More Perl commands may follow here.
 
-# End of Perl part of the script.|
+# End of Perl part of the script.
+```
 
-|   |
-|---|
-|bash$ **bash bashandperl.sh**
+```bash
+bash$ bash bashandperl.sh
 Greetings from the Bash part of the script.
 
-bash$ **perl -x bashandperl.sh**
-Greetings from the Perl part of the script.|
+bash$ perl -x bashandperl.sh
+Greetings from the Perl part of the script.
+```
 
 It is, of course, possible to embed even more exotic scripting languages within shell wrappers. _Python_, for example ...
 
 **Example 36-8. Python embedded in a _Bash_ script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ex56py.sh
 
 # Shell commands may precede the Python script.
@@ -305,15 +304,15 @@ python -c 'k = raw_input( "Hit a key to exit to outer script. " )'
 echo "==============================================================="
 echo "However, the script may also contain shell and system commands."
 
-exit 0|
+exit 0
+```
 
 Wrapping a script around _mplayer_ and the Google's translation server, you can create something that talks back to you.
 
 **Example 36-9. A script that speaks**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #   Courtesy of:
 #   http://elinux.org/RPi_Text_to_Speech_(Speech_Synthesis)
 
@@ -335,9 +334,9 @@ LINES=4
 spk=$(tail -$LINES $0) # Tail end of same script!
 speak "$spk"
 exit
-# Browns. Nice talking to you.|
+# Browns. Nice talking to you.
+```
 
-One interesting example of a complex shell wrapper is Martin Matusiak's [[http://sourceforge.net/projects/undvd/|_undvd_ script]], which provides an easy-to-use command-line interface to the complex [[http://www.mplayerhq.hu/DOCS/HTML/en/mencoder.html|mencoder]] utility. Another example is Itzchak Rehberg's [[http://projects.izzysoft.de/trac/ext3undel|Ext3Undel]], a set of scripts to recover deleted file on an _ext3_ filesystem.
+One interesting example of a complex shell wrapper is Martin Matusiak's [_undvd_ script](http://sourceforge.net/projects/undvd/), which provides an easy-to-use command-line interface to the complex [mencoder](http://www.mplayerhq.hu/DOCS/HTML/en/mencoder.html) utility. Another example is Itzchak Rehberg's [Ext3Undel](http://projects.izzysoft.de/trac/ext3undel), a set of scripts to recover deleted file on an _ext3_ filesystem.
 
 [^1]: Quite a number of Linux utilities are, in fact, shell wrappers. Some examples are /usr/bin/pdf2ps, /usr/bin/batch, and /usr/bin/xmkmf.
-

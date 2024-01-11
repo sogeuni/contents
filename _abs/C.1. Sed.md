@@ -111,8 +111,8 @@ This deletes only the first of each set of consecutive blank lines. That might b
 
 For illustrative examples of sed within shell scripts, see:
 
-1. [[shell-wrapper#^EX3|Example 36-1]]
-2. [[shell-wrapper#^EX4|Example 36-2]]
+1. [[shell-wrappers#^EX3|Example 36-1]]
+2. [[shell-wrappers#^EX4|Example 36-2]]
 3. [[complex-commands#^EX57|Example 16-3]]
 4. [[contributed-scripts#^RN|Example A-2]]
 5. [[text-processing-commands#^GRP|Example 16-17]]

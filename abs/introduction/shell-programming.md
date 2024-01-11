@@ -15,7 +15,7 @@ The craft of scripting is not hard to master, since scripts can be built in bite
 > We now have miniaturized single-board computers with amazing capabilities, such as the [Raspberry Pi](http://www.raspberrypi.org/).
 > Bash scripting provides a way to explore the capabilities of these fascinating devices.
 
-A shell script is a quick-and-dirty method of prototyping a complex application. Getting even a limited subset of the functionality to work in a script is often a useful first stage in project development. In this way, the structure of the application can be tested and tinkered with, and the major pitfalls found before proceeding to the final coding in _C_, _C++_, _Java_, [[shell-wrapper#^PERLREF|Perl]], or _Python_.
+A shell script is a quick-and-dirty method of prototyping a complex application. Getting even a limited subset of the functionality to work in a script is often a useful first stage in project development. In this way, the structure of the application can be tested and tinkered with, and the major pitfalls found before proceeding to the final coding in _C_, _C++_, _Java_, [[shell-wrappers#^PERLREF|Perl]], or _Python_.
 
 Shell scripting hearkens back to the classic UNIX philosophy of breaking complex projects into simpler subtasks, of chaining together components and utilities. Many consider this a better, or at least more esthetically pleasing approach to problem solving than using one of the new generation of high-powered all-in-one languages, such as _Perl_, which attempt to be all things to all people, but at the cost of forcing you to alter your thinking processes to fit the tool.
 

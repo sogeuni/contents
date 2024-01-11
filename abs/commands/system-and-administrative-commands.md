@@ -547,7 +547,7 @@ COMMAND  PID USER  FD  TYPE DEVICE SIZE NODE NAME
 	      
 ```
 
-See [[networkprogramming#^IPADDRESSES|Example 30-2]] for an effective use of **lsof**.
+See [[network-programming#^IPADDRESSES|Example 30-2]] for an effective use of **lsof**.
 
 **strace**
 
@@ -1341,7 +1341,7 @@ Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 
 The **iptables** command set is a packet filtering tool used mainly for such security purposes as setting up network firewalls. This is a complex tool, and a detailed explanation of its use is beyond the scope of this document. [Oskar Andreasson's tutorial](http://www.frozentux.net/iptables-tutorial/iptables-tutorial.html) is a reasonable starting point.
 
-See also [[system-and-administrative-commands#^IPTABLES01|shutting down _iptables_]] and [[networkprogramming#^IPADDRESSES|Example 30-2]].
+See also [[system-and-administrative-commands#^IPTABLES01|shutting down _iptables_]] and [[network-programming#^IPADDRESSES|Example 30-2]].
 
 **chkconfig**
 
@@ -1511,7 +1511,7 @@ chmod 777 $MOUNTPOINT  # Makes new drive accessible to all users.
 exit
 ```
 
-See also [[system-and-administrative-commands#^CREATEFS|Example 17-8]] and [[Chapter 31. Of Zeros and Nulls#^RAMDISK|Example 31-3]].
+See also [[system-and-administrative-commands#^CREATEFS|Example 17-8]] and [[of-zeros-and-nulls#^RAMDISK|Example 31-3]].
 
 **mkdosfs**
 

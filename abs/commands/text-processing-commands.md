@@ -1343,7 +1343,7 @@ _Ghostscript_ (**gs**) is a GPL-ed Postscript interpreter.
 
 **texexec**
 
-Utility for processing _TeX_ and _pdf_ files. Found in /usr/bin on many Linux distros, it is actually a [[shell-wrapper#^SHWRAPPER|shell wrapper]] that calls [[shell-wrapper#^PERLREF|Perl]] to invoke _Tex_.
+Utility for processing _TeX_ and _pdf_ files. Found in /usr/bin on many Linux distros, it is actually a [[shell-wrappers#^SHWRAPPER|shell wrapper]] that calls [[shell-wrappers#^PERLREF|Perl]] to invoke _Tex_.
 
 ```bash
 texexec --pdfarrange --result=Concatenated.pdf *pdf

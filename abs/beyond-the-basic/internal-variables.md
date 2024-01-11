@@ -876,7 +876,7 @@ Positional parameters, passed from command line to script, passed to a function,
 
 $#
 
-Number of command-line arguments [[shell-wrapper#^EX4|^4] or positional parameters (see [Example 36-2]])
+Number of command-line arguments [[shell-wrappers#^EX4|^4] or positional parameters (see [Example 36-2]])
 
 $*
 
@@ -1149,7 +1149,7 @@ $-
 
 Flags passed to script (using [[internal-commands-and-builtins#^SETREF|set]]). See [[internal-commands-and-builtins#^EX34|Example 15-16]].
 
-> [!caution] This was originally a _ksh_ construct adopted into Bash, and unfortunately it does not seem to work reliably in Bash scripts. One possible use for it is to have a script [[intandnonint#^IITEST|self-test whether it is interactive]].
+> [!caution] This was originally a _ksh_ construct adopted into Bash, and unfortunately it does not seem to work reliably in Bash scripts. One possible use for it is to have a script [[interactive-and-non-interactive-shell-and-scripts#^IITEST|self-test whether it is interactive]].
 
 $!
 

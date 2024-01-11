@@ -1,24 +1,19 @@
-# Chapter 34. Gotchas
+---
+title: 34. Gotchas
+---
 
-|   |   |
-|---|---|
-||_
-
-_Turandot: _Gli enigmi sono tre, la morte una!__
-
-_Caleph: _No, no! Gli enigmi sono tre, una la vita!__
-
-_--Puccini_
-
-_|
+> Turandot: _Gli enigmi sono tre, la morte una!_
+>
+> Caleph: _No, no! Gli enigmi sono tre, una la vita!_
+>
+> --<cite>Puccini</cite>
 
 Here are some (non-recommended!) scripting practices that will bring excitement into an otherwise dull life.
 
 - Assigning reserved words or characters to variable names.
     
-    |   |
-    |---|
-    |case=value0       # Causes problems.
+```bash
+case=value0       # Causes problems.
 23skidoo=value1   # Also problems.
 # Variable names starting with a digit are reserved by the shell.
 # Try _23skidoo=value1. Starting variables with an underscore is okay.
@@ -29,13 +24,16 @@ echo $_           # $_ is a special variable set to last arg of last command.
 # But . . .       _ is a valid function name!
 
 xyz((!*=value2    # Causes severe problems.
+# As of version 3 of Bash, periods are not allowed within variable names.
+```
+
+xyz((!*=value2    # Causes severe problems.
 # As of version 3 of Bash, periods are not allowed within variable names.|
     
 - Using a hyphen or other reserved characters in a variable name (or function name).
     
-    |   |
-    |---|
-    |var-1=23
+```bash
+var-1=23
 # Use 'var_1' instead.
 
 function-whatever ()   # Error
@@ -44,13 +42,13 @@ function-whatever ()   # Error
  
 # As of version 3 of Bash, periods are not allowed within function names.
 function.whatever ()   # Error
-# Use 'functionWhatever ()' instead.|
+# Use 'functionWhatever ()' instead.
+```
     
 - Using the same name for a variable and a function. This can make a script difficult to understand.
     
-    |   |
-    |---|
-    |do_something ()
+```bash
+do_something ()
 {
   echo "This function does something with \"$1\"."
 }
@@ -59,13 +57,13 @@ do_something=do_something
 
 do_something do_something
 
-# All this is legal, but highly confusing.|
+# All this is legal, but highly confusing.
+```
     
 - Using [[special-characters#^WHITESPACEREF|whitespace]] inappropriately. In contrast to other programming languages, Bash can be quite finicky about whitespace.
     
-    |   |
-    |---|
-    |var1 = 23   # 'var1=23' is correct.
+```bash
+var1 = 23   # 'var1=23' is correct.
 # On line above, Bash attempts to execute command "var1"
 # with the arguments "=" and "23".
 	
@@ -73,23 +71,23 @@ let c = $a - $b   # Instead:   let c=$a-$b   or   let "c = $a - $b"
 
 if [ $a -le 5]    # if [ $a -le 5 ]   is correct.
 #           ^^      if [ "$a" -le 5 ]   is even better.
-                  # [[ $a -le 5 ]] also works.|
+                  # [[ $a -le 5 ]] also works.
+```
     
 - Not terminating with a [[special-characters#^SEMICOLONREF|semicolon]] the final command in a [[special-characters#^CODEBLOCKREF|code block within curly brackets]].
     
-    |   |
-    |---|
-    |{ ls -l; df; echo "Done." }
+```bash
+{ ls -l; df; echo "Done." }
 # bash: syntax error: unexpected end of file
 
 { ls -l; df; echo "Done."; }
-#                        ^     ### Final command needs semicolon.|
+#                        ^     ### Final command needs semicolon.
+```
     
 - Assuming uninitialized variables (variables before a value is assigned to them) are "zeroed out". An uninitialized variable has a value of _null_, _not_ zero.
     
-    |   |
-    |---|
-    |#!/bin/bash
+```bash
+#!/bin/bash
 
 echo "uninitialized_var = $uninitialized_var"
 # uninitialized_var =
@@ -100,13 +98,13 @@ echo "uninitialized_var = $uninitialized_var"
 if [[ ! -v uninitialized_var ]]
 then
   uninitialized_var=0   # Initialize it to zero!
-fi|
+fi
+```
     
 - Mixing up _=_ and _-eq_ in a test. Remember, _=_ is for comparing literal variables and _-eq_ for integers.
     
-    |   |
-    |---|
-    |if [ "$a" = 273 ]      # Is $a an integer or string?
+```bash
+if [ "$a" = 273 ]      # Is $a an integer or string?
 if [ "$a" -eq 273 ]    # If $a is an integer.
 
 # Sometimes you can interchange -eq and = without adverse consequences.
@@ -131,15 +129,15 @@ if [ "$a" -eq 273.0 ]
 then
   echo "a = $a"
 fi  # Aborts with an error message.  
-# test.sh: [: 273.0: integer expression expected|
+# test.sh: [: 273.0: integer expression expected
+```
     
 - Misusing [[other-comparison-operators#^SCOMPARISON1|string comparison]] operators.
     
     **Example 34-1. Numerical and string comparison are not equivalent**
     
-    |   |
-    |---|
-    |#!/bin/bash
+```bash
+#!/bin/bash
 # bad-op.sh: Trying to use a string comparison on integers.
 
 echo
@@ -182,16 +180,17 @@ fi                          # 105 is less than 5
 
 echo
 
-exit 0|
+exit 0
+```
     
 - Attempting to use [[internal-commands-and-builtins#^LETREF|let]] to set string variables.
+
+```bash
+let "a = hello, you"
+echo "$a"   # 0
+```
     
-    |   |
-    |---|
-    |let "a = hello, you"
-echo "$a"   # 0|
-    
-- Sometimes variables within "test" brackets ([[other-comparison-operators#^STRTEST| ]) need to be quoted (double quotes). Failure to do so may cause unexpected behavior. See [Example 7-6]], [[redirecting-code-blocks#^REDIR2|Example 20-5]], and [[internal-variables#^ARGLIST|Example 9-6]].
+- Sometimes variables within "test" brackets ([ ]) need to be quoted (double quotes). Failure to do so may cause unexpected behavior. See [[other-comparison-operators#^STRTEST|Example 7-6]], [[redirecting-code-blocks#^REDIR2|Example 20-5]], and [[internal-variables#^ARGLIST|Example 9-6]].
     
 - Quoting a variable containing whitespace [[quoting-variables#^WSQUO|prevents splitting]]. Sometimes this produces [[quoting-variables#^VARSPLITTING|unintended consequences]].
     
@@ -199,21 +198,20 @@ echo "$a"   # 0|
     
 - Attempting to use **-** as a redirection operator (which it is not) will usually result in an unpleasant surprise.
     
-    |   |
-    |---|
-    |command1 2> - \| command2
+```bash
+command1 2> - | command2
 # Trying to redirect error output of command1 into a pipe . . .
 # . . . will not work.	
 
-command1 2>& - \| command2  # Also futile.
+command1 2>& - | command2  # Also futile.
 
-Thanks, S.C.|
+Thanks, S.C.
+```
     
 - Using Bash [[bashver2#^BASH2REF|version 2+]] functionality may cause a bailout with error messages. Older Linux machines may have version 1.XX of Bash as the default installation.
     
-    |   |
-    |---|
-    |#!/bin/bash
+```bash
+#!/bin/bash
 
 minimum_version=2
 # Since Chet Ramey is constantly adding features to Bash,
@@ -227,7 +225,8 @@ then
   exit $E_BAD_VERSION
 fi
 
-...|
+...
+```
     
 - Using Bash-specific functionality in a [[shell-programming#^BASHDEF|Bourne shell]] script (**#!/bin/sh**) on a non-Linux machine [[gotchas#^BINSH|may cause unexpected behavior]]. A Linux system usually aliases **sh** to **bash**, but this does not necessarily hold true for a generic UNIX machine.
     
@@ -236,19 +235,18 @@ fi
 - In certain contexts, a misleading [[exit-status#^EXITSTATUSREF|exit status]] may be returned. This may occur when [[local-variables#^EXITVALANOMALY01|setting a local variable within a function]] or when [[internal-commands-and-builtins#^EXITVALANOMALY02|assigning an arithmetic value to a variable]].
     
 - The [[test-constructs#^ARXS|exit status of an arithmetic expression]] is _not_ equivalent to an _error code_.
-    
-    |   |
-    |---|
-    |var=1 && ((--var)) && echo $var
+
+```bash
+var=1 && ((--var)) && echo $var
 #        ^^^^^^^^^ Here the and-list terminates with exit status 1.
 #                     $var doesn't echo!
-echo $?   # 1|
+echo $?   # 1
+```
     
 - A script with DOS-type newlines (_\r\n_) will fail to execute, since **#!/bin/bash\r\n** is _not_ recognized, _not_ the same as the expected **#!/bin/bash\n**. The fix is to convert the script to UNIX-style newlines.
-    
-    |   |
-    |---|
-    |#!/bin/bash
+
+```bash
+#!/bin/bash
 
 echo "Here"
 
@@ -261,17 +259,17 @@ chmod 755 $0   # Change back to execute permission.
 
 echo "There"
 
-exit 0|
+exit 0
+```
     
 - A shell script headed by **#!/bin/sh** will not run in full Bash-compatibility mode. Some Bash-specific functions might be disabled. Scripts that need complete access to all the Bash-specific extensions should start with **#!/bin/bash**.
     
 - [[here-documents#^INDENTEDLS|Putting whitespace in front of the terminating limit string]] of a [[here-documents#^HEREDOCREF|here document]] will cause unexpected behavior in a script.
     
 - Putting more than one _echo_ statement in a function [[assorted-tips#^RVT|whose output is captured]].
-    
-    |   |
-    |---|
-    |add2 ()
+
+```bash
+add2 ()
 {
   echo "Whatever ... "   # Delete this line!
   let "retval = $1 + $2"
@@ -285,32 +283,32 @@ exit 0|
 #   Sum of 12 and 43 = Whatever ... 
 #   55
 
-#        The "echoes" concatenate.|
+#        The "echoes" concatenate.
+```
     
     This [[assortedtips#^RVTCAUTION|will not work]].
     
 - A script may not **export** variables back to its [[internal-commands-and-builtins#^FORKREF|parent process]], the shell, or to the environment. Just as we learned in biology, a child process can inherit from a parent, but not vice versa.
-    
-    |   |
-    |---|
-    |WHATEVER=/home/bozo
+
+```bash
+WHATEVER=/home/bozo
 export WHATEVER
-exit 0|
-    
-    |   |
-    |---|
-    |bash$ **echo $WHATEVER**
-bash$|
+exit 0
+```
+
+```bash
+bash$ **echo $WHATEVER**
+bash$
+```
     
     Sure enough, back at the command prompt, $WHATEVER remains unset.
     
 - Setting and manipulating variables in a [[subshells#^SUBSHELLSREF|subshell]], then attempting to use those same variables outside the scope of the subshell will result an unpleasant surprise.
     
     **Example 34-2. Subshell Pitfalls**
-    
-    |   |
-    |---|
-    |#!/bin/bash
+
+```bash
+#!/bin/bash
 # Pitfalls of variables in a subshell.
 
 outer_variable=outer
@@ -343,15 +341,15 @@ echo
 exit 0
 
 # What happens if you uncomment lines 19 and 20?
-# Does it make a difference?|
+# Does it make a difference?
+```
     
 - [[special-characters#^PIPEREF|Piping]] **echo** output to a [[internal-commands-and-builtins#^READREF|read]] may produce unexpected results. In this scenario, the **read** acts as if it were running in a subshell. Instead, use the [[internal-commands-and-builtins#^SETREF|set]] command (as in [[internal-commands-and-builtins#^SETPOS|Example 15-18]]).
     
     **Example 34-3. Piping the output of _echo_ to a _read_**
-    
-    |   |
-    |---|
-    |#!/bin/bash
+
+```bash
+#!/bin/bash
 #  badread.sh:
 #  Attempting to use 'echo and 'read'
 #+ to assign variables non-interactively.
@@ -362,7 +360,7 @@ a=aaa
 b=bbb
 c=ccc
 
-echo "one two three" \| read a b c
+echo "one two three" | read a b c
 # Try to reassign a, b, and c.
 
 echo
@@ -401,7 +399,7 @@ b=bbb
 c=ccc
 
 echo; echo
-echo "one two three" \| ( read a b c;
+echo "one two three" | ( read a b c;
 echo "Inside subshell: "; echo "a = $a"; echo "b = $b"; echo "c = $c" )
 # a = one
 # b = two
@@ -413,19 +411,19 @@ echo "b = $b"  # b = bbb
 echo "c = $c"  # c = ccc
 echo
 
-exit 0|
-    
+exit 0
+```
+
     In fact, as Anthony Richardson points out, piping to _any_ loop can cause a similar problem.
-    
-    |   |
-    |---|
-    |# Loop piping troubles.
+
+```bash
+# Loop piping troubles.
 #  This example by Anthony Richardson,
 #+ with addendum by Wilbert Berendsen.
 
 
 foundone=false
-find $HOME -type f -atime +30 -size 100k \|
+find $HOME -type f -atime +30 -size 100k |
 while true
 do
    read f
@@ -467,7 +465,7 @@ fi
 #+ within a code block, so they share the same subshell.
 #  Thank you, W.B.
 
-find $HOME -type f -atime +30 -size 100k \| {
+find $HOME -type f -atime +30 -size 100k | {
      foundone=false
      while read f
      do
@@ -480,17 +478,18 @@ find $HOME -type f -atime +30 -size 100k \| {
      then
        echo "No files need archiving."
      fi
-}|
+}
+```
     
     A lookalike problem occurs when trying to write the stdout of a **tail -f** piped to [[text-processing-commands#^GREPREF|grep]].
     
-    |   |
-    |---|
-    |tail -f /var/log/messages \| grep "$ERROR_MSG" >> error.log
+```bash
+tail -f /var/log/messages | grep "$ERROR_MSG" >> error.log
 #  The "error.log" file will not have anything written to it.
 #  As Samuli Kaipiainen points out, this results from grep
 #+ buffering its output.
-#  The fix is to add the "--line-buffered" parameter to grep.|
+#  The fix is to add the "--line-buffered" parameter to grep.
+```
     
 - Using "suid" commands within scripts is risky, as it may compromise system security. [^1]
     
@@ -501,25 +500,17 @@ find $HOME -type f -atime +30 -size 100k \| {
 - Bash scripts written for Linux or BSD systems may need fixups to run on a commercial UNIX machine. Such scripts often employ the GNU set of commands and filters, which have greater functionality than their generic UNIX counterparts. This is particularly true of such text processing utilites as [[text-processing-commands#^TRREF|tr]].
     
 - Sadly, updates to Bash itself have broken older scripts that [[manipulating-strings#^PARAGRAPHSPACE|used to work perfectly fine]]. Let us recall [[gotchas#^UNDOCF|how risky it is to use undocumented Bash features]].
-    
 
-|   |   |
-|---|---|
-||_
+> Danger is near thee --
+>
+> _Beware, beware, beware, beware._
+>
+> _Many brave hearts are asleep in the deep._
+>
+> _So beware --_
+>
+> _Beware._
+>
+> --<cite>A.J. Lamb and H.W. Petrie</cite>
 
-_Danger is near thee --_
-
-_Beware, beware, beware, beware._
-
-_Many brave hearts are asleep in the deep._
-
-_So beware --_
-
-_Beware._
-
-_--A.J. Lamb and H.W. Petrie_
-
-_|
-
-[[file-test-operators#^SUIDREF|^1]: Setting the [suid]] permission on the script itself has no effect in Linux and most other UNIX flavors.
-
+[^1]: Setting the [[file-test-operators#^SUIDREF|suid]] permission on the script itself has no effect in Linux and most other UNIX flavors.

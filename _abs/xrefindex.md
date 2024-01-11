@@ -803,11 +803,11 @@ Curly brackets {}
 
 [[dev-and-proc#^DEVPROCREF|/dev]] directory
 
-- [[Chapter 31. Of Zeros and Nulls#^DEVNULLREF|/dev/null]] pseudo-device file
+- [[of-zeros-and-nulls#^DEVNULLREF|/dev/null]] pseudo-device file
     
 - [[generate-random-integer#^URANDOMREF|/dev/urandom]] pseudo-device file, generating pseudorandom numbers with
     
-- [[Chapter 31. Of Zeros and Nulls#^ZEROSREF1|/dev/zero]], pseudo-device file
+- [[of-zeros-and-nulls#^ZEROSREF1|/dev/zero]], pseudo-device file
     
 
 [[dev#^DEVFILEREF|Device file]]
@@ -1080,7 +1080,7 @@ Games and amusements
     
 - [[arrays#^POEM|Poem]]
     
-- [[shell-wrapper#^SPEECH00|Speech generation]]
+- [[shell-wrappers#^SPEECH00|Speech generation]]
     
 - [[recursion-without-local-variables#^HANOI|Towers of Hanoi]]
     
@@ -1216,7 +1216,7 @@ Games and amusements
 
 [[special-characters#^CODEBLOCKREF|Inline group]], i.e., code block
 
-[[intandnonint#^IITEST|Interactive script]], test for
+[[interactive-and-non-interactive-shell-and-scripts#^IITEST|Interactive script]], test for
 
 [[io-redirection#^IOREDIRREF|I/O redirection]]
 
@@ -1229,7 +1229,7 @@ Games and amusements
 
 - [[system-and-administrative-commands#^IPTABLES01|Usage example]]
     
-- [[networkprogramming#^IPTABLES02|Example script]]
+- [[network-programming#^IPTABLES02|Example script]]
     
 
 [[loops#^ITERATIONREF|Iteration]]
@@ -1424,7 +1424,7 @@ Loopback devices
 
 [[system-and-administrative-commands#^NETSTATREF|netstat]], Network statistics
 
-[[networkprogramming|Network programming]]
+[[network-programming|Network programming]]
 
 [[text-processing-commands#^NLREF|nl]], a filter to number lines of text
 
@@ -1530,11 +1530,11 @@ Parentheses
 - [[Appendix D. Parsing and Managing Pathnames|Parsing _pathnames_]]
     
 
-[[shell-wrapper#^PERLREF|Perl]], programming language
+[[shell-wrappers#^PERLREF|Perl]], programming language
 
-- [[shell-wrapper#^BASHANDPERL0|Combined]] in the same file with a _Bash_ script
+- [[shell-wrappers#^BASHANDPERL0|Combined]] in the same file with a _Bash_ script
     
-- [[shell-wrapper#^PERLEMB|Embedded]] in a _Bash_ script
+- [[shell-wrappers#^PERLEMB|Embedded]] in a _Bash_ script
     
 
 [[contributed-scripts#^QKY|_Perquackey_-type anagramming game]] (_Quackey_ script)
@@ -1809,7 +1809,7 @@ Raspberry Pi (single-board computer)
     
 - [[local-variables#^LOCVARRECUR|Local variables]]
     
-- [[recursionsct#^SCRIPTRECURSION|Script calling itself recursively]]
+- [[recursion-a-script-calling-itself#^SCRIPTRECURSION|Script calling itself recursively]]
     
 - [[recursion-without-local-variables#^HANOIREF|Towers of Hanoi]]
     
@@ -1965,7 +1965,7 @@ Redirection
 
 [[Part 1. Introduction#^WHATSASCRIPT|Shell script]], definition of
 
-[[shell-wrapper#^SHWRAPPER|Shell wrapper]], script embedding a command or utility
+[[shell-wrappers#^SHWRAPPER|Shell wrapper]], script embedding a command or utility
 
 [[othertypesv#^SHIFTREF|shift]], reassigning _positional parameters_
 
@@ -2099,7 +2099,7 @@ Strings
 
 [[varsubn#^SNGLQUO|_Strong_ quoting]] **' ... '**
 
-[[scrstyle|Stylesheet]] for writing scripts
+[[scripting-with-style|Stylesheet]] for writing scripts
 
 [[subshells#^SUBSHELLSREF|Subshell]]
 
@@ -2123,7 +2123,7 @@ Strings
 
 [[basic-commands#^SYMLINKREF|Symbolic links]]
 
-[[Chapter 31. Of Zeros and Nulls#^SWAPFILEREF|Swapfiles]]
+[[of-zeros-and-nulls#^SWAPFILEREF|Swapfiles]]
 
 * * *
 
@@ -2241,7 +2241,7 @@ Timed input
     
 - [[complex-functions-and-function-complexities#^CAPTURERETVAL|Capturing the return value]] of a function, using _echo_
     
-- [[networkprogramming#^CGISCRIPT|_CGI_ programming]], using scripts for
+- [[network-programming#^CGISCRIPT|_CGI_ programming]], using scripts for
     
 - Comment blocks
     
@@ -2517,7 +2517,7 @@ Word splitting
 - [[command-substitution#^CSWS|Resulting from _command substitution_]]
     
 
-[[shell-wrapper#^SHWRAPPER|Wrapper]], shell
+[[shell-wrappers#^SHWRAPPER|Wrapper]], shell
 
 * * *
 

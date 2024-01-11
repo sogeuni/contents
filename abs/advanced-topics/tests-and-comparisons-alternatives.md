@@ -1,10 +1,11 @@
-# 36.3. Tests and Comparisons: Alternatives
+---
+title: "36.3. Tests and Comparisons: Alternatives"
+---
 
 For tests, the [[test-constructs#^DBLBRACKETS|[[ ]]]] construct may be more appropriate than **[[other-comparison-operators#^ICOMPARISON1| ]**. Likewise, [arithmetic comparisons]] might benefit from the [[double-parentheses-construct.html|(( ))]] construct.
 
-|   |
-|---|
-|a=8
+```bash
+a=8
 
 # All of the comparisons below are equivalent.
 test "$a" -lt 16 && echo "yes, $a < 16"         # "and list"
@@ -22,5 +23,5 @@ test "$city" \< Paris && echo "Yes, Paris is greater than $city"
 [[ $city < Paris ]] && echo "Yes, Paris is greater than $city"
                                   # Need not quote $city.
 
-# Thank you, S.C.|
-
+# Thank you, S.C.
+```

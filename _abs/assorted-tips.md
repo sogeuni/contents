@@ -70,7 +70,7 @@ This is a simplified variant of the [[here-strings#^PREPENDEX|Example 19-13]] sc
 
 - A shell script may act as an embedded command inside another shell script, a _Tcl_ or _wish_ script, or even a [[file-and-archiving-commands#^MAKEFILEREF|Makefile]]. It can be invoked as an external shell command in a C program using the _system()_ call, i.e., _system("script_name");_.
 
-- Setting a variable to the contents of an embedded _sed_ or _awk_ script increases the readability of the surrounding [[shell-wrapper#^SHWRAPPER|shell wrapper]]. See [[contributed-scripts#^MAILFORMAT|Example A-1]] and [[internal-commands-and-builtins#^COLTOTALER3|Example 15-20]].
+- Setting a variable to the contents of an embedded _sed_ or _awk_ script increases the readability of the surrounding [[shell-wrappers#^SHWRAPPER|shell wrapper]]. See [[contributed-scripts#^MAILFORMAT|Example A-1]] and [[internal-commands-and-builtins#^COLTOTALER3|Example 15-20]].
 
 - Put together files containing your favorite and most useful definitions and functions. As necessary, "include" one or more of these "library files" in scripts with either the [[special-characters#^DOTREF|dot]] (**.**) or [[internal-commands-and-builtins#^SOURCEREF|source]] command.
 

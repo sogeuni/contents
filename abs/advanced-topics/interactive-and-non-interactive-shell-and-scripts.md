@@ -1,12 +1,13 @@
-# 36.1. Interactive and non-interactive shells and scripts
+---
+title: 36.1. Interactive and non-interactive shells and scripts
+---
 
 An _interactive_ shell reads commands from user input on a tty. Among other things, such a shell reads startup files on activation, displays a prompt, and enables job control by default. The user can _interact_ with the shell.
 
 A shell running a script is always a non-interactive shell. All the same, the script can still access its tty. It is even possible to emulate an interactive shell in a script.
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 MY_PROMPT='$ '
 while :
 do
@@ -18,7 +19,8 @@ do
 exit 0
 
 # This example script, and much of the above explanation supplied by
-# St�phane Chazelas (thanks again).|
+# Stéphane Chazelas (thanks again).
+```
 
 Let us consider an _interactive_ script to be one that requires input from the user, usually with [[internal-commands-and-builtins#^READREF|read]] statements (see [[internal-commands-and-builtins#^EX36|Example 15-3]]). "Real life" is actually a bit messier than that. For now, assume an interactive script is bound to a tty, a script that a user has invoked from the console or an _xterm_.
 
@@ -28,9 +30,8 @@ Non-interactive scripts can run in the background, but interactive ones hang, wa
 
 If a script needs to test whether it is running in an interactive shell, it is simply a matter of finding whether the _prompt_ variable, [[internal-variables#^PS1REF|$PS1]] is set. (If the user is being prompted for input, then the script needs to display a prompt.)
 
-|   |
-|---|
-|if [ -z $PS1 ] # no prompt?
+```bash
+if [ -z $PS1 ] # no prompt?
 ### if [ -v PS1 ]   # On Bash 4.2+ ...
 then
   # non-interactive
@@ -38,24 +39,24 @@ then
 else
   # interactive
   ...
-fi|
+fi
+```
 
 Alternatively, the script can test for the presence of option "i" in the [[internal-variables#^FLPREF|$-]] flag.
 
-|   |
-|---|
-|case $- in
+```bash
+case $- in
 *i*)    # interactive shell
 ;;
 *)      # non-interactive shell
 ;;
-# (Courtesy of "UNIX F.A.Q.," 1993)|
+# (Courtesy of "UNIX F.A.Q.," 1993)
+```
 
 However, John Lange describes an alternative method, using the [[file-test-operators#^TERMTEST|-t _test_ operator]].
 
-|   |
-|---|
-|# Test for a terminal!
+```bash
+# Test for a terminal!
 
 fd=0   # stdin
 
@@ -74,14 +75,12 @@ fi
 #    but fails when you invoke the command remotely via ssh.
 #    So for a true test you also have to test for a socket.
 
-if [[ -t "$fd" \| -p /dev/stdin ]]
+if [[ -t "$fd" | -p /dev/stdin ]]
 then
   echo interactive
 else
   echo non-interactive
-fi|
+fi
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Scripts may be forced to run in interactive mode with the -i option or with a **#!/bin/bash -i** header. Be aware that this can cause erratic script behavior or show error messages even when no error is present.|
-
+> [!note] Scripts may be forced to run in interactive mode with the -i option or with a **#!/bin/bash -i** header. Be aware that this can cause erratic script behavior or show error messages even when no error is present.

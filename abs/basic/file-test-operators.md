@@ -86,7 +86,7 @@ file is a [[dev#^SOCKETREF|socket]]
 
 file ([[io-redirection#^FDREF|descriptor]]) is associated with a terminal device
 
-This test option [[intandnonint#^II2TEST|may be used to check]] whether the stdin **[ -t 0 ]** or stdout **[ -t 1 ]** in a given script is a terminal.
+This test option [[interactive-and-non-interactive-shell-and-scripts#^II2TEST|may be used to check]] whether the stdin **[ -t 0 ]** or stdout **[ -t 1 ]** in a given script is a terminal.
 
 -r
 

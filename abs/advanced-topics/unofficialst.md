@@ -1,10 +1,11 @@
-# 35.1. Unofficial Shell Scripting Stylesheet
+---
+title 35.1. Unofficial Shell Scripting Stylesheet
+---
 
 - Comment your code. This makes it easier for others to understand (and appreciate), and easier for you to maintain.
-    
-    |   |
-    |---|
-    |PASS="$PASS${MATRIX:$(($RANDOM%${#MATRIX})):1}"
+
+```bash
+PASS="$PASS${MATRIX:$(($RANDOM%${#MATRIX})):1}"
 #  It made perfect sense when you wrote it last year,
 #+ but now it's a complete mystery.
 #  (From Antek Sawicki's "pw.sh" script.)|
@@ -46,13 +47,13 @@ cleanup_pfiles ()
 
 cleanup_pfiles $projectdir
 
-exit $?|
+exit $?
+```
     
 - Avoid using "magic numbers," [^1] that is, "hard-wired" literal constants. Use meaningful variable names instead. This makes the script easier to understand and permits making changes and updates without breaking the application.
-    
-    |   |
-    |---|
-    |if [ -f /var/log/messages ]
+
+```bash
+if [ -f /var/log/messages ]
 then
   ...
 fi
@@ -65,13 +66,13 @@ LOGFILE=/var/log/messages  # Only line that needs to be changed.
 if [ -f "$LOGFILE" ]
 then
   ...
-fi|
+fi
+```
     
 - Choose descriptive names for variables and functions.
-    
-    |   |
-    |---|
-    |fl=`ls -al $dirname`                 # Cryptic.
+
+```bash
+fl=`ls -al $dirname`                 # Cryptic.
 file_listing=`ls -al $dirname`       # Better.
 
 
@@ -108,16 +109,17 @@ echo $favorite_number
 
 _uservariable=23                     # Permissible, but not recommended.
 # It's better for user-defined variables not to start with an underscore.
-# Leave that for system variables.|
+# Leave that for system variables.
+```
     
 - Use [[exit-status#^EXITCOMMANDREF|exit codes]] in a systematic and meaningful way.
-    
-    |   |
-    |---|
-    |E_WRONG_ARGS=95
+
+```bash
+E_WRONG_ARGS=95
 ...
 ...
-exit $E_WRONG_ARGS|
+exit $E_WRONG_ARGS
+```
     
     See also [[exitcodes.html|Appendix E]].
     
@@ -125,9 +127,7 @@ exit $E_WRONG_ARGS|
     
 - Use standardized parameter flags for script invocation. _Ender_ proposes the following set of flags.
     
-    |   |
-    |---|
-    |-a      All: Return all information (including hidden file info).
+-a      All: Return all information (including hidden file info).
 -b      Brief: Short version, usually for other scripts.
 -c      Copy, concatenate, etc.
 -d      Daily: Use information from the whole day, and not merely
@@ -142,35 +142,28 @@ exit $E_WRONG_ARGS|
 -s      Setup & File Maintenance: Config files for this script.
 -u      Usage: List of invocation flags for the script.
 -v      Verbose: Human readable output, more or less formatted.
--V      Version / License / Copy(right\|left) / Contribs (email too).|
+-V      Version / License / Copy(right|left) / Contribs (email too).
     
     See also [[standard-options.html|Section G.1]].
     
 - Break complex scripts into simpler modules. Use functions where appropriate. See [[bash-ver2#^CARDS|Example 37-4]].
     
 - Don't use a complex construct where a simpler one will do.
-    
-    |   |
-    |---|
-    |COMMAND
+
+```bash
+COMMAND
 if [ $? -eq 0 ]
 ...
 # Redundant and non-intuitive.
 
 if COMMAND
 ...
-# More concise (if perhaps not quite as legible).|
-    
+# More concise (if perhaps not quite as legible).
+```
 
-|   |   |
-|---|---|
-||_
+> ... reading the UNIX source code to the Bourne shell (/bin/sh). I was shocked at how much simple algorithms could be made cryptic, and therefore useless, by a poor choice of code style. I asked myself, "Could someone be proud of this code?"
+>
+> --<cite>Landon Noll</cite>
 
-_... reading the UNIX source code to the Bourne shell (/bin/sh). I was shocked at how much simple algorithms could be made cryptic, and therefore useless, by a poor choice of code style. I asked myself, "Could someone be proud of this code?"_
-
-_--Landon Noll_
-
-_|
-
-[[starting-off-with-a-sha-bang#^MAGNUMREF|^1]: In this context, "magic numbers" have an entirely different meaning than the [magic numbers]] used to designate file types.
+[^1]: In this context, "magic numbers" have an entirely different meaning than the [[starting-off-with-a-sha-bang#^MAGNUMREF|magic numbers]] used to designate file types.
 

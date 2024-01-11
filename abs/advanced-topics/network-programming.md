@@ -1,14 +1,10 @@
-# Chapter 30. Network Programming
+---
+title: 30. Network Programming
+---
 
-|   |   |
-|---|---|
-||_
-
-_The Net's a cross between an elephant and a white elephant sale: it never forgets, and it's always crap._
-
-_--Nemo_
-
-_|
+> The Net's a cross between an elephant and a white elephant sale: it never forgets, and it's always crap.
+>
+> --<cite>Nemo</cite>
 
 A Linux system has quite a number of tools for accessing, manipulating, and troubleshooting network connections. We can incorporate some of these tools into scripts -- scripts that expand our knowledge of networking, useful scripts that can facilitate the administration of a network.
 
@@ -16,9 +12,8 @@ Here is a simple CGI script that demonstrates connecting to a remote server.
 
 **Example 30-1. Print the server environment**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # test-cgi.sh
 # by Michael Zick
 # Used with permission
@@ -82,15 +77,15 @@ exit 0
 1) Drop this in your http://domain.name/cgi-bin directory.
 2) Then, open http://domain.name/cgi-bin/test-cgi.sh.
 
-_test_CGI_|
+_test_CGI_
+```
 
 For security purposes, it may be helpful to identify the IP addresses a computer is accessing.
 
 **Example 30-2. IP addresses**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ip-addresses.sh
 # List the IP addresses your computer is connected to.
 
@@ -110,8 +105,8 @@ lsof_args=-ni     # -i lists Internet-associated files.
 router="[0-9][0-9][0-9][0-9][0-9]->"
 #       Delete the router info.
 
-lsof "$lsof_args" \| grep $connection_type \| grep -v "$no_match" \|
-      awk '{print $9}' \| cut -d : -f $field \| sort \| uniq \|
+lsof "$lsof_args" | grep $connection_type | grep -v "$no_match" |
+      awk '{print $9}' | cut -d : -f $field | sort | uniq |
       sed s/"^$router"//
 
 #  Bledsoe's script assigns the output of a filtered IP list,
@@ -127,43 +122,18 @@ lsof "$lsof_args" \| grep $connection_type \| grep -v "$no_match" \|
 #  Exercise:
 #  --------
 #  Use the 'iptables' command to extend this script
-#+ to reject connection attempts from well-known spammer IP domains.|
+#+ to reject connection attempts from well-known spammer IP domains.
+```
 
 More examples of network programming:
 
-1. [Getting the time from _nist.gov_](devref1.html#NPREF)
-    
-2. [Downloading a URL](devref1.html#NW001)
-    
-3. [A GRE tunnel](system.html#IPSCRIPT0)
-    
-4. [Checking if an Internet server is up](communications.html#PING0)
-    
-5. [Example 16-41](communications.html#ISSPAMMER)
-    
-6. [Example A-28](contributed-scripts.html#ISSPAMMER2)
-    
-7. [Example A-29](contributed-scripts.html#WHX)
-    
-8. [Example 29-1](devref1.html#DEVTCP)
-    
-
-See also the [networking commands](system.html#NETWORKSYS1) in the [System and Administrative Commands](system.html) chapter and the [communications commands](communications.html) in the [[Chapter 16. External Filters, Programs and Commands|External Filters, Programs and Commands]] chapter.
-[devref1#^NPREF|Getting the time from _nist.gov_]]
-    
+1. [[dev#^NPREF|Getting the time from _nist.gov_]]
 2. [[dev#^NW001|Downloading a URL]]
-    
 3. [[system-and-administrative-commands#^IPSCRIPT0|A GRE tunnel]]
-    
 4. [[communications-commands#^PING0|Checking if an Internet server is up]]
-    
 5. [[communications-commands#^ISSPAMMER|Example 16-41]]
-    
 6. [[contributed-scripts#^ISSPAMMER2|Example A-28]]
-    
 7. [[contributed-scripts#^WHX|Example A-29]]
-    
 8. [[dev#^DEVTCP|Example 29-1]]
-    
 
 See also the [[system-and-administrative-commands#^NETWORKSYS1|networking commands]] in the [[system.html|System and Administrative Commands]] chapter and the [[communications-commands.html|communications commands]] in the [[external-filters-programs-and-commands|External Filters, Programs and Commands]] chapter.

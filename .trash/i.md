@@ -72,13 +72,13 @@ For Anita, the source of all the magic
 * [[arrays]]
 * [[indirect-references]]
 * [[dev-and-proc]]
-* [[networkprogramming]]
-* [[Chapter 31. Of Zeros and Nulls]]
+* [[network-programming]]
+* [[of-zeros-and-nulls]]
 * [[debugging]]
 * [[options]]
 * [[gotchas]]
-* [[scrstyle]]
-* [[Chapter 36. Miscellany]]
+* [[scripting-with-style]]
+* [[miscellany]]
 * [[Chapter 37. Bash, versions 2, 3, and 4]]
 
 [[Chapter 38. Endnotes]]
@@ -704,15 +704,15 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 29-4. [[proc#^CONSTAT|On-line connect status]]
 
-30-1. [[networkprogramming#^TESTCGI|Print the server environment]]
+30-1. [[network-programming#^TESTCGI|Print the server environment]]
 
-30-2. [[networkprogramming#^IPADDRESSES|IP addresses]]
+30-2. [[network-programming#^IPADDRESSES|IP addresses]]
 
-31-1. [[Chapter 31. Of Zeros and Nulls#^COOKIES|Hiding the cookie jar]]
+31-1. [[of-zeros-and-nulls#^COOKIES|Hiding the cookie jar]]
 
-31-2. [[Chapter 31. Of Zeros and Nulls#^EX73|Setting up a swapfile using /dev/zero]]
+31-2. [[of-zeros-and-nulls#^EX73|Setting up a swapfile using /dev/zero]]
 
-31-3. [[Chapter 31. Of Zeros and Nulls#^RAMDISK|Creating a ramdisk]]
+31-3. [[of-zeros-and-nulls#^RAMDISK|Creating a ramdisk]]
 
 32-1. [[debugging#^EX74|A buggy script]]
 
@@ -756,11 +756,11 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 36-9. [[wrapper#^SPEECH0|A script that speaks]]
 
-36-10. [[recursionsct#^RECURSE|A (useless) script that recursively calls itself]]
+36-10. [[recursion-a-script-calling-itself#^RECURSE|A (useless) script that recursively calls itself]]
 
-36-11. [[recursionsct#^PBOOK|A (useful) script that recursively calls itself]]
+36-11. [[recursion-a-script-calling-itself#^PBOOK|A (useful) script that recursively calls itself]]
 
-36-12. [[recursionsct#^USRMNT|Another (useful) script that recursively calls itself]]
+36-12. [[recursion-a-script-calling-itself#^USRMNT|Another (useful) script that recursively calls itself]]
 
 36-13. [[colorizing#^EX30A|A "colorized" address database]]
 

@@ -1,8 +1,12 @@
+---
+title: 31. Of Zeros and Nulls
+---
+
 > Faultily faultless, icily regular, splendidly null
 >
 > Dead perfection; no more.
 >
->_--<cite>Alfred Lord Tennyson</cite>
+> --<cite>Alfred Lord Tennyson</cite>
 
 **/dev/zero ... /dev/null**
 
@@ -12,21 +16,21 @@ Think of /dev/null as a _black hole_. It is essentially the equivalent of a writ
 
 Suppressing stdout.
 
-```
+```bash
 cat $filename >/dev/null
 # Contents of the file will not list to stdout.
 ```
 
 Suppressing stderr (from [[complex-commands#^EX57|Example 16-3]]).
 
-```
+```bash
 rm $badname 2>/dev/null
 #           So error messages [stderr] deep-sixed.
 ```
 
 Suppressing output from _both_ stdout and stderr.
 
-```
+```bash
 cat $filename 2>/dev/null >/dev/null
 # If "$filename" does not exist, there will be no error message output.
 # If "$filename" does exist, the contents of the file will not list to stdout.
@@ -41,7 +45,7 @@ cat $filename 2>/dev/null >/dev/null
 
 Deleting contents of a file, but preserving the file itself, with all attendant permissions (from [[starting-off-with-a-sha-bang#^EX1|Example 2-1]] and [[starting-off-with-a-sha-bang#^EX2|Example 2-3]]):
 
-```
+```bash
 cat /dev/null > /var/log/messages
 #  : > /var/log/messages   has same effect, but does not spawn a new process.
 
@@ -52,7 +56,7 @@ Automatically emptying the contents of a logfile (especially good for dealing wi
 
 **Example 31-1. Hiding the cookie jar**
 
-```
+```bash
 # Obsolete Netscape browser.
 # Same principle applies to newer browsers.
 
@@ -71,7 +75,7 @@ Like /dev/null, /dev/zero is a pseudo-device file, but it actually produces a st
 
 **Example 31-2. Setting up a swapfile using /dev/zero**
 
-```
+```bash
 #!/bin/bash
 # Creating a swap file.
 
@@ -141,7 +145,7 @@ Another application of /dev/zero is to "zero out" a file of a designated size fo
 
 **Example 31-3. Creating a ramdisk**
 
-```
+```bash
 #!/bin/bash
 # ramdisk.sh
 

@@ -235,7 +235,7 @@ Of historical interest are Colin Needham's _original International Movie Databas
 
 ---
 
-Fritz Mehner has written a [bash-support plugin](http://vim.sourceforge.net/scripts/script.php?script_id=365) for the _vim_ text editor. He has also also come up with his own [stylesheet for Bash](http://lug.fh-swf.de/vim/vim-bash/StyleGuideShell.en.pdf). Compare it with the [[unofficialst|ABS Guide Unofficial Stylesheet]].
+Fritz Mehner has written a [bash-support plugin](http://vim.sourceforge.net/scripts/script.php?script_id=365) for the _vim_ text editor. He has also also come up with his own [stylesheet for Bash](http://lug.fh-swf.de/vim/vim-bash/StyleGuideShell.en.pdf). Compare it with the [[unofficial-shell-scripting-stylesheet|ABS Guide Unofficial Stylesheet]].
 
 ---
 

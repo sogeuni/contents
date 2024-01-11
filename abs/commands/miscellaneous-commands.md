@@ -591,7 +591,7 @@ exit $?
 # 3) Have script sutodetect image file (*img) in $PWD.
 ```
 
-Other applications of **dd** include initializing temporary swap files ([[Chapter 31. Of Zeros and Nulls#^EX73|Example 31-2]]) and ramdisks ([[Chapter 31. Of Zeros and Nulls#^RAMDISK|Example 31-3]]). It can even do a low-level copy of an entire hard drive partition, although this is not necessarily recommended.
+Other applications of **dd** include initializing temporary swap files ([[of-zeros-and-nulls#^EX73|Example 31-2]]) and ramdisks ([[of-zeros-and-nulls#^RAMDISK|Example 31-3]]). It can even do a low-level copy of an entire hard drive partition, although this is not necessarily recommended.
 
 People (with presumably nothing better to do with their time) are constantly thinking of interesting applications of **dd**.
 

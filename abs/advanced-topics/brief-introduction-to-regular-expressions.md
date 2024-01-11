@@ -80,7 +80,7 @@ This is the only instance of line 2.
 >  This line contains the number 113312312.    # Match.
 > ```
 
-- **Extended REs.** Additional metacharacters added to the basic set. Used in [[text-processing-commands#^EGREPREF|egrep]], [[C.2. Awk#^AWKREF|awk]], and [[shell-wrapper#^PERLREF|Perl]].
+- **Extended REs.** Additional metacharacters added to the basic set. Used in [[text-processing-commands#^EGREPREF|egrep]], [[C.2. Awk#^AWKREF|awk]], and [[shell-wrappers#^PERLREF|Perl]].
     
 - The question mark -- ? -- matches zero or one of the previous RE. It is generally used for matching single characters.
     
@@ -180,7 +180,7 @@ bash$ **ls -l ?[[:digit:]][[:digit:]]?**
     POSIX character classes are used in [[text-processing-commands#^EX49|Example 16-21]] and [[text-processing-commands#^LOWERCASE|Example 16-22]].
     
 
-[[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|Sed]], [[C.2. Awk#^AWKREF|awk]], and [[shell-wrapper#^PERLREF|Perl]], used as filters in scripts, take REs as arguments when "sifting" or transforming files or I/O streams. See [[contributed-scripts#^BEHEAD|Example A-12]] and [[contributed-scripts#^TREE|Example A-16]] for illustrations of this.
+[[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|Sed]], [[C.2. Awk#^AWKREF|awk]], and [[shell-wrappers#^PERLREF|Perl]], used as filters in scripts, take REs as arguments when "sifting" or transforming files or I/O streams. See [[contributed-scripts#^BEHEAD|Example A-12]] and [[contributed-scripts#^TREE|Example A-16]] for illustrations of this.
 
 The standard reference on this complex topic is Friedl's _Mastering Regular Expressions_. _Sed & Awk_, by Dougherty and Robbins, also gives a very lucid treatment of REs. See the [[bibliography|_Bibliography_]] for more information on these books.
 
