@@ -110,7 +110,7 @@ DISKS=${1:-E_NOPARAM}   # Must specify how many disks.
 
 See also [[special-characters#^EX58|Example 3-4]], [[zeros#^EX73|Example 31-2]], and [[contributed-scripts#^COLLATZ|Example A-6]].
 
-Compare this method with [[list-cons#^ANDDEFAULT|using an _and list_ to supply a default command-line argument]].
+Compare this method with [[list-constructs#^ANDDEFAULT|using an _and list_ to supply a default command-line argument]].
 
 **${parameter=default}**, **${parameter:=default}**
 

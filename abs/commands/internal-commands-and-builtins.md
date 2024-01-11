@@ -249,7 +249,7 @@ See also [[assorted-tips#^PROGRESSBAR|Example 36-17]].
 
 **read**
 
-"Reads" the value of a variable from stdin, that is, interactively fetches input from the keyboard. The -a option lets **read** get array variables (see [[Chapter 27. Arrays#^EX67|Example 27-6]]).
+"Reads" the value of a variable from stdin, that is, interactively fetches input from the keyboard. The -a option lets **read** get array variables (see [[arrays#^EX67|Example 27-6]]).
 
 **Example 15-3. Variable assignment, using _read_**
 
@@ -1074,9 +1074,9 @@ Here is another example of using _eval_ to _evaluate_ a complex expression, this
 eval ${1}+=\"${x} ${y} \"
 ```
 
-[[contributed-scripts#^SAMORSE|Example A-53]] uses _eval_ to convert [[Chapter 27. Arrays#^ARRAYREF|array]] elements into a command list.
+[[contributed-scripts#^SAMORSE|Example A-53]] uses _eval_ to convert [[arrays#^ARRAYREF|array]] elements into a command list.
 
-The _eval_ command occurs in the older version of [[ivr#^IVRREF|indirect referencing]].
+The _eval_ command occurs in the older version of [[indirect-references#^IVRREF|indirect referencing]].
 
 ```bash
 eval var=\$$var

@@ -151,7 +151,7 @@ More examples of network programming:
 See also the [networking commands](system.html#NETWORKSYS1) in the [System and Administrative Commands](system.html) chapter and the [communications commands](communications.html) in the [[Chapter 16. External Filters, Programs and Commands|External Filters, Programs and Commands]] chapter.
 [devref1#^NPREF|Getting the time from _nist.gov_]]
     
-2. [[devref1#^NW001|Downloading a URL]]
+2. [[dev#^NW001|Downloading a URL]]
     
 3. [[system-and-administrative-commands#^IPSCRIPT0|A GRE tunnel]]
     
@@ -163,7 +163,7 @@ See also the [networking commands](system.html#NETWORKSYS1) in the [System and A
     
 7. [[contributed-scripts#^WHX|Example A-29]]
     
-8. [[devref1#^DEVTCP|Example 29-1]]
+8. [[dev#^DEVTCP|Example 29-1]]
     
 
 See also the [[system-and-administrative-commands#^NETWORKSYS1|networking commands]] in the [[system.html|System and Administrative Commands]] chapter and the [[communications-commands.html|communications commands]] in the [[external-filters-programs-and-commands|External Filters, Programs and Commands]] chapter.

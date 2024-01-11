@@ -698,7 +698,7 @@ See also the [[Bibliography#^DDLINK|dd thread]] entry in the [[bibliography.md#^
 
 **od**
 
-The **od**, or _octal dump_ filter converts input (or files) to octal (base-8) or other bases. This is useful for viewing or processing binary data files or otherwise unreadable system [[devref1#^DEVFILEREF|device files]], such as /dev/urandom, and as a filter for binary data.
+The **od**, or _octal dump_ filter converts input (or files) to octal (base-8) or other bases. This is useful for viewing or processing binary data files or otherwise unreadable system [[dev#^DEVFILEREF|device files]], such as /dev/urandom, and as a filter for binary data.
 
 ```bash
 head -c4 /dev/urandom | od -N4 -tu4 | sed -ne '1s/.* //p'

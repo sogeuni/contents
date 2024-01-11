@@ -137,7 +137,7 @@ echo "Swap file created and activated."
 exit $retcode
 ```
 
-Another application of /dev/zero is to "zero out" a file of a designated size for a special purpose, such as mounting a filesystem on a [[devref1#^LOOPBACKREF|loopback device]] (see [[system-and-administrative-commands#^CREATEFS|Example 17-8]]) or "securely" deleting a file (see [[miscellaneous-commands#^BLOTOUT|Example 16-61]]).
+Another application of /dev/zero is to "zero out" a file of a designated size for a special purpose, such as mounting a filesystem on a [[dev#^LOOPBACKREF|loopback device]] (see [[system-and-administrative-commands#^CREATEFS|Example 17-8]]) or "securely" deleting a file (see [[miscellaneous-commands#^BLOTOUT|Example 16-61]]).
 
 **Example 31-3. Creating a ramdisk**
 

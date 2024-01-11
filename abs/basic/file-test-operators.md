@@ -16,7 +16,7 @@ This is identical in effect to -e. It has been "deprecated," [^1] and its use is
 
 -f
 
-file is a _regular_ file (not a directory or [[devref1#^DEVFILEREF|device file]])
+file is a _regular_ file (not a directory or [[dev#^DEVFILEREF|device file]])
 
 -s
 
@@ -28,11 +28,11 @@ file is a directory
 
 -b
 
-file is a [[devref1#^BLOCKDEVREF|block device]]
+file is a [[dev#^BLOCKDEVREF|block device]]
 
 -c
 
-file is a [[devref1#^CHARDEVREF|character device]]
+file is a [[dev#^CHARDEVREF|character device]]
 
 ```bash
 device0="/dev/sda2"    # /   (root directory)
@@ -80,7 +80,7 @@ file is a symbolic link
 
 -S
 
-file is a [[devref1#^SOCKETREF|socket]]
+file is a [[dev#^SOCKETREF|socket]]
 
 -t
 

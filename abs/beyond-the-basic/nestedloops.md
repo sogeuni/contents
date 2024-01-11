@@ -37,4 +37,4 @@ done
 exit 0
 ```
 
-See [[Chapter 27. Arrays#^BUBBLE|Example 27-11]] for an illustration of nested [[loops#^WHILELOOPREF|while loops]], and [[Chapter 27. Arrays#^EX68|Example 27-13]] to see a while loop nested inside an [[loops#^UNTILLOOPREF|until loop]].
+See [[arrays#^BUBBLE|Example 27-11]] for an illustration of nested [[loops#^WHILELOOPREF|while loops]], and [[arrays#^EX68|Example 27-13]] to see a while loop nested inside an [[loops#^UNTILLOOPREF|until loop]].

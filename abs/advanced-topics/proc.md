@@ -1,10 +1,11 @@
-# 29.2. /proc
+---
+title: 29.2. /proc
+---
 
 The /proc directory is actually a pseudo-filesystem. The files in /proc mirror currently running system and kernel [[special-characters#^PROCESSREF|processes]] and contain information and statistics about them.
 
-|   |
-|---|
-|bash$ **cat /proc/devices**
+```bash
+bash$ cat /proc/devices
 Character devices:
    1 mem
    2 pty
@@ -27,7 +28,9 @@ Character devices:
    3 ide0
    9 md
 
-bash$ **cat /proc/interrupts**
+
+
+bash$ cat /proc/interrupts
            CPU0       
    0:      84505          XT-PIC  timer
    1:       3375          XT-PIC  keyboard
@@ -39,7 +42,8 @@ bash$ **cat /proc/interrupts**
  NMI:          0 
  ERR:          0
 
-bash$ **cat /proc/partitions**
+
+bash$ cat /proc/partitions
 major minor  #blocks  name     rio rmerge rsect ruse wio wmerge wsect wuse running use aveq
 
     3     0    3007872 hda 4472 22260 114520 94240 3551 18703 50384 549710 0 111550 644030
@@ -48,13 +52,19 @@ major minor  #blocks  name     rio rmerge rsect ruse wio wmerge wsect wuse runni
     3     4     165280 hda4 10 0 20 210 0 0 0 0 0 210 210
     ...
 
-bash$ **cat /proc/loadavg**
+
+
+bash$ cat /proc/loadavg
 0.13 0.42 0.27 2/44 1119
 
-bash$ **cat /proc/apm**
+
+
+bash$ cat /proc/apm
 1.16 1.2 0x03 0x01 0xff 0x80 -1% -1 ?
 
-bash$ **cat /proc/acpi/battery/BAT0/info**
+
+
+bash$ cat /proc/acpi/battery/BAT0/info
 present:                 yes
  design capacity:         43200 mWh
  last full capacity:      36640 mWh
@@ -71,25 +81,26 @@ present:                 yes
  
  
  
-bash$ **fgrep Mem /proc/meminfo**
+bash$ fgrep Mem /proc/meminfo
 MemTotal:       515216 kB
- MemFree:        266248 kB|
+ MemFree:        266248 kB
+         
+```
 
 Shell scripts may extract data from certain of the files in /proc. [^1]
 
-|   |
-|---|
-|FS=iso                       # ISO filesystem support in kernel?
+```bash
+FS=iso                       # ISO filesystem support in kernel?
 
-grep $FS /proc/filesystems   # iso9660|
+grep $FS /proc/filesystems   # iso9660
+```
 
-|   |
-|---|
-|kernel_version=$( awk '{ print $3 }' /proc/version )|
+```bash
+kernel_version=$( awk '{ print $3 }' /proc/version )
+```
 
-|   |
-|---|
-|CPU=$( awk '/model name/ {print $5}' < /proc/cpuinfo )
+```bash
+CPU=$( awk '/model name/ {print $5}' < /proc/cpuinfo )
 
 if [ "$CPU" = "Pentium(R)" ]
 then
@@ -102,27 +113,27 @@ fi
 
 
 
-cpu_speed=$( fgrep "cpu MHz" /proc/cpuinfo \| awk '{print $4}' )
+cpu_speed=$( fgrep "cpu MHz" /proc/cpuinfo | awk '{print $4}' )
 #  Current operating speed (in MHz) of the cpu on your machine.
 #  On a laptop this may vary, depending on use of battery
-#+ or AC power.|
+#+ or AC power.
+```
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # get-commandline.sh
 # Get the command-line parameters of a process.
 
 OPTION=cmdline
 
 # Identify PID.
-pid=$( echo $(pidof "$1") \| awk '{ print $1 }' )
+pid=$( echo $(pidof "$1") | awk '{ print $1 }' )
 # Get only first            ^^^^^^^^^^^^^^^^^^ of multiple instances.
 
 echo
 echo "Process ID of (first instance of) "$1" = $pid"
 echo -n "Command-line arguments: "
-cat /proc/"$pid"/"$OPTION" \| xargs -0 echo
+cat /proc/"$pid"/"$OPTION" | xargs -0 echo
 #   Formats output:        ^^^^^^^^^^^^^^^
 #   (Thanks, Han Holl, for the fixup!)
 
@@ -130,46 +141,46 @@ echo; echo
 
 
 # For example:
-# sh get-commandline.sh xterm|
+# sh get-commandline.sh xterm
+```
 
 +
 
-|   |
-|---|
-|devfile="/proc/bus/usb/devices"
+```bash
+devfile="/proc/bus/usb/devices"
 text="Spd"
 USB1="Spd=12"
 USB2="Spd=480"
 
 
-bus_speed=$(fgrep -m 1 "$text" $devfile \| awk '{print $9}')
+bus_speed=$(fgrep -m 1 "$text" $devfile | awk '{print $9}')
 #                 ^^^^ Stop after first match.
 
 if [ "$bus_speed" = "$USB1" ]
 then
   echo "USB 1.1 port found."
   # Do something appropriate for USB 1.1.
-fi|
+fi
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|It is even possible to control certain peripherals with commands sent to the /proc directory.
-
-\|   \|
-\|---\|
-\|root# **echo on > /proc/acpi/ibm/light**\|
-
-This turns on the _Thinklight_ in certain models of IBM/Lenovo Thinkpads. (May not work on all Linux distros.)
-
-Of course, caution is advised when writing to /proc.|
+> [!note]
+> It is even possible to control certain peripherals with commands sent to the /proc directory.
+>
+> ```bash
+	  root# echo on > /proc/acpi/ibm/light
+          
+> ```
+>
+> This turns on the _Thinklight_ in certain models of IBM/Lenovo Thinkpads. (May not work on all Linux distros.)
+>
+> Of course, caution is advised when writing to /proc.
 
 The /proc directory contains subdirectories with unusual numerical names. Every one of these names maps to the [[internal-variables#^PPIDREF|process ID]] of a currently running process. Within each of these subdirectories, there are a number of files that hold useful information about the corresponding process. The stat and status files keep running statistics on the process, the cmdline file holds the command-line arguments the process was invoked with, and the exe file is a symbolic link to the complete path name of the invoking process. There are a few more such files, but these seem to be the most interesting from a scripting standpoint.
 
 **Example 29-3. Finding the process associated with a PID**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # pid-identifier.sh:
 # Gives complete path name to process associated with pid.
 
@@ -186,12 +197,12 @@ then
   exit $E_WRONGARGS
 fi  
 
-pidno=$( ps ax \| grep $1 \| awk '{ print $1 }' \| grep $1 )
+pidno=$( ps ax | grep $1 | awk '{ print $1 }' | grep $1 )
 # Checks for pid in "ps" listing, field #1.
 # Then makes sure it is the actual process, not the process invoked by this script.
 # The last "grep $1" filters out this possibility.
 #
-#    pidno=$( ps ax \| awk '{ print $1 }' \| grep $1 )
+#    pidno=$( ps ax | awk '{ print $1 }' | grep $1 )
 #    also works, as Teemu Huovila, points out.
 
 if [ -z "$pidno" ]  #  If, after all the filtering, the result is a zero-length string,
@@ -227,8 +238,8 @@ fi
 
 
 
-exe_file=$( ls -l /proc/$1 \| grep "exe" \| awk '{ print $11 }' )
-# Or       exe_file=$( ls -l /proc/$1/exe \| awk '{print $11}' )
+exe_file=$( ls -l /proc/$1 | grep "exe" | awk '{ print $11 }' )
+# Or       exe_file=$( ls -l /proc/$1/exe | awk '{print $11}' )
 #
 #  /proc/pid-number/exe is a symbolic link
 #+ to the complete path name of the invoking process.
@@ -242,24 +253,24 @@ fi
 
 
 #  This elaborate script can *almost* be replaced by
-#       ps ax \| grep $1 \| awk '{ print $5 }'
+#       ps ax | grep $1 | awk '{ print $5 }'
 #  However, this will not work...
 #+ because the fifth field of 'ps' is argv[0] of the process,
 #+ not the executable file path.
 #
 # However, either of the following would work.
 #       find /proc/$1/exe -printf '%l\n'
-#       lsof -aFn -p $1 -d txt \| sed -ne 's/^n//p'
+#       lsof -aFn -p $1 -d txt | sed -ne 's/^n//p'
 
 # Additional commentary by Stephane Chazelas.
 
-exit 0|
+exit 0
+```
 
 **Example 29-4. On-line connect status**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # connect-stat.sh
 #  Note that this script may need modification
 #+ to work with a wireless connection.
@@ -269,7 +280,7 @@ PROCFILENAME=status  # Where to look.
 NOTCONNECTED=85
 INTERVAL=2           # Update every 2 seconds.
 
-pidno=$( ps ax \| grep -v "ps ax" \| grep -v grep \| grep $PROCNAME \|
+pidno=$( ps ax | grep -v "ps ax" | grep -v grep | grep $PROCNAME |
 awk '{ print $1 }' )
 
 # Finding the process number of 'pppd', the 'ppp daemon'.
@@ -301,8 +312,8 @@ do
 #   exit $NOTCONNECTED
   fi
 
-netstat -s \| grep "packets received"  # Get some connect statistics.
-netstat -s \| grep "packets delivered"
+netstat -s | grep "packets received"  # Get some connect statistics.
+netstat -s | grep "packets delivered"
 
 
   sleep $INTERVAL
@@ -318,11 +329,10 @@ exit 0
 #    ---------
 #    Improve the script so it exits on a "q" keystroke.
 #    Make the script more user-friendly in other ways.
-#    Fix the script to work with wireless/DSL connections.|
+#    Fix the script to work with wireless/DSL connections.
+```
 
-|   |   |
-|---|---|
-|![[../images/warning.gif|Warning]]|In general, it is dangerous to _write_ to the files in /proc, as this can corrupt the filesystem or crash the machine.|
+> [!warning]
+> In general, it is dangerous to _write_ to the files in /proc, as this can corrupt the filesystem or crash the machine.
 
-[[system-and-administrative-commands#^PROCINFOREF|^1]: Certain system commands, such as [procinfo]], [[system-and-administrative-commands#^FREEREF|free]], [[system-and-administrative-commands#^VMSTATREF|vmstat]], [[system-and-administrative-commands#^LSDEVREF|lsdev]], and [[system-and-administrative-commands#^UPTIMEREF|uptime]] do this as well.
-
+[^1]: Certain system commands, such as [[system-and-administrative-commands#^PROCINFOREF|procinfo]], [[system-and-administrative-commands#^FREEREF|free]], [[system-and-administrative-commands#^VMSTATREF|vmstat]], [[system-and-administrative-commands#^LSDEVREF|lsdev]], and [[system-and-administrative-commands#^UPTIMEREF|uptime]] do this as well.

@@ -196,7 +196,7 @@ exec 3>&-                              # Now close it for the remainder of the s
 
 For a more detailed introduction to I/O redirection see [[ioredirintro.html|Appendix F]].
 
-[^1]: By convention in UNIX and Linux, data streams and peripherals ([[devref1#^DEVFILEREF|device files]]) are treated as files, in a fashion analogous to ordinary files.
+[^1]: By convention in UNIX and Linux, data streams and peripherals ([[dev#^DEVFILEREF|device files]]) are treated as files, in a fashion analogous to ordinary files.
 
 [^2]: A _file descriptor_ is simply a number that the operating system assigns to an open file to keep track of it. Consider it a simplified type of file pointer. It is analogous to a _file handle_ in **C**.
 

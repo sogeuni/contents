@@ -68,10 +68,10 @@ For Anita, the source of all the magic
 * [[process-substitution]]
 * [[functions]]
 * [[aliases]]
-* [[list-cons]]
-* [[Chapter 27. Arrays]]
-* [[ivr]]
-* [[devproc]]
+* [[list-constructs]]
+* [[arrays]]
+* [[indirect-references]]
+* [[dev-and-proc]]
 * [[networkprogramming]]
 * [[Chapter 31. Of Zeros and Nulls]]
 * [[debugging]]
@@ -652,57 +652,57 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 25-2. [[aliases#^UNAL|_unalias_: Setting and unsetting an alias]]
 
-26-1. [[list-cons#^EX64|Using an _and list_ to test for command-line arguments]]
+26-1. [[list-constructs#^EX64|Using an _and list_ to test for command-line arguments]]
 
-26-2. [[list-cons#^ANDLIST2|Another command-line arg test using an _and list_]]
+26-2. [[list-constructs#^ANDLIST2|Another command-line arg test using an _and list_]]
 
-26-3. [[list-cons#^EX65|Using _or lists_ in combination with an _and list_]]
+26-3. [[list-constructs#^EX65|Using _or lists_ in combination with an _and list_]]
 
-27-1. [[Chapter 27. Arrays#^EX66|Simple array usage]]
+27-1. [[arrays#^EX66|Simple array usage]]
 
-27-2. [[Chapter 27. Arrays#^POEM|Formatting a poem]]
+27-2. [[arrays#^POEM|Formatting a poem]]
 
-27-3. [[Chapter 27. Arrays#^ARRAYOPS|Various array operations]]
+27-3. [[arrays#^ARRAYOPS|Various array operations]]
 
-27-4. [[Chapter 27. Arrays#^ARRAYSTROPS|String operations on arrays]]
+27-4. [[arrays#^ARRAYSTROPS|String operations on arrays]]
 
-27-5. [[Chapter 27. Arrays#^SCRIPTARRAY|Loading the contents of a script into an array]]
+27-5. [[arrays#^SCRIPTARRAY|Loading the contents of a script into an array]]
 
-27-6. [[Chapter 27. Arrays#^EX67|Some special properties of arrays]]
+27-6. [[arrays#^EX67|Some special properties of arrays]]
 
-27-7. [[Chapter 27. Arrays#^EMPTYARRAY|Of empty arrays and empty elements]]
+27-7. [[arrays#^EMPTYARRAY|Of empty arrays and empty elements]]
 
-27-8. [[Chapter 27. Arrays#^ARRAYASSIGN|Initializing arrays]]
+27-8. [[arrays#^ARRAYASSIGN|Initializing arrays]]
 
-27-9. [[Chapter 27. Arrays#^COPYARRAY|Copying and concatenating arrays]]
+27-9. [[arrays#^COPYARRAY|Copying and concatenating arrays]]
 
-27-10. [[Chapter 27. Arrays#^ARRAYAPPEND|More on concatenating arrays]]
+27-10. [[arrays#^ARRAYAPPEND|More on concatenating arrays]]
 
-27-11. [[Chapter 27. Arrays#^BUBBLE|The Bubble Sort]]
+27-11. [[arrays#^BUBBLE|The Bubble Sort]]
 
-27-12. [[Chapter 27. Arrays#^EMBARR|Embedded arrays and indirect references]]
+27-12. [[arrays#^EMBARR|Embedded arrays and indirect references]]
 
-27-13. [[Chapter 27. Arrays#^EX68|The Sieve of Eratosthenes]]
+27-13. [[arrays#^EX68|The Sieve of Eratosthenes]]
 
-27-14. [[Chapter 27. Arrays#^EX68A|The Sieve of Eratosthenes, Optimized]]
+27-14. [[arrays#^EX68A|The Sieve of Eratosthenes, Optimized]]
 
-27-15. [[Chapter 27. Arrays#^STACKEX|Emulating a push-down stack]]
+27-15. [[arrays#^STACKEX|Emulating a push-down stack]]
 
-27-16. [[Chapter 27. Arrays#^QFUNCTION|Complex array application: _Exploring a weird mathematical series_]]
+27-16. [[arrays#^QFUNCTION|Complex array application: _Exploring a weird mathematical series_]]
 
-27-17. [[Chapter 27. Arrays#^TWODIM|Simulating a two-dimensional array, then tilting it]]
+27-17. [[arrays#^TWODIM|Simulating a two-dimensional array, then tilting it]]
 
-28-1. [[ivr#^INDREF|Indirect Variable References]]
+28-1. [[indirect-references#^INDREF|Indirect Variable References]]
 
-28-2. [[ivr#^COLTOTALER2|Passing an indirect reference to _awk_]]
+28-2. [[indirect-references#^COLTOTALER2|Passing an indirect reference to _awk_]]
 
-29-1. [[devref1#^DEVTCP|Using /dev/tcp for troubleshooting]]
+29-1. [[dev#^DEVTCP|Using /dev/tcp for troubleshooting]]
 
-29-2. [[devref1#^MUSICSCR|Playing music]]
+29-2. [[dev#^MUSICSCR|Playing music]]
 
-29-3. [[procref1#^PIDID|Finding the process associated with a PID]]
+29-3. [[proc#^PIDID|Finding the process associated with a PID]]
 
-29-4. [[procref1#^CONSTAT|On-line connect status]]
+29-4. [[proc#^CONSTAT|On-line connect status]]
 
 30-1. [[networkprogramming#^TESTCGI|Print the server environment]]
 

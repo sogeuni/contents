@@ -259,7 +259,7 @@ echo $cpname_PID
 #+ apparent that each process, the executing shell and the coprocess,
 #+ waits for the other to finish writing in its own write-enabled pipe.\||
     
-- The new **mapfile** builtin makes it possible to load an array with the contents of a text file without using a loop or [[Chapter 27. Arrays#^ARRAYINITCS|command substitution]].
+- The new **mapfile** builtin makes it possible to load an array with the contents of a text file without using a loop or [[arrays#^ARRAYINITCS|command substitution]].
     
     |   |
     |---|
@@ -452,7 +452,7 @@ _Note to Chet Ramey:_ Please add only _essential_ features in future Bash releas
 
 Version 4.1 of Bash, released in May, 2010, was primarily a bugfix update.
 
-- The [[internal-commands-and-builtins#^PRINTFREF|printf]] command now accepts a -v option for setting [[Chapter 27. Arrays#^ARRAYREF|array]] indices.
+- The [[internal-commands-and-builtins#^PRINTFREF|printf]] command now accepts a -v option for setting [[arrays#^ARRAYREF|array]] indices.
     
 - Within [[test-constructs#^DBLBRACKETS|double brackets]], the **>** and **<** string comparison operators now conform to the [[localization#^LOCALEREF|locale]]. Since the locale setting may affect the sorting order of string expressions, this has side-effects on comparison tests within _[[ ... ]]_ expressions.
     
@@ -607,7 +607,7 @@ echo "\$line = "$line""
     
     This option offers possible "fixups" for these example scripts: [[gotchas#^BADREAD|Example 34-3]] and [[internal-commands-and-builtins#^READPIPE|Example 15-8]].
     
-- Negative [[Chapter 27. Arrays#^ARRAYREF|array]] indices permit counting backwards from the end of an array.
+- Negative [[arrays#^ARRAYREF|array]] indices permit counting backwards from the end of an array.
     
     **Example 37-11. Negative array indices**
     

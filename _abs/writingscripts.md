@@ -16,7 +16,7 @@ Perform a recursive directory listing on the user's home directory and save the 
 
 **Converting [[loops#^FORLOOPREF1|for]] loops to [[loops#^WHILELOOPREF|while]] and [[loops#^UNTILLOOPREF|until]] loops**
 
-Convert the _for loops_ in [[loops#^EX22|Example 11-1]] to _while loops_. Hint: store the data in an [[Chapter 27. Arrays#^ARRAYREF|array]] and step through the array elements.
+Convert the _for loops_ in [[loops#^EX22|Example 11-1]] to _while loops_. Hint: store the data in an [[arrays#^ARRAYREF|array]] and step through the array elements.
 
 Having already done the "heavy lifting," now convert the loops in the example to _until loops_.
 
@@ -230,7 +230,7 @@ This exercise tests mastery of [[regexp#^REGEXREF|Regular Expressions]].
 
 **Cross Reference**
 
-Write a script that generates a _cross-reference_ (_concordance_) on a target file. The output will be a listing of all word occurrences in the target file, along with the line numbers in which each word occurs. Traditionally, _linked list_ constructs would be used in such applications. Therefore, you should investigate [[Chapter 27. Arrays#^ARRAYREF|arrays]] in the course of this exercise. [[text-processing-commands#^WF|Example 16-12]] is probably _not_ a good place to start.
+Write a script that generates a _cross-reference_ (_concordance_) on a target file. The output will be a listing of all word occurrences in the target file, along with the line numbers in which each word occurs. Traditionally, _linked list_ constructs would be used in such applications. Therefore, you should investigate [[arrays#^ARRAYREF|arrays]] in the course of this exercise. [[text-processing-commands#^WF|Example 16-12]] is probably _not_ a good place to start.
 
 **Square Root**
 
@@ -337,7 +337,7 @@ The obvious followup to this is to extend the hex dump script into a disassemble
 
 **Emulating a Shift Register**
 
-Using [[Chapter 27. Arrays#^STACKEX|Example 27-15]] as an inspiration, write a script that emulates a 64-bit shift register as an [[Chapter 27. Arrays#^ARRAYREF|array]]. Implement functions to _load_ the register, _shift left_, _shift right_, and _rotate_ it. Finally, write a function that interprets the register contents as eight 8-bit ASCII characters.
+Using [[arrays#^STACKEX|Example 27-15]] as an inspiration, write a script that emulates a 64-bit shift register as an [[arrays#^ARRAYREF|array]]. Implement functions to _load_ the register, _shift left_, _shift right_, and _rotate_ it. Finally, write a function that interprets the register contents as eight 8-bit ASCII characters.
 
 **Calculating Determinants**
 
@@ -485,13 +485,13 @@ This script will have three main sections
 3. Decrypting encrypted text.
     
 
-The script will make extensive use of [[Chapter 27. Arrays#^ARRAYREF|arrays]] and [[functions#^FUNCTIONREF|functions]]. You may use [[contributed-scripts#^GRONSFELD|Example A-56]] as an inspiration.
+The script will make extensive use of [[arrays#^ARRAYREF|arrays]] and [[functions#^FUNCTIONREF|functions]]. You may use [[contributed-scripts#^GRONSFELD|Example A-56]] as an inspiration.
 
 --
 
 Please do not send the author your solutions to these exercises. There are more appropriate ways to impress him with your cleverness, such as submitting bugfixes and suggestions for improving the book.
 
-|[[writingscripts#^AEN25254|[1]]]|For all you clever types who failed intermediate algebra, a _determinant_ is a numerical value associated with a multidimensional _matrix_ ([[Chapter 27. Arrays#^ARRAYREF|array]] of numbers).
+|[[writingscripts#^AEN25254|[1]]]|For all you clever types who failed intermediate algebra, a _determinant_ is a numerical value associated with a multidimensional _matrix_ ([[arrays#^ARRAYREF|array]] of numbers).
 
 \|   \|
 \|---\|

@@ -1,3 +1,7 @@
+---
+title: 27. Arrays
+---
+
 Newer versions of Bash support one-dimensional arrays. Array elements may be initialized with the **`variable[xx]`** notation. Alternatively, a script may introduce the entire array by an explicit **declare -a variable** statement. To dereference (retrieve the contents of) an array element, use _curly bracket_ notation, that is, **`${element[xx]}`**.
 
 **Example 27-1. Simple array usage**
@@ -83,7 +87,7 @@ exit 0
 
 As we have seen, a convenient way of initializing an entire array is the `array=( element1 element2 ... elementN )` notation.
 
-```
+```bash
 base64_charset=( {A..Z} {a..z} {0..9} + / = )
                #  Using extended brace expansion
                #+ to initialize the elements of the array.                
@@ -93,7 +97,7 @@ base64_charset=( {A..Z} {a..z} {0..9} + / = )
 
 > Bash permits array operations on variables, even if the variables are not explicitly declared as arrays.
 >
-> ```
+> ```bash
 > string=abcABC123ABCabc
 > echo ${string[@]}               # abcABC123ABCabc
 > echo ${string[*]}               # abcABC123ABCabc 
@@ -337,7 +341,7 @@ exit 0
 
 **Example 27-5. Loading the contents of a script into an array**
 
-```
+```bash
 #!/bin/bash
 # script-array.sh: Loads this script into an array.
 # Inspired by an e-mail from Chris Martin (thanks!).
@@ -637,7 +641,7 @@ array[${#array[*]}]="new element"
 > [!tip]
 > The **array=( element1 element2 ... elementN )** initialization operation, with the help of [[command-substitution#^COMMANDSUBREF|command substitution]], makes it possible to load the contents of a text file into an array.
 >
-> ```
+> ```bash
 > #!/bin/bash
 > 
 > filename=sample_file
@@ -1127,8 +1131,8 @@ function print () {
         TEST1="ARRAY2[*]"
         local ${!TEST1} # See what happens if you delete this line.
         #  Indirect reference.
-	#  This makes the components of $TEST1
-	#+ accessible to this function.
+    #  This makes the components of $TEST1
+    #+ accessible to this function.
 
 
         #  Let's see what we've got so far.
@@ -1145,7 +1149,7 @@ function print () {
 
         # Print variable
         echo "Variable VARIABLE: $VARIABLE"
-	
+    
         # Print a string element
         IFS="$OLD_IFS"
         TEST2="STRING[*]"

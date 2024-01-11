@@ -693,7 +693,7 @@ bash$ free | grep Mem | awk '{ print $4 }'
 
 **procinfo**
 
-Extract and list information and statistics from the [[devproc#^DEVPROCREF|/proc pseudo-filesystem]]. This gives a very extensive and detailed listing.
+Extract and list information and statistics from the [[dev-and-proc#^DEVPROCREF|/proc pseudo-filesystem]]. This gives a very extensive and detailed listing.
 
 ```bash
 bash$ procinfo | grep Bootup
@@ -969,7 +969,7 @@ Adding an appropriate entry to /etc/logrotate.conf makes it possible to manage p
 
 **ps**
 
-_P_rocess _S_tatistics: lists currently executing processes by owner and PID (process ID). This is usually invoked with ax or aux options, and may be piped to [[text-processing-commands#^GREPREF|grep]] or [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]] to search for a specific process (see [[internal-commands-and-builtins#^EX44|Example 15-14]] and [[procref1#^PIDID|Example 29-3]]).
+_P_rocess _S_tatistics: lists currently executing processes by owner and PID (process ID). This is usually invoked with ax or aux options, and may be piped to [[text-processing-commands#^GREPREF|grep]] or [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]] to search for a specific process (see [[internal-commands-and-builtins#^EX44|Example 15-14]] and [[proc#^PIDID|Example 29-3]]).
 
 ```bash
 bash$  ps ax | grep sendmail
@@ -1246,7 +1246,7 @@ See also [[debugging#^ONLINE|Example 32-6]].
 
 **netstat**
 
-Show current network statistics and information, such as routing tables and active connections. This utility accesses information in /proc/net ([[devproc|Chapter 29]]). See [[procref1#^CONSTAT|Example 29-4]].
+Show current network statistics and information, such as routing tables and active connections. This utility accesses information in /proc/net ([[dev-and-proc|Chapter 29]]). See [[proc#^CONSTAT|Example 29-4]].
 
 **netstat -r** is equivalent to [[system-and-administrative-commands#^ROUTEREF|route]].
 
@@ -1263,7 +1263,7 @@ Active Internet connections (w/o servers)
 ```
 
 > [!note]
-> A **netstat -lptu** shows [[devref1#^SOCKETREF|sockets]] that are listening to ports, and the associated processes. This can be useful for determining whether a computer has been hacked or compromised.
+> A **netstat -lptu** shows [[dev#^SOCKETREF|sockets]] that are listening to ports, and the associated processes. This can be useful for determining whether a computer has been hacked or compromised.
 
 **iwconfig**
 
@@ -1385,7 +1385,7 @@ mount /mnt/cdrom
 # Shortcut, if /mnt/cdrom listed in /etc/fstab
 ```
 
-The versatile _mount_ command can even mount an ordinary file on a block device, and the file will act as if it were a filesystem. _Mount_ accomplishes that by associating the file with a [[devref1#^LOOPBACKREF|loopback device]]. One application of this is to mount and examine an ISO9660 filesystem image before burning it onto a CDR. [^3]
+The versatile _mount_ command can even mount an ordinary file on a block device, and the file will act as if it were a filesystem. _Mount_ accomplishes that by associating the file with a [[dev#^LOOPBACKREF|loopback device]]. One application of this is to mount and examine an ISO9660 filesystem image before burning it onto a CDR. [^3]
 
 **Example 17-7. Checking a CD image**
 
@@ -1415,7 +1415,7 @@ umount /mnt/cdrom
 
 **gnome-mount**
 
-The newer Linux distros have deprecated **mount** and **umount**. The successor, for command-line mounting of removable storage devices, is **gnome-mount**. It can take the -d option to mount a [[devref1#^DEVFILEREF|device file]] by its listing in /dev.
+The newer Linux distros have deprecated **mount** and **umount**. The successor, for command-line mounting of removable storage devices, is **gnome-mount**. It can take the -d option to mount a [[dev#^DEVFILEREF|device file]] by its listing in /dev.
 
 For example, to mount a USB flash drive:
 
@@ -1438,7 +1438,7 @@ At times, you may wish to force an immediate buffer flush, as when securely dele
 
 **losetup**
 
-Sets up and configures [[devref1#^LOOPBACKREF|loopback devices]].
+Sets up and configures [[dev#^LOOPBACKREF|loopback devices]].
 
 **Example 17-8. Creating a filesystem in a file**
 
@@ -1674,7 +1674,7 @@ flock $0 cat $0 > lockfile__$0
 
 **mknod**
 
-Creates block or character [[devref1#^DEVFILEREF|device files]] (may be necessary when installing new hardware on the system). The **MAKEDEV** utility has virtually all of the functionality of **mknod**, and is easier to use.
+Creates block or character [[dev#^DEVFILEREF|device files]] (may be necessary when installing new hardware on the system). The **MAKEDEV** utility has virtually all of the functionality of **mknod**, and is easier to use.
 
 **MAKEDEV**
 
@@ -2033,7 +2033,7 @@ Remote distribution client: synchronizes, clones, or backs up a file system on a
 
 [^6]: Operators of single-user Linux systems generally prefer something simpler for backups, such as **tar**.
 
-[^7]: As of the [[bash-ver4#^BASH4REF|version 4 update]] of Bash, the -f and -c options take a block size of 512 when in [[starting-off-with-a-sha-bang#^POSIX2REF|POSIX]] mode. Additionally, there are two new options: -b for [[devref1#^SOCKETREF|socket]] buffer size, and -T for the limit on the number of _threads_.
+[^7]: As of the [[bash-ver4#^BASH4REF|version 4 update]] of Bash, the -f and -c options take a block size of 512 when in [[starting-off-with-a-sha-bang#^POSIX2REF|POSIX]] mode. Additionally, there are two new options: -b for [[dev#^SOCKETREF|socket]] buffer size, and -T for the limit on the number of _threads_.
 
 [^8]: NAND is the logical _not-and_ operator. Its effect is somewhat similar to subtraction.
 

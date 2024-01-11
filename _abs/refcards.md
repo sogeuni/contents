@@ -56,10 +56,10 @@ The following reference cards provide a useful _summary_ of certain scripting co
 |-d|File is a _directory_||-r|File has _read_ permission|
 |-h|File is a [[basic#^SYMLINKREF|symbolic link]]||-w|File has _write_ permission|
 |-L|File is a _symbolic link_||-x|File has _execute_ permission|
-|-b|File is a [[devref1#^BLOCKDEVREF|block device]]||||
-|-c|File is a [[devref1#^CHARDEVREF|character device]]||-g|_sgid_ flag set|
+|-b|File is a [[dev#^BLOCKDEVREF|block device]]||||
+|-c|File is a [[dev#^CHARDEVREF|character device]]||-g|_sgid_ flag set|
 |-p|File is a [[special-characters#^PIPEREF|pipe]]||-u|_suid_ flag set|
-|-S|File is a [[devref1#^SOCKETREF|socket]]||-k|"sticky bit" set|
+|-S|File is a [[dev#^SOCKETREF|socket]]||-k|"sticky bit" set|
 |-t|File is associated with a _terminal_||||
 ||||||
 |-N|File modified since it was last read||F1 -nt F2|File F1 is _newer_ than F2 *|
@@ -139,7 +139,7 @@ The following reference cards provide a useful _summary_ of certain scripting co
 |||
 |Curly Brackets||
 |${variable}|[[parameter-substitution#^PARAMSUBREF|Parameter substitution]]|
-|${!variable}|[[ivr#^IVRREF|Indirect variable reference]]|
+|${!variable}|[[indirect-references#^IVRREF|Indirect variable reference]]|
 |{ command1; command2; . . . commandN; }|[[special-characters#^CODEBLOCKREF|Block of code]]|
 |{string1,string2,string3,...}|[[special-characters#^BRACEEXPREF|Brace expansion]]|
 |{a..z}|[[bashver3#^BRACEEXPREF3|Extended brace expansion]]|

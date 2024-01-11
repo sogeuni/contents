@@ -106,7 +106,7 @@ exit 0
 
 In contrast to certain other programming languages, shell scripts normally pass only value parameters to functions. Variable names (which are actually _pointers_), if passed as parameters to functions, will be treated as string literals. _Functions interpret their arguments literally._
 
-[[ivr#^IVRREF|Indirect variable references]] (see [[bash-ver2#^EX78|Example 37-2]]) provide a clumsy sort of mechanism for passing variable pointers to functions.
+[[indirect-references#^IVRREF|Indirect variable references]] (see [[bash-ver2#^EX78|Example 37-2]]) provide a clumsy sort of mechanism for passing variable pointers to functions.
 
 **Example 24-4. Passing an indirect reference to a function**
 

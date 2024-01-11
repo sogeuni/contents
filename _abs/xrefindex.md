@@ -202,7 +202,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
 
 **[ ]**Brackets
 
-- [[Chapter 27. Arrays#^BRACKARRAY|_Array_ element]]
+- [[arrays#^BRACKARRAY|_Array_ element]]
     
 - [[brief-introduction-to-regular-expressions#^BRACKETSREF|Enclose character set to match]] in a _Regular Expression_
     
@@ -249,7 +249,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
 - **${!var}**
     
-    [[ivr#^IVR2|Indirect referencing of a variable]], new notation
+    [[indirect-references#^IVR2|Indirect referencing of a variable]], new notation
     
 - **${!#}**
     
@@ -292,7 +292,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
 - **\;** [[complex-commands#^FINDREF0|_Semicolon_]], _escaped_, terminates a [[complex-commands#^FINDREF|find]] command
     
-- **\$$** [[ivr#^IVRREF|Indirect reverencing of a variable]], old-style notation
+- **\$$** [[indirect-references#^IVRREF|Indirect reverencing of a variable]], old-style notation
     
 - [[escaping#^ESCNEWLINE|Escaping a _newline_]], to write a multi-line command
     
@@ -398,9 +398,9 @@ _Advanced Bash Scripting Guide_, [[mirrorsites#^WHERE_TARBALL|where to download]
 
 [[command-substitution#^AGRAM2|Anagramming]]
 
-[[list-cons#^LCONS1|_And_ list]]
+[[list-constructs#^LCONS1|_And_ list]]
 
-- [[list-cons#^ANDDEFAULT|To supply default command-line argument]]
+- [[list-constructs#^ANDDEFAULT|To supply default command-line argument]]
     
 
 [[operators#^LOGOPS1|_And_ logical operator]] **&&**
@@ -434,61 +434,61 @@ _Advanced Bash Scripting Guide_, [[mirrorsites#^WHERE_TARBALL|where to download]
     |![[../images/note.gif|Note]]|[[bashver3#^PLUSEQSTR|In certain contexts]], **+=** can also function as a _string concatenation_ operator.|
     
 
-[[Chapter 27. Arrays#^ARRAYREF|Arrays]]
+[[arrays#^ARRAYREF|Arrays]]
 
 - [[bash-ver4#^ASSOCARR|Associative arrays]]
     
     [[optimizations#^ASSOCARRTST|more efficient]] than conventional arrays
     
-- [[Chapter 27. Arrays#^ARRAYREF|Bracket notation]]
+- [[arrays#^ARRAYREF|Bracket notation]]
     
-- [[Chapter 27. Arrays#^ARRAYAPPEND0|Concatenating]], _example script_
+- [[arrays#^ARRAYAPPEND0|Concatenating]], _example script_
     
-- [[Chapter 27. Arrays#^COPYARRAY0|Copying]]
+- [[arrays#^COPYARRAY0|Copying]]
     
 - [[typing-variables#^ARRAYDECLARE|Declaring]]
     
     declare -a array_name
     
-- [[Chapter 27. Arrays#^ARRAYINDIR|Embedded arrays]]
+- [[arrays#^ARRAYINDIR|Embedded arrays]]
     
-- [[Chapter 27. Arrays#^EMPTYARRAY0|Empty arrays, empty elements]], _example script_
+- [[arrays#^EMPTYARRAY0|Empty arrays, empty elements]], _example script_
     
-- [[Chapter 27. Arrays#^ARRAYINDIR|Indirect references]]
+- [[arrays#^ARRAYINDIR|Indirect references]]
     
-- [[Chapter 27. Arrays#^ARRAYINIT0|Initialization]]
+- [[arrays#^ARRAYINIT0|Initialization]]
     
     array=( element1 element2 ... elementN)
     
-    [[Chapter 27. Arrays#^ARRAYASSIGN0|_Example script_]]
+    [[arrays#^ARRAYASSIGN0|_Example script_]]
     
-    Using [[Chapter 27. Arrays#^ARRAYINITCS|command substitution]]
+    Using [[arrays#^ARRAYINITCS|command substitution]]
     
-- [[Chapter 27. Arrays#^ARRAYINITCS|Loading a file]] into an array
+- [[arrays#^ARRAYINITCS|Loading a file]] into an array
     
-- [[Chapter 27. Arrays#^ARRAYMULTIDIM|Multidimensional]], simulating
+- [[arrays#^ARRAYMULTIDIM|Multidimensional]], simulating
     
-- [[Chapter 27. Arrays#^ARRAYNEST|Nesting and embedding]]
+- [[arrays#^ARRAYNEST|Nesting and embedding]]
     
-- [[Chapter 27. Arrays#^ARRAYNOTATION|Notation and usage]]
+- [[arrays#^ARRAYNOTATION|Notation and usage]]
     
-- [[Chapter 27. Arrays#^ARRAYNUMELEMENTS|Number of elements in]]
+- [[arrays#^ARRAYNUMELEMENTS|Number of elements in]]
     
     ${#array_name[@]}
     
     ${#array_name[*]}
     
-- [[Chapter 27. Arrays#^ARRAYSYNTAX|Operations]]
+- [[arrays#^ARRAYSYNTAX|Operations]]
     
 - [[assorted-tips#^PASSARRAY|Passing an _array_]] to a function
     
 - As [[assorted-tips#^RETARRAY|_return value_ from a function]]
     
-- Special properties, [[Chapter 27. Arrays#^ARRAYSPECIALPROPS|example script]]
+- Special properties, [[arrays#^ARRAYSPECIALPROPS|example script]]
     
-- String operations, [[Chapter 27. Arrays#^ARRAYSTRINGOPS|example script]]
+- String operations, [[arrays#^ARRAYSTRINGOPS|example script]]
     
-- [[Chapter 27. Arrays#^ARRAYUNSET|_unset_ deletes array elements]]
+- [[arrays#^ARRAYUNSET|_unset_ deletes array elements]]
     
 
 [[internal-commands-and-builtins#^READARROW|Arrow keys]], detecting
@@ -568,7 +568,7 @@ Backlight, [[system-and-administrative-commands#^BACKLIGHT|setting the brightnes
 - [[contributed-scripts#^BASE64|Example script]]
     
 
-[[devref1#^BLOCKDEVREF|Block devices]]
+[[dev#^BLOCKDEVREF|Block devices]]
 
 - [[file-test-operators#^BLOCKDEVTEST|testing for]]
     
@@ -595,7 +595,7 @@ Backlight, [[system-and-administrative-commands#^BACKLIGHT|setting the brightnes
 
 Brackets, **[ ]**
 
-- [[Chapter 27. Arrays#^BRACKARRAY|_Array_ element]]
+- [[arrays#^BRACKARRAY|_Array_ element]]
     
 - [[brief-introduction-to-regular-expressions#^BRACKETSREF|Enclose character set to match]] in a _Regular Expression_
     
@@ -647,7 +647,7 @@ Brackets, _curly_, **{}**, used in
 - [[basic-commands#^CATUSES|Uses of]]
     
 
-[[devref1#^CHARDEVREF|Character devices]]
+[[dev#^CHARDEVREF|Character devices]]
 
 - [[file-test-operators#^CHARDEVTEST|testing for]]
     
@@ -801,7 +801,7 @@ Curly brackets {}
 
 [[parameter-substitution#^DEFPARAM|Default parameters]]
 
-[[devproc#^DEVPROCREF|/dev]] directory
+[[dev-and-proc#^DEVPROCREF|/dev]] directory
 
 - [[Chapter 31. Of Zeros and Nulls#^DEVNULLREF|/dev/null]] pseudo-device file
     
@@ -810,7 +810,7 @@ Curly brackets {}
 - [[Chapter 31. Of Zeros and Nulls#^ZEROSREF1|/dev/zero]], pseudo-device file
     
 
-[[devref1#^DEVFILEREF|Device file]]
+[[dev#^DEVFILEREF|Device file]]
 
 [[assorted-tips#^DIALOGREF|_dialog_]], utility for generating _dialog_ boxes in a script
 
@@ -867,7 +867,7 @@ Encrypting files, using [[file-and-archiving-commands#^OPENSSLREF|openssl]]
 
 [[other-comparison-operators#^EQUALREF|-eq]] , _is-equal-to_ [[other-comparison-operators#^ICOMPARISON1|integer comparison]] test
 
-[[Chapter 27. Arrays#^PRIMES0|Eratosthenes, Sieve of]], algorithm for generating prime numbers
+[[arrays#^PRIMES0|Eratosthenes, Sieve of]], algorithm for generating prime numbers
 
 [[escaping#^SPM|Escaped characters]], special meanings of
 
@@ -888,7 +888,7 @@ Encrypting files, using [[file-and-archiving-commands#^OPENSSLREF|openssl]]
     
 - [[internal-commands-and-builtins#^EVALFORCED|Forces _reevaluation_]] of arguments
     
-- And [[ivr#^EVALINDREF|indirect references]]
+- And [[indirect-references#^EVALINDREF|indirect references]]
     
 - [[internal-commands-and-builtins#^EVALRISK|Risk of using]]
     
@@ -1066,7 +1066,7 @@ Games and amusements
     
 - [[contributed-scripts#^MSQUARE|Magic Squares]]
     
-- [[devref1#^MUSICSCR|Music-playing script]]
+- [[dev#^MUSICSCR|Music-playing script]]
     
 - [[contributed-scripts#^NIM|Nim]]
     
@@ -1078,7 +1078,7 @@ Games and amusements
     
 - [[contributed-scripts#^BASHPODDER|Podcasting]]
     
-- [[Chapter 27. Arrays#^POEM|Poem]]
+- [[arrays#^POEM|Poem]]
     
 - [[shell-wrapper#^SPEECH00|Speech generation]]
     
@@ -1220,9 +1220,9 @@ Games and amusements
 
 [[io-redirection#^IOREDIRREF|I/O redirection]]
 
-[[ivr#^IVRREF|Indirect referencing of variables]]
+[[indirect-references#^IVRREF|Indirect referencing of variables]]
 
-- [[ivr#^IVR2|New notation]], introduced in [[bash-ver2#^BASH2REF|version 2]] of Bash ( [[bash-ver2#^VARREFNEW|example script]])
+- [[indirect-references#^IVR2|New notation]], introduced in [[bash-ver2#^BASH2REF|version 2]] of Bash ( [[bash-ver2#^VARREFNEW|example script]])
     
 
 [[system-and-administrative-commands#^IPTABLESREF|iptables]], packet filtering and firewall utility
@@ -1283,11 +1283,11 @@ Games and amusements
 - [[basic-commands#^SYMLINKREF|_symbolic_ links]], _ln -s_
     
 
-[[list-cons#^LISTCONSREF|List constructs]]
+[[list-constructs#^LISTCONSREF|List constructs]]
 
-- [[list-cons#^LCONS1|_And_ list]]
+- [[list-constructs#^LCONS1|_And_ list]]
     
-- [[list-cons#^ORLISTREF|_Or_ list]]
+- [[list-constructs#^ORLISTREF|_Or_ list]]
     
 
 [[local-variables#^LOCALREF1|Local variables]]
@@ -1301,7 +1301,7 @@ Games and amusements
 
 [[files#^LOGOUTFILEREF1|Logout file]], the ~/.bash_logout file
 
-[[system-and-administrative-commands#^ISOMOUNTREF0|Loopback device]], mounting a file on a [[devref1#^BLOCKDEVREF|block device]]
+[[system-and-administrative-commands#^ISOMOUNTREF0|Loopback device]], mounting a file on a [[dev#^BLOCKDEVREF|block device]]
 
 [[loops|Loops]]
 
@@ -1370,7 +1370,7 @@ Games and amusements
 
 Loopback devices
 
-- [[devref1#^LOOPBACKREF|In /dev directory]]
+- [[dev#^LOOPBACKREF|In /dev directory]]
     
 - [[system-and-administrative-commands#^ISOMOUNTREF0|Mounting an ISO image]]
     
@@ -1464,7 +1464,7 @@ Operator
 
 [[options#^OPTIONSREF|Options]], passed to shell or script on command line or by [[internal-commands-and-builtins#^SETREF|set]] command
 
-[[list-cons#^ORLISTREF|_Or_ list]]
+[[list-constructs#^ORLISTREF|_Or_ list]]
 
 [[operators#^ORREF|_Or_ logical operator]], **||**
 
@@ -1639,7 +1639,7 @@ Pointers
     
 - [[complex-functions-and-function-complexities#^FUNCPOINTERS|and functions]]
     
-- [[ivr#^IRRREF|and _indirect references_]]
+- [[indirect-references#^IRRREF|and _indirect references_]]
     
 - [[varsubn#^POINTERREF|and _variables_]]
     
@@ -1683,16 +1683,16 @@ Prime numbers
     
 - Generating primes [[contributed-scripts#^PRIMES1|using the _modulo_ operator]]
     
-- Sieve of Eratosthenes, [[Chapter 27. Arrays#^PRIMES0|example script]]
+- Sieve of Eratosthenes, [[arrays#^PRIMES0|example script]]
     
 
 [[internal-commands-and-builtins#^PRINTFREF|printf]], _formatted print_ command
 
-[[procref1#^PROCREF2|/proc]] directory
+[[proc#^PROCREF2|/proc]] directory
 
-- [[procref1#^PROCRUNNING|Running processes]], files describing
+- [[proc#^PROCRUNNING|Running processes]], files describing
     
-- [[procref1#^PROCWARNING|Writing to files in /proc]], _warning_
+- [[proc#^PROCWARNING|Writing to files in /proc]], _warning_
     
 
 [[special-characters#^PROCESSREF|Process]]
@@ -1987,16 +1987,16 @@ Simulations
     
 - [[math-commands#^CANNONREF|PI]], approximating by firing cannonballs
     
-- [[Chapter 27. Arrays#^STACKEX0|Pushdown _stack_]]
+- [[arrays#^STACKEX0|Pushdown _stack_]]
     
 
 [[varsubn#^SNGLQUO|Single quotes]] (**' ... '**) _strong_ [[Chapter 5. Quoting#^QUOTINGREF|quoting]]
 
-[[devref1#^SOCKETREF|Socket]], a communication node associated with an I/O port
+[[dev#^SOCKETREF|Socket]], a communication node associated with an I/O port
 
 Sorting
 
-- [[Chapter 27. Arrays#^BUBBLESORT|Bubble sort]]
+- [[arrays#^BUBBLESORT|Bubble sort]]
     
 - [[contributed-scripts#^INSERTIONSORT0|Insertion sort]]
     
@@ -2023,7 +2023,7 @@ Stack
 
 - [[internal-variables#^STACKDEFREF|Definition]]
     
-- Emulating a _push-down stack_, [[Chapter 27. Arrays#^STACKEX0|example script]]
+- Emulating a _push-down stack_, [[arrays#^STACKEX0|example script]]
     
 
 Standard Deviation, [[contributed-scripts#^STDDEV|example script]]
@@ -2368,7 +2368,7 @@ _until [ condition-is-true ]; do_
 
 _Variables_
 
-- [[Chapter 27. Arrays#^ARRAYOPSVARS|Array operations on]]
+- [[arrays#^ARRAYOPSVARS|Array operations on]]
     
 - [[operators#^ASNOP1|Assignment]]
     
@@ -2394,11 +2394,11 @@ _Variables_
     
 - [[parameter-substitution#^EXPREPL1|Expansion / Substring replacement]] operators
     
-- [[ivr#^IVRREF|Indirect referencing]]
+- [[indirect-references#^IVRREF|Indirect referencing]]
     
     _eval variable1=\$$variable2_
     
-    [[ivr#^IVR2|Newer notation]]
+    [[indirect-references#^IVR2|Newer notation]]
     
     _${!variable}_
     

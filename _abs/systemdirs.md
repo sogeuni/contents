@@ -42,11 +42,11 @@ Sysadmins and anyone else writing administrative scripts should be intimately fa
     
 - /dev
     
-    Device directory. Entries (but _not_ mount points) for physical and virtual devices. See [[devproc|Chapter 29]].
+    Device directory. Entries (but _not_ mount points) for physical and virtual devices. See [[dev-and-proc|Chapter 29]].
     
 - /proc
     
-    Process directory. Contains information and statistics about running processes and kernel parameters. See [[devproc|Chapter 29]].
+    Process directory. Contains information and statistics about running processes and kernel parameters. See [[dev-and-proc|Chapter 29]].
     
 - /sys
     

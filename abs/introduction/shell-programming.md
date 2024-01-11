@@ -35,7 +35,7 @@ According to [[bibliography#^MAYERREF|Herbert Mayer]], "a useful language needs 
 > - Need data structures, such as linked lists or trees
 > - Need to generate / manipulate graphics or GUIs
 > - Need direct access to system hardware or external peripherals
-> - Need port or [[devref1#^SOCKETREF|socket]] I/O
+> - Need port or [[dev#^SOCKETREF|socket]] I/O
 > - Need to use libraries or interface with legacy code
 > - Proprietary, closed-source applications (Shell scripts put the source code right out in the open for all the world to see.)
 > 

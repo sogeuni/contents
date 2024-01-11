@@ -393,7 +393,7 @@ exit 0
 >
 > The "if COMMAND" construct returns the exit status of COMMAND.
 >
-> Similarly, a condition within test brackets may stand alone without an **if**, when used in combination with a [[list-cons#^LISTCONSREF|list construct]].
+> Similarly, a condition within test brackets may stand alone without an **if**, when used in combination with a [[list-constructs#^LISTCONSREF|list construct]].
 >
 > ```bash
 > var1=20

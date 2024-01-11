@@ -1,8 +1,10 @@
-# 29.1. /dev
+---
+title: "29.1. /dev"
+---
 
 The /dev directory contains entries for the _physical devices_ that may or may not be present in the hardware. [^1] Appropriately enough, these are called _device files_. As an example, the hard drive partitions containing the mounted filesystem(s) have entries in /dev, as [[system-and-administrative-commands#^DFREF|df]] shows.
 
-```
+```bash
 bash$ df
 Filesystem           1k-blocks      Used Available Use%
  Mounted on
@@ -15,13 +17,13 @@ Filesystem           1k-blocks      Used Available Use%
 
 Among other things, the /dev directory contains _loopback_ devices, such as /dev/loop0. A loopback device is a gimmick that allows an ordinary file to be accessed as if it were a block device. [^2] This permits mounting an entire filesystem within a single large file. See [[system-and-administrative-commands#^CREATEFS|Example 17-8]] and [[system-and-administrative-commands#^ISOMOUNTREF|Example 17-7]].
 
-A few of the pseudo-devices in /dev have other specialized uses, such as [[Chapter 31. Of Zeros and Nulls#^ZEROSREF|/dev/null]], [[Chapter 31. Of Zeros and Nulls#^ZEROSREF1|/dev/zero]], [[generate-random-integer#^URANDOMREF|/dev/urandom]], /dev/sda1 (hard drive partition), /dev/udp (_User Datagram Packet_ port), and [[devref1#^DEVTCP|/dev/tcp]].
+A few of the pseudo-devices in /dev have other specialized uses, such as [[Chapter 31. Of Zeros and Nulls#^ZEROSREF|/dev/null]], [[Chapter 31. Of Zeros and Nulls#^ZEROSREF1|/dev/zero]], [[generate-random-integer#^URANDOMREF|/dev/urandom]], /dev/sda1 (hard drive partition), /dev/udp (_User Datagram Packet_ port), and [[dev#^DEVTCP|/dev/tcp]].
 
 For instance:
 
 To manually [[system-and-administrative-commands#^MOUNTREF|mount]] a USB flash drive, append the following line to [[system-and-administrative-commands#^FSTABREF|/etc/fstab]]. [^3]
 
-```
+```bash
 /dev/sda1    /mnt/flashdrive    auto    noauto,user,noatime    0 0
 ```
 
@@ -29,7 +31,7 @@ To manually [[system-and-administrative-commands#^MOUNTREF|mount]] a USB flash d
 
 Checking whether a disk is in the CD-burner (soft-linked to /dev/hdc):
 
-```
+```bash
 head -1 /dev/hdc
 
 
@@ -59,7 +61,7 @@ The following examples assume an active Internet connection.
 
 Getting the time from nist.gov:
 
-```
+```bash
 bash$ cat </dev/tcp/time.nist.gov/13
 53082 04-03-18 04:26:54 68 0 0 502.3 UTC(NIST) *
 	      
@@ -69,7 +71,7 @@ bash$ cat </dev/tcp/time.nist.gov/13
 
 Generalizing the above into a script:
 
-```
+```bash
 #!/bin/bash
 # This script must run with root permissions.
 
@@ -84,7 +86,7 @@ echo "UTC Time = "$UTC""
 
 Downloading a URL:
 
-```
+```bash
 bash$ exec 5<>/dev/tcp/www.net.cn/80
 bash$ echo -e "GET / HTTP/1.0\n" >&5
 bash$ cat <&5
@@ -94,7 +96,7 @@ bash$ cat <&5
 
 **Example 29-1. Using /dev/tcp for troubleshooting**
 
-```
+```bash
 #!/bin/bash
 # dev-tcp.sh: /dev/tcp redirection to check Internet connection.
 
@@ -135,7 +137,7 @@ exit $MYEXIT
 
 **Example 29-2. Playing music**
 
-```
+```bash
 #!/bin/bash
 # music.sh
 
@@ -181,7 +183,9 @@ exit      # A "bonny" example of an elegant shell script!
 [^1]: The entries in /dev provide mount points for physical and virtual devices. These entries use very little drive space.
     
     Some devices, such as /dev/null, /dev/zero, and /dev/urandom are virtual. They are not actual physical devices and exist only in software.
+
 [^2]: A _block device_ reads and/or writes data in chunks, or _blocks_, in contrast to a _character device_, which acesses data in _character_ units. Examples of block devices are hard drives, CDROM drives, and flash drives. Examples of character devices are keyboards, modems, sound cards.
+
 [^3]: Of course, the mount point /mnt/flashdrive must exist. If not, then, as _root_, **mkdir /mnt/flashdrive**.
     
     To actually mount the drive, use the following command: **mount /mnt/flashdrive**

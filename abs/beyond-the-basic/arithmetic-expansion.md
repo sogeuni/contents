@@ -48,6 +48,6 @@ Examples of arithmetic expansion in scripts:
 
 1. [[complex-commands#^EX45|Example 16-9]]
 2. [[loops#^EX25|Example 11-15]]
-3. [[Chapter 27. Arrays#^EX66|Example 27-1]]
-4. [[Chapter 27. Arrays#^BUBBLE|Example 27-11]]
+3. [[arrays#^EX66|Example 27-1]]
+4. [[arrays#^BUBBLE|Example 27-11]]
 5. [[contributed-scripts#^TREE|Example A-16]]

@@ -427,7 +427,7 @@ exit 0
 > # Now, this will not work correctly.
 > ```
 
-- Next in our bag of tricks are techniques for passing an [[Chapter 27. Arrays#^ARRAYREF|array]] to a [[functions#^FUNCTIONREF|function]], then "returning" an array back to the main body of the script.
+- Next in our bag of tricks are techniques for passing an [[arrays#^ARRAYREF|array]] to a [[functions#^FUNCTIONREF|function]], then "returning" an array back to the main body of the script.
 
     Passing an array involves loading the space-separated elements of the array into a variable with [[command-substitution#^COMMANDSUBREF|command substitution]]. Getting an array back as the "return value" from a function uses the previously mentioned strategem of [[internal-commands-and-builtins#^ECHOREF|echoing]] the array in the function, then invoking command substitution and the **( ... )** operator to assign it to an array.
 
@@ -581,7 +581,7 @@ isotheral
 #+ see the agram2.sh script.
 ```
     
-See also [[procref1#^CONSTAT|Example 29-4]], [[text-processing-commands#^CRYPTOQUOTE|Example 16-25]], and [[contributed-scripts#^SOUNDEX|Example A-9]].
+See also [[proc#^CONSTAT|Example 29-4]], [[text-processing-commands#^CRYPTOQUOTE|Example 16-25]], and [[contributed-scripts#^SOUNDEX|Example A-9]].
 
 - Use "[[here-documents#^ANONHEREDOC0|anonymous here documents]]" to comment out blocks of code, to save having to individually comment out each line with a #. See [[here-documents#^COMMENTBLOCK|Example 19-11]].
 

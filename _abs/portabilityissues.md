@@ -22,7 +22,7 @@ Bash has certain features that the traditional [[shell-programming#^BASHDEF|Bour
 - Certain extended [[options#^INVOCATIONOPTIONSREF|invocation options]]
 - [[command-substitution#^COMMANDSUBREF|Command substitution]] using **$( )** notation
 - [[bash-ver3#^BRACEEXPREF3|Brace expansion]]
-- Certain [[Chapter 27. Arrays#^ARRAYREF|array]] operations, and [[bash-ver4#^ASSOCARR|associative arrays]]
+- Certain [[arrays#^ARRAYREF|array]] operations, and [[bash-ver4#^ASSOCARR|associative arrays]]
 - The [[test-constructs#^DBLBRACKETS|double brackets]] extended test construct
 - The [[double-parentheses-construct#^DBLPARENSREF|double-parentheses]] arithmetic-evaluation construct
 - Certain [[manipulating-strings#^STRINGMANIP|string manipulation]] operations

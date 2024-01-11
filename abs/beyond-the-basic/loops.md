@@ -522,7 +522,7 @@ echo; echo
 exit 0
 ```
 
-See also [[Chapter 27. Arrays#^QFUNCTION|Example 27-16]], [[Chapter 27. Arrays#^TWODIM|Example 27-17]], and [[contributed-scripts#^COLLATZ|Example A-6]].
+See also [[arrays#^QFUNCTION|Example 27-16]], [[arrays#^TWODIM|Example 27-17]], and [[contributed-scripts#^COLLATZ|Example A-6]].
 
 ---
 

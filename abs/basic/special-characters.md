@@ -325,7 +325,7 @@ not_empty ()
 
 **reverse (or negate) the sense of a test or exit status [[exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[other-comparison-operators#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal-commands-and-builtins#^KEYWORDREF|keyword]].
 
-In a different context, the ! also appears in [[ivr#^IVRREF|indirect variable references]].
+In a different context, the ! also appears in [[indirect-references#^IVRREF|indirect variable references]].
 
 In yet another context, from the _command line_, the ! invokes the Bash _history mechanism_ (see [[histcommands.html|Appendix L]]). Note that within a script, the history mechanism is disabled.
 

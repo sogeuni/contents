@@ -74,7 +74,7 @@ bash$ expr 5 % 3
 
 _5/3 = 1, with remainder 2_
 
-This operator finds use in, among other things, generating numbers within a specific range (see [[generate-random-integer#EX21|Example 9-11]] and [[generate-random-integer#RANDOMTEST|Example 9-15]]) and formatting program output (see [[Chapter 27. Arrays#^QFUNCTION|Example 27-16]] and [[contributed-scripts#COLLATZ|Example A-6]]). It can even be used to generate prime numbers, (see [[contributed-scripts#PRIMES|Example A-15]]). Modulo turns up surprisingly often in numerical recipes.
+This operator finds use in, among other things, generating numbers within a specific range (see [[generate-random-integer#EX21|Example 9-11]] and [[generate-random-integer#RANDOMTEST|Example 9-15]]) and formatting program output (see [[arrays#^QFUNCTION|Example 27-16]] and [[contributed-scripts#COLLATZ|Example A-6]]). It can even be used to generate prime numbers, (see [[contributed-scripts#PRIMES|Example A-15]]). Modulo turns up surprisingly often in numerical recipes.
 
 **Example 8-1. Greatest common divisor**
 
@@ -262,7 +262,7 @@ exit 0
 >
 > Use [[math-commands#BCREF|bc]] in scripts that that need floating point calculations or math library functions.
 
-**bitwise operators.** The bitwise operators seldom make an appearance in shell scripts. Their chief use seems to be manipulating and testing values read from ports or [[devref1#SOCKETREF|sockets]]. "Bit flipping" is more relevant to compiled languages, such as C and C++, which provide direct access to system hardware. However, see _vladz's_ ingenious use of bitwise operators in his _base64.sh_ ([[contributed-scripts#BASE64|Example A-54]]) script.
+**bitwise operators.** The bitwise operators seldom make an appearance in shell scripts. Their chief use seems to be manipulating and testing values read from ports or [[dev#SOCKETREF|sockets]]. "Bit flipping" is more relevant to compiled languages, such as C and C++, which provide direct access to system hardware. However, see _vladz's_ ingenious use of bitwise operators in his _base64.sh_ ([[contributed-scripts#BASE64|Example A-54]]) script.
 
 **bitwise operators**
 
@@ -338,7 +338,7 @@ if [[ $condition1 && $condition2 ]]    # Also works.
 #+ of [ ... ] construct.
 ```
 
-> [!note] && may also be used, depending on context, in an [[list-cons#LISTCONSREF|and list]] to concatenate commands.
+> [!note] && may also be used, depending on context, in an [[list-constructs#LISTCONSREF|and list]] to concatenate commands.
 
 ||
 
