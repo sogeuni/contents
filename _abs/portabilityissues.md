@@ -26,7 +26,7 @@ Bash has certain features that the traditional [[shell-programming#^BASHDEF|Bour
 - The [[test-constructs#^DBLBRACKETS|double brackets]] extended test construct
 - The [[double-parentheses-construct#^DBLPARENSREF|double-parentheses]] arithmetic-evaluation construct
 - Certain [[manipulating-strings#^STRINGMANIP|string manipulation]] operations
-- [[Chapter 23. Process Substitution#^PROCESSSUBREF|Process substitution]]
+- [[process-substitution#^PROCESSSUBREF|Process substitution]]
 - A Regular Expression [[bash-ver3#^REGEXMATCHREF|matching operator]]
 - Bash-specific [[internal-commands-and-builtins#^BUILTINREF|builtins]]
 - [[bash-ver4#^COPROCREF|Coprocesses]]

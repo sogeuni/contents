@@ -592,7 +592,7 @@ bash$ nc localhost.localdomain 25
  Thu, 31 Mar 2005 15:41:35 -0700
 ```
 
-A real-life [[Chapter%2023.%20Process%20Substitution.md#^NETCATEXAMPLE|usage example]].
+A real-life [[process-substitution#^NETCATEXAMPLE|usage example]].
 
 **Example 17-5. Checking a remote server for _identd_**
 

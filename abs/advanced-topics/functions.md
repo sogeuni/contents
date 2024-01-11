@@ -1,12 +1,6 @@
-# Chapter 24. Functions
-
-**Table of Contents**
-
-24.1. [[complexfunct.html|Complex Functions and Function Complexities]]
-
-24.2. [[localvar.html|Local Variables]]
-
-24.3. [[recurnolocvar.html|Recursion Without Local Variables]]
+---
+title: 24. Functions
+---
 
 Like "real" programming languages, Bash has functions, though in a somewhat limited implementation. A function is a subroutine, a [[special-characters#^CODEBLOCKREF|code block]] that implements a set of operations, a "black box" that performs a specified task. Wherever there is repetitive code, when a task repeats with only slight variations in procedure, then consider using a function.
 
@@ -29,32 +23,30 @@ _function_name_ ()
 _command_...  
 }  
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|A function may be "compacted" into a single line.
-
-\|   \|
-\|---\|
-\|fun () { echo "This is a function"; echo; }
-#                                 ^     ^\|
-
-In this case, however, a _semicolon_ must follow the final command in the function.
-
-\|   \|
-\|---\|
-\|fun () { echo "This is a function"; echo } # Error!
-#                                       ^
-
-fun2 () { echo "Even a single-command function? Yes!"; }
-#                                                    ^\||
+> [!note]
+> A function may be "compacted" into a single line.
+>
+> ```bash
+> fun () { echo "This is a function"; echo; }
+> #                                 ^     ^
+> ```
+>
+> In this case, however, a _semicolon_ must follow the final command in the function.
+>
+> ```bash
+> fun () { echo "This is a function"; echo } # Error!
+> #                                       ^
+> 
+> fun2 () { echo "Even a single-command function? Yes!"; }
+> #                                                    ^
+> ```
 
 Functions are called, _triggered_, simply by invoking their names. _A function call is equivalent to a command._
 
 **Example 24-1. Simple functions**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ex59.sh: Exercising functions (simple).
 
 JUST_A_SECOND=1
@@ -91,13 +83,13 @@ fun ()
 funky
 fun
 
-exit $?|
+exit $?
+```
 
 The function definition must precede the first call to it. There is no method of "declaring" the function, as, for example, in C.
 
-|   |
-|---|
-|f1
+```bash
+f1
 # Will give an error message, since function "f1" not yet defined.
 
 declare -f f1      # This doesn't help either.
@@ -121,64 +113,63 @@ f1  #  Function "f2" is not actually called until this point,
     #+ although it is referenced before its definition.
     #  This is permissible.
     
-    # Thanks, S.C.|
+    # Thanks, S.C.
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Functions may not be empty!
-
-\|   \|
-\|---\|
-\|#!/bin/bash
-# empty-function.sh
-
-empty ()
-{
-}
-
-exit 0  # Will not exit here!
-
-# $ sh empty-function.sh
-# empty-function.sh: line 6: syntax error near unexpected token `}'
-# empty-function.sh: line 6: `}'
-
-# $ echo $?
-# 2
-
-
-# Note that a function containing only comments is empty.
-
-func ()
-{
-  # Comment 1.
-  # Comment 2.
-  # This is still an empty function.
-  # Thank you, Mark Bova, for pointing this out.
-}
-# Results in same error message as above.
-
-
-# However ...
-
-not_quite_empty ()
-{
-  illegal_command
-} #  A script containing this function will *not* bomb
-  #+ as long as the function is not called.
-
-not_empty ()
-{
-  :
-} # Contains a : (null command), and this is okay.
-
-
-# Thank you, Dominick Geyer and Thiemo Kellner.\||
+> [!note]
+> Functions may not be empty!
+>
+> ```bash
+> #!/bin/bash
+> # empty-function.sh
+> 
+> empty ()
+> {
+> }
+> 
+> exit 0  # Will not exit here!
+> 
+> # $ sh empty-function.sh
+> # empty-function.sh: line 6: syntax error near unexpected token `}'
+> # empty-function.sh: line 6: `}'
+> 
+> # $ echo $?
+> # 2
+> 
+> 
+> # Note that a function containing only comments is empty.
+> 
+> func ()
+> {
+>   # Comment 1.
+>   # Comment 2.
+>   # This is still an empty function.
+>   # Thank you, Mark Bova, for pointing this out.
+> }
+> # Results in same error message as above.
+> 
+> 
+> # However ...
+> 
+> not_quite_empty ()
+> {
+>   illegal_command
+> } #  A script containing this function will *not* bomb
+>   #+ as long as the function is not called.
+> 
+> not_empty ()
+> {
+>   :
+> } # Contains a : (null command), and this is okay.
+> 
+> 
+> # Thank you, Dominick Geyer and Thiemo Kellner.
+> ```
 
 It is even possible to nest a function within another function, although this is not very useful.
 
-|   |
-|---|
-|f1 ()
+```bash
+f1 ()
 {
 
   f2 () # nested
@@ -197,13 +188,13 @@ f1  #  Does nothing, since calling "f1" does not automatically call "f2".
 f2  #  Now, it's all right to call "f2",
     #+ since its definition has been made visible by calling "f1".
 
-    # Thanks, S.C.|
+    # Thanks, S.C.
+```
 
 Function declarations can appear in unlikely places, even where a command would otherwise go.
 
-|   |
-|---|
-|ls -l \| foo() { echo "foo"; }  # Permissible, but useless.
+```bash
+ls -l | foo() { echo "foo"; }  # Permissible, but useless.
 
 
 
@@ -234,18 +225,18 @@ exit  # Invokes "exit ()" function, not "exit" builtin.
 filename=file1
 
 [ -f "$filename" ] &&
-foo () { rm -f "$filename"; echo "File "$filename" deleted."; } \|
+foo () { rm -f "$filename"; echo "File "$filename" deleted."; } ||
 foo () { echo "File "$filename" not found."; touch bar; }
 
 foo
 
-# Thanks, S.C. and Christopher Head|
+# Thanks, S.C. and Christopher Head
+```
 
 Function names can take strange forms.
 
-|   |
-|---|
-|_(){ for i in {1..10}; do echo -n "$FUNCNAME"; done; echo; }
+```bash
+  _(){ for i in {1..10}; do echo -n "$FUNCNAME"; done; echo; }
 # ^^^         No space between function name and parentheses.
 #             This doesn't always work. Why not?
 
@@ -260,36 +251,35 @@ Function names can take strange forms.
 :(){ echo ":"; }; :
 
 # Of what use is this?
-# It's a devious way to obfuscate the code in a script.|
+# It's a devious way to obfuscate the code in a script.
+```
 
 See also [[contributed-scripts#^GRONSFELD|Example A-56]]
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|What happens when different versions of the same function appear in a script?
-
-\|   \|
-\|---\|
-\|#  As Yan Chen points out,
-#  when a function is defined multiple times,
-#  the final version is what is invoked.
-#  This is not, however, particularly useful.
-
-func ()
-{
-  echo "First version of func ()."
-}
-
-func ()
-{
-  echo "Second version of func ()."
-}
-
-func   # Second version of func ().
-
-exit $?
-
-#  It is even possible to use functions to override
-#+ or preempt system commands.
-#  Of course, this is *not* advisable.\||
-
+> [!note]
+> What happens when different versions of the same function appear in a script?
+>
+> ```bash
+> #  As Yan Chen points out,
+> #  when a function is defined multiple times,
+> #  the final version is what is invoked.
+> #  This is not, however, particularly useful.
+> 
+> func ()
+> {
+>   echo "First version of func ()."
+> }
+> 
+> func ()
+> {
+>   echo "Second version of func ()."
+> }
+> 
+> func   # Second version of func ().
+> 
+> exit $?
+> 
+> #  It is even possible to use functions to override
+> #+ or preempt system commands.
+> #  Of course, this is *not* advisable.
+> ```

@@ -374,7 +374,7 @@ echo ${@:0}
 
 # $0                $1  $2  $3|
     
-- The new ** [[globbing.html|globbing]] operator matches filenames and directories [[localvar#^RECURSIONREF0|recursively]].
+- The new ** [[globbing.html|globbing]] operator matches filenames and directories [[local-variables#^RECURSIONREF0|recursively]].
     
     |   |
     |---|

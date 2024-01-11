@@ -197,7 +197,7 @@ This is pretty much a bugfix update.
 
 - In [[parameter-substitution#^PSGLOB|_global_ parameter substitutions]], the pattern no longer anchors at the start of the string.
 
-- The --wordexp option disables [[Chapter 23. Process Substitution#^PROCESSSUBREF|process substitution]].
+- The --wordexp option disables [[process-substitution#^PROCESSSUBREF|process substitution]].
 
 - The **=~** [[bash-ver3#^REGEXMATCHREF|Regular Expression match operator]] no longer requires [[Chapter 5. Quoting#^QUOTINGREF|quoting]] of the _pattern_ within [[test-constructs#^DBLBRACKETS|[[ ... ]]]].
 

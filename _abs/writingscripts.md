@@ -108,7 +108,7 @@ _Extra credit:_ Write the script so it can handle files and directories [[basic-
 
 What is the most efficient way to make change for $1.68, using only coins in common circulations (up to 25c)? It's 6 quarters, 1 dime, a nickel, and three cents.
 
-Given any arbitrary command-line input in dollars and cents ($*.??), calculate the change, using the minimum number of coins. If your home country is not the United States, you may use your local currency units instead. The script will need to parse the command-line input, then change it to multiples of the smallest monetary unit (cents or whatever). Hint: look at [[complexfunct#^EX61|Example 24-8]].
+Given any arbitrary command-line input in dollars and cents ($*.??), calculate the change, using the minimum number of coins. If your home country is not the United States, you may use your local currency units instead. The script will need to parse the command-line input, then change it to multiples of the smallest monetary unit (cents or whatever). Hint: look at [[complex-functions-and-function-complexities#^EX61|Example 24-8]].
 
 **Quadratic Equations**
 
@@ -341,7 +341,7 @@ Using [[Chapter 27. Arrays#^STACKEX|Example 27-15]] as an inspiration, write a s
 
 **Calculating Determinants**
 
-Write a script that calculates determinants [[localvar#^RECURSIONREF0|^1] by [recursively]] expanding the _minors_. Use a 4 x 4 determinant as a test case.
+Write a script that calculates determinants [[local-variables#^RECURSIONREF0|^1] by [recursively]] expanding the _minors_. Use a 4 x 4 determinant as a test case.
 
 **Hidden Words**
 

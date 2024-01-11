@@ -1559,7 +1559,7 @@ print_message ()
 }
 ```
 
-If the _sourced_ file is itself an executable script, then it will run, then return control to the script that called it. A _sourced_ executable script may use a [[complexfunct#^RETURNREF|return]] for this purpose.
+If the _sourced_ file is itself an executable script, then it will run, then return control to the script that called it. A _sourced_ executable script may use a [[complex-functions-and-function-complexities#^RETURNREF|return]] for this purpose.
 
 Arguments may be (optionally) passed to the _sourced_ file as [[othertypesv#^POSPARAMREF1|positional parameters]].
 
@@ -1682,7 +1682,7 @@ An **exec** also serves to [[using-exec#^USINGEXECREF|reassign file descriptors]
 
 **shopt**
 
-This command permits changing _shell options_ on the fly (see [[Chapter 25. Aliases#^AL|Example 25-1]] and [[Chapter 25. Aliases#^UNAL|Example 25-2]]). It often appears in the Bash [[files#^FILESREF1|startup files]], but also has its uses in scripts. Needs [[bash-ver2#^BASH2REF|version 2]] or later of Bash.
+This command permits changing _shell options_ on the fly (see [[aliases#^AL|Example 25-1]] and [[aliases#^UNAL|Example 25-2]]). It often appears in the Bash [[files#^FILESREF1|startup files]], but also has its uses in scripts. Needs [[bash-ver2#^BASH2REF|version 2]] or later of Bash.
 
 ```bash
 shopt -s cdspell

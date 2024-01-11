@@ -53,7 +53,7 @@ Unless otherwise noted, [the author](mailto:thegrendel.abs@gmail.com) of this bo
 
 [^1]: These are referred to as [[internal-commands-and-builtins#^BUILTINREF|builtins]], features internal to the shell.
 
-[^2]: Although [[localvar#^RECURSIONREF0|recursion _is_ possible in a shell script]], it tends to be slow and its implementation is often an [[recurnolocvar#^FIBOREF|ugly kludge]].
+[^2]: Although [[local-variables#^RECURSIONREF0|recursion _is_ possible in a shell script]], it tends to be slow and its implementation is often an [[recursion-without-local-variables#^FIBOREF|ugly kludge]].
 
 [^3]: An _acronym_ is an _ersatz_ word formed by pasting together the initial letters of the words into a tongue-tripping phrase. This morally corrupt and pernicious practice deserves appropriately severe punishment. Public flogging suggests itself.
 

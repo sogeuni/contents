@@ -191,7 +191,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
 - **>( ... )**
     
-    **<( ... )** [[Chapter 23. Process Substitution#^PROCESSSUBREF|Process substitution]]
+    **<( ... )** [[process-substitution#^PROCESSSUBREF|Process substitution]]
     
 - **... )** [[testing-and-branching#^CASEPAREN|Terminates test-condition]] in _case_ construct
     
@@ -391,9 +391,9 @@ Address database, [[testing-and-branching#^EX30|script example]]
 
 _Advanced Bash Scripting Guide_, [[mirrorsites#^WHERE_TARBALL|where to download]]
 
-[[Chapter 25. Aliases#^ALIASREF|Alias]]
+[[aliases#^ALIASREF|Alias]]
 
-- [[Chapter 25. Aliases#^UNALIASREF|Removing an _alias_]], using _unalias_
+- [[aliases#^UNALIASREF|Removing an _alias_]], using _unalias_
     
 
 [[command-substitution#^AGRAM2|Anagramming]]
@@ -917,7 +917,7 @@ Exit and Exit status
     
     [[exit-status#^PIPEEX|_Pipe_]] exit status
     
-    [[complexfunct#^EXITRETURN1|Specified by a _function return_]]
+    [[complex-functions-and-function-complexities#^EXITRETURN1|Specified by a _function return_]]
     
     [[exit-status#^EXITSUCCESS|_Successful_]], **0**
     
@@ -1003,31 +1003,31 @@ Exit and Exit status
 
 [[functions#^FUNCTIONREF|Functions]]
 
-- [[complexfunct#^PASSEDARGS|Arguments passed]] referred to by position
+- [[complex-functions-and-function-complexities#^PASSEDARGS|Arguments passed]] referred to by position
     
-- [[complexfunct#^CAPTURERETVAL|Capturing the return value]] of a function using [[internal-commands-and-builtins#^ECHOREF|echo]]
+- [[complex-functions-and-function-complexities#^CAPTURERETVAL|Capturing the return value]] of a function using [[internal-commands-and-builtins#^ECHOREF|echo]]
     
 - [[special-characters#^COLONFNAME|_Colon_]] as function name
     
 - [[functions#^FUNCTDEFMUST|Definition must precede]] first call to function
     
-- [[complexfunct#^EXITRETURN1|Exit status]]
+- [[complex-functions-and-function-complexities#^EXITRETURN1|Exit status]]
     
-- [[localvar#^LOCALREF1|Local variables]]
+- [[local-variables#^LOCALREF1|Local variables]]
     
-    and [[localvar#^LOCVARRECUR|recursion]]
+    and [[local-variables#^LOCVARRECUR|recursion]]
     
 - [[assorted-tips#^PASSARRAY|Passing an _array_]] to a function
     
-- [[complexfunct#^FUNCPOINTERS|Passing pointers]] to a function
+- [[complex-functions-and-function-complexities#^FUNCPOINTERS|Passing pointers]] to a function
     
-- [[complexfunct#^PASSEDARGS|Positional parameters]]
+- [[complex-functions-and-function-complexities#^PASSEDARGS|Positional parameters]]
     
-- [[localvar#^RECURSIONREF0|Recursion]]
+- [[local-variables#^RECURSIONREF0|Recursion]]
     
-- [[complexfunct#^REDSTDINFUNC1|Redirecting stdin]] of a function
+- [[complex-functions-and-function-complexities#^REDSTDINFUNC1|Redirecting stdin]] of a function
     
-- [[complexfunct#^RETURNREF|return]]
+- [[complex-functions-and-function-complexities#^RETURNREF|return]]
     
     Multiple _return values_ from a function, [[contributed-scripts#^STDDEV|example script]]
     
@@ -1035,7 +1035,7 @@ Exit and Exit status
     
     [[assorted-tips#^RVT|_Return_ range limits]], workarounds
     
-- [[complexfunct#^FSHIFTREF|_Shift_ arguments passed]] to a function
+- [[complex-functions-and-function-complexities#^FSHIFTREF|_Shift_ arguments passed]] to a function
     
 - [[functions#^FSTRANGEREF|Unusual function names]]
     
@@ -1082,7 +1082,7 @@ Games and amusements
     
 - [[shell-wrapper#^SPEECH00|Speech generation]]
     
-- [[recurnolocvar#^HANOI|Towers of Hanoi]]
+- [[recursion-without-local-variables#^HANOI|Towers of Hanoi]]
     
     [[contributed-scripts#^HANOI2|Graphic version]]
     
@@ -1290,9 +1290,9 @@ Games and amusements
 - [[list-cons#^ORLISTREF|_Or_ list]]
     
 
-[[localvar#^LOCALREF1|Local variables]]
+[[local-variables#^LOCALREF1|Local variables]]
 
-- and [[localvar#^LOCVARRECUR|recursion]]
+- and [[local-variables#^LOCVARRECUR|recursion]]
     
 
 [[localization|Localization]]
@@ -1610,7 +1610,7 @@ Parentheses
     
     [[gotchas#^PIPELOOP|_echo_ to a loop]]
     
-    [[gotchas#^BADREAD0|_echo_ to _read_]] (however, this problem [[Chapter 23. Process Substitution#^GOODREAD0|can be circumvented]])
+    [[gotchas#^BADREAD0|_echo_ to _read_]] (however, this problem [[process-substitution#^GOODREAD0|can be circumvented]])
     
     [[gotchas#^PTAILGREP|_tail_ -f to _grep_]]
     
@@ -1637,7 +1637,7 @@ Pointers
 
 - [[io-redirection#^FDREF1|and file descriptors]]
     
-- [[complexfunct#^FUNCPOINTERS|and functions]]
+- [[complex-functions-and-function-complexities#^FUNCPOINTERS|and functions]]
     
 - [[ivr#^IRRREF|and _indirect references_]]
     
@@ -1659,7 +1659,7 @@ Pointers
     
 - [[internal-variables#^APPREF|$*]], as a _single_ word
     
-- [[complexfunct#^PASSEDARGS|in functions]]
+- [[complex-functions-and-function-complexities#^PASSEDARGS|in functions]]
     
 
 [[starting-off-with-a-sha-bang#^POSIX2REF|POSIX]], _Portable Operating System Interface / UNIX_
@@ -1704,15 +1704,15 @@ Prime numbers
 - [[special-characters#^PROCESSIDDEF|Process ID]] (PID)
     
 
-[[Chapter 23. Process Substitution#^PROCESSSUBREF|Process substitution]]
+[[process-substitution#^PROCESSSUBREF|Process substitution]]
 
-- [[Chapter 23. Process Substitution#^PCC2DIR|To compare contents of directories]]
+- [[process-substitution#^PCC2DIR|To compare contents of directories]]
     
-- [[Chapter 23. Process Substitution#^PSFDSTDIN|To supply stdin of a command]]
+- [[process-substitution#^PSFDSTDIN|To supply stdin of a command]]
     
-- [[Chapter 23. Process Substitution#^COMMANDSPARENS1|Template]]
+- [[process-substitution#^COMMANDSPARENS1|Template]]
     
-- [[Chapter 23. Process Substitution#^GOODREAD0|_while-read_ loop without a _subshell_]]
+- [[process-substitution#^GOODREAD0|_while-read_ loop without a _subshell_]]
     
 
 [[tabexpansion|Programmable completion]] (tab expansion)
@@ -1799,19 +1799,19 @@ Raspberry Pi (single-board computer)
 
 [[internal-commands-and-builtins#^READLINEREF|readline]] library
 
-[[localvar#^RECURSIONREF|Recursion]]
+[[local-variables#^RECURSIONREF|Recursion]]
 
-- [[localvar#^RECURSIONDEMO0|Demonstration of]]
+- [[local-variables#^RECURSIONDEMO0|Demonstration of]]
     
-- [[localvar#^FACTORIALREF|Factorial]]
+- [[local-variables#^FACTORIALREF|Factorial]]
     
-- [[recurnolocvar#^FIBOREF|Fibonacci sequence]]
+- [[recursion-without-local-variables#^FIBOREF|Fibonacci sequence]]
     
-- [[localvar#^LOCVARRECUR|Local variables]]
+- [[local-variables#^LOCVARRECUR|Local variables]]
     
 - [[recursionsct#^SCRIPTRECURSION|Script calling itself recursively]]
     
-- [[recurnolocvar#^HANOIREF|Towers of Hanoi]]
+- [[recursion-without-local-variables#^HANOIREF|Towers of Hanoi]]
     
 
 Redirection
@@ -1836,7 +1836,7 @@ Redirection
     
 - [[special-characters#^COXEX|stdin / stdout]], using **-**
     
-- [[complexfunct#^REDSTDINFUNC1|stdinof a _function_]]
+- [[complex-functions-and-function-complexities#^REDSTDINFUNC1|stdinof a _function_]]
     
 - [[io-redirection#^IOREDIRECTIONREF|stdout to a file]]
     
@@ -1907,7 +1907,7 @@ Redirection
 
 [[restricted-shells#^RESTRICTEDSHREF|Restricted shell]], shell (or script) with certain commands disabled
 
-[[complexfunct#^RETURNREF|return]], command that terminates a [[functions#^FUNCTIONREF|function]]
+[[complex-functions-and-function-complexities#^RETURNREF|return]], command that terminates a [[functions#^FUNCTIONREF|function]]
 
 [[miscellaneous-commands#^RUNPARTSREF|run-parts]]
 
@@ -2239,7 +2239,7 @@ Timed input
     
     _Associative_ array [[optimizations#^ASSOCARRTST|more efficient]] than a numerically-indexed array
     
-- [[complexfunct#^CAPTURERETVAL|Capturing the return value]] of a function, using _echo_
+- [[complex-functions-and-function-complexities#^CAPTURERETVAL|Capturing the return value]] of a function, using _echo_
     
 - [[networkprogramming#^CGISCRIPT|_CGI_ programming]], using scripts for
     
@@ -2303,7 +2303,7 @@ Timed input
     
 - [[assorted-tips#^TRACKINGSCR|Tracking script usage]]
     
-- [[Chapter 23. Process Substitution#^GOODREAD0|_while-read_ loop without a _subshell_]]
+- [[process-substitution#^GOODREAD0|_while-read_ loop without a _subshell_]]
     
 - [[assorted-tips#^WIDGETREF|Widgets]], invoking from a script
     
@@ -2345,7 +2345,7 @@ _Trinary (ternary)_ operator, _C_-style, **var>10?88:99**
 
 [[internal-variables#^UIDREF|$UID]], User ID number
 
-[[Chapter 25. Aliases#^UNALIASREF|unalias]], to remove an [[Chapter 25. Aliases#^ALIASREF|alias]]
+[[aliases#^UNALIASREF|unalias]], to remove an [[aliases#^ALIASREF|alias]]
 
 [[system-and-administrative-commands#^UNAMEREF|uname]], output system information
 
@@ -2470,7 +2470,7 @@ _while [ condition ]; do_
     
 - [[loops#^WHILEREADREF2|_while read_]] construct
     
-    [[Chapter 23. Process Substitution#^GOODREAD0|Avoiding a _subshell_]]
+    [[process-substitution#^GOODREAD0|Avoiding a _subshell_]]
     
 
 [[special-characters#^WHITESPACEREF|Whitespace]], spaces, tabs, and newline characters

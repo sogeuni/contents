@@ -1,18 +1,19 @@
-# 24.1. Complex Functions and Function Complexities
+---
+title: 24.1. Complex Functions and Function Complexities
+---
 
 Functions may process arguments passed to them and return an [[exit-status#^EXITSTATUSREF|exit status]] to the script for further processing.
 
-|   |
-|---|
-|function_name $arg1 $arg2|
+```bash
+function_name $arg1 $arg2
+```
 
 The function refers to the passed arguments by position (as if they were [[internal-variables#^POSPARAMREF|positional parameters]]), that is, $1, $2, and so forth.
 
 **Example 24-2. Function Taking Parameters**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Functions and parameters
 
 DEFAULT=default                             # Default param value.
@@ -66,19 +67,18 @@ echo "\"\" \"second\" passed."
 func2 "" second       # Called with zero-length first parameter
 echo                  # and ASCII string as a second one.
 
-exit 0|
+exit 0
+```
 
-|   |   |
-|---|---|
-|![[../images/important.gif|Important]]|The [[othertypesv#^SHIFTREF|shift]] command works on arguments passed to functions (see [[assortedtips#^MULTIPLICATION|Example 36-18]]).|
+> [!important]
+> The [[othertypesv#^SHIFTREF|shift]] command works on arguments passed to functions (see [[assortedtips#^MULTIPLICATION|Example 36-18]]).
 
 But, what about command-line arguments passed to the script? Does a function see them? Well, let's clear up the confusion.
 
 **Example 24-3. Functions and command-line args passed to the script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # func-cmdlinearg.sh
 #  Call this script with a command-line argument,
 #+ something like $0 arg1.
@@ -101,7 +101,8 @@ echo "Second call to function: command-line arg passed explicitly."
 func $1
 # Now it's seen!
 
-exit 0|
+exit 0
+```
 
 In contrast to certain other programming languages, shell scripts normally pass only value parameters to functions. Variable names (which are actually _pointers_), if passed as parameters to functions, will be treated as string literals. _Functions interpret their arguments literally._
 
@@ -109,9 +110,8 @@ In contrast to certain other programming languages, shell scripts normally pass 
 
 **Example 24-4. Passing an indirect reference to a function**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ind-func.sh: Passing an indirect reference to a function.
 
 echo_var ()
@@ -133,15 +133,15 @@ Hello="Hello, again!"
 echo_var "$message"        # Hello
 echo_var "${!message}"     # Hello, again!
 
-exit 0|
+exit 0
+```
 
 The next logical question is whether parameters can be dereferenced _after_ being passed to a function.
 
 **Example 24-5. Dereferencing a parameter passed to a function**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # dereference.sh
 # Dereferencing parameter passed to a function.
 # Script by Bruce W. Clare.
@@ -162,13 +162,13 @@ echo $Junk "before"    # Some Text before
 dereference Junk
 echo $Junk "after"     # Some Different Text after
 
-exit 0|
+exit 0
+```
 
 **Example 24-6. Again, dereferencing a parameter passed to a function**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ref-params.sh: Dereferencing a parameter passed to a function.
 #                (Complex Example)
 
@@ -205,7 +205,8 @@ done
 
 # Thanks to Stephane Chazelas for providing this instructive example.
 
-exit 0|
+exit 0
+```
 
 **Exit and Return**
 
@@ -215,13 +216,12 @@ Functions return a value, called an _exit status_. This is analogous to the [[ex
 
 **return**
 
-Terminates a function. A **return** command [[internal-variables#^XSTATVARREF|^1] optionally takes an _integer_ argument, which is returned to the calling script as the "exit status" of the function, and this exit status is assigned to the variable [$?]].
+Terminates a function. A **return** command [^1] optionally takes an _integer_ argument, which is returned to the calling script as the "exit status" of the function, and this exit status is assigned to the variable [[internal-variables#^XSTATVARREF|$?]].
 
 **Example 24-7. Maximum of two numbers**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # max.sh: Maximum of two integers.
 
 E_PARAM_ERR=250    # If less than 2 params passed to function.
@@ -268,37 +268,36 @@ exit 0
 #  Exercise (easy):
 #  ---------------
 #  Convert this to an interactive script,
-#+ that is, have the script ask for input (two numbers).|
+#+ that is, have the script ask for input (two numbers).
+```
 
-|   |   |
-|---|---|
-|![[../images/tip.gif|Tip]]|For a function to return a string or array, use a dedicated variable.
-
-\|   \|
-\|---\|
-\|count_lines_in_etc_passwd()
-{
-  [[ -r /etc/passwd ]] && REPLY=$(echo $(wc -l < /etc/passwd))
-  #  If /etc/passwd is readable, set REPLY to line count.
-  #  Returns both a parameter value and status information.
-  #  The 'echo' seems unnecessary, but . . .
-  #+ it removes excess whitespace from the output.
-}
-
-if count_lines_in_etc_passwd
-then
-  echo "There are $REPLY lines in /etc/passwd."
-else
-  echo "Cannot count lines in /etc/passwd."
-fi  
-
-# Thanks, S.C.\||
+> [!tip]
+> For a function to return a string or array, use a dedicated variable.
+>
+> ```bash
+> count_lines_in_etc_passwd()
+> {
+>   [[ -r /etc/passwd ]] && REPLY=$(echo $(wc -l < /etc/passwd))
+>   #  If /etc/passwd is readable, set REPLY to line count.
+>   #  Returns both a parameter value and status information.
+>   #  The 'echo' seems unnecessary, but . . .
+>   #+ it removes excess whitespace from the output.
+> }
+> 
+> if count_lines_in_etc_passwd
+> then
+>   echo "There are $REPLY lines in /etc/passwd."
+> else
+>   echo "Cannot count lines in /etc/passwd."
+> fi  
+> 
+> # Thanks, S.C.
+> ```
 
 **Example 24-8. Converting numbers to Roman numerals**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # Arabic number to Roman numeral conversion
 # Range: 0 - 200
@@ -370,182 +369,182 @@ to_roman $num 1 I
 
 echo
 
-exit|
+exit
+```
 
 See also [[testing-and-branching#^ISALPHA|Example 11-29]].
 
-|   |   |
-|---|---|
-|![[../images/important.gif|Important]]|The largest positive integer a function can return is 255. The **return** command is closely tied to the concept of [[exit-status#^EXITSTATUSREF|exit status]], which accounts for this particular limitation. Fortunately, there are various [[assortedtips#^RVT|workarounds]] for those situations requiring a large integer return value from a function.
-
-**Example 24-9. Testing large return values in a function**
-
-\|   \|
-\|---\|
-\|#!/bin/bash
-# return-test.sh
-
-# The largest positive value a function can return is 255.
-
-return_test ()         # Returns whatever passed to it.
-{
-  return $1
-}
-
-return_test 27         # o.k.
-echo $?                # Returns 27.
-  
-return_test 255        # Still o.k.
-echo $?                # Returns 255.
-
-return_test 257        # Error!
-echo $?                # Returns 1 (return code for miscellaneous error).
-
-# =========================================================
-return_test -151896    # Do large negative numbers work?
-echo $?                # Will this return -151896?
-                       # No! It returns 168.
-#  Version of Bash before 2.05b permitted
-#+ large negative integer return values.
-#  It happened to be a useful feature.
-#  Newer versions of Bash unfortunately plug this loophole.
-#  This may break older scripts.
-#  Caution!
-# =========================================================
-
-exit 0\|
-
-A workaround for obtaining large integer "return values" is to simply assign the "return value" to a global variable.
-
-\|   \|
-\|---\|
-\|Return_Val=   # Global variable to hold oversize return value of function.
-
-alt_return_test ()
-{
-  fvar=$1
-  Return_Val=$fvar
-  return   # Returns 0 (success).
-}
-
-alt_return_test 1
-echo $?                              # 0
-echo "return value = $Return_Val"    # 1
-
-alt_return_test 256
-echo "return value = $Return_Val"    # 256
-
-alt_return_test 257
-echo "return value = $Return_Val"    # 257
-
-alt_return_test 25701
-echo "return value = $Return_Val"    #25701\|
-
-A more elegant method is to have the function **echo** its "return value to stdout," and then capture it by [[command-substitution#^COMMANDSUBREF|command substitution]]. See the [[assorted-tips#^RVT|discussion of this]] in [[assorted-tips|Section 36.7]].
-
-**Example 24-10. Comparing two large integers**
-
-\|   \|
-\|---\|
-\|#!/bin/bash
-# max2.sh: Maximum of two LARGE integers.
-
-#  This is the previous "max.sh" example,
-#+ modified to permit comparing large integers.
-
-EQUAL=0             # Return value if both params equal.
-E_PARAM_ERR=-99999  # Not enough params passed to function.
-#           ^^^^^^    Out of range of any params that might be passed.
-
-max2 ()             # "Returns" larger of two numbers.
-{
-if [ -z "$2" ]
-then
-  echo $E_PARAM_ERR
-  return
-fi
-
-if [ "$1" -eq "$2" ]
-then
-  echo $EQUAL
-  return
-else
-  if [ "$1" -gt "$2" ]
-  then
-    retval=$1
-  else
-    retval=$2
-  fi
-fi
-
-echo $retval        # Echoes (to stdout), rather than returning value.
-                    # Why?
-}
-
-
-return_val=$(max2 33001 33997)
-#            ^^^^             Function name
-#                 ^^^^^ ^^^^^ Params passed
-#  This is actually a form of command substitution:
-#+ treating a function as if it were a command,
-#+ and assigning the stdout of the function to the variable "return_val."
-
-
-# ========================= OUTPUT ========================
-if [ "$return_val" -eq "$E_PARAM_ERR" ]
-  then
-  echo "Error in parameters passed to comparison function!"
-elif [ "$return_val" -eq "$EQUAL" ]
-  then
-    echo "The two numbers are equal."
-else
-    echo "The larger of the two numbers is $return_val."
-fi
-# =========================================================
-  
-exit 0
-
-#  Exercises:
-#  ---------
-#  1) Find a more elegant way of testing
-#+    the parameters passed to the function.
-#  2) Simplify the if/then structure at "OUTPUT."
-#  3) Rewrite the script to take input from command-line parameters.\|
-
-Here is another example of capturing a function "return value." Understanding it requires[C.2. Awk](C.2.%20Awk.md#^AWKREF) [[awk#^AWKREF|awk]].
-
-\|   \|
-\|---\|
-\|month_length ()  # Takes month number as an argument.
-{                # Returns number of days in month.
-monthD="31 28 31 30 31 30 31 31 30 31 30 31"  # Declare as local?
-echo "$monthD" \\| awk '{ print $'"${1}"' }'    # Tricky.
-#                             ^^^^^^^^^
-# Parameter passed to function  ($1 -- month number), then to awk.
-# Awk sees this as "print $1 . . . print $12" (depending on month number)
-# Template for passing a parameter to embedded awk script:
-#                                 $'"${script_parameter}"'
-
-#    Here's a slightly simpler awk construct:
-#    echo $monthD \\| awk -v month=$1 '{print $(month)}'
-#    Uses the -v awk option, which assigns a variable value
-#+   prior to execution of the awk program block.
-#    Thank you, Rich.
-
-#  Needs error checking for correct parameter range (1-12)
-#+ and for February in leap year.
-}
-
-# ----------------------------------------------
-# Usage example:
-month=4        # April, for example (4th month).
-days_in=$(month_length $month)
-echo $days_in  # 30
-# ----------------------------------------------\|
-
-See also [[contributed-scripts#^DAYSBETWEEN|Example A-7]] and [[contributed-scripts#^STDDEV|Example A-37]].
-
-**Exercise:** Using what we have just learned, extend the previous [[complexfunct#^EX61|Roman numerals example]] to accept arbitrarily large input.|
+> [!important]
+> The largest positive integer a function can return is 255. The **return** command is closely tied to the concept of [[exit-status#^EXITSTATUSREF|exit status]], which accounts for this particular limitation. Fortunately, there are various [[assortedtips#^RVT|workarounds]] for those situations requiring a large integer return value from a function.
+>
+> **Example 24-9. Testing large return values in a function**
+>
+> ```bash
+> #!/bin/bash
+> # return-test.sh
+> 
+> # The largest positive value a function can return is 255.
+> 
+> return_test ()         # Returns whatever passed to it.
+> {
+>   return $1
+> }
+> 
+> return_test 27         # o.k.
+> echo $?                # Returns 27.
+>   
+> return_test 255        # Still o.k.
+> echo $?                # Returns 255.
+> 
+> return_test 257        # Error!
+> echo $?                # Returns 1 (return code for miscellaneous error).
+> 
+> # =========================================================
+> return_test -151896    # Do large negative numbers work?
+> echo $?                # Will this return -151896?
+>                        # No! It returns 168.
+> #  Version of Bash before 2.05b permitted
+> #+ large negative integer return values.
+> #  It happened to be a useful feature.
+> #  Newer versions of Bash unfortunately plug this loophole.
+> #  This may break older scripts.
+> #  Caution!
+> # =========================================================
+> 
+> exit 0
+> ```
+>
+> A workaround for obtaining large integer "return values" is to simply assign the "return value" to a global variable.
+>
+> ```bash
+> Return_Val=   # Global variable to hold oversize return value of function.
+> 
+> alt_return_test ()
+> {
+>   fvar=$1
+>   Return_Val=$fvar
+>   return   # Returns 0 (success).
+> }
+> 
+> alt_return_test 1
+> echo $?                              # 0
+> echo "return value = $Return_Val"    # 1
+> 
+> alt_return_test 256
+> echo "return value = $Return_Val"    # 256
+> 
+> alt_return_test 257
+> echo "return value = $Return_Val"    # 257
+> 
+> alt_return_test 25701
+> echo "return value = $Return_Val"    #25701
+> ```
+>
+> A more elegant method is to have the function **echo** its "return value to stdout," and then capture it by [[command-substitution#^COMMANDSUBREF|command substitution]]. See the [[assorted-tips#^RVT|discussion of this]] in [[assorted-tips|Section 36.7]].
+>
+> **Example 24-10. Comparing two large integers**
+>
+> ```bash
+> #!/bin/bash
+> # max2.sh: Maximum of two LARGE integers.
+> 
+> #  This is the previous "max.sh" example,
+> #+ modified to permit comparing large integers.
+> 
+> EQUAL=0             # Return value if both params equal.
+> E_PARAM_ERR=-99999  # Not enough params passed to function.
+> #           ^^^^^^    Out of range of any params that might be passed.
+> 
+> max2 ()             # "Returns" larger of two numbers.
+> {
+> if [ -z "$2" ]
+> then
+>   echo $E_PARAM_ERR
+>   return
+> fi
+> 
+> if [ "$1" -eq "$2" ]
+> then
+>   echo $EQUAL
+>   return
+> else
+>   if [ "$1" -gt "$2" ]
+>   then
+>     retval=$1
+>   else
+>     retval=$2
+>   fi
+> fi
+> 
+> echo $retval        # Echoes (to stdout), rather than returning value.
+>                     # Why?
+> }
+> 
+> 
+> return_val=$(max2 33001 33997)
+> #            ^^^^             Function name
+> #                 ^^^^^ ^^^^^ Params passed
+> #  This is actually a form of command substitution:
+> #+ treating a function as if it were a command,
+> #+ and assigning the stdout of the function to the variable "return_val."
+> 
+> 
+> # ========================= OUTPUT ========================
+> if [ "$return_val" -eq "$E_PARAM_ERR" ]
+>   then
+>   echo "Error in parameters passed to comparison function!"
+> elif [ "$return_val" -eq "$EQUAL" ]
+>   then
+>     echo "The two numbers are equal."
+> else
+>     echo "The larger of the two numbers is $return_val."
+> fi
+> # =========================================================
+>   
+> exit 0
+> 
+> #  Exercises:
+> #  ---------
+> #  1) Find a more elegant way of testing
+> #+    the parameters passed to the function.
+> #  2) Simplify the if/then structure at "OUTPUT."
+> #  3) Rewrite the script to take input from command-line parameters.
+> ```
+>
+> Here is another example of capturing a function "return value." Understanding it requires[[C.2.%20Awk.md#^AWKREF|C.2. Awk]] [[awk#^AWKREF|awk]].
+>
+> ```bash
+> month_length ()  # Takes month number as an argument.
+> {                # Returns number of days in month.
+> monthD="31 28 31 30 31 30 31 31 30 31 30 31"  # Declare as local?
+> echo "$monthD" | awk '{ print $'"${1}"' }'    # Tricky.
+> #                             ^^^^^^^^^
+> # Parameter passed to function  ($1 -- month number), then to awk.
+> # Awk sees this as "print $1 . . . print $12" (depending on month number)
+> # Template for passing a parameter to embedded awk script:
+> #                                 $'"${script_parameter}"'
+> 
+> #    Here's a slightly simpler awk construct:
+> #    echo $monthD | awk -v month=$1 '{print $(month)}'
+> #    Uses the -v awk option, which assigns a variable value
+> #+   prior to execution of the awk program block.
+> #    Thank you, Rich.
+> 
+> #  Needs error checking for correct parameter range (1-12)
+> #+ and for February in leap year.
+> }
+> 
+> # ----------------------------------------------
+> # Usage example:
+> month=4        # April, for example (4th month).
+> days_in=$(month_length $month)
+> echo $days_in  # 30
+> # ----------------------------------------------
+> ```
+>
+> See also [[contributed-scripts#^DAYSBETWEEN|Example A-7]] and [[contributed-scripts#^STDDEV|Example A-37]].
+>
+> **Exercise:** Using what we have just learned, extend the previous [[complex-functions-and-function-complexities#^EX61|Roman numerals example]] to accept arbitrarily large input.
 
 **Redirection**
 
@@ -555,9 +554,8 @@ A function is essentially a [[special-characters#^CODEBLOCKREF|code block]], whi
 
 **Example 24-11. Real name from username**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # realname.sh
 #
 # From username, gets "real name" from /etc/passwd.
@@ -579,7 +577,7 @@ file_excerpt ()    #  Scan file for pattern,
 {                  #+ then print relevant portion of line.
   while read line  # "while" does not necessarily need [ condition ]
   do
-    echo "$line" \| grep $1 \| awk -F":" '{ print $5 }'
+    echo "$line" | grep $1 | awk -F":" '{ print $5 }'
     # Have awk use ":" delimiter.
   done
 } <$file  # Redirect into function's stdin.
@@ -587,20 +585,20 @@ file_excerpt ()    #  Scan file for pattern,
 file_excerpt $pattern
 
 # Yes, this entire script could be reduced to
-#       grep PATTERN /etc/passwd \| awk -F":" '{ print $5 }'
+#       grep PATTERN /etc/passwd | awk -F":" '{ print $5 }'
 # or
 #       awk -F: '/PATTERN/ {print $5}'
 # or
 #       awk -F: '($1 == "username") { print $5 }' # real name from username
 # However, it might not be as instructive.
 
-exit 0|
+exit 0
+```
 
 There is an alternate, and perhaps less confusing method of redirecting a function's stdin. This involves redirecting the stdin to an embedded bracketed code block within the function.
 
-|   |
-|---|
-|# Instead of:
+```bash
+# Instead of:
 Function ()
 {
  ...
@@ -620,20 +618,19 @@ Function ()  # This works.
 {
   {
    echo $*
-  } \| tr a b
+  } | tr a b
 }
 
 Function ()  # This doesn't work.
 {
   echo $*
-} \| tr a b   # A nested code block is mandatory here.
+} | tr a b   # A nested code block is mandatory here.
 
 
-# Thanks, S.C.|
+# Thanks, S.C.
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Emmanuel Rouat's [[sample-bashrc.html|sample bashrc file]] contains some instructive examples of functions.|
+> [!note]
+> Emmanuel Rouat's [[sample-bashrc.html|sample bashrc file]] contains some instructive examples of functions.
 
-[[internal-commands-and-builtins#^BUILTINREF|^1]: The **return** command is a Bash [builtin]].
-
+[^1]: The **return** command is a Bash [[internal-commands-and-builtins#^BUILTINREF|builtin]].

@@ -1257,7 +1257,7 @@ echo $_              #  :
 
 $?
 
-[[exit-status#^EXITSTATUSREF|Exit status]] of a command, [[functions#^FUNCTIONREF|function]], or the script itself (see [[complexfunct#^MAX|Example 24-7]])
+[[exit-status#^EXITSTATUSREF|Exit status]] of a command, [[functions#^FUNCTIONREF|function]], or the script itself (see [[complex-functions-and-function-complexities#^MAX|Example 24-7]])
 
 `$$`
 
@@ -1267,7 +1267,7 @@ Process ID (_PID_) of the script itself. [[debugging#^ONLINE|^5] The $$ variable
 
 [^2]: The PID of the currently running script is `$$`, of course.
 
-[^3]: Somewhat analogous to [[localvar#^RECURSIONREF|recursion]], in this context _nesting_ refers to a pattern embedded within a larger pattern. One of the definitions of _nest_, according to the 1913 edition of _Webster's Dictionary_, illustrates this beautifully: "_A collection of boxes, cases, or the like, of graduated size, each put within the one next larger._"
+[^3]: Somewhat analogous to [[local-variables#^RECURSIONREF|recursion]], in this context _nesting_ refers to a pattern embedded within a larger pattern. One of the definitions of _nest_, according to the 1913 edition of _Webster's Dictionary_, illustrates this beautifully: "_A collection of boxes, cases, or the like, of graduated size, each put within the one next larger._"
 
 [^4]: The words "argument" and "parameter" are often used interchangeably. In the context of this document, they have the same precise meaning: _a variable passed to a script or function._
 

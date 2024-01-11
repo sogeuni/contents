@@ -1,3 +1,7 @@
+---
+title: 23. Process Substitution
+---
+
 [[special-characters#^PIPEREF|Piping]] the stdout of a command into the stdin of another is a powerful technique. But, what if you need to pipe the stdout of _multiple_ commands? This is where _process substitution_ comes in.
 
 _Process substitution_ feeds the output of a [[special-characters#^PROCESSREF|process]] (or processes) into the stdin of another process.
@@ -12,11 +16,10 @@ Command list enclosed within parentheses
 
 Process substitution uses /dev/fd/\<n> files to send the results of the process(es) within parentheses to another process. [^1]
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|There is _no_ space between the the "<" or ">" and the parentheses. Space there would give an error message.|
+> [!caution]
+> There is _no_ space between the the "<" or ">" and the parentheses. Space there would give an error message.
 
-```
+```bash
 bash$ echo >(true)
 /dev/fd/63
 
@@ -39,14 +42,12 @@ bash$ wc <(grep script /usr/share/dict/linux.words)
 	      
 ```
 
-
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Bash creates a pipe with two [[io-redirection#^FDREF|file descriptors]], --fIn and fOut--. The stdin of [[internal-commands-and-builtins#^TRUEREF|true]] connects to fOut (dup2(fOut, 0)), then Bash passes a /dev/fd/fIn argument to **echo**. On systems lacking /dev/fd/<n> files, Bash may use temporary files. (Thanks, S.C.)|
+> [!note]
+> Bash creates a pipe with two [[io-redirection#^FDREF|file descriptors]], --fIn and fOut--. The stdin of [[internal-commands-and-builtins#^TRUEREF|true]] connects to fOut (dup2(fOut, 0)), then Bash passes a /dev/fd/fIn argument to **echo**. On systems lacking /dev/fd/<n> files, Bash may use temporary files. (Thanks, S.C.)
 
 Process substitution can compare the output of two different commands, or even the output of different options to the same command.
 
-```
+```bash
 bash$ comm <(ls -l) <(ls -al)
 total 12
 -rw-rw-r--    1 bozo bozo       78 Mar 10 12:58 File0
@@ -62,13 +63,13 @@ total 12
 
 Process substitution can compare the contents of two directories -- to see which filenames are in one, but not the other.
 
-```
+```bash
 diff <(ls $first_directory) <(ls $second_directory)
 ```
 
 Some other usages and uses of process substitution:
 
-```
+```bash
 read -a list < <( od -Ad -w24 -t u2 /dev/urandom )
 #  Read a list of random numbers from /dev/urandom,
 #+ process with "od"
@@ -78,7 +79,7 @@ read -a list < <( od -Ad -w24 -t u2 /dev/urandom )
 #  Courtesy of JuanJo Ciarlante.
 ```
 
-```
+```bash
 PORT=6881   # bittorrent
 
 # Scan the port to make sure nothing nefarious is going on.
@@ -93,7 +94,7 @@ gzip | tee>(md5sum - | sed 's/-$/mydata.lz2/'>mydata-gz.md5)>mydata.gz
 #+ (with light edits by the ABS Guide author).
 ```
 
-```
+```bash
 cat <(ls -l)
 # Same as     ls -l | cat
 
@@ -128,7 +129,7 @@ Here is a method of circumventing the problem of an [[gotchas#^BADREAD0|_echo_ p
 
 **Example 23-1. Code block redirection without forking**
 
-```
+```bash
 #!/bin/bash
 # wr-ps.bash: while-read loop with process substitution.
 
@@ -200,7 +201,7 @@ This is a similar example.
 
 **Example 23-2. Redirecting the output of _process substitution_ into a loop.**
 
-```
+```bash
 #!/bin/bash
 # psub.bash
 
@@ -227,7 +228,7 @@ bash psub.bash
 
 A reader sent in the following interesting example of process substitution.
 
-```
+```bash
 # Script fragment taken from SuSE distribution:
 
 # --------------------------------------------------------------#

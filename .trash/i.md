@@ -65,9 +65,9 @@ For Anita, the source of all the magic
 * [[io-redirection]]
 * [[subshells]]
 * [[restricted-shells]]
-* [[Chapter 23. Process Substitution]]
+* [[process-substitution]]
 * [[functions]]
-* [[Chapter 25. Aliases]]
+* [[aliases]]
 * [[list-cons]]
 * [[Chapter 27. Arrays]]
 * [[ivr]]
@@ -610,47 +610,47 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 22-1. [[restricted-shells#^RESTRICTED|Running a script in restricted mode]]
 
-23-1. [[Chapter 23. Process Substitution#^WRPS|Code block redirection without forking]]
+23-1. [[process-substitution#^WRPS|Code block redirection without forking]]
 
-23-2. [[Chapter 23. Process Substitution#^PSUBP|Redirecting the output of _process substitution_ into a loop.]]
+23-2. [[process-substitution#^PSUBP|Redirecting the output of _process substitution_ into a loop.]]
 
 24-1. [[functions#^EX59|Simple functions]]
 
-24-2. [[complexfunct#^EX60|Function Taking Parameters]]
+24-2. [[complex-functions-and-function-complexities#^EX60|Function Taking Parameters]]
 
-24-3. [[complexfunct#^FUNCCMDLINEARG|Functions and command-line args passed to the script]]
+24-3. [[complex-functions-and-function-complexities#^FUNCCMDLINEARG|Functions and command-line args passed to the script]]
 
-24-4. [[complexfunct#^INDFUNC|Passing an indirect reference to a function]]
+24-4. [[complex-functions-and-function-complexities#^INDFUNC|Passing an indirect reference to a function]]
 
-24-5. [[complexfunct#^DEREFERENCECL|Dereferencing a parameter passed to a function]]
+24-5. [[complex-functions-and-function-complexities#^DEREFERENCECL|Dereferencing a parameter passed to a function]]
 
-24-6. [[complexfunct#^REFPARAMS|Again, dereferencing a parameter passed to a function]]
+24-6. [[complex-functions-and-function-complexities#^REFPARAMS|Again, dereferencing a parameter passed to a function]]
 
-24-7. [[complexfunct#^MAX|Maximum of two numbers]]
+24-7. [[complex-functions-and-function-complexities#^MAX|Maximum of two numbers]]
 
-24-8. [[complexfunct#^EX61|Converting numbers to Roman numerals]]
+24-8. [[complex-functions-and-function-complexities#^EX61|Converting numbers to Roman numerals]]
 
-24-9. [[complexfunct#^RETURNTEST|Testing large return values in a function]]
+24-9. [[complex-functions-and-function-complexities#^RETURNTEST|Testing large return values in a function]]
 
-24-10. [[complexfunct#^MAX2|Comparing two large integers]]
+24-10. [[complex-functions-and-function-complexities#^MAX2|Comparing two large integers]]
 
-24-11. [[complexfunct#^REALNAME|Real name from username]]
+24-11. [[complex-functions-and-function-complexities#^REALNAME|Real name from username]]
 
-24-12. [[localvar#^EX62|Local variable visibility]]
+24-12. [[local-variables#^EX62|Local variable visibility]]
 
-24-13. [[localvar#^RECURSIONDEMO|Demonstration of a simple recursive function]]
+24-13. [[local-variables#^RECURSIONDEMO|Demonstration of a simple recursive function]]
 
-24-14. [[localvar#^RECURSIONDEMO2|Another simple demonstration]]
+24-14. [[local-variables#^RECURSIONDEMO2|Another simple demonstration]]
 
-24-15. [[localvar#^EX63|Recursion, using a local variable]]
+24-15. [[local-variables#^EX63|Recursion, using a local variable]]
 
-24-16. [[recurnolocvar#^FIBO|_The Fibonacci Sequence_]]
+24-16. [[recursion-without-local-variables#^FIBO|_The Fibonacci Sequence_]]
 
-24-17. [[recurnolocvar#^HANOI|_The Towers of Hanoi_]]
+24-17. [[recursion-without-local-variables#^HANOI|_The Towers of Hanoi_]]
 
-25-1. [[Chapter 25. Aliases#^AL|Aliases within a script]]
+25-1. [[aliases#^AL|Aliases within a script]]
 
-25-2. [[Chapter 25. Aliases#^UNAL|_unalias_: Setting and unsetting an alias]]
+25-2. [[aliases#^UNAL|_unalias_: Setting and unsetting an alias]]
 
 26-1. [[list-cons#^EX64|Using an _and list_ to test for command-line arguments]]
 

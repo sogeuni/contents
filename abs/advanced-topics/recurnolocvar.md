@@ -1,12 +1,13 @@
-# 24.3. Recursion Without Local Variables
+---
+title: 24.3. Recursion Without Local Variables
+---
 
 A function may recursively call itself even without use of local variables.
 
 **Example 24-16. _The Fibonacci Sequence_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # fibo.sh : Fibonacci sequence (recursive)
 # Author: M. Cooper
 # License: GPL3
@@ -51,13 +52,13 @@ done
 
 echo
 
-exit 0|
+exit 0
+```
 
 **Example 24-17. _The Towers of Hanoi_**
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 #
 # The Towers Of Hanoi
 # Bash script
@@ -101,15 +102,15 @@ exit 0|
 #
 #
 #         ...                   ...                    ...
-#         \| \|                   \| \|                    \| \|
-#        _\|_\|_                  \| \|                    \| \|
-#       \|_____\|                 \| \|                    \| \|
-#      \|_______\|                \| \|                    \| \|
-#     \|_________\|               \| \|                    \| \|
-#    \|___________\|              \| \|                    \| \|
-#   \|             \|             \| \|                    \| \|
+#         | |                   | |                    | |
+#        _|_|_                  | |                    | |
+#       |_____|                 | |                    | |
+#      |_______|                | |                    | |
+#     |_________|               | |                    | |
+#    |___________|              | |                    | |
+#   |             |             | |                    | |
 # .--------------------------------------------------------------.
-# \|**************************************************************\|
+# |**************************************************************|
 #          #1                   #2                      #3
 #
 #=================================================================#
@@ -158,5 +159,5 @@ esac
 # 1) Would commands beyond this point ever be executed?
 #    Why not? (Easy)
 # 2) Explain the workings of the workings of the "dohanoi" function.
-#    (Difficult -- see the Dewdney reference, above.)|
-
+#    (Difficult -- see the Dewdney reference, above.)
+```

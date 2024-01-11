@@ -56,7 +56,7 @@ In general, an [[external-filters-programs-and-commands#^EXTERNALREF|external co
 
 A command list embedded between _parentheses_ runs as a subshell.
 
-Variables in a subshell are _not_ visible outside the block of code in the subshell. They are not accessible to the [[internal-commands-and-builtins#^FORKREF|parent process]], to the shell that launched the subshell. These are, in effect, variables [[localvar#^LOCALREF|local]] to the _child process_.
+Variables in a subshell are _not_ visible outside the block of code in the subshell. They are not accessible to the [[internal-commands-and-builtins#^FORKREF|parent process]], to the shell that launched the subshell. These are, in effect, variables [[local-variables#^LOCALREF|local]] to the _child process_.
 
 **Example 21-1. Variable scope in a subshell**
 
@@ -134,7 +134,7 @@ exit 0
 
 See also [[internal-variables#^BASHPIDREF|$BASHPID]] and [[gotchas#^SUBPIT|Example 34-2]].
 
-> **Definition:** The _scope_ of a variable is the context in which it has meaning, in which it has a _value_ that can be referenced. For example, the scope of a [[localvar#^LOCALREF1|local variable]] lies only within the function, block of code, or subshell within which it is defined, while the scope of a _global_ variable is the entire script in which it appears.
+> **Definition:** The _scope_ of a variable is the context in which it has meaning, in which it has a _value_ that can be referenced. For example, the scope of a [[local-variables#^LOCALREF1|local variable]] lies only within the function, block of code, or subshell within which it is defined, while the scope of a _global_ variable is the entire script in which it appears.
 
 > [!note]
 > While the [[internal-variables#^BASHSUBSHELLREF|$BASH_SUBSHELL]] internal variable indicates the nesting level of a subshell, the [[internal-variables#^SHLVLREF|$SHLVL]] variable _shows no change_ within a subshell.
