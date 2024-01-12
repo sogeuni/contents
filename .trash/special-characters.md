@@ -287,7 +287,7 @@ May be used to begin a comment line, although this is not recommended. Using # f
 |---|
 |: This is a comment that generates an error, ( if [ $x -eq 3] ).|
 
-The ":" serves as a [[special-characters#^FIELDREF|field]] separator, in [[files#^DATAFILESREF1|/etc/passwd]], and in the [[internal-variables#^PATHREF|$PATH]] variable.
+The ":" serves as a [[special-characters#^FIELDREF|field]] separator, in [[important-files#^DATAFILESREF1|/etc/passwd]], and in the [[internal-variables#^PATHREF|$PATH]] variable.
 
 |   |
 |---|
@@ -326,7 +326,7 @@ A _colon_ can serve as a placeholder in an otherwise empty function.
 
 In a different context, the ! also appears in [[indirect-references#^IVRREF|indirect variable references]].
 
-In yet another context, from the _command line_, the ! invokes the Bash _history mechanism_ (see [[histcommands.html|Appendix L]]). Note that within a script, the history mechanism is disabled.
+In yet another context, from the _command line_, the ! invokes the Bash _history mechanism_ (see [[history-commands.html|Appendix L]]). Note that within a script, the history mechanism is disabled.
 
 *
 
@@ -665,7 +665,7 @@ See the discussion on the [[double-parentheses-construct.html|(( ... )) construc
 
 **scriptname >filename** redirects the output of scriptname to file filename. Overwrite filename if it already exists.
 
-**command &>filename** redirects both the [[ioredirintro#^STDINOUTDEF|stdout]] and the stderr of command to filename.
+**command &>filename** redirects both the [[a-detailed-introduction-to-io-and-io-redirection#^STDINOUTDEF|stdout]] and the stderr of command to filename.
 
 |   |   |
 |---|---|

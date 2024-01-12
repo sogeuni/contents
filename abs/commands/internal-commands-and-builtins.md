@@ -1305,7 +1305,7 @@ exit 0
 
 **export**
 
-The **export** [^4] command makes available variables to all child processes of the running script or shell. One important use of the **export** command is in [[files#^FILESREF1|startup files]], to initialize and make accessible [[othertypesv#^ENVREF|environmental variables]] to subsequent user processes.
+The **export** [^4] command makes available variables to all child processes of the running script or shell. One important use of the **export** command is in [[important-files#^FILESREF1|startup files]], to initialize and make accessible [[othertypesv#^ENVREF|environmental variables]] to subsequent user processes.
 
 > [!caution]
 > Unfortunately, [[gotchas#^PARCHILDPROBREF|there is no way to export variables back to the parent process]], to the process that called or invoked the script or shell.
@@ -1370,7 +1370,7 @@ exit 0
 > ```
 
 > [!note]
-> A variable to be exported may require special treatment. See [[sample-bashrc#^BASHPROF|Example M-2]].
+> A variable to be exported may require special treatment. See [[sample-bashrc-and-bash-profile-files#^BASHPROF|Example M-2]].
 
 **declare**, **typeset**
 
@@ -1682,7 +1682,7 @@ An **exec** also serves to [[using-exec#^USINGEXECREF|reassign file descriptors]
 
 **shopt**
 
-This command permits changing _shell options_ on the fly (see [[aliases#^AL|Example 25-1]] and [[aliases#^UNAL|Example 25-2]]). It often appears in the Bash [[files#^FILESREF1|startup files]], but also has its uses in scripts. Needs [[bash-version-2#^BASH2REF|version 2]] or later of Bash.
+This command permits changing _shell options_ on the fly (see [[aliases#^AL|Example 25-1]] and [[aliases#^UNAL|Example 25-2]]). It often appears in the Bash [[important-files#^FILESREF1|startup files]], but also has its uses in scripts. Needs [[bash-version-2#^BASH2REF|version 2]] or later of Bash.
 
 ```bash
 shopt -s cdspell

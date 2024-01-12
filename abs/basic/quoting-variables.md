@@ -124,7 +124,7 @@ Single quotes (' ') operate similarly to double quotes, but do not permit refere
 > # This example courtesy of Stéphane Chazelas.
 > ```
 
-[^1]: Encapsulating "!" within double quotes gives an error when used _from the command line_. This is interpreted as a [[histcommands|history command]]. Within a script, though, this problem does not occur, since the Bash history mechanism is disabled then.
+[^1]: Encapsulating "!" within double quotes gives an error when used _from the command line_. This is interpreted as a [[history-commands|history command]]. Within a script, though, this problem does not occur, since the Bash history mechanism is disabled then.
     
     Of more concern is the _apparently_ inconsistent behavior of _\_ within double quotes, and especially following an **echo -e** command.
     

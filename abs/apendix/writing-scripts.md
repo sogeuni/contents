@@ -1,4 +1,6 @@
-# O.2. Writing Scripts
+---
+title: O.2. Writing Scripts
+---
 
 Write a script to carry out each of the following tasks.
 
@@ -40,7 +42,7 @@ Given a list of filenames as input, this script queries each target file (parsin
 
 **Unique System ID**
 
-Generate a "unique" 6-digit hexadecimal identifier for your computer. Do _not_ use the flawed [[system-and-administrative-commands#^HOSTIDREF|hostid]] command. Hint: **[[file-and-archiving-commands#^MD5SUMREF|md5sum]] [[files#^DATAFILESREF1|/etc/passwd]]**, then select the first 6 digits of output.
+Generate a "unique" 6-digit hexadecimal identifier for your computer. Do _not_ use the flawed [[system-and-administrative-commands#^HOSTIDREF|hostid]] command. Hint: **[[file-and-archiving-commands#^MD5SUMREF|md5sum]] [[important-files#^DATAFILESREF1|/etc/passwd]]**, then select the first 6 digits of output.
 
 **Backup**
 
@@ -96,7 +98,7 @@ The script will use the [[system-and-administrative-commands#^DUREF|du]] and [[c
 
 For all logged in users, show their real names and the time and date of their last login.
 
-Hint: use [[system-and-administrative-commands#^WHOREF|who]], [[system-and-administrative-commands#^LASTLOGREF|lastlog]], and parse [[files#^DATAFILESREF1|/etc/passwd]].
+Hint: use [[system-and-administrative-commands#^WHOREF|who]], [[system-and-administrative-commands#^LASTLOGREF|lastlog]], and parse [[important-files#^DATAFILESREF1|/etc/passwd]].
 
 **Safe Delete**
 
@@ -124,7 +126,7 @@ Hint: _bc_ requires the -l option to load the math library.
 
 **Unicode Table**
 
-Using [[Appendix T. ASCII Table#^ASCIISH|Example T-1]] as a template, write a script that prints to a file a complete [[bash-version-4#^UNICODEREF|Unicode]] table.
+Using [[ascii-table#^ASCIISH|Example T-1]] as a template, write a script that prints to a file a complete [[bash-version-4#^UNICODEREF|Unicode]] table.
 
 Hint: Use the -e option to [[internal-commands-and-builtins#^ECHOREF|echo]]: **echo -e '\uXXXX'**, where _XXXX_ is the Unicode numerical character designation. This requires [[bash-version-4#^BASH42|version 4.2]] or later of Bash.
 
@@ -146,15 +148,15 @@ Borrowing the ASCII graphics from [[contributed-scripts#^PETALS|Example A-40]], 
 
 Write a script that plays the child's game of _tic-tac-toe_ against a human player. The script will let the human choose whether to take the first move. The script will follow an optimal strategy, and therefore never lose. To simplify matters, you may use ASCII graphics:
 
-|   |
-|---|
-|o \| x \|
+```bash
+   o | x |
    ----------
-     \| x \|
+     | x |
    ----------
-     \| o \|
+     | o |
      
-   Your move, human (row, column)?|
+   Your move, human (row, column)?
+```
 
 **Alphabetizing a String**
 
@@ -162,7 +164,7 @@ Alphabetize (in ASCII order) an arbitrary string read from the command-line.
 
 **Parsing**
 
-Parse [[files#^DATAFILESREF1|/etc/passwd]], and output its contents in nice, easy-to-read tabular form.
+Parse [[important-files#^DATAFILESREF1|/etc/passwd]], and output its contents in nice, easy-to-read tabular form.
 
 **Logging Logins**
 
@@ -223,7 +225,7 @@ Optional:
 
 - Do a dictionary check on every sequence of at least four consecutive alphabetic characters in the password under test. This will eliminate passwords containing embedded "words" found in a standard dictionary.
     
-- Enable the script to check all the passwords on your system. These do not reside in [[files#^DATAFILESREF1|/etc/passwd]].
+- Enable the script to check all the passwords on your system. These do not reside in [[important-files#^DATAFILESREF1|/etc/passwd]].
     
 
 This exercise tests mastery of [[regexp#^REGEXREF|Regular Expressions]].
@@ -491,14 +493,14 @@ The script will make extensive use of [[arrays#^ARRAYREF|arrays]] and [[function
 
 Please do not send the author your solutions to these exercises. There are more appropriate ways to impress him with your cleverness, such as submitting bugfixes and suggestions for improving the book.
 
-|[[writingscripts#^AEN25254|[1]]]|For all you clever types who failed intermediate algebra, a _determinant_ is a numerical value associated with a multidimensional _matrix_ ([[arrays#^ARRAYREF|array]] of numbers).
+|[[writing-scripts#^AEN25254|[1]]]|For all you clever types who failed intermediate algebra, a _determinant_ is a numerical value associated with a multidimensional _matrix_ ([[arrays#^ARRAYREF|array]] of numbers).
 
-\|   \|
-\|---\|
-\|For the simple case of a 2 x 2 determinant:
+|   |
+|---|
+|For the simple case of a 2 x 2 determinant:
 
-  \\|a  b\\|
-  \\|b  a\\|
+  |a  b|
+  |b  a|
 
-The solution is a*a - b*b, where "a" and "b" represent numbers.\||
+The solution is a*a - b*b, where "a" and "b" represent numbers.||
 

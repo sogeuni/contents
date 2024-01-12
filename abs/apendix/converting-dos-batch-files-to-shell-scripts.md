@@ -1,3 +1,7 @@
+---
+title: Appendix N. Converting DOS Batch Files to Shell Scripts
+---
+
 Quite a number of programmers learned scripting on a PC running DOS. Even the crippled DOS batch file language allowed writing some fairly powerful scripts and applications, though they often required extensive kludges and workarounds. Occasionally, the need still arises to convert an old DOS batch file to a UNIX shell script. This is generally not difficult, as DOS batch file operators are only a limited subset of the equivalent shell scripting ones.
 
 **Table N-1. Batch file keywords / variables / operators, and their shell equivalents**
@@ -86,7 +90,7 @@ Converting a DOS batch file into a shell script is generally straightforward, an
 
 **Example N-1. VIEWDATA.BAT: DOS Batch File**
 
-```
+```batch
 REM VIEWDATA
 
 REM INSPIRED BY AN EXAMPLE IN "DOS POWERTOOLS"
@@ -112,7 +116,7 @@ The script conversion is somewhat of an improvement. [^1]
 
 **Example N-2. _viewdata.sh_: Shell Script Conversion of VIEWDATA.BAT**
 
-```
+```bash
 #!/bin/bash
 # viewdata.sh
 # Conversion of VIEWDATA.BAT to shell script.

@@ -102,7 +102,7 @@ Checking `$BASH_VERSION` is a good method of determining which shell is running.
 
 $CDPATH
 
-A colon-separated list of search paths available to the [[internal-commands-and-builtins#^CDREF|cd]] command, similar in function to the [[internal-variables#^PATHREF|$PATH]] variable for binaries. The $CDPATH variable may be set in the local [[sample-bashrc#^BASHRC|~/.bashrc]] file.
+A colon-separated list of search paths available to the [[internal-commands-and-builtins#^CDREF|cd]] command, similar in function to the [[internal-variables#^PATHREF|$PATH]] variable for binaries. The $CDPATH variable may be set in the local [[sample-bashrc-and-bash-profile-files#^BASHRC|~/.bashrc]] file.
 
 ```bash
 bash$ cd bash-doc
@@ -163,7 +163,7 @@ $GROUPS
 
 Groups current user belongs to
 
-This is a listing (array) of the group id numbers for current user, as recorded in [[files#^DATAFILESREF1|/etc/passwd]] and /etc/group.
+This is a listing (array) of the group id numbers for current user, as recorded in [[important-files#^DATAFILESREF1|/etc/passwd]] and /etc/group.
 
 ```bash
 root# echo $GROUPS
@@ -338,7 +338,7 @@ Ignore EOF: how many end-of-files (control-D) the shell will ignore before loggi
 
 $LC_COLLATE
 
-Often set in the [[sample-bashrc|.bashrc]] or /etc/profile files, this variable controls collation order in filename expansion and pattern matching. If mishandled, LC_COLLATE can cause unexpected results in [[globbing|filename globbing]].
+Often set in the [[sample-bashrc-and-bash-profile-files|.bashrc]] or /etc/profile files, this variable controls collation order in filename expansion and pattern matching. If mishandled, LC_COLLATE can cause unexpected results in [[globbing|filename globbing]].
 
 > [!note]
 > As of version 2.05 of Bash, filename globbing no longer distinguishes between lowercase and uppercase letters in a character range between brackets. For example, **ls [A-M]*** would match both File1.txt and file1.txt. To revert to the customary behavior of bracket matching, set LC_COLLATE to C by an **export LC_COLLATE=C** in /etc/profile and/or ~/.bashrc.
@@ -388,7 +388,7 @@ $PATH
 
 Path to binaries, usually /usr/bin/, /usr/X11R6/bin/, /usr/local/bin, etc.
 
-When given a command, the shell automatically does a hash table search on the directories listed in the _path_ for the executable. The path is stored in the [[othertypesv#^ENVREF|environmental variable]], $PATH, a list of directories, separated by colons. Normally, the system stores the $PATH definition in /etc/profile and/or [[sample-bashrc|~/.bashrc]] (see [[files|Appendix H]]).
+When given a command, the shell automatically does a hash table search on the directories listed in the _path_ for the executable. The path is stored in the [[othertypesv#^ENVREF|environmental variable]], $PATH, a list of directories, separated by colons. Normally, the system stores the $PATH definition in /etc/profile and/or [[sample-bashrc-and-bash-profile-files|~/.bashrc]] (see [[important-files|Appendix H]]).
 
 ```bash
 bash$ echo $PATH
@@ -808,7 +808,7 @@ $UID
 
 User ID number
 
-Current user's user identification number, as recorded in [[files#^DATAFILESREF1|/etc/passwd]]
+Current user's user identification number, as recorded in [[important-files#^DATAFILESREF1|/etc/passwd]]
 
 This is the current user's real id, even if she has temporarily assumed another identity through [[system-and-administrative-commands#^SUREF|su]]. $UID is a readonly variable, not subject to change from the command line or within a script, and is the counterpart to the [[system-and-administrative-commands#^IDREF|id]] builtin.
 
@@ -849,7 +849,7 @@ fi
 See also [[starting-off-with-a-sha-bang#^EX2|Example 2-3]].
 
 > [!note]
-> The variables $ENV, $LOGNAME, $MAIL, $TERM, $USER, and $USERNAME are _not_ Bash [[internal-commands-and-builtins#^BUILTINREF|builtins]]. These are, however, often set as [[othertypesv#^ENVREF|environmental variables]] in one of the [[files#^FILESREF1|Bash]] or _login_ startup files. $SHELL, the name of the user's login shell, may be set from /etc/passwd or in an "init" script, and it is likewise not a Bash builtin.
+> The variables $ENV, $LOGNAME, $MAIL, $TERM, $USER, and $USERNAME are _not_ Bash [[internal-commands-and-builtins#^BUILTINREF|builtins]]. These are, however, often set as [[othertypesv#^ENVREF|environmental variables]] in one of the [[important-files#^FILESREF1|Bash]] or _login_ startup files. $SHELL, the name of the user's login shell, may be set from /etc/passwd or in an "init" script, and it is likewise not a Bash builtin.
 >
 > ```bash
 > tcsh% echo $LOGNAME

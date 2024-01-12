@@ -2,7 +2,7 @@
 title: "36.5. \"Colorizing\" Scripts"
 ---
 
-The ANSI [^1] escape sequences set screen attributes, such as bold text, and color of foreground and background. [[Appendix N. Converting DOS Batch Files to Shell Scripts#^DOSBATCH1|DOS batch files]] commonly used ANSI escape codes for _color_ output, and so can Bash scripts.
+The ANSI [^1] escape sequences set screen attributes, such as bold text, and color of foreground and background. [[converting-dos-batch-files-to-shell-scripts#^DOSBATCH1|DOS batch files]] commonly used ANSI escape codes for _color_ output, and so can Bash scripts.
 
 **Example 36-13. A "colorized" address database**
 

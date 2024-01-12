@@ -1,3 +1,7 @@
+---
+title: Appendix S. Copyright
+---
+
 The _Advanced Bash Scripting Guide_ is herewith granted to the PUBLIC DOMAIN. This has the following implications and consequences.
 
 ```

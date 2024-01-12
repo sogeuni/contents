@@ -22,7 +22,7 @@ Likewise, thanks to [Michel Charpentier](mailto:charpov@cs.unh.edu) for permissi
 
 Kudos to [Noah Friedman](mailto:friedman@prep.ai.mit.edu) for permission to use his string function script ([[contributed-scripts#^STRING|Example A-18]]).
 
-[Emmanuel Rouat](mailto:emmanuel.rouat@wanadoo.fr) suggested corrections and additions on [[command-substitution#^COMMANDSUBREF|command substitution]], [[aliases|Chapter 25. Aliases]], and [[parsing-and-managing-pathnames|path management]]. He also contributed a very nice sample .bashrc file ([[sample-bashrc.html|Appendix M]]).
+[Emmanuel Rouat](mailto:emmanuel.rouat@wanadoo.fr) suggested corrections and additions on [[command-substitution#^COMMANDSUBREF|command substitution]], [[aliases|Chapter 25. Aliases]], and [[parsing-and-managing-pathnames|path management]]. He also contributed a very nice sample .bashrc file ([[sample-bashrc-and-bash-profile-files.html|Appendix M]]).
 
 [Heiner Steven](mailto:heiner.steven@odn.de) kindly gave permission to use his base conversion script, [[math-commands#^BASE|Example 16-48]]. He also made a number of corrections and many helpful suggestions. Special thanks.
 

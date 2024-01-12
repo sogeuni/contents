@@ -121,9 +121,9 @@ E_WRONG_ARGS=95
 exit $E_WRONG_ARGS
 ```
     
-    See also [[exitcodes.html|Appendix E]].
+    See also [[exit-codes-with-special-meanings.html|Appendix E]].
     
-    _Ender_ suggests using the [[exitcodes#^SYSEXITSREF|exit codes in /usr/include/sysexits.h]] in shell scripts, though these are primarily intended for C and C++ programming.
+    _Ender_ suggests using the [[exit-codes-with-special-meanings#^SYSEXITSREF|exit codes in /usr/include/sysexits.h]] in shell scripts, though these are primarily intended for C and C++ programming.
     
 - Use standardized parameter flags for script invocation. _Ender_ proposes the following set of flags.
     
@@ -144,7 +144,7 @@ exit $E_WRONG_ARGS
 -v      Verbose: Human readable output, more or less formatted.
 -V      Version / License / Copy(right|left) / Contribs (email too).
     
-    See also [[standard-options.html|Section G.1]].
+    See also [[standard-command-line-options.html|Section G.1]].
     
 - Break complex scripts into simpler modules. Use functions where appropriate. See [[bash-version-2#^CARDS|Example 37-4]].
     

@@ -592,4 +592,4 @@ c=${!b}            #  Now, the more familiar type of indirect reference.
 echo $c            #  something_else
 ```
 
-[^1]: If $parameter is null in a non-interactive script, it will terminate with a [[exitcodes#^EXITCODESREF|127 exit status]] (the Bash error code for "command not found").
+[^1]: If $parameter is null in a non-interactive script, it will terminate with a [[exit-codes-with-special-meanings#^EXITCODESREF|127 exit status]] (the Bash error code for "command not found").

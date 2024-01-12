@@ -1,4 +1,6 @@
-# Appendix I. Important System Directories
+---
+title: Appendix I. Important System Directories
+---
 
 Sysadmins and anyone else writing administrative scripts should be intimately familiar with the following system directories.
 
@@ -88,13 +90,9 @@ Sysadmins and anyone else writing administrative scripts should be intimately fa
     
     System _boot_ directory. The kernel, module links, system map, and boot manager reside here.
     
-    |   |   |
-    |---|---|
-    |![[../images/warning.gif|Warning]]|Altering files in this directory may result in an unbootable system.|
-    
+> [!warning]
+> Altering files in this directory may result in an unbootable system.
 
-|[[systemdirs#^AEN23969|[1]]]|Some early UNIX systems had a fast, small-capacity fixed disk (containing /, the root partition), and a second drive which was larger, but slower (containing /usr and other partitions). The most frequently used programs and utilities therefore resided on the small-but-fast drive, in /bin, and the others on the slower drive, in /usr/bin.
+[^1]: Some early UNIX systems had a fast, small-capacity fixed disk (containing /, the root partition), and a second drive which was larger, but slower (containing /usr and other partitions). The most frequently used programs and utilities therefore resided on the small-but-fast drive, in /bin, and the others on the slower drive, in /usr/bin.
 
-This likewise accounts for the split between /sbin and /usr/sbin, /lib and /usr/lib, etc.|
-
-|Important Files||An Introduction to Programmable Completion|
+    This likewise accounts for the split between /sbin and /usr/sbin, /lib and /usr/lib, etc.

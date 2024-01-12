@@ -1,4 +1,6 @@
-# G.1. Standard Command-Line Options
+---
+title: G.1. Standard Command-Line Options
+---
 
 Over time, there has evolved a loose standard for the meanings of command-line option flags. The GNU utilities conform more closely to this "standard" than older UNIX utilities.
 
@@ -83,9 +85,7 @@ However:
     _Force_: force overwrite of target file(s).
     
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|Many UNIX and Linux utilities deviate from this "standard," so it is dangerous to _assume_ that a given option will behave in a standard way. Always check the man page for the command in question when in doubt.|
+> [!caution]
+> Many UNIX and Linux utilities deviate from this "standard," so it is dangerous to _assume_ that a given option will behave in a standard way. Always check the man page for the command in question when in doubt.
 
-A complete table of recommended options for the GNU utilities is available at [[http://www.gnu.org/prep/standards/|the GNU standards page]].
-
+A complete table of recommended options for the GNU utilities is available at [the GNU standards page](http://www.gnu.org/prep/standards/).

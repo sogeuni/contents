@@ -1,4 +1,6 @@
-# Appendix K. Localization
+---
+title: Appendix K. Localization
+---
 
 Localization is an undocumented Bash feature.
 
@@ -6,11 +8,10 @@ A localized shell script echoes its text output in the language defined as the s
 
 To create a localized script, use the following template to write all messages to the user (error messages, prompts, etc.).
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # localized.sh
-#  Script by St�phane Chazelas,
+#  Script by Stéphane Chazelas,
 #+ modified by Bruno Haible, bugfixed by Alfredo Pironti.
 
 . gettext.sh
@@ -23,7 +24,7 @@ error()
   exit $E_CDERROR
 }
 
-cd $var \| error "`eval_gettext \"Can\'t cd to \\\$var.\"`"
+cd $var || error "`eval_gettext \"Can\'t cd to \\\$var.\"`"
 #  The triple backslashes (escapes) in front of $var needed
 #+ "because eval_gettext expects a string
 #+ where the variable values have not yet been substituted."
@@ -93,47 +94,45 @@ read -p "`gettext \"Enter the value: \"`" var
 #  This way 'gettext' works correctly, as does 'xgettext.'
 #  Moreover, the NULL character won't change the behavior
 #+ of the 'echo' command.
-#  ------------------------------------------------------------------|
+#  ------------------------------------------------------------------
+```
 
-|   |
-|---|
-|bash$ **bash -D localized.sh**
+```bash
+bash$ bash -D localized.sh
 "Can't cd to %s."
- "Enter the value: "|
+ "Enter the value: "
+```
 
 This lists all the localized text. (The -D option lists double-quoted strings prefixed by a $, without executing the script.)
 
-|   |
-|---|
-|bash$ **bash --dump-po-strings localized.sh**
+```bash
+bash$ bash --dump-po-strings localized.sh
 #: a:6
  msgid "Can't cd to %s."
  msgstr ""
  #: a:7
  msgid "Enter the value: "
- msgstr ""|
+ msgstr ""
+```
 
-The --dump-po-strings option to Bash resembles the -D option, but uses [gettext](textproc.html#GETTEXTREF) "po" format.
+The --dump-po-strings option to Bash resembles the -D option, but uses [[textproc.html#GETTEXTREF|gettext]] "po" format.
 
-|   |   |
-|---|---|
-|![Note](../images/note.gif)|Bruno Haible points out:
-
-Starting with gettext-0.12.2, **xgettext -o - localized.sh** is recommended instead of **bash --dump-po-strings localized.sh**, because **xgettext** . . .
-
-1. understands the gettext and eval_gettext commands (whereas bash --dump-po-strings understands only its deprecated $"..." syntax)
-
-2. can extract comments placed by the programmer, intended to be read by the translator.
-
-This shell code is then not specific to Bash any more; it works the same way with Bash 1.x and other /bin/sh implementations.|
+> [!note]
+> Bruno Haible points out:
+>
+> Starting with gettext-0.12.2, **xgettext -o - localized.sh** is recommended instead of **bash --dump-po-strings localized.sh**, because **xgettext** . . .
+>
+> 1. understands the gettext and eval_gettext commands (whereas bash --dump-po-strings understands only its deprecated $"..." syntax)
+> 2. can extract comments placed by the programmer, intended to be read by the translator.
+>
+> This shell code is then not specific to Bash any more; it works the same way with Bash 1.x and other /bin/sh implementations.
 
 Now, build a language.po file for each language that the script will be translated into, specifying the _msgstr_. Alfredo Pironti gives the following example:
 
 fr.po:
 
-|   |
-|---|
-|#: a:6
+```bash
+#: a:6
 msgid "Can't cd to $var."
 msgstr "Impossible de se positionner dans le repertoire $var."
 #: a:7
@@ -143,44 +142,44 @@ msgstr "Entrez la valeur : "
 #  The string are dumped with the variable names, not with the %s syntax,
 #+ similar to C programs.
 #+ This is a very cool feature if the programmer uses
-#+ variable names that make sense!|
+#+ variable names that make sense!
+```
 
-Then, run [msgfmt](textproc.html#MSGFMTREF).
+Then, run [[textproc.html#MSGFMTREF|msgfmt]].
 
 **msgfmt -o localized.sh.mo fr.po**
 
 Place the resulting localized.sh.mo file in the /usr/local/share/locale/fr/LC_MESSAGES directory, and at the beginning of the script, insert the lines:
 
-|   |
-|---|
-|TEXTDOMAINDIR=/usr/local/share/locale
-TEXTDOMAIN=localized.sh|
+```bash
+TEXTDOMAINDIR=/usr/local/share/locale
+TEXTDOMAIN=localized.sh
+```
 
 If a user on a French system runs the script, she will get French messages.
 
-|   |   |
-|---|---|
-|![Note](../images/note.gif)|With older versions of Bash or other shells, localization requires [gettext](textproc.html#GETTEXTREF), using the -s option. In this case, the script becomes:
-
-\|   \|
-\|---\|
-\|#!/bin/bash
-# localized.sh
-
-E_CDERROR=65
-
-error() {
-  local format=$1
-  shift
-  printf "$(gettext -s "$format")" "$@" >&2
-  exit $E_CDERROR
-}
-cd $var \\| error "Can't cd to %s." "$var"
-read -p "$(gettext -s "Enter the value: ")" var
-# ...\||
+> [!note]
+> With older versions of Bash or other shells, localization requires [[textproc.html#GETTEXTREF|gettext]], using the -s option. In this case, the script becomes:
+>
+> ```bash
+> #!/bin/bash
+> # localized.sh
+> 
+> E_CDERROR=65
+> 
+> error() {
+>   local format=$1
+>   shift
+>   printf "$(gettext -s "$format")" "$@" >&2
+>   exit $E_CDERROR
+> }
+> cd $var || error "Can't cd to %s." "$var"
+> read -p "$(gettext -s "Enter the value: ")" var
+> # ...
+> ```
 
 The TEXTDOMAIN and TEXTDOMAINDIR variables need to be set and exported to the environment. This should be done within the script itself.
 
 ---
 
-This appendix written by St�phane Chazelas, with modifications suggested by Alfredo Pironti, and by Bruno Haible, maintainer of GNU [gettext](textproc.html#GETTEXTREF).
+This appendix written by Stéphane Chazelas, with modifications suggested by Alfredo Pironti, and by Bruno Haible, maintainer of GNU [[textproc.html#GETTEXTREF|gettext]].

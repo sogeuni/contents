@@ -1,6 +1,6 @@
 # 2.1. Invoking the script
 
-Having written the script, you can invoke it by **sh scriptname**, [[ioredirintro#^STDINOUTDEF|^1] or alternatively **bash scriptname**. (Not recommended is using **sh <scriptname**, since this effectively disables reading from [stdin]] within the script.) Much more convenient is to make the script itself directly executable with a [[basic#^CHMODREF|chmod]].
+Having written the script, you can invoke it by **sh scriptname**, [[a-detailed-introduction-to-io-and-io-redirection#^STDINOUTDEF|^1] or alternatively **bash scriptname**. (Not recommended is using **sh <scriptname**, since this effectively disables reading from [stdin]] within the script.) Much more convenient is to make the script itself directly executable with a [[basic#^CHMODREF|chmod]].
 
 Either:
 

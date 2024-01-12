@@ -1125,7 +1125,7 @@ _..___..__
 
 +++
 
-The following script is by Mark Moraes of the University of Toronto. See the file Moraes-COPYRIGHT for permissions and restrictions. This file is included in the combined [[mirrorsites#^WHERE_TARBALL|HTML/source tarball]] of the _ABS Guide_.
+The following script is by Mark Moraes of the University of Toronto. See the file Moraes-COPYRIGHT for permissions and restrictions. This file is included in the combined [[download-and-mirror-sites#^WHERE_TARBALL|HTML/source tarball]] of the _ABS Guide_.
 
 **Example A-12. _behead_: Removing mail and news message headers**
 
@@ -11040,7 +11040,7 @@ UseGetOpt --aoption --debug --log --test --file myfile anotherfile
 exit
 ```
 
-**Example A-51. The version of the _UseGetOpt.sh_ example used in the [[tabexpansion.html|Tab Expansion appendix]]**
+**Example A-51. The version of the _UseGetOpt.sh_ example used in the [[an-introduction-to-programmable-completion.html|Tab Expansion appendix]]**
 
 ```bash
 #!/bin/bash

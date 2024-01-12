@@ -1,4 +1,6 @@
-# Appendix L. History Commands
+---
+title: Appendix L. History Commands
+---
 
 The Bash shell provides command-line tools for editing and manipulating a user's _command history_. This is primarily a convenience, a means of saving keystrokes.
 
@@ -9,13 +11,14 @@ Bash history commands:
 2. **fc**
     
 
-|   |
-|---|
-|bash$ **history**
+```bash
+bash$ history
    1  mount /mnt/cdrom
     2  cd /mnt/cdrom
     3  ls
-     ...|
+     ...
+	      
+```
 
 Internal variables associated with Bash history commands:
 
@@ -52,9 +55,8 @@ Internal variables associated with Bash history commands:
 
 Unfortunately, the Bash history tools find no use in scripting.
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # history.sh
 # A (vain) attempt to use the 'history' command in a script.
 
@@ -68,11 +70,13 @@ var=$(history); echo "$var"  # $var is empty.
 #+ enables the history mechanism.
 
 set -o history
-var=$(history); echo "$var"   # 1  var=$(history)|
+var=$(history); echo "$var"   # 1  var=$(history)
+```
 
-|   |
-|---|
-|bash$ **./history.sh**
-(no output)|
+```bash
+bash$ ./history.sh
+(no output)	      
+	      
+```
 
 The [Advancing in the Bash Shell](http://samrowe.com/wordpress/advancing-in-the-bash-shell/) site gives a good introduction to the use of history commands in Bash.

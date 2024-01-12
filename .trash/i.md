@@ -96,26 +96,26 @@ For Anita, the source of all the magic
 	* [[sed]]
 	* [[awk]]
 * [[parsing-and-managing-pathnames]]
-* [[exitcodes]
-* [[ioredirintro]]
-* [[Appendix G. Command-Line Options]]
-	* [[standard-options]]
-	* [[G.2. Bash Command-Line Options]]
-* [[files]]
-* [[systemdirs]]
-* [[tabexpansion]]
+* [[exit-codes-with-special-meanings]
+* [[a-detailed-introduction-to-io-and-io-redirection]]
+* [[command-line-options]]
+	* [[standard-command-line-options]]
+	* [[bash-command-line-options]]
+* [[important-files]]
+* [[important-system-directories]]
+* [[an-introduction-to-programmable-completion]]
 * [[localization]]
-* [[histcommands]]
-* [[sample-bashrc]]
-* [[Appendix N. Converting DOS Batch Files to Shell Scripts]]
+* [[history-commands]]
+* [[sample-bashrc-and-bash-profile-files]]
+* [[converting-dos-batch-files-to-shell-scripts]]
 * [[exercises]]
-	* [[scriptanalysis]]
-	* [[writingscripts]]
-* [[revisionhistory]]
-* [[mirrorsites]]
+	* [[analyzing-scripts]]
+	* [[writing-scripts]]
+* [[revision-history]]
+* [[download-and-mirror-sites]]
 * [[Appendix R. To Do List]]
-* [[Appendix S. Copyright]]
-* [[Appendix T. ASCII Table]]
+* [[copyright]]
+* [[ascii-table]]
 
 [[xrefindex|Index]]
 
@@ -144,13 +144,13 @@ C-1. [[sed#^AEN23200|Basic sed operators]]
 
 C-2. [[sed#^AEN23271|Examples of sed operators]]
 
-E-1. [[exitcodes#^AEN23549|_Reserved_ Exit Codes]]
+E-1. [[exit-codes-with-special-meanings#^AEN23549|_Reserved_ Exit Codes]]
 
-N-1. [[Appendix N. Converting DOS Batch Files to Shell Scripts#^AEN24336|Batch file keywords / variables / operators, and their shell equivalents]]
+N-1. [[converting-dos-batch-files-to-shell-scripts#^AEN24336|Batch file keywords / variables / operators, and their shell equivalents]]
 
-N-2. [[Appendix N. Converting DOS Batch Files to Shell Scripts#^AEN24545|DOS commands and their UNIX equivalents]]
+N-2. [[converting-dos-batch-files-to-shell-scripts#^AEN24545|DOS commands and their UNIX equivalents]]
 
-P-1. [[revisionhistory#^AEN25364|Revision History]]
+P-1. [[revision-history#^AEN25364|Revision History]]
 
 **List of Examples**
 
@@ -908,7 +908,7 @@ A-49. [[contributed-scripts#^HANOI2A|_The Towers of Hanoi, alternate graphic ver
 
 A-50. [[contributed-scripts#^USEGETOPT|An alternate version of the]] [[manipulating-strings#^GETOPTSIMPLE|getopt-simple.sh]] script
 
-A-51. [[contributed-scripts#^USEGETOPT2|The version of the _UseGetOpt.sh_ example used in the]] [[tabexpansion|Tab Expansion appendix]]
+A-51. [[contributed-scripts#^USEGETOPT2|The version of the _UseGetOpt.sh_ example used in the]] [[an-introduction-to-programmable-completion|Tab Expansion appendix]]
 
 A-52. [[contributed-scripts#^SHOWALLC|Cycling through all the possible color backgrounds]]
 
@@ -930,18 +930,18 @@ A-60. [[contributed-scripts#^ASSOCARRTEST|Associative arrays vs. conventional ar
 
 C-1. [[awk#^LETTERCOUNT2|Counting Letter Occurrences]]
 
-J-1. [[tabexpansion#^USEGETOPTEX|Completion script for _UseGetOpt.sh_]]
+J-1. [[an-introduction-to-programmable-completion#^USEGETOPTEX|Completion script for _UseGetOpt.sh_]]
 
-M-1. [[sample-bashrc#^BASHRC|Sample .bashrc file]]
+M-1. [[sample-bashrc-and-bash-profile-files#^BASHRC|Sample .bashrc file]]
 
-M-2. [[sample-bashrc#^BASHPROF|.bash_profile file]]
+M-2. [[sample-bashrc-and-bash-profile-files#^BASHPROF|.bash_profile file]]
 
-N-1. [[Appendix N. Converting DOS Batch Files to Shell Scripts#^VIEWDAT|VIEWDATA.BAT: DOS Batch File]]
+N-1. [[converting-dos-batch-files-to-shell-scripts#^VIEWDAT|VIEWDATA.BAT: DOS Batch File]]
 
-N-2. [[Appendix N. Converting DOS Batch Files to Shell Scripts#^VIEWDATA|_viewdata.sh_: Shell Script Conversion of VIEWDATA.BAT]]
+N-2. [[converting-dos-batch-files-to-shell-scripts#^VIEWDATA|_viewdata.sh_: Shell Script Conversion of VIEWDATA.BAT]]
 
-T-1. [[Appendix T. ASCII Table#^ASCIISH|A script that generates an ASCII table]]
+T-1. [[ascii-table#^ASCIISH|A script that generates an ASCII table]]
 
-T-2. [[Appendix T. ASCII Table#^ASCII2SH|Another ASCII table script]]
+T-2. [[ascii-table#^ASCII2SH|Another ASCII table script]]
 
-T-3. [[Appendix T. ASCII Table#^ASCII3SH|A third ASCII table script, using _awk_]]
+T-3. [[ascii-table#^ASCII3SH|A third ASCII table script, using _awk_]]

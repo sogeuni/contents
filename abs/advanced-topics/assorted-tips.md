@@ -37,7 +37,7 @@ if [ $# -ne "$ARGCOUNT" ]
   echo "Usage: `basename $0` name"
 ```
 
-For an example of using pseudo-code, see the [[writingscripts#^NEWTONSQRT|Square Root]] exercise.
+For an example of using pseudo-code, see the [[writing-scripts#^NEWTONSQRT|Square Root]] exercise.
 
 - To keep a record of which user scripts have run during a particular session or over a number of sessions, add the following lines to each script you want to keep track of. This will keep a continuing file record of the script names and invocation times.
 

@@ -1622,7 +1622,7 @@ Creates an _ISO9660_ filesystem suitable for a CDR image.
 
 CHange ROOT directory. Normally commands are fetched from [[internal-variables#^PATHREF|$PATH]], relative to /, the default _root directory_. This changes the _root_ directory to a different one (and also changes the working directory to there). This is useful for security purposes, for instance when the system administrator wishes to restrict certain users, such as those [[communications-commands#^TELNETREF|telnetting]] in, to a secured portion of the filesystem (this is sometimes referred to as confining a guest user to a "chroot jail"). Note that after a **chroot**, the execution path for system binaries is no longer valid.
 
-A **chroot /opt** would cause references to /usr/bin to be translated to /opt/usr/bin. Likewise, **chroot /aaa/bbb /bin/ls** would redirect future instances of **ls** to /aaa/bbb as the base directory, rather than / as is normally the case. An **alias XX 'chroot /aaa/bbb ls'** in a user's [[sample-bashrc.html|~/.bashrc]] effectively restricts which portion of the filesystem she may run command "XX" on.
+A **chroot /opt** would cause references to /usr/bin to be translated to /opt/usr/bin. Likewise, **chroot /aaa/bbb /bin/ls** would redirect future instances of **ls** to /aaa/bbb as the base directory, rather than / as is normally the case. An **alias XX 'chroot /aaa/bbb ls'** in a user's [[sample-bashrc-and-bash-profile-files.html|~/.bashrc]] effectively restricts which portion of the filesystem she may run command "XX" on.
 
 The **chroot** command is also handy when running from an emergency boot floppy (**chroot** to /dev/fd0), or as an option to **lilo** when recovering from a system crash. Other uses include installation from a different filesystem (an [[file-and-archiving-commands#^RPMREF|rpm]] option) or running a readonly filesystem from a CD ROM. Invoke only as _root_, and use with care.
 
@@ -1698,7 +1698,7 @@ Perform a low-level format on a floppy disk (/dev/fd0*).
 
 **ulimit**
 
-Sets an _upper limit_ on use of system resources. Usually invoked with the -f option, which sets a limit on file size (**ulimit -f 1000** limits files to 1 meg maximum). [^7] The -t option limits the coredump size (**ulimit -c 0** eliminates coredumps). Normally, the value of **ulimit** would be set in /etc/profile and/or ~/.bash_profile (see [[files|Appendix H]]).
+Sets an _upper limit_ on use of system resources. Usually invoked with the -f option, which sets a limit on file size (**ulimit -f 1000** limits files to 1 meg maximum). [^7] The -t option limits the coredump size (**ulimit -c 0** eliminates coredumps). Normally, the value of **ulimit** would be set in /etc/profile and/or ~/.bash_profile (see [[important-files|Appendix H]]).
 
 > [!important]
 > Judicious use of **ulimit** can protect a system against the dreaded _fork bomb_.
@@ -1730,7 +1730,7 @@ Set user or group disk quotas from the command-line.
 
 **umask**
 
-User file creation permissions _mask_. Limit the default file attributes for a particular user. All files created by that user take on the attributes specified by **umask**. The (octal) value passed to **umask** defines the file permissions _disabled_. For example, **umask 022** ensures that new files will have at most 755 permissions (777 NAND 022). [^8] Of course, the user may later change the attributes of particular files with [[basic-commands#^CHMODREF|chmod]]. The usual practice is to set the value of **umask** in /etc/profile and/or ~/.bash_profile (see [[files|Appendix H]]).
+User file creation permissions _mask_. Limit the default file attributes for a particular user. All files created by that user take on the attributes specified by **umask**. The (octal) value passed to **umask** defines the file permissions _disabled_. For example, **umask 022** ensures that new files will have at most 755 permissions (777 NAND 022). [^8] Of course, the user may later change the attributes of particular files with [[basic-commands#^CHMODREF|chmod]]. The usual practice is to set the value of **umask** in /etc/profile and/or ~/.bash_profile (see [[important-files|Appendix H]]).
 
 **Example 17-10. Using _umask_ to hide an output file from prying eyes**
 

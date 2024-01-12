@@ -143,7 +143,7 @@ For simpler examples of awk within shell scripts, see:
 15. [[loops#^USERLIST|Example 11-9]]
 16. [[shell-wrappers#^PRASC|Example 36-4]]
 17. [[math-commands#^HYPOT|Example 16-53]]
-18. [[Appendix T. ASCII Table#^ASCII3SH|Example T-3]]
+18. [[ascii-table#^ASCII3SH|Example T-3]]
 
 That's all the awk we'll cover here, folks, but there's lots more to learn. See the appropriate references in the [[bibliography|_Bibliography_]].
 

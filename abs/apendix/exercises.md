@@ -1,10 +1,6 @@
 # Appendix O. Exercises
 
-**Table of Contents**
-
-O.1. [[scriptanalysis.html|Analyzing Scripts]]
-
-O.2. [[writingscripts.html|Writing Scripts]]
+O.2. [[writing-scripts.html|Writing Scripts]]
 
 The exercises that follow test and extend your knowledge of scripting. Think of them as a challenge, as an entertaining way to take you further along the stony path toward UNIX wizardry.
 
@@ -24,5 +20,3 @@ The exercises that follow test and extend your knowledge of scripting. Think of 
       This is possibly due to malicious rumors abou[lack of credentials](38.2.%20About%20the%20Author.md#^NOCREDS)s]] and  
       [[contributed-scripts#^KTOUR0|deficient scripting skills]].)  
       
-
-|Converting DOS Batch Files to Shell Scripts||Analyzing Scripts|

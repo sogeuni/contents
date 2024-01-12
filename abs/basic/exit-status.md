@@ -121,6 +121,6 @@ exit 113   # Will return 113 to shell.
 > # Thanks, Stéphane Chazelas and Kristopher Newsome.
 > ```
 
-> [!caution] Certain exit status codes have [[exitcodes#^EXITCODESREF|reserved meanings]] and should not be user-specified in a script.
+> [!caution] Certain exit status codes have [[exit-codes-with-special-meanings#^EXITCODESREF|reserved meanings]] and should not be user-specified in a script.
 
 [^1]: In those instances when there is no [[complex-functions-and-function-complexities#^RETURNREF|return]] terminating the function.

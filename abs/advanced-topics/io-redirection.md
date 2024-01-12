@@ -194,7 +194,7 @@ exec 3>&-                              # Now close it for the remainder of the s
 # Thanks, S.C.
 ```
 
-For a more detailed introduction to I/O redirection see [[ioredirintro.html|Appendix F]].
+For a more detailed introduction to I/O redirection see [[a-detailed-introduction-to-io-and-io-redirection.html|Appendix F]].
 
 [^1]: By convention in UNIX and Linux, data streams and peripherals ([[dev#^DEVFILEREF|device files]]) are treated as files, in a fashion analogous to ordinary files.
 
