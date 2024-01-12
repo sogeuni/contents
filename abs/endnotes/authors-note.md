@@ -1,5 +1,5 @@
 ---
-38.1. Author's Note
+title: "38.1. Author's Note"
 ---
 
 > doce ut discas
