@@ -1,3 +1,7 @@
+---
+title: 38.3. Where to Go For Help
+---
+
 [The author](mailto:thegrendel.abs@gmail.com) is no longer supporting or updating this document. He will not answer questions about this book or about general scripting topics.
 
 > If you need assistance with a schoolwork assignment, read the pertinent sections of this and other reference works. Do your best to solve the problem using your own wits and resources. _Please do not waste the author's time._ You will get neither help nor sympathy. [^1]

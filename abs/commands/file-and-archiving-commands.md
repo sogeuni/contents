@@ -359,7 +359,7 @@ exit 0
 /usr/bin/rm
 ```
 
-For an interesting use of this command, see [[colorizing#^HORSERACE|Example 36-16]].
+For an interesting use of this command, see [[colorizing-scripts#^HORSERACE|Example 36-16]].
 
 **whereis**
 
@@ -921,7 +921,7 @@ exit 0
 #+ http://sourceforge.net/projects/tripwire/.
 ```
 
-Also see [[contributed-scripts#^DIRECTORYINFO|Example A-19]], [[colorizing#^HORSERACE|Example 36-16]], and [[manipulating-strings#^RANDSTRING|Example 10-2]] for creative uses of the **md5sum** command.
+Also see [[contributed-scripts#^DIRECTORYINFO|Example A-19]], [[colorizing-scripts#^HORSERACE|Example 36-16]], and [[manipulating-strings#^RANDSTRING|Example 10-2]] for creative uses of the **md5sum** command.
 
 > [!note]
 > There have been reports that the 128-bit **md5sum** can be cracked, so the more secure 160-bit **sha1sum** is a welcome new addition to the checksum toolkit.

@@ -154,7 +154,7 @@ The _sha-bang_ ( #!) [^1] at the head of a script tells your system that this fi
 #!/bin/awk -f
 ```
 
-Each of the above script header lines calls a different command interpreter, be it /bin/sh, the default shell (**bash** in a Linux system) or otherwise. [^4] Using **#!/bin/sh**, the default Bourne shell in most commercial variants of UNIX, makes the script [[portabilityissues|portable]] to non-Linux machines, though you [[gotchas#^BINSH|sacrifice Bash-specific features]]. The script will, however, conform to the POSIX [^5] **sh** standard.
+Each of the above script header lines calls a different command interpreter, be it /bin/sh, the default shell (**bash** in a Linux system) or otherwise. [^4] Using **#!/bin/sh**, the default Bourne shell in most commercial variants of UNIX, makes the script [[portability-issues|portable]] to non-Linux machines, though you [[gotchas#^BINSH|sacrifice Bash-specific features]]. The script will, however, conform to the POSIX [^5] **sh** standard.
 
 Note that the path given at the "sha-bang" must be correct, otherwise an error message -- usually "Command not found." -- will be the only result of running the script. [^6]
 

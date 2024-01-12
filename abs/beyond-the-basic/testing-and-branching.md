@@ -438,7 +438,7 @@ choice_of beans rice carrots radishes rutabaga spinach
 exit 0
 ```
 
-See also [[bash-ver2#^RESISTOR|Example 37-3]].
+See also [[bash-version-2#^RESISTOR|Example 37-3]].
 
 [^1]: Pattern-match lines may also _start_ with a **(** left paren to give the layout a more structured appearance.
 

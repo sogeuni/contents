@@ -24,8 +24,8 @@ Some interesting options to _tput_ are:
 
 Example scripts using _tput_:
 
-1. [[colorizing#^COLORECHO|Example 36-15]]
-2. [[colorizing#^EX30A|Example 36-13]]
+1. [[colorizing-scripts#^COLORECHO|Example 36-15]]
+2. [[colorizing-scripts#^EX30A|Example 36-13]]
 3. [[contributed-scripts#^HOMEWORK|Example A-44]]
 4. [[contributed-scripts#^NIM|Example A-42]]
 5. [[arrays#^POEM|Example 27-2]]

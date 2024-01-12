@@ -6,15 +6,12 @@ Among the new goodies:
 
 - Associative arrays. [^1]
     
-    |   |
-    |---|
-    |An _associative_ array can be thought of as a set of two linked arrays -- one holding the _data_, and the other the _keys_ that index the individual elements of the _data_ array.|
+> An _associative_ array can be thought of as a set of two linked arrays -- one holding the _data_, and the other the _keys_ that index the individual elements of the _data_ array.
     
     **Example 37-5. A simple address database**
     
-    |   |
-    |---|
-    |#!/bin/bash4
+```bash
+#!/bin/bash4
 # fetch_address.sh
 
 declare -A address
@@ -35,13 +32,13 @@ echo "John's address is ${address[John]}."
 echo
 
 echo "${!address[*]}"   # The array indices ...
-# Charles John Wilma|
+# Charles John Wilma
+```
     
     **Example 37-6. A somewhat more elaborate address database**
     
-    |   |
-    |---|
-    |#!/bin/bash4
+```bash
+#!/bin/bash4
 # fetch_address-2.sh
 # A more elaborate version of fetch_address.sh.
 
@@ -90,36 +87,35 @@ fetch_address "Arvid Boyce"
 fetch_address "Bozo Bozeman"
 # Bozo Bozeman's address is not in database.
 
-exit $?   # In this case, exit code = 99, since that is function return.|
+exit $?   # In this case, exit code = 99, since that is function return.
+```
     
     See [[contributed-scripts#^SAMORSE|Example A-53]] for an interesting usage of an _associative array_.
     
-    |   |   |
-    |---|---|
-    |![[../images/caution.gif|Caution]]|Elements of the _index_ array may include embedded [[special-characters#^WHITESPACEREF|space characters]], or even leading and/or trailing space characters. However, index array elements containing _only_ _whitespace_ are _not_ permitted.
-
-\|   \|
-\|---\|
-\|address[   ]="Blank"   # Error!\||
+> [!caution]
+> Elements of the _index_ array may include embedded [[special-characters#^WHITESPACEREF|space characters]], or even leading and/or trailing space characters. However, index array elements containing _only_ _whitespace_ are _not_ permitted.
+>
+> ```bash
+> address[   ]="Blank"   # Error!
+> ```
     
 - Enhancements to the [[testing-and-branching#^CASEESAC1|case]] construct: the _;;&_ and _;&_ terminators.
     
     **Example 37-7. Testing characters**
     
-    |   |
-    |---|
-    |#!/bin/bash4
+```bash
+#!/bin/bash4
 
 test_char ()
 {
   case "$1" in
-    [[:print:]] )  echo "$1 is a printable character.";;&       # \|
-    # The ;;& terminator continues to the next pattern test.      \|
+    [[:print:]] )  echo "$1 is a printable character.";;&       # |
+    # The ;;& terminator continues to the next pattern test.      |
     [[:alnum:]] )  echo "$1 is an alpha/numeric character.";;&  # v
     [[:alpha:]] )  echo "$1 is an alphabetic character.";;&     # v
     [[:lower:]] )  echo "$1 is a lowercase alphabetic character.";;&
-    [[:digit:]] )  echo "$1 is an numeric character.";&         # \|
-    # The ;& terminator executes the next statement ...         # \|
+    [[:digit:]] )  echo "$1 is an numeric character.";&         # |
+    # The ;& terminator executes the next statement ...         # |
     %%%@@@@@    )  echo "********************************";;    # v
 #   ^^^^^^^^  ... even with a dummy pattern.
   esac
@@ -147,7 +143,8 @@ test_char /
 echo
 
 # The ;;& terminator can save complex if/then conditions.
-# The ;& is somewhat less useful.|
+# The ;& is somewhat less useful.
+```
     
 - The new **coproc** builtin enables two parallel [[special-characters#^PROCESSREF|processes]] to communicate and interact. As Chet Ramey states in the [[bibliography#^BASHFAQ|Bash FAQ]] [^2] , ver. 4.01:
     
@@ -166,9 +163,8 @@ echo
     
     Coprocesses use _file descriptors_. [[io-redirection#^FDREF2|File descriptors enable processes and pipes to communicate]].
     
-    |   |
-    |---|
-    |#!/bin/bash4
+```bash
+#!/bin/bash4
 # A coprocess communicates with a while-read loop.
 
 
@@ -178,17 +174,17 @@ coproc { cat mx_data.txt; sleep 2; }
 
 while read -u ${COPROC[0]} line    #  ${COPROC[0]} is the
 do                                 #+ file descriptor of the coprocess.
-  echo "$line" \| sed -e 's/line/NOT-ORIGINAL-TEXT/'
+  echo "$line" | sed -e 's/line/NOT-ORIGINAL-TEXT/'
 done
 
 kill $COPROC_PID                   #  No longer need the coprocess,
-                                   #+ so kill its PID.|
+                                   #+ so kill its PID.
+```
     
     But, be careful!
     
-    |   |
-    |---|
-    |#!/bin/bash4
+```bash
+#!/bin/bash4
 
 echo; echo
 a=aaa
@@ -219,51 +215,50 @@ echo
 #+ it still doesn't enable the parent process
 #+ to "inherit" variables from the child process, the while-read loop.
 
-#  Compare this to the "badread.sh" script.|
+#  Compare this to the "badread.sh" script.
+```
     
-    |   |   |
-    |---|---|
-    |![[../images/caution.gif|Caution]]|The coprocess is _asynchronous_, and this might cause a problem. It may terminate before another process has finished communicating with it.
-
-\|   \|
-\|---\|
-\|#!/bin/bash4
-
-coproc cpname { for i in {0..10}; do echo "index = $i"; done; }
-#      ^^^^^^ This is a *named* coprocess.
-read -u ${cpname[0]}
-echo $REPLY         #  index = 0
-echo ${COPROC[0]}   #+ No output ... the coprocess timed out
-#  after the first loop iteration.
-
-
-
-# However, George Dimitriu has a partial fix.
-
-coproc cpname { for i in {0..10}; do echo "index = $i"; done; sleep 1;
-echo hi > myo; cat - >> myo; }
-#       ^^^^^ This is a *named* coprocess.
-
-echo "I am main"$'\04' >&${cpname[1]}
-myfd=${cpname[0]}
-echo myfd=$myfd
-
-### while read -u $myfd
-### do
-###   echo $REPLY;
-### done
-
-echo $cpname_PID
-
-#  Run this with and without the commented-out while-loop, and it is
-#+ apparent that each process, the executing shell and the coprocess,
-#+ waits for the other to finish writing in its own write-enabled pipe.\||
+> [!caution]
+> The coprocess is _asynchronous_, and this might cause a problem. It may terminate before another process has finished communicating with it.
+>
+> ```bash
+> #!/bin/bash4
+> 
+> coproc cpname { for i in {0..10}; do echo "index = $i"; done; }
+> #      ^^^^^^ This is a *named* coprocess.
+> read -u ${cpname[0]}
+> echo $REPLY         #  index = 0
+> echo ${COPROC[0]}   #+ No output ... the coprocess timed out
+> #  after the first loop iteration.
+> 
+> 
+> 
+> # However, George Dimitriu has a partial fix.
+> 
+> coproc cpname { for i in {0..10}; do echo "index = $i"; done; sleep 1;
+> echo hi > myo; cat - >> myo; }
+> #       ^^^^^ This is a *named* coprocess.
+> 
+> echo "I am main"$'\04' >&${cpname[1]}
+> myfd=${cpname[0]}
+> echo myfd=$myfd
+> 
+> ### while read -u $myfd
+> ### do
+> ###   echo $REPLY;
+> ### done
+> 
+> echo $cpname_PID
+> 
+> #  Run this with and without the commented-out while-loop, and it is
+> #+ apparent that each process, the executing shell and the coprocess,
+> #+ waits for the other to finish writing in its own write-enabled pipe.
+> ```
     
 - The new **mapfile** builtin makes it possible to load an array with the contents of a text file without using a loop or [[arrays#^ARRAYINITCS|command substitution]].
-    
-    |   |
-    |---|
-    |#!/bin/bash4
+
+```bash
+#!/bin/bash4
 
 mapfile Arr1 < $0
 # Same result as     Arr1=( $(cat $0) )
@@ -275,15 +270,15 @@ echo "--"; echo
 read -a Arr2 < $0
 echo "${Arr2[@]}"  # Reads only first line of script into the array.
 
-exit|
+exit
+```
     
 - The [[internal-commands-and-builtins#^READREF|read]] builtin got a minor facelift. The -t [[internal-commands-and-builtins#^READTIMED|timeout]] option now accepts (decimal) fractional values [^3] and the -i option permits preloading the edit buffer. [^4] Unfortunately, these enhancements are still a work in progress and not (yet) usable in scripts.
     
 - [[parameter-substitution#^PARAMSUBREF|Parameter substitution]] gets _case-modification_ operators.
     
-    |   |
-    |---|
-    |#!/bin/bash4
+```bash
+#!/bin/bash4
 
 var=veryMixedUpVariable
 echo ${var}            # veryMixedUpVariable
@@ -294,31 +289,31 @@ echo ${var^^}          # VERYMIXEDUPVARIABLE
 echo ${var,}           # veryMixedUpVariable
 #         *              First char --> lowercase.
 echo ${var,,}          # verymixedupvariable
-#         **             All chars  --> lowercase.|
+#         **             All chars  --> lowercase.
+```
     
 - The [[typing-variables.html|declare]] builtin now accepts the -l _lowercase_ and -c _capitalize_ options.
     
-    |   |
-    |---|
-    |#!/bin/bash4
+```bash
+#!/bin/bash4
 
 declare -l var1            # Will change to lowercase
 var1=MixedCaseVARIABLE
 echo "$var1"               # mixedcasevariable
-# Same effect as             echo $var1 \| tr A-Z a-z
+# Same effect as             echo $var1 | tr A-Z a-z
 
 declare -c var2            # Changes only initial char to uppercase.
 var2=originally_lowercase
 echo "$var2"               # Originally_lowercase
-# NOT the same effect as     echo $var2 \| tr a-z A-Z|
+# NOT the same effect as     echo $var2 | tr a-z A-Z
+```
     
 - [[special-characters#^BRACEEXPREF|Brace expansion]] has more options.
     
     _Increment/decrement_, specified in the final term within braces.
     
-    |   |
-    |---|
-    |#!/bin/bash4
+```bash
+#!/bin/bash4
 
 echo {40..60..2}
 # 40 42 44 46 48 50 52 54 56 58 60
@@ -334,23 +329,25 @@ echo {60..40..-2}
 # But, what about letters and symbols?
 echo {X..d}
 # X Y Z [  ] ^ _ ` a b c d
-# Does not echo the \ which escapes a space.|
+# Does not echo the \ which escapes a space.
+```
     
     _Zero-padding_, specified in the first term within braces, prefixes each term in the output with the _same number_ of zeroes.
     
-    |   |
-    |---|
-    |bash4$ **echo {010..15}**
+```bash
+bash4$ echo {010..15}
 010 011 012 013 014 015
 
-bash4$ **echo {000..10}**
-000 001 002 003 004 005 006 007 008 009 010|
+
+bash4$ echo {000..10}
+000 001 002 003 004 005 006 007 008 009 010
+      
+```
     
-- [[bash-ver4#^SUBSTREXTREF4|_Substring extraction_ on _positional parameters_]] now starts with [[othertypesv#^SCRNAMEPARAM|$0]] as the _zero-index_. (This corrects an inconsistency in the treatment of positional parameters.)
+- [[bash-version-4#^SUBSTREXTREF4|_Substring extraction_ on _positional parameters_]] now starts with [[othertypesv#^SCRNAMEPARAM|$0]] as the _zero-index_. (This corrects an inconsistency in the treatment of positional parameters.)
     
-    |   |
-    |---|
-    |#!/bin/bash
+```bash
+#!/bin/bash
 # show-params.bash
 # Requires version 4+ of Bash.
 
@@ -372,13 +369,13 @@ echo ${@:0}
 # bash4 show-params.bash4 one two three
 # show-params.bash4 one two three
 
-# $0                $1  $2  $3|
+# $0                $1  $2  $3
+```
     
 - The new ** [[globbing.html|globbing]] operator matches filenames and directories [[local-variables#^RECURSIONREF0|recursively]].
     
-    |   |
-    |---|
-    |#!/bin/bash4
+```bash
+#!/bin/bash4
 # filelist.bash4
 
 shopt -s globstar  # Must enable globstar, otherwise ** doesn't work.
@@ -418,15 +415,15 @@ allmyfiles/my_music/piano-lesson.1.ogg
 allmyfiles/my_pictures
 allmyfiles/my_pictures/at-beach-with-Jade.png
 allmyfiles/my_pictures/picnic-with-Melissa.png
-filelist.bash4|
+filelist.bash4
+```
     
 - The new [[internal-variables#^BASHPIDREF|$BASHPID]] internal variable.
     
 - There is a new [[internal-commands-and-builtins#^BUILTINREF|builtin]] error-handling function named **command_not_found_handle**.
     
-    |   |
-    |---|
-    |#!/bin/bash4
+```bash
+#!/bin/bash4
 
 command_not_found_handle ()
 { # Accepts implicit parameters.
@@ -437,16 +434,14 @@ command_not_found_handle ()
 bad_command arg1 arg2
 
 # The following command is not valid: "bad_command"
-# With the following argument(s): "arg1" "arg2"|
-    
+# With the following argument(s): "arg1" "arg2"
+```
 
-|   |
-|---|
-|_Editorial comment_
-
-Associative arrays? Coprocesses? Whatever happened to the lean and mean Bash we have come to know and love? Could it be suffering from (horrors!) "feature creep"? Or perhaps even Korn shell envy?
-
-_Note to Chet Ramey:_ Please add only _essential_ features in future Bash releases -- perhaps _for-each_ loops and support for multi-dimensional arrays. [^5] Most Bash users won't need, won't use, and likely won't greatly appreciate complex "features" like built-in debuggers, Perl interfaces, and bolt-on rocket boosters.|
+> _Editorial comment_
+>
+> Associative arrays? Coprocesses? Whatever happened to the lean and mean Bash we have come to know and love? Could it be suffering from (horrors!) "feature creep"? Or perhaps even Korn shell envy?
+>
+> _Note to Chet Ramey:_ Please add only _essential_ features in future Bash releases -- perhaps _for-each_ loops and support for multi-dimensional arrays. [^5] Most Bash users won't need, won't use, and likely won't greatly appreciate complex "features" like built-in debuggers, Perl interfaces, and bolt-on rocket boosters.
 
 ## 37.3.1. Bash, version 4.1
 
@@ -460,9 +455,8 @@ Version 4.1 of Bash, released in May, 2010, was primarily a bugfix update.
     
     **Example 37-8. Reading N characters**
     
-    |   |
-    |---|
-    |#!/bin/bash
+```bash
+#!/bin/bash
 # Requires Bash version -ge 4.1 ...
 
 num_chars=61
@@ -476,15 +470,15 @@ exit
 #!/bin/bash
 # Requires Bash version -ge 4.1 ...
 
-num_chars=61|
+num_chars=61
+```
     
 - [[here-documents#^HEREDOCREF|Here documents]] embedded in [[varassignment#^COMMANDSUBREF0|**$( ... )** command substitution]] constructs may terminate with a simple **)**.
     
     **Example 37-9. Using a _here document_ to set a variable**
     
-    |   |
-    |---|
-    |#!/bin/bash
+```bash
+#!/bin/bash
 # here-commsub.sh
 # Requires Bash version -ge 4.1 ...
 
@@ -508,7 +502,8 @@ echo "$multi_line_var"
 
 #  Bash still emits a warning, though.
 #  warning: here-document at line 10 delimited
-#+ by end-of-file (wanted `ENDxxx')|
+#+ by end-of-file (wanted `ENDxxx')
+```
     
 
 ## 37.3.2. Bash, version 4.2
@@ -516,14 +511,11 @@ echo "$multi_line_var"
 Version 4.2 of Bash, released in February, 2011, contains a number of new features and enhancements, in addition to bugfixes.
 
 - Bash now supports the the _\u_ and _\U_ _Unicode_ escape.
-    
-    |   |
-    |---|
-    |Unicode is a cross-platform standard for encoding into numerical values letters and graphic symbols. This permits representing and displaying characters in foreign alphabets and unusual fonts.|
-    
-    |   |
-    |---|
-    |echo -e '\u2630'   # Horizontal triple bar character.
+
+> Unicode is a cross-platform standard for encoding into numerical values letters and graphic symbols. This permits representing and displaying characters in foreign alphabets and unusual fonts.
+
+```bash
+echo -e '\u2630'   # Horizontal triple bar character.
 # Equivalent to the more roundabout:
 echo -e "\xE2\x98\xB0"
                    # Recognized by earlier Bash versions.
@@ -572,19 +564,18 @@ echo -ne "${symbol[FAX]}   "
 echo -ne "${symbol[care_of]}   "
 echo -ne "${symbol[account]}   "
 echo -ne "${symbol[trademark]}   "
-echo|
-    
-    |   |   |
-    |---|---|
-    |![[../images/note.gif|Note]]|The above example uses the [[escaping#^STRQ|**$' ... '**]] _string-expansion_ construct.|
+echo
+```
+
+> [!note]
+> The above example uses the [[escaping#^STRQ|**$' ... '**]] _string-expansion_ construct.
     
 - When the _lastpipe_ shell option is set, the last command in a [[special-characters#^PIPEREF|pipe]] _doesn't run in a subshell_.
     
     **Example 37-10. Piping input to a [[internal-commands-and-builtins#^READREF|read]]**
-    
-    |   |
-    |---|
-    |#!/bin/bash
+
+```bash
+#!/bin/bash
 # lastpipe-option.sh
 
 line=''                   # Null value.
@@ -598,12 +589,13 @@ echo "Exit status of attempting to set \"lastpipe\" option is $?"
 
 echo
 
-head -1 $0 \| read line    # Pipe the first line of the script to read.
+head -1 $0 | read line    # Pipe the first line of the script to read.
 #            ^^^^^^^^^      Not in a subshell!!!
 
 echo "\$line = "$line""
 # Older Bash releases       $line =
-# Bash version 4.2          $line = #!/bin/bash|
+# Bash version 4.2          $line = #!/bin/bash
+```
     
     This option offers possible "fixups" for these example scripts: [[gotchas#^BADREAD|Example 34-3]] and [[internal-commands-and-builtins#^READPIPE|Example 15-8]].
     
@@ -611,9 +603,8 @@ echo "\$line = "$line""
     
     **Example 37-11. Negative array indices**
     
-    |   |
-    |---|
-    |#!/bin/bash
+```bash
+#!/bin/bash
 # neg-array.sh
 # Requires Bash, version -ge 4.2.
 
@@ -652,15 +643,15 @@ done  # Lists the elements in the array, backwards.
 
 echo
 
-# See also neg-offset.sh.|
+# See also neg-offset.sh.
+```
     
 - [[manipulating-strings#^SUBSTREXTR01|Substring extraction]] uses a negative _length_ parameter to specify an offset from the _end_ of the target string.
     
     **Example 37-12. Negative parameter in string-extraction construct**
-    
-    |   |
-    |---|
-    |#!/bin/bash
+
+```bash
+#!/bin/bash
 # Bash, version -ge 4.2
 # Negative length-index in substring extraction.
 # Important: It changes the interpretation of this construct!
@@ -685,11 +676,15 @@ echo ${stringZ:3:-6}                         #    ABC123
 #  When the "length" parameter is negative, 
 #+ it serves as an offset-from-end parameter.
 
-#  See also neg-array.sh.|
-    
+#  See also neg-array.sh.
+```
 
 [^1]: To be more specific, Bash 4+ has _limited_ support for associative arrays. It's a bare-bones implementation, and it lacks the much of the functionality of such arrays in other programming languages. Note, however, that [[optimizations#^ASSOCARRTST|associative arrays in Bash seem to execute faster and more efficiently than numerically-indexed arrays]].
+
 [^2]: Copyright 1995-2009 by Chester Ramey.
+
 [^3]: This only works with [[special-characters#^PIPEREF|pipes]] and certain other _special_ files.
+
 [^4]: But only in conjunction with [[internal-commands-and-builtins#^READLINEREF|readline]], i.e., from the command-line.
+
 [^5]: And while you're at it, consider fixing the notorious [[internal-commands-and-builtins#^PIPEREADREF0|piped read]] problem.

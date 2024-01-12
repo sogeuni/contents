@@ -146,7 +146,7 @@ exit $E_WRONG_ARGS
     
     See also [[standard-options.html|Section G.1]].
     
-- Break complex scripts into simpler modules. Use functions where appropriate. See [[bash-ver2#^CARDS|Example 37-4]].
+- Break complex scripts into simpler modules. Use functions where appropriate. See [[bash-version-2#^CARDS|Example 37-4]].
     
 - Don't use a complex construct where a simpler one will do.
 

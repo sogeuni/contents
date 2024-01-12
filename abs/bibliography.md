@@ -29,7 +29,7 @@ This ebook is an excellent introduction to _sed_. Rather than being a conversion
 
 Dale Dougherty and Arnold Robbins, _Sed and Awk_, 2nd edition, O'Reilly and Associates, 1997, 1-156592-225-5.
 
-Unfolding the full power of shell scripting requires at least a passing familiarity with [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|_sed_ and _awk_]]. This is the classic tutorial. It includes an excellent introduction to _Regular Expressions_. Recommended.
+Unfolding the full power of shell scripting requires at least a passing familiarity with [[a-sed-and-awk-micro-primer#^SEDREF|_sed_ and _awk_]]. This is the classic tutorial. It includes an excellent introduction to _Regular Expressions_. Recommended.
 
 *
 
@@ -113,7 +113,7 @@ Excellent Bash pocket reference (don't leave home without it, especially if you'
 
 Arnold Robbins, _Effective Awk Programming_, Free Software Foundation / O'Reilly and Associates, 2000, 1-882114-26-4.
 
-The absolute best [[C.2. Awk#^AWKREF|awk]] tutorial and reference. The free electronic version of this book is part of the _awk_ documentation, and printed copies of the latest version are available from O'Reilly and Associates.
+The absolute best [[awk#^AWKREF|awk]] tutorial and reference. The free electronic version of this book is part of the _awk_ documentation, and printed copies of the latest version are available from O'Reilly and Associates.
 
 This book served as an inspiration for the author of the _ABS Guide_.
 
@@ -231,7 +231,7 @@ Philip Patterson's [logforbash](http://www.gossiplabs.org) logging/debugging scr
 
 [AuctionGallery](http://auctiongallery.sourceforge.net), an application for eBay "power sellers" coded in Bash.
 
-Of historical interest are Colin Needham's _original International Movie Database (IMDB) reader polling scripts_, which nicely illustrate the use of [[C.2. Awk#^AWKREF|awk]] for string parsing. Unfortunately, the URL link is broken.
+Of historical interest are Colin Needham's _original International Movie Database (IMDB) reader polling scripts_, which nicely illustrate the use of [[awk#^AWKREF|awk]] for string parsing. Unfortunately, the URL link is broken.
 
 ---
 

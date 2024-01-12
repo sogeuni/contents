@@ -406,7 +406,7 @@ bash$
 	   
 ```
 
-The **setterm** command can be used within a script to change the appearance of text written to stdout, although there are certainly [[colorizing#^COLORIZINGREF|better tools]] available for this purpose.
+The **setterm** command can be used within a script to change the appearance of text written to stdout, although there are certainly [[colorizing-scripts#^COLORIZINGREF|better tools]] available for this purpose.
 
 ```bash
 setterm -bold on
@@ -524,7 +524,7 @@ root          tty1                      Fri Dec  7 18:43:21 -0700 2001
 
 **lsof**
 
-List open files. This command outputs a detailed table of all currently open files and gives information about their owner, size, the processes associated with them, and more. Of course, **lsof** may be piped to [[text-processing-commands#^GREPREF|grep]] and/or [[C.2. Awk#^AWKREF|awk]] to parse and analyze its results.
+List open files. This command outputs a detailed table of all currently open files and gives information about their owner, size, the processes associated with them, and more. Of course, **lsof** may be piped to [[text-processing-commands#^GREPREF|grep]] and/or [[awk#^AWKREF|awk]] to parse and analyze its results.
 
 ```bash
 bash$ lsof
@@ -674,7 +674,7 @@ echo clone | nc thunk.org 5000 > e2fsprogs.dat
 
 **free**
 
-Shows memory and cache usage in tabular form. The output of this command lends itself to parsing, using [[text-processing-commands#^GREPREF|grep]], [[C.2. Awk#^AWKREF|awk]] or **Perl**. The **procinfo** command shows all the information that **free** does, and much more.
+Shows memory and cache usage in tabular form. The output of this command lends itself to parsing, using [[text-processing-commands#^GREPREF|grep]], [[awk#^AWKREF|awk]] or **Perl**. The **procinfo** command shows all the information that **free** does, and much more.
 
 ```bash
 bash$ free
@@ -745,7 +745,7 @@ Filesystem           1k-blocks      Used Available Use% Mounted on
 
 **dmesg**
 
-Lists all system bootup messages to stdout. Handy for debugging and ascertaining which device drivers were installed and which system interrupts in use. The output of **dmesg** may, of course, be parsed with [[text-processing-commands#^GREPREF|grep]], [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]], or [[C.2. Awk#^AWKREF|awk]] from within a script.
+Lists all system bootup messages to stdout. Handy for debugging and ascertaining which device drivers were installed and which system interrupts in use. The output of **dmesg** may, of course, be parsed with [[text-processing-commands#^GREPREF|grep]], [[a-sed-and-awk-micro-primer#^SEDREF|sed]], or [[awk#^AWKREF|awk]] from within a script.
 
 ```bash
 bash$ dmesg | grep hda
@@ -969,7 +969,7 @@ Adding an appropriate entry to /etc/logrotate.conf makes it possible to manage p
 
 **ps**
 
-_P_rocess _S_tatistics: lists currently executing processes by owner and PID (process ID). This is usually invoked with ax or aux options, and may be piped to [[text-processing-commands#^GREPREF|grep]] or [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]] to search for a specific process (see [[internal-commands-and-builtins#^EX44|Example 15-14]] and [[proc#^PIDID|Example 29-3]]).
+_P_rocess _S_tatistics: lists currently executing processes by owner and PID (process ID). This is usually invoked with ax or aux options, and may be piped to [[text-processing-commands#^GREPREF|grep]] or [[a-sed-and-awk-micro-primer#^SEDREF|sed]] to search for a specific process (see [[internal-commands-and-builtins#^EX44|Example 15-14]] and [[proc#^PIDID|Example 29-3]]).
 
 ```bash
 bash$  ps ax | grep sendmail
@@ -2033,7 +2033,7 @@ Remote distribution client: synchronizes, clones, or backs up a file system on a
 
 [^6]: Operators of single-user Linux systems generally prefer something simpler for backups, such as **tar**.
 
-[^7]: As of the [[bash-ver4#^BASH4REF|version 4 update]] of Bash, the -f and -c options take a block size of 512 when in [[starting-off-with-a-sha-bang#^POSIX2REF|POSIX]] mode. Additionally, there are two new options: -b for [[dev#^SOCKETREF|socket]] buffer size, and -T for the limit on the number of _threads_.
+[^7]: As of the [[bash-version-4#^BASH4REF|version 4 update]] of Bash, the -f and -c options take a block size of 512 when in [[starting-off-with-a-sha-bang#^POSIX2REF|POSIX]] mode. Additionally, there are two new options: -b for [[dev#^SOCKETREF|socket]] buffer size, and -T for the limit on the number of _threads_.
 
 [^8]: NAND is the logical _not-and_ operator. Its effect is somewhat similar to subtraction.
 

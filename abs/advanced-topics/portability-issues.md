@@ -1,9 +1,6 @@
 ---
 title: 36.9. Portability Issues
-aliases:
-  - 36.9. Portability Issues
 ---
-
 
 > It is easier to port a shell than a shell script.
 >
@@ -21,17 +18,17 @@ Bash has certain features that the traditional [[shell-programming#^BASHDEF|Bour
 
 - Certain extended [[options#^INVOCATIONOPTIONSREF|invocation options]]
 - [[command-substitution#^COMMANDSUBREF|Command substitution]] using **$( )** notation
-- [[bash-ver3#^BRACEEXPREF3|Brace expansion]]
-- Certain [[arrays#^ARRAYREF|array]] operations, and [[bash-ver4#^ASSOCARR|associative arrays]]
+- [[bash-version-3#^BRACEEXPREF3|Brace expansion]]
+- Certain [[arrays#^ARRAYREF|array]] operations, and [[bash-version-4#^ASSOCARR|associative arrays]]
 - The [[test-constructs#^DBLBRACKETS|double brackets]] extended test construct
 - The [[double-parentheses-construct#^DBLPARENSREF|double-parentheses]] arithmetic-evaluation construct
 - Certain [[manipulating-strings#^STRINGMANIP|string manipulation]] operations
 - [[process-substitution#^PROCESSSUBREF|Process substitution]]
-- A Regular Expression [[bash-ver3#^REGEXMATCHREF|matching operator]]
+- A Regular Expression [[bash-version-3#^REGEXMATCHREF|matching operator]]
 - Bash-specific [[internal-commands-and-builtins#^BUILTINREF|builtins]]
-- [[bash-ver4#^COPROCREF|Coprocesses]]
+- [[bash-version-4#^COPROCREF|Coprocesses]]
 
-See the [[ftp://ftp.cwru.edu/pub/bash/FAQ|Bash F.A.Q.]] for a complete listing.
+See the [Bash F.A.Q.](ftp://ftp.cwru.edu/pub/bash/FAQ) for a complete listing.
 
 ## 36.9.1. A Test Suite
 
@@ -39,7 +36,7 @@ Let us illustrate some of the incompatibilities between Bash and the classic Bou
 
 **Example 36-23. Test Suite**
 
-```
+```bash
 #!/bin/bash
 # test-suite.sh
 # A partial Bash compatibility test suite.

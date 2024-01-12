@@ -1,3 +1,7 @@
+---
+title: 38.4. Tools Used to Produce This Book
+---
+
 ## 38.4.1. Hardware
 
 A used IBM Thinkpad, model 760XL laptop (P166, 104 meg RAM) running Red Hat 7.1/7.3. Sure, it's slow and has a funky keyboard, but it beats the heck out of a No. 2 pencil and a Big Chief tablet.

@@ -1,3 +1,7 @@
+---
+title: 38.5 Credits
+---
+
 _Community participation made this project possible._ The author gratefully acknowledges that writing this book would have been unthinkable without help and feedback from all you people out there.
 
 [Philippe Martin](mailto:feloy@free.fr) translated the first version (0.1) of this document into DocBook/SGML. While not on the job at a small French company as a software developer, he enjoys working on GNU/Linux documentation and software, reading literature, playing music, and, for his peace of mind, making merry with friends. You may run across him somewhere in France or in the Basque Country, or you can email him at [feloy@free.fr](mailto:feloy@free.fr).
@@ -18,7 +22,7 @@ Likewise, thanks to [Michel Charpentier](mailto:charpov@cs.unh.edu) for permissi
 
 Kudos to [Noah Friedman](mailto:friedman@prep.ai.mit.edu) for permission to use his string function script ([[contributed-scripts#^STRING|Example A-18]]).
 
-[Emmanuel Rouat](mailto:emmanuel.rouat@wanadoo.fr) suggested corrections and additions on [[command-substitution#^COMMANDSUBREF|command substitution]], [[aliases|Chapter 25. Aliases]], and [[Appendix D. Parsing and Managing Pathnames|path management]]. He also contributed a very nice sample .bashrc file ([[sample-bashrc.html|Appendix M]]).
+[Emmanuel Rouat](mailto:emmanuel.rouat@wanadoo.fr) suggested corrections and additions on [[command-substitution#^COMMANDSUBREF|command substitution]], [[aliases|Chapter 25. Aliases]], and [[parsing-and-managing-pathnames|path management]]. He also contributed a very nice sample .bashrc file ([[sample-bashrc.html|Appendix M]]).
 
 [Heiner Steven](mailto:heiner.steven@odn.de) kindly gave permission to use his base conversion script, [[math-commands#^BASE|Example 16-48]]. He also made a number of corrections and many helpful suggestions. Special thanks.
 

@@ -79,23 +79,23 @@ For Anita, the source of all the magic
 * [[gotchas]]
 * [[scripting-with-style]]
 * [[miscellany]]
-* [[Chapter 37. Bash, versions 2, 3, and 4]]
+* [[bash-version-2-3-and-4]]
 
 [[Chapter 38. Endnotes]]
-* [[38.1. Author's Note]]
-* [[38.2. About the Author]]
-* [[38.3. Where to Go For Help]]
-* [[38.4. Tools Used to Produce This Book]]
-* [[38.5. Credits]]
-* [[38.6. Disclaimer]]
+* [[authors-note]]
+* [[about-the-author]]
+* [[where-to-go-for-help]]
+* [[tools-used-to-produce-this-book]]
+* [[credits]]
+* [[disclaimer]]
 
 [[Bibliography|Bibliography]]
 * [[contributed-scripts]]
-* [[refcards]]
-* [[Appendix C. A Sed and Awk Micro-Primer]]
-	* [[C.1. Sed]]
-	* [[C.2. Awk]]
-* [[Appendix D. Parsing and Managing Pathnames]]
+* [[reference-cards]]
+* [[a-sed-and-awk-micro-primer]]
+	* [[sed]]
+	* [[awk]]
+* [[parsing-and-managing-pathnames]]
 * [[exitcodes]
 * [[ioredirintro]]
 * [[Appendix G. Command-Line Options]]
@@ -126,23 +126,23 @@ For Anita, the source of all the magic
 
 33-1. [[options#^AEN19601|Bash options]]
 
-36-1. [[colorizing#^AEN20327|Numbers representing colors in Escape Sequences]]
+36-1. [[colorizing-scripts#^AEN20327|Numbers representing colors in Escape Sequences]]
 
-B-1. [[refcards#^AEN22402|Special Shell Variables]]
+B-1. [[reference-cards#^AEN22402|Special Shell Variables]]
 
-B-2. [[refcards#^AEN22473|TEST Operators: Binary Comparison]]
+B-2. [[reference-cards#^AEN22473|TEST Operators: Binary Comparison]]
 
-B-3. [[refcards#^AEN22593|TEST Operators: Files]]
+B-3. [[reference-cards#^AEN22593|TEST Operators: Files]]
 
-B-4. [[refcards#^AEN22728|Parameter Substitution and Expansion]]
+B-4. [[reference-cards#^AEN22728|Parameter Substitution and Expansion]]
 
-B-5. [[refcards#^AEN22828|String Operations]]
+B-5. [[reference-cards#^AEN22828|String Operations]]
 
-B-6. [[refcards#^AEN22979|Miscellaneous Constructs]]
+B-6. [[reference-cards#^AEN22979|Miscellaneous Constructs]]
 
-C-1. [[C.1. Sed#^AEN23200|Basic sed operators]]
+C-1. [[sed#^AEN23200|Basic sed operators]]
 
-C-2. [[C.1. Sed#^AEN23271|Examples of sed operators]]
+C-2. [[sed#^AEN23271|Examples of sed operators]]
 
 E-1. [[exitcodes#^AEN23549|_Reserved_ Exit Codes]]
 
@@ -248,7 +248,7 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 9-16. [[generate-random-integer#^SEEDINGRANDOM|Reseeding RANDOM]]
 
-9-17. [[generate-random-integer#^RANDOM2|Pseudorandom numbers, using]] [[C.2. Awk#^AWKREF|awk]]
+9-17. [[generate-random-integer#^RANDOM2|Pseudorandom numbers, using]] [[awk#^AWKREF|awk]]
 
 10-1. [[manipulating-strings#^PARAGRAPHSPACE|Inserting a blank line between paragraphs in a text file]]
 
@@ -762,13 +762,13 @@ P-1. [[revisionhistory#^AEN25364|Revision History]]
 
 36-12. [[recursion-a-script-calling-itself#^USRMNT|Another (useful) script that recursively calls itself]]
 
-36-13. [[colorizing#^EX30A|A "colorized" address database]]
+36-13. [[colorizing-scripts#^EX30A|A "colorized" address database]]
 
-36-14. [[colorizing#^DRAW-BOX|Drawing a box]]
+36-14. [[colorizing-scripts#^DRAW-BOX|Drawing a box]]
 
-36-15. [[colorizing#^COLORECHO|Echoing colored text]]
+36-15. [[colorizing-scripts#^COLORECHO|Echoing colored text]]
 
-36-16. [[colorizing#^HORSERACE|A "horserace" game]]
+36-16. [[colorizing-scripts#^HORSERACE|A "horserace" game]]
 
 36-17. [[36.7. Assorted Tips#^PROGRESSBAR|A Progress Bar]]
 
@@ -928,7 +928,7 @@ A-59. [[contributed-scripts#^TESTEXECTIME|Testing execution times of various com
 
 A-60. [[contributed-scripts#^ASSOCARRTEST|Associative arrays vs. conventional arrays (execution times)]]
 
-C-1. [[C.2. Awk#^LETTERCOUNT2|Counting Letter Occurrences]]
+C-1. [[awk#^LETTERCOUNT2|Counting Letter Occurrences]]
 
 J-1. [[tabexpansion#^USEGETOPTEX|Completion script for _UseGetOpt.sh_]]
 

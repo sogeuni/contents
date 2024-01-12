@@ -245,7 +245,7 @@ done
 exit $?
 ```
 
-See also [[bash-ver2#^EX77|Example 37-1]].
+See also [[bash-version-2#^EX77|Example 37-1]].
 
 \"
 

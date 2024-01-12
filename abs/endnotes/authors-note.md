@@ -1,5 +1,9 @@
-> doce ut discas__
-> 
+---
+38.1. Author's Note
+---
+
+> doce ut discas
+>
 > <cite>(Teach, that you yourself may learn.)</cite>
 
 How did I come to write a scripting book? It's a strange tale. It seems that a few years back I needed to learn shell scripting -- and what better way to do that than to read a good book on the subject? I was looking to buy a tutorial and reference covering all aspects of the subject. I was looking for a book that would take difficult concepts, turn them inside out, and explain them in excruciating detail, with well-commented examples. [^1] In fact, I was looking for _this very book_, or something very much like it. Unfortunately, [[bibliography#^KOCHANREF|it didn't exist]], and if I wanted it, I'd have to write it. And so, here we are, folks.

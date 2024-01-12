@@ -1,4 +1,6 @@
-# Appendix B. Reference Cards
+---
+title: Appendix B. Reference Cards
+---
 
 The following reference cards provide a useful _summary_ of certain scripting concepts. The foregoing text treats these matters in more depth, as well as giving usage examples.
 
@@ -165,5 +167,3 @@ The following reference cards provide a useful _summary_ of certain scripting co
 |||
 |[[command-substitution#^BACKQUOTESREF|Back Quotes]]||
 |result=`COMMAND`|[[command-substitution#^COMMANDSUBREF|Command substitution]], classic style|
-
-|Contributed Scripts||A Sed and Awk Micro-Primer|

@@ -177,7 +177,7 @@ Colors=([0]="purple" [1]="reddish-orange" [2]="light green")
 	     
 ```
 
-[^1]: In this context, _typing_ a variable means to classify it and restrict its properties. For example, a variable _declared_ or _typed_ as an integer is no longer available for [[refcards#^STRINGOPSTAB|string operations]].
+[^1]: In this context, _typing_ a variable means to classify it and restrict its properties. For example, a variable _declared_ or _typed_ as an integer is no longer available for [[reference-cards#^STRINGOPSTAB|string operations]].
 
     ```bash
     declare -i intvar

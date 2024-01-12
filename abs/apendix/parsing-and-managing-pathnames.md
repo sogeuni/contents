@@ -1,6 +1,10 @@
+---
+title: Appendix D. Parsing and Managing Pathnames
+---
+
 Emmanual Rouat contributed the following example of parsing and transforming _filenames_ and, in particular, [[special-characters#^PATHNAMEREF|pathnames]]. It draws heavily on the functionality of _sed_.
 
-```
+```bash
 #!/usr/bin/env bash
 #-----------------------------------------------------------
 # Management of PATH, LD_LIBRARY_PATH, MANPATH variables...
@@ -94,7 +98,7 @@ echo $BARPATH
 
 David Wheeler kindly permitted me to use his instructive examples.
 
-```
+```bash
 Doing it correctly: A quick summary
 by David Wheeler
 http://www.dwheeler.com/essays/filenames-in-shell.html

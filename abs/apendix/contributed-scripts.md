@@ -1,12 +1,14 @@
-# Appendix A. Contributed Scripts
+---
+title: Appendix A. Contributed Scripts
+---
 
 These scripts, while not fitting into the text of this document, do illustrate some interesting shell programming techniques. Some are useful, too. Have fun analyzing and running them.
 
 **Example A-1. _mailformat_: Formatting an e-mail message**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+
+#!/bin/bash
 # mail-format.sh (ver. 1.1): Format e-mail messages.
 
 # Gets rid of carets, tabs, and also folds excessively long lines.
@@ -45,7 +47,7 @@ s/		*//'
 
 #  Delete carets and tabs at beginning of lines,
 #+ then fold lines to $MAXWIDTH characters.
-sed "$sedscript" $1 \| fold -s --width=$MAXWIDTH
+sed "$sedscript" $1 | fold -s --width=$MAXWIDTH
                         #  -s option to "fold"
                         #+ breaks lines at whitespace, if possible.
 
@@ -57,15 +59,15 @@ sed "$sedscript" $1 \| fold -s --width=$MAXWIDTH
 #+ scripting language provide an alternative to the bloated executables
 #+ of a clunky operating system.
 
-exit $?|
+exit $?
+```
 
 **Example A-2. _rn_: A simple-minded file renaming utility**
 
 This script is a modification of [[text-processing-commands#^LOWERCASE|Example 16-22]].
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 # rn.sh
 
 # Very simpleminded filename "rename" utility (based on "lowercase.sh").
@@ -93,7 +95,7 @@ do
    if [ -f "$filename" ]  # If finds match...
    then
      fname=`basename $filename`            # Strip off path.
-     n=`echo $fname \| sed -e "s/$1/$2/"`   # Substitute new for old in filename.
+     n=`echo $fname | sed -e "s/$1/$2/"`   # Substitute new for old in filename.
      mv $fname $n                          # Rename.
      let "number += 1"
    fi
@@ -112,15 +114,15 @@ exit $?
 # Exercises:
 # ---------
 # What types of files will this not work on?
-# How can this be fixed?|
+# How can this be fixed?
+```
 
 **Example A-3. _blank-rename_: Renames filenames containing blanks**
 
 This is an even simpler-minded version of previous script.
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 # blank-rename.sh
 #
 # Substitutes underscores for blanks in all the filenames in a directory.
@@ -131,11 +133,11 @@ FOUND=0                   # Successful return value.
 
 for filename in *         #Traverse all files in directory.
 do
-     echo "$filename" \| grep -q " "         #  Check whether filename
+     echo "$filename" | grep -q " "         #  Check whether filename
      if [ $? -eq $FOUND ]                   #+ contains space(s).
      then
        fname=$filename                      # Yes, this filename needs work.
-       n=`echo $fname \| sed -e "s/ /_/g"`   # Substitute underscore for blank.
+       n=`echo $fname | sed -e "s/ /_/g"`   # Substitute underscore for blank.
        mv "$fname" "$n"                     # Do the actual renaming.
        let "number += 1"
      fi
@@ -148,13 +150,13 @@ else
  echo "$number files renamed."
 fi 
 
-exit 0|
+exit 0
+```
 
 **Example A-4. _encryptedpw_: Uploading to an ftp site, using a locally encrypted password**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # Example "ex72.sh" modified to use encrypted password.
 
@@ -199,13 +201,13 @@ End-Of-Session
 # -n option to "ftp" disables auto-logon.
 # Note that "bell" rings 'bell' after each file transfer.
 
-exit 0|
+exit 0
+```
 
 **Example A-5. _copy-cd_: Copying a data CD**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # copy-cd.sh: copying a data CD
 
 CDROM=/dev/cdrom                           # CD ROM device
@@ -257,13 +259,13 @@ echo
 # Exercise:
 # Change the above "case" statement to also accept "yes" and "Yes" as input.
 
-exit 0|
+exit 0
+```
 
 **Example A-6. Collatz series**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # collatz.sh
 
 #  The notorious "hailstone" or Collatz series.
@@ -331,13 +333,13 @@ echo
 #+ see _Computers, Pattern, Chaos, and Beauty_, by Pickover, p. 185 ff.,
 #+ as listed in the bibliography.
 
-exit 0|
+exit 0
+```
 
 **Example A-7. _days-between_: Days between two dates**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # days-between.sh:    Number of days between two dates.
 # Usage: ./days-between.sh [M]M/[D]D/YYYY [M]M/[D]D/YYYY
 #
@@ -385,7 +387,7 @@ Parse_Date ()                 # Parse date from command-line params.
 
 check_date ()                 # Checks for invalid date(s) passed.
 {
-  [ "$day" -gt "$DIM" ] \| [ "$month" -gt "$MIY" ] \|
+  [ "$day" -gt "$DIM" ] | [ "$month" -gt "$MIY" ] |
   [ "$year" -lt "$REFYR" ] && Param_Error
   # Exit script on bad value(s).
   # Uses or-list / and-list.
@@ -491,13 +493,13 @@ exit 0
 
 #  Compare this script with
 #+ the implementation of Gauss' Formula in a C program at
-#+    http://buschencrew.hypermart.net/software/datedif|
+#+    http://buschencrew.hypermart.net/software/datedif
+```
 
 **Example A-8. Making a _dictionary_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # makedict.sh  [make dictionary]
 
 # Modification of /usr/sbin/mkdict (/usr/sbin/cracklib-forman) script.
@@ -526,25 +528,25 @@ fi
                                     #+ options to sort. Changed from
                                     #+ original script.
 
-cat $* \|                            #  Dump specified files to stdout.
-        tr A-Z a-z \|                #  Convert to lowercase.
-        tr ' ' '\012' \|             #  New: change spaces to newlines.
-#       tr -cd '\012[a-z][0-9]' \|   #  Get rid of everything
+cat $* |                            #  Dump specified files to stdout.
+        tr A-Z a-z |                #  Convert to lowercase.
+        tr ' ' '\012' |             #  New: change spaces to newlines.
+#       tr -cd '\012[a-z][0-9]' |   #  Get rid of everything
                                     #+ non-alphanumeric (in orig. script).
-        tr -c '\012a-z'  '\012' \|   #  Rather than deleting non-alpha
+        tr -c '\012a-z'  '\012' |   #  Rather than deleting non-alpha
                                     #+ chars, change them to newlines.
-        sort \|                      #  $SORT options unnecessary now.
-        uniq \|                      #  Remove duplicates.
-        grep -v '^#' \|              #  Delete lines starting with #.
+        sort |                      #  $SORT options unnecessary now.
+        uniq |                      #  Remove duplicates.
+        grep -v '^#' |              #  Delete lines starting with #.
         grep -v '^$'                #  Delete blank lines.
 
-exit $?|
+exit $?
+```
 
 **Example A-9. Soundex conversion**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # soundex.sh: Calculate "soundex" code for names
 
 # =======================================================
@@ -587,11 +589,11 @@ assign_value ()                #  Assigns numerical value
 # Try to figure out what is going on here.
 
 value=$( echo "$1" \
-\| tr -d wh \
-\| tr $val1 1 \| tr $val2 2 \| tr $val3 3 \
-\| tr $val4 4 \| tr $val5 5 \| tr $val6 6 \
-\| tr -s 123456 \
-\| tr -d aeiouy )
+| tr -d wh \
+| tr $val1 1 | tr $val2 2 | tr $val3 3 \
+| tr $val4 4 | tr $val5 5 | tr $val6 6 \
+| tr -s 123456 \
+| tr -d aeiouy )
 
 # Assign letter values.
 # Remove duplicate numbers, except when separated by vowels.
@@ -610,7 +612,7 @@ echo "Name = $input_name"
 
 # Change all characters of name input to lowercase.
 # ------------------------------------------------
-name=$( echo $input_name \| tr A-Z a-z )
+name=$( echo $input_name | tr A-Z a-z )
 # ------------------------------------------------
 # Just in case argument to script is mixed case.
 
@@ -621,7 +623,7 @@ name=$( echo $input_name \| tr A-Z a-z )
 
 char_pos=0                     # Initialize character position. 
 prefix0=${name:$char_pos:1}
-prefix=`echo $prefix0 \| tr a-z A-Z`
+prefix=`echo $prefix0 | tr a-z A-Z`
                                # Uppercase 1st letter of soundex.
 
 let "char_pos += 1"            # Bump character position to 2nd letter of name.
@@ -636,7 +638,7 @@ name1=${name:$char_pos}
 #  However, we also need to test whether the first letter of the name
 #+ is a vowel or 'w' or 'h', because otherwise this would bollix things up.
 
-char1=`echo $prefix \| tr A-Z a-z`    # First letter of name, lowercased.
+char1=`echo $prefix | tr A-Z a-z`    # First letter of name, lowercased.
 
 assign_value $name
 s1=$value
@@ -651,7 +653,7 @@ s3=9$s3                              #  If first letter of name is a vowel
 				     #+ unused value, which can be tested for.
 
 
-if [[ "$s1" -ne "$s2" \| "$s3" -eq 9 ]]
+if [[ "$s1" -ne "$s2" | "$s3" -eq 9 ]]
 then
   suffix=$s2
 else  
@@ -700,13 +702,13 @@ echo
 # --------
 # Simplify the "Exception Patch" section of this script.
 
-exit 0|
+exit 0
+```
 
 **Example A-10. _Game of Life_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # life.sh: "Life in the Slow Lane"
 # Author: Mendel Cooper
 # License: GPL3
@@ -829,7 +831,7 @@ do
     let "alive += 1"
   fi  
 
-  echo -n "$cell" \| sed -e 's/_/ /g'
+  echo -n "$cell" | sed -e 's/_/ /g'
   # Print out array, changing underscores to spaces.
 done  
 
@@ -1017,7 +1019,7 @@ fi                        #+ if no live cells.
 # {
 
 # Load initial array with contents of startup file.
-initial=( `cat "$startfile" \| sed -e '/#/d' \| tr -d '\n' \|\
+initial=( `cat "$startfile" | sed -e '/#/d' | tr -d '\n' |\
 # Delete lines containing '#' comment character.
            sed -e 's/\./\. /g' -e 's/_/_ /g'` )
 # Remove linefeeds and insert space between elements.
@@ -1093,13 +1095,13 @@ exit 0   # CEOF:EOF
 #+          in the script for an altered grid size.
 #
 # Exercise: Optimize this script.
-#           It has redundant code.|
+#           It has redundant code.
+```
 
 **Example A-11. Data file for _Game of Life_**
 
-|   |
-|---|
-|# gen0
+```bash
+# gen0
 #
 # This is an example "generation 0" start-up file for "life.sh".
 # --------------------------------------------------------------
@@ -1118,7 +1120,8 @@ ____._____
 ____._____
 ___...____
 __.._..___
-_..___..__|
+_..___..__
+```
 
 +++
 
@@ -1126,9 +1129,8 @@ The following script is by Mark Moraes of the University of Toronto. See the fil
 
 **Example A-12. _behead_: Removing mail and news message headers**
 
-|   |
-|---|
-|#! /bin/sh
+```bash
+#! /bin/sh
 #  Strips off the header from a mail/News message i.e. till the first
 #+ empty line.
 #  Author: Mark Moraes, University of Toronto
@@ -1177,7 +1179,8 @@ exit
  *    ever read sources, credits must appear in the documentation.
  *
  * 4. This notice may not be removed or altered.
- */|
+ */
+```
 
 +
 
@@ -1185,9 +1188,8 @@ Antek Sawicki contributed the following script, which makes very clever use of t
 
 **Example A-13. _password_: Generating random 8-character passwords**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #
 #
 #  Random password generator for Bash 2.x +
@@ -1234,7 +1236,8 @@ done
 
 echo "$PASS"      # ==> Or, redirect to a file, as desired.
 
-exit 0|
+exit 0
+```
 
 +
 
@@ -1242,9 +1245,8 @@ James R. Van Zandt contributed this script which uses named pipes and, in his wo
 
 **Example A-14. _fifo_: Making daily backups, using named pipes**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ==> Script by James R. Van Zandt, and used here with his permission.
 
 # ==> Comments added by author of this document.
@@ -1270,14 +1272,15 @@ James R. Van Zandt contributed this script which uses named pipes and, in his wo
   # ==> The end result is this backs up the main directories, from / on down.
 
   # ==>  What are the advantages of a "named pipe" in this situation,
-  # ==>+ as opposed to an "anonymous pipe", with \|?
+  # ==>+ as opposed to an "anonymous pipe", with |?
   # ==>  Will an anonymous pipe even work here?
 
   # ==>  Is it necessary to delete the pipe before exiting the script?
   # ==>  How could that be done?
 
 
-  exit 0|
+  exit 0
+```
 
 +
 
@@ -1285,9 +1288,8 @@ St�phane Chazelas used the following script to demonstrate generating prime nu
 
 **Example A-15. Generating prime numbers using the modulo operator**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # primes.sh: Generate prime numbers, without using arrays.
 # Script contributed by Stephane Chazelas.
 
@@ -1335,7 +1337,8 @@ exit $?
 #+ with the Sieve of Eratosthenes (ex68.sh).
 
 
-#  Exercise: Rewrite this script without recursion.|
+#  Exercise: Rewrite this script without recursion.
+```
 
 +
 
@@ -1343,9 +1346,8 @@ Rick Boivie's revision of Jordi Sanfeliu's _tree_ script.
 
 **Example A-16. _tree_: Displaying a directory tree**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # tree.sh
 
 #  Written by Rick Boivie.
@@ -1371,14 +1373,14 @@ do
                           #     directory level.
   while [ $zz != $1 ]     # Keep track of inner nested loop.
     do
-      echo -n "\| "        # ==> Display vertical connector symbol,
+      echo -n "| "        # ==> Display vertical connector symbol,
                           # ==> with 2 spaces & no line feed
                           #     in order to indent.
       zz=`expr $zz + 1`   # ==> Increment zz.
     done
 
     if [ -L "$dir" ] ; then # ==> If directory is a symbolic link...
-      echo "+---$dir" `ls -l $dir \| sed 's/^.*'$dir' //'`
+      echo "+---$dir" `ls -l $dir | sed 's/^.*'$dir' //'`
       # ==> Display horiz. connector and list directory name, but...
       # ==> delete date/time part of long listing.
     else
@@ -1406,15 +1408,15 @@ numdirs=0
 search 0
 echo "Total directories = $numdirs"
 
-exit 0|
+exit 0
+```
 
 Patsie's version of a directory _tree_ script.
 
 **Example A-17. _tree2_: Alternate directory tree script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # tree2.sh
 
 # Lightly modified/reformatted by ABS Guide author.
@@ -1447,8 +1449,8 @@ SELF=`basename $0`                # Our own program name.
 TMP="/tmp/${SELF}.${PID}.tmp"     # Temporary 'du' result.
 
 # Convert number to dotted thousand.
-function dot { echo "            $*" \|
-               sed -e :a -e 's/\(.*[0-9]\)\([0-9]\{3\}\)/\1,\2/;ta' \|
+function dot { echo "            $*" |
+               sed -e :a -e 's/\(.*[0-9]\)\([0-9]\{3\}\)/\1,\2/;ta' |
                tail -c 12; }
 
 # Usage: tree <recursion> <indent prefix> <min size> <directory>
@@ -1459,15 +1461,15 @@ function tree {
   dirname="$4"          # Which directory are we checking?
 
 # Get ($TOP) biggest subdirs/subfiles from TMP file.
-  LIST=`egrep "[[:space:]]${dirname}/[^/]*$" "$TMP" \|
-        awk '{if($1>'$minsize') print;}' \| sort -nr \| head -$TOP`
+  LIST=`egrep "[[:space:]]${dirname}/[^/]*$" "$TMP" |
+        awk '{if($1>'$minsize') print;}' | sort -nr | head -$TOP`
   [ -z "$LIST" ] && return        # Empty list, then go back.
 
   cnt=0
-  num=`echo "$LIST" \| wc -l`      # How many entries in the list.
+  num=`echo "$LIST" | wc -l`      # How many entries in the list.
 
   ## Main loop
-  echo "$LIST" \| while read size name; do
+  echo "$LIST" | while read size name; do
     ((cnt+=1))		          # Count entry number.
     bname=`basename "$name"`      # We only need a basename of the entry.
     [ -d "$name" ] && bname="$bname/"
@@ -1484,8 +1486,8 @@ function tree {
     # Last argument is the full directory name to check.
     if [ -d "$name" -a $recurs -lt $MAXRECURS ]; then
       [ $cnt -lt $num ] \
-        \| (tree $((recurs+1)) "$prefix  " $((size/10)) "$name") \
-        && (tree $((recurs+1)) "$prefix \|" $((size/10)) "$name")
+        | (tree $((recurs+1)) "$prefix  " $((size/10)) "$name") \
+        && (tree $((recurs+1)) "$prefix |" $((size/10)) "$name")
     fi
   done
 
@@ -1500,7 +1502,7 @@ function tree {
 ###                ###
 
 rootdir="$@"
-[ -d "$rootdir" ] \|
+[ -d "$rootdir" ] |
   { echo "$SELF: Usage: $SELF <directory>" >&2; exit $E_DIR; }
   # We should be called with a directory name.
 
@@ -1508,7 +1510,7 @@ echo "Building inventory list, please wait ..."
      # Show "please wait" message.
 du -akx "$rootdir" 1>"$TMP" 2>/dev/null
      # Build a temporary list of all files/dirs and their size.
-size=`tail -1 "$TMP" \| awk '{print $1}'`
+size=`tail -1 "$TMP" | awk '{print $1}'`
      # What is our rootdirectory's size?
 echo "`dot $size` $rootdir"
      # Display rootdirectory's entry.
@@ -1518,15 +1520,15 @@ tree 0 "" 0 "$rootdir"
 rm "$TMP" 2>/dev/null
      # Clean up TMP file.
 
-exit $?|
+exit $?
+```
 
 Noah Friedman permitted use of his _string function_ script. It essentially reproduces some of the _C_-library string manipulation functions.
 
 **Example A-18. _string functions_: C-style string functions**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # string.bash --- bash emulation of string(3) library routines
 # Author: Noah Friedman <friedman@prep.ai.mit.edu>
@@ -1796,15 +1798,15 @@ echo
 # Add code to test all the other string functions above.
 
 
-exit 0|
+exit 0
+```
 
 Michael Zick's complex array example uses the [[file-and-archiving-commands#^MD5SUMREF|md5sum]] check sum command to encode directory information.
 
 **Example A-19. Directory information**
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 # directory-info.sh
 # Parses and lists directory information.
 
@@ -2045,7 +2047,7 @@ IndexList()
 		l)	((Lidx+=3)) ;;		# At LEAST two more fields
 #  A little more elegance here would handle pipes,
 #+ sockets, deleted files - later.
-		*)	until IsNumber ${LIST[$Lidx]} \| ((Lidx >= Lcnt))
+		*)	until IsNumber ${LIST[$Lidx]} | ((Lidx >= Lcnt))
 			do
 				((Lidx+=1))
 			done
@@ -2119,7 +2121,7 @@ DigestFile()
 
 	case $if in
 	0) eval T1=\( \"\$\{$1\[@\]\}\" \)
-	   T2=( $(echo ${T1[@]} \| md5sum -) )
+	   T2=( $(echo ${T1[@]} | md5sum -) )
 	   ;;
 	1) T2=( $(md5sum $1) )
 	   ;;
@@ -2351,7 +2353,8 @@ declare -a FILE_LOC
 LocateFile ${PWD} FILE_LOC
 ListArray FILE_LOC
 
-exit 0|
+exit 0
+```
 
 St�phane Chazelas demonstrates object-oriented programming in a Bash script.
 
@@ -2359,9 +2362,8 @@ Mariusz Gniazdowski contributed a [[internal-commands-and-builtins#^HASHREF|hash
 
 **Example A-20. Library of hash functions**
 
-|   |
-|---|
-|# Hash:
+```bash
+# Hash:
 # Hash function library
 # Author: Mariusz Gniazdowski <mariusz.gn-at-gmail.com>
 # Date: 2005-04-07
@@ -2542,15 +2544,15 @@ IFS="$oldIFS"
 }
 
 #  NOTE: In lines 103 and 116, ampersand changed.
-#  But, it doesn't matter, because these are comment lines anyhow.|
+#  But, it doesn't matter, because these are comment lines anyhow.
+```
 
 Here is an example script using the foregoing hash library.
 
 **Example A-21. Colorizing text using hash functions**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # hash-example.sh: Colorizing text.
 # Author: Mariusz Gniazdowski <mariusz.gn-at-gmail.com>
 
@@ -2608,15 +2610,15 @@ exit $?
 
 #  On some terminals, the "light" colors print in bold,
 #  and end up looking darker than the normal ones.
-#  Why is this?|
+#  Why is this?
+```
 
 An example illustrating the mechanics of hashing, but from a different point of view.
 
 **Example A-22. More on hash functions**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # $Id: ha.sh,v 1.2 2005/04/21 23:24:26 oliver Exp $
 # Copyright 2005 Oliver Beckstein
 # Released under the GNU Public License
@@ -2759,15 +2761,15 @@ exit 0
 # Exercise:
 # --------
 
-# Add error checks to the functions.|
+# Add error checks to the functions.
+```
 
 Now for a script that installs and mounts those cute USB keychain solid-state "hard drives."
 
 **Example A-23. Mounting USB keychain storage devices**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ==> usb.sh
 # ==> Script for mounting and installing pen/keychain USB storage devices.
 # ==> Runs as root at system startup (see below).
@@ -2815,11 +2817,11 @@ IAM=$0
 # Functions lifted near-verbatim from usb-mount code.
 #
 function allAttachedScsiUsb {
-  find /proc/scsi/ -path '/proc/scsi/usb-storage*' -type f \|
+  find /proc/scsi/ -path '/proc/scsi/usb-storage*' -type f |
   xargs grep -l 'Attached: Yes'
 }
 function scsiDevFromScsiUsb {
-  echo $1 \| awk -F"[-/]" '{ n=$(NF-1);
+  echo $1 | awk -F"[-/]" '{ n=$(NF-1);
   print "/dev/sd" substr("abcdefghijklmnopqrstuvwxyz", n+1, 1) }'
 }
 
@@ -2908,15 +2910,15 @@ elif [ "${ACTION}" = "remove" ]; then
     fi
 fi
 
-exit 0|
+exit 0
+```
 
 Converting a text file to HTML format.
 
 **Example A-24. Converting to HTML**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # tohtml.sh [v. 0.2.01, reldate: 04/13/12, a teeny bit less buggy]
 
 # Convert a text file to HTML format.
@@ -3001,7 +3003,7 @@ process_text ()
 
       if [[ "$line" =~ \[*jpg\] ]]    # Is a graphic?
       then                            # Strip away brackets.
-        temp=$( echo "$line" \| sed -e 's/\[//' -e 's/\]//' )
+        temp=$( echo "$line" | sed -e 's/\[//' -e 's/\]//' )
         line=""$CENTER" <img src="\"$IMGDIR"/$temp\"> "$END_CENTER" "
                                       # Add image tag.
                                       # And, center it.
@@ -3010,13 +3012,13 @@ process_text ()
     fi
 
 
-    echo "$line" \| grep -q _
+    echo "$line" | grep -q _
     if [ "$?" -eq 0 ]    # If line contains underscore ...
     then
       # ===================================================
       # Convert underscored phrase to italics.
-      temp=$( echo "$line" \|
-              sed -e 's/ _/ <i>/' -e 's/_/<\/i> /' \|
+      temp=$( echo "$line" |
+              sed -e 's/ _/ <i>/' -e 's/_/<\/i> /' |
               sed -e 's/^_/<i>/'  -e 's/_/<\/i>/' )
       #  Process only underscores prefixed by space,
       #+ or at beginning or end of line.
@@ -3058,15 +3060,15 @@ exit $?
 #  ---------
 #  1) Fixup: Check for closing underscore before a comma or period.
 #  2) Add a test for the presence of a closing underscore
-#+    in phrases to be italicized.|
+#+    in phrases to be italicized.
+```
 
 Here is something to warm the hearts of webmasters and mistresses: a script that saves weblogs.
 
 **Example A-25. Preserving weblogs**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # archiveweblogs.sh v1.0
 
 # Troy Engel <tengel@fluid.com>
@@ -3119,7 +3121,7 @@ for logday in $LOG_DAYS; do
   for logfile in $LOG_FILES; do
     MYFILE="$LOG_DIR/$logfile.$logday"
     if [ -w $MYFILE ]; then
-      DTS=`$LS -lgo --time-style=+%Y%m%d $MYFILE \| $COL -t \| $CUT -d ' ' -f7`
+      DTS=`$LS -lgo --time-style=+%Y%m%d $MYFILE | $COL -t | $CUT -d ' ' -f7`
       $MV $MYFILE $BKP_DIR/$logfile.$DTS
       $BZ2 $BKP_DIR/$logfile.$DTS
     else
@@ -3131,15 +3133,15 @@ for logday in $LOG_DAYS; do
   done
 done
 
-exit 0|
+exit 0
+```
 
 How to keep the shell from expanding and reinterpreting text strings.
 
 **Example A-26. Protecting literal strings**
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 # protect_literal.sh
 
 # set -vx
@@ -3286,15 +3288,15 @@ echo
 # _Protect_Literal_String_Test
 # # # Remove the above "# " to disable this code. # # #
 
-exit 0|
+exit 0
+```
 
 But, what if you _want_ the shell to expand and reinterpret strings?
 
 **Example A-27. Unprotecting literal strings**
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 # unprotect_literal.sh
 
 # set -vx
@@ -3416,15 +3418,15 @@ echo $newestVar
 # _UnProtect_Literal_String_Test
 # # # Remove the above "# " to disable this code. # # #
 
-exit 0|
+exit 0
+```
 
 This interesting script helps hunt down spammers.
 
 **Example A-28. Spammer Identification**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # $Id: is_spammer.bash,v 1.12.2.11 2004/10/01 21:42:33 mszick Exp $
 # Above line is RCS info.
@@ -3670,8 +3672,8 @@ pend_drop() {
 # (See "Additional documentation," above.)
 # edit_exact <excludes_array_name> <target_array_name>
 edit_exact() {
-    [ $# -eq 2 ] \|
-    [ $# -eq 3 ] \| return 1
+    [ $# -eq 2 ] |
+    [ $# -eq 3 ] | return 1
     local -a _ee_Excludes
     local -a _ee_Target
     local _ee_x
@@ -3682,8 +3684,8 @@ edit_exact() {
     eval _ee_Target=\( \$\{$2\[@\]\} \)
     local _ee_len=${#_ee_Target[@]}     # Original length.
     local _ee_cnt=${#_ee_Excludes[@]}   # Exclude list length.
-    [ ${_ee_len} -ne 0 ] \| return 0    # Can't edit zero length.
-    [ ${_ee_cnt} -ne 0 ] \| return 0    # Can't edit zero length.
+    [ ${_ee_len} -ne 0 ] | return 0    # Can't edit zero length.
+    [ ${_ee_cnt} -ne 0 ] | return 0    # Can't edit zero length.
     for (( x = 0; x < ${_ee_cnt} ; x++ ))
     do
         _ee_x=${_ee_Excludes[$x]}
@@ -3705,8 +3707,8 @@ edit_exact() {
 # This function described in edit_by_glob.bash.
 # edit_by_glob <excludes_array_name> <target_array_name>
 edit_by_glob() {
-    [ $# -eq 2 ] \|
-    [ $# -eq 3 ] \| return 1
+    [ $# -eq 2 ] |
+    [ $# -eq 3 ] | return 1
     local -a _ebg_Excludes
     local -a _ebg_Target
     local _ebg_x
@@ -3717,8 +3719,8 @@ edit_by_glob() {
     eval _ebg_Target=\( \$\{$2\[@\]\} \)
     local _ebg_len=${#_ebg_Target[@]}
     local _ebg_cnt=${#_ebg_Excludes[@]}
-    [ ${_ebg_len} -ne 0 ] \| return 0
-    [ ${_ebg_cnt} -ne 0 ] \| return 0
+    [ ${_ebg_len} -ne 0 ] | return 0
+    [ ${_ebg_cnt} -ne 0 ] | return 0
     for (( x = 0; x < ${_ebg_cnt} ; x++ ))
     do
         _ebg_x=${_ebg_Excludes[$x]}
@@ -3740,7 +3742,7 @@ edit_by_glob() {
 # This function described in unique_lines.bash.
 # unique_lines <in_name> <out_name>
 unique_lines() {
-    [ $# -eq 2 ] \| return 1
+    [ $# -eq 2 ] | return 1
     local -a _ul_in
     local -a _ul_out
     local -i _ul_cnt
@@ -3772,7 +3774,7 @@ unique_lines() {
 # This function described in char_convert.bash.
 # to_lower <string>
 to_lower() {
-    [ $# -eq 1 ] \| return 1
+    [ $# -eq 1 ] | return 1
     local _tl_out
     _tl_out=${1//A/a}
     _tl_out=${_tl_out//B/b}
@@ -3810,15 +3812,15 @@ to_lower() {
 # This function described in to_dot.bash
 # to_dot <string>
 to_dot() {
-    [ $# -eq 1 ] \| return 1
-    echo ${1//[#\|@\|%]/.}
+    [ $# -eq 1 ] | return 1
+    echo ${1//[#|@|%]/.}
     return 0
 }
 
 # This function described in is_number.bash.
 # is_number <input>
 is_number() {
-    [ "$#" -eq 1 ]    \| return 1  # is blank?
+    [ "$#" -eq 1 ]    | return 1  # is blank?
     [ x"$1" == 'x0' ] && return 0  # is zero?
     local -i tst
     let tst=$1 2>/dev/null         # else is numeric!
@@ -3828,7 +3830,7 @@ is_number() {
 # This function described in is_address.bash.
 # is_address <input>
 is_address() {
-    [ $# -eq 1 ] \| return 1    # Blank ==> false
+    [ $# -eq 1 ] | return 1    # Blank ==> false
     local -a _ia_input
     local IFS=${ADR_IFS}
     _ia_input=( $1 )
@@ -3852,8 +3854,8 @@ is_address() {
 #  split_ip <IP_address>
 #+ <array_name_norm> [<array_name_rev>]
 split_ip() {
-    [ $# -eq 3 ] \|              #  Either three
-    [ $# -eq 2 ] \| return 1     #+ or two arguments
+    [ $# -eq 3 ] |              #  Either three
+    [ $# -eq 2 ] | return 1     #+ or two arguments
     local -a _si_input
     local IFS=${ADR_IFS}
     _si_input=( $1 )
@@ -3875,7 +3877,7 @@ split_ip() {
 # This function described in dot_array.bash.
 # dot_array <array_name>
 dot_array() {
-    [ $# -eq 1 ] \| return 1     # Single argument required.
+    [ $# -eq 1 ] | return 1     # Single argument required.
     local -a _da_input
     eval _da_input=\(\ \$\{$1\[@\]\}\ \)
     local IFS=${DOT_IFS}
@@ -3888,7 +3890,7 @@ dot_array() {
 # This function described in file_to_array.bash
 # file_to_array <file_name> <line_array_name>
 file_to_array() {
-    [ $# -eq 2 ] \| return 1  # Two arguments required.
+    [ $# -eq 2 ] | return 1  # Two arguments required.
     local IFS=${NO_WSP}
     local -a _fta_tmp_
     _fta_tmp_=( $(cat $1) )
@@ -3900,7 +3902,7 @@ file_to_array() {
 #  col_print <array_name> <min_space> <
 #+ tab_stop [tab_stops]>
 col_print() {
-    [ $# -gt 2 ] \| return 0
+    [ $# -gt 2 ] | return 0
     local -a _cp_inp
     local -a _cp_spc
     local -a _cp_line
@@ -3917,7 +3919,7 @@ col_print() {
     set -f
     local IFS=${NO_WSP}
     eval _cp_inp=\(\ \$\{$1\[@\]\}\ \)
-    [ ${#_cp_inp[@]} -gt 0 ] \| return 0 # Empty is easy.
+    [ ${#_cp_inp[@]} -gt 0 ] | return 0 # Empty is easy.
     _cp_mcnt=$2
     _cp_min=${_cp_max:1:${_cp_mcnt}}
     shift
@@ -4425,7 +4427,7 @@ name_fixup(){
 
 # Grope and mung original input(s).
 split_input() {
-    [ ${#uc_name[@]} -gt 0 ] \| return 0
+    [ ${#uc_name[@]} -gt 0 ] | return 0
     local -i _si_cnt
     local -i _si_len
     local _si_str
@@ -4461,7 +4463,7 @@ split_input() {
 limit_chk() {
     local -i _lc_lmt
     # Check indirection limit.
-    if [ ${indirect} -eq 0 ] \| [ $# -eq 0 ]
+    if [ ${indirect} -eq 0 ] | [ $# -eq 0 ]
     then
         # The 'do-forever' choice
         echo 1                 # Any value will do.
@@ -4487,7 +4489,7 @@ limit_chk() {
 #     Repeat until nothing new found.
 # expand_input_name <indirection_limit>
 expand_input_name() {
-    [ ${#uc_name[@]} -gt 0 ] \| return 0
+    [ ${#uc_name[@]} -gt 0 ] | return 0
     local -a _ein_addr
     local -a _ein_new
     local -i _ucn_cnt
@@ -4541,7 +4543,7 @@ expand_input_name() {
 #     Repeat until nothing new found.
 # expand_input_address <indirection_limit>
 expand_input_address() {
-    [ ${#uc_address[@]} -gt 0 ] \| return 0
+    [ ${#uc_address[@]} -gt 0 ] | return 0
     local -a _eia_addr
     local -a _eia_name
     local -a _eia_new
@@ -4592,7 +4594,7 @@ expand_input_address() {
 # The input is the chk_name list.
 # detail_each_name <indirection_limit>
 detail_each_name() {
-    [ ${#chk_name[@]} -gt 0 ] \| return 0
+    [ ${#chk_name[@]} -gt 0 ] | return 0
     local -a _den_chk       # Names to check
     local -a _den_name      # Names found here
     local -a _den_address   # Addresses found here
@@ -4908,7 +4910,7 @@ then
 # Input is the chk_address list.
 # detail_each_address <indirection_limit>
 detail_each_address() {
-    [ ${#chk_address[@]} -gt 0 ] \| return 0
+    [ ${#chk_address[@]} -gt 0 ] | return 0
     unique_lines chk_address chk_address
     edit_exact known_address chk_address
     if [ ${#chk_address[@]} -gt 0 ]
@@ -4947,7 +4949,7 @@ report_pairs() {
 # A good place to capture for GraphViz: address->status(server(reports))
 # check_lists <ip_address>
 check_lists() {
-    [ $# -eq 1 ] \| return 1
+    [ $# -eq 1 ] | return 1
     local -a _cl_fwd_addr
     local -a _cl_rev_addr
     local -a _cl_reply
@@ -5199,7 +5201,7 @@ do_user_args() {
 # A general purpose debug tool.
 # list_array <array_name>
 list_array() {
-    [ $# -eq 1 ] \| return 1  # One argument required.
+    [ $# -eq 1 ] | return 1  # One argument required.
 
     local -a _la_lines
     set -f
@@ -5365,7 +5367,7 @@ Quickstart
   dot Program to convert graphic description file to a 
   diagram. (dot -V)
   A part of the Graph-Viz set of programs.
-  See: [http://www.research.att.com/sw/tools/graphviz\|GraphViz]
+  See: [http://www.research.att.com/sw/tools/graphviz|GraphViz]
 
   'dotty,' a visual editor for graphic description files.
   Also a part of the Graph-Viz set of programs.
@@ -5597,15 +5599,15 @@ Additional Note
 
 Michael Zick points out that there is a "makeviz.bash" interactive
 Web site at rediris.es. Can't give the full URL, since this is not
-a publically accessible site.|
+a publically accessible site.
+```
 
 Another anti-spam script.
 
 **Example A-29. Spammer Hunt**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # whx.sh: "whois" spammer lookup
 # Author: Walter Dnes
 # Slight revisions (first section) by ABS Guide author.
@@ -5637,7 +5639,7 @@ fi
 if [[ "$1" =~ [a-zA-Z][a-zA-Z]$ ]]  #  Ends in two alpha chars?
 then                                  #  It's a domain name &&
                                       #+ must do host lookup.
-  IPADDR=$(host -W $HOSTWAIT $1 \| awk '{print $4}')
+  IPADDR=$(host -W $HOSTWAIT $1 | awk '{print $4}')
                                       #  Doing host lookup
                                       #+ to get IP address.
 				      #  Extract final field.
@@ -5711,7 +5713,7 @@ AFRINICquery() {
     echo "***" >> $OUTFILE
     echo "***" >> $OUTFILE
     echo " " >> $OUTFILE
-    RWHOIS=`grep "^remarks: .*rwhois\.[^ ]\+" "$OUTFILE" \| tail -n 1 \|\
+    RWHOIS=`grep "^remarks: .*rwhois\.[^ ]\+" "$OUTFILE" | tail -n 1 |\
     sed "s/\(^.*\)\(rwhois\..*\)\(:4.*\)/\2/"`
     whois -h ${RWHOIS}:${PORT} "$IPADDR" >> $OUTFILE
   fi
@@ -5768,7 +5770,7 @@ ARINquery() {
 
   if grep -E "^Comment: .*rwhois.[^ ]+" "$OUTFILE"
   then
-    RWHOIS=`grep -e "^Comment:.*rwhois\.[^ ]\+" "$OUTFILE" \| tail -n 1 \|\
+    RWHOIS=`grep -e "^Comment:.*rwhois\.[^ ]\+" "$OUTFILE" | tail -n 1 |\
     sed "s/^\(.*\)\(rwhois\.[^ ]\+\)\(.*$\)/\2/"`
     echo "Searching for $IPADDR in ${RWHOIS}"
     whois -h ${RWHOIS}:${PORT} "$IPADDR" >> $OUTFILE
@@ -5803,20 +5805,20 @@ RIPEquery() {
 
 
 
-slash8=`echo $IPADDR \| cut -d. -f 1`
+slash8=`echo $IPADDR | cut -d. -f 1`
   if [ -z "$slash8" ]  # Yet another sanity check.
   then
     echo "Undefined error!"
     exit $E_UNDEF
   fi
-slash16=`echo $IPADDR \| cut -d. -f 1-2`
+slash16=`echo $IPADDR | cut -d. -f 1-2`
 #                             ^ Period specified as 'cut" delimiter.
   if [ -z "$slash16" ]
   then
     echo "Undefined error!"
     exit $E_UNDEF
   fi
-octet2=`echo $slash16 \| cut -d. -f 2`
+octet2=`echo $slash16 | cut -d. -f 2`
   if [ -z "$octet2" ]
   then
     echo "Undefined error!"
@@ -5884,15 +5886,15 @@ exit 0
 #@  Sure, the script can be cleaned up some, and it's still a bit buggy,
 #@+ (exercise for reader), but all the same, it's a nice piece of coding
 #@+ by Walter Dnes.
-#@  Thank you!|
+#@  Thank you!
+```
 
 "Little Monster's" front end to [[communications-commands#^WGETREF|wget]].
 
 **Example A-30. Making _wget_ easier to use**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # wgetter2.bash
 
 # Author: Little Monster [monster@monstruum.co.uk]
@@ -6299,8 +6301,8 @@ while [ 1 ]; do
        read noHide  # Otherwise wget will just log it to a file.
 
        case $noHide in    # Now you see me, now you don't.
-          y\|Y ) hide="";;
-          n\|N ) hide=" -b";;
+          y|Y ) hide="";;
+          n|N ) hide=" -b";;
             * ) hide="";;
        esac
 
@@ -6368,7 +6370,7 @@ savePath/site-list-${today}"
        read
        case $REPLY in
        # Need to change this to a 'trap' clause.
-          q\|Q ) exit $E_USER_EXIT;;  # Exercise for the reader?
+          q|Q ) exit $E_USER_EXIT;;  # Exercise for the reader?
             * ) URLS=" $REPLY";;
        esac
 
@@ -6376,13 +6378,13 @@ savePath/site-list-${today}"
 done
 
 
-exit 0|
+exit 0
+```
 
 **Example A-31. A _podcasting_ script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 #  bashpodder.sh:
 #  By Linc 10/1/2004
@@ -6433,7 +6435,7 @@ rm -f temp.log
 #+ in the podcast.log file:
 while read podcast
   do # ==> Main action follows.
-  file=$(wget -q $podcast -O - \| tr '\r' '\n' \| tr \' \" \| \
+  file=$(wget -q $podcast -O - | tr '\r' '\n' | tr \' \" | \
 sed -n 's/.*url="\([^"]*\)".*/\1/p')
   for url in $file
                 do
@@ -6447,10 +6449,10 @@ sed -n 's/.*url="\([^"]*\)".*/\1/p')
 
 # Move dynamically created log file to permanent log file:
 cat podcast.log >> temp.log
-sort temp.log \| uniq > podcast.log
+sort temp.log | uniq > podcast.log
 rm temp.log
 # Create an m3u playlist:
-ls $datadir \| grep -v m3u > $datadir/podcast.m3u
+ls $datadir | grep -v m3u > $datadir/podcast.m3u
 
 
 exit 0
@@ -6461,13 +6463,13 @@ see Phil Salkie's article,
 "Internet Radio to Podcast with Shell Tools"
 in the September, 2005 issue of LINUX JOURNAL,
 http://www.linuxjournal.com/article/8171
-#################################################|
+#################################################
+```
 
 **Example A-32. Nightly backup to a firewire HD**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # nightly-backup.sh
 # http://www.richardneill.org/source.php#nightly-backup-rsync
 # Copyright (c) 2005 Richard Neill <backup@richardneill.org>.
@@ -6531,9 +6533,9 @@ E_BACKUP=73
 
 
 # Check that all the important variables have been set:
-if [ -z "$LOCAL_USER" ] \|
-   [ -z "$SOURCE_DIR" ] \|
-   [ -z "$MOUNT_POINT" ]  \|
+if [ -z "$LOCAL_USER" ] |
+   [ -z "$SOURCE_DIR" ] |
+   [ -z "$MOUNT_POINT" ]  |
    [ -z "$BACKUP_DEST_DIR" ]
 then
    echo 'One of the variables is not set! Edit the file: $0. BACKUP FAILED.'
@@ -6615,14 +6617,14 @@ fi
 # BUS="scsi", KERNEL="sd*", SYSFS{vendor}="WDC WD16",
 # SYSFS{model}="00JB-00GVA0     ", NAME="%k", SYMLINK="lacie_1394d%n"
 
-if mount \| grep $MOUNT_POINT >/dev/null; then
+if mount | grep $MOUNT_POINT >/dev/null; then
   echo "Mount point $MOUNT_POINT is indeed mounted. OK"
 else
   echo -n "Attempting to mount $MOUNT_POINT..."	
            # If it isn't mounted, try to mount it.
   sudo mount $MOUNT_POINT 2>/dev/null
 
-  if mount \| grep $MOUNT_POINT >/dev/null; then
+  if mount | grep $MOUNT_POINT >/dev/null; then
     UNMOUNT_LATER=TRUE
     echo "OK"
     #  Note: Ensure that this is also unmounted
@@ -6732,8 +6734,8 @@ echo "This backup of $SOURCE_DIR on `hostname` was created on \
   #  (Note: df can output to more than one line.)
   #  We test this here, rather than before
   #+ so that rsync may possibly have a chance.
-  DISK_FULL_PERCENT=`/bin/df $BACKUP_DEST_DIR \|
-  tr "\n" ' ' \| awk '{print $12}' \| grep -oE [0-9]+ `
+  DISK_FULL_PERCENT=`/bin/df $BACKUP_DEST_DIR |
+  tr "\n" ' ' | awk '{print $12}' | grep -oE [0-9]+ `
   echo "Disk space check on backup partition \
   $MOUNT_POINT $DISK_FULL_PERCENT% full."
   if [ $DISK_FULL_PERCENT -gt 90 ]; then
@@ -6830,13 +6832,13 @@ fi
 
 # Should have already exited if backup worked.
 echo 'BACKUP FAILED! Is this just a dry run? Is the disk full?) '
-exit $E_BACKUP|
+exit $E_BACKUP
+```
 
 **Example A-33. An expanded _cd_ command**
 
-|   |
-|---|
-|###########################################################################
+```bash
+###########################################################################
 #
 #       cdll
 #       by Phil Braham
@@ -6886,8 +6888,8 @@ exit $E_BACKUP|
 
 cd_hm ()
 {
-        ${PRINTF} "%s" "cd [dir] [0-9] [@[s\|h] [-g [<dir>]] [-d] \
-[-D] [-r<n>] [dir\|0-9] [-R<n>] [<dir>\|0-9]
+        ${PRINTF} "%s" "cd [dir] [0-9] [@[s|h] [-g [<dir>]] [-d] \
+[-D] [-r<n>] [dir|0-9] [-R<n>] [<dir>|0-9]
    [-s<n>] [-S<n>] [-u] [-U] [-f] [-F] [-h] [-H] [-v]
     <dir> Go to directory
     0-n         Go to previous directory (0 is previous, 1 is last but 1 etc)
@@ -7073,8 +7075,8 @@ cd_dohistoryS ()
 
 cd_getrc ()
 {
-    cd_flchar=$(stty -a \| awk -F \;
-    '/rows/ { print $2 $3 }' \| awk -F \  '{ print $4 }')
+    cd_flchar=$(stty -a | awk -F \;
+    '/rows/ { print $2 $3 }' | awk -F \  '{ print $4 }')
     if ${TEST} ${cd_flchar} -ne 0
     then
         cd_lchar=${cd_flchar}/2-5
@@ -7099,11 +7101,11 @@ cd_doselection ()
                         cd_npwd=0
                 fi
         fi
-        tm=$(echo "${cd_npwd}" \| cut -b 1)
+        tm=$(echo "${cd_npwd}" | cut -b 1)
     if ${TEST} "${tm}" = "-"
     then
-        pm=$(echo "${cd_npwd}" \| cut -b 2)
-        nm=$(echo "${cd_npwd}" \| cut -d $pm -f2)
+        pm=$(echo "${cd_npwd}" | cut -b 2)
+        nm=$(echo "${cd_npwd}" | cut -d $pm -f2)
         case "${pm}" in
              a) cd_npwd=${cd_sugg[$nm]} ;;
              s) cd_npwd="${CDS[$nm]}" ;;
@@ -7423,8 +7425,8 @@ then the stack is not updated.
 
 Usage
 =====  
-cd [dir] [0-9] [@[s\|h] [-g <dir>] [-d] [-D] [-r<n>]
-   [dir\|0-9] [-R<n>] [<dir>\|0-9] [-s<n>] [-S<n>]
+cd [dir] [0-9] [@[s|h] [-g <dir>] [-d] [-D] [-r<n>]
+   [dir|0-9] [-R<n>] [<dir>|0-9] [-s<n>] [-S<n>]
    [-u] [-U] [-f] [-F] [-h] [-H] [-v]
 
     <dir>       Go to directory
@@ -7602,13 +7604,13 @@ Configuration
 
 Version: 1.2.1 Date: 24-MAY-2003
 
-DOCUMENTATION|
+DOCUMENTATION
+```
 
 **Example A-34. A soundcard setup script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # soundcard-on.sh
 
 #  Script author: Mkarcher
@@ -7713,13 +7715,13 @@ modprobe --ignore-install snd-cs4236 port=$port cport=$cport\
 fm_port=$oplport irq=$irq dma1=$dma1 dma2=$dma2 isapnp=0 index=0
 # See the modprobe manpage.
 
-exit $?|
+exit $?
+```
 
 **Example A-35. Locating split paragraphs in a text file**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # find-splitpara.sh
 #  Finds split paragraphs in a text file,
 #+ and tags the line numbers.
@@ -7784,13 +7786,13 @@ yields:
 
 
 There will be additional output for all the other split paragraphs
-in the target file.|
+in the target file.
+```
 
 **Example A-36. Insertion sort**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # insertion-sort.bash: Insertion sort implementation in Bash
 #                      Heavy use of Bash array features:
 #+                     (string) slicing, merging, etc
@@ -7854,13 +7856,13 @@ echo
 echo  "------"
 echo $'Result:\n'${list[@]}
 
-exit $?|
+exit $?
+```
 
 **Example A-37. Standard Deviation**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # sd.sh: Standard Deviation
 
 #  The Standard Deviation indicates how consistent a set of data is.
@@ -7909,11 +7911,11 @@ arith_mean ()
 
   while read value   # Read one data point at a time.
   do
-    rt=$(echo "scale=$SC; $rt + $value" \| bc)
+    rt=$(echo "scale=$SC; $rt + $value" | bc)
     (( ct++ ))
   done
 
-  am=$(echo "scale=$SC; $rt / $ct" \| bc)
+  am=$(echo "scale=$SC; $rt / $ct" | bc)
 
   echo $am; return $ct   # This function "returns" TWO values!
   #  Caution: This little trick will not work if $ct > 255!
@@ -7931,14 +7933,14 @@ sd ()
 
   while read value   # Read one line at a time.
   do
-    diff=$(echo "scale=$SC; $mean1 - $value" \| bc)
+    diff=$(echo "scale=$SC; $mean1 - $value" | bc)
     # Difference between arith. mean and data point.
-    dif2=$(echo "scale=$SC; $diff * $diff" \| bc) # Squared.
-    sum2=$(echo "scale=$SC; $sum2 + $dif2" \| bc) # Sum of squares.
+    dif2=$(echo "scale=$SC; $diff * $diff" | bc) # Squared.
+    sum2=$(echo "scale=$SC; $sum2 + $dif2" | bc) # Sum of squares.
   done
 
-    avg2=$(echo "scale=$SC; $sum2 / $n" \| bc)  # Avg. of sum of squares.
-    sdev=$(echo "scale=$SC; sqrt($avg2)" \| bc) # Square root =
+    avg2=$(echo "scale=$SC; $sum2 / $n" | bc)  # Avg. of sum of squares.
+    sdev=$(echo "scale=$SC; sqrt($avg2)" | bc) # Square root =
     echo $sdev                                 # Standard Deviation.
 
 } <"$datafile"   # Rewinds data file.
@@ -7976,13 +7978,13 @@ exit
 # Number of data points in "sample1.dat" = 5
 # Arithmetic mean (average) = 18.756000000
 # Standard Deviation = .235338054
-# ++++++++++++++++++++++++++++++++++++++++ #|
+# ++++++++++++++++++++++++++++++++++++++++ #
+```
 
 **Example A-38. A _pad_ file generator for shareware authors**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # pad.sh
 
 #######################################################
@@ -8203,7 +8205,7 @@ echo "(may cut and paste into field)"
 #+ "Char_Desc" fields with a text editor,
 #+ then cut-and-paste the text into the answer fields.
 echo
-echo "              \|---------------45 characters---------------\|"
+echo "              |---------------45 characters---------------|"
 fill_in Char_Desc_45
 check_field_length 45 "$?"
 echo
@@ -8224,13 +8226,13 @@ clear
 echo "Done."; echo; echo
 echo "Save file is:  \""$savefile"\""
 
-exit 0|
+exit 0
+```
 
 **Example A-39. A _man page_ editor**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # maned.sh
 # A rudimentary man page editor
 
@@ -8289,7 +8291,7 @@ progname ()
   then
     savefile=""$name"."$section""       #  Filename suffix = section.
     echo -n "$1 " >>$savefile
-    name1=$(echo "$name" \| tr a-z A-Z)  #  Change to uppercase,
+    name1=$(echo "$name" | tr a-z A-Z)  #  Change to uppercase,
                                         #+ per man page convention.
     echo -n "$name1" >>$savefile
   else
@@ -8377,13 +8379,13 @@ end    # ... exit not needed.
 #  This script is not nearly as elaborate as the
 #+ full-featured "manedit" package
 #+ http://freshmeat.net/projects/manedit/
-#+ but it's much easier to use.|
+#+ but it's much easier to use.
+```
 
 **Example A-40. Petals Around the Rose**
 
-|   |
-|---|
-|#!/bin/bash -i
+```bash
+#!/bin/bash -i
 # petals.sh
 
 #########################################################################
@@ -8405,24 +8407,24 @@ RANDOM=$$   # Seeds the random number generator from PID of script.
 
 
 # Bones (ASCII graphics for dice)
-bone1[1]="\|         \|"
-bone1[2]="\|       o \|"
-bone1[3]="\|       o \|"
-bone1[4]="\| o     o \|"
-bone1[5]="\| o     o \|"
-bone1[6]="\| o     o \|"
-bone2[1]="\|    o    \|"
-bone2[2]="\|         \|"
-bone2[3]="\|    o    \|"
-bone2[4]="\|         \|"
-bone2[5]="\|    o    \|"
-bone2[6]="\| o     o \|"
-bone3[1]="\|         \|"
-bone3[2]="\| o       \|"
-bone3[3]="\| o       \|"
-bone3[4]="\| o     o \|"
-bone3[5]="\| o     o \|"
-bone3[6]="\| o     o \|"
+bone1[1]="|         |"
+bone1[2]="|       o |"
+bone1[3]="|       o |"
+bone1[4]="| o     o |"
+bone1[5]="| o     o |"
+bone1[6]="| o     o |"
+bone2[1]="|    o    |"
+bone2[2]="|         |"
+bone2[3]="|    o    |"
+bone2[4]="|         |"
+bone2[5]="|    o    |"
+bone2[6]="| o     o |"
+bone3[1]="|         |"
+bone3[2]="| o       |"
+bone3[3]="| o       |"
+bone3[4]="| o     o |"
+bone3[5]="| o     o |"
+bone3[6]="| o     o |"
 bone="+---------+"
 
 
@@ -8528,7 +8530,7 @@ while [ "$petal" != "$EXIT" ]    # Main loop.
 do
   game
   read petal
-  echo "$petal" \| grep [0-9] >/dev/null  # Filter response for digit.
+  echo "$petal" | grep [0-9] >/dev/null  # Filter response for digit.
                                          # Otherwise just roll dice again.
   if [ "$?" -eq 0 ]   # If-loop #1.
   then
@@ -8576,13 +8578,13 @@ exit $?
 # 1) http://en.wikipedia.org/wiki/Petals_Around_the_Rose
 #    (Wikipedia entry.)
 # 2) http://www.borrett.id.au/computing/petals-bg.htm
-#    (How Bill Gates coped with the Petals Around the Rose challenge.)|
+#    (How Bill Gates coped with the Petals Around the Rose challenge.)
+```
 
 **Example A-41. Quacky: a Perquackey-type word game**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # qky.sh
 
 ##############################################################
@@ -8922,7 +8924,7 @@ check_word ()
       fi
 
       case "$strlen" in
-        1 \| 2 )
+        1 | 2 )
         Status[3]="Two-letter-word-PENALTY"
         return $NG;;
         * ) 
@@ -9047,13 +9049,13 @@ exit $?
 # 7) Fix bugs!!!
 
 # For more info, reference:
-# http://bash.deta.in/qky.README.html|
+# http://bash.deta.in/qky.README.html
+```
 
 **Example A-42. Nim**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # nim.sh: Game of Nim
 
 # Author: Mendel Cooper
@@ -9084,11 +9086,11 @@ instructions ()
 Nim is a game with roots in the distant past.
 This particular variant starts with five rows of pegs.
 
-1:    \| \| \| \| \| 
-2:     \| \| \| \| 
-3:      \| \| \| 
-4:       \| \| 
-5:        \| 
+1:    | | | | | 
+2:     | | | | 
+3:      | | | 
+4:       | | 
+5:        | 
 
 The number at the left identifies the row.
 
@@ -9144,7 +9146,7 @@ display ()
 
     while [ "$p" -gt 0 ]
     do
-      echo -n "\| "
+      echo -n "| "
       ((p--))
     done
   # -----------------------------------------------
@@ -9257,7 +9259,7 @@ bot_move ()
 {
 
   row_b=0
-  while [[ $row_b -eq 0 \| ${Rows[row_b]} -eq 0 ]]
+  while [[ $row_b -eq 0 | ${Rows[row_b]} -eq 0 ]]
   do
     row_b=$RANDOM          # Choose random row.
     let "row_b %= $ROWS"
@@ -9327,13 +9329,13 @@ done
 #+ Last Year at Marienbad.
 #
 #  In 1978, Leo Christopherson wrote an animated version of Nim,
-#+ Android Nim, for the TRS-80 Model I.|
+#+ Android Nim, for the TRS-80 Model I.
+```
 
 **Example A-43. A command-line stopwatch**
 
-|   |
-|---|
-|#!/bin/sh
+```bash
+#!/bin/sh
 # sw.sh
 # A command-line Stopwatch
 
@@ -9383,7 +9385,7 @@ cache_progs() {
     stty > /dev/null
     date > /dev/null
     grep . < /dev/null
-    (echo "import time" \| python) 2> /dev/null
+    (echo "import time" | python) 2> /dev/null
     bc < /dev/null
     sed '' < /dev/null
     printf '1' > /dev/null
@@ -9392,10 +9394,10 @@ cache_progs() {
 }
 cache_progs   # To minimise startup delay.
 
-date +%s.%N \| grep -qF 'N' && use_python=1 # If `date` lacks nanoseconds.
+date +%s.%N | grep -qF 'N' && use_python=1 # If `date` lacks nanoseconds.
 now() {
     if [ "$use_python" ]; then
-        echo "import time; print time.time()" 2>/dev/null \| python
+        echo "import time; print time.time()" 2>/dev/null | python
     else
         printf "%.2f" `date +%s.%N`
     fi
@@ -9403,9 +9405,9 @@ now() {
 
 fmt_seconds() {
     seconds=$1
-    mins=`echo $seconds/60 \| bc`
+    mins=`echo $seconds/60 | bc`
     if [ "$mins" != "0" ]; then
-        seconds=`echo "$seconds - ($mins*60)" \| bc`
+        seconds=`echo "$seconds - ($mins*60)" | bc`
         echo "$mins:$seconds"
     else
         echo "$seconds"
@@ -9414,7 +9416,7 @@ fmt_seconds() {
 
 total() {
     end=`now`
-    total=`echo "$end - $start" \| bc`
+    total=`echo "$end - $start" | bc`
     fmt_seconds $total
 }
 
@@ -9425,12 +9427,12 @@ stop() {
 }
 
 lap() {
-    laptime=`echo "$1" \| sed -n 's/.*real[^0-9.]*\(.*\)/\1/p'`
+    laptime=`echo "$1" | sed -n 's/.*real[^0-9.]*\(.*\)/\1/p'`
     [ ! "$laptime" -o "$laptime" = "0.00" ] && return
     # Signals too frequent.
-    laptotal=`echo $laptime+0$laptotal \| bc`
+    laptotal=`echo $laptime+0$laptotal | bc`
     if [ "$2" = "display" ]; then
-        lapcount=`echo 0$lapcount+1 \| bc`
+        lapcount=`echo 0$lapcount+1 | bc`
         laptime=`fmt_seconds $laptotal`
         echo $laptime "($lapcount)"
         lapped="true"
@@ -9438,7 +9440,7 @@ lap() {
     fi
 }
 
-echo -n "Space for lap \| ? for split \| Ctrl-C to stop \| Space to start...">&2
+echo -n "Space for lap | ? for split | Ctrl-C to stop | Space to start...">&2
 
 while true; do
     trap true INT QUIT  # Set signal handlers.
@@ -9450,7 +9452,7 @@ while true; do
         stop
     elif [ $ret -eq 3 -o $ret -eq 131 ]; then             # SIGQUIT = lap
         if [ ! "$start" ]; then
-            start=`now` \| exit 1
+            start=`now` | exit 1
             echo >&2
             continue
         fi
@@ -9462,13 +9464,13 @@ while true; do
     fi
 done
 
-exit $?|
+exit $?
+```
 
 **Example A-44. An all-purpose shell scripting homework assignment solution**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #  homework.sh: All-purpose homework assignment solution.
 #  Author: M. Leo Cooper
 #  If you substitute your own name as author, then it is plagiarism,
@@ -9544,10 +9546,10 @@ b_r
 for i in $(seq 0 $MAXL)
 do
   p_l "${L[i]}"
-  if [[ "$i" -eq "$P1" \| "$i" -eq "$P2" \| "$i" -eq "$P3" ]]
+  if [[ "$i" -eq "$P1" | "$i" -eq "$P2" | "$i" -eq "$P3" ]]
   then
     cr
-  elif [[ "$i" -eq "$PP1" \| "$i" -eq "$PP2" ]]
+  elif [[ "$i" -eq "$PP1" | "$i" -eq "$PP2" ]]
   then
     cr; cr
   fi
@@ -9563,13 +9565,13 @@ exit $E_LZY
 #  A typical example of an obfuscated script that is difficult
 #+ to understand, and frustrating to maintain.
 #  In your career as a sysadmin, you'll run into these critters
-#+ all too often.|
+#+ all too often.
+```
 
 **Example A-45. The Knight's Tour**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ktour.sh
 
 # author: mendel cooper
@@ -9661,7 +9663,7 @@ print_board ()
   for row in {7..0}               #  Reverse order of rows ...
   do                              #+ so it prints in chessboard order.
     let "rownum = $row + 1"       #  Start numbering rows at 1.
-    echo -n "$rownum  \|"          #  Mark board edge with border and
+    echo -n "$rownum  |"          #  Mark board edge with border and
     for column in {0..7}          #+ "algebraic notation."
     do
       let "idx = $ROWS*$row + $column"
@@ -9672,7 +9674,7 @@ print_board ()
         printf "%02d " "${board[idx]}"; echo -n "  "
       fi
     done
-    echo -e -n "\b\b\b\|"  # \b is a backspace.
+    echo -e -n "\b\b\b|"  # \b is a backspace.
     echo                  # -e enables echoing escaped chars.
   done
 
@@ -9770,7 +9772,7 @@ from_algebraic ()   #  Translate standard algebraic chess notation
     fi
   fi
 
-  if [[ $acol -eq $MIN \| $acol -gt $ROWS ]]
+  if [[ $acol -eq $MIN | $acol -gt $ROWS ]]
   then        # Outside of range 1 - 8?
     return $FAIL
   fi
@@ -9874,7 +9876,7 @@ generate_moves ()   #  Calculate all valid knight moves,
 
 is_on_board ()  # Is position actually on the board?
 {
-  if [[ "$1" -lt "$MIN" \| "$1" -gt "$MAX" ]]
+  if [[ "$1" -lt "$MIN" | "$1" -gt "$MAX" ]]
   then
     return $FAILURE
   else
@@ -9914,7 +9916,7 @@ do_move ()      # Move the knight!
   fi
   ##############################################
 
-  if [[ "$square" -gt $MAX \| "$square" -lt $MIN \|
+  if [[ "$square" -gt $MAX | "$square" -lt $MIN |
         ${board[square]} -ne $UNVISITED ]]
   then
     (( --movenum ))              #  Decrement move count,
@@ -10178,13 +10180,13 @@ exit 0   # return 0;
 #    Must figure out why standard algorithm fails for startpos=37 ...
 #+   but _not_ on any other, including symmetrical startpos=26.
 #    Possibly, when calculating possible moves, counts the move back
-#+   to the originating square. If so, it might be a relatively easy fix.|
+#+   to the originating square. If so, it might be a relatively easy fix.
+```
 
 **Example A-46. Magic Squares**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # msquare.sh
 # Magic Square generator (odd-order squares only!)
 
@@ -10266,7 +10268,7 @@ print_square ()               # Output square, one row at a time.
 
 
 #################################################
-if [[ -z "$1" ]] \| [[ "$1" -gt $MAXSIZE ]]
+if [[ -z "$1" ]] | [[ "$1" -gt $MAXSIZE ]]
 then
   usage_message
 fi
@@ -10295,13 +10297,13 @@ exit $?
 # 3) Add appropriate functions for generating magic squares
 #    with an *even* number of rows/columns.
 #    This is non-trivial(!).
-#    See the URL for Kwon Young Shin, above, for help.|
+#    See the URL for Kwon Young Shin, above, for help.
+```
 
 **Example A-47. Fifteen Puzzle**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # fifteen.sh
 
 # Classic "Fifteen Puzzle"
@@ -10315,10 +10317,10 @@ exit $?
 
 #  Object: Rearrange the numbers so they read in order,
 #+ from 1 - 15:   ________________
-#                \|  1   2   3   4 \|
-#                \|  5   6   7   8 \|
-#                \|  9  10  11  12 \|
-#                \| 13  14  15     \|
+#                |  1   2   3   4 |
+#                |  5   6   7   8 |
+#                |  9  10  11  12 |
+#                | 13  14  15     |
 #                 ----------------
 
 
@@ -10377,11 +10379,11 @@ function PrintPuzzle
   do
     for i2 in {1..4} 
     do
-      printf "\| %2s " "${Puzzle[$puzpos]}"
+      printf "| %2s " "${Puzzle[$puzpos]}"
       (( puzpos++ ))
     done
-    echo "\|"                     # Right-side border.
-    test $i1 = 4 \| echo "+----+----+----+----+"
+    echo "|"                     # Right-side border.
+    test $i1 = 4 | echo "+----+----+----+----+"
   done
   echo "'----'----'----'----'"   # Bottom border.
 }
@@ -10435,7 +10437,7 @@ function Solved
 
   for pos in {0..14}
   do
-    test "${Puzzle[$pos]}" = $(( $pos + 1 )) \| return $FAIL
+    test "${Puzzle[$pos]}" = $(( $pos + 1 )) | return $FAIL
     # Check whether number in each square = square number.
   done
   return 0   # Successful solution.
@@ -10473,13 +10475,13 @@ exit 0
 #  Exercise:
 #  --------
 #  Rewrite the script to display the letters A - O,
-#+ rather than the numbers 1 - 15.|
+#+ rather than the numbers 1 - 15.
+```
 
 **Example A-48. _The Towers of Hanoi, graphic version_**
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 # The Towers Of Hanoi
 # Original script (hanoi.bash) copyright (C) 2000 Amit Singh.
 # All Rights Reserved.
@@ -10536,9 +10538,9 @@ function FromRod  {
 
   while true; do
     rod=$1
-    test ${rod/[^123]/} \| continue
+    test ${rod/[^123]/} | continue
 
-    sequence=$(echo $(seq 0 $disks1 \| tac))
+    sequence=$(echo $(seq 0 $disks1 | tac))
     for summit in $sequence; do
       eval weight=\${Rod${rod}[$summit]}
       test $weight -ne 0 &&
@@ -10553,9 +10555,9 @@ function ToRod  { # $1=previous (FromRod) weight
   
   while true; do
     rod=$2
-    test ${rod/[^123]} \| continue
+    test ${rod/[^123]} | continue
 
-    sequence=$(echo $(seq 0 $disks1 \| tac))
+    sequence=$(echo $(seq 0 $disks1 | tac))
     for firstfree in $sequence; do
       eval weight=\${Rod${rod}[$firstfree]}
       test $weight -gt 0 && { (( firstfree++ )); break; }
@@ -10571,19 +10573,19 @@ function PrintRods  {
 
 
   repeat " " $spaces1
-  echo -n "\|"
+  echo -n "|"
   repeat " " $spaces2
-  echo -n "\|"
+  echo -n "|"
   repeat " " $spaces2
-  echo "\|"
+  echo "|"
 
-  sequence=$(echo $(seq 0 $disks1 \| tac))
+  sequence=$(echo $(seq 0 $disks1 | tac))
   for disk in $sequence; do
     for rod in {1..3}; do
       eval empty=$(( $DISKS - (Rod${rod}[$disk] / 2) ))
       eval fill=\${Rod${rod}[$disk]}
       repeat " " $empty
-      test $fill -gt 0 && repeat "*" $fill \| echo -n "\|"
+      test $fill -gt 0 && repeat "*" $fill | echo -n "|"
       repeat " " $empty
     done
     echo
@@ -10686,13 +10688,13 @@ esac
 exit $E_NOEXIT   # Shouldn't exit here.
 
 # Note:
-# Redirect script output to a file, otherwise it scrolls off display.|
+# Redirect script output to a file, otherwise it scrolls off display.
+```
 
 **Example A-49. _The Towers of Hanoi, alternate graphic version_**
 
-|   |
-|---|
-|#! /bin/bash
+```bash
+#! /bin/bash
 # The Towers Of Hanoi
 # Original script (hanoi.bash) copyright (C) 2000 Amit Singh.
 # All Rights Reserved.
@@ -10747,9 +10749,9 @@ function FromRod  {
 
   while true; do
     rod=$1
-    test ${rod/[^123]/} \| continue
+    test ${rod/[^123]/} | continue
 
-    sequence=$(echo $(seq 0 $disks1 \| tac))
+    sequence=$(echo $(seq 0 $disks1 | tac))
     for summit in $sequence; do
       eval weight=\${Rod${rod}[$summit]}
       test $weight -ne 0 &&
@@ -10764,9 +10766,9 @@ function ToRod  { # $1=previous (FromRod) weight
   
   while true; do
     rod=$2
-    test ${rod/[^123]} \| continue
+    test ${rod/[^123]} | continue
 
-    sequence=$(echo $(seq 0 $disks1 \| tac))
+    sequence=$(echo $(seq 0 $disks1 | tac))
     for firstfree in $sequence; do
       eval weight=\${Rod${rod}[$firstfree]}
       test $weight -gt 0 && { (( firstfree++ )); break; }
@@ -10783,19 +10785,19 @@ function PrintRods  {
   tput cup 5 0
 
   repeat " " $spaces1
-  echo -n "\|"
+  echo -n "|"
   repeat " " $spaces2
-  echo -n "\|"
+  echo -n "|"
   repeat " " $spaces2
-  echo "\|"
+  echo "|"
 
-  sequence=$(echo $(seq 0 $disks1 \| tac))
+  sequence=$(echo $(seq 0 $disks1 | tac))
   for disk in $sequence; do
     for rod in {1..3}; do
       eval empty=$(( $DISKS - (Rod${rod}[$disk] / 2) ))
       eval fill=\${Rod${rod}[$disk]}
       repeat " " $empty
-      test $fill -gt 0 && repeat "*" $fill \| echo -n "\|"
+      test $fill -gt 0 && repeat "*" $fill | echo -n "|"
       repeat " " $empty
     done
     echo
@@ -10907,13 +10909,13 @@ exit $E_NOEXIT   # Shouldn't exit here.
 #  --------
 #  There is a minor bug in the script that causes the display of
 #+ the next-to-last move to be skipped.
-#+ Fix this.|
+#+ Fix this.
+```
 
 **Example A-50. An alternate version of the [[manipulating-strings#^GETOPTSIMPLE|getopt-simple.sh]] script**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # UseGetOpt.sh
 
 # Author: Peggy Russell <prusselltechgroup@gmail.com>
@@ -10934,7 +10936,7 @@ DoSomething () {
   inputOptions=$(getopt -o "${ShortOpts}" --long \
               "${LongOpts}" --name "${ScriptName}" -- "${@}")
 
-  if [[ ($? -ne 0) \| ($# -eq 0) ]]; then
+  if [[ ($? -ne 0) | ($# -eq 0) ]]; then
     echo "Usage: ${ScriptName} [-dhlt] {OPTION...}"
     exit $E_OPTERR
   fi
@@ -10952,15 +10954,15 @@ DoSomething () {
 
   while true; do
     case "${1}" in
-      --aoption \| -a)  # Argument found.
+      --aoption | -a)  # Argument found.
         echo "Option [$1]"
         ;;
 
-      --debug \| -d)    # Enable informational messages.
+      --debug | -d)    # Enable informational messages.
         echo "Option [$1] Debugging enabled"
         ;;
 
-      --file \| -f)     #  Check for optional argument.
+      --file | -f)     #  Check for optional argument.
         case "$2" in   #+ Double colon is optional argument.
           "")          #  Not there.
               echo "Option [$1] Use default"
@@ -10976,15 +10978,15 @@ DoSomething () {
         DoSomething
         ;;
 
-      --log \| -l) # Enable Logging.
+      --log | -l) # Enable Logging.
         echo "Option [$1] Logging enabled"
         ;;
 
-      --test \| -t) # Enable testing.
+      --test | -t) # Enable testing.
         echo "Option [$1] Testing enabled"
         ;;
 
-      --help \| -h)
+      --help | -h)
         echo "Option [$1] Display help"
         break
         ;;
@@ -11035,13 +11037,13 @@ UseGetOpt -adltf myfile  anotherfile
 echo;echo "Test 4 - Long Options"
 UseGetOpt --aoption --debug --log --test --file myfile anotherfile
 
-exit|
+exit
+```
 
 **Example A-51. The version of the _UseGetOpt.sh_ example used in the [[tabexpansion.html|Tab Expansion appendix]]**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 #  UseGetOpt-2.sh
 #  Modified version of the script for illustrating tab-expansion
@@ -11068,7 +11070,7 @@ DoSomething () {
   inputOptions=$(getopt -o "${ShortOpts}" --long \
               "${LongOpts}" --name "${ScriptName}" -- "${@}")
 
-  if [[ ($? -ne 0) \| ($# -eq 0) ]]; then
+  if [[ ($? -ne 0) | ($# -eq 0) ]]; then
     echo "Usage: ${ScriptName} [-dhlt] {OPTION...}"
     exit $E_OPTERR
   fi
@@ -11078,15 +11080,15 @@ DoSomething () {
 
   while true; do
     case "${1}" in
-      --aoption \| -a)  # Argument found.
+      --aoption | -a)  # Argument found.
         echo "Option [$1]"
         ;;
 
-      --debug \| -d)    # Enable informational messages.
+      --debug | -d)    # Enable informational messages.
         echo "Option [$1] Debugging enabled"
         ;;
 
-      --file \| -f)     #  Check for optional argument.
+      --file | -f)     #  Check for optional argument.
         case "$2" in   #+ Double colon is optional argument.
           "")          #  Not there.
               echo "Option [$1] Use default"
@@ -11102,15 +11104,15 @@ DoSomething () {
         DoSomething
         ;;
 
-      --log \| -l) # Enable Logging.
+      --log | -l) # Enable Logging.
         echo "Option [$1] Logging enabled"
         ;;
 
-      --test \| -t) # Enable testing.
+      --test | -t) # Enable testing.
         echo "Option [$1] Testing enabled"
         ;;
 
-      --help \| -h)
+      --help | -h)
         echo "Option [$1] Display help"
         break
         ;;
@@ -11134,13 +11136,13 @@ DoSomething () {
   
 #  }
 
-exit|
+exit
+```
 
 **Example A-52. Cycling through all the possible color backgrounds**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 
 # show-all-colors.sh
 # Displays all 256 possible background colors, using ANSI escape sequences.
@@ -11156,7 +11158,7 @@ for num1 in {0..7}
 do {
    for num2 in {0,1}
        do {
-          shownum=`echo "$offset + $T1 * ${num2} + $num1" \| bc`
+          shownum=`echo "$offset + $T1 * ${num2} + $num1" | bc`
           echo -en "\E[0;48;5;${shownum}m color ${shownum} \E[0m"
           }
        done
@@ -11172,7 +11174,7 @@ do {
           for num3 in {0..5}
               do {
                  shownum=`echo "$offset + $T2 * ${num3} \
-                 + $num2 + $T3 * ${num1}" \| bc`
+                 + $num2 + $T3 * ${num1}" | bc`
                  echo -en "\E[0;48;5;${shownum}m color ${shownum} \E[0m"
                  }
                done
@@ -11190,13 +11192,13 @@ do {
 }
 done
 
-echo|
+echo
+```
 
 **Example A-53. Morse Code Practice**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # sam.sh, v. .01a
 # Still Another Morse (code training script)
 # With profuse apologies to Sam (F.B.) Morse.
@@ -11352,13 +11354,13 @@ exit 0
 #  ---------
 #  1) Have the script accept either lowercase or uppercase words
 #+    as arguments. Hint: Use 'tr' . . .
-#  2) Have the script optionally accept input from a text file.|
+#  2) Have the script optionally accept input from a text file.
+```
 
 **Example A-54. Base64 encoding/decoding**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # base64.sh: Bash implementation of Base64 encoding and decoding.
 #
 # Copyright (c) 2011 vladz <vladz@devzero.fr>
@@ -11408,16 +11410,16 @@ function encode_base64 {
   declare -a -i c8 c6
 
   #  Convert hexadecimal to decimal.
-  c8=( $(printf "ibase=16; ${1:0:2}\n${1:2:2}\n${1:4:2}\n" \| bc) )
+  c8=( $(printf "ibase=16; ${1:0:2}\n${1:2:2}\n${1:4:2}\n" | bc) )
 
   #  Let's play with bitwise operators
   #+ (3x8-bit into 4x6-bits conversion).
   (( c6[0] = c8[0] >> 2 ))
-  (( c6[1] = ((c8[0] &  3) << 4) \| (c8[1] >> 4) ))
+  (( c6[1] = ((c8[0] &  3) << 4) | (c8[1] >> 4) ))
 
   # The following operations depend on the c8 element number.
   case ${#c8[*]} in 
-    3) (( c6[2] = ((c8[1] & 15) << 2) \| (c8[2] >> 6) ))
+    3) (( c6[2] = ((c8[1] & 15) << 2) | (c8[2] >> 6) ))
        (( c6[3] = c8[2] & 63 )) ;;
     2) (( c6[2] = (c8[1] & 15) << 2 ))
        (( c6[3] = 64 )) ;;
@@ -11449,14 +11451,14 @@ function decode_base64 {
 
   #  Let's play with bitwise operators
   #+ (4x8-bit into 3x6-bits conversion).
-  (( c8[0] = (c6[0] << 2) \| (c6[1] >> 4) ))
+  (( c8[0] = (c6[0] << 2) | (c6[1] >> 4) ))
 
   # The next operations depends on the c6 elements number.
   case ${#c6[*]} in
-    3) (( c8[1] = ( (c6[1] & 15) << 4) \| (c6[2] >> 2) ))
+    3) (( c8[1] = ( (c6[1] & 15) << 4) | (c6[2] >> 2) ))
        (( c8[2] = (c6[2] & 3) << 6 )); unset c8[2] ;;
-    4) (( c8[1] = ( (c6[1] & 15) << 4) \| (c6[2] >> 2) ))
-       (( c8[2] = ( (c6[2] &  3) << 6) \|  c6[3] )) ;;
+    4) (( c8[1] = ( (c6[1] & 15) << 4) | (c6[2] >> 2) ))
+       (( c8[2] = ( (c6[2] &  3) << 6) |  c6[3] )) ;;
   esac
 
   for char in ${c8[*]}; do
@@ -11470,26 +11472,26 @@ function decode_base64 {
 if [ "$1" = "-d" ]; then   # decode
 
   # Reformat STDIN in pseudo 4x6-bit groups.
-  content=$(cat - \| tr -d "\n" \| sed -r "s/(.{4})/\1 /g")
+  content=$(cat - | tr -d "\n" | sed -r "s/(.{4})/\1 /g")
 
   for chars in ${content}; do decode_base64 ${chars}; done
 
 else
   # Make a hexdump of stdin and reformat in 3-byte groups.
-  content=$(cat - \| xxd -ps -u \| sed -r "s/(\w{6})/\1 /g" \|
+  content=$(cat - | xxd -ps -u | sed -r "s/(\w{6})/\1 /g" |
             tr -d "\n")
 
   for chars in ${content}; do encode_base64 ${chars}; done
 
   echo
 
-fi|
+fi
+```
 
 **Example A-55. Inserting text in a file using _sed_**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #  Prepends a string at a specified line
 #+ in files with names ending in "sample"
 #+ in the current working directory.
@@ -11525,13 +11527,13 @@ exit 0
 
 # Exercise:
 # Add error checking to this script.
-# It needs it badly.|
+# It needs it badly.
+```
 
 **Example A-56. The Gronsfeld Cipher**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # gronsfeld.bash
 
 # License: GPL3
@@ -11656,7 +11658,7 @@ do  # Calculate shift values for encryption/decryption.
   # There are simpler ways to accomplish this.
 done
 
-args=$(echo "$*" \| sed -e 's/ //g' \| tr A-Z a-z \| sed -e 's/[0-9]//g')
+args=$(echo "$*" | sed -e 's/ //g' | tr A-Z a-z | sed -e 's/[0-9]//g')
 # Remove whitespace and digits from command-line args.
 # Can modify to also remove punctuation characters, if desired.
 
@@ -11677,13 +11679,13 @@ exit $?    # } End-of-script
 #+  a fairly secure password not susceptible to a dictionary attack.
 #   Or, you could use your own name (surely that's easy to remember!).
 #   For example, Bozo Bozeman encrypts to hfnbttdppkt29379.
-#   **************************************************************   #|
+#   **************************************************************   #
+```
 
 **Example A-57. Bingo Number Generator**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # bingo.sh
 # Bingo number generator
 # Reldate 20Aug12, License: Public Domain
@@ -11808,15 +11810,15 @@ exit 0
 
 # Certainly, this script could stand some improvement.
 #See also the author's Instructable:
-#www.instructables.com/id/Binguino-An-Arduino-based-Bingo-Number-Generato/|
+#www.instructables.com/id/Binguino-An-Arduino-based-Bingo-Number-Generato/
+```
 
 To end this section, a review of the basics . . . and more.
 
 **Example A-58. Basics Reviewed**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # basics-reviewed.bash
 
 # File extension == *.bash == specific to Bash
@@ -12855,13 +12857,13 @@ echo ${sparseZ[@]//*/$(_GenFunc)}
 # Perhaps it will be implemented in a future version of Bash.
 
 
-exit 0|
+exit 0
+```
 
 **Example A-59. Testing execution times of various commands**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #  test-execution-time.sh
 #  Example by Erik Brandsberg, for testing execution time
 #+ of certain operations.
@@ -12929,13 +12931,13 @@ do
   fi
 done
 
-exit $?|
+exit $?
+```
 
 **Example A-60. Associative arrays vs. conventional arrays (execution times)**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 #  assoc-arr-test.sh
 #  Benchmark test script to compare execution times of
 #  numeric-indexed array vs. associative array.
@@ -13034,6 +13036,5 @@ time for value in "${array4[@]}"; do
         simple=$value
 done
 
-exit $?|
-
-|Bibliography||Reference Cards|
+exit $?
+```

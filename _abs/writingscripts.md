@@ -124,9 +124,9 @@ Hint: _bc_ requires the -l option to load the math library.
 
 **Unicode Table**
 
-Using [[Appendix T. ASCII Table#^ASCIISH|Example T-1]] as a template, write a script that prints to a file a complete [[bash-ver4#^UNICODEREF|Unicode]] table.
+Using [[Appendix T. ASCII Table#^ASCIISH|Example T-1]] as a template, write a script that prints to a file a complete [[bash-version-4#^UNICODEREF|Unicode]] table.
 
-Hint: Use the -e option to [[internal-commands-and-builtins#^ECHOREF|echo]]: **echo -e '\uXXXX'**, where _XXXX_ is the Unicode numerical character designation. This requires [[bash-ver4#^BASH42|version 4.2]] or later of Bash.
+Hint: Use the -e option to [[internal-commands-and-builtins#^ECHOREF|echo]]: **echo -e '\uXXXX'**, where _XXXX_ is the Unicode numerical character designation. This requires [[bash-version-4#^BASH42|version 4.2]] or later of Bash.
 
 **Sum of Matching Numbers**
 
@@ -287,7 +287,7 @@ do
    (( loopcnt++ ))     # Update loop counter.
 done|
 
-It's a simple enough recipe, and _seems_ at first glance easy enough to convert into a working Bash script. The problem, though, is that Bash has [[operators#^NOFLOATINGPOINT|no native support for floating point numbers]]. So, the script writer needs to use [[math-commands#^BCREF|bc]] or possibly [[C.2. Awk#^AWKREF|awk]] to convert the numbers and do the calculations. It could get rather messy . . .
+It's a simple enough recipe, and _seems_ at first glance easy enough to convert into a working Bash script. The problem, though, is that Bash has [[operators#^NOFLOATINGPOINT|no native support for floating point numbers]]. So, the script writer needs to use [[math-commands#^BCREF|bc]] or possibly [[awk#^AWKREF|awk]] to convert the numbers and do the calculations. It could get rather messy . . .
 
 **Logging File Accesses**
 

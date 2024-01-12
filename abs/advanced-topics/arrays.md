@@ -1098,7 +1098,7 @@ exit 0
 
 --
 
-Embedded arrays in combination with [[bash-ver2#^VARREFNEW|indirect references]] create some fascinating possibilities
+Embedded arrays in combination with [[bash-version-2#^VARREFNEW|indirect references]] create some fascinating possibilities
 
 **Example 27-12. Embedded arrays and indirect references**
 

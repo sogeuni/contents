@@ -1,12 +1,11 @@
 ---
 title: 36.7. Assorted Tips
-aliases:
-  - 36.7. Assorted Tips
 ---
+
 ## 36.7.1. Ideas for more powerful scripts
 
 - You have a problem that you want to solve by writing a Bash script. Unfortunately, you don't know quite where to start. One method is to plunge right in and code those parts of the script that come easily, and write the hard parts as _pseudo-code_.
-    
+
 ```bash
 #!/bin/bash
 
@@ -432,7 +431,7 @@ exit 0
     Passing an array involves loading the space-separated elements of the array into a variable with [[command-substitution#^COMMANDSUBREF|command substitution]]. Getting an array back as the "return value" from a function uses the previously mentioned strategem of [[internal-commands-and-builtins#^ECHOREF|echoing]] the array in the function, then invoking command substitution and the **( ... )** operator to assign it to an array.
 
     **Example 36-20. Passing and returning arrays**
-    
+
 ```bash
 #!/bin/bash
 # array-function.sh: Passing an array to a function and ...
@@ -518,7 +517,7 @@ For a more elaborate example of passing arrays to functions, see [[contributed-s
 
 - Using the [[double-parentheses-construct|double-parentheses construct]], it is possible to use C-style syntax for setting and incrementing/decrementing variables and in [[loops#^FORLOOPREF1|for]] and [[loops#^WHILELOOPREF|while]] loops. See [[loops#^FORLOOPC|Example 11-13]] and [[loops#^WHLOOPC|Example 11-18]].
 
-- Setting the [[internal-variables#^PATHREF|path]] and [[system-and-administrative-commands#^UMASKREF|umask]] at the beginning of a script makes it more [[portabilityissues|portable]] -- more likely to run on a "foreign" machine whose user may have bollixed up the $PATH and **umask**.
+- Setting the [[internal-variables#^PATHREF|path]] and [[system-and-administrative-commands#^UMASKREF|umask]] at the beginning of a script makes it more [[portability-issues|portable]] -- more likely to run on a "foreign" machine whose user may have bollixed up the $PATH and **umask**.
 
 ```bash
 #!/bin/bash

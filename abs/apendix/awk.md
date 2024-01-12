@@ -1,10 +1,14 @@
+---
+title: C.2. Awk
+---
+
 _Awk_ [^1] is a full-featured text processing language with a syntax reminiscent of _C_. While it possesses an extensive set of operators and capabilities, we will cover only a few of these here - the ones most useful in shell scripts.
 
 Awk breaks each line of input passed to it into [[special-characters#^FIELDREF|fields]]. By default, a field is a string of consecutive characters delimited by [[special-characters#^WHITESPACEREF|whitespace]], though there are options for changing this. Awk parses and operates on each separate field. This makes it ideal for handling structured text files -- especially tables -- data organized into consistent chunks, such as rows and columns.
 
 [[varsubn#^SNGLQUO|Strong quoting]] and [[special-characters#^CODEBLOCKREF|curly brackets]] enclose blocks of awk code within a shell script.
 
-```
+```bash
 # $1 is field #1, $2 is field #2, etc.
 
 echo one two | awk '{print $1}'
@@ -32,13 +36,13 @@ awk '{print $0}' $filename
 
 We have just seen the awk _print_ command in action. The only other feature of awk we need to deal with here is variables. Awk handles variables similarly to shell scripts, though a bit more flexibly.
 
-```
+```bash
 { total += ${column_number} }
 ```
 
 This adds the value of _column_number_ to the running total of _total_>. Finally, to print "total", there is an **END** command block, executed after the script has processed all its input.
 
-```
+```bash
 END { print total }
 ```
 
@@ -48,7 +52,7 @@ The following example illustrates how **awk** can add text-parsing tools to a sh
 
 **Example C-1. Counting Letter Occurrences**
 
-```
+```bash
 #! /bin/sh
 # letter-count2.sh: Counting letter occurrences in a text file.
 #

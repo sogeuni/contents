@@ -1,12 +1,13 @@
-# 36.5. "Colorizing" Scripts
+---
+title: "36.5. \"Colorizing\" Scripts"
+---
 
 The ANSI [^1] escape sequences set screen attributes, such as bold text, and color of foreground and background. [[Appendix N. Converting DOS Batch Files to Shell Scripts#^DOSBATCH1|DOS batch files]] commonly used ANSI escape codes for _color_ output, and so can Bash scripts.
 
 **Example 36-13. A "colorized" address database**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # ex30a.sh: "Colorized" version of ex30.sh.
 #            Crude address database
 
@@ -41,7 +42,7 @@ read person
 case "$person" in
 # Note variable is quoted.
 
-  "E" \| "e" )
+  "E" | "e" )
   # Accept upper or lowercase input.
   echo
   echo "Roland Evans"
@@ -53,7 +54,7 @@ case "$person" in
   echo "Business partner & old friend"
   ;;
 
-  "J" \| "j" )
+  "J" | "j" )
   echo
   echo "Mildred Jambalaya"
   echo "249 E. 7th St., Apt. 19"
@@ -80,13 +81,13 @@ tput sgr0                               # Reset colors to "normal."
 
 echo
 
-exit 0|
+exit 0
+```
 
 **Example 36-14. Drawing a box**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # Draw-box.sh: Drawing a box using ASCII characters.
 
 # Script by Stefano Palmeri, with minor editing by document author.
@@ -133,7 +134,7 @@ draw_box(){
 
 #=============#
 HORZ="-"
-VERT="\|"
+VERT="|"
 CORNER_CHAR="+"
 
 MINARGS=4
@@ -147,7 +148,7 @@ fi
 
 # Looking for non digit chars in arguments.
 # Probably it could be done better (exercise for the reader?).
-if echo $@ \| tr -d [:blank:] \| tr -d [:digit:] \| grep . &> /dev/null; then
+if echo $@ | tr -d [:blank:] | tr -d [:digit:] | grep . &> /dev/null; then
    exit $E_BADARGS
 fi
 
@@ -156,10 +157,10 @@ BOX_WIDTH=`expr $4 - 1`    #+ is a part of both box height and width.
 T_ROWS=`tput lines`        #  Define current terminal dimension 
 T_COLS=`tput cols`         #+ in rows and columns.
          
-if [ $1 -lt 1 ] \| [ $1 -gt $T_ROWS ]; then    #  Start checking if arguments
+if [ $1 -lt 1 ] || [ $1 -gt $T_ROWS ]; then    #  Start checking if arguments
    exit $E_BADARGS                             #+ are correct.
 fi
-if [ $2 -lt 1 ] \| [ $2 -gt $T_COLS ]; then
+if [ $2 -lt 1 ] || [ $2 -gt $T_COLS ]; then
    exit $E_BADARGS
 fi
 if [ `expr $1 + $BOX_HEIGHT + 1` -gt $T_ROWS ]; then
@@ -168,7 +169,7 @@ fi
 if [ `expr $2 + $BOX_WIDTH + 1` -gt $T_COLS ]; then
    exit $E_BADARGS
 fi
-if [ $3 -lt 1 ] \| [ $4 -lt 1 ]; then
+if [ $3 -lt 1 ] || [ $4 -lt 1 ]; then
    exit $E_BADARGS
 fi                                 # End checking arguments.
 
@@ -232,53 +233,53 @@ exit 0
 
 # Exercise:
 # --------
-# Add the option of printing text within the drawn box.|
+# Add the option of printing text within the drawn box.
+```
 
-The simplest, and perhaps most useful ANSI escape sequence is bold text, **\033[[escaping#^ESCP|1m ... \033[0m**. The \033 represents an [escape]], the "[1" turns on the bold attribute, while the "[0" switches it off. The "m" terminates each term of the escape sequence.
+The simplest, and perhaps most useful ANSI escape sequence is bold text, **\033[1m ... \033[0m**. The \033 represents an [[escaping#^ESCP|escape]], the "[1" turns on the bold attribute, while the "[0" switches it off. The "m" terminates each term of the escape sequence.
 
-|   |
-|---|
-|bash$ **echo -e "\033[1mThis is bold text.\033[0m"**|
+```bash
+bash$ echo -e "\033[1mThis is bold text.\033[0m"
+```
 
 A similar escape sequence switches on the underline attribute (on an _rxvt_ and an _aterm_).
 
-|   |
-|---|
-|bash$ **echo -e "\033[4mThis is underlined text.\033[0m"**|
+```bash
+bash$ echo -e "\033[4mThis is underlined text.\033[0m"
+```
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|With an **echo**, the -e option enables the escape sequences.|
+> [!note]
+> With an **echo**, the -e option enables the escape sequences.
 
 Other escape sequences change the text and/or background color.
 
-|   |
-|---|
-|bash$ **echo -e '\E[34;47mThis prints in blue.'; tput sgr0**
+```bash
+bash$ echo -e '\E[34;47mThis prints in blue.'; tput sgr0
 
-bash$ **echo -e '\E[33;44m'"yellow text on blue background"; tput sgr0**
 
-bash$ **echo -e '\E[1;33;44m'"BOLD yellow text on blue background"; tput sgr0**|
+bash$ echo -e '\E[33;44m'"yellow text on blue background"; tput sgr0
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|It's usually advisable to set the _bold_ attribute for light-colored foreground text.|
+
+bash$ echo -e '\E[1;33;44m'"BOLD yellow text on blue background"; tput sgr0
+	      
+
+```
+
+> [!note]
+> It's usually advisable to set the _bold_ attribute for light-colored foreground text.
 
 The **tput sgr0** restores the terminal settings to normal. Omitting this lets all subsequent output from that particular terminal remain blue.
 
-|   |   |
-|---|---|
-|![[../images/note.gif|Note]]|Since **tput sgr0** fails to restore terminal settings under certain circumstances, **echo -ne \E[0m** may be a better choice.|
+> [!note]
+> Since **tput sgr0** fails to restore terminal settings under certain circumstances, **echo -ne \E[0m** may be a better choice.
 
-|   |
-|---|
-|Use the following template for writing colored text on a colored background.
-
-**echo -e '\E[COLOR1;COLOR2mSome text goes here.'**
-
-The "\E[" begins the escape sequence. The semicolon-separated numbers "COLOR1" and "COLOR2" specify a foreground and a background color, according to the table below. (The order of the numbers does not matter, since the foreground and background numbers fall in non-overlapping ranges.) The "m" terminates the escape sequence, and the text begins immediately after that.
-
-Note also that [[varsubn#^SNGLQUO|single quotes]] enclose the remainder of the command sequence following the **echo -e**.|
+> Use the following template for writing colored text on a colored background.
+>
+> **echo -e '\E[COLOR1;COLOR2mSome text goes here.'**
+>
+>The "\E[" begins the escape sequence. The semicolon-separated numbers "COLOR1" and "COLOR2" specify a foreground and a background color, according to the table below. (The order of the numbers does not matter, since the foreground and background numbers fall in non-overlapping ranges.) The "m" terminates the escape sequence, and the text begins immediately after that.
+>
+> Note also that [[varsubn#^SNGLQUO|single quotes]] enclose the remainder of the command sequence following the **echo -e**.
 
 The numbers in the following table work for an _rxvt_ terminal. Results may vary for other terminal emulators.
 
@@ -297,9 +298,8 @@ The numbers in the following table work for an _rxvt_ terminal. Results may vary
 
 **Example 36-15. Echoing colored text**
 
-|   |
-|---|
-|#!/bin/bash
+```bash
+#!/bin/bash
 # color-echo.sh: Echoing text messages in color.
 
 # Modify this script for your own purposes.
@@ -361,13 +361,11 @@ exit 0
 # Exercises:
 # ---------
 # 1) Add the "bold" attribute to the 'cecho ()' function.
-# 2) Add options for colored backgrounds.|
+# 2) Add options for colored backgrounds.
 
-**Example 36-16. A "horserace" game**
+Example 36-16. A "horserace" game
 
-|   |
-|---|
-|#!/bin/bash
+#!/bin/bash
 # horserace.sh: Very simple horserace simulation.
 # Author: Stefano Palmeri
 # Used with permission.
@@ -424,7 +422,7 @@ tput cup 20 0; rm -fr  $HORSE_RACE_TMP_DIR'  TERM EXIT
 
 # Set a unique (paranoid) name for the temp directory the script needs.
 HORSE_RACE_TMP_DIR=$HOME/.horserace-`date +%s`-`head -c10 /dev/urandom \
-\| md5sum \| head -c30`
+| md5sum | head -c30`
 
 # Create the temp directory and move right in.
 mkdir $HORSE_RACE_TMP_DIR
@@ -443,7 +441,7 @@ move_and_echo() {
 # Function to generate a pseudo-random number between 1 and 9. 
 random_1_9 ()
 {
-    head -c10 /dev/urandom \| md5sum \| tr -d [a-z] \| tr -d 0 \| cut -c1 
+    head -c10 /dev/urandom | md5sum | tr -d [a-z] | tr -d 0 | cut -c1 
 }
 
 #  Two functions that simulate "movement," when drawing the horses. 
@@ -460,7 +458,7 @@ N_COLS=`tput cols`
 N_LINES=`tput lines`
 
 # Need at least a 20-LINES X 80-COLUMNS terminal. Check it.
-if [ $N_COLS -lt 80 ] \| [ $N_LINES -lt 20 ]; then
+if [ $N_COLS -lt 80 ] || [ $N_LINES -lt 20 ]; then
    echo "`basename $0` needs a 80-cols X 20-lines terminal."
    echo "Your terminal is ${N_COLS}-cols X ${N_LINES}-lines."
    exit $E_RUNERR
@@ -470,7 +468,7 @@ fi
 # Start drawing the race field.
 
 # Need a string of 80 chars. See below.
-BLANK80=`seq -s "" 100 \| head -c80`
+BLANK80=`seq -s "" 100 | head -c80`
 
 clear
 
@@ -490,12 +488,12 @@ echo -ne '\E[30m'
 
 move_and_echo 3 1 "START  1"            
 move_and_echo 3 75 FINISH
-move_and_echo 1 5 "\|"
-move_and_echo 1 80 "\|"
-move_and_echo 2 5 "\|"
-move_and_echo 2 80 "\|"
-move_and_echo 4 5 "\|  2"
-move_and_echo 4 80 "\|"
+move_and_echo 1 5 "|"
+move_and_echo 1 80 "|"
+move_and_echo 2 5 "|"
+move_and_echo 2 80 "|"
+move_and_echo 4 5 "|  2"
+move_and_echo 4 80 "|"
 move_and_echo 5 5 "V  3"
 move_and_echo 5 80 "V"
 
@@ -566,7 +564,7 @@ for HN in `seq 9`; do
       # Define a random handicap for horse.
        HANDICAP=`random_1_9`
       # Check if the random_1_9 function returned a good value.
-      while ! echo $HANDICAP \| grep [1-9] &> /dev/null; do
+      while ! echo $HANDICAP | grep [1-9] &> /dev/null; do
                 HANDICAP=`random_1_9`
       done
       # Define last handicap position for horse. 
@@ -577,19 +575,19 @@ for HN in `seq 9`; do
      
       # Calculate odds.
       case $HANDICAP in 
-              1) ODDS=`echo $HANDICAP \* 0.25 + 1.25 \| bc`
+              1) ODDS=`echo $HANDICAP \* 0.25 + 1.25 | bc`
                                  echo $ODDS > odds_${HN}
               ;;
-              2 \| 3) ODDS=`echo $HANDICAP \* 0.40 + 1.25 \| bc`
+              2 | 3) ODDS=`echo $HANDICAP \* 0.40 + 1.25 | bc`
                                        echo $ODDS > odds_${HN}
               ;;
-              4 \| 5 \| 6) ODDS=`echo $HANDICAP \* 0.55 + 1.25 \| bc`
+              4 | 5 | 6) ODDS=`echo $HANDICAP \* 0.55 + 1.25 | bc`
                                              echo $ODDS > odds_${HN}
               ;; 
-              7 \| 8) ODDS=`echo $HANDICAP \* 0.75 + 1.25 \| bc`
+              7 | 8) ODDS=`echo $HANDICAP \* 0.75 + 1.25 | bc`
                                        echo $ODDS > odds_${HN}
               ;; 
-              9) ODDS=`echo $HANDICAP \* 0.90 + 1.25 \| bc`
+              9) ODDS=`echo $HANDICAP \* 0.90 + 1.25 | bc`
                                   echo $ODDS > odds_${HN}
       esac
 
@@ -653,17 +651,17 @@ while [ $COL -lt $WINNING_POS ]; do
           MOVE_HORSE=0     
           
           # Check if the random_1_9 function has returned a good value.
-          while ! echo $MOVE_HORSE \| grep [1-9] &> /dev/null; do
+          while ! echo $MOVE_HORSE | grep [1-9] &> /dev/null; do
                 MOVE_HORSE=`random_1_9`
           done
           
           # Define old type and position of the "randomized horse".
-          HORSE_TYPE=`cat  horse_${MOVE_HORSE}_position \| tail -n 1`
-          COL=$(expr `cat  horse_${MOVE_HORSE}_position \| head -n 1`)
+          HORSE_TYPE=`cat  horse_${MOVE_HORSE}_position | tail -n 1`
+          COL=$(expr `cat  horse_${MOVE_HORSE}_position | head -n 1`)
           
           ADD_POS=1
           # Check if the current position is an handicap position. 
-          if seq 10 7 68 \| grep -w $COL &> /dev/null; then
+          if seq 10 7 68 | grep -w $COL &> /dev/null; then
                 if grep -w $MOVE_HORSE $COL &> /dev/null; then
                       ADD_POS=0
                       grep -v -w  $MOVE_HORSE $COL > ${COL}_new
@@ -690,7 +688,7 @@ while [ $COL -lt $WINNING_POS ]; do
           
           # Move the cursor to new horse position.
           tput cup `expr $MOVE_HORSE + 5` \
-	  `cat  horse_${MOVE_HORSE}_position \| head -n 1` 
+	  `cat  horse_${MOVE_HORSE}_position | head -n 1` 
           
           # Draw the horse.
           $DRAW_HORSE
@@ -701,18 +699,18 @@ while [ $COL -lt $WINNING_POS ]; do
            if [ $COL = 15 ]; then
              echo $MOVE_HORSE >> fieldline15  
            fi
-           if [ `wc -l fieldline15 \| cut -f1 -d " "` = 9 ]; then
+           if [ `wc -l fieldline15 | cut -f1 -d " "` = 9 ]; then
                print_odds
                : > fieldline15
            fi           
           
           # Define the leading horse.
-          HIGHEST_POS=`cat *position \| sort -n \| tail -1`          
+          HIGHEST_POS=`cat *position | sort -n | tail -1`          
           
           # Set background color to white.
           echo -ne '\E[47m'
           tput cup 17 0
-          echo -n Current leader: `grep -w $HIGHEST_POS *position \| cut -c7`\
+          echo -n Current leader: `grep -w $HIGHEST_POS *position | cut -c7`\
 	  "                              "
 
 done  
@@ -726,7 +724,7 @@ echo -en '\E[5m'
 
 # Make the winning horse blink.
 tput cup `expr $MOVE_HORSE + 5` \
-`cat  horse_${MOVE_HORSE}_position \| head -n 1`
+`cat  horse_${MOVE_HORSE}_position | head -n 1`
 $DRAW_HORSE
 
 # Disable blinking text.
@@ -756,15 +754,15 @@ rm -rf $HORSE_RACE_TMP_DIR
 
 tput cup 19 0
 
-exit 0|
+exit 0
+```
 
 See also [[contributed-scripts#^HASHEXAMPLE|Example A-21]], [[contributed-scripts#^HOMEWORK|Example A-44]], [[contributed-scripts#^SHOWALLC|Example A-52]], and [[contributed-scripts#^PETALS|Example A-40]].
 
-|   |   |
-|---|---|
-|![[../images/caution.gif|Caution]]|There is, however, a major problem with all this. _ANSI escape sequences are emphatically [[portabilityissues|non-portable]]._ What works fine on some terminal emulators (or the console) may work differently, or not at all, on others. A "colorized" script that looks stunning on the script author's machine may produce unreadable output on someone else's. This somewhat compromises the usefulness of colorizing scripts, and possibly relegates this technique to the status of a gimmick. Colorized scripts are probably inappropriate in a commercial setting, i.e., your supervisor might disapprove.|
+> [!caution]
+> There is, however, a major problem with all this. _ANSI escape sequences are emphatically [[portability-issues|non-portable]]._ What works fine on some terminal emulators (or the console) may work differently, or not at all, on others. A "colorized" script that looks stunning on the script author's machine may produce unreadable output on someone else's. This somewhat compromises the usefulness of colorizing scripts, and possibly relegates this technique to the status of a gimmick. Colorized scripts are probably inappropriate in a commercial setting, i.e., your supervisor might disapprove.
 
-Alister's [ansi-color](http://code.google.com/p/ansi-color/) utility (based on [[http://bash.deta.in/color-1.1.tar.gz|Moshe Jacobson's color utility]] considerably simplifies using ANSI escape sequences. It substitutes a clean and logical syntax for the clumsy constructs just discussed.
+Alister's [ansi-color](http://code.google.com/p/ansi-color/) utility (based on [Moshe Jacobson's color utility](http://bash.deta.in/color-1.1.tar.gz) considerably simplifies using ANSI escape sequences. It substitutes a clean and logical syntax for the clumsy constructs just discussed.
 
 Henry/teikedvl has likewise created a utility ([http://scriptechocolor.sourceforge.net/](http://scriptechocolor.sourceforge.net/)) to simplify creation of colorized scripts.
 

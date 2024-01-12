@@ -14,7 +14,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
     **^^**
     
-    [[bash-ver4#^CASEMODPARAMSUB|Uppercase conversion]] in _parameter substitution_
+    [[bash-version-4#^CASEMODPARAMSUB|Uppercase conversion]] in _parameter substitution_
     
 
 **~** _Tilde_
@@ -36,7 +36,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
     **==** [[other-comparison-operators#^SCOMPARISON2|String comparison]] operator
     
-- **=~** _Regular Expression_ [[bash-ver3#^REGEXMATCHREF|match]] operator
+- **=~** _Regular Expression_ [[bash-version-3#^REGEXMATCHREF|match]] operator
     
     [[contributed-scripts#^FINDSPLIT0|_Example script_]]
     
@@ -120,7 +120,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
     [[gotchas#^OMITSEMICOLON|terminating _curly-bracketed_ code block]]
     
-- **;;&** **;&** [[bash-ver4#^NCTERM|Terminators]] in a _case_ option ([[bash-ver4#^BASH4REF|version 4+]] of Bash).
+- **;;&** **;&** [[bash-version-4#^NCTERM|Terminators]] in a _case_ option ([[bash-version-4#^BASH4REF|version 4+]] of Bash).
     
 
 **:** Colon
@@ -180,7 +180,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
     **,,**
     
-    [[bash-ver4#^CASEMODPARAMSUB|Lowercase conversion]] in _parameter substitution_
+    [[bash-version-4#^CASEMODPARAMSUB|Lowercase conversion]] in _parameter substitution_
     
 
 **()** Parentheses
@@ -336,7 +336,7 @@ Note that _commands_ are indexed in [[part4#^PART4A|Part 4]].
     
 - ****** [[operators#^EXPONENTIATIONREF|Exponentiation]], arithmetic operator
     
-- ****** Extended _globbing_ [[bash-ver4#^GLOBSTARREF|file-match operator]]
+- ****** Extended _globbing_ [[bash-version-4#^GLOBSTARREF|file-match operator]]
     
 
 **%** Percent sign
@@ -381,7 +381,7 @@ _Shell Variables_
 
 **$9** [[othertypesv#^POSPARAMREF1|Ninth argument passed to script]]
 
-[[refcards#^SPECSHVARTAB|**Table**]] of _shell variables_
+[[reference-cards#^SPECSHVARTAB|**Table**]] of _shell variables_
 
 * * * * * *
 
@@ -436,7 +436,7 @@ _Advanced Bash Scripting Guide_, [[mirrorsites#^WHERE_TARBALL|where to download]
 
 [[arrays#^ARRAYREF|Arrays]]
 
-- [[bash-ver4#^ASSOCARR|Associative arrays]]
+- [[bash-version-4#^ASSOCARR|Associative arrays]]
     
     [[optimizations#^ASSOCARRTST|more efficient]] than conventional arrays
     
@@ -500,7 +500,7 @@ ASCII
 - [[Appendix T. ASCII Table|Scripts for generating ASCII table]]
     
 
-[[C.2. Awk|C.2. Awk]] field-oriented text processing language
+[[awk|C.2. Awk]] field-oriented text processing language
 
 - [[generate-random-integer#^AWKRANDOMREF|rand()]], random function
     
@@ -527,19 +527,19 @@ Backlight, [[system-and-administrative-commands#^BACKLIGHT|setting the brightnes
     
     [[options#^OPTIONSTABLE|**Table**]]
     
-- [[portabilityissues#^BASHCOMPAT|Features that classic _Bourne_ shell lacks]]
+- [[portability-issues#^BASHCOMPAT|Features that classic _Bourne_ shell lacks]]
     
 - [[internal-variables|Internal variables]]
     
-- [[bash-ver2#^BASH2REF|Version 2]]
+- [[bash-version-2#^BASH2REF|Version 2]]
     
-- [[bash-ver3#^BASH3REF|Version 3]]
+- [[bash-version-3#^BASH3REF|Version 3]]
     
-- [[bash-ver4#^BASH4REF|Version 4]]
+- [[bash-version-4#^BASH4REF|Version 4]]
     
-    [[bash-ver4#^BASH41|Version 4.1]]
+    [[bash-version-4#^BASH41|Version 4.1]]
     
-    [[bash-ver4#^BASH42|Version 4.2]]
+    [[bash-version-4#^BASH42|Version 4.2]]
     
 
 [[sample-bashrc|.bashrc]]
@@ -588,9 +588,9 @@ Backlight, [[system-and-administrative-commands#^BACKLIGHT|setting the brightnes
 
 - [[special-characters#^BRACEEXPREF33|Extended]], _{a..z}_
     
-- [[bash-ver3#^BRACEEXPREF3|Parameterizing]]
+- [[bash-version-3#^BRACEEXPREF3|Parameterizing]]
     
-- With [[bash-ver4#^BRACEEXPREF4|increment and zero-padding]] (new feature in Bash, [[bash-ver4#^BASH4REF|version 4]])
+- With [[bash-version-4#^BRACEEXPREF4|increment and zero-padding]] (new feature in Bash, [[bash-version-4#^BASH4REF|version 4]])
     
 
 Brackets, **[ ]**
@@ -658,20 +658,20 @@ Brackets, _curly_, **{}**, used in
 
 [[special-characters#^NULLREF|Colon]], **:** , equivalent to the [[internal-commands-and-builtins#^TRUEREF|true]] Bash builtin
 
-[[colorizing#^COLORIZINGREF|Colorizing scripts]]
+[[colorizing-scripts#^COLORIZINGREF|Colorizing scripts]]
 
 - Cycling through the background colors, [[contributed-scripts#^SHOWALLC|example script]]
     
-- [[colorizing#^COLORIZTABLE|**Table**]] of color escape sequences
+- [[colorizing-scripts#^COLORIZTABLE|**Table**]] of color escape sequences
     
-- [[colorizing#^COLORIZTEMPL|Template]], colored text on colored background
+- [[colorizing-scripts#^COLORIZTEMPL|Template]], colored text on colored background
     
 
 [[operators#^COMMAOP|Comma operator]], linking commands or operations
 
 [[G.2. Bash Command-Line Options|Command-line options]]
 
-[[bash-ver4#^CNFH|command_not_found_handle ()]] _builtin_ error-handling function ([[bash-ver4#^BASH4REF|version 4+]] of Bash)
+[[bash-version-4#^CNFH|command_not_found_handle ()]] _builtin_ error-handling function ([[bash-version-4#^BASH4REF|version 4+]] of Bash)
 
 [[command-substitution#^COMMANDSUBREF|Command substitution]]
 
@@ -733,7 +733,7 @@ Commenting out blocks of code
 - [[special-characters#^CTLMREF|Control-M]], carriage return
     
 
-[[bash-ver4#^COPROCREF|Coprocesses]]
+[[bash-version-4#^COPROCREF|Coprocesses]]
 
 [[system-and-administrative-commands#^CRONREF|cron]], scheduling _daemon_
 
@@ -796,7 +796,7 @@ Curly brackets {}
 
 - [[typing-variables#^DECLAREOPSREF1|options]]
     
-    [[bash-ver4#^DECLARECASEMOD|case-modification]] options ([[bash-ver4#^BASH4REF|version 4+]] of Bash)
+    [[bash-version-4#^DECLARECASEMOD|case-modification]] options ([[bash-version-4#^BASH4REF|version 4+]] of Bash)
     
 
 [[parameter-substitution#^DEFPARAM|Default parameters]]
@@ -840,7 +840,7 @@ Curly brackets {}
 - [[quoting-variables#^QUOTINGBSL|_Double-quoting_ the _backslash_ (**\**) character]]
     
 
-[[C.1. Sed#^DOUBLESPACE|Double-spacing a text file]], using [[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]]
+[[sed#^DOUBLESPACE|Double-spacing a text file]], using [[a-sed-and-awk-micro-primer#^SEDREF|sed]]
 
 * * *
 
@@ -873,7 +873,7 @@ Encrypting files, using [[file-and-archiving-commands#^OPENSSLREF|openssl]]
 
 - Within [[escaping#^STRQ|$' ... ']] string expansion
     
-- [[bash-ver4#^UNICODEREF2|Used with _Unicode_ characters]]
+- [[bash-version-4#^UNICODEREF2|Used with _Unicode_ characters]]
     
 
 [[system-and-administrative-commands#^FSTABREF|/etc/fstab]] (filesystem mount) file
@@ -1054,11 +1054,11 @@ Games and amusements
     
 - [[text-processing-commands#^CRYPTOQUOTE|Crypto-Quotes]]
     
-- [[bash-ver2#^CARDS|Dealing a deck of cards]]
+- [[bash-version-2#^CARDS|Dealing a deck of cards]]
     
 - [[contributed-scripts#^FIFTEEN|Fifteen Puzzle]]
     
-- [[colorizing#^HORSERACE|Horse race]]
+- [[colorizing-scripts#^HORSERACE|Horse race]]
     
 - [[contributed-scripts#^KTOUR|Knight's Tour]]
     
@@ -1222,7 +1222,7 @@ Games and amusements
 
 [[indirect-references#^IVRREF|Indirect referencing of variables]]
 
-- [[indirect-references#^IVR2|New notation]], introduced in [[bash-ver2#^BASH2REF|version 2]] of Bash ( [[bash-ver2#^VARREFNEW|example script]])
+- [[indirect-references#^IVR2|New notation]], introduced in [[bash-version-2#^BASH2REF|version 2]] of Bash ( [[bash-version-2#^VARREFNEW|example script]])
     
 
 [[system-and-administrative-commands#^IPTABLESREF|iptables]], packet filtering and firewall utility
@@ -1263,7 +1263,7 @@ Games and amusements
 
 * * *
 
-[[bash-ver4#^LASTPIPEREF|lastpipe]] shell option
+[[bash-version-4#^LASTPIPEREF|lastpipe]] shell option
 
 [[other-comparison-operators#^LE0REF|-le]] , _less-than or equal_ [[other-comparison-operators#^ICOMPARISON1|integer comparison]] test
 
@@ -1392,7 +1392,7 @@ Loopback devices
 - [[contributed-scripts#^MANED|_Man page_ editor]] (script)
     
 
-[[bash-ver4#^MAPFILEREF|mapfile]] builtin, loads an array with a text file
+[[bash-version-4#^MAPFILEREF|mapfile]] builtin, loads an array with a text file
 
 [[math-commands|Math commands]]
 
@@ -1502,11 +1502,11 @@ Operator
     
     [[parameter-substitution#^PSSUB1|Value of _parameter_]]
     
-- [[bash-ver4#^CASEMODPARAMSUB|_Case modification_]] ([[bash-ver4#^BASH4REF|version 4+]] of Bash).
+- [[bash-version-4#^CASEMODPARAMSUB|_Case modification_]] ([[bash-version-4#^BASH4REF|version 4+]] of Bash).
     
 - [[contributed-scripts#^PW0|_Script example_]]
     
-- [[refcards#^PARSUBTAB|**Table**]] of _parameter substitution_
+- [[reference-cards#^PARSUBTAB|**Table**]] of _parameter substitution_
     
 
 [[gotchas#^PARCHILDPROBREF|Parent / child process problem]], a _child_ process cannot [[internal-commands-and-builtins#^EXPORTREF|export]] variables to a [[internal-commands-and-builtins#^FORKREF|parent process]]
@@ -1522,12 +1522,12 @@ Parentheses
 
 [[internal-variables#^PATHREF|$PATH]], the _path_ (location of system binaries)
 
-- Appending directories to $PATH [[bash-ver3#^PATHAPPEND|using the += operator]].
+- Appending directories to $PATH [[bash-version-3#^PATHAPPEND|using the += operator]].
     
 
 [[special-characters#^PATHNAMEREF|Pathname]], a filename that incorporates the complete _path_ of a given file.
 
-- [[Appendix D. Parsing and Managing Pathnames|Parsing _pathnames_]]
+- [[parsing-and-managing-pathnames|Parsing _pathnames_]]
     
 
 [[shell-wrappers#^PERLREF|Perl]], programming language
@@ -1551,7 +1551,7 @@ Parentheses
     
 - [[exit-status#^PIPEEX|Exit status]] of a pipe
     
-- [[bash-ver3#^PIPEFAILREF|Pipefail]], _set -o pipefail_ option to indicate [[exit-status#^EXITSTATUSREF|exit status]] within a _pipe_
+- [[bash-version-3#^PIPEFAILREF|Pipefail]], _set -o pipefail_ option to indicate [[exit-status#^EXITSTATUSREF|exit status]] within a _pipe_
     
 - [[internal-variables#^PIPESTATUSREF|$PIPESTATUS]], _exit status_ of last executed pipe
     
@@ -1566,7 +1566,7 @@ Parentheses
     
 - [[internal-commands-and-builtins#^DOUBLESLASHREF|**//** (double forward slash)]], behavior of [[internal-commands-and-builtins#^CDREF|cd]] command toward
     
-- [[gotchas#^BINSH|#!/bin/sh]] script header disables [[portabilityissues#^BASHCOMPAT|extended _Bash_ features]]
+- [[gotchas#^BINSH|#!/bin/sh]] script header disables [[portability-issues#^BASHCOMPAT|extended _Bash_ features]]
     
 - [[optimizations#^CATABUSE|Abuse of _cat_]]
     
@@ -1644,11 +1644,11 @@ Pointers
 - [[varsubn#^POINTERREF|and _variables_]]
     
 
-[[portabilityissues|Portability issues]] in shell scripting
+[[portability-issues|Portability issues]] in shell scripting
 
 - [[assorted-tips#^SETPUM|Setting _path_ and _umask_]]
     
-- [[portabilityissues#^TESTSUITE0|A _test suite_ script]] (Bash versus classic Bourne shell)
+- [[portability-issues#^TESTSUITE0|A _test suite_ script]] (Bash versus classic Bourne shell)
     
 - [[assorted-tips#^WHATISREF3|Using _whatis_]]
     
@@ -1664,9 +1664,9 @@ Pointers
 
 [[starting-off-with-a-sha-bang#^POSIX2REF|POSIX]], _Portable Operating System Interface / UNIX_
 
-- [[portabilityissues#^POSIX3REF|--posix option]]
+- [[portability-issues#^POSIX3REF|--posix option]]
     
-- [[portabilityissues#^POSIX3REF|1003.2 standard]]
+- [[portability-issues#^POSIX3REF|1003.2 standard]]
     
 - [[brief-introduction-to-regular-expressions#^POSIXREF|Character classes]]
     
@@ -1758,7 +1758,7 @@ Random numbers
 
 - [[generate-random-integer#^URANDOMREF|/dev/urandom]]
     
-- [[generate-random-integer#^AWKRANDOMREF|rand()]], random function in [[C.2. Awk#^AWKREF|awk]]
+- [[generate-random-integer#^AWKRANDOMREF|rand()]], random function in [[awk#^AWKREF|awk]]
     
 - [[generate-random-integer#^RANDOMVAR01|$RANDOM]], Bash function that returns a pseudorandom integer
     
@@ -1861,21 +1861,21 @@ Redirection
 - [[miscellaneous-commands#^TEEREF|tee]], redirect to a file output of command(s) partway through a [[special-characters#^PIPEREF|pipe]]
     
 
-[[refcards|Reference Cards]]
+[[reference-cards|Reference Cards]]
 
-- [[refcards#^MISCTAB|Miscellaneous constructs]]
+- [[reference-cards#^MISCTAB|Miscellaneous constructs]]
     
-- [[refcards#^PARSUBTAB|Parameter substitution/expansion]]
+- [[reference-cards#^PARSUBTAB|Parameter substitution/expansion]]
     
-- [[refcards#^SPECSHVARTAB|Special shell variables]]
+- [[reference-cards#^SPECSHVARTAB|Special shell variables]]
     
-- [[refcards#^STRINGOPSTAB|String operations]]
+- [[reference-cards#^STRINGOPSTAB|String operations]]
     
 - Test operators
     
-    [[refcards#^BINCOMPTAB|Binary comparison]]
+    [[reference-cards#^BINCOMPTAB|Binary comparison]]
     
-    [[refcards#^FILESTAB|Files]]
+    [[reference-cards#^FILESTAB|Files]]
     
 
 [[regexp#^REGEXREF|_Regular Expressions_]]
@@ -1924,7 +1924,7 @@ Redirection
 
 [[internal-variables#^SECPROMPTREF|Secondary prompt]], **$PS2**
 
-[[securityissues|Security issues]]
+[[security-issues|Security issues]]
 
 - [[system-and-administrative-commands#^NMAPREF|nmap]], _network mapper_ / port scanner
     
@@ -1932,16 +1932,16 @@ Redirection
     
 - [[gotchas#^SUIDSCR|_suid_ commands inside a script]]
     
-- [[securityissues#^INFECTEDSCRIPTS1|Viruses, trojans, and worms]] in scripts
+- [[security-issues#^INFECTEDSCRIPTS1|Viruses, trojans, and worms]] in scripts
     
-- [[securityissues#^SECURITYTIPS1|Writing secure scripts]]
+- [[security-issues#^SECURITYTIPS1|Writing secure scripts]]
     
 
-[[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]], pattern-based programming language
+[[a-sed-and-awk-micro-primer#^SEDREF|sed]], pattern-based programming language
 
-- [[C.1. Sed#^SEDBASICTABLE|**Table**]], basic operators
+- [[sed#^SEDBASICTABLE|**Table**]], basic operators
     
-- [[C.1. Sed#^SEDOPTABLE|**Table**]], examples of operators
+- [[sed#^SEDOPTABLE|**Table**]], examples of operators
     
 
 [[testing-and-branching#^SELECTREF|select]], construct for menu building
@@ -1981,7 +1981,7 @@ Simulations
     
 - [[generate-random-integer#^BROWNIANREF|Galton board]]
     
-- [[colorizing#^HORSERACEREF|Horserace]]
+- [[colorizing-scripts#^HORSERACEREF|Horserace]]
     
 - [[contributed-scripts#^LIFEREF|_Life_]], game of
     
@@ -2036,7 +2036,7 @@ Standard Deviation, [[contributed-scripts#^STDDEV|example script]]
 
 Strings
 
-- **=~** [[bash-ver3#^REGEXMATCHREF|String match operator]]
+- **=~** [[bash-version-3#^REGEXMATCHREF|String match operator]]
     
 - [[other-comparison-operators#^SCOMPARISON1|Comparison]]
     
@@ -2046,7 +2046,7 @@ Strings
     
 - [[manipulating-strings#^STRINGMANIP|Manipulation]]
     
-- [[manipulating-strings#^AWKSTRINGMANIP2|Manipulation]], using [[C.2. Awk#^AWKREF|awk]]
+- [[manipulating-strings#^AWKSTRINGMANIP2|Manipulation]], using [[awk#^AWKREF|awk]]
     
 - [[other-comparison-operators#^STRINGNOTNULL|_Null_ string]], testing for
     
@@ -2094,7 +2094,7 @@ Strings
     
     [[contributed-scripts#^DAYSBETWEEN0|_Script example_]]
     
-- [[refcards#^STRINGOPSTAB|**Table**]] of _string/substring_ manipulation and extraction operators
+- [[reference-cards#^STRINGOPSTAB|**Table**]] of _string/substring_ manipulation and extraction operators
     
 
 [[varsubn#^SNGLQUO|_Strong_ quoting]] **' ... '**
@@ -2129,7 +2129,7 @@ Strings
 
 [[tabexpansion|Tab completion]]
 
-Table lookup, [[bash-ver2#^RESISTOR|script example]]
+Table lookup, [[bash-version-2#^RESISTOR|script example]]
 
 [[text-processing-commands#^TAILREF|tail]], _echo_ to stdout lines at the (tail) end of a text file
 
@@ -2213,9 +2213,9 @@ Test operators
     
 - **Tables** of _test_ operators
     
-    [[refcards#^BINCOMPTAB|Binary comparison]]
+    [[reference-cards#^BINCOMPTAB|Binary comparison]]
     
-    [[refcards#^FILESTAB|File]]
+    [[reference-cards#^FILESTAB|File]]
     
 
 [[text-processing-commands|Text and text file processing]]
@@ -2253,7 +2253,7 @@ Timed input
     
 - [[assorted-tips#^CSTYLE|_C_-style syntax]] , for manipulating variables
     
-- [[C.1. Sed#^DOUBLESPACE|Double-spacing a text file]]
+- [[sed#^DOUBLESPACE|Double-spacing a text file]]
     
 - Filenames prefixed with a dash, [[basic-commands#^DASHREM|removing]]
     
@@ -2269,7 +2269,7 @@ Timed input
     
 - [[assorted-tips#^PASSARRAY|Passing an _array_]] to a function
     
-- $PATH, appending to, [[bash-ver3#^PATHAPPEND|using the += operator]].
+- $PATH, appending to, [[bash-version-3#^PATHAPPEND|using the += operator]].
     
 - [[assorted-tips#^PREPENDREF|_Prepending_]] lines at head of a file
     
@@ -2349,7 +2349,7 @@ _Trinary (ternary)_ operator, _C_-style, **var>10?88:99**
 
 [[system-and-administrative-commands#^UNAMEREF|uname]], output system information
 
-[[bash-ver4#^UNICODEREF|Unicode]], encoding standard for representing letters and symbols
+[[bash-version-4#^UNICODEREF|Unicode]], encoding standard for representing letters and symbols
 
 - [[optimizations#^LCALL|Disabling _unicode_]] to optimize script
     

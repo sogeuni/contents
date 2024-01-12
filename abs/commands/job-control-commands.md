@@ -231,6 +231,6 @@ Note that _autoload_ is not a part of the core Bash installation. It needs to be
 
 [^2]: The C source for a number of loadable builtins is typically found in the /usr/share/doc/bash-?.??/functions directory.
 
-    Note that the -f option to **enable** is not [[portabilityissues|portable]] to all systems.
+    Note that the -f option to **enable** is not [[portability-issues|portable]] to all systems.
 
 [^3]: The same effect as **autoload** can be achieved with [[typing-variables.html|typeset -fu]].

@@ -2,7 +2,7 @@
 title: 18.2. Globbing
 ---
 
-Bash itself cannot recognize Regular Expressions. Inside scripts, it is commands and utilities -- such as [[Appendix%20C.%20A%20Sed%20and%20Awk%20Micro-Primer#^SEDREF|sed]] and [[C.2. Awk#^AWKREF|awk]] -- that interpret RE's.
+Bash itself cannot recognize Regular Expressions. Inside scripts, it is commands and utilities -- such as [[Appendix%20C.%20A%20Sed%20and%20Awk%20Micro-Primer#^SEDREF|sed]] and [[awk#^AWKREF|awk]] -- that interpret RE's.
 
 Bash _does_ carry out _filename expansion_ [^1] -- a process known as _globbing_ -- but this does _not_ use the standard RE set. Instead, globbing recognizes and expands _wild cards_. Globbing interprets the standard wild card characters [^2] -- [[special-characters#^ASTERISKREF|*]] and [[special-characters#^WILDCARDQU|?]], character lists in square brackets, and certain other special characters (such as ^ for negating the sense of a match). There are important limitations on wild card characters in globbing, however. Strings containing _*_ will not match filenames that start with a dot, as, for example, [[sample-bashrc.html|.bashrc]]. [^3] Likewise, the _?_ has a different meaning in globbing than as part of an RE.
 

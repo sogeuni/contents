@@ -88,7 +88,7 @@ esac
 
 ### ;;&, ;&
 
-**[[bash-ver4#^NCTERM|Terminators]] in a _case_ option ([[bash-ver4#^BASH4REF|version 4+]] of Bash).**
+**[[bash-version-4#^NCTERM|Terminators]] in a _case_ option ([[bash-version-4#^BASH4REF|version 4+]] of Bash).**
 
 ### .
 
@@ -188,7 +188,7 @@ done
 
 ### ,, ,
 
-**[[bash-ver4#^CASEMODPARAMSUB|Lowercase conversion]] in _parameter substitution_ (added in [[bash-ver4#^BASH4REF|version 4]] of Bash).**
+**[[bash-version-4#^CASEMODPARAMSUB|Lowercase conversion]] in _parameter substitution_ (added in [[bash-version-4#^BASH4REF|version 4]] of Bash).**
 
 ### \
 
@@ -310,7 +310,7 @@ A _colon_ is [[functions#^FSTRANGEREF|acceptable as a function name]].
 # The name of this function is :
 ```
 
-This is not [[portabilityissues|portable]] behavior, and therefore not a recommended practice. In fact, more recent releases of Bash do not permit this usage. An underscore **_** works, though.
+This is not [[portability-issues|portable]] behavior, and therefore not a recommended practice. In fact, more recent releases of Bash do not permit this usage. An underscore **_** works, though.
 
 A _colon_ can serve as a placeholder in an otherwise empty function.
 
@@ -345,7 +345,7 @@ The * also represents [[brief-introduction-to-regular-expressions#^ASTERISKREG|a
 
 **[[operators#^AROPS1|arithmetic operator]].** In the context of arithmetic operations, the * denotes multiplication.
 
-** A double asterisk can represent the [[operators#^EXPONENTIATIONREF|exponentiation]] operator or [[bash-ver4#^GLOBSTARREF|extended file-match]] _globbing_.
+** A double asterisk can represent the [[operators#^EXPONENTIATIONREF|exponentiation]] operator or [[bash-version-4#^GLOBSTARREF|extended file-match]] _globbing_.
 
 ### ?
 
@@ -397,7 +397,7 @@ A $ prefixing a variable name indicates the _value_ the variable holds.
 
 ### $' ... '
 
-**[[escaping#^STRQ|Quoted string expansion]].** This construct expands single or multiple escaped octal or hex values into ASCII [^3] or [[bash-ver4#^UNICODEREF|Unicode]] characters.
+**[[escaping#^STRQ|Quoted string expansion]].** This construct expands single or multiple escaped octal or hex values into ASCII [^3] or [[bash-version-4#^UNICODEREF|Unicode]] characters.
 
 ### $*, $@
 

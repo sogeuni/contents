@@ -148,7 +148,7 @@ The **unexpand** filter converts spaces to tabs. This reverses the effect of **e
 
 **cut**
 
-A tool for extracting [[special-characters#^FIELDREF|fields]] from files. It is similar to the **print $N** command set in [[C.2. Awk#^AWKREF|awk]], but more limited. It may be simpler to use _cut_ in a script than _awk_. Particularly important are the -d (delimiter) and -f (field specifier) options.
+A tool for extracting [[special-characters#^FIELDREF|fields]] from files. It is similar to the **print $N** command set in [[awk#^AWKREF|awk]], but more limited. It may be simpler to use _cut_ in a script than _awk_. Particularly important are the -d (delimiter) and -f (field specifier) options.
 
 Using **cut** to obtain a listing of the mounted filesystems:
 
@@ -889,11 +889,11 @@ exit 0
 
 Scripting languages especially suited for parsing text files and command output. May be embedded singly or in combination in pipes and shell scripts.
 
-**[[Appendix C. A Sed and Awk Micro-Primer#^SEDREF|sed]]**
+**[[a-sed-and-awk-micro-primer#^SEDREF|sed]]**
 
 Non-interactive "stream editor", permits using many **ex** commands in [[time-date-commands#^BATCHPROCREF|batch]] mode. It finds many uses in shell scripts.
 
-**[[C.2. Awk#^AWKREF|awk]]**
+**[[awk#^AWKREF|awk]]**
 
 Programmable file extractor and formatter, good for manipulating and/or extracting [[special-characters#^FIELDREF|fields]] (columns) in structured text files. Its syntax is similar to C.
 

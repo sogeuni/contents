@@ -1,8 +1,6 @@
-**Table of Contents**
-
-C.1. [[C.1. Sed|Sed]]
-
-C.2. [[C.2. Awk|Awk]]
+---
+title: Appendix C. A Sed and Awk Micro-Primer
+---
 
 This is a very brief introduction to the **sed** and **awk** text processing utilities. We will deal with only a few basic commands here, but that will suffice for understanding simple sed and awk constructs within shell scripts.
 

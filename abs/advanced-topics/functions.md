@@ -14,7 +14,7 @@ _function_name_ () {
 _command_...  
 }  
 
-This second form will cheer the hearts of C programmers (and is more [[portabilityissues|portable]]).
+This second form will cheer the hearts of C programmers (and is more [[portability-issues|portable]]).
 
 As in C, the function's opening bracket may optionally appear on the second line.
 
