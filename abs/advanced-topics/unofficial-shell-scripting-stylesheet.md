@@ -1,5 +1,5 @@
 ---
-title 35.1. Unofficial Shell Scripting Stylesheet
+title: 35.1. Unofficial Shell Scripting Stylesheet
 ---
 
 - Comment your code. This makes it easier for others to understand (and appreciate), and easier for you to maintain.
@@ -8,13 +8,13 @@ title 35.1. Unofficial Shell Scripting Stylesheet
 PASS="$PASS${MATRIX:$(($RANDOM%${#MATRIX})):1}"
 #  It made perfect sense when you wrote it last year,
 #+ but now it's a complete mystery.
-#  (From Antek Sawicki's "pw.sh" script.)|
+#  (From Antek Sawicki's "pw.sh" script.)
+```
     
     Add descriptive headers to your scripts and functions.
     
-    |   |
-    |---|
-    |#!/bin/bash
+```bash
+#!/bin/bash
 
 #************************************************#
 #                   xyz.sh                       #
@@ -166,4 +166,3 @@ if COMMAND
 > --<cite>Landon Noll</cite>
 
 [^1]: In this context, "magic numbers" have an entirely different meaning than the [[starting-off-with-a-sha-bang#^MAGNUMREF|magic numbers]] used to designate file types.
-
