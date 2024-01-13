@@ -9,7 +9,7 @@ Certain of the following job control commands take a _job identifier_ as an argu
 Lists the jobs running in the background, giving the _job number_. Not as useful as [[system-and-administrative-commands#^PPSSREF|ps]].
 
 > [!note]
-> It is all too easy to confuse _jobs_ and _processes_. Certain [[internal-commands-and-builtins#^BUILTINREF|builtins]], such as **kill**, **disown**, and **wait** accept either a job number or a process number as an argument. The [[job-control-commands#^FGREF|fg]], [[job-control-commands#^BGREF|bg]] and **jobs** commands accept only a job number.
+> It is all too easy to confuse _jobs_ and _processes_. Certain [[internal-commands-and-builtins|builtins]], such as **kill**, **disown**, and **wait** accept either a job number or a process number as an argument. The [[job-control-commands#^FGREF|fg]], [[job-control-commands#^BGREF|bg]] and **jobs** commands accept only a job number.
 >
 > ```bash
 > bash$ sleep 100 &
@@ -201,13 +201,13 @@ bash$ command ls
 
 **builtin**
 
-Invoking **builtin BUILTIN_COMMAND** runs the command _BUILTIN_COMMAND_ as a shell [[internal-commands-and-builtins#^BUILTINREF|builtin]], temporarily disabling both functions and external system commands with the same name.
+Invoking **builtin BUILTIN_COMMAND** runs the command _BUILTIN_COMMAND_ as a shell [[internal-commands-and-builtins|builtin]], temporarily disabling both functions and external system commands with the same name.
 
 **enable**
 
 This either enables or disables a shell builtin command. As an example, _enable -n kill_ disables the shell builtin [[job-control-commands#^KILLREF|kill]], so that when Bash subsequently encounters _kill_, it invokes the external command /bin/kill.
 
-The -a option to _enable_ lists all the shell builtins, indicating whether or not they are enabled. The -f filename option lets _enable_ load a [[internal-commands-and-builtins#^BUILTINREF|builtin]] as a shared library (DLL) module from a properly compiled object file. [^2].
+The -a option to _enable_ lists all the shell builtins, indicating whether or not they are enabled. The -f filename option lets _enable_ load a [[internal-commands-and-builtins|builtin]] as a shared library (DLL) module from a properly compiled object file. [^2].
 
 **autoload**
 

@@ -373,7 +373,7 @@ exit 0
 #+ complete with whitespace, line breaks, etc.
 ```
 
-In an array context, some Bash [[internal-commands-and-builtins#^BUILTINREF|builtins]] have a slightly altered meaning. For example, [[internal-commands-and-builtins#^UNSETREF|unset]] deletes array elements, or even an entire array.
+In an array context, some Bash [[internal-commands-and-builtins|builtins]] have a slightly altered meaning. For example, [[internal-commands-and-builtins#^UNSETREF|unset]] deletes array elements, or even an entire array.
 
 **Example 27-6. Some special properties of arrays**
 

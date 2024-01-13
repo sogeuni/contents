@@ -92,7 +92,7 @@ esac
 
 ### .
 
-**"dot" command [[internal-commands-and-builtins#^SOURCEREF|period].** Equivalent to [source]] (see [[internal-commands-and-builtins#^EX38|Example 15-22]]). This is a bash [[internal-commands-and-builtins#^BUILTINREF|builtin]].
+**"dot" command [[internal-commands-and-builtins#^SOURCEREF|period].** Equivalent to [source]] (see [[internal-commands-and-builtins#^EX38|Example 15-22]]). This is a bash [[internal-commands-and-builtins|builtin]].
 
 ### .
 
@@ -210,7 +210,7 @@ This is also the division [[operators#^AROPS1|arithmetic operator]].
 
 ### :
 
-**null command [[internal-commands-and-builtins#^TRUEREF|colon].** This is the shell equivalent of a "NOP" (_no op_, a do-nothing operation). It may be considered a synonym for the shell builtin [true]]. The ":" command is itself a _Bash_ [[internal-commands-and-builtins#^BUILTINREF|builtin]], and its [[exit-status#^EXITSTATUSREF|exit status]] is _true_ (0).
+**null command [[internal-commands-and-builtins#^TRUEREF|colon].** This is the shell equivalent of a "NOP" (_no op_, a do-nothing operation). It may be considered a synonym for the shell builtin [true]]. The ":" command is itself a _Bash_ [[internal-commands-and-builtins|builtin]], and its [[exit-status#^EXITSTATUSREF|exit status]] is _true_ (0).
 
 ```bash
 :
@@ -594,7 +594,7 @@ ls . | xargs -i -t cp ./{} $1
 
 ### {} \;
 
-**pathname.** Mostly used in [[complex-commands#^FINDREF|find]] constructs. This is _not_ a shell [[internal-commands-and-builtins#^BUILTINREF|builtin]].
+**pathname.** Mostly used in [[complex-commands#^FINDREF|find]] constructs. This is _not_ a shell [[internal-commands-and-builtins|builtin]].
 
 > Definition: A _pathname_ is a _filename_ that includes the complete [[internal-variables#^PATHREF|path]]. As an example, /home/bozo/Notes/Thursday/schedule.txt. This is sometimes referred to as the _absolute path_.
 
@@ -910,7 +910,7 @@ The _double-dash_ -- prefixes _long_ (verbatim) options to commands.
 
 **sort --ignore-leading-blanks**
 
-Used with a [[internal-commands-and-builtins#^BUILTINREF|Bash builtin]], it means the _end of options_ to that particular command.
+Used with a [[internal-commands-and-builtins|Bash builtin]], it means the _end of options_ to that particular command.
 
 > [!tip]
 > This provides a handy means of removing files whose _names begin with a dash_.
@@ -1120,7 +1120,7 @@ In a [[brief-introduction-to-regular-expressions#^PLUSREF|different context]], t
 
 **Option.** Option flag for a command or filter.
 
-Certain commands and [[internal-commands-and-builtins#^BUILTINREF|builtins]] use the + to enable certain options and the - to disable them. In [[parameter-substitution#^PARAMSUBREF|parameter substitution]], the + prefixes an [[parameter-substitution#^PARAMALTV|alternate value]] that a variable expands to.
+Certain commands and [[internal-commands-and-builtins|builtins]] use the + to enable certain options and the - to disable them. In [[parameter-substitution#^PARAMSUBREF|parameter substitution]], the + prefixes an [[parameter-substitution#^PARAMALTV|alternate value]] that a variable expands to.
 
 ### %
 
@@ -1420,6 +1420,6 @@ UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whites
 
 [^7]: Even as in olden times a _philtre_ denoted a potion alleged to have magical transformative powers, so does a UNIX _filter_ transform its target in (roughly) analogous fashion. (The coder who comes up with a "love philtre" that runs on a Linux machine will likely win accolades and honors.)
 
-[^8]: Bash stores a list of commands previously issued from the command-line in a _buffer_, or memory space, for recall with the [[internal-commands-and-builtins#^BUILTINREF|builtin]] _history_ commands.
+[^8]: Bash stores a list of commands previously issued from the command-line in a _buffer_, or memory space, for recall with the [[internal-commands-and-builtins|builtin]] _history_ commands.
 
 [^9]: A linefeed (_newline_) is also a whitespace character. This explains why a _blank line_, consisting only of a linefeed, is considered whitespace.

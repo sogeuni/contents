@@ -137,6 +137,7 @@ exit 0
 > 
 > exit $?
 > ```
+>
 > **Example 24-14. Another simple demonstration**
 >
 > ```bash
@@ -168,6 +169,7 @@ exit 0
 > 
 > exit $?
 > ```
+^RECURSIONREF0
 
 Local variables are a useful tool for writing recursive code, but this practice generally involves a great deal of computational overhead and is definitely _not_ recommended in a shell script. [^6]
 

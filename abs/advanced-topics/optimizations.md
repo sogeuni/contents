@@ -6,7 +6,7 @@ Most shell scripts are quick 'n dirty solutions to non-complex problems. As such
 
 Check the loops in the script. Time consumed by repetitive operations adds up quickly. If at all possible, remove time-consuming operations from within loops.
 
-Use [[internal.html#BUILTINREF|builtin]] commands in preference to system commands. Builtins execute faster and usually do not launch a subshell when invoked.
+Use [[internal-commands-and-builtins|builtin]] commands in preference to system commands. Builtins execute faster and usually do not launch a subshell when invoked.
 
 Avoid unnecessary commands, particularly in a [[special-chars.html#PIPEREF|pipe]].
 

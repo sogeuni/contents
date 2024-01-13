@@ -351,7 +351,7 @@ Examples of command substitution in shell scripts:
 15. [[math-commands#^BASE|Example 16-48]]
 16. [[math-commands#^ALTBC|Example 16-49]]
 
-[^1]: For purposes of _command substitution_, a **command** may be an external system command, an internal scripting [[internal-commands-and-builtins#^BUILTINREF|builtin]], or even [[assorted-tips#^RVT|a script function]].
+[^1]: For purposes of _command substitution_, a **command** may be an external system command, an internal scripting [[internal-commands-and-builtins|builtin]], or even [[assorted-tips#^RVT|a script function]].
 
 [^2]: In a more technically correct sense, _command substitution_ extracts the stdout of a command, then assigns it to a variable using the = operator.
 

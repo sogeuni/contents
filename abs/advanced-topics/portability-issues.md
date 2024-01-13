@@ -25,7 +25,7 @@ Bash has certain features that the traditional [[shell-programming#^BASHDEF|Bour
 - Certain [[manipulating-strings#^STRINGMANIP|string manipulation]] operations
 - [[process-substitution#^PROCESSSUBREF|Process substitution]]
 - A Regular Expression [[bash-version-3#^REGEXMATCHREF|matching operator]]
-- Bash-specific [[internal-commands-and-builtins#^BUILTINREF|builtins]]
+- Bash-specific [[internal-commands-and-builtins|builtins]]
 - [[bash-version-4#^COPROCREF|Coprocesses]]
 
 See the [Bash F.A.Q.](ftp://ftp.cwru.edu/pub/bash/FAQ) for a complete listing.

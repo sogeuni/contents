@@ -48,7 +48,7 @@ Note: The "UID ..." line would be filtered out by the "grep" command,
 but is shown here for illustrative purposes.
 ```
 
-In general, an [[external-filters-programs-and-commands#^EXTERNALREF|external command]] in a script [[internal-commands-and-builtins#^FORKREF|forks off]] a subprocess, [^1] whereas a Bash [[internal-commands-and-builtins#^BUILTINREF|builtin]] does not. For this reason, builtins execute more quickly and use fewer system resources than their external command equivalents.
+In general, an [[external-filters-programs-and-commands#^EXTERNALREF|external command]] in a script [[internal-commands-and-builtins#^FORKREF|forks off]] a subprocess, [^1] whereas a Bash [[internal-commands-and-builtins|builtin]] does not. For this reason, builtins execute more quickly and use fewer system resources than their external command equivalents.
 
 **Command List within Parentheses**
 

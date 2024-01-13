@@ -420,7 +420,7 @@ filelist.bash4
     
 - The new [[internal-variables#^BASHPIDREF|$BASHPID]] internal variable.
     
-- There is a new [[internal-commands-and-builtins#^BUILTINREF|builtin]] error-handling function named **command_not_found_handle**.
+- There is a new [[internal-commands-and-builtins|builtin]] error-handling function named **command_not_found_handle**.
     
 ```bash
 #!/bin/bash4

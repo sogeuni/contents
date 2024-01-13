@@ -55,7 +55,7 @@ head -1 /dev/hdc
 
 When executing a command on a /dev/tcp/$host/$port pseudo-device file, Bash opens a TCP connection to the associated _socket_.
 
-> A _socket_ is a communications node associated with a specific I/O port. (This is analogous to a _hardware socket_, or _receptacle_, for a connecting cable.) It permits data transfer between hardware devices on the same machine, between machines on the same network, between machines across different networks, and, of course, between machines at different locations on the Internet.
+> A _socket_ is a communications node associated with a specific I/O port. (This is analogous to a _hardware socket_, or _receptacle_, for a connecting cable.) It permits data transfer between hardware devices on the same machine, between machines on the same network, between machines across different networks, and, of course, between machines at different locations on the Internet. ^SOCKETREF
 
 The following examples assume an active Internet connection.
 

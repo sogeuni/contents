@@ -1,7 +1,6 @@
 ---
 title: 15. Internal Commands and Builtins
 ---
-
 A _builtin_ is a **command** contained within the Bash tool set, literally _built in_. This is either for performance reasons -- builtins execute faster than external commands, which usually require _forking off_ [^1] a separate process -- or because a particular builtin needs direct access to the shell internals.
 
 > When a command or the shell itself initiates (or _spawns_) a new subprocess to carry out a task, this is called _forking_. This new process is the _child_, and the process that _forked_ it off is the _parent_. While the _child process_ is doing its work, the _parent process_ is still executing.
@@ -56,7 +55,7 @@ echo "This line uses the \"echo\" builtin."
 /bin/echo "This line uses the /bin/echo system command."
 ```
 
-A _keyword_ is a _reserved_ word, token or operator. Keywords have a special meaning to the shell, and indeed are the building blocks of the shell's syntax. As examples, _for_, _while_, _do_, and _!_ are keywords. Similar to a [[internal-commands-and-builtins#^BUILTINREF|builtin]], a keyword is hard-coded into Bash, but unlike a _builtin_, a keyword is not in itself a command, but _a subunit of a command construct_. [^2]
+A _keyword_ is a _reserved_ word, token or operator. Keywords have a special meaning to the shell, and indeed are the building blocks of the shell's syntax. As examples, _for_, _while_, _do_, and _!_ are keywords. Similar to a [[internal-commands-and-builtins|builtin]], a keyword is hard-coded into Bash, but unlike a _builtin_, a keyword is not in itself a command, but _a subunit of a command construct_. [^2]
 
 **I/O**
 

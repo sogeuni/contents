@@ -22,7 +22,7 @@ Shell scripting hearkens back to the classic UNIX philosophy of breaking complex
 According to [[bibliography#^MAYERREF|Herbert Mayer]], "a useful language needs arrays, pointers, and a generic mechanism for building data structures." By these criteria, shell scripting falls somewhat short of being "useful." Or, perhaps not. . . .
 
 > When not to use shell scripts
-> 
+>
 > - Resource-intensive tasks, especially where speed is a factor (sorting, hashing, recursion [^2] ...)
 > - Procedures involving heavy-duty math operations, especially floating point arithmetic, arbitrary precision calculations, or complex numbers (use _C++_ or _FORTRAN_ instead)
 > - Cross-platform portability required (use _C_ or _Java_ instead)
@@ -38,10 +38,10 @@ According to [[bibliography#^MAYERREF|Herbert Mayer]], "a useful language needs 
 > - Need port or [[dev#^SOCKETREF|socket]] I/O
 > - Need to use libraries or interface with legacy code
 > - Proprietary, closed-source applications (Shell scripts put the source code right out in the open for all the world to see.)
-> 
+>
 > If any of the above applies, consider a more powerful scripting language -- perhaps _Perl_, _Tcl_, _Python_, _Ruby_ -- or possibly a compiled language such as _C_, _C++_, or _Java_. Even then, prototyping the application as a shell script might still be a useful development step.
 
-We will be using Bash, an acronym [^3] for "Bourne-Again shell" and a pun on Stephen Bourne's now classic _Bourne_ shell. Bash has become a _de facto_ standard for shell scripting on most flavors of UNIX. Most of the principles this book covers apply equally well to scripting with other shells, such as the _Korn Shell_, from which Bash derives some of its features, [^4] and the _C Shell_ and its variants. (Note that _C Shell_ programming is not recommended due to certain inherent problems, as pointed out in an October, 1993 [Usenet post](http://www.faqs.org/faqs/unix-faq/shell/csh-whynot/) by Tom Christiansen.)
+We will be using Bash, an acronym [^3] for "Bourne-Again shell" and a pun on Stephen Bourne's now classic _Bourne_ shell. Bash has become a _de facto_ standard for shell scripting on most flavors of UNIX. Most of the principles this book covers apply equally well to scripting with other shells, such as the _Korn Shell_, from which Bash derives some of its features, [^4] and the _C Shell_ and its variants. (Note that _C Shell_ programming is not recommended due to certain inherent problems, as pointed out in an October, 1993 [Usenet post](http://www.faqs.org/faqs/unix-faq/shell/csh-whynot/) by Tom Christiansen.) ^BASHDEF
 
 What follows is a tutorial on shell scripting. It relies heavily on examples to illustrate various features of the shell. The example scripts work -- they've been tested, insofar as possible -- and some of them are even useful in real life. The reader can play with the actual working code of the examples in the source archive (scriptname.sh or scriptname.bash), [^5] give them _execute_ permission (**chmod u+rx scriptname**), then run them to see what happens. Should the [source archive](http://bash.deta.in/abs-guide-latest.tar.bz2) not be available, then cut-and-paste from the [HTML](http://www.tldp.org/LDP/abs/abs-guide.html.tar.gz) or [pdf](http://bash.deta.in/abs-guide.pdf) rendered versions. Be aware that some of the scripts presented here introduce features before they are explained, and this may require the reader to temporarily skip ahead for enlightenment.
 
@@ -51,9 +51,9 @@ Unless otherwise noted, [the author](mailto:thegrendel.abs@gmail.com) of this bo
 >
 > --<cite>Edmund Spenser</cite>
 
-[^1]: These are referred to as [[internal-commands-and-builtins#^BUILTINREF|builtins]], features internal to the shell.
+[^1]: These are referred to as [[internal-commands-and-builtins|builtins]], features internal to the shell.
 
-[^2]: Although [[local-variables#^RECURSIONREF0|recursion _is_ possible in a shell script]], it tends to be slow and its implementation is often an [[recursion-without-local-variables#^FIBOREF|ugly kludge]].
+[^2]: Although [[local-variables#^RECURSIONREF0|recursion is possible in a shell script]], it tends to be slow and its implementation is often an [[recursion-without-local-variables#^EX24-16|ugly kludge]].
 
 [^3]: An _acronym_ is an _ersatz_ word formed by pasting together the initial letters of the words into a tongue-tripping phrase. This morally corrupt and pernicious practice deserves appropriately severe punishment. Public flogging suggests itself.
 

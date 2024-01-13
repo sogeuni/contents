@@ -3,7 +3,7 @@ title: 9.1. Internal Variables
 ---
 
 
-_[[internal-commands-and-builtins#^BUILTINREF|Builtin]] variables:_
+_[[internal-commands-and-builtins|Builtin]] variables:_
 
 variables affecting bash script behavior
 
@@ -849,7 +849,7 @@ fi
 See also [[starting-off-with-a-sha-bang#^EX2|Example 2-3]].
 
 > [!note]
-> The variables $ENV, $LOGNAME, $MAIL, $TERM, $USER, and $USERNAME are _not_ Bash [[internal-commands-and-builtins#^BUILTINREF|builtins]]. These are, however, often set as [[othertypesv#^ENVREF|environmental variables]] in one of the [[important-files#^FILESREF1|Bash]] or _login_ startup files. $SHELL, the name of the user's login shell, may be set from /etc/passwd or in an "init" script, and it is likewise not a Bash builtin.
+> The variables $ENV, $LOGNAME, $MAIL, $TERM, $USER, and $USERNAME are _not_ Bash [[internal-commands-and-builtins|builtins]]. These are, however, often set as [[othertypesv#^ENVREF|environmental variables]] in one of the [[important-files#^FILESREF1|Bash]] or _login_ startup files. $SHELL, the name of the user's login shell, may be set from /etc/passwd or in an "init" script, and it is likewise not a Bash builtin.
 >
 > ```bash
 > tcsh% echo $LOGNAME

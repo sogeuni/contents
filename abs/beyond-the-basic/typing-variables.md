@@ -2,7 +2,7 @@
 title: "9.2. Typing variables: **declare** or **typeset**"
 ---
 
-The _declare_ or _typeset_ [[internal-commands-and-builtins#^BUILTINREF|builtins]], which are exact synonyms, permit modifying the properties of variables. This is a very weak form of the _typing_ [^1] available in certain programming languages. The _declare_ command is specific to version 2 or later of Bash. The _typeset_ command also works in ksh scripts.
+The _declare_ or _typeset_ [[internal-commands-and-builtins|builtins]], which are exact synonyms, permit modifying the properties of variables. This is a very weak form of the _typing_ [^1] available in certain programming languages. The _declare_ command is specific to version 2 or later of Bash. The _typeset_ command also works in ksh scripts.
 
 **declare/typeset options**
 

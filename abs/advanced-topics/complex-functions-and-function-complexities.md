@@ -633,4 +633,4 @@ Function ()  # This doesn't work.
 > [!note]
 > Emmanuel Rouat's [[sample-bashrc-and-bash-profile-files.html|sample bashrc file]] contains some instructive examples of functions.
 
-[^1]: The **return** command is a Bash [[internal-commands-and-builtins#^BUILTINREF|builtin]].
+[^1]: The **return** command is a Bash [[internal-commands-and-builtins|builtin]].

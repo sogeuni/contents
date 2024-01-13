@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/advanced-topics/aliases.md",
+                "file": "abs/introduction/shell-programming.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -70,7 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 273.5
   },
   "right": {
     "id": "b61191cfb73da0e5",
@@ -87,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/advanced-topics/aliases.md",
+                "file": "abs/introduction/shell-programming.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/advanced-topics/aliases.md",
+                "file": "abs/introduction/shell-programming.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/advanced-topics/aliases.md"
+                "file": "abs/introduction/shell-programming.md"
               }
             }
           },
@@ -153,7 +153,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/advanced-topics/aliases.md",
+                "file": "abs/introduction/shell-programming.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -166,8 +166,8 @@
                   "hideUnresolved": false,
                   "collapse-color-groups": true,
                   "colorGroups": [],
-                  "collapse-display": true,
-                  "showArrow": false,
+                  "collapse-display": false,
+                  "showArrow": true,
                   "textFadeMultiplier": 0,
                   "nodeSizeMultiplier": 1,
                   "lineSizeMultiplier": 1,
@@ -176,7 +176,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.7132754626224427,
+                  "scale": 1.1479419914105844,
                   "close": true
                 }
               }
@@ -186,7 +186,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 550.5
+    "width": 793.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -198,8 +198,18 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "7c4dde10a3995f5d",
+  "active": "4272eec0c40732e3",
   "lastOpenFiles": [
+    "abs/advanced-topics/recursion-without-local-variables.md",
+    "abs/introduction/shell-programming.md",
+    "abs/commands/internal-commands-and-builtins.md",
+    "abs/advanced-topics/devproc.md",
+    "abs/advanced-topics/dev-and-proc.md",
+    "abs/bibliography.md",
+    "abs/advanced-topics/shell-wrappers.md",
+    "abs/introduction/index.md",
+    "abs/index.md",
+    "abs/advanced-topics/aliases.md",
     "abs/apendix/ascii-table.md",
     "abs/apendix/copyright.md",
     "abs/apendix/Appendix T. ASCII Table.md",
@@ -216,16 +226,6 @@
     "abs/apendix/exercises.md",
     "abs/apendix/converting-dos-batch-files-to-shell-scripts.md",
     "abs/apendix/Appendix N. Converting DOS Batch Files to Shell Scripts.md",
-    "abs/apendix/sample-bashrc-and-bash-profile-files.md",
-    "abs/apendix/sample-bashrc.md",
-    "abs/apendix/history-commands.md",
-    "abs/apendix/histcommands.md",
-    "abs/apendix/localization.md",
-    "abs/apendix/an-introduction-to-programmable-completion.md",
-    "abs/apendix/tabexpansion.md",
-    "abs/apendix/important-system-directories.md",
-    "abs/apendix/systemdirs.md",
-    "abs/apendix/important-files.md",
     "_abs",
     "git",
     "abs/apendix",
