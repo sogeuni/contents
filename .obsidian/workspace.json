@@ -19,22 +19,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "794bdc0ce6414f49",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "abs/advanced-topics/recursion-without-local-variables.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -101,7 +87,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/advanced-topics/recursion-without-local-variables.md",
+                "file": "abs/introduction/shell-programming.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +104,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/advanced-topics/recursion-without-local-variables.md",
+                "file": "abs/introduction/shell-programming.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +127,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/advanced-topics/recursion-without-local-variables.md"
+                "file": "abs/introduction/shell-programming.md"
               }
             }
           },
@@ -167,7 +153,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/advanced-topics/recursion-without-local-variables.md",
+                "file": "abs/introduction/shell-programming.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -212,10 +198,10 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "794bdc0ce6414f49",
+  "active": "a7f108f530ed14b7",
   "lastOpenFiles": [
-    "abs/introduction/shell-programming.md",
     "abs/advanced-topics/recursion-without-local-variables.md",
+    "abs/introduction/shell-programming.md",
     "abs/advanced-topics/recurnolocvar.md",
     "abs/introduction/preliminary-exercises.md",
     "abs/advanced-topics/aliases.md",
