@@ -6,7 +6,7 @@ A function may recursively call itself even without use of local variables.
 
 **Example 24-16. _The Fibonacci Sequence_**
 
-```bash
+```bash title="Example 24-16. _The Fibonacci Sequence_"
 #!/bin/bash
 # fibo.sh : Fibonacci sequence (recursive)
 # Author: M. Cooper
@@ -54,6 +54,7 @@ echo
 
 exit 0
 ```
+^EX24-16
 
 **Example 24-17. _The Towers of Hanoi_**
 
