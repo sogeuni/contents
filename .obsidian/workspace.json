@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
+                "file": "abs/advanced-topics/recursion-without-local-variables.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -62,7 +62,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "part 1. intro",
+                "query": "Recursion Without Local Variables",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,7 +79,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -100,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
+                "file": "abs/advanced-topics/recursion-without-local-variables.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
+                "file": "abs/advanced-topics/recursion-without-local-variables.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/introduction/starting-off-with-a-sha-bang.md"
+                "file": "abs/advanced-topics/recursion-without-local-variables.md"
               }
             }
           },
@@ -166,7 +167,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
+                "file": "abs/advanced-topics/recursion-without-local-variables.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -213,6 +214,8 @@
   },
   "active": "a7f108f530ed14b7",
   "lastOpenFiles": [
+    "abs/introduction/starting-off-with-a-sha-bang.md",
+    "abs/advanced-topics/portability-issues.md",
     "abs/introduction/shell-programming.md",
     "abs/advanced-topics/recursion-without-local-variables.md",
     "abs/advanced-topics/recurnolocvar.md",
@@ -237,8 +240,6 @@
     "abs/apendix/sample-bashrc-and-bash-profile-files.md",
     "abs/apendix/sample-bashrc.md",
     "abs/apendix/history-commands.md",
-    "abs/apendix/histcommands.md",
-    "abs/apendix/localization.md",
     "_abs",
     "git",
     "abs/apendix",

@@ -14,7 +14,7 @@ title: 11.3. Loop Control
 
 The **break** and **continue** loop control commands [^1] correspond exactly to their counterparts in other programming languages. The **break** command terminates the loop (_breaks_ out of it), while **continue** causes a jump to the next [[loops#^ITERATIONREF|iteration]] of the loop, skipping all the remaining commands in that particular loop cycle.
 
-**Example 11-21. Effects of _break_ and **continue** in a loop**
+###### Example 11-21. Effects of *break* and **continue** in a loop
 
 ```bash
 #!/bin/bash
@@ -70,7 +70,7 @@ exit 0
 
 The **break** command may optionally take a parameter. A plain **break** terminates only the innermost loop in which it is embedded, but a **break N** breaks out of _N_ levels of loop.
 
-**Example 11-22. Breaking out of multiple loop levels**
+###### Example 11-22. Breaking out of multiple loop levels
 
 ```bash
 #!/bin/bash
@@ -105,7 +105,7 @@ exit 0
 
 The **continue** command, similar to **break**, optionally takes a parameter. A plain **continue** cuts short the current iteration within its loop and begins the next. A **continue N** terminates all remaining iterations at its loop level and continues with the next iteration at the loop, N levels above.
 
-**Example 11-23. Continuing at a higher loop level**
+###### Example 11-23. Continuing at a higher loop level
 
 ```bash
 #!/bin/bash
@@ -140,7 +140,7 @@ echo; echo
 exit 0
 ```
 
-**Example 11-24. Using _continue N_ in an actual task**
+###### Example 11-24. Using *continue N* in an actual task
 
 ```bash
 # Albert Reiner gives an example of how to use "continue N":

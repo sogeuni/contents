@@ -4,7 +4,7 @@ title: 17.1. Analyzing a System Script
 
 Using our knowledge of administrative commands, let us examine a system script. One of the shortest and simplest to understand scripts is "killall," [^1] used to suspend running processes at system shutdown.
 
-**Example 17-12. _killall_, from /etc/rc.d/init.d**
+###### Example 17-12. *killall*, from /etc/rc.d/init.d
 
 ```bash
 #!/bin/sh

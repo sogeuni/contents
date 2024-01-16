@@ -63,7 +63,7 @@ Following the execution of a [[special-characters#^PIPEREF|pipe]], a $? gives th
 
 After a script terminates, a $? from the command-line gives the exit status of the script, that is, the last command executed in the script, which is, by convention, **0** on success or an integer in the range 1 - 255 on error.
 
-**Example 6-1. exit / exit status**
+###### Example 6-1. exit / exit status
 
 ```bash
 #!/bin/bash

@@ -176,7 +176,7 @@ Sets, changes, or manages a user's password.
 
 The **passwd** command can be used in a script, but probably _should not_ be.
 
-**Example 17-1. Setting a new password**
+###### Example 17-1. Setting a new password
 
 ```bash title="Example 17-1. Setting a new password"
 #!/bin/bash
@@ -276,7 +276,7 @@ bash$ tty
 
 Shows and/or changes terminal settings. This complex command, used in a script, can control terminal behavior and the way output displays. See the info page, and study it carefully.
 
-**Example 17-2. Setting an _erase_ character**
+###### Example 17-2. Setting an *erase* character
 
 ```bash
 #!/bin/bash
@@ -299,7 +299,7 @@ exit 0
 # Exercise: How would you reset the erase character to the default value?
 ```
 
-**Example 17-3. _secret password_: Turning off terminal echoing**
+###### Example 17-3. *secret password*: Turning off terminal echoing
 
 ```bash
 #!/bin/bash
@@ -335,7 +335,7 @@ exit 0
 
 A creative use of **stty** is detecting a user keypress (without hitting **ENTER**).
 
-**Example 17-4. Keypress detection**
+###### Example 17-4. Keypress detection
 
 ```bash
 #!/bin/bash
@@ -594,7 +594,7 @@ bash$ nc localhost.localdomain 25
 
 A real-life [[process-substitution#^NETCATEXAMPLE|usage example]].
 
-**Example 17-5. Checking a remote server for _identd_**
+###### Example 17-5. Checking a remote server for *identd*
 
 ```bash
 #! /bin/sh
@@ -1045,7 +1045,7 @@ bash$ pidof xclock
 	    
 ```
 
-**Example 17-6. _pidof_ helps kill a process**
+###### Example 17-6. *pidof* helps kill a process
 
 ```bash
 #!/bin/bash
@@ -1387,7 +1387,7 @@ mount /mnt/cdrom
 
 The versatile _mount_ command can even mount an ordinary file on a block device, and the file will act as if it were a filesystem. _Mount_ accomplishes that by associating the file with a [[dev#^LOOPBACKREF|loopback device]]. One application of this is to mount and examine an ISO9660 filesystem image before burning it onto a CDR. [^3]
 
-**Example 17-7. Checking a CD image**
+###### Example 17-7. Checking a CD image
 
 ```bash
 # As root...
@@ -1440,7 +1440,7 @@ At times, you may wish to force an immediate buffer flush, as when securely dele
 
 Sets up and configures [[dev#^LOOPBACKREF|loopback devices]].
 
-**Example 17-8. Creating a filesystem in a file**
+###### Example 17-8. Creating a filesystem in a file
 
 ```bash
 SIZE=1000000  # 1 meg
@@ -1465,7 +1465,7 @@ Enable / disable swap partitition or file. These commands usually take effect at
 
 Create a Linux _ext2_ filesystem. This command must be invoked as _root_.
 
-**Example 17-9. Adding a new hard drive**
+###### Example 17-9. Adding a new hard drive
 
 ```bash
 #!/bin/bash
@@ -1732,7 +1732,7 @@ Set user or group disk quotas from the command-line.
 
 User file creation permissions _mask_. Limit the default file attributes for a particular user. All files created by that user take on the attributes specified by **umask**. The (octal) value passed to **umask** defines the file permissions _disabled_. For example, **umask 022** ensures that new files will have at most 755 permissions (777 NAND 022). [^8] Of course, the user may later change the attributes of particular files with [[basic-commands#^CHMODREF|chmod]]. The usual practice is to set the value of **umask** in /etc/profile and/or ~/.bash_profile (see [[important-files|Appendix H]]).
 
-**Example 17-10. Using _umask_ to hide an output file from prying eyes**
+###### Example 17-10. Using *umask* to hide an output file from prying eyes
 
 ```bash
 #!/bin/bash
@@ -1883,7 +1883,7 @@ List symbols in an unstripped compiled binary.
 
 Command-line tool for manipulating the root window of the screen.
 
-**Example 17-11. _Backlight_: changes the brightness of the (laptop) screen backlight**
+###### Example 17-11. *Backlight*: changes the brightness of the (laptop) screen backlight
 
 ```bash
 #!/bin/bash

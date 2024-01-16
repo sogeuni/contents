@@ -10,7 +10,7 @@ the assignment operator (_no space before and after_)
 >
 > Note that = can be either an _assignment_ or a _test_ operator, depending on context.
 
-**Example 4-2. Plain Variable Assignment**
+###### Example 4-2. Plain Variable Assignment
 
 ```bash
 #!/bin/bash
@@ -51,7 +51,7 @@ echo
 exit 0
 ```
 
-**Example 4-3. Variable Assignment, plain and fancy**
+###### Example 4-3. Variable Assignment, plain and fancy
 
 ```bash
 #!/bin/bash

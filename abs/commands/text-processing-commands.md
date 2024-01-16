@@ -53,7 +53,7 @@ bash$ sort testfile | uniq -c | sort -nr
 
 The **sort INPUTFILE | uniq -c | sort -nr** command string produces a _frequency of occurrence_ listing on the INPUTFILE file (the -nr options to **sort** cause a reverse numerical sort). This template finds use in analysis of log files and dictionary lists, and wherever the lexical structure of a document needs to be examined.
 
-**Example 16-12. Word Frequency Analysis**
+###### Example 16-12. Word Frequency Analysis
 
 ```bash
 #!/bin/bash
@@ -265,7 +265,7 @@ File: 1.data 2.data
 
 lists the beginning of a file to stdout. The default is 10 lines, but a different number can be specified. The command has a number of interesting options.
 
-**Example 16-13. Which files are scripts?**
+###### Example 16-13. Which files are scripts?
 
 ```bash
 #!/bin/bash
@@ -300,7 +300,7 @@ exit 0
 #     Correct this.
 ```
 
-**Example 16-14. Generating 10-digit random numbers**
+###### Example 16-14. Generating 10-digit random numbers
 
 ```bash
 #!/bin/bash
@@ -393,7 +393,7 @@ See also [[file-and-archiving-commands#^EX52|Example 16-39]].
 
 lists the (tail) end of a file to stdout. The default is 10 lines, but this can be changed with the -n option. Commonly used to keep track of changes to a system logfile, using the -f option, which outputs lines appended to the file.
 
-**Example 16-15. Using _tail_ to monitor the system log**
+###### Example 16-15. Using *tail* to monitor the system log
 
 ```bash
 #!/bin/bash
@@ -506,7 +506,7 @@ printf 'a b\nc  d\n\n\n\n\n\000\n\000e\000\000\nf' \| grep -c '$'    # 9
 
 The --color (or --colour) option marks the matching string in color (on the console or in an _xterm_ window). Since _grep_ prints out each entire line containing the matching pattern, this lets you see exactly _what_ is being matched. See also the -o option, which shows only the matching portion of the line(s).
 
-**Example 16-16. Printing out the _From_ lines in stored e-mail messages**
+###### Example 16-16. Printing out the *From* lines in stored e-mail messages
 
 ```bash
 #!/bin/bash
@@ -574,7 +574,7 @@ fi
 
 [[debugging#^ONLINE|Example 32-6]] demonstrates how to use **grep** to search for a word pattern in a system logfile.
 
-**Example 16-17. Emulating _grep_ in a script**
+###### Example 16-17. Emulating *grep* in a script
 
 ```bash
 #!/bin/bash
@@ -646,7 +646,7 @@ This is an ordinary text file.
 
 Now, for an interesting recreational use of _grep_ . . .
 
-**Example 16-18. Crossword puzzle solver**
+###### Example 16-18. Crossword puzzle solver
 
 ```bash
 #!/bin/bash
@@ -732,7 +732,7 @@ Line 1 matches.
 > [!note]
 > On some Linux distros, **egrep** and **fgrep** are symbolic links to, or aliases for **grep**, but invoked with the -E and -F options, respectively.
 
-**Example 16-19. Looking up definitions in _Webster's 1913 Dictionary_**
+###### Example 16-19. Looking up definitions in *Webster's 1913 Dictionary*
 
 ```bash
 #!/bin/bash
@@ -836,7 +836,7 @@ exit $?
 
 The command **look** works like **grep**, but does a lookup on a "dictionary," a sorted word list. By default, **look** searches for a match in /usr/dict/words, but a different dictionary file may be specified.
 
-**Example 16-20. Checking words in a list for validity**
+###### Example 16-20. Checking words in a list for validity
 
 ```bash
 #!/bin/bash
@@ -1000,7 +1000,7 @@ bash$ echo "abcd2ef1" | tr '[:alpha:]' -
 ----2--1
 ```
 
-**Example 16-21. _toupper_: Transforms a file to all uppercase.**
+###### Example 16-21. *toupper*: Transforms a file to all uppercase.
 
 ```bash
 #!/bin/bash
@@ -1032,7 +1032,7 @@ exit 0
 #  Hint: Use either the "case" or "select" command.
 ```
 
-**Example 16-22. _lowercase_: Changes all filenames in working directory to lowercase.**
+###### Example 16-22. *lowercase*: Changes all filenames in working directory to lowercase.
 
 ```bash
 #!/bin/bash
@@ -1080,7 +1080,7 @@ done
 exit $?
 ```
 
-**Example 16-23. _du_: DOS to UNIX text file conversion.**
+###### Example 16-23. *du*: DOS to UNIX text file conversion.
 
 ```bash
 #!/bin/bash
@@ -1114,7 +1114,7 @@ exit 0
 # Change the above script to convert from UNIX to DOS.
 ```
 
-**Example 16-24. _rot13_: ultra-weak encryption.**
+###### Example 16-24. *rot13*: ultra-weak encryption.
 
 ```bash
 #!/bin/bash
@@ -1133,7 +1133,7 @@ cat "$@" | tr 'a-zA-Z' 'n-za-mN-ZA-M'   # "a" goes to "n", "b" to "o" ...
 exit 0
 ```
 
-**Example 16-25. Generating "Crypto-Quote" Puzzles**
+###### Example 16-25. Generating "Crypto-Quote" Puzzles
 
 ```bash
 #!/bin/bash
@@ -1205,7 +1205,7 @@ A filter that wraps lines of input to a specified width. This is especially usef
 
 Simple-minded file formatter, used as a filter in a pipe to "wrap" long lines of text output.
 
-**Example 16-26. Formatted file listing.**
+###### Example 16-26. Formatted file listing.
 
 ```bash
 #!/bin/bash
@@ -1235,7 +1235,7 @@ This deceptively named filter removes reverse line feeds from an input stream. I
 
 Column formatter. This filter transforms list-type text output into a "pretty-printed" table by inserting tabs at appropriate places.
 
-**Example 16-27. Using _column_ to format a directory listing**
+###### Example 16-27. Using *column* to format a directory listing
 
 ```bash
 #!/bin/bash
@@ -1269,7 +1269,7 @@ Line numbering filter: **nl filename** lists filename to stdout, but inserts con
 
 The output of **nl** is very similar to **cat -b**, since, by default **nl** does not list blank lines.
 
-**Example 16-28. _nl_: A self-numbering script.**
+###### Example 16-28. *nl*: A self-numbering script.
 
 ```bash
 #!/bin/bash
@@ -1368,7 +1368,7 @@ The **tbl** table processing utility is considered part of **groff**, as its fun
 
 The **eqn** equation processing utility is likewise part of **groff**, and its function is to convert equation markup into **groff** commands.
 
-**Example 16-29. _manview_: Viewing formatted manpages**
+###### Example 16-29. *manview*: Viewing formatted manpages
 
 ```bash
 #!/bin/bash

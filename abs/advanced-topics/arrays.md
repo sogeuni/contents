@@ -4,7 +4,7 @@ title: 27. Arrays
 
 Newer versions of Bash support one-dimensional arrays. Array elements may be initialized with the **`variable[xx]`** notation. Alternatively, a script may introduce the entire array by an explicit **declare -a variable** statement. To dereference (retrieve the contents of) an array element, use _curly bracket_ notation, that is, **`${element[xx]}`**.
 
-**Example 27-1. Simple array usage**
+###### Example 27-1. Simple array usage
 
 ```bash
 #!/bin/bash
@@ -113,7 +113,7 @@ base64_charset=( {A..Z} {a..z} {0..9} + / = )
 >
 > Once again this demonstrates that [[untyped#^BVUNTYPED|Bash variables are untyped]].
 
-**Example 27-2. Formatting a poem**
+###### Example 27-2. Formatting a poem
 
 ```bash
 #!/bin/bash
@@ -160,7 +160,7 @@ exit 0
 
 Array variables have a syntax all their own, and even standard Bash commands and operators have special options adapted for array use.
 
-**Example 27-3. Various array operations**
+###### Example 27-3. Various array operations
 
 ```bash
 #!/bin/bash
@@ -214,7 +214,7 @@ exit
 
 Many of the standard [[manipulating-strings#^STRINGMANIP|string operations]] work on arrays.
 
-**Example 27-4. String operations on arrays**
+###### Example 27-4. String operations on arrays
 
 ```bash
 #!/bin/bash
@@ -339,7 +339,7 @@ exit 0
 
 [[command-substitution#^COMMANDSUBREF|Command substitution]] can construct the individual elements of an array.
 
-**Example 27-5. Loading the contents of a script into an array**
+###### Example 27-5. Loading the contents of a script into an array
 
 ```bash
 #!/bin/bash
@@ -375,7 +375,7 @@ exit 0
 
 In an array context, some Bash [[internal-commands-and-builtins|builtins]] have a slightly altered meaning. For example, [[internal-commands-and-builtins#^UNSETREF|unset]] deletes array elements, or even an entire array.
 
-**Example 27-6. Some special properties of arrays**
+###### Example 27-6. Some special properties of arrays
 
 ```bash
 #!/bin/bash
@@ -445,7 +445,7 @@ exit 0
 
 As seen in the previous example, either **`${array_name[@]}`** or **`${array_name\[*]}`** refers to _all_ the elements of the array. Similarly, to get a count of the number of elements in an array, use either **`${#array_name[@]}`** or **`${#array_name[*]}`**. **`${#array_name}`** is the length (number of characters) of **`${array_name[0]}`**, the first element of the array.
 
-**Example 27-7. Of empty arrays and empty elements**
+###### Example 27-7. Of empty arrays and empty elements
 
 ```bash
 #!/bin/bash
@@ -674,7 +674,7 @@ array[${#array[*]}]="new element"
 
 Clever scripting makes it possible to add array operations.
 
-**Example 27-8. Initializing arrays**
+###### Example 27-8. Initializing arrays
 
 ```bash
 #! /bin/bash
@@ -770,7 +770,7 @@ exit 0
 > [!note]
 > Adding a superfluous **declare -a** statement to an array declaration may speed up execution of subsequent operations on the array.
 
-**Example 27-9. Copying and concatenating arrays**
+###### Example 27-9. Copying and concatenating arrays
 
 ```bash
 #! /bin/bash
@@ -840,7 +840,7 @@ echo "Array Before = ${before[@]}"
 exit 0
 ```
 
-**Example 27-10. More on concatenating arrays**
+###### Example 27-10. More on concatenating arrays
 
 ```bash
 #! /bin/bash
@@ -961,7 +961,7 @@ exit 0
 
 Arrays permit deploying old familiar algorithms as shell scripts. Whether this is necessarily a good idea is left for the reader to decide.
 
-**Example 27-11. The Bubble Sort**
+###### Example 27-11. The Bubble Sort
 
 ```bash
 #!/bin/bash
@@ -1100,7 +1100,7 @@ exit 0
 
 Embedded arrays in combination with [[bash-version-2#^VARREFNEW|indirect references]] create some fascinating possibilities
 
-**Example 27-12. Embedded arrays and indirect references**
+###### Example 27-12. Embedded arrays and indirect references
 
 ```bash
 #!/bin/bash
@@ -1176,7 +1176,7 @@ exit 0
 
 Arrays enable implementing a shell script version of the _Sieve of Eratosthenes_. Of course, a resource-intensive application of this nature should really be written in a compiled language, such as C. It runs excruciatingly slowly as a script.
 
-**Example 27-13. The Sieve of Eratosthenes**
+###### Example 27-13. The Sieve of Eratosthenes
 
 ```bash
 #!/bin/bash
@@ -1315,7 +1315,7 @@ echo ${Primes[*]}
 exit $?
 ```
 
-**Example 27-14. The Sieve of Eratosthenes, Optimized**
+###### Example 27-14. The Sieve of Eratosthenes, Optimized
 
 ```bash
 #!/bin/bash
@@ -1362,7 +1362,7 @@ Compare these array-based prime number generators with alternatives that do not 
 
 Arrays lend themselves, to some extent, to emulating data structures for which Bash has no native support.
 
-**Example 27-15. Emulating a push-down stack**
+###### Example 27-15. Emulating a push-down stack
 
 ```bash
 #!/bin/bash
@@ -1490,7 +1490,7 @@ exit 0
 
 Fancy manipulation of array "subscripts" may require intermediate variables. For projects involving this, again consider using a more powerful programming language, such as Perl or C.
 
-**Example 27-16. Complex array application: _Exploring a weird mathematical series_**
+###### Example 27-16. Complex array application: *Exploring a weird mathematical series*
 
 ```bash
 #!/bin/bash
@@ -1558,7 +1558,7 @@ exit 0
 
 Bash supports only one-dimensional arrays, though a little trickery permits simulating multi-dimensional ones.
 
-**Example 27-17. Simulating a two-dimensional array, then tilting it**
+###### Example 27-17. Simulating a two-dimensional array, then tilting it
 
 ```bash
 #!/bin/bash

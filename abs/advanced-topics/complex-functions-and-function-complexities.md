@@ -10,7 +10,7 @@ function_name $arg1 $arg2
 
 The function refers to the passed arguments by position (as if they were [[internal-variables#^POSPARAMREF|positional parameters]]), that is, $1, $2, and so forth.
 
-**Example 24-2. Function Taking Parameters**
+###### Example 24-2. Function Taking Parameters
 
 ```bash
 #!/bin/bash
@@ -75,7 +75,7 @@ exit 0
 
 But, what about command-line arguments passed to the script? Does a function see them? Well, let's clear up the confusion.
 
-**Example 24-3. Functions and command-line args passed to the script**
+###### Example 24-3. Functions and command-line args passed to the script
 
 ```bash
 #!/bin/bash
@@ -108,7 +108,7 @@ In contrast to certain other programming languages, shell scripts normally pass 
 
 [[indirect-references#^IVRREF|Indirect variable references]] (see [[bash-version-2#^EX78|Example 37-2]]) provide a clumsy sort of mechanism for passing variable pointers to functions.
 
-**Example 24-4. Passing an indirect reference to a function**
+###### Example 24-4. Passing an indirect reference to a function
 
 ```bash
 #!/bin/bash
@@ -138,7 +138,7 @@ exit 0
 
 The next logical question is whether parameters can be dereferenced _after_ being passed to a function.
 
-**Example 24-5. Dereferencing a parameter passed to a function**
+###### Example 24-5. Dereferencing a parameter passed to a function
 
 ```bash
 #!/bin/bash
@@ -165,7 +165,7 @@ echo $Junk "after"     # Some Different Text after
 exit 0
 ```
 
-**Example 24-6. Again, dereferencing a parameter passed to a function**
+###### Example 24-6. Again, dereferencing a parameter passed to a function
 
 ```bash
 #!/bin/bash
@@ -218,7 +218,7 @@ Functions return a value, called an _exit status_. This is analogous to the [[ex
 
 Terminates a function. A **return** command [^1] optionally takes an _integer_ argument, which is returned to the calling script as the "exit status" of the function, and this exit status is assigned to the variable [[internal-variables#^XSTATVARREF|$?]].
 
-**Example 24-7. Maximum of two numbers**
+###### Example 24-7. Maximum of two numbers
 
 ```bash
 #!/bin/bash
@@ -294,7 +294,7 @@ exit 0
 > # Thanks, S.C.
 > ```
 
-**Example 24-8. Converting numbers to Roman numerals**
+###### Example 24-8. Converting numbers to Roman numerals
 
 ```bash
 #!/bin/bash
@@ -552,7 +552,7 @@ _Redirecting the stdin of a function_
 
 A function is essentially a [[special-characters#^CODEBLOCKREF|code block]], which means its stdin can be redirected (as in [[special-characters#^EX8|Example 3-1]]).
 
-**Example 24-11. Real name from username**
+###### Example 24-11. Real name from username
 
 ```bash
 #!/bin/bash

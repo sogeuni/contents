@@ -22,7 +22,7 @@ echo `expr length $stringZ`      # 15
 echo `expr "$stringZ" : '.*'`    # 15
 ```
 
-**Example 10-1. Inserting a blank line between paragraphs in a text file**
+###### Example 10-1. Inserting a blank line between paragraphs in a text file
 
 ```bash
 #!/bin/bash
@@ -139,7 +139,7 @@ echo ${stringZ: -4}                          # Cabc
 
 The _position_ and _length_ arguments can be "parameterized," that is, represented as a variable, rather than as a numerical constant.
 
-**Example 10-2. Generating an 8-character "random" string**
+###### Example 10-2. Generating an 8-character "random" string
 
 ```bash
 #!/bin/bash
@@ -303,7 +303,7 @@ echo ${stringZ%%b*c}     # a
 
 This operator is useful for generating filenames.
 
-**Example 10-3. Converting graphic file formats, with filename change**
+###### Example 10-3. Converting graphic file formats, with filename change
 
 ```bash
 
@@ -368,7 +368,7 @@ do
 exit $?
 ```
 
-**Example 10-4. Converting streaming audio files to _ogg_**
+###### Example 10-4. Converting streaming audio files to *ogg*
 
 ```bash
 #!/bin/bash
@@ -426,7 +426,7 @@ exit $?
 
 A simple emulation of [[miscellaneous-commands#^GETOPTY|getopt]] using substring-extraction constructs.
 
-**Example 10-5. Emulating _getopt_**
+###### Example 10-5. Emulating *getopt*
 
 ```bash
 
@@ -538,7 +538,7 @@ echo ${stringZ/%abc/XYZ}          # abcABC123ABCXYZ
 
 A Bash script may invoke the string manipulation facilities of [[awk#^AWKREF|awk]] as an alternative to using its built-in operations.
 
-**Example 10-6. Alternate ways of extracting and locating substrings**
+###### Example 10-6. Alternate ways of extracting and locating substrings
 
 ```bash
 #!/bin/bash

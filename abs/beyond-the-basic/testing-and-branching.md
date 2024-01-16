@@ -30,7 +30,7 @@ case "$variable" in
 > - If a condition tests _true_, then the associated commands execute and the **case** block terminates.
 > - The entire **case** block ends with an **esac** (_case_ spelled backwards).|
 
-**Example 11-25. Using _case_**
+###### Example 11-25. Using *case*
 
 ```bash
 #!/bin/bash
@@ -64,7 +64,7 @@ esac      #  Allows ranges of characters in [square brackets],
 exit 0
 ```
 
-**Example 11-26. Creating menus using _case_**
+###### Example 11-26. Creating menus using *case*
 
 ```bash
 #!/bin/bash
@@ -185,7 +185,7 @@ done
 #  Used with permission.
 ```
 
-**Example 11-27. Using _command substitution_ to generate the _case_ variable**
+###### Example 11-27. Using _command substitution_ to generate the *case* variable
 
 ```bash
 #!/bin/bash
@@ -205,7 +205,7 @@ exit 0
 
 A **case** construct can filter strings for [[globbing.html|globbing]] patterns.
 
-**Example 11-28. Simple string matching**
+###### Example 11-28. Simple string matching
 
 ```bash
 
@@ -249,7 +249,7 @@ echo $?             # 0
 exit 0		    
 ```
 
-**Example 11-29. Checking for alphabetic input**
+###### Example 11-29. Checking for alphabetic input
 
 ```bash
 #!/bin/bash
@@ -372,7 +372,7 @@ done
 
 This prompts the user to enter one of the choices presented in the variable list. Note that **select** uses the $PS3 prompt (#? ) by default, but this may be changed.
 
-**Example 11-30. Creating menus using _select_**
+###### Example 11-30. Creating menus using *select*
 
 ```bash
 #!/bin/bash
@@ -409,7 +409,7 @@ Compare this to the behavior of a
 
 construct with the **in _list_** omitted.
 
-**Example 11-31. Creating menus using _select_ in a function**
+###### Example 11-31. Creating menus using *select* in a function
 
 ```bash
 #!/bin/bash

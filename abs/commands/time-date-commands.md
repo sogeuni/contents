@@ -7,7 +7,7 @@ title: 16.3. Time / Date Commands
 
 Simply invoked, **date** prints the date and time to stdout. Where this command gets interesting is in its formatting and parsing options.
 
-**Example 16-10. Using _date_**
+###### Example 16-10. Using *date*
 
 ```bash
 #!/bin/bash
@@ -48,7 +48,7 @@ Sat Mar 30 04:07:42 UTC 2002
 
 This option facilitates calculating the time between different dates.
 
-**Example 16-11. _Date_ calculations**
+###### Example 16-11. *Date* calculations
 
 ```bash
 #!/bin/bash

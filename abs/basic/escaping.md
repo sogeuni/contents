@@ -40,7 +40,7 @@ translates to the octal [[special-characters#^ASCIIDEF|ASCII]] equivalent of _0n
 
 > [!important] The **$' ...[quoted](Chapter%205.%20Quoting.md#^QUOTINGREF)oted]] string-expansion construct is a mechanism that uses escaped octal or hex values to assign ASCII characters to variables, e.g., **quote=$'\042'**.|
 
-**Example 5-2. Escaped Characters**
+###### Example 5-2. Escaped Characters
 
 ```bash
 #!/bin/bash
@@ -138,7 +138,7 @@ exit 0
 
 A more elaborate example:
 
-**Example 5-3. Detecting key-presses**
+###### Example 5-3. Detecting key-presses
 
 ```bash
 #!/bin/bash

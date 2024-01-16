@@ -35,7 +35,7 @@ If _do_ is on same line as _for_, there needs to be a semicolon after list.
 
 **for** _arg_ in [_list_] ; do  
 
-**Example 11-1. Simple _for_ loops**
+###### Example 11-1. Simple *for* loops
 
 ```bash
 #!/bin/bash
@@ -63,7 +63,7 @@ exit 0
 
 Each **[list]** element may contain multiple parameters. This is useful when processing parameters in groups. In such cases, use the [[internal-commands-and-builtins#SETREF|set]] command (see [[internal-commands-and-builtins#EX34|Example 15-16]]) to force parsing of each **[list]** element and assignment of each component to the positional parameters.
 
-**Example 11-2. _for_ loop with two parameters in each [list] element**
+###### Example 11-2. *for* loop with two parameters in each [list] element
 
 ```bash
 #!/bin/bash
@@ -94,7 +94,7 @@ exit 0
 
 A variable may supply the **[list]** in a _for loop_.
 
-**Example 11-3. _Fileinfo:_ operating on a file list contained in a variable**
+###### Example 11-3. *Fileinfo:* operating on a file list contained in a variable
 
 ```bash
 #!/bin/bash
@@ -131,7 +131,7 @@ exit 0
 
 The **[list]** in a _for loop_ may be parameterized.
 
-**Example 11-4. Operating on a parameterized file list**
+###### Example 11-4. Operating on a parameterized file list
 
 ```bash
 #!/bin/bash
@@ -149,7 +149,7 @@ done
 
 If the **[list]** in a _for loop_ contains wild cards (* and ?) used in filename expansion, then [[globbing|globbing]] takes place.
 
-**Example 11-5. Operating on files with a _for_ loop**
+###### Example 11-5. Operating on files with a *for* loop
 
 ```bash
 #!/bin/bash
@@ -187,7 +187,7 @@ exit 0
 
 Omitting the **in [list]** part of a _for loop_ causes the loop to operate on $@ -- the [[internalvariables#POSPARAMREF|positional parameters]]. A particularly clever illustration of this is [[contributed-scripts#PRIMES|Example A-15]]. See also [[internal-commands-and-builtins#REVPOSPARAMS|Example 15-17]].
 
-**Example 11-6. Missing **in [list]** in a _for_ loop**
+###### Example 11-6. Missing **in [list]** in a *for* loop
 
 ```bash
 #!/bin/bash
@@ -210,7 +210,7 @@ exit 0
 
 It is possible to use [[command-substitution#COMMANDSUBREF|command substitution]] to generate the **[list]** in a _for loop_. See also [[miscellaneous-commands#EX53|Example 16-54]], [[loops1#SYMLINKS|Example 11-11]] and [[math-commands#BASE|Example 16-48]].
 
-**Example 11-7. Generating the **[list]** in a _for_ loop with command substitution**
+###### Example 11-7. Generating the **[list]** in a *for* loop with command substitution
 
 ```bash
 #!/bin/bash
@@ -230,7 +230,7 @@ exit 0
 
 Here is a somewhat more complex example of using command substitution to create the **[list]**.
 
-**Example 11-8. A _grep_ replacement for binary files**
+###### Example 11-8. A *grep* replacement for binary files
 
 ```bash
 #!/bin/bash
@@ -276,7 +276,7 @@ exit 0
 
 More of the same.
 
-**Example 11-9. Listing all users on the system**
+###### Example 11-9. Listing all users on the system
 
 ```bash
 #!/bin/bash
@@ -312,7 +312,7 @@ exit $?
 
 Yet another example of the **[list]** resulting from command substitution.
 
-**Example 11-10. Checking all the binaries in a directory for authorship**
+###### Example 11-10. Checking all the binaries in a directory for authorship
 
 ```bash
 #!/bin/bash
@@ -359,7 +359,7 @@ done
 
 The output of a _for loop_ may be piped to a command or commands.
 
-**Example 11-11. Listing the _symbolic links_ in a directory**
+###### Example 11-11. Listing the *symbolic links* in a directory
 
 ```bash
 #!/bin/bash
@@ -429,7 +429,7 @@ do
 
 The stdout of a loop may be [[io-redirection#IOREDIRREF|redirected]] to a file, as this slight modification to the previous example shows.
 
-**Example 11-12. Symbolic links in a directory, saved to a file**
+###### Example 11-12. Symbolic links in a directory, saved to a file
 
 ```bash
 #!/bin/bash
@@ -458,7 +458,7 @@ exit $?
 
 There is an alternative syntax to a _for loop_ that will look very familiar to C programmers. This requires [[dblparens#DBLPARENSREF|double parentheses]].
 
-**Example 11-13. A C-style _for_ loop**
+###### Example 11-13. A C-style *for* loop
 
 ```bash
 #!/bin/bash
@@ -528,7 +528,7 @@ See also [[arrays#^QFUNCTION|Example 27-16]], [[arrays#^TWODIM|Example 27-17]], 
 
 Now, a _for loop_ used in a "real-life" context.
 
-**Example 11-14. Using _efax_ in batch mode**
+###### Example 11-14. Using *efax* in batch mode
 
 ```bash
 #!/bin/bash
@@ -623,7 +623,7 @@ The bracket construct in a _while loop_ is nothing more than our old friend, the
 
 Note that the _test brackets_ [[loops1#WHILENOBRACKETS|are _not_ mandatory]] in a _while_ loop. See, for example, the [[internal-commands-and-builtins#GETOPTSX|getopts construct]].
 
-**Example 11-15. Simple _while_ loop**
+###### Example 11-15. Simple *while* loop
 
 ```bash
 #!/bin/bash
@@ -648,7 +648,7 @@ echo
 exit 0
 ```
 
-**Example 11-16. Another _while_ loop**
+###### Example 11-16. Another *while* loop
 
 ```bash
 #!/bin/bash
@@ -670,7 +670,7 @@ exit 0
 
 A _while loop_ may have multiple conditions. Only the final condition determines when the loop terminates. This necessitates a slightly different loop syntax, however.
 
-**Example 11-17. _while_ loop with multiple conditions**
+###### Example 11-17. *while* loop with multiple conditions
 
 ```bash
 #!/bin/bash
@@ -698,7 +698,7 @@ exit 0
 
 As with a _for loop_, a _while loop_ may employ C-style syntax by using the double-parentheses construct (see also [[dblparens#CVARS|Example 8-5]]).
 
-**Example 11-18. C-style syntax in a _while_ loop**
+###### Example 11-18. C-style syntax in a *while* loop
 
 ```bash
 #!/bin/bash
@@ -822,7 +822,7 @@ As is the case with _for loops_, placing the _do_ on the same line as the condit
 
 **until** [ _condition-is-true_ ] ; do
 
-**Example 11-19. _until_ loop**
+###### Example 11-19. *until* loop
 
 ```bash
 #!/bin/bash

@@ -13,7 +13,7 @@ bash$ factor 27417
 27417: 3 13 19 37
 ```
 
-**Example 16-46. Generating prime numbers**
+###### Example 16-46. Generating prime numbers
 
 ```bash
 #!/bin/bash
@@ -71,7 +71,7 @@ Here is a simple template for using **bc** to calculate a script variable. This 
 variable=$(echo "OPTIONS; OPERATIONS" | bc)
 ```
 
-**Example 16-47. Monthly Payment on a Mortgage**
+###### Example 16-47. Monthly Payment on a Mortgage
 
 ```bash
 #!/bin/bash
@@ -176,7 +176,7 @@ read term
  #+     expand this script to print complete amortization tables.
 ```
 
-**Example 16-48. Base Conversion**
+###### Example 16-48. Base Conversion
 
 ```bash
 #!/bin/bash
@@ -310,7 +310,7 @@ LIMIT_STRING
 )
 ```
 
-**Example 16-49. Invoking _bc_ using a _here document_**
+###### Example 16-49. Invoking _bc_ using a *here document*
 
 ```bash
 #!/bin/bash
@@ -371,7 +371,7 @@ echo "hypotenuse = $hyp"    # 8.184039344
 exit 0
 ```
 
-**Example 16-50. Calculating PI**
+###### Example 16-50. Calculating PI
 
 ```bash
 #!/bin/bash
@@ -539,7 +539,7 @@ echo "7 8 * p" | dc     # 56
 
 Most persons avoid **dc**, because of its non-intuitive input and rather cryptic operators. Yet, it has its uses.
 
-**Example 16-51. Converting a decimal number to hexadecimal**
+###### Example 16-51. Converting a decimal number to hexadecimal
 
 ```bash
 #!/bin/bash
@@ -595,7 +595,7 @@ dc <<< 10k5v1+2/p # 1.6180339887
 #  ... which happens to be the Pythagorean Golden Ratio, to 10 places.
 ```
 
-**Example 16-52. Factoring**
+###### Example 16-52. Factoring
 
 ```bash
 #!/bin/bash
@@ -641,7 +641,7 @@ echo  "$1[p]s2[lip/dli%0=1dvsr]s12sid2%0=13sidvsr[dli%0=\
 
 Yet another way of doing floating point math in a script is using [[awk#^AWKREF|awk's]] built-in math functions in a [[wrapper#^SHWRAPPER|shell wrapper]].
 
-**Example 16-53. Calculating the hypotenuse of a triangle**
+###### Example 16-53. Calculating the hypotenuse of a triangle
 
 ```bash
 #!/bin/bash

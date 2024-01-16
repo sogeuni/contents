@@ -194,7 +194,7 @@ fi
 
 Command substitution permits setting a variable to the output of a [[loops#^FORLOOPREF1|loop]]. The key to this is grabbing the output of an [[internal-commands-and-builtins#^ECHOREF|echo]] command within the loop.
 
-**Example 12-2. Generating a variable from a loop**
+###### Example 12-2. Generating a variable from a loop
 
 ```bash
 #!/bin/bash

@@ -76,7 +76,7 @@ _5/3 = 1, with remainder 2_
 
 This operator finds use in, among other things, generating numbers within a specific range (see [[generate-random-integer#EX21|Example 9-11]] and [[generate-random-integer#RANDOMTEST|Example 9-15]]) and formatting program output (see [[arrays#^QFUNCTION|Example 27-16]] and [[contributed-scripts#COLLATZ|Example A-6]]). It can even be used to generate prime numbers, (see [[contributed-scripts#PRIMES|Example A-15]]). Modulo turns up surprisingly often in numerical recipes.
 
-**Example 8-1. Greatest common divisor**
+###### Example 8-1. Greatest common divisor
 
 ```bash
 
@@ -171,7 +171,7 @@ _mod-equal_ (_remainder_ of dividing variable by a constant)
 
 _Arithmetic operators often occur in an [expr](moreadv.html#EXPRREF) or [let](internal.html#LETREF) expression._
 
-**Example 8-2. Using Arithmetic Operations**
+###### Example 8-2. Using Arithmetic Operations
 
 ```bash
 #!/bin/bash
@@ -356,7 +356,7 @@ if [[ $condition1 || $condition2 ]]    # Also works.
 
 > [!note] Bash tests the [[exit-status#EXITSTATUSREF|exit status]] of each statement linked with a logical operator.
 
-**Example 8-3. Compound Condition Tests Using && and ||**
+###### Example 8-3. Compound Condition Tests Using && and ||
 
 ```bash
 #!/bin/bash

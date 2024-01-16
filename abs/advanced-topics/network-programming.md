@@ -10,7 +10,7 @@ A Linux system has quite a number of tools for accessing, manipulating, and trou
 
 Here is a simple CGI script that demonstrates connecting to a remote server.
 
-**Example 30-1. Print the server environment**
+###### Example 30-1. Print the server environment
 
 ```bash
 #!/bin/bash
@@ -82,7 +82,7 @@ _test_CGI_
 
 For security purposes, it may be helpful to identify the IP addresses a computer is accessing.
 
-**Example 30-2. IP addresses**
+###### Example 30-2. IP addresses
 
 ```bash
 #!/bin/bash

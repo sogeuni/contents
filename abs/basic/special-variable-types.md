@@ -44,7 +44,7 @@ $0 is the name of the script itself, $1 is the first argument, $2 the second, $3
 
 The special variables [[internal-variables#^APPREF|$* and $@]] denote _all_ the positional parameters.
 
-**Example 4-5. Positional Parameters**
+###### Example 4-5. Positional Parameters
 
 ```bash
 #!/bin/bash
@@ -147,7 +147,7 @@ fi
 
 ---
 
-**Example 4-6. _wh_, _whois_ domain name lookup**
+###### Example 4-6. _wh_, *whois* domain name lookup
 
 ```bash
 #!/bin/bash
@@ -192,7 +192,7 @@ $1 <--- $2, $2 <--- $3, $3 <--- $4, etc.
 
 The old $1 disappears, but _$0 (the script name) does not change_. If you use a large number of positional parameters to a script, **shift** lets you access those past 10, although [[othertypesv#^BRACKETNOTATION|{bracket} notation]] also permits this.
 
-**Example 4-7. Using _shift_**
+###### Example 4-7. Using *shift*
 
 ```bash
 #!/bin/bash

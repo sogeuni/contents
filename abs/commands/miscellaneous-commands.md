@@ -24,7 +24,7 @@ bash$ seq -s : 5
 
 Both **jot** and **seq** come in handy in a [[loops#^FORLOOPREF1|for loop]].
 
-**Example 16-54. Using _seq_ to generate loop arguments**
+###### Example 16-54. Using *seq* to generate loop arguments
 
 ```bash
 #!/bin/bash
@@ -98,7 +98,7 @@ do
 done
 ```
 
-**Example 16-55. Letter Count"**
+###### Example 16-55. Letter Count"
 
 ```bash
 #!/bin/bash
@@ -174,7 +174,7 @@ exit $?
 
 The **getopt** command parses command-line options preceded by a [[special-characters#^DASHREF|dash]]. This external command corresponds to the [[internal-commands-and-builtins#^GETOPTSX|getopts]] Bash builtin. Using **getopt** permits handling long options by means of the -l flag, and this also allows parameter reshuffling.
 
-**Example 16-56. Using _getopt_ to parse command-line options**
+###### Example 16-56. Using *getopt* to parse command-line options
 
 ```bash
 #!/bin/bash
@@ -434,7 +434,7 @@ Some basic options to **dd** are:
 
 A **dd --help** lists all the options this powerful utility takes.
 
-**Example 16-57. A script that copies itself**
+###### Example 16-57. A script that copies itself
 
 ```bash
 #!/bin/bash
@@ -454,7 +454,7 @@ exit $?
 #  Does this script qualify as a quine?
 ```
 
-**Example 16-58. Exercising _dd_**
+###### Example 16-58. Exercising *dd*
 
 ```bash
 #!/bin/bash
@@ -482,7 +482,7 @@ exit $?
 
 To demonstrate just how versatile **dd** is, let's use it to capture keystrokes.
 
-**Example 16-59. Capturing Keystrokes**
+###### Example 16-59. Capturing Keystrokes
 
 ```bash
 #!/bin/bash
@@ -530,7 +530,7 @@ Likewise, **dd** can create bootable flash drives and SD cards.
 
 **dd if=image.iso of=/dev/sdb**
 
-**Example 16-60. Preparing a bootable SD card for the _Raspberry Pi_**
+###### Example 16-60. Preparing a bootable SD card for the *Raspberry Pi*
 
 ```bash
 #!/bin/bash
@@ -595,7 +595,7 @@ Other applications of **dd** include initializing temporary swap files ([[of-zer
 
 People (with presumably nothing better to do with their time) are constantly thinking of interesting applications of **dd**.
 
-**Example 16-61. Securely deleting a file**
+###### Example 16-61. Securely deleting a file
 
 ```bash
 #!/bin/bash
@@ -752,7 +752,7 @@ random001=`md5sum $0 | awk '{print $1}'`
 
 The **mcookie** command gives yet another way to generate a "unique" filename.
 
-**Example 16-62. Filename generator**
+###### Example 16-62. Filename generator
 
 ```bash
 #!/bin/bash
@@ -789,7 +789,7 @@ exit 0
 
 This utility converts between different _units of measure_. While normally invoked in interactive mode, **units** may find use in a script.
 
-**Example 16-63. Converting meters to miles**
+###### Example 16-63. Converting meters to miles
 
 ```bash
 #!/bin/bash
@@ -828,7 +828,7 @@ A hidden treasure, **m4** is a powerful macro [^6] processing filter, virtually 
 
 The April, 2002 issue of [_Linux Journal_](http://www.linuxjournal.com) has a very nice article on **m4** and its uses.
 
-**Example 16-64. Using _m4_**
+###### Example 16-64. Using *m4*
 
 ```bash
 #!/bin/bash

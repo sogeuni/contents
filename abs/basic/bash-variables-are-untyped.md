@@ -3,7 +3,7 @@ title: 4.3. Bash Variables Are Untyped
 ---
 Unlike many other programming languages, Bash does not segregate its variables by "type." Essentially, _Bash variables are character strings_, but, depending on context, Bash permits arithmetic operations and comparisons on variables. The determining factor is whether the value of a variable contains only digits.
 
-**Example 4-4. Integer or string?**
+###### Example 4-4. Integer or string?
 
 ```bash
 

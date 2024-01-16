@@ -168,7 +168,7 @@ If parameter set, use it, else print _err_msg_ and _abort the script_ with an [[
 
 Both forms nearly equivalent. The : makes a difference only when _parameter_ has been declared and is null, as above.
 
-**Example 10-7. Using parameter substitution and error messages**
+###### Example 10-7. Using parameter substitution and error messages
 
 ```bash
 #!/bin/bash
@@ -230,7 +230,7 @@ exit $HERE   # Will NOT exit here.
 # In fact, this script will return an exit status (echo $?) of 1.
 ```
 
-**Example 10-8. Parameter substitution and "usage" messages**
+###### Example 10-8. Parameter substitution and "usage" messages
 
 ```bash
 #!/bin/bash
@@ -264,7 +264,7 @@ exit 0  # Will exit here only if command-line parameter present.
 > - **${#*}** and **${#@}** give the _number of positional parameters_.
 > - For an array, **${#array[*]}** and **${#array[@]}** give the number of elements in the array.|
 
-**Example 10-9. Length of a variable**
+###### Example 10-9. Length of a variable
 
 ```bash
 #!/bin/bash
@@ -346,7 +346,7 @@ echo "${filename##*.}"      # data
 
 [[bashver2#^BASH2REF|Version 2]] of Bash added additional options.
 
-**Example 10-10. Pattern matching in parameter substitution**
+###### Example 10-10. Pattern matching in parameter substitution
 
 ```bash
 #!/bin/bash
@@ -395,7 +395,7 @@ echo
 exit 0
 ```
 
-**Example 10-11. Renaming file extensions:**
+###### Example 10-11. Renaming file extensions:
 
 ```bash
 #!/bin/bash
@@ -453,7 +453,7 @@ If _Replacement_ is omitted, then the first match of _Pattern_ is replaced by _n
 
 As above, if _Replacement_ is omitted, then all occurrences of _Pattern_ are replaced by _nothing_, that is, deleted.
 
-**Example 10-12. Using pattern matching to parse arbitrary strings**
+###### Example 10-12. Using pattern matching to parse arbitrary strings
 
 ```bash
 #!/bin/bash
@@ -527,7 +527,7 @@ If _prefix_ of _var_ matches _Pattern_, then substitute _Replacement_ for _Patte
 
 If _suffix_ of _var_ matches _Pattern_, then substitute _Replacement_ for _Pattern_.
 
-**Example 10-13. Matching patterns at prefix or suffix of string**
+###### Example 10-13. Matching patterns at prefix or suffix of string
 
 ```bash
 #!/bin/bash

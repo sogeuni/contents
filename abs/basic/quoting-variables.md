@@ -51,7 +51,7 @@ COMMAND "$variable2 $variable2 $variable2"
 
 > [!tip] Enclosing the arguments to an **echo** statement in double quotes is necessary only when word splitting or preservation of [[special-characters#^WHITESPACEREF|whitespace]] is an issue.
 
-**Example 5-1. Echoing Weird Variables**
+###### Example 5-1. Echoing Weird Variables
 
 ```bash
 #!/bin/bash

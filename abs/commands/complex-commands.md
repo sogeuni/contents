@@ -74,7 +74,7 @@ find /etc -type f -exec cat '{}' \; | tr -c '.[:digit:]' '\n' \
 > [!note]
 > The -exec option to **find** should not be confused with the [[internal#^EXECREF|exec]] shell builtin.
 
-**Example 16-3. _Badname_, eliminate file names in current directory containing bad characters and [[special-chars#^WHITESPACEREF|whitespace]].**
+###### Example 16-3. *Badname*, eliminate file names in current directory containing bad characters and [[special-chars#^WHITESPACEREF|whitespace]].
 
 ```bash
 #!/bin/bash
@@ -110,7 +110,7 @@ find . -name '*[+{;"\\=?~()<>&*|$ ]*' -maxdepth 0 \
 # (Thanks, S.C.)
 ```
 
-**Example 16-4. Deleting a file by its _inode_ number**
+###### Example 16-4. Deleting a file by its *inode* number
 
 ```bash
 #!/bin/bash
@@ -264,7 +264,7 @@ bash$ find ~/mail -type f | xargs grep "Linux"
 > # Thank you, Roberto Polli, for the inspiration.
 > ```
 
-**Example 16-5. Logfile: Using _xargs_ to monitor system log**
+###### Example 16-5. Logfile: Using *xargs* to monitor system log
 
 ```bash
 #!/bin/bash
@@ -307,7 +307,7 @@ exit 0
 
 [[moreadv#^CURLYBRACKETSREF|As in **find**]], a curly bracket pair serves as a placeholder for replacement text.
 
-**Example 16-6. Copying files in current directory to another**
+###### Example 16-6. Copying files in current directory to another
 
 ```bash
 #!/bin/bash
@@ -342,7 +342,7 @@ ls . | xargs -i -t cp ./{} $1
 exit 0
 ```
 
-**Example 16-7. Killing processes by name**
+###### Example 16-7. Killing processes by name
 
 ```bash
 #!/bin/bash
@@ -387,7 +387,7 @@ exit $?
 #+ but using it is not quite as educational.
 ```
 
-**Example 16-8. Word frequency analysis using _xargs_**
+###### Example 16-8. Word frequency analysis using *xargs*
 
 ```bash
 #!/bin/bash
@@ -469,7 +469,7 @@ Increment a variable, with the same effect as **let y=y+1** and **y=$(($y+1))**.
 
 Extract substring of $length characters, starting at $position.
 
-**Example 16-9. Using _expr_**
+###### Example 16-9. Using *expr*
 
 ```bash
 #!/bin/bash

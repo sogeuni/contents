@@ -58,7 +58,7 @@ A command list embedded between _parentheses_ runs as a subshell.
 
 Variables in a subshell are _not_ visible outside the block of code in the subshell. They are not accessible to the [[internal-commands-and-builtins#^FORKREF|parent process]], to the shell that launched the subshell. These are, in effect, variables [[local-variables#^LOCALREF|local]] to the _child process_.
 
-**Example 21-1. Variable scope in a subshell**
+###### Example 21-1. Variable scope in a subshell
 
 ```bash
 #!/bin/bash
@@ -153,7 +153,7 @@ See also [[internal-variables#^BASHPIDREF|$BASHPID]] and [[gotchas#^SUBPIT|Examp
 
 Directory changes made in a subshell do not carry over to the parent shell.
 
-**Example 21-2. List User Profiles**
+###### Example 21-2. List User Profiles
 
 ```bash
 #!/bin/bash
@@ -235,7 +235,7 @@ fi
 
 Processes may execute in parallel within different subshells. This permits breaking a complex task into subcomponents processed concurrently.
 
-**Example 21-3. Running parallel processes in subshells**
+###### Example 21-3. Running parallel processes in subshells
 
 ```bash
 (cat list1 list2 list3 | sort | uniq > list123) &

@@ -44,7 +44,7 @@ bash$ ls -lv
 > 2
 > ```
 
-**Example 16-1. Using _ls_ to create a table of contents for burning a CDR disk**
+###### Example 16-1. Using *ls* to create a table of contents for burning a CDR disk
 
 ```bash
 #!/bin/bash
@@ -316,7 +316,7 @@ The syntax of the command is a bit tricky. For example: **ln -s oldfile newfile*
 
 Links give the ability to invoke a script (or any other type of executable) with multiple names, and having that script behave according to how it was invoked.
 
-**Example 16-2. Hello or Good-bye**
+###### Example 16-2. Hello or Good-bye
 
 ```bash
 #!/bin/bash

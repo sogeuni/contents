@@ -4,7 +4,7 @@ title: 11.2. Nested Loops
 
 A _nested loop_ is a loop within a loop, an inner loop within the body of an outer one. How this works is that the first pass of the outer loop triggers the inner loop, which executes to completion. Then the second pass of the outer loop triggers the inner loop again. This repeats until the outer loop finishes. Of course, a _break_ within either the inner or outer loop would interrupt this process.
 
-**Example 11-20. Nested Loop**
+###### Example 11-20. Nested Loop
 
 ```bash
 #!/bin/bash

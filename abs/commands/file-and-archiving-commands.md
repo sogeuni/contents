@@ -82,7 +82,7 @@ A simple **rpm -i package_name.rpm** usually suffices to install a package, thou
 
 This specialized archiving copy command (**c**o**p**y **i**nput and **o**utput) is rarely seen any more, having been supplanted by **tar**/**gzip**. It still has its uses, such as moving a directory tree. With an appropriate block size (for copying) specified, it can be appreciably faster than **tar**.
 
-**Example 16-30. Using _cpio_ to move a directory tree**
+###### Example 16-30. Using *cpio* to move a directory tree
 
 ```bash
 #!/bin/bash
@@ -128,7 +128,7 @@ exit $?
 
 This command extracts a **cpio** archive from an [[file-and-archiving-commands#^RPMREF|rpm]] one.
 
-**Example 16-31. Unpacking an _rpm_ archive**
+###### Example 16-31. Unpacking an *rpm* archive
 
 ```bash
 #!/bin/bash
@@ -265,7 +265,7 @@ file $DIRECTORY/* | fgrep $KEYWORD
 # . . .
 ```
 
-**Example 16-32. Stripping comments from C program files**
+###### Example 16-32. Stripping comments from C program files
 
 ```bash
 #!/bin/bash
@@ -381,7 +381,7 @@ rm: /bin/rm /usr/share/man/man1/rm.1.bz2
 whatis               (1)  - search the whatis database for complete words
 ```
 
-**Example 16-33. Exploring /usr/X11R6/bin**
+###### Example 16-33. Exploring /usr/X11R6/bin
 
 ```bash
 #!/bin/bash
@@ -486,7 +486,7 @@ bash$ readlink /usr/bin/awk
 
 Use the **strings** command to find printable strings in a binary or data file. It will list sequences of printable characters found in the target file. This might be handy for a quick 'n dirty examination of a core dump or for looking at an unknown graphic image file (**strings image-file | more** might show something like _JFIF_, which would identify the file as a _jpeg_ graphic). In a script, you would probably parse the output of **strings** with [[textproc#^GREPREF|grep]] or [[sedawk#^SEDREF|sed]]. See [[loops#^BINGREP|Example 11-8]] and [[loops#^FINDSTRING|Example 11-10]].
 
-**Example 16-34. An "improved" _strings_ command**
+###### Example 16-34. An "improved" *strings* command
 
 ```bash
 #!/bin/bash
@@ -643,7 +643,7 @@ The **cmp** command is a simpler version of **diff**, above. Whereas **diff** re
 > [!note]
 > Like **diff**, **cmp** returns an exit status of 0 if the compared files are identical, and 1 if they differ. This permits use in a test construct within a shell script.
 
-**Example 16-35. Using _cmp_ to compare two files within a script.**
+###### Example 16-35. Using *cmp* to compare two files within a script.
 
 ```bash
 #!/bin/bash
@@ -724,7 +724,7 @@ Strips the **basename** from a filename, printing only the path information.
 > [!note]
 > **basename** and **dirname** can operate on any arbitrary string. The argument does not need to refer to an existing file, or even be a filename for that matter (see [[contributed-scripts#^DAYSBETWEEN|Example A-7]]).
 
-**Example 16-36. _basename_ and _dirname_**
+###### Example 16-36. _basename_ and *dirname*
 
 ```bash
 #!/bin/bash
@@ -746,7 +746,7 @@ These are utilities for splitting a file into smaller chunks. Their usual use is
 
 The **csplit** command splits a file according to _context_, the split occuring where patterns are matched.
 
-**Example 16-37. A script that copies itself in sections**
+###### Example 16-37. A script that copies itself in sections
 
 ```bash
 #!/bin/bash
@@ -801,7 +801,7 @@ bash$ echo -n "Top Secret" | md5sum
 >
 > The **md5sum** and **sha1sum** commands display a [[special-characters#^DASHREF2|dash]] when they receive their input from stdout.
 
-**Example 16-38. Checking file integrity**
+###### Example 16-38. Checking file integrity
 
 ```bash
 #!/bin/bash
@@ -944,7 +944,7 @@ This utility encodes binary files (images, sound files, compressed files, etc.) 
 
 This reverses the encoding, decoding _uuencoded_ files back into the original binaries.
 
-**Example 16-39. Uudecoding encoded files**
+###### Example 16-39. Uudecoding encoded files
 
 ```bash
 #!/bin/bash

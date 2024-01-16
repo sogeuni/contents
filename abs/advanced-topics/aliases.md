@@ -6,7 +6,7 @@ A Bash _alias_ is essentially nothing more than a keyboard shortcut, an abbrevia
 
 In a script, aliases have very limited usefulness. It would be nice if aliases could assume some of the functionality of the **C** preprocessor, such as macro expansion, but unfortunately Bash does not expand arguments within the alias body. [^2] Moreover, a script fails to expand an alias itself within "compound constructs," such as [[tests#^IFTHEN|if/then]] statements, loops, and functions. An added limitation is that an alias will not expand recursively. Almost invariably, whatever we would like an alias to do could be accomplished much more effectively with a [[functions#^FUNCTIONREF|function]].
 
-**Example 25-1. Aliases within a script** ^AL
+###### Example 25-1. Aliases within a script ^AL
 
 ```bash
 #!/bin/bash
@@ -86,7 +86,7 @@ exit 0
 
 The **unalias** command removes a previously set _alias_. ^UNALIASREF
 
-**Example 25-2. _unalias_: Setting and unsetting an alias** ^UNAL
+###### Example 25-2. *unalias*: Setting and unsetting an alias ^UNAL
 
 ```bash
 #!/bin/bash

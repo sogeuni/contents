@@ -178,7 +178,7 @@ This is the Bash _builtin_ version of the /bin/printf or /usr/bin/printf command
 > [!caution]
 > Older versions of Bash may not support **printf**.
 
-**Example 15-2. _printf_ in action**
+###### Example 15-2. *printf* in action
 
 ```bash
 #!/bin/bash
@@ -250,7 +250,7 @@ See also [[assorted-tips#^PROGRESSBAR|Example 36-17]].
 
 "Reads" the value of a variable from stdin, that is, interactively fetches input from the keyboard. The -a option lets **read** get array variables (see [[arrays#^EX67|Example 27-6]]).
 
-**Example 15-3. Variable assignment, using _read_**
+###### Example 15-3. Variable assignment, using *read*
 
 ```bash
 #!/bin/bash
@@ -280,7 +280,7 @@ exit 0
 
 A **read** without an associated variable assigns its input to the dedicated variable [[internal-variables#^REPLYREF|$REPLY]].
 
-**Example 15-4. What happens when _read_ has no variable**
+###### Example 15-4. What happens when *read* has no variable
 
 ```bash
 #!/bin/bash
@@ -336,7 +336,7 @@ exit 0
 
 Normally, inputting a **\** suppresses a newline during input to a **read**. The -r option causes an inputted **\** to be interpreted literally.
 
-**Example 15-5. Multi-line input to _read_**
+###### Example 15-5. Multi-line input to *read*
 
 ```bash
 #!/bin/bash
@@ -389,7 +389,7 @@ echo; echo "Keypress was "\"$keypress\""."
 
 The -n option to **read** also allows detection of the **arrow keys** and certain of the other unusual keys.
 
-**Example 15-6. Detecting the arrow keys**
+###### Example 15-6. Detecting the arrow keys
 
 ```bash
 #!/bin/bash
@@ -529,7 +529,7 @@ The -u option takes the [[io-redirection#^FDREF|file descriptor]] of the target 
 
 The **read** command may also "read" its variable value from a file [[io-redirection#^IOREDIRREF|redirected]] to stdin. If the file contains more than one line, only the first line is assigned to the variable. If **read** has more than one parameter, then each of these variables gets assigned a successive [[special-characters#^WHITESPACEREF|whitespace-delineated]] string. Caution!
 
-**Example 15-7. Using _read_ with [[io-redirection#^IOREDIRREF|file redirection]]**
+###### Example 15-7. Using *read* with [[io-redirection#^IOREDIRREF|file redirection]]
 
 ```bash
 #!/bin/bash
@@ -709,7 +709,7 @@ This command set is a mechanism for bookmarking working directories, a means of 
 
 Scripts that require various changes to the current working directory without hard-coding the directory name changes can make good use of these commands. Note that the implicit $DIRSTACK array variable, accessible from within a script, holds the contents of the directory stack.
 
-**Example 15-9. Changing the current working directory**
+###### Example 15-9. Changing the current working directory
 
 ```bash
 #!/bin/bash
@@ -746,7 +746,7 @@ exit 0
 
 The **let** command carries out _arithmetic_ operations on variables. [^3] In many cases, it functions as a less complex version of [[complex-commands#^EXPRREF|expr]].
 
-**Example 15-10. Letting _let_ do arithmetic.**
+###### Example 15-10. Letting *let* do arithmetic.
 
 ```bash
 #!/bin/bash
@@ -868,7 +868,7 @@ eval eval echo $a   # d
 # Thank you, E. Choroba.
 ```
 
-**Example 15-11. Showing the effect of _eval_**
+###### Example 15-11. Showing the effect of *eval*
 
 ```bash
 
@@ -914,7 +914,7 @@ eval major=${version/./;minor=}     #  Replaces '.' in version by ';minor='
 echo Major: $major, minor: $minor   #  Major: 3, minor: 4
 ```
 
-**Example 15-12. Using _eval_ to select among variables**
+###### Example 15-12. Using *eval* to select among variables
 
 ```bash
 #!/bin/bash
@@ -954,7 +954,7 @@ choose_array      # (null)
 # Thank you, Antonio Macchi, for pointing this out.
 ```
 
-**Example 15-13. _Echoing_ the _command-line parameters_**
+###### Example 15-13. _Echoing_ the *command-line parameters*
 
 ```bash
 
@@ -999,7 +999,7 @@ Command-line parameter $4 = fourth
 Command-line parameter $5 = fifth
 ```
 
-**Example 15-14. Forcing a log-off**
+###### Example 15-14. Forcing a log-off
 
 ```bash
 
@@ -1040,7 +1040,7 @@ exit $?
 #+      if [ fuser -s /dev/modem ]; then . . .
 ```
 
-**Example 15-15. A version of _rot13_**
+###### Example 15-15. A version of *rot13*
 
 ```bash
 #!/bin/bash
@@ -1091,7 +1091,7 @@ eval var=\$$var
 
 The **set** command changes the value of internal script variables/options. One use for this is to toggle [[options#^OPTIONSREF|option flags]] which help determine the behavior of the script. Another application for it is to reset the [[internal-variables#^POSPARAMREF|positional parameters]] that a script sees as the result of a command (**set `command`**). The script can then parse the [[special-characters#^FIELDREF|fields]] of the command output.
 
-**Example 15-16. Using _set_ with positional parameters**
+###### Example 15-16. Using *set* with positional parameters
 
 ```bash
 #!/bin/bash
@@ -1133,7 +1133,7 @@ exit 0
 
 More fun with positional parameters.
 
-**Example 15-17. Reversing the positional parameters**
+###### Example 15-17. Reversing the positional parameters
 
 ```bash
 #!/bin/bash
@@ -1220,7 +1220,7 @@ AUTHORCOPY=/home/bozo/posts
 
 Using **set** with the -- option explicitly assigns the contents of a variable to the positional parameters. If no variable follows the -- it _unsets_ the positional parameters.
 
-**Example 15-18. Reassigning the positional parameters**
+###### Example 15-18. Reassigning the positional parameters
 
 ```bash
 #!/bin/bash
@@ -1277,7 +1277,7 @@ bash$ echo $PATH
 bash$ 
 ```
 
-**Example 15-19. "Unsetting" a variable**
+###### Example 15-19. "Unsetting" a variable
 
 ```bash
 #!/bin/bash
@@ -1309,7 +1309,7 @@ The **export** [^4] command makes available variables to all child processes of 
 > [!caution]
 > Unfortunately, [[gotchas#^PARCHILDPROBREF|there is no way to export variables back to the parent process]], to the process that called or invoked the script or shell.
 
-**Example 15-20. Using _export_ to pass a variable to an embedded _awk_ script**
+###### Example 15-20. Using _export_ to pass a variable to an embedded *awk* script
 
 ```bash
 #!/bin/bash
@@ -1415,7 +1415,7 @@ shift $(($OPTIND - 1))
 # All this is not nearly as complicated as it looks <grin>.
 ```
 
-**Example 15-21. Using _getopts_ to read the options/arguments passed to a script**
+###### Example 15-21. Using *getopts* to read the options/arguments passed to a script
 
 ```bash
 #!/bin/bash
@@ -1488,7 +1488,7 @@ exit $?
 
 This command, when invoked from the command-line, executes a script. Within a script, a **source file-name** loads the file file-name. _Sourcing_ a file (dot-command) _imports_ code into the script, appending to the script (same effect as the `#include` directive in a _C_ program). The net result is the same as if the "sourced" lines of code were physically present in the body of the script. This is useful in situations when multiple scripts use a common data file or function library.
 
-**Example 15-22. "Including" a data file**
+###### Example 15-22. "Including" a data file
 
 ```bash
 #!/bin/bash
@@ -1568,7 +1568,7 @@ source $filename $arg1 arg2
 
 It is even possible for a script to _source_ itself, though this does not seem to have any practical applications.
 
-**Example 15-23. A (useless) script that sources itself**
+###### Example 15-23. A (useless) script that sources itself
 
 ```bash
 #!/bin/bash
@@ -1627,7 +1627,7 @@ Unconditionally terminates a script. [^6] The **exit** command may optionally ta
 
 This shell builtin replaces the current process with a specified command. Normally, when the shell encounters a command, it [[internal-commands-and-builtins#^FORKREF|forks off]] a child process to actually execute the command. Using the **exec** builtin, the shell does not fork, and the command _exec_'ed replaces the shell. When used in a script, therefore, it forces an exit from the script when the **exec**'ed command terminates. [^7]
 
-**Example 15-24. Effects of _exec_**
+###### Example 15-24. Effects of *exec*
 
 ```bash
 #!/bin/bash
@@ -1646,7 +1646,7 @@ exit 99                       #  This script will not exit here.
                               #  It will *not* be 99.
 ```
 
-**Example 15-25. A script that _exec's_ itself**
+###### Example 15-25. A script that *exec's* itself
 
 ```bash
 #!/bin/bash

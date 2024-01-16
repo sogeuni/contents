@@ -160,7 +160,7 @@ files _f1_ and _f2_ are hard links to the same file
 
 "not" -- reverses the sense of the tests above (returns true if condition absent).
 
-**Example 7-4. Testing for broken links**
+###### Example 7-4. Testing for broken links
 
 ```bash
 #!/bin/bash

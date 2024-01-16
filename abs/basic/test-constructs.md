@@ -84,7 +84,7 @@ fi
 
 - _These last two examples courtesy of Stéphane Chazelas._
 
-**Example 7-1. What is truth?**
+###### Example 7-1. What is truth?
 
 ```bash
 
@@ -276,7 +276,7 @@ The **if test condition-true** construct is the exact equivalent of **if [ condi
 >
 > If, for some reason, you wish to use /usr/bin/test in a Bash script, then specify it by full pathname.|
 
-**Example 7-2. Equivalence of _test_, /usr/bin/test, [ ], and /usr/bin/[**
+###### Example 7-2. Equivalence of *test*, /usr/bin/test, [ ], and /usr/bin/[
 
 ```bash
 #!/bin/bash
@@ -406,7 +406,7 @@ exit 0
 
 The [[double-parentheses-construct|(( )) construct]] expands and evaluates an arithmetic expression. If the expression evaluates as zero, it returns an [[exit-status#^EXITSTATUSREF|exit status]] of 1, or "false". A non-zero expression returns an exit status of 0, or "true". This is in marked contrast to using the **test** and [ ] constructs previously discussed.
 
-**Example 7-3. Arithmetic Tests using (( ))**
+###### Example 7-3. Arithmetic Tests using (( ))
 
 ```bash
 #!/bin/bash

@@ -151,7 +151,7 @@ string is not _null._
 
 > [!caution] The **-n** test requires that the string be quoted within the test brackets. Using an unquoted string with _! -z_, or even just the unquoted string alone within test brackets (see [[other-comparison-operators#^STRTEST|Example 7-6]]) normally works, however, this is an unsafe practice. _Always_ quote a tested string. [^1]
 
-**Example 7-5. Arithmetic and string comparisons**
+###### Example 7-5. Arithmetic and string comparisons
 
 ```bash
 #!/bin/bash
@@ -192,7 +192,7 @@ echo
 exit 0
 ```
 
-**Example 7-6. Testing whether a string is _null_**
+###### Example 7-6. Testing whether a string is *null*
 
 ```bash
 #!/bin/bash
@@ -265,7 +265,7 @@ fi                    # Not quoting "$string1" now gives wrong result!
 exit 0   # Thank you, also, Florian Wisser, for the "heads-up".
 ```
 
-**Example 7-7. _zmore_**
+###### Example 7-7. *zmore*
 
 ```bash
 #!/bin/bash

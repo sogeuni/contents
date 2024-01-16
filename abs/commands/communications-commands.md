@@ -67,7 +67,7 @@ bash$ dig -x 81.9.6.2
  ;; MSG SIZE  rcvd: 91
 ```
 
-**Example 16-40. Finding out where to report a spammer**
+###### Example 16-40. Finding out where to report a spammer
 
 ```bash
 #!/bin/bash
@@ -117,7 +117,7 @@ exit $?
 #+ see the SpamViz home page, http://www.spamviz.net/index.html.
 ```
 
-**Example 16-41. Analyzing a spam domain**
+###### Example 16-41. Analyzing a spam domain
 
 ```bash
 #! /bin/bash
@@ -401,7 +401,7 @@ wget -c ftp://ftp.xyz25.net/bozofiles/filename.tar.bz2
 #  This works with ftp servers and many HTTP sites.
 ```
 
-**Example 16-42. Getting a stock quote**
+###### Example 16-42. Getting a stock quote
 
 ```bash
 #!/bin/bash
@@ -478,7 +478,7 @@ _Remote synchronize_, updates (synchronizes) files between two different network
 bash$ rsync -a ~/sourcedir/*txt /node1/subdirectory/
 ```
 
-**Example 16-43. Updating FC4**
+###### Example 16-43. Updating FC4
 
 ```bash
 #!/bin/bash
@@ -709,7 +709,7 @@ See also [[contributed-scripts#^NIGHTLYBACKUP|Example A-32]].
 
 _Secure shell_, logs onto a remote host and executes commands there. This secure replacement for **telnet**, **rlogin**, **rcp**, and **rsh** uses identity authentication and encryption. See its [[basic-commands#^MANREF|manpage]] for details.
 
-**Example 16-44. Using _ssh_**
+###### Example 16-44. Using *ssh*
 
 ```bash
 #!/bin/bash
@@ -812,7 +812,7 @@ Send or read e-mail messages.
 
 This stripped-down command-line mail client works fine as a command embedded in a script.
 
-**Example 16-45. A script that mails itself**
+###### Example 16-45. A script that mails itself
 
 ```bash
 #!/bin/sh

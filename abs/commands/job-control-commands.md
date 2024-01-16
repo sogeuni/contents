@@ -37,7 +37,7 @@ Suspend script execution until all jobs running in background have terminated, o
 
 You may use the **wait** command to prevent a script from exiting before a background job finishes executing (this would create a dreaded [[job-control-commands#^ZOMBIEREF|orphan process]]).
 
-**Example 15-26. Waiting for a process to finish before proceeding**
+###### Example 15-26. Waiting for a process to finish before proceeding
 
 ```bash
 #!/bin/bash
@@ -152,7 +152,7 @@ This capability is of relatively limited value, since it is not common to profil
 
 Forcibly terminate a process by sending it an appropriate _terminate_ signal (see [[system-and-administrative-commands#^KILLPROCESS|Example 17-6]]).
 
-**Example 15-27. A script that kills itself**
+###### Example 15-27. A script that kills itself
 
 ```bash
 #!/bin/bash

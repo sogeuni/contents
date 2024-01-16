@@ -24,7 +24,7 @@ Enclosing a referenced value in _double quotes_ (" ... ") does not interfere wit
 
 Note that **$variable** is actually a simplified form of **${variable}**. In contexts where the **$variable** syntax causes an error, the longer form may work (see [[parameter-substitution.html|Section 10.2]], below).
 
-**Example 4-1. Variable assignment and substitution**
+###### Example 4-1. Variable assignment and substitution
 
 ```bash
 #!/bin/bash

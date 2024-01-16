@@ -82,7 +82,7 @@ declare -x var3=373
 
 The **declare** command permits assigning a value to a variable in the same statement as setting its properties.
 
-**Example 9-10. Using _declare_ to type variables**
+###### Example 9-10. Using *declare* to type variables
 
 ```bash
 #!/bin/bash

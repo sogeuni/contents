@@ -4,7 +4,7 @@ title: 20.1. Using _exec_
 
 An **exec <filename** command redirects stdin to a file. From that point on, all stdin comes from that file, rather than its normal source (usually keyboard input). This provides a method of reading a file line by line and possibly parsing each line of input using [[a-sed-and-awk-micro-primer#^SEDREF|sed]] and/or [[awk#^AWKREF|awk]].
 
-**Example 20-1. Redirecting stdin using _exec_**
+###### Example 20-1. Redirecting stdin using *exec*
 
 ```bash
 #!/bin/bash
@@ -53,7 +53,7 @@ Similarly, an **exec >filename** command redirects stdout to a designated file. 
 >
 > Thank you, Ahmed Darwish, for pointing this out.
 
-**Example 20-2. Redirecting stdout using _exec_**
+###### Example 20-2. Redirecting stdout using *exec*
 
 ```bash
 #!/bin/bash
@@ -95,7 +95,7 @@ echo
 exit 0
 ```
 
-**Example 20-3. Redirecting both stdin and stdout in the same script with _exec_**
+###### Example 20-3. Redirecting both stdin and stdout in the same script with *exec*
 
 ```bash
 #!/bin/bash
@@ -146,7 +146,7 @@ echo "File \"$1\" written to \"$2\" as uppercase conversion."
 
 I/O redirection is a clever way of avoiding the dreaded [[subshells#^PARVIS|inaccessible variables within a subshell]] problem.
 
-**Example 20-4. Avoiding a subshell**
+###### Example 20-4. Avoiding a subshell
 
 ```bash
 #!/bin/bash

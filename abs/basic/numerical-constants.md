@@ -4,7 +4,7 @@ title: 8.2. Numerical Constants
 
 A shell script interprets a number as decimal (base 10), unless that number has a special prefix or notation. A number preceded by a _0_ is _octal_ (base 8). A number preceded by _0x_ is _hexadecimal_ (base 16). A number with an embedded _#_ evaluates as _BASE#NUMBER_ (with range and notational restrictions).
 
-**Example 8-4. Representation of numerical constants**
+###### Example 8-4. Representation of numerical constants
 
 ```bash
 #!/bin/bash

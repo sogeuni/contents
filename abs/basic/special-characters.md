@@ -504,7 +504,7 @@ echo "a = $a"   # a = 321   (value inside code block)
 
 The code block enclosed in braces may have [[io-redirection#^IOREDIRREF|I/O redirected]] to and from it.
 
-**Example 3-1. Code blocks and I/O redirection**
+###### Example 3-1. Code blocks and I/O redirection
 
 ```bash
 #!/bin/bash
@@ -530,7 +530,7 @@ exit 0
 # . . . Hans-Joerg Diers suggests using the "set" Bash builtin.
 ```
 
-**Example 3-2. Saving the output of a code block to a file**
+###### Example 3-2. Saving the output of a code block to a file
 
 ```bash
 #!/bin/bash
@@ -820,7 +820,7 @@ bash$ sleep 10 &
 
 Within a script, commands and even [[loops#^FORLOOPREF1|loops]] may run in the background.
 
-**Example 3-3. Running a loop in the background**
+###### Example 3-3. Running a loop in the background
 
 ```bash
 #!/bin/bash
@@ -1040,7 +1040,7 @@ Using [[file-and-archiving-commands#^DIFFREF|diff]] to compare a file with a _se
 
 Finally, a real-world example using _-_ with [[file-and-archiving-commands#^TARREF|tar]].
 
-**Example 3-4. Backup of all files changed in last day**
+###### Example 3-4. Backup of all files changed in last day
 
 ```bash
 #!/bin/bash
