@@ -6,7 +6,7 @@ title: "9.3. $RANDOM: generate random integer"
 >
 > --<cite>John von Neumann</cite>
 
-$RANDOM is an internal Bash [[functions#^FUNCTIONREF|function]] (not a constant) that returns a _pseudorandom_ [^1] integer in the range 0 - 32767. It should _not_ be used to generate an encryption key.
+$RANDOM is an internal Bash [[functions|function]] (not a constant) that returns a _pseudorandom_ [^1] integer in the range 0 - 32767. It should _not_ be used to generate an encryption key.
 
 ###### Example 9-11. Generating random numbers
 

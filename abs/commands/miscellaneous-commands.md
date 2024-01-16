@@ -277,7 +277,7 @@ One might well ask the purpose of this. From the command-line or in a script, th
 >
 > Hit **Ctl-C** _very quickly_, or you just might get more than you bargained for. . . .
 
-The _yes_ command may be emulated in a very simple script [[functions#^FUNCTIONREF|function]].
+The _yes_ command may be emulated in a very simple script [[functions|function]].
 
 ```bash
 yes ()

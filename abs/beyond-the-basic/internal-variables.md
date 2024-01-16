@@ -1257,7 +1257,7 @@ echo $_              #  :
 
 $?
 
-[[exit-status#^EXITSTATUSREF|Exit status]] of a command, [[functions#^FUNCTIONREF|function]], or the script itself (see [[complex-functions-and-function-complexities#^MAX|Example 24-7]])
+[[exit-status#^EXITSTATUSREF|Exit status]] of a command, [[functions|function]], or the script itself (see [[complex-functions-and-function-complexities#^MAX|Example 24-7]])
 
 `$$`
 

@@ -4,7 +4,7 @@ title: 4.4. Special Variable Types
 
 ## _Local variables_
 
-Variables [[subshells#^SCOPEREF|visible]] only within a [[special-characters#^CODEBLOCKREF|code block]] or function (see also [[local-variables#^LOCALREF|local variables]] in [[functions#^FUNCTIONREF|functions]])
+Variables [[subshells#^SCOPEREF|visible]] only within a [[special-characters#^CODEBLOCKREF|code block]] or function (see also [[local-variables#^LOCALREF|local variables]] in [[functions|functions]])
 
 ## _Environmental variables_
 
@@ -261,7 +261,7 @@ $ sh shift-past.sh 1 2 3 4 5
 #                    ^^^^^^^^
 ```
 
-> [!note] The **shift** command works in a similar fashion on parameters passed to a [[functions#^FUNCTIONREF|function]]. See [[assortedtips#^MULTIPLICATION|Example 36-18]].
+> [!note] The **shift** command works in a similar fashion on parameters passed to a [[functions|function]]. See [[assortedtips#^MULTIPLICATION|Example 36-18]].
 
 [^1]: Note that [[complex-functions-and-function-complexities#^PASSEDARGS|_functions_ also take positional parameters]].
 

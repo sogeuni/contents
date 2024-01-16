@@ -10,7 +10,7 @@ The **exit** command terminates a script, just as in a **C** program. It can als
 
 Every command returns an _exit status_ (sometimes referred to as a _return status_ or _exit code_). A successful command returns a 0, while an unsuccessful one returns a non-zero value that usually can be interpreted as an _error code_. Well-behaved UNIX commands, programs, and utilities return a 0 exit code upon successful completion, though there are some exceptions.
 
-Likewise, [[functions#^FUNCTIONREF|functions]] within a script and the script itself return an exit status. The last command executed in the function or script determines the exit status. Within a script, an **exit _nnn_** command may be used to deliver an _nnn_ exit status to the shell (_nnn_ must be an integer in the 0 - 255 range).
+Likewise, [[functions|functions]] within a script and the script itself return an exit status. The last command executed in the function or script determines the exit status. Within a script, an **exit _nnn_** command may be used to deliver an _nnn_ exit status to the shell (_nnn_ must be an integer in the 0 - 255 range).
 
 > [!note]
 > When a script ends with an **exit** that has no parameter, the exit status of the script is the exit status of the last command executed in the script (previous to the **exit**).

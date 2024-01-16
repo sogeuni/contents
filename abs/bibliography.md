@@ -85,7 +85,7 @@ title: Bibliography
 - YongYe's wonderfully complex [Tetris game script](http://bash.deta.in/Tetris_Game.sh).
 - Mark Komarinski's [Printing-Usage HOWTO](http://www.tldp.org/HOWTO/Printing-Usage-HOWTO.html).
 - [The Linux USB subsystem](http://www.linux-usb.org/USB-guide/book1.html) (helpful in writing scripts affecting USB peripherals).
-- There is some nice material on [[io-redirection#^IOREDIRREF|I/O redirection]] in [chapter 10 of the textutils documentation](http://sunsite.ualberta.ca/Documentation/Gnu/textutils-2.0/html_chapter/textutils_10.html) at the [University of Alberta site](http://sunsite.ualberta.ca/Documentation).
+- There is some nice material on [[io-redirection|I/O redirection]] in [chapter 10 of the textutils documentation](http://sunsite.ualberta.ca/Documentation/Gnu/textutils-2.0/html_chapter/textutils_10.html) at the [University of Alberta site](http://sunsite.ualberta.ca/Documentation).
 - [Rick Hohensee](mailto:humbubba@smarty.smart.net) has written the *osimpa* i386 assembler entirely as Bash scripts.
 - *dgatwood* has a very nice [shell script games](http://www.shellscriptgames.com/) site, featuring a Tetris® clone and solitaire.
 - Aurelio Marinho Jargas has written a [Regular expression wizard](http://txt2regex.sf.net). He has also written an informative [book](http://guia-er.sf.net) on Regular Expressions, in Portuguese.

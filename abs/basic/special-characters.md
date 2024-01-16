@@ -267,7 +267,7 @@ Evaluate string of variables using [[parameter-substitution#^PARAMSUBREF|paramet
 
 **[[parameter-substitution#^EXPREPL1|Variable expansion / substring replacement]]**.
 
-In combination with the > [[io-redirection#^IOREDIRREF|redirection operator]], truncates a file to zero length, without changing its permissions. If the file did not previously exist, creates it.
+In combination with the > [[io-redirection|redirection operator]], truncates a file to zero length, without changing its permissions. If the file did not previously exist, creates it.
 
 ```bash
 : > data.xxx   # File "data.xxx" now empty.	      
@@ -405,7 +405,7 @@ A $ prefixing a variable name indicates the _value_ the variable holds.
 
 ### $?
 
-**exit status variable.** The [[exit-status#^EXSREF|$? variable]] holds the [[exit-status#^EXITSTATUSREF|exit status]] of a command, a [[functions#^FUNCTIONREF|function]], or of the script itself.
+**exit status variable.** The [[exit-status#^EXSREF|$? variable]] holds the [[exit-status#^EXITSTATUSREF|exit status]] of a command, a [[functions|function]], or of the script itself.
 
 ### $$
 
@@ -484,7 +484,7 @@ The _{a..z}_ [[bashver3#^BRACEEXPREF3|extended brace expansion]] construction is
 
 ### {}
 
-**Block of code \[curly brackets].** Also referred to as an _inline group_, this construct, in effect, creates an _anonymous function_ (a function without a name). However, unlike in a "standard" [[functions#^FUNCTIONREF|function]], the variables inside a code block remain visible to the remainder of the script.
+**Block of code \[curly brackets].** Also referred to as an _inline group_, this construct, in effect, creates an _anonymous function_ (a function without a name). However, unlike in a "standard" [[functions|function]], the variables inside a code block remain visible to the remainder of the script.
 
 ```bash
 bash$ { local a;
@@ -502,7 +502,7 @@ echo "a = $a"   # a = 321   (value inside code block)
 # Thanks, S.C.
 ```
 
-The code block enclosed in braces may have [[io-redirection#^IOREDIRREF|I/O redirected]] to and from it.
+The code block enclosed in braces may have [[io-redirection|I/O redirected]] to and from it.
 
 ###### Example 3-1. Code blocks and I/O redirection
 
@@ -657,7 +657,7 @@ See the discussion on the [[double-parentheses-construct.html|(( ... )) construc
 
 ### > &> >& >> < <>
 
-**[[io-redirection#^IOREDIRREF|redirection]].**
+**[[io-redirection|redirection]].**
 
 **scriptname >filename** redirects the output of scriptname to file filename. Overwrite filename if it already exists.
 

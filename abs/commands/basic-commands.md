@@ -4,7 +4,7 @@ title: 16.1. Basic Commands
 
 **The first commands a novice learns**
 
-**ls**
+## ls
 
 The basic file "list" command. It is all too easy to underestimate the power of this humble command. For example, using the -R, recursive option, **ls** provides a tree-like listing of a directory structure. Other useful options are -S, sort listing by file size, -t, sort by file modification time, -v, sort by (numerical) version numbers embedded in the filenames, [^1] -b, show escape characters, and -i, show file inodes (see [[complex-commands#^IDELETE|Example 16-4]]).
 
@@ -99,7 +99,7 @@ echo "Exit code = $exitcode"
 exit $exitcode
 ```
 
-**cat**, **tac**
+## cat, tac
 
 **cat**, an acronym for _concatenate_, lists a file to stdout. When combined with redirection (> or >>), it is commonly used to concatenate files.
 
@@ -115,7 +115,7 @@ The -n option to **cat** inserts consecutive numbers before all lines of the tar
 See also [[text-processing-commands#^LNUM|Example 16-28]] and [[text-processing-commands#^ROT13|Example 16-24]].
 
 > [!note]
-> In a [[special-characters#^PIPEREF|pipe]], it may be more efficient to [[io-redirection#^IOREDIRREF|redirect]] the stdin to a file, rather than to **cat** the file.
+> In a [[special-characters#^PIPEREF|pipe]], it may be more efficient to [[io-redirection|redirect]] the stdin to a file, rather than to **cat** the file.
 >
 > ```bash
 > cat filename | tr a-z A-Z
@@ -126,7 +126,7 @@ See also [[text-processing-commands#^LNUM|Example 16-28]] and [[text-processing-
 
 **tac**, is the inverse of _cat_, listing a file backwards from its end.
 
-**rev**
+## rev
 
 reverses each line of a file, and outputs to stdout. This does not have the same effect as **tac**, as it preserves the order of the lines, but flips each one around (mirror image).
 
@@ -147,7 +147,7 @@ bash$ rev file1.txt
 	      
 ```
 
-**cp**
+## cp
 
 This is the file copy command. **cp file1 file2** copies file1 to file2, overwriting file2 if it already exists (see [[complex-commands#^EX42|Example 16-6]]).
 
@@ -160,7 +160,7 @@ This is the file copy command. **cp file1 file2** copies file1 to file2, overwri
 > #+  by copying over all newer and not previously existing files.
 > ```
 
-**mv**
+## mv
 
 This is the file _move_ command. It is equivalent to a combination of **cp** and **rm**. It may be used to move multiple files to a directory, or even to rename a directory. For some examples of using **mv** in a script, see [[parameter-substitution#^RFE|Example 10-11]] and [[contributed-scripts#^RN|Example A-2]].
 
@@ -178,7 +178,7 @@ This is the file _move_ command. It is equivalent to a combination of **cp** and
 > 	      
 > ```
 
-**rm**
+## rm
 
 Delete (remove) a file or files. The -f option forces removal of even readonly files, and is useful for bypassing user input in a script.
 
@@ -206,15 +206,15 @@ Delete (remove) a file or files. The -f option forces removal of even readonly f
 > [!warning]
 > When used with the recursive flag -r, this command removes files all the way down the directory tree from the current directory. A careless **rm -rf *** can wipe out a big chunk of a directory structure.
 
-**rmdir**
+## rmdir
 
 Remove directory. The directory must be empty of all files -- including "invisible" _dotfiles_ [^2] -- for this command to succeed.
 
-**mkdir**
+## mkdir
 
 Make directory, creates a new directory. For example, **mkdir -p project/programs/December** creates the named directory. The _-p_ option automatically creates any necessary parent directories.
 
-**chmod**
+## chmod
 
 Changes the attributes of an existing file or directory (see [[internal-commands-and-builtins#^EX44|Example 15-14]]).
 
@@ -269,7 +269,7 @@ chmod 000 directory-name
 #  These restrictions do not apply to root.
 ```
 
-**chattr**
+## chattr
 
 **Ch**ange file **attr**ibutes. This is analogous to **chmod** above, but with different options and a different invocation syntax, and it works only on _ext2/ext3_ filesystems.
 
@@ -295,7 +295,7 @@ If a file has the c (compress) attribute set, then it will automatically be comp
 > [!note]
 > The file attributes set with **chattr** do not show in a file listing (**ls -l**).
 
-**ln**
+## ln
 
 Creates links to pre-existings files. A "link" is a reference to a file, an alternate name for it. The **ln** command permits referencing the linked file by more than one name and is a superior alternative to aliasing (see [[othertypesv#^EX18|Example 4-6]]).
 
@@ -345,7 +345,7 @@ echo "Hello!"
 exit $HELLO_CALL
 ```
 
-**man**, **info**
+## man, info
 
 These commands access the manual and information pages on system commands and installed utilities. When available, the _info_ pages usually contain more detailed descriptions than do the _man_ pages.
 

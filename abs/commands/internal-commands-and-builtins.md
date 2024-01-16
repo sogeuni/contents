@@ -527,9 +527,9 @@ The -t option to **read** permits timed input (see [[internal-variables#^TOUT|Ex
 
 The -u option takes the [[io-redirection#^FDREF|file descriptor]] of the target file.
 
-The **read** command may also "read" its variable value from a file [[io-redirection#^IOREDIRREF|redirected]] to stdin. If the file contains more than one line, only the first line is assigned to the variable. If **read** has more than one parameter, then each of these variables gets assigned a successive [[special-characters#^WHITESPACEREF|whitespace-delineated]] string. Caution!
+The **read** command may also "read" its variable value from a file [[io-redirection|redirected]] to stdin. If the file contains more than one line, only the first line is assigned to the variable. If **read** has more than one parameter, then each of these variables gets assigned a successive [[special-characters#^WHITESPACEREF|whitespace-delineated]] string. Caution!
 
-###### Example 15-7. Using *read* with [[io-redirection#^IOREDIRREF|file redirection]]
+###### Example 15-7. Using *read* with [[io-redirection|file redirection]]
 
 ```bash
 #!/bin/bash
@@ -1695,7 +1695,7 @@ pwd       # /home
 
 **caller**
 
-Putting a **caller** command inside a [[functions#^FUNCTIONREF|function]] echoes to stdout information about the _caller_ of that function.
+Putting a **caller** command inside a [[functions|function]] echoes to stdout information about the _caller_ of that function.
 
 ```bash
 #!/bin/bash

@@ -66,7 +66,7 @@ One type of lottery involves picking five different numbers, in the range of 1 -
 
 **Integer or String**
 
-Write a script [[functions#^FUNCTIONREF|function]] that determines if an argument passed to it is an integer or a string. The function will return TRUE (0) if passed an integer, and FALSE (1) if passed a string.
+Write a script [[functions|function]] that determines if an argument passed to it is an integer or a string. The function will return TRUE (0) if passed an integer, and FALSE (1) if passed a string.
 
 Hint: What does the following expression return when $1 is _not_ an integer?
 
@@ -487,7 +487,7 @@ This script will have three main sections
 3. Decrypting encrypted text.
     
 
-The script will make extensive use of [[arrays#^ARRAYREF|arrays]] and [[functions#^FUNCTIONREF|functions]]. You may use [[contributed-scripts#^GRONSFELD|Example A-56]] as an inspiration.
+The script will make extensive use of [[arrays#^ARRAYREF|arrays]] and [[functions|functions]]. You may use [[contributed-scripts#^GRONSFELD|Example A-56]] as an inspiration.
 
 --
 

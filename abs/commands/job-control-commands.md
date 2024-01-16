@@ -128,7 +128,7 @@ Optionally, **wait** can take a _job identifier_ as an argument, for example, _w
 >                
 > ```
 >
-> [[io-redirection#^IOREDIRREF|Redirecting]] the output of the command to a file or even to /dev/null also takes care of this problem.|
+> [[io-redirection|Redirecting]] the output of the command to a file or even to /dev/null also takes care of this problem.|
 
 **suspend**
 

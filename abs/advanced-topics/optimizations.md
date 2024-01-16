@@ -183,4 +183,4 @@ Write your scripts in a modular and coherent form, [^1] so they can be reorganiz
 
 For an excellent demonstration of how optimization can dramatically reduce the execution time of a script, see [[mathc.html#MONTHLYPMT|Example 16-47]].
 
-[^1]: This usually means liberal use of [[functions.html#FUNCTIONREF|functions]].
+[^1]: This usually means liberal use of [[functions|functions]].

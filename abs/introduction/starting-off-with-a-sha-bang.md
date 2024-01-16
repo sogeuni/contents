@@ -180,7 +180,7 @@ Note that the path given at the "sha-bang" must be correct, otherwise an error m
 
 ## Invoking the script
 
-Having written the script, you can invoke it by **`sh scriptname`**, [^8] or alternatively **`bash scriptname`**. (Not recommended is using **`sh <scriptname`**, since this effectively disables reading from [[a-detailed-introduction-to-io-and-io-redirection#STDINOUTDEF|stdin]] within the script.) Much more convenient is to make the script itself directly executable with a [[basic#CHMODREF|chmod]].
+Having written the script, you can invoke it by **`sh scriptname`**, [^8] or alternatively **`bash scriptname`**. (Not recommended is using **`sh <scriptname`**, since this effectively disables reading from [[a-detailed-introduction-to-io-and-io-redirection|stdin]] within the script.) Much more convenient is to make the script itself directly executable with a [[basic-commands#chmod|chmod]].
 
 Either:
 
@@ -199,7 +199,7 @@ As a final step, after testing and debugging, you would likely want to move it t
 ## Preliminary Exercises
 
 1. System administrators often write scripts to automate common tasks. Give several instances where such scripts would be useful.
-2. Write a script that upon invocation shows the [[time-date-commands#^DATEREF|time and date]], [[system-and-administrative-commands#^WHOREF|lists all logged-in users]], and gives the system [[system-and-administrative-commands#^UPTIMEREF|uptime]]. The script then [[io-redirection#^IOREDIRREF|saves this information]] to a logfile.
+2. Write a script that upon invocation shows the [[time-date-commands#date|time and date]], [[system-and-administrative-commands#who|lists all logged-in users]], and gives the system [[system-and-administrative-commands#uptime|uptime]]. The script then [[io-redirection|saves this information]] to a logfile.
 
 [^1]: More commonly seen in the literature as _she-bang_ or _sh-bang_. This derives from the concatenation of the tokens _sharp_ (#) and _bang_ (!).
 

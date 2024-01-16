@@ -21,7 +21,7 @@ Unfortunately, according to [an article](http://www.linuxjournal.com/article/825
 _Dan Stromberg_ suggests the following guidelines for writing (relatively) secure shell scripts.
 
 - Don't put secret data in [[othertypesv#^ENVREF|environment variables]].
-- Don't pass secret data in an external command's arguments (pass them in via a [[special-characters#^PIPEREF|pipe]] or [[io-redirection#^IOREDIRREF|redirection]] instead).
+- Don't pass secret data in an external command's arguments (pass them in via a [[special-characters#^PIPEREF|pipe]] or [[io-redirection|redirection]] instead).
 - Set your [[internal-variables#^PATHREF|$PATH]] carefully. Don't just trust whatever path you inherit from the caller if your script is running as _root_. In fact, whenever you use an environment variable inherited from the caller, think about what could happen if the caller put something misleading in the variable, e.g., if the caller set [[internal-variables#^HOMEDIRREF|$HOME]] to /etc.
 
 [^1]: See Marius van Oers' article, [Unix Shell Scripting Malware](http://www.virusbtn.com/magazine/archives/200204/malshell.xml), and also the [[bibliography.md#^DENNINGREF|_Denning_ reference]] in the _bibliography_.

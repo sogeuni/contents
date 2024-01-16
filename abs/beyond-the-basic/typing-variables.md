@@ -58,7 +58,7 @@ The variable _indices_ will be treated as an [[arrays#^ARRAYREF|array]].
 declare -f
 ```
 
-A **declare -f** line with no arguments in a script causes a listing of all the [[functions#^FUNCTIONREF|functions]] previously defined in that script.
+A **declare -f** line with no arguments in a script causes a listing of all the [[functions|functions]] previously defined in that script.
 
 ```bash
 declare -f function_name

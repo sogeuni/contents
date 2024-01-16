@@ -618,7 +618,7 @@ if ls -l nonexistent_filename | grep -q 'No such file or directory'
 fi
 ```
 
-[[io-redirection#^IOREDIRREF|Redirecting]] stderr to stdout fixes this.
+[[io-redirection|Redirecting]] stderr to stdout fixes this.
 
 ```bash
 if ls -l nonexistent_filename 2>&1 | grep -q 'No such file or directory'

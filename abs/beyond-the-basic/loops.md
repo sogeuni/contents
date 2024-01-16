@@ -339,7 +339,7 @@ exit $?
 #+ for $directory and $fstring.
 ```
 
-A final example of **[list]** / command substitution, but this time the "command" is a [[functions#FUNCTIONREF|function]].
+A final example of **[list]** / command substitution, but this time the "command" is a [[functions|function]].
 
 ```bash
 generate_list ()
@@ -427,7 +427,7 @@ do
 #+  a colon (or space in earlier example) as well."
 ```
 
-The stdout of a loop may be [[io-redirection#IOREDIRREF|redirected]] to a file, as this slight modification to the previous example shows.
+The stdout of a loop may be [[io-redirection|redirected]] to a file, as this slight modification to the previous example shows.
 
 ###### Example 11-12. Symbolic links in a directory, saved to a file
 
@@ -737,7 +737,7 @@ echo
 exit 0
 ```
 
-Inside its test brackets, a _while loop_ can call a [[functions#FUNCTIONREF|function]].
+Inside its test brackets, a _while loop_ can call a [[functions|function]].
 
 ```bash
 t=0

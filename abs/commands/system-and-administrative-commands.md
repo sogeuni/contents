@@ -6,11 +6,11 @@ The startup and shutdown scripts in /etc/rc.d illustrate the uses (and usefulnes
 
 **Users and Groups**
 
-**users**
+## users
 
 Show all logged on users. This is the approximate equivalent of **who -q**.
 
-**groups**
+## groups
 
 Lists the current user and the groups she belongs to. This corresponds to the [[internal-variables#^GROUPSREF|$GROUPS]] internal variable, but gives the group names, rather than the numbers.
 
@@ -22,7 +22,7 @@ bash$ echo $GROUPS
 501
 ```
 
-**chown**, **chgrp**
+## chown, chgrp
 
 The **chown** command changes the ownership of a file or files. This command is a useful method that _root_ can use to shift file ownership from one user to another. An ordinary user may not change the ownership of files, not even her own files. [^1]
 
@@ -38,22 +38,22 @@ chgrp --recursive dunderheads *.data
 #+ all the way down the $PWD directory tree (that's what "recursive" means).
 ```
 
-**useradd**, **userdel**
+## useradd, userdel
 
 The **useradd** administrative command adds a user account to the system and creates a home directory for that particular user, if so specified. The corresponding **userdel** command removes a user account from the system [^2] and deletes associated files.
 
 > [!note]
 > The **adduser** command is a synonym for **useradd** and is usually a symbolic link to it.
 
-**usermod**
+## usermod
 
 Modify a user account. Changes may be made to the password, group membership, expiration date, and other attributes of a given user's account. With this command, a user's password may be locked, which has the effect of disabling the account.
 
-**groupmod**
+## groupmod
 
 Modify a given group. The group name and/or ID number may be changed using this command.
 
-**id**
+## id
 
 The **id** command lists the real and effective user IDs and the group IDs of the user associated with the current process. This is the counterpart to the [[internal-variables#^UIDREF|$UID]], [[internal-variables#^EUIDREF|$EUID]], and [[internal-variables#^GROUPSREF|$GROUPS]] internal Bash variables.
 
@@ -70,7 +70,7 @@ bash$ echo $UID
 
 Also see [[internal-variables#^AMIROOT|Example 9-5]].
 
-**lid**
+## lid
 
 The _lid_ (list ID) command shows the group(s) that a given user belongs to, or alternately, the users belonging to a given group. May be invoked only by root.
 
@@ -87,7 +87,7 @@ root# lid daemon
 	      
 ```
 
-**who**
+## who
 
 Show all users logged on to the system.
 
@@ -831,7 +831,7 @@ bash$ vmstat
 	    
 ```
 
-**uptime**
+## uptime
 
 Shows how long the system has been running, along with associated statistics.
 

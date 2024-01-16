@@ -633,7 +633,7 @@ SCRIPT_AUTHOR_COMMENTS
 >     
 > 5. $BASH_LINENO
 >     
->     In a [[functions#^FUNCTIONREF|function]], indicates the line number of the function call.
+>     In a [[functions|function]], indicates the line number of the function call.
 >     
 > 6. $BASH_REMATCH
 >     
