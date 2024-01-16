@@ -4,7 +4,7 @@ title: 36.7. Assorted Tips
 
 ## 36.7.1. Ideas for more powerful scripts
 
-- You have a problem that you want to solve by writing a Bash script. Unfortunately, you don't know quite where to start. One method is to plunge right in and code those parts of the script that come easily, and write the hard parts as _pseudo-code_.
+- You have a problem that you want to solve by writing a Bash script. Unfortunately, you don't know quite where to start. One method is to plunge right in and code those parts of the script that come easily, and write the hard parts as *pseudo-code*.
 
 ```bash
 #!/bin/bash
@@ -53,7 +53,7 @@ echo>> $SAVE_FILE      # Blank line as separator.
 #+ (something like ~/.scripts-run)
 ```
 
-- The >> operator _appends_ lines to a file. What if you wish to _prepend_ a line to an existing file, that is, to paste it in at the beginning?
+- The >> operator *appends* lines to a file. What if you wish to *prepend* a line to an existing file, that is, to paste it in at the beginning?
 
 ```bash
 file=data.txt
@@ -67,7 +67,7 @@ echo $title | cat - $file >$file.new
 
 This is a simplified variant of the [[here-strings#^PREPENDEX|Example 19-13]] script given earlier. And, of course, [[sedawk#^SEDREF|sed]] can also do this.
 
-- A shell script may act as an embedded command inside another shell script, a _Tcl_ or _wish_ script, or even a [[file-and-archiving-commands#^MAKEFILEREF|Makefile]]. It can be invoked as an external shell command in a C program using the _system()_ call, i.e., _system("script_name");_.
+- A shell script may act as an embedded command inside another shell script, a *Tcl* or *wish* script, or even a [[file-and-archiving-commands#^MAKEFILEREF|Makefile]]. It can be invoked as an external shell command in a C program using the *system()* call, i.e., *system("script_name");*.
 
 - Setting a variable to the contents of an embedded _sed_ or _awk_ script increases the readability of the surrounding [[shell-wrappers#^SHWRAPPER|shell wrapper]]. See [[contributed-scripts#^MAILFORMAT|Example A-1]] and [[internal-commands-and-builtins#^COLTOTALER3|Example 15-20]].
 
@@ -426,7 +426,7 @@ exit 0
 > # Now, this will not work correctly.
 > ```
 
-- Next in our bag of tricks are techniques for passing an [[arrays#^ARRAYREF|array]] to a [[functions#^FUNCTIONREF|function]], then "returning" an array back to the main body of the script.
+- Next in our bag of tricks are techniques for passing an [[arrays#^ARRAYREF|array]] to a [[functions|function]], then "returning" an array back to the main body of the script.
 
     Passing an array involves loading the space-separated elements of the array into a variable with [[command-substitution#^COMMANDSUBREF|command substitution]]. Getting an array back as the "return value" from a function uses the previously mentioned strategem of [[internal-commands-and-builtins#^ECHOREF|echoing]] the array in the function, then invoking command substitution and the **( ... )** operator to assign it to an array.
 

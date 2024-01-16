@@ -588,6 +588,6 @@ Script examples:
 6. [[contributed-scripts#^INSERTIONSORT|Example A-36]]
 7. [[contributed-scripts#^QKY|Example A-41]]
 
-[^1]: This applies to either command-line arguments or parameters passed to a [[functions#^FUNCTIONREF|function]].
+[^1]: This applies to either command-line arguments or parameters passed to a [[functions|function]].
 
 [^2]: Note that _$substring_ and _$replacement_ may refer to either _literal strings_ or _variables_, depending on context. See the first usage example.

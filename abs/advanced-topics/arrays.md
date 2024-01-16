@@ -2,7 +2,7 @@
 title: 27. Arrays
 ---
 
-Newer versions of Bash support one-dimensional arrays. Array elements may be initialized with the **`variable[xx]`** notation. Alternatively, a script may introduce the entire array by an explicit **declare -a variable** statement. To dereference (retrieve the contents of) an array element, use _curly bracket_ notation, that is, **`${element[xx]}`**.
+Newer versions of Bash support one-dimensional arrays. Array elements may be initialized with the **`variable[xx]`** notation. Alternatively, a script may introduce the entire array by an explicit **declare -a variable** statement. To dereference (retrieve the contents of) an array element, use *curly bracket* notation, that is, **`${element[xx]}`**.
 
 ###### Example 27-1. Simple array usage
 
@@ -443,7 +443,7 @@ echo ${colors[@]}            # List array again, now empty.
 exit 0
 ```
 
-As seen in the previous example, either **`${array_name[@]}`** or **`${array_name\[*]}`** refers to _all_ the elements of the array. Similarly, to get a count of the number of elements in an array, use either **`${#array_name[@]}`** or **`${#array_name[*]}`**. **`${#array_name}`** is the length (number of characters) of **`${array_name[0]}`**, the first element of the array.
+As seen in the previous example, either **`${array_name[@]}`** or **`${array_name\[*]}`** refers to *all* the elements of the array. Similarly, to get a count of the number of elements in an array, use either **`${#array_name[@]}`** or **`${#array_name[*]}`**. **`${#array_name}`** is the length (number of characters) of **`${array_name[0]}`**, the first element of the array.
 
 ###### Example 27-7. Of empty arrays and empty elements
 
@@ -1174,7 +1174,7 @@ exit 0
 
 --
 
-Arrays enable implementing a shell script version of the _Sieve of Eratosthenes_. Of course, a resource-intensive application of this nature should really be written in a compiled language, such as C. It runs excruciatingly slowly as a script.
+Arrays enable implementing a shell script version of the *Sieve of Eratosthenes*. Of course, a resource-intensive application of this nature should really be written in a compiled language, such as C. It runs excruciatingly slowly as a script.
 
 ###### Example 27-13. The Sieve of Eratosthenes
 
@@ -1705,7 +1705,7 @@ exit 0
 #     Try to minimize "distortion" when the array is rotated.
 ```
 
-A two-dimensional array is essentially equivalent to a one-dimensional one, but with additional addressing modes for referencing and manipulating the individual elements by _row_ and _column_ position.
+A two-dimensional array is essentially equivalent to a one-dimensional one, but with additional addressing modes for referencing and manipulating the individual elements by *row* and *column* position.
 
 For an even more elaborate example of simulating a two-dimensional array, see [[contributed-scripts#^LIFESLOW|Example A-10]].
 

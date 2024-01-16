@@ -154,13 +154,13 @@ The _sha-bang_ (`#!`) [^1] at the head of a script tells your system that this f
 #!/bin/awk -f
 ```
 
-Each of the above script header lines calls a different command interpreter, be it /bin/sh, the default shell (**bash** in a Linux system) or otherwise. [^4] Using **#!/bin/sh**, the default Bourne shell in most commercial variants of UNIX, makes the script [[portability-issues|portable]] to non-Linux machines, though you [[gotchas#^BINSH|sacrifice Bash-specific features]]. The script will, however, conform to the POSIX [^5] **sh** standard.
+Each of the above script header lines calls a different command interpreter, be it `/bin/sh`, the default shell (**bash** in a Linux system) or otherwise. [^4] Using `#!/bin/sh`, the default Bourne shell in most commercial variants of UNIX, makes the script [[portability-issues|portable]] to non-Linux machines, though you [[gotchas#^BINSH|sacrifice Bash-specific features]]. The script will, however, conform to the POSIX [^5] **sh** standard.
 
 Note that the path given at the "sha-bang" must be correct, otherwise an error message -- usually "Command not found." -- will be the only result of running the script. [^6]
 
 #! can be omitted if the script consists only of a set of generic system commands, using no internal shell directives. The second example, above, requires the initial #!, since the variable assignment line, **lines=50**, uses a shell-specific construct. [^7] Note again that **#!/bin/sh** invokes the default shell interpreter, which defaults to /bin/bash on a Linux machine.
 
-> [!note] 
+> [!note]
 > This tutorial encourages a modular approach to constructing a script. Make note of and collect "boilerplate" code snippets that might be useful in future scripts. Eventually you will build quite an extensive library of nifty routines. As an example, the following script prolog tests whether the script has been invoked with the correct number of parameters.
 >
 > ```bash
@@ -176,7 +176,7 @@ Note that the path given at the "sha-bang" must be correct, otherwise an error m
 > fi 
 > ```
 >
-> Many times, you will write a script that carries out one particular task. The first script in this chapter is an example. Later, it might occur to you to generalize the script to do other, similar tasks. Replacing the literal ("hard-wired") constants by variables is a step in that direction, as is replacing repetitive code blocks by [[functions#^FUNCTIONREF|functions]].
+> Many times, you will write a script that carries out one particular task. The first script in this chapter is an example. Later, it might occur to you to generalize the script to do other, similar tasks. Replacing the literal ("hard-wired") constants by variables is a step in that direction, as is replacing repetitive code blocks by [[functions|functions]].
 
 ## Invoking the script
 
