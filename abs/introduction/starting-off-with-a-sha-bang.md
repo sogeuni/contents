@@ -176,7 +176,30 @@ Note that the path given at the "sha-bang" must be correct, otherwise an error m
 > fi 
 > ```
 >
-> Many times, you will write a script that carries out one particular task. The first script in this chapter is an example. Later, it might occur to you to generalize the script to do other, similar tasks. Replacing the literal ("hard-wired") constants by variables is a step in that direction, as is replacing repetitive code blocks by [[functions#^FUNCTIONREF|functions]].|
+> Many times, you will write a script that carries out one particular task. The first script in this chapter is an example. Later, it might occur to you to generalize the script to do other, similar tasks. Replacing the literal ("hard-wired") constants by variables is a step in that direction, as is replacing repetitive code blocks by [[functions#^FUNCTIONREF|functions]].
+
+## Invoking the script
+
+Having written the script, you can invoke it by **`sh scriptname`**, [^8] or alternatively **`bash scriptname`**. (Not recommended is using **`sh <scriptname`**, since this effectively disables reading from [[a-detailed-introduction-to-io-and-io-redirection#STDINOUTDEF|stdin]] within the script.) Much more convenient is to make the script itself directly executable with a [[basic#CHMODREF|chmod]].
+
+Either:
+
+**`chmod 555 scriptname`** (gives everyone read/execute permission) [^9]
+
+or
+
+**`chmod +rx scriptname`** (gives everyone read/execute permission)
+
+**`chmod u+rx scriptname`** (gives only the script owner read/execute permission)
+
+Having made the script executable, you may now test it by **`./scriptname`**. [^10] If it begins with a "sha-bang" line, invoking the script calls the correct command interpreter to run it.
+
+As a final step, after testing and debugging, you would likely want to move it to `/usr/local/bin` (as _root_, of course), to make the script available to yourself and all other users as a systemwide executable. The script could then be invoked by simply typing **`scriptname [ENTER]`** from the command-line.
+
+## Preliminary Exercises
+
+1. System administrators often write scripts to automate common tasks. Give several instances where such scripts would be useful.
+2. Write a script that upon invocation shows the [[time-date-commands#^DATEREF|time and date]], [[system-and-administrative-commands#^WHOREF|lists all logged-in users]], and gives the system [[system-and-administrative-commands#^UPTIMEREF|uptime]]. The script then [[io-redirection#^IOREDIRREF|saves this information]] to a logfile.
 
 [^1]: More commonly seen in the literature as _she-bang_ or _sh-bang_. This derives from the concatenation of the tokens _sharp_ (#) and _bang_ (!).
 
@@ -223,3 +246,9 @@ Note that the path given at the "sha-bang" must be correct, otherwise an error m
 [^6]: To avoid this possibility, a script may begin with a [[system-and-administrative-commands#^ENVV2REF|#!/bin/env bash]] _sha-bang_ line. This may be useful on UNIX machines where _bash_ is not located in /bin
 
 [^7]: If _Bash_ is your default shell, then the #! isn't necessary at the beginning of a script. However, if launching a script from a different shell, such as _tcsh_, then you _will_ need the #!.
+
+[^8]: Caution: invoking a _Bash_ script by **`sh scriptname`** turns off Bash-specific extensions, and the script may therefore fail to execute.
+
+[^9]: A script needs _read_, as well as execute permission for it to run, since the shell needs to be able to read it.
+
+[^10]: Why not simply invoke the script with **scriptname**? If the directory you are in ([[internal-variables#PWDREF|$PWD]]) is where scriptname is located, why doesn't this work? This fails because, for security reasons, the current directory (./) is not by default included in a user's [[internal-variables#PATHREF|$PATH]]. It is therefore necessary to explicitly invoke the script in the current directory with a **./scriptname**.

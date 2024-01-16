@@ -1,5 +1,6 @@
 ---
 title: 2.1. Invoking the script
+draft: true
 ---
 
 Having written the script, you can invoke it by **`sh scriptname`**, [^1] or alternatively **`bash scriptname`**. (Not recommended is using **`sh <scriptname`**, since this effectively disables reading from [[a-detailed-introduction-to-io-and-io-redirection#STDINOUTDEF|stdin]] within the script.) Much more convenient is to make the script itself directly executable with a [[basic#CHMODREF|chmod]].

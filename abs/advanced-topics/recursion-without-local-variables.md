@@ -4,7 +4,7 @@ title: 24.3. Recursion Without Local Variables
 
 A function may recursively call itself even without use of local variables.
 
-###### Example 24-16. The Fibonacci Sequence
+###### Example 24-16. *The Fibonacci Sequence*
 
 ```bash
 #!/bin/bash
@@ -55,7 +55,7 @@ echo
 exit 0
 ```
 
-**Example 24-17. _The Towers of Hanoi_**
+###### Example 24-17. *The Towers of Hanoi*
 
 ```bash
 #! /bin/bash
