@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/introduction/shell-programming.md",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -100,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/introduction/shell-programming.md",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/introduction/shell-programming.md",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/introduction/shell-programming.md"
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md"
               }
             }
           },
@@ -153,7 +153,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
         "id": "bcb36eecbba39704",
@@ -166,7 +166,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/introduction/shell-programming.md",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -213,8 +213,8 @@
   },
   "active": "a7f108f530ed14b7",
   "lastOpenFiles": [
-    "abs/advanced-topics/recursion-without-local-variables.md",
     "abs/introduction/shell-programming.md",
+    "abs/advanced-topics/recursion-without-local-variables.md",
     "abs/advanced-topics/recurnolocvar.md",
     "abs/introduction/preliminary-exercises.md",
     "abs/advanced-topics/aliases.md",

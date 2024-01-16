@@ -7,7 +7,7 @@ title: 2. Starting Off With a Sha-Bang
 
 In the simplest case, a script is nothing more than a list of system commands stored in a file. At the very least, this saves the effort of retyping that particular sequence of commands each time it is invoked.
 
-**Example 2-1. _cleanup_: A script to clean up log files in /var/log**
+###### Example 2-1. *cleanup*: A script to clean up log files in `/var/log`
 
 ```bash
 # Cleanup
@@ -21,7 +21,7 @@ echo "Log files cleaned up."
 
 There is nothing unusual here, only a set of commands that could just as easily have been invoked one by one from the command-line on the console or in a terminal window. The advantages of placing the commands in a script go far beyond not having to retype them time and again. The script becomes a _program_ -- a _tool_ -- and it can easily be modified or customized for a particular application.
 
-**Example 2-2. _cleanup_: An improved clean-up script**
+###### Example 2-2. *cleanup*: An improved clean-up script
 
 ```bash
 #!/bin/bash
@@ -49,7 +49,7 @@ exit #  The right and proper method of "exiting" from a script.
 
 Now _that's_ beginning to look like a real script. But we can go even farther...
 
-**Example 2-3. _cleanup_: An enhanced and generalized version of above scripts.**
+###### Example 2-3. *cleanup*: An enhanced and generalized version of above scripts.
 
 ```bash
 #!/bin/bash
