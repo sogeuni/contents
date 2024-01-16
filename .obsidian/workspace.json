@@ -11,8 +11,11 @@
             "id": "f67ec3ab6f4e9ce0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "diff-view",
+              "state": {
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
+                "staged": false
+              }
             }
           }
         ]
@@ -131,7 +134,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
         "id": "bcb36eecbba39704",

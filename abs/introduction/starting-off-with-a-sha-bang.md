@@ -19,7 +19,7 @@ cat /dev/null > wtmp
 echo "Log files cleaned up."
 ```
 
-There is nothing unusual here, only a set of commands that could just as easily have been invoked one by one from the command-line on the console or in a terminal window. The advantages of placing the commands in a script go far beyond not having to retype them time and again. The script becomes a _program_ -- a _tool_ -- and it can easily be modified or customized for a particular application.
+There is nothing unusual here, only a set of commands that could just as easily have been invoked one by one from the command-line on the console or in a terminal window. The advantages of placing the commands in a script go far beyond not having to retype them time and again. The script becomes a *program* -- a *tool* -- and it can easily be modified or customized for a particular application.
 
 ###### Example 2-2. *cleanup*: An improved clean-up script
 
@@ -47,7 +47,7 @@ exit #  The right and proper method of "exiting" from a script.
      #+ of the preceding command. 
 ```
 
-Now _that's_ beginning to look like a real script. But we can go even farther...
+Now *that's* beginning to look like a real script. But we can go even farther...
 
 ###### Example 2-3. *cleanup*: An enhanced and generalized version of above scripts.
 
@@ -143,7 +143,7 @@ Since you may not wish to wipe out the entire system log, this version of the sc
 
 * * *
 
-The _sha-bang_ (`#!`) [^1] at the head of a script tells your system that this file is a set of commands to be fed to the command interpreter indicated. The #! is actually a two-byte [^2] _magic number_, a special marker that designates a file type, or in this case an executable shell script (type **man magic** for more details on this fascinating topic). Immediately following the _sha-bang_ is a _path name_. This is the path to the program that interprets the commands in the script, whether it be a shell, a programming language, or a utility. This command interpreter then executes the commands in the script, starting at the top (the line following the _sha-bang_ line), and ignoring comments. [^3]
+The *sha-bang* (`#!`) [^1] at the head of a script tells your system that this file is a set of commands to be fed to the command interpreter indicated. The #! is actually a two-byte [^2] *magic number*, a special marker that designates a file type, or in this case an executable shell script (type **man magic** for more details on this fascinating topic). Immediately following the *sha-bang* is a *path name*. This is the path to the program that interprets the commands in the script, whether it be a shell, a programming language, or a utility. This command interpreter then executes the commands in the script, starting at the top (the line following the *sha-bang* line), and ignoring comments. [^3]
 
 ```bash
 #!/bin/sh
@@ -194,20 +194,20 @@ or
 
 Having made the script executable, you may now test it by **`./scriptname`**. [^10] If it begins with a "sha-bang" line, invoking the script calls the correct command interpreter to run it.
 
-As a final step, after testing and debugging, you would likely want to move it to `/usr/local/bin` (as _root_, of course), to make the script available to yourself and all other users as a systemwide executable. The script could then be invoked by simply typing **`scriptname [ENTER]`** from the command-line.
+As a final step, after testing and debugging, you would likely want to move it to `/usr/local/bin` (as *root*, of course), to make the script available to yourself and all other users as a systemwide executable. The script could then be invoked by simply typing **`scriptname [ENTER]`** from the command-line.
 
 ## Preliminary Exercises
 
 1. System administrators often write scripts to automate common tasks. Give several instances where such scripts would be useful.
 2. Write a script that upon invocation shows the [[time-date-commands#date|time and date]], [[system-and-administrative-commands#who|lists all logged-in users]], and gives the system [[system-and-administrative-commands#uptime|uptime]]. The script then [[io-redirection|saves this information]] to a logfile.
 
-[^1]: More commonly seen in the literature as _she-bang_ or _sh-bang_. This derives from the concatenation of the tokens _sharp_ (#) and _bang_ (!).
+[^1]: More commonly seen in the literature as *she-bang* or *sh-bang*. This derives from the concatenation of the tokens *sharp* (#) and *bang* (!).
 
 [^2]: Some flavors of UNIX (those based on 4.2 BSD) allegedly take a four-byte magic number, requiring a blank after the ! -- **#! /bin/sh**. [According to Sven Mascheck](http://www.in-ulm.de/~mascheck/various/shebang/#details) this is probably a myth.
 
 [^3]: The #! line in a shell script will be the first thing the command interpreter (**sh** or **bash**) sees. Since this line begins with a #, it will be correctly interpreted as a comment when the command interpreter finally executes the script. The line has already served its purpose - calling the command interpreter.
 
-    If, in fact, the script includes an _extra_ #! line, then **bash** will interpret it as a comment.
+    If, in fact, the script includes an *extra* #! line, then **bash** will interpret it as a comment.
 
     ```bash
     #!/bin/bash
@@ -241,14 +241,14 @@ As a final step, after testing and debugging, you would likely want to move it t
 
     Also, try starting a README file with a **#!/bin/more**, and making it executable. The result is a self-listing documentation file. (A [[here-documents#^HEREDOCREF|here document]] using [[basic-commands#^CATREF|cat]] is possibly a better alternative -- see [[here-documents#^EX71|Example 19-3]]).
 
-[^5]: **P**ortable **O**perating **S**ystem _I_nterface, an attempt to standardize UNI**X**-like OSes. The POSIX specifications are listed on the [Open Group site](http://www.opengroup.org/onlinepubs/007904975/toc.htm).
+[^5]: **P**ortable **O**perating **S**ystem *I*nterface, an attempt to standardize UNI**X**-like OSes. The POSIX specifications are listed on the [Open Group site](http://www.opengroup.org/onlinepubs/007904975/toc.htm).
 
-[^6]: To avoid this possibility, a script may begin with a [[system-and-administrative-commands#^ENVV2REF|#!/bin/env bash]] _sha-bang_ line. This may be useful on UNIX machines where _bash_ is not located in /bin
+[^6]: To avoid this possibility, a script may begin with a [[system-and-administrative-commands#^ENVV2REF|#!/bin/env bash]] *sha-bang* line. This may be useful on UNIX machines where *bash* is not located in /bin
 
-[^7]: If _Bash_ is your default shell, then the #! isn't necessary at the beginning of a script. However, if launching a script from a different shell, such as _tcsh_, then you _will_ need the #!.
+[^7]: If *Bash* is your default shell, then the #! isn't necessary at the beginning of a script. However, if launching a script from a different shell, such as *tcsh*, then you *will* need the #!.
 
-[^8]: Caution: invoking a _Bash_ script by **`sh scriptname`** turns off Bash-specific extensions, and the script may therefore fail to execute.
+[^8]: Caution: invoking a *Bash* script by **`sh scriptname`** turns off Bash-specific extensions, and the script may therefore fail to execute.
 
-[^9]: A script needs _read_, as well as execute permission for it to run, since the shell needs to be able to read it.
+[^9]: A script needs *read*, as well as execute permission for it to run, since the shell needs to be able to read it.
 
 [^10]: Why not simply invoke the script with **scriptname**? If the directory you are in ([[internal-variables#PWDREF|$PWD]]) is where scriptname is located, why doesn't this work? This fails because, for security reasons, the current directory (./) is not by default included in a user's [[internal-variables#PATHREF|$PATH]]. It is therefore necessary to explicitly invoke the script in the current directory with a **./scriptname**.
