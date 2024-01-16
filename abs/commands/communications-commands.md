@@ -298,7 +298,7 @@ PING localhost.localdomain (127.0.0.1) from 127.0.0.1 : 56(84) bytes of data.
  round-trip min/avg/max/mdev = 0.286/0.497/0.709/0.212 ms
 ```
 
-A successful _ping_ returns an [[exit-status#^EXITSTATUSREF|exit status]] of 0. This can be tested for in a script.
+A successful _ping_ returns an [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of 0. This can be tested for in a script.
 
 ```bash
 HNAME=news-15.net  # Notorious spammer.

@@ -801,7 +801,7 @@ exit
 ```
 
 > [!caution]
-> The _let_ command can, in certain contexts, return a surprising [[exit-status#^EXITSTATUSREF|exit status]].
+> The _let_ command can, in certain contexts, return a surprising [[exit-and-exit-status#^EXITSTATUSREF|exit status]].
 >
 > ```bash
 > # Evgeniy Ivanov points out:
@@ -1615,7 +1615,7 @@ exit 0   # The net effect is counting from 1 to 100.
 
 **exit**
 
-Unconditionally terminates a script. [^6] The **exit** command may optionally take an integer argument, which is returned to the shell as the [[exit-status#^EXITSTATUSREF|exit status]] of the script. It is good practice to end all but the simplest scripts with an **exit 0**, indicating a successful run.
+Unconditionally terminates a script. [^6] The **exit** command may optionally take an integer argument, which is returned to the shell as the [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of the script. It is good practice to end all but the simplest scripts with an **exit 0**, indicating a successful run.
 
 > [!note]
 > If a script terminates with an **exit** lacking an argument, the exit status of the script is the exit status of the last command executed in the script, not counting the **exit**. This is equivalent to an **exit $?**.
@@ -1724,7 +1724,7 @@ You may find this command useful in debugging.
 
 **true**
 
-A command that returns a successful (zero) [[exit-status#^EXITSTATUSREF|exit status]], but does nothing else.
+A command that returns a successful (zero) [[exit-and-exit-status#^EXITSTATUSREF|exit status]], but does nothing else.
 
 ```bash
 bash$ true
@@ -1747,7 +1747,7 @@ done
 
 **false**
 
-A command that returns an unsuccessful [[exit-status#^EXITSTATUSREF|exit status]], but does nothing else.
+A command that returns an unsuccessful [[exit-and-exit-status#^EXITSTATUSREF|exit status]], but does nothing else.
 
 ```bash
 bash$ false

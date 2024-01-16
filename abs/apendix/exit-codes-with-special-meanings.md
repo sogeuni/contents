@@ -10,7 +10,7 @@ title: Appendix E. Exit Codes With Special Meanings
 |2|Misuse of shell builtins (according to Bash documentation)|empty_function() {}|[[debugging#^MISSINGKEYWORD|Missing keyword]] or command, or permission problem (and [[file-and-archiving-commands#^DIFFERR2|_diff_ return code on a failed binary file comparison]]).|
 |126|Command invoked cannot execute|/dev/null|Permission problem or command is not an executable|
 |127|"command not found"|illegal_command|Possible problem with $PATH or a typo|
-|128|Invalid argument to [[exit-status.md#^EXITCOMMANDREF|exit]]|exit 3.14159|**exit** takes only integer args in the range 0 - 255 (see first footnote)|
+|128|Invalid argument to [[exit-and-exit-status|exit]]|exit 3.14159|**exit** takes only integer args in the range 0 - 255 (see first footnote)|
 |128+n|Fatal error signal "n"|_kill -9_ $PPID of script|**$?** returns 137 (128 + 9)|
 |130|Script terminated by Control-C|_Ctl-C_|Control-C is fatal error signal 2, (130 = 128 + 2, see above)|
 |255*|Exit status out of range|exit -1|**exit** takes only integer args in the range 0 - 255|

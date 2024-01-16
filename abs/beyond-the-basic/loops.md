@@ -608,7 +608,7 @@ exit $?   # Also, efax sends diagnostic messages to stdout.
 
 **while**
 
-This construct tests for a condition at the top of a loop, and keeps looping as long as that condition is true (returns a 0 [[exit-status#EXITSTATUSREF|exit status]]). In contrast to a [[loops1#FORLOOPREF1|for loop]], a _while loop_ finds use in situations where the number of loop repetitions is not known beforehand.
+This construct tests for a condition at the top of a loop, and keeps looping as long as that condition is true (returns a 0 [[exit-and-exit-status#EXITSTATUSREF|exit status]]). In contrast to a [[loops1#FORLOOPREF1|for loop]], a _while loop_ finds use in situations where the number of loop repetitions is not known beforehand.
 
 **while** [ _condition_ ]  
 do

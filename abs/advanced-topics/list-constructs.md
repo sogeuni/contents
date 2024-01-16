@@ -177,7 +177,7 @@ done
 ```
 
 > [!important]
-> The [[exit-status#^EXITSTATUSREF|exit status]] of an **and list** or an **or list** is the exit status of the last command executed.
+> The [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of an **and list** or an **or list** is the exit status of the last command executed.
 
 Clever combinations of _and_ and _or_ lists are possible, but the logic may easily become convoluted and require close attention to [[operator-precedence#^OPPRECEDENCE1|operator precedence rules]], and possibly extensive debugging.
 

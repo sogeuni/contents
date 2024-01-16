@@ -90,7 +90,7 @@ The following is a listing of some useful options. They may be specified in eith
 |-n|noexec|Read commands in script, but do not execute them (syntax check)|
 |-o Option-Name|(none)|Invoke the _Option-Name_ option|
 |-o posix|POSIX|Change the behavior of Bash, or invoked script, to conform to [[sha-bang#^POSIX2REF\|POSIX]] standard.|
-|-o pipefail|pipe failure|Causes a pipeline to return the [[exit-status#^EXITSTATUSREF\|exit status]] of the last command in the pipe that returned a non-zero return value.|
+|-o pipefail|pipe failure|Causes a pipeline to return the [[exit-and-exit-status#^EXITSTATUSREF\|exit status]] of the last command in the pipe that returned a non-zero return value.|
 |-p|privileged|Script runs as "suid" (caution!)|
 |-r|restricted|Script runs in _restricted_ mode (see [[restricted-sh\|Chapter 22]]).|
 |-s|stdin|Read commands from stdin|

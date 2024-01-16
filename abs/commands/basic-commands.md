@@ -33,7 +33,7 @@ bash$ ls -lv
 ```
 
 > [!tip]
-> The _ls_ command returns a non-zero [[exit-status#^EXITSTATUSREF|exit status]] when attempting to list a non-existent file.
+> The _ls_ command returns a non-zero [[exit-and-exit-status#^EXITSTATUSREF|exit status]] when attempting to list a non-existent file.
 >
 > ```bash
 > bash$ ls abc

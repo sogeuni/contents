@@ -89,7 +89,7 @@ This section covers the following commands:
 - [[text-processing-commands#^EQNREF|eqn]]
 - [[internal-commands-and-builtins#^EVALREF|eval]]
 - [[internal-commands-and-builtins#^EXECREF|exec]]
-- [[internal-commands-and-builtins#^EXITREF|exit]] (Related topic: [[exit-status#^EXITSTATUSREF|exit status]])
+- [[internal-commands-and-builtins#^EXITREF|exit]] (Related topic: [[exit-and-exit-status#^EXITSTATUSREF|exit status]])
 - [[text-processing-commands#^EXPANDREF|expand]]
 - [[internal-commands-and-builtins#^EXPORTREF|export]]
 - [[complex-commands#^EXPRREF|expr]]

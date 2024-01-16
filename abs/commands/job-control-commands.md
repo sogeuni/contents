@@ -33,7 +33,7 @@ The **fg** command switches a job running in the background into the foreground.
 
 **wait**
 
-Suspend script execution until all jobs running in background have terminated, or until the job number or process ID specified as an option terminates. Returns the [[exit-status#^EXITSTATUSREF|exit status]] of waited-for command.
+Suspend script execution until all jobs running in background have terminated, or until the job number or process ID specified as an option terminates. Returns the [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of waited-for command.
 
 You may use the **wait** command to prevent a script from exiting before a background job finishes executing (this would create a dreaded [[job-control-commands#^ZOMBIEREF|orphan process]]).
 
@@ -136,7 +136,7 @@ This has a similar effect to **Control**-**Z**, but it suspends the shell (the s
 
 **logout**
 
-Exit a login shell, optionally specifying an [[exit-status#^EXITSTATUSREF|exit status]].
+Exit a login shell, optionally specifying an [[exit-and-exit-status#^EXITSTATUSREF|exit status]].
 
 **times**
 

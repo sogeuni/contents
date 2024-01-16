@@ -164,7 +164,7 @@ echo "a = $a"      # a = xyz
 
 **${parameter?err_msg}**, **${parameter:?err_msg}**
 
-If parameter set, use it, else print _err_msg_ and _abort the script_ with an [[exit-status#^EXITSTATUSREF|exit status]] of 1.
+If parameter set, use it, else print _err_msg_ and _abort the script_ with an [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of 1.
 
 Both forms nearly equivalent. The : makes a difference only when _parameter_ has been declared and is null, as above.
 

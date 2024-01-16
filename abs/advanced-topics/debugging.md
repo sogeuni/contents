@@ -645,4 +645,4 @@ SCRIPT_AUTHOR_COMMENTS
 >     
 > 8. [[internal-variables#^BASHSUBSHELLREF|$BASH_SUBSHELL]]|
 
-[^1]: By convention, _signal 0_ is assigned to [[exit-status#^EXITCOMMANDREF|exit]].
+[^1]: By convention, _signal 0_ is assigned to [[exit-and-exit-status|exit]].

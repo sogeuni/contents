@@ -86,7 +86,7 @@ exit 113   # Will return 113 to shell.
 
 [[internal-variables#^XSTATVARREF|$?]] is especially useful for testing the result of a command in a script (see [[file-and-archiving-commands#^FILECOMP|Example 16-35]] and [[text-processing-commands#^LOOKUP|Example 16-20]]).
 
-> [!note] The [[special-characters#^NOTREF|!]], the _logical not_ qualifier, reverses the outcome of a test or command, and this affects its [[exit-status#^EXITSTATUSREF|exit status]].
+> [!note] The [[special-characters#^NOTREF|!]], the _logical not_ qualifier, reverses the outcome of a test or command, and this affects its [[exit-and-exit-status#^EXITSTATUSREF|exit status]].
 >
 > **Example 6-2. Negating a condition using !**
 >

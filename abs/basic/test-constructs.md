@@ -2,11 +2,11 @@
 title: 7.1. Test Constructs
 ---
 
-- An **if/then** construct tests whether the [[exit-status#^EXITSTATUSREF|exit status]] of a list of commands is 0 (since 0 means "success" by UNIX convention), and if so, executes one or more commands.
+- An **if/then** construct tests whether the [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of a list of commands is 0 (since 0 means "success" by UNIX convention), and if so, executes one or more commands.
 - There exists a dedicated command called **[[special-characters#^LEFTBRACKET|** ([left bracket]] special character). It is a synonym for **test**, and a [[internal-commands-and-builtins|builtin]] for efficiency reasons. This command considers its arguments as comparison expressions or file tests and returns an exit status corresponding to the result of the comparison (0 for true, 1 for false).
 - With version 2.02, Bash introduced the [[test-constructs#^DBLBRACKETS|[[ ... ]]]] _extended test command_, which performs comparisons in a manner more familiar to programmers from other languages. Note that **[[internal-commands-and-builtins#^KEYWORDREF|[** is a [keyword]], not a command.
     Bash sees **[[ $a -lt $b ]]** as a single element, which returns an exit status.
-- The [[double-parentheses-construct.html|(( ... ))]] and [[internal-commands-and-builtins#^LETREF|let ...]] constructs return an [[exit-status#^EXITSTATUSREF|exit status]], _according to whether the arithmetic expressions they evaluate expand to a non-zero value_. These [[arithmetic-expansion#^ARITHEXPREF|arithmetic-expansion]] constructs may therefore be used to perform [[other-comparison-operators#^ICOMPARISON1|arithmetic comparisons]].
+- The [[double-parentheses-construct.html|(( ... ))]] and [[internal-commands-and-builtins#^LETREF|let ...]] constructs return an [[exit-and-exit-status#^EXITSTATUSREF|exit status]], _according to whether the arithmetic expressions they evaluate expand to a non-zero value_. These [[arithmetic-expansion#^ARITHEXPREF|arithmetic-expansion]] constructs may therefore be used to perform [[other-comparison-operators#^ICOMPARISON1|arithmetic comparisons]].
 
 ```bash
 (( 0 && 1 ))                 # Logical AND
@@ -404,7 +404,7 @@ exit 0
 > [ -d "$home" ] || echo "$home directory does not exist."
 > ```
 
-The [[double-parentheses-construct|(( )) construct]] expands and evaluates an arithmetic expression. If the expression evaluates as zero, it returns an [[exit-status#^EXITSTATUSREF|exit status]] of 1, or "false". A non-zero expression returns an exit status of 0, or "true". This is in marked contrast to using the **test** and [ ] constructs previously discussed.
+The [[double-parentheses-construct|(( )) construct]] expands and evaluates an arithmetic expression. If the expression evaluates as zero, it returns an [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of 1, or "false". A non-zero expression returns an exit status of 0, or "true". This is in marked contrast to using the **test** and [ ] constructs previously discussed.
 
 ###### Example 7-3. Arithmetic Tests using (( ))
 

@@ -230,9 +230,9 @@ fi
     
 - Using Bash-specific functionality in a [[shell-programming#^BASHDEF|Bourne shell]] script (**#!/bin/sh**) on a non-Linux machine [[gotchas#^BINSH|may cause unexpected behavior]]. A Linux system usually aliases **sh** to **bash**, but this does not necessarily hold true for a generic UNIX machine.
     
-- Using undocumented features in Bash turns out to be a dangerous practice. In previous releases of this book there were several scripts that depended on the "feature" that, although the maximum value of an [[exit-status#^EXITSTATUSREF|exit]] or [[complex-functions-and-function-complexities#^RETURNREF|return]] value was 255, that limit did not apply to _negative_ integers. Unfortunately, in version 2.05b and later, that loophole disappeared. See [[complex-functions-and-function-complexities#^RETURNTEST|Example 24-9]].
+- Using undocumented features in Bash turns out to be a dangerous practice. In previous releases of this book there were several scripts that depended on the "feature" that, although the maximum value of an [[exit-and-exit-status#^EXITSTATUSREF|exit]] or [[complex-functions-and-function-complexities#^RETURNREF|return]] value was 255, that limit did not apply to _negative_ integers. Unfortunately, in version 2.05b and later, that loophole disappeared. See [[complex-functions-and-function-complexities#^RETURNTEST|Example 24-9]].
     
-- In certain contexts, a misleading [[exit-status#^EXITSTATUSREF|exit status]] may be returned. This may occur when [[local-variables#^EXITVALANOMALY01|setting a local variable within a function]] or when [[internal-commands-and-builtins#^EXITVALANOMALY02|assigning an arithmetic value to a variable]].
+- In certain contexts, a misleading [[exit-and-exit-status#^EXITSTATUSREF|exit status]] may be returned. This may occur when [[local-variables#^EXITVALANOMALY01|setting a local variable within a function]] or when [[internal-commands-and-builtins#^EXITVALANOMALY02|assigning an arithmetic value to a variable]].
     
 - The [[test-constructs#^ARXS|exit status of an arithmetic expression]] is _not_ equivalent to an _error code_.
 

@@ -2,7 +2,7 @@
 title: 24.1. Complex Functions and Function Complexities
 ---
 
-Functions may process arguments passed to them and return an [[exit-status#^EXITSTATUSREF|exit status]] to the script for further processing.
+Functions may process arguments passed to them and return an [[exit-and-exit-status#^EXITSTATUSREF|exit status]] to the script for further processing.
 
 ```bash
 function_name $arg1 $arg2
@@ -212,7 +212,7 @@ exit 0
 
 **exit status**
 
-Functions return a value, called an _exit status_. This is analogous to the [[exit-status#^EXITSTATUSREF|exit status]] returned by a command. The exit status may be explicitly specified by a **return** statement, otherwise it is the exit status of the last command in the function (0 if successful, and a non-zero error code if not). This [[exit-status#^EXITSTATUSREF|exit status]] may be used in the script by referencing it as [[internal-variables#^XSTATVARREF|$?]]. This mechanism effectively permits script functions to have a "return value" similar to C functions.
+Functions return a value, called an _exit status_. This is analogous to the [[exit-and-exit-status#^EXITSTATUSREF|exit status]] returned by a command. The exit status may be explicitly specified by a **return** statement, otherwise it is the exit status of the last command in the function (0 if successful, and a non-zero error code if not). This [[exit-and-exit-status#^EXITSTATUSREF|exit status]] may be used in the script by referencing it as [[internal-variables#^XSTATVARREF|$?]]. This mechanism effectively permits script functions to have a "return value" similar to C functions.
 
 **return**
 
@@ -375,7 +375,7 @@ exit
 See also [[testing-and-branching#^ISALPHA|Example 11-29]].
 
 > [!important]
-> The largest positive integer a function can return is 255. The **return** command is closely tied to the concept of [[exit-status#^EXITSTATUSREF|exit status]], which accounts for this particular limitation. Fortunately, there are various [[assortedtips#^RVT|workarounds]] for those situations requiring a large integer return value from a function.
+> The largest positive integer a function can return is 255. The **return** command is closely tied to the concept of [[exit-and-exit-status#^EXITSTATUSREF|exit status]], which accounts for this particular limitation. Fortunately, there are various [[assortedtips#^RVT|workarounds]] for those situations requiring a large integer return value from a function.
 >
 > **Example 24-9. Testing large return values in a function**
 >

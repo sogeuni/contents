@@ -401,7 +401,7 @@ bash$ echo $PATH
 
 $PIPESTATUS
 
-[[arrays#^ARRAYREF|Array]] variable holding [[exit-status#^EXITSTATUSREF|exit status]](es) of last executed _foreground_ [[special-characters#^PIPEREF|pipe]].
+[[arrays#^ARRAYREF|Array]] variable holding [[exit-and-exit-status#^EXITSTATUSREF|exit status]](es) of last executed _foreground_ [[special-characters#^PIPEREF|pipe]].
 
 ```bash
 bash$ echo $PIPESTATUS
@@ -453,7 +453,7 @@ The members of the $PIPESTATUS array hold the exit status of each respective com
 > 
 > ```
 >
-> Chet Ramey attributes the above output to the behavior of [[basic-commands#^LSREF|ls]]. If _ls_ writes to a _pipe_ whose output is not read, then _SIGPIPE_ kills it, and its [[exit-status#^EXITSTATUSREF|exit status]] is 141. Otherwise its exit status is 0, as expected. This likewise is the case for [[text-processing-commands#^TRREF|tr]].
+> Chet Ramey attributes the above output to the behavior of [[basic-commands#^LSREF|ls]]. If _ls_ writes to a _pipe_ whose output is not read, then _SIGPIPE_ kills it, and its [[exit-and-exit-status#^EXITSTATUSREF|exit status]] is 141. Otherwise its exit status is 0, as expected. This likewise is the case for [[text-processing-commands#^TRREF|tr]].
 
 > [!note]
 > $PIPESTATUS is a "volatile" variable. It needs to be captured immediately after the pipe in question, before any other command intervenes.
@@ -1257,7 +1257,7 @@ echo $_              #  :
 
 $?
 
-[[exit-status#^EXITSTATUSREF|Exit status]] of a command, [[functions|function]], or the script itself (see [[complex-functions-and-function-complexities#^MAX|Example 24-7]])
+[[exit-and-exit-status#^EXITSTATUSREF|Exit status]] of a command, [[functions|function]], or the script itself (see [[complex-functions-and-function-complexities#^MAX|Example 24-7]])
 
 `$$`
 

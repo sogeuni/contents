@@ -554,7 +554,7 @@ osinfo.txt:This is a file containing information about Linux.
 >  osinfo.txt:The GPL governs the distribution of the Linux operating system.
 > ```
 
-If there is a successful match, **grep** returns an [[exit-status#^EXITSTATUSREF|exit status]] of 0, which makes it useful in a condition test in a script, especially in combination with the -q option to suppress output.
+If there is a successful match, **grep** returns an [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of 0, which makes it useful in a condition test in a script, especially in combination with the -q option to suppress output.
 
 ```bash
 SUCCESS=0                      # if grep lookup succeeds

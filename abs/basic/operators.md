@@ -354,7 +354,7 @@ if [[ $condition1 || $condition2 ]]    # Also works.
 #+ of a [ ... ] construct.
 ```
 
-> [!note] Bash tests the [[exit-status#EXITSTATUSREF|exit status]] of each statement linked with a logical operator.
+> [!note] Bash tests the [[exit-and-exit-status#EXITSTATUSREF|exit status]] of each statement linked with a logical operator.
 
 ###### Example 8-3. Compound Condition Tests Using && and ||
 

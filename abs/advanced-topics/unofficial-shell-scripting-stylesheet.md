@@ -112,7 +112,7 @@ _uservariable=23                     # Permissible, but not recommended.
 # Leave that for system variables.
 ```
     
-- Use [[exit-status#^EXITCOMMANDREF|exit codes]] in a systematic and meaningful way.
+- Use [[exit-and-exit-status|exit codes]] in a systematic and meaningful way.
 
 ```bash
 E_WRONG_ARGS=95

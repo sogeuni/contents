@@ -210,7 +210,7 @@ This is also the division [[operators#^AROPS1|arithmetic operator]].
 
 ### :
 
-**null command [[internal-commands-and-builtins#^TRUEREF|colon].** This is the shell equivalent of a "NOP" (_no op_, a do-nothing operation). It may be considered a synonym for the shell builtin [true]]. The ":" command is itself a _Bash_ [[internal-commands-and-builtins|builtin]], and its [[exit-status#^EXITSTATUSREF|exit status]] is _true_ (0).
+**null command [[internal-commands-and-builtins#^TRUEREF|colon].** This is the shell equivalent of a "NOP" (_no op_, a do-nothing operation). It may be considered a synonym for the shell builtin [true]]. The ":" command is itself a _Bash_ [[internal-commands-and-builtins|builtin]], and its [[exit-and-exit-status#^EXITSTATUSREF|exit status]] is _true_ (0).
 
 ```bash
 :
@@ -323,7 +323,7 @@ not_empty ()
 
 ### !
 
-**reverse (or negate) the sense of a test or exit status [[exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[other-comparison-operators#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal-commands-and-builtins#^KEYWORDREF|keyword]].
+**reverse (or negate) the sense of a test or exit status [[exit-and-exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-and-exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[other-comparison-operators#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal-commands-and-builtins#^KEYWORDREF|keyword]].
 
 In a different context, the ! also appears in [[indirect-references#^IVRREF|indirect variable references]].
 
@@ -405,7 +405,7 @@ A $ prefixing a variable name indicates the _value_ the variable holds.
 
 ### $?
 
-**exit status variable.** The [[exit-status#^EXSREF|$? variable]] holds the [[exit-status#^EXITSTATUSREF|exit status]] of a command, a [[functions|function]], or of the script itself.
+**exit status variable.** The [[exit-and-exit-status#^EXSREF|$? variable]] holds the [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of a command, a [[functions|function]], or of the script itself.
 
 ### $$
 
@@ -1175,46 +1175,48 @@ bash$ echo ~nonexistent-user
 
 **[[bashver4#^CASEMODPARAMSUB|Uppercase conversion]] in _parameter substitution_ (added in [[bashver4#^BASH4REF|version 4]] of Bash).**
 
-### Control Characters
+## Control Characters
 
-**change the behavior of the terminal or text display.** A control character is a **CONTROL** + **key** combination (pressed simultaneously). A control character may also be written in _octal_ or _hexadecimal_ notation, following an _escape_.
+**change the behavior of the terminal or text display.** A control character is a <kbd>CONTROL + key</kbd> combination (pressed simultaneously). A control character may also be written in _octal_ or _hexadecimal_ notation, following an _escape_.
 
 Control characters are not normally useful inside a script.
 
-- **Ctl-A**
+### <kbd>Ctl-A</kbd>
 
 Moves cursor to beginning of line of text (on the command-line).
 
-- **Ctl-B**
-  - **Backspace** (nondestructive).
+### <kbd>Ctl-B</kbd>
 
-- **Ctl-C**
-  - **Break**. Terminate a foreground job.
+**Backspace** (nondestructive).
 
-- **Ctl-D**
+### <kbd>Ctl-C</kbd>
 
-  _Log out_ from a shell (similar to [[exit-status#^EXITCOMMANDREF|exit]]).
+**Break**. Terminate a foreground job.
 
-  **EOF** (end-of-file). This also terminates input from stdin.
-    
-  When typing text on the console or in an _xterm_ window, **Ctl-D** erases the character under the cursor. When there are no characters present, **Ctl-D** logs out of the session, as expected. In an _xterm_ window, this has the effect of closing the window.
-    
-- **Ctl-E**
-    
-    Moves cursor to end of line of text (on the command-line).
-    
-- **Ctl-F**
-    
-    Moves cursor forward one character position (on the command-line).
-    
-- **Ctl-G**
-    
-    **BEL**. On some old-time teletype terminals, this would actually ring a bell. In an _xterm_ it might beep.
-    
-- **Ctl-H**
-    
-    **Rubout** (destructive backspace). Erases characters the cursor backs over while backspacing.
-    
+### <kbd>Ctl-D</kbd>
+
+*Log out* from a shell (similar to [[exit-and-exit-status|exit]]).
+
+**EOF** (end-of-file). This also terminates input from stdin.
+
+When typing text on the console or in an _xterm_ window, <kbd>Ctl-D</kbd> erases the character under the cursor. When there are no characters present, <kbd>Ctl-D</kbd> logs out of the session, as expected. In an _xterm_ window, this has the effect of closing the window.
+
+### <kbd>Ctl-E</kbd>
+
+Moves cursor to end of line of text (on the command-line).
+
+### <kbd>Ctl-F</kbd>
+
+Moves cursor forward one character position (on the command-line).
+
+### <kbd>Ctl-G</kbd>
+
+**BEL**. On some old-time teletype terminals, this would actually ring a bell. In an _xterm_ it might beep.
+
+### <kbd>Ctl-H</kbd>
+
+**Rubout** (destructive backspace). Erases characters the cursor backs over while backspacing.
+
 ```bash
 #!/bin/bash
 # Embedding Ctl-H in a string.
@@ -1248,24 +1250,24 @@ sleep 2
 echo -n "$rubout"
 sleep 2
 ```
-    
-- **Ctl-I**
-    
-    **Horizontal tab**.
-    
-- **Ctl-J**
-    
-    **Newline** (line feed). In a script, may also be expressed in octal notation -- '\012' or in hexadecimal -- '\x0a'.
-    
-- **Ctl-K**
-    
-    **Vertical tab**.
-    
-    When typing text on the console or in an _xterm_ window, **Ctl-K** erases from the character under the cursor to end of line. Within a script, **Ctl-K** may behave differently, as in Lee Lee Maschmeyer's example, below.
-    
-- **Ctl-L**
-    
-    **Formfeed** (clear the terminal screen). In a terminal, this has the same effect as the [[terminal-control-commands#^CLEARREF|clear]] command. When sent to a printer, a **Ctl-L** causes an advance to end of the paper sheet.
+
+### <kbd>Ctl-I</kbd>
+
+**Horizontal tab**.
+
+### <kbd>Ctl-J</kbd>
+
+**Newline** (line feed). In a script, may also be expressed in octal notation -- '\012' or in hexadecimal -- '\x0a'.
+
+### <kbd>Ctl-K</kbd>
+
+**Vertical tab**.
+
+When typing text on the console or in an _xterm_ window, <kbd>Ctl-K</kbd> erases from the character under the cursor to end of line. Within a script, <kbd>Ctl-K</kbd> may behave differently, as in Lee Lee Maschmeyer's example, below.
+
+### <kbd>Ctl-L</kbd>
+
+**Formfeed** (clear the terminal screen). In a terminal, this has the same effect as the [[terminal-control-commands#^CLEARREF|clear]] command. When sent to a printer, a <kbd>Ctl-L</kbd> causes an advance to end of the paper sheet.
     
 - **Ctl-M**
     

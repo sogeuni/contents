@@ -64,7 +64,7 @@ exit 0
 > ```
 
 > [!note]
-> As Evgeniy Ivanov points out, when declaring and setting a local variable in a single command, apparently the order of operations is to _first set the variable, and only afterwards restrict it to local scope_. This is reflected in the [[exit-status.html#EXITSTATUSREF|return value]].
+> As Evgeniy Ivanov points out, when declaring and setting a local variable in a single command, apparently the order of operations is to _first set the variable, and only afterwards restrict it to local scope_. This is reflected in the [[exit-and-exit-status.html#EXITSTATUSREF|return value]].
 >
 > ```bash
 > #!/bin/bash
