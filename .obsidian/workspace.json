@@ -19,6 +19,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "3866cf5120ff0d23",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "abs/advanced-topics/recursion-without-local-variables.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -140,7 +153,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       },
       {
         "id": "bcb36eecbba39704",
