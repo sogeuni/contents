@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "abs/basic/special-characters.md",
-                "mode": "preview",
+                "mode": "source",
                 "backlinks": true,
                 "source": false
               }
@@ -140,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       },
       {
         "id": "bcb36eecbba39704",
@@ -199,8 +199,9 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "7c4dde10a3995f5d",
+  "active": "66be20fd1a89cad5",
   "lastOpenFiles": [
+    "^ex3-1.md",
     "abs/basic/special-characters.md",
     "abs/advanced-topics/brief-introduction-to-regular-expressions.md",
     "abs/commands/system-and-administrative-commands.md",
@@ -226,7 +227,6 @@
     "abs/apendix/writingscripts.md",
     "abs/apendix/analyzing-scripts.md",
     "abs/apendix/scriptanalysis.md",
-    "abs/apendix/exercises.md",
     "_abs",
     "git",
     "abs/apendix",

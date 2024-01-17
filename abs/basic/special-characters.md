@@ -1,13 +1,13 @@
 ---
 title: 3. Special Characters
 ---
-What makes a character _special_? If it has a meaning beyond its _literal meaning_, a [[brief-introduction-to-regular-expressions#^metameaningref|meta-meaning]], then we refer to it as a _special character_. Along with commands and [[internal-commands-and-builtins#^keywordref|keywords]], _special characters_ are building blocks of Bash scripts.
+What makes a character *special*? If it has a meaning beyond its *literal meaning*, a [[brief-introduction-to-regular-expressions#^metameaningref|meta-meaning]], then we refer to it as a *special character*. Along with commands and [[internal-commands-and-builtins#^keywordref|keywords]], *special characters* are building blocks of Bash scripts.
 
 ## Special Characters Found In Scripts and Elsewhere
 
-### \# {#comments}
+### \# (hash)
 
-**Comments.** Lines beginning with a # (with the exception of [[starting-off-with-a-sha-bang#^magnumref|#!]]) are comments and will _not_ be executed.
+**Comments.** Lines beginning with a # (with the exception of [[starting-off-with-a-sha-bang#^magnumref|\#!]]) are comments and will *not* be executed.
 
 ```bash
 # This line is a comment.
@@ -31,7 +31,7 @@ Comments may even be embedded within a [[special-characters#^PIPEREF|pipe]].
 ```bash
 initial=( `cat "$startfile" | sed -e '/#/d' | tr -d '\n' |\
 # Delete lines containing '#' comment character.
-           sed -e 's/\./\. /g' -e 's/_/_ /g'` )
+           sed -e 's/\./\. /g' -e 's/*/* /g'` )
 # Excerpted from life.sh script
 ```
 
@@ -39,7 +39,7 @@ initial=( `cat "$startfile" | sed -e '/#/d' | tr -d '\n' |\
 > A command may not follow a comment on the same line. There is no method of terminating the comment, in order for "live code" to begin on the same line. Use a new line for the next command.
 
 > [!note]
-> Of course, a [[quoting#^QUOTINGREF|quoted]] or an [[escaping#^ESCP|escaped]] # in an [[internal-commands-and-builtins#^ECHOREF|echo]] statement does _not_ begin a comment. Likewise, a # appears in [[parameter-substitution#^PSUB2|certain parameter-substitution constructs]] and in [[numerical-constants#^NUMCONSTANTS|numerical constant expressions]].
+> Of course, a [[quoting#^QUOTINGREF|quoted]] or an [[escaping#^ESCP|escaped]] # in an [[internal-commands-and-builtins#^ECHOREF|echo]] statement does *not* begin a comment. Likewise, a # appears in [[parameter-substitution#^PSUB2|certain parameter-substitution constructs]] and in [[numerical-constants#^NUMCONSTANTS|numerical constant expressions]].
 >
 > ```bash
 > echo "The # here does not begin a comment."
@@ -57,7 +57,7 @@ initial=( `cat "$startfile" | sed -e '/#/d' | tr -d '\n' |\
 
 Certain [[parameter-substitution#^PSOREX1|pattern matching operations]] also use the #.
 
-### ;
+### ; (semicolon)
 
 **Command separator \[semicolon].** Permits putting two or more commands on the same line.
 
@@ -73,9 +73,9 @@ else   #                       ^^
 fi; echo "File test complete."
 ```
 
-Note that the ";" [[complex-commands#^FINDREF0|sometimes needs to be _escaped_]].
+Note that the ";" [[complex-commands#^FINDREF0|sometimes needs to be *escaped*]].
 
-### ;;
+### ;; (double semicolon)
 
 **Terminator in a [[testing-and-branching#^CASEESAC1|case]] option \[double semicolon].**
 
@@ -88,13 +88,15 @@ esac
 
 ### ;;&, ;&
 
-**[[bash-version-4#^NCTERM|Terminators]] in a _case_ option ([[bash-version-4#^BASH4REF|version 4+]] of Bash).**
+**[[bash-version-4#^NCTERM|Terminators]] in a *case* option ([[bash-version-4#^BASH4REF|version 4+]] of Bash).**
 
-### .
+### . (dot)
+
+. 
 
 **"dot" command [[internal-commands-and-builtins#^SOURCEREF|period].** Equivalent to [source]] (see [[internal-commands-and-builtins#^EX38|Example 15-22]]). This is a bash [[internal-commands-and-builtins|builtin]].
 
-### .
+.
 
 **"dot", as a component of a filename.** When working with filenames, a leading dot is the prefix of a "hidden" file, a file that an [[basic-commands#^LSREF|ls]] will not normally show.
 
@@ -118,7 +120,7 @@ total 14
 	        
 ```
 
-When considering directory names, _a single dot_ represents the current working directory, and _two dots_ denote the parent directory.
+When considering directory names, *a single dot* represents the current working directory, and *two dots* denote the parent directory.
 
 ```bash
 bash$ pwd
@@ -134,7 +136,7 @@ bash$ pwd
 	        
 ```
 
-The _dot_ often appears as the destination (directory) of a file movement command, in this context meaning _current directory_.
+The *dot* often appears as the destination (directory) of a file movement command, in this context meaning *current directory*.
 
 ```bash
 bash$ cp /home/bozo/current_work/junk/* .
@@ -143,28 +145,28 @@ bash$ cp /home/bozo/current_work/junk/* .
 
 Copy all the "junk" files to [[internal-variables#^PWDREF|$PWD]].
 
-### .
+.
 
 **"dot" character match.** When [[brief-introduction-to-regular-expressions#^REGEXDOT|matching characters]], as part of a [[regexp#^REGEXREF|regular expression]], a "dot" [[brief-introduction-to-regular-expressions#^REGEXDOT|matches a single character]].
 
-### "
+### " (double quote)
 
-**[[variable-substitution#^DBLQUO|partial quoting]] [[quoting|double quote].** _"STRING"_ preserves (from interpretation) most of the special characters within _STRING_. See [Chapter 5]].
+**[[variable-substitution#^DBLQUO|partial quoting]] [[quoting|double quote].** *"STRING"* preserves (from interpretation) most of the special characters within *STRING*. See [Chapter 5]].
 
-### '
+### ' (single quote)
 
-**[[variable-substitution#^SNGLQUO|full quoting]] [[quoting|single quote].** _'STRING'_ preserves all special characters within _STRING_. This is a stronger form of quoting than _"STRING"_. See [Chapter 5]].
+**[[variable-substitution#^SNGLQUO|full quoting]] [[quoting|single quote].** *'STRING'* preserves all special characters within *STRING*. This is a stronger form of quoting than *"STRING"*. See [Chapter 5]].
 
-### ,
+### , (comma)
 
-**[[operators#^COMMAOP|comma operator]].** The _comma operator_ [^1] links together a series of arithmetic operations. All are evaluated, but only the last one is returned.
+**[[operators#^COMMAOP|comma operator]].** The *comma operator* [^1] links together a series of arithmetic operations. All are evaluated, but only the last one is returned.
 
 ```bash
 let "t2 = ((a = 9, 15 / 3))"
 # Set "a = 9" and "t2 = 15 / 3"
 ```
 
-The _comma_ operator can also concatenate strings.
+The *comma* operator can also concatenate strings.
 
 ```bash
 for file in /{,usr/}bin/*calc
@@ -188,29 +190,29 @@ done
 
 ### ,, ,
 
-**[[bash-version-4#^CASEMODPARAMSUB|Lowercase conversion]] in _parameter substitution_ (added in [[bash-version-4#^BASH4REF|version 4]] of Bash).**
+**[[bash-version-4#^CASEMODPARAMSUB|Lowercase conversion]] in *parameter substitution* (added in [[bash-version-4#^BASH4REF|version 4]] of Bash).**
 
-### \
+### \ (backslash)
 
 **[[escaping#^ESCP|escape]] [backslash].** A quoting mechanism for single characters.
 
-**\X** _escapes_ the character _X_. This has the effect of "quoting" _X_, equivalent to _'X'_. The \ may be used to quote " and ', so they are expressed literally.
+**\X** *escapes* the character *X*. This has the effect of "quoting" *X*, equivalent to *'X'*. The \ may be used to quote " and ', so they are expressed literally.
 
 See [[Chapter 5. Quoting|Chapter 5]] for an in-depth explanation of escaped characters.
 
-### /
+### / (forward slash)
 
 **Filename path separator [forward slash].** Separates the components of a filename (as in /home/bozo/projects/Makefile).
 
 This is also the division [[operators#^AROPS1|arithmetic operator]].
 
-### `
+### \` (backtick)
 
 **[[command-substitution#^COMMANDSUBREF|command substitution]].** The **`command`** construct makes available the output of **command** for assignment to a variable. This is also known as [[command-substitution#^BACKQUOTESREF|backquotes]] or backticks.
 
-### :
+### : (colon)
 
-**null command [[internal-commands-and-builtins#^TRUEREF|colon].** This is the shell equivalent of a "NOP" (_no op_, a do-nothing operation). It may be considered a synonym for the shell builtin [true]]. The ":" command is itself a _Bash_ [[internal-commands-and-builtins|builtin]], and its [[exit-and-exit-status#^EXITSTATUSREF|exit status]] is _true_ (0).
+**null command [[internal-commands-and-builtins#^TRUEREF|colon].** This is the shell equivalent of a "NOP" (*no op*, a do-nothing operation). It may be considered a synonym for the shell builtin [true]]. The ":" command is itself a *Bash* [[internal-commands-and-builtins|builtin]], and its [[exit-and-exit-status#^EXITSTATUSREF|exit status]] is *true* (0).
 
 ```bash
 :
@@ -295,7 +297,7 @@ bash$ echo $PATH
 /usr/local/bin:/bin:/usr/bin:/usr/X11R6/bin:/sbin:/usr/sbin:/usr/games
 ```
 
-A _colon_ is [[functions#^FSTRANGEREF|acceptable as a function name]].
+A *colon* is [[functions#^FSTRANGEREF|acceptable as a function name]].
 
 ```bash
 :()
@@ -312,7 +314,7 @@ A _colon_ is [[functions#^FSTRANGEREF|acceptable as a function name]].
 
 This is not [[portability-issues|portable]] behavior, and therefore not a recommended practice. In fact, more recent releases of Bash do not permit this usage. An underscore **_** works, though.
 
-A _colon_ can serve as a placeholder in an otherwise empty function.
+A *colon* can serve as a placeholder in an otherwise empty function.
 
 ```bash
 not_empty ()
@@ -321,17 +323,19 @@ not_empty ()
 } # Contains a : (null command), and so is not empty.
 ```
 
-### !
+### ! (exclamation mark)
 
-**reverse (or negate) the sense of a test or exit status [[exit-and-exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-and-exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[other-comparison-operators#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal-commands-and-builtins#^keywordref|keyword]].
+**reverse (or negate) the sense of a test or exit status [[exit-and-exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-and-exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of *equal* ( [[other-comparison-operators#^EQUALSIGNREF|=]] ) to *not-equal* ( != ). The ! operator is a Bash [[internal-commands-and-builtins#^keywordref|keyword]].
 
 In a different context, the ! also appears in [[indirect-references#^IVRREF|indirect variable references]].
 
-In yet another context, from the _command line_, the ! invokes the Bash _history mechanism_ (see [[history-commands.html|Appendix L]]). Note that within a script, the history mechanism is disabled.
+In yet another context, from the *command line*, the ! invokes the Bash *history mechanism* (see [[history-commands.html|Appendix L]]). Note that within a script, the history mechanism is disabled.
 
-### *
+### \* (asterisk)
 
-**wild card [[globbing.html|asterisk].** The * character serves as a "wild card" for filename expansion in [globbing]]. By itself, it matches every filename in a given directory.
+*
+
+**wild card [[globbing|asterisk]].** The * character serves as a "wild card" for filename expansion in [[globbing]]. By itself, it matches every filename in a given directory.
 
 ```bash
 bash$ echo *
@@ -341,17 +345,19 @@ abs-book.sgml add-drive.sh agram.sh alias.sh
 
 The * also represents [[brief-introduction-to-regular-expressions#^ASTERISKREG|any number (or zero) characters]] in a [[regexp#^REGEXREF|regular expression]].
 
-### *
+*
 
 **[[operators#^AROPS1|arithmetic operator]].** In the context of arithmetic operations, the * denotes multiplication.
 
-** A double asterisk can represent the [[operators#^EXPONENTIATIONREF|exponentiation]] operator or [[bash-version-4#^GLOBSTARREF|extended file-match]] _globbing_.
+** A double asterisk can represent the [[operators#^EXPONENTIATIONREF|exponentiation]] operator or [[bash-version-4#^GLOBSTARREF|extended file-match]] *globbing*.
 
-### ?
+### ? (question mark)
+
+?
 
 **test operator.** Within certain expressions, the ? indicates a test for a condition.
 
-In a [[double-parentheses-construct.html|double-parentheses construct]], the ? can serve as an element of a C-style _trinary_ operator. [^2]
+In a [[double-parentheses-construct.html|double-parentheses construct]], the ? can serve as an element of a C-style *trinary* operator. [^2]
 
 condition**?**result-if-true**:**result-if-false
 
@@ -369,11 +375,13 @@ condition**?**result-if-true**:**result-if-false
 
 In a [[parameter-substitution#^PARAMSUBREF|parameter substitution]] expression, the ? [[parameter-substitution#^QERRMSG|tests whether a variable has been set]].
 
-### ?
+?
 
 **wild card.** The ? character serves as a single-character "wild card" for filename expansion in [[globbing.html|globbing]], as well as [[brief-introduction-to-regular-expressions#^QUEXREGEX|representing one character]] in an [[brief-introduction-to-regular-expressions#^EXTREGEX|extended regular expression]].
 
-### $
+### $ (dollar sign)
+
+$
 
 **[[varsubn.html|Variable substitution]] (contents of a variable).**
 
@@ -385,9 +393,9 @@ echo $var1     # 5
 echo $var2     # 23skidoo
 ```
 
-A $ prefixing a variable name indicates the _value_ the variable holds.
+A $ prefixing a variable name indicates the *value* the variable holds.
 
-### $
+$
 
 **end-of-line.** In a [[regexp#^REGEXREF|regular expression]], a "$" addresses the [[brief-introduction-to-regular-expressions#^DOLLARSIGNREF|end of a line]] of text.
 
@@ -399,17 +407,17 @@ A $ prefixing a variable name indicates the _value_ the variable holds.
 
 **[[escaping#^STRQ|Quoted string expansion]].** This construct expands single or multiple escaped octal or hex values into ASCII [^3] or [[bash-version-4#^UNICODEREF|Unicode]] characters.
 
-### $*, $@
+### \$\*, \$@
 
 **[[internal-variables#^APPREF|positional parameters]].**
 
-### $?
+### \$?
 
 **exit status variable.** The [[exit-and-exit-status#^EXSREF|$? variable]] holds the [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of a command, a [[functions|function]], or of the script itself.
 
-### $$
+### \$\$
 
-**process ID variable.** The [[internal-variables#^PROCCID|$$ variable]] holds the _process ID_ [^4] of the script in which it appears.
+**process ID variable.** The [[internal-variables#^PROCCID|$$ variable]] holds the *process ID* [^4] of the script in which it appears.
 
 ### ()
 
@@ -420,7 +428,7 @@ A $ prefixing a variable name indicates the _value_ the variable holds.
 ```
 
 > [!important]
-> A listing of commands within _parentheses_ starts a [[subshells#^SUBSHELLSREF|subshell]].
+> A listing of commands within *parentheses* starts a [[subshells#^SUBSHELLSREF|subshell]].
 >
 > Variables inside parentheses, within the subshell, are not visible to the rest of the script. The parent process, the script, [[subshells#^PARVIS|cannot read variables created in the child process]], the subshell.
 >
@@ -440,7 +448,7 @@ Array=(element1 element2 element3)
 
 ### {xxx,yyy,zzz,...}
 
-**Brace expansion.**
+**Brace expansion.** 
 
 ```bash
 echo \"{These,words,are,quoted}\"   # " prefix and suffix
@@ -454,10 +462,10 @@ cp file22.{txt,backup}
 # Copies "file22.txt" to "file22.backup"
 ```
 
-A command may act upon a comma-separated list of file specs within _braces_. [^5] Filename expansion ([globbingref.html|[globbing]]) applies to the file specs between the braces.
+A command may act upon a comma-separated list of file specs within *braces*. [^5] Filename expansion ([globbingref.html|[globbing]]) applies to the file specs between the braces.
 
 > [!caution]
-> No spaces allowed within the braces _unless_ the spaces are quoted or escaped.
+> No spaces allowed within the braces *unless* the spaces are quoted or escaped.
 >
 > `echo {file1,file2}\ :{\ A," B",' C'}`
 >
@@ -480,11 +488,11 @@ base64_charset=( {A..Z} {a..z} {0..9} + / = )
 # From vladz's "base64.sh" example script.
 ```
 
-The _{a..z}_ [[bashver3#^BRACEEXPREF3|extended brace expansion]] construction is a feature introduced in [[bashver3#^BASH3REF|version 3]] of _Bash_.
+The *{a..z}* [[bashver3#^BRACEEXPREF3|extended brace expansion]] construction is a feature introduced in [[bashver3#^BASH3REF|version 3]] of *Bash*.
 
 ### {}
 
-**Block of code \[curly brackets].** Also referred to as an _inline group_, this construct, in effect, creates an _anonymous function_ (a function without a name). However, unlike in a "standard" [[functions|function]], the variables inside a code block remain visible to the remainder of the script.
+**Block of code \[curly brackets].** Also referred to as an *inline group*, this construct, in effect, creates an *anonymous function* (a function without a name). However, unlike in a "standard" [[functions|function]], the variables inside a code block remain visible to the remainder of the script. [[#^ex3-2]]
 
 ```bash
 bash$ { local a;
@@ -502,11 +510,11 @@ echo "a = $a"   # a = 321   (value inside code block)
 # Thanks, S.C.
 ```
 
-The code block enclosed in braces may have [[io-redirection|I/O redirected]] to and from it.
+The code block enclosed in braces may have [[io-redirection|I/O redirected]] to and from it. 
 
 ###### Example 3-1. Code blocks and I/O redirection
 
-```bash
+```bash title="Example 3-1. Code blocks and I/O redirection"
 #!/bin/bash
 # Reading lines in /etc/fstab.
 
@@ -529,6 +537,7 @@ exit 0
 # Hint: use awk, or . . .
 # . . . Hans-Joerg Diers suggests using the "set" Bash builtin.
 ```
+^ex3-2
 
 ###### Example 3-2. Saving the output of a code block to a file
 
@@ -577,13 +586,13 @@ exit 0
 ```
 
 > [!note]
-> Unlike a command group within (parentheses), as above, a code block enclosed by {braces} will _not_ normally launch a [[subshells#^SUBSHELLSREF|subshell]]. [^6]
+> Unlike a command group within (parentheses), as above, a code block enclosed by {braces} will *not* normally launch a [[subshells#^SUBSHELLSREF|subshell]]. [^6]
 >
-> It is possible to [[loops#^ITERATIONREF|iterate]] a code block using a [[loops#^NODODONE|non-standard _for-loop_]].
+> It is possible to [[loops#^ITERATIONREF|iterate]] a code block using a [[loops#^NODODONE|non-standard *for-loop*]].
 
 ### {}
 
-**placeholder for text.** Used after [[complex-commands#^XARGSCURLYREF|xargs -i]] (_replace strings_ option). The {} double curly brackets are a placeholder for output text.
+**placeholder for text.** Used after [[complex-commands#^XARGSCURLYREF|xargs -i]] (*replace strings* option). The {} double curly brackets are a placeholder for output text.
 
 ```bash
 ls . | xargs -i -t cp ./{} $1
@@ -594,9 +603,9 @@ ls . | xargs -i -t cp ./{} $1
 
 ### {} \;
 
-**pathname.** Mostly used in [[complex-commands#^FINDREF|find]] constructs. This is _not_ a shell [[internal-commands-and-builtins|builtin]].
+**pathname.** Mostly used in [[complex-commands#^FINDREF|find]] constructs. This is *not* a shell [[internal-commands-and-builtins|builtin]].
 
-> Definition: A _pathname_ is a _filename_ that includes the complete [[internal-variables#^PATHREF|path]]. As an example, /home/bozo/Notes/Thursday/schedule.txt. This is sometimes referred to as the _absolute path_.
+> Definition: A *pathname* is a *filename* that includes the complete [[internal-variables#^PATHREF|path]]. As an example, /home/bozo/Notes/Thursday/schedule.txt. This is sometimes referred to as the *absolute path*.
 
 > [!note] The ";" ends the -exec option of a **find** command sequence. It needs to be escaped to protect it from interpretation by the shell.
 
@@ -604,9 +613,9 @@ ls . | xargs -i -t cp ./{} $1
 
 **test.**
 
-[[tests#^IFTHEN|Test]] expression between **`[ ]`**. Note that **[** is part of the shell _builtin_ [[test-constructs#^TTESTREF|test]] (and a synonym for it), _not_ a link to the external command /usr/bin/test.
+[[tests#^IFTHEN|Test]] expression between **`[ ]`**. Note that **[** is part of the shell *builtin* [[test-constructs#^TTESTREF|test]] (and a synonym for it), *not* a link to the external command /usr/bin/test.
 
-### \[\[ ]]
+### \[\[ \]\]
 
 **test.**
 
@@ -631,7 +640,7 @@ echo ${Array[1]}
 
 As part of a [[regexp#^REGEXREF|regular expression]], brackets delineate a [[brief-introduction-to-regular-expressions#^BRACKETSREF|range of characters]] to match.
 
-### $[ ... ]
+### \$\[ ... ]
 
 **integer expansion.**
 
@@ -645,7 +654,7 @@ echo $[$a+$b]   # 10
 echo $[$a*$b]   # 21
 ```
 
-Note that this usage is _deprecated_, and has been replaced by the [[double-parentheses-construct.html|(( ... ))]] construct.
+Note that this usage is *deprecated*, and has been replaced by the [[double-parentheses-construct.html|(( ... ))]] construct.
 
 ### (( ))
 
@@ -752,7 +761,7 @@ cat *.lst | sort | uniq
 # Merges and sorts all ".lst" files, then deletes duplicate lines.
 ```
 
-> A pipe, as a classic method of interprocess communication, sends the stdout of one [[special-characters#^PROCESSREF|process]] to the stdin of another. In a typical case, a command, such as [[basic#^CATREF|cat]] or [[internal-commands-and-builtins#^ECHOREF|echo]], pipes a stream of data to a _filter_, a command that transforms its input for processing. [^7]
+> A pipe, as a classic method of interprocess communication, sends the stdout of one [[special-characters#^PROCESSREF|process]] to the stdin of another. In a typical case, a command, such as [[basic#^CATREF|cat]] or [[internal-commands-and-builtins#^ECHOREF|echo]], pipes a stream of data to a *filter*, a command that transforms its input for processing. [^7]
 >
 > `cat $filename1 $filename2 \| grep $search_word`
 >
@@ -782,7 +791,7 @@ bash$ ls -l | ./uppercase.sh
 ```
 
 > [!note]
-> The stdout of each process in a pipe must be read as the stdin of the next. If this is not the case, the data stream will _block_, and the pipe will not behave as expected.
+> The stdout of each process in a pipe must be read as the stdin of the next. If this is not the case, the data stream will *block*, and the pipe will not behave as expected.
 >
 > ```bash
 > cat file1 file2 | ls -l | sort
@@ -797,7 +806,7 @@ bash$ ls -l | ./uppercase.sh
 > echo "variable = $variable"     # variable = initial_value
 > ```
 >
-> If one of the commands in the pipe aborts, this prematurely terminates execution of the pipe. Called a _broken pipe_, this condition sends a _SIGPIPE_ [[debugging#^SIGNALD|signal]].
+> If one of the commands in the pipe aborts, this prematurely terminates execution of the pipe. Called a *broken pipe*, this condition sends a *SIGPIPE* [[debugging#^SIGNALD|signal]].
 
 ### >|
 
@@ -805,7 +814,7 @@ bash$ ls -l | ./uppercase.sh
 
 ### ||
 
-**[[operators#^ORREF|OR logical operator]].** In a [[test-constructs#^TESTCONSTRUCTS1|test construct]], the || operator causes a return of 0 (success) if _either_ of the linked test conditions is true.
+**[[operators#^ORREF|OR logical operator]].** In a [[test-constructs#^TESTCONSTRUCTS1|test construct]], the || operator causes a return of 0 (success) if *either* of the linked test conditions is true.
 
 ### &
 
@@ -871,7 +880,7 @@ exit 0
 
 ### &&
 
-**[[operators#^LOGOPS1|AND logical operator]].** In a [[test-constructs#^TESTCONSTRUCTS1|test construct]], the && operator causes a return of 0 (success) only if _both_ the linked test conditions are true.
+**[[operators#^LOGOPS1|AND logical operator]].** In a [[test-constructs#^TESTCONSTRUCTS1|test construct]], the && operator causes a return of 0 (success) only if *both* the linked test conditions are true.
 
 ### -
 
@@ -906,14 +915,14 @@ param2=${param1:-$DEFAULTVAL}
 
 **--**
 
-The _double-dash_ -- prefixes _long_ (verbatim) options to commands.
+The *double-dash* -- prefixes *long* (verbatim) options to commands.
 
 **sort --ignore-leading-blanks**
 
-Used with a [[internal-commands-and-builtins|Bash builtin]], it means the _end of options_ to that particular command.
+Used with a [[internal-commands-and-builtins|Bash builtin]], it means the *end of options* to that particular command.
 
 > [!tip]
-> This provides a handy means of removing files whose _names begin with a dash_.
+> This provides a handy means of removing files whose *names begin with a dash*.
 >
 > ```bash
 > bash$ ls -l
@@ -926,7 +935,7 @@ Used with a [[internal-commands-and-builtins|Bash builtin]], it means the _end o
 > total 0
 > ```
 
-The _double-dash_ is also used in conjunction with [[internal-commands-and-builtins#^SETREF|set]].
+The *double-dash* is also used in conjunction with [[internal-commands-and-builtins#^SETREF|set]].
 
 **set -- $variable** (as in [[internal-commands-and-builtins#^SETPOS|Example 15-18]])
 
@@ -1005,7 +1014,7 @@ bash$ echo "whatever" | cat -
 whatever 
 ```
 
-Where a filename is expected, _-_ redirects output to stdout (sometimes seen with **tar cf**), or accepts input from stdin, rather than from a file. This is a method of using a file-oriented utility as a filter in a pipe.
+Where a filename is expected, *-* redirects output to stdout (sometimes seen with **tar cf**), or accepts input from stdin, rather than from a file. This is a method of using a file-oriented utility as a filter in a pipe.
 
 ```bash
 bash$ file
@@ -1034,11 +1043,11 @@ Now the command accepts input from stdin and analyzes it.
 
 The "-" can be used to pipe stdout to other commands. This permits such stunts as [[assortedtips#^PREPENDREF|prepending lines to a file]].
 
-Using [[file-and-archiving-commands#^DIFFREF|diff]] to compare a file with a _section_ of another:
+Using [[file-and-archiving-commands#^DIFFREF|diff]] to compare a file with a *section* of another:
 
 **grep Linux file1 | diff file2 -**
 
-Finally, a real-world example using _-_ with [[file-and-archiving-commands#^TARREF|tar]].
+Finally, a real-world example using *-* with [[file-and-archiving-commands#^TARREF|tar]].
 
 ###### Example 3-4. Backup of all files changed in last day
 
@@ -1081,7 +1090,7 @@ exit 0
 > [!caution]
 > Filenames beginning with "-" may cause problems when coupled with the "-" redirection operator. A script should check for this and add an appropriate prefix to such filenames, for example ./-FILENAME, $PWD/-FILENAME, or $PATHNAME/-FILENAME.
 >
-> If the value of a variable begins with a _-_, this may likewise create problems.
+> If the value of a variable begins with a *-*, this may likewise create problems.
 >
 > ```bash
 > var="-n"
@@ -1173,11 +1182,11 @@ bash$ echo ~nonexistent-user
 
 ### ^, ^^
 
-**[[bashver4#^CASEMODPARAMSUB|Uppercase conversion]] in _parameter substitution_ (added in [[bashver4#^BASH4REF|version 4]] of Bash).**
+**[[bashver4#^CASEMODPARAMSUB|Uppercase conversion]] in *parameter substitution* (added in [[bashver4#^BASH4REF|version 4]] of Bash).**
 
 ## Control Characters
 
-**change the behavior of the terminal or text display.** A control character is a `CONTROL + key` combination (pressed simultaneously). A control character may also be written in _octal_ or _hexadecimal_ notation, following an _escape_.
+**change the behavior of the terminal or text display.** A control character is a `CONTROL + key` combination (pressed simultaneously). A control character may also be written in *octal* or *hexadecimal* notation, following an *escape*.
 
 Control characters are not normally useful inside a script.
 
@@ -1199,7 +1208,7 @@ Moves cursor to beginning of line of text (on the command-line).
 
 **EOF** (end-of-file). This also terminates input from stdin.
 
-When typing text on the console or in an _xterm_ window, `Ctl-D` erases the character under the cursor. When there are no characters present, `Ctl-D` logs out of the session, as expected. In an _xterm_ window, this has the effect of closing the window.
+When typing text on the console or in an *xterm* window, `Ctl-D` erases the character under the cursor. When there are no characters present, `Ctl-D` logs out of the session, as expected. In an *xterm* window, this has the effect of closing the window.
 
 ### `Ctl-E`
 
@@ -1211,7 +1220,7 @@ Moves cursor forward one character position (on the command-line).
 
 ### `Ctl-G`
 
-**BEL**. On some old-time teletype terminals, this would actually ring a bell. In an _xterm_ it might beep.
+**BEL**. On some old-time teletype terminals, this would actually ring a bell. In an *xterm* it might beep.
 
 ### `Ctl-H`
 
@@ -1263,7 +1272,7 @@ sleep 2
 
 **Vertical tab**.
 
-When typing text on the console or in an _xterm_ window, `Ctl-K` erases from the character under the cursor to end of line. Within a script, `Ctl-K` may behave differently, as in Lee Lee Maschmeyer's example, below.
+When typing text on the console or in an *xterm* window, `Ctl-K` erases from the character under the cursor to end of line. Within a script, `Ctl-K` may behave differently, as in Lee Lee Maschmeyer's example, below.
 
 ### `Ctl-L`
 
@@ -1317,15 +1326,15 @@ exit 0
     
 - **Ctl-N**
     
-    Erases a line of text recalled from _history buffer_ [^8] (on the command-line).
+    Erases a line of text recalled from *history buffer* [^8] (on the command-line).
     
 - **Ctl-O**
     
-    Issues a _newline_ (on the command-line).
+    Issues a *newline* (on the command-line).
     
 - **Ctl-P**
     
-    Recalls last command from _history buffer_ (on the command-line).
+    Recalls last command from *history buffer* (on the command-line).
     
 - **Ctl-Q**
     
@@ -1335,7 +1344,7 @@ exit 0
     
 - **Ctl-R**
     
-    Backwards search for text in _history buffer_ (on the command-line).
+    Backwards search for text in *history buffer* (on the command-line).
     
 - **Ctl-S**
     
@@ -1349,7 +1358,7 @@ exit 0
     
 - **Ctl-U**
     
-    Erase a line of input, from the cursor backward to beginning of line. In some settings, **Ctl-U** erases the entire line of input, _regardless of cursor position_.
+    Erase a line of input, from the cursor backward to beginning of line. In some settings, **Ctl-U** erases the entire line of input, *regardless of cursor position*.
     
 - **Ctl-V**
     
@@ -1368,48 +1377,48 @@ echo <Ctl-V><Ctl-J>
     
 - **Ctl-X**
     
-    In certain word processing programs, _Cuts_ highlighted text and copies to _clipboard_.
+    In certain word processing programs, *Cuts* highlighted text and copies to *clipboard*.
     
 - **Ctl-Y**
     
-    _Pastes_ back text previously erased (with **Ctl-U** or **Ctl-W**).
+    *Pastes* back text previously erased (with **Ctl-U** or **Ctl-W**).
     
 - **Ctl-Z**
     
-    _Pauses_ a foreground job.
+    *Pauses* a foreground job.
     
-    _Substitute_ operation in certain word processing applications.
+    *Substitute* operation in certain word processing applications.
     
     **EOF** (end-of-file) character in the MSDOS filesystem.
     
 
 ### Whitespace
 
-**functions as a separator between commands and/or variables.** Whitespace consists of either _spaces_, _tabs_, _blank lines_, or any combination thereof. [^9] In some contexts, such as [[gotchas#^WSBAD|variable assignment]], whitespace is not permitted, and results in a syntax error.
+**functions as a separator between commands and/or variables.** Whitespace consists of either *spaces*, *tabs*, *blank lines*, or any combination thereof. [^9] In some contexts, such as [[gotchas#^WSBAD|variable assignment]], whitespace is not permitted, and results in a syntax error.
 
 Blank lines have no effect on the action of a script, and are therefore useful for visually separating functional sections.
 
-[[internal-variables#^IFSREF|$IFS]], the special variable separating _fields_ of input to certain commands. It defaults to whitespace.
+[[internal-variables#^IFSREF|$IFS]], the special variable separating *fields* of input to certain commands. It defaults to whitespace.
 
-> **Definition:** A _field_ is a discrete chunk of data expressed as a string of consecutive characters. Separating each field from adjacent fields is either _whitespace_ or some other designated character (often determined by the $IFS). In some contexts, a field may be called a _record_.|
+> **Definition:** A *field* is a discrete chunk of data expressed as a string of consecutive characters. Separating each field from adjacent fields is either *whitespace* or some other designated character (often determined by the $IFS). In some contexts, a field may be called a *record*.|
 
-To preserve _whitespace_ within a string or in a variable, use [[quoting#^QUOTINGREF|quoting]].
+To preserve *whitespace* within a string or in a variable, use [[quoting#^QUOTINGREF|quoting]].
 
-UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whitespace_ using the [[brief-introduction-to-regular-expressions#^POSIXREF|POSIX]] character class [[brief-introduction-to-regular-expressions#^WSPOSIX|[:space:]]].
+UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on *whitespace* using the [[brief-introduction-to-regular-expressions#^POSIXREF|POSIX]] character class [[brief-introduction-to-regular-expressions#^WSPOSIX|[:space:]]].
 
-[^1]: An _operator_ is an agent that carries out an _operation_. Some examples are the common [[operators#^AROPS1|arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of _operator_ and [[internal-commands-and-builtins#^keywordref|keyword]].
+[^1]: An *operator* is an agent that carries out an *operation*. Some examples are the common [[operators#^AROPS1|arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of *operator* and [[internal-commands-and-builtins#^keywordref|keyword]].
 
-[^2]: This is more commonly known as the _ternary_ operator. Unfortunately, _ternary_ is an ugly word. It doesn't roll off the tongue, and it doesn't elucidate. It obfuscates. _Trinary_ is by far the more elegant usage.
+[^2]: This is more commonly known as the *ternary* operator. Unfortunately, *ternary* is an ugly word. It doesn't roll off the tongue, and it doesn't elucidate. It obfuscates. *Trinary* is by far the more elegant usage.
 
 [^3]: **A**merican **S**tandard **C**ode for **I**nformation **I**nterchange. This is a system for encoding text characters (alphabetic, numeric, and a limited set of symbols) as 7-bit numbers that can be stored and manipulated by computers. Many of the ASCII characters are represented on a standard keyboard.
 
-[^4]: A _PID_, or _process ID_, is a number assigned to a running process. The _PID_s of running processes may be viewed with a [[system-and-administrative-commands#^PPSSREF|ps]] command.
+[^4]: A *PID*, or *process ID*, is a number assigned to a running process. The *PID*s of running processes may be viewed with a [[system-and-administrative-commands#^PPSSREF|ps]] command.
 
-    **Definition:** A _process_ is a currently executing command (or program), sometimes referred to as a _job_.
+    **Definition:** A *process* is a currently executing command (or program), sometimes referred to as a *job*.
 
-[^5]: The shell does the _brace expansion_. The command itself acts upon the _result_ of the expansion.
+[^5]: The shell does the *brace expansion*. The command itself acts upon the *result* of the expansion.
 
-[^6]: Exception: a code block in braces as part of a pipe _may_ run as a [[subshells#^SUBSHELLSREF|subshell]].
+[^6]: Exception: a code block in braces as part of a pipe *may* run as a [[subshells#^SUBSHELLSREF|subshell]].
 
     ```bash
     ls | { read firstline; read secondline; }
@@ -1420,8 +1429,8 @@ UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whites
     # Thanks, S.C.
     ```
 
-[^7]: Even as in olden times a _philtre_ denoted a potion alleged to have magical transformative powers, so does a UNIX _filter_ transform its target in (roughly) analogous fashion. (The coder who comes up with a "love philtre" that runs on a Linux machine will likely win accolades and honors.)
+[^7]: Even as in olden times a *philtre* denoted a potion alleged to have magical transformative powers, so does a UNIX *filter* transform its target in (roughly) analogous fashion. (The coder who comes up with a "love philtre" that runs on a Linux machine will likely win accolades and honors.)
 
-[^8]: Bash stores a list of commands previously issued from the command-line in a _buffer_, or memory space, for recall with the [[internal-commands-and-builtins|builtin]] _history_ commands.
+[^8]: Bash stores a list of commands previously issued from the command-line in a *buffer*, or memory space, for recall with the [[internal-commands-and-builtins|builtin]] *history* commands.
 
-[^9]: A linefeed (_newline_) is also a whitespace character. This explains why a _blank line_, consisting only of a linefeed, is considered whitespace.
+[^9]: A linefeed (*newline*) is also a whitespace character. This explains why a *blank line*, consisting only of a linefeed, is considered whitespace.
