@@ -1,7 +1,7 @@
 ---
 title: 3. Special Characters
 ---
-What makes a character _special_? If it has a meaning beyond its _literal meaning_, a [[brief-introduction-to-regular-expressions#^METAMEANINGREF|meta-meaning]], then we refer to it as a _special character_. Along with commands and [[internal-commands-and-builtins#^KEYWORDREF|keywords]], _special characters_ are building blocks of Bash scripts.
+What makes a character _special_? If it has a meaning beyond its _literal meaning_, a [[brief-introduction-to-regular-expressions#^metameaningref|meta-meaning]], then we refer to it as a _special character_. Along with commands and [[internal-commands-and-builtins#^keywordref|keywords]], _special characters_ are building blocks of Bash scripts.
 
 ## Special Characters Found In Scripts and Elsewhere
 
@@ -323,7 +323,7 @@ not_empty ()
 
 ### !
 
-**reverse (or negate) the sense of a test or exit status [[exit-and-exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-and-exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[other-comparison-operators#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal-commands-and-builtins#^KEYWORDREF|keyword]].
+**reverse (or negate) the sense of a test or exit status [[exit-and-exit-status#^EXITSTATUSREF|bang].** The ! operator inverts the [exit status]] of the command to which it is applied (see [[exit-and-exit-status#^NEGCOND|Example 6-2]]). It also inverts the meaning of a test operator. This can, for example, change the sense of _equal_ ( [[other-comparison-operators#^EQUALSIGNREF|=]] ) to _not-equal_ ( != ). The ! operator is a Bash [[internal-commands-and-builtins#^keywordref|keyword]].
 
 In a different context, the ! also appears in [[indirect-references#^IVRREF|indirect variable references]].
 
@@ -610,7 +610,7 @@ ls . | xargs -i -t cp ./{} $1
 
 **test.**
 
-Test expression between `[[[ ]]`. More flexible than the single-bracket [ ] test, this is a shell [internal#^KEYWORDREF|keyword]].
+Test expression between `[[[ ]]`. More flexible than the single-bracket [ ] test, this is a shell [internal#^keywordref|keyword]].
 
 See the discussion on the [[test-constructs#^DBLBRACKETS|`[[ ... ]]` construct]].
 
@@ -1177,43 +1177,43 @@ bash$ echo ~nonexistent-user
 
 ## Control Characters
 
-**change the behavior of the terminal or text display.** A control character is a <kbd>CONTROL + key</kbd> combination (pressed simultaneously). A control character may also be written in _octal_ or _hexadecimal_ notation, following an _escape_.
+**change the behavior of the terminal or text display.** A control character is a `CONTROL + key` combination (pressed simultaneously). A control character may also be written in _octal_ or _hexadecimal_ notation, following an _escape_.
 
 Control characters are not normally useful inside a script.
 
-### <kbd>Ctl-A</kbd>
+### `Ctl-A`
 
 Moves cursor to beginning of line of text (on the command-line).
 
-### <kbd>Ctl-B</kbd>
+### `Ctl-B`
 
 **Backspace** (nondestructive).
 
-### <kbd>Ctl-C</kbd>
+### `Ctl-C`
 
 **Break**. Terminate a foreground job.
 
-### <kbd>Ctl-D</kbd>
+### `Ctl-D`
 
 *Log out* from a shell (similar to [[exit-and-exit-status|exit]]).
 
 **EOF** (end-of-file). This also terminates input from stdin.
 
-When typing text on the console or in an _xterm_ window, <kbd>Ctl-D</kbd> erases the character under the cursor. When there are no characters present, <kbd>Ctl-D</kbd> logs out of the session, as expected. In an _xterm_ window, this has the effect of closing the window.
+When typing text on the console or in an _xterm_ window, `Ctl-D` erases the character under the cursor. When there are no characters present, `Ctl-D` logs out of the session, as expected. In an _xterm_ window, this has the effect of closing the window.
 
-### <kbd>Ctl-E</kbd>
+### `Ctl-E`
 
 Moves cursor to end of line of text (on the command-line).
 
-### <kbd>Ctl-F</kbd>
+### `Ctl-F`
 
 Moves cursor forward one character position (on the command-line).
 
-### <kbd>Ctl-G</kbd>
+### `Ctl-G`
 
 **BEL**. On some old-time teletype terminals, this would actually ring a bell. In an _xterm_ it might beep.
 
-### <kbd>Ctl-H</kbd>
+### `Ctl-H`
 
 **Rubout** (destructive backspace). Erases characters the cursor backs over while backspacing.
 
@@ -1251,23 +1251,23 @@ echo -n "$rubout"
 sleep 2
 ```
 
-### <kbd>Ctl-I</kbd>
+### `Ctl-I`
 
 **Horizontal tab**.
 
-### <kbd>Ctl-J</kbd>
+### `Ctl-J`
 
 **Newline** (line feed). In a script, may also be expressed in octal notation -- '\012' or in hexadecimal -- '\x0a'.
 
-### <kbd>Ctl-K</kbd>
+### `Ctl-K`
 
 **Vertical tab**.
 
-When typing text on the console or in an _xterm_ window, <kbd>Ctl-K</kbd> erases from the character under the cursor to end of line. Within a script, <kbd>Ctl-K</kbd> may behave differently, as in Lee Lee Maschmeyer's example, below.
+When typing text on the console or in an _xterm_ window, `Ctl-K` erases from the character under the cursor to end of line. Within a script, `Ctl-K` may behave differently, as in Lee Lee Maschmeyer's example, below.
 
-### <kbd>Ctl-L</kbd>
+### `Ctl-L`
 
-**Formfeed** (clear the terminal screen). In a terminal, this has the same effect as the [[terminal-control-commands#^CLEARREF|clear]] command. When sent to a printer, a <kbd>Ctl-L</kbd> causes an advance to end of the paper sheet.
+**Formfeed** (clear the terminal screen). In a terminal, this has the same effect as the [[terminal-control-commands#^CLEARREF|clear]] command. When sent to a printer, a `Ctl-L` causes an advance to end of the paper sheet.
     
 - **Ctl-M**
     
@@ -1397,7 +1397,7 @@ To preserve _whitespace_ within a string or in a variable, use [[quoting#^QUOTIN
 
 UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on _whitespace_ using the [[brief-introduction-to-regular-expressions#^POSIXREF|POSIX]] character class [[brief-introduction-to-regular-expressions#^WSPOSIX|[:space:]]].
 
-[^1]: An _operator_ is an agent that carries out an _operation_. Some examples are the common [[operators#^AROPS1|arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of _operator_ and [[internal-commands-and-builtins#^KEYWORDREF|keyword]].
+[^1]: An _operator_ is an agent that carries out an _operation_. Some examples are the common [[operators#^AROPS1|arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of _operator_ and [[internal-commands-and-builtins#^keywordref|keyword]].
 
 [^2]: This is more commonly known as the _ternary_ operator. Unfortunately, _ternary_ is an ugly word. It doesn't roll off the tongue, and it doesn't elucidate. It obfuscates. _Trinary_ is by far the more elegant usage.
 

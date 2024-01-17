@@ -184,7 +184,7 @@ bash$ **ls -l ?[[:digit:]][[:digit:]]?**
 
 The standard reference on this complex topic is Friedl's _Mastering Regular Expressions_. _Sed & Awk_, by Dougherty and Robbins, also gives a very lucid treatment of REs. See the [[bibliography|_Bibliography_]] for more information on these books.
 
-[^1]: A _meta-meaning_ is the meaning of a term or expression on a higher level of abstraction. For example, the _literal_ meaning of _regular expression_ is an ordinary expression that conforms to accepted usage. The _meta-meaning_ is drastically different, as discussed at length in this chapter.
+[^1]: A _meta-meaning_ is the meaning of a term or expression on a higher level of abstraction. For example, the _literal_ meaning of _regular expression_ is an ordinary expression that conforms to accepted usage. The _meta-meaning_ is drastically different, as discussed at length in this chapter. ^metameaningref
 
 [^2]: Since [[a-sed-and-awk-micro-primer#^SEDREF|sed]], [[awk#^AWKREF|awk]], and [[text-processing-commands#^GREPREF|grep]] process single lines, there will usually not be a newline to match. In those cases where there is a newline in a multiple line expression, the dot will match the newline.
     

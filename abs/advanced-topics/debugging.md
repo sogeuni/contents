@@ -35,7 +35,7 @@ Output from script:
 
 What's wrong with the above script? Hint: after the _if_.
 
-###### Example 32-2. Missing [[internal-commands-and-builtins#^KEYWORDREF|keyword]]
+###### Example 32-2. Missing [[internal-commands-and-builtins#^keywordref|keyword]]
 
 ```bash
 #!/bin/bash

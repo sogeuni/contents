@@ -576,7 +576,7 @@ exit $?   # Also, efax sends diagnostic messages to stdout.
 ```
 
 > [!note]
-> The [[internal-commands-and-builtins#KEYWORDREF|keywords]] **do** and **done** delineate the _for-loop_ command block. However, these may, in certain contexts, be omitted by framing the command block within [[special-chars#CODEBLOCKREF|curly brackets]]
+> The [[internal-commands-and-builtins#keywordref|keywords]] **do** and **done** delineate the _for-loop_ command block. However, these may, in certain contexts, be omitted by framing the command block within [[special-chars#CODEBLOCKREF|curly brackets]]
 >
 > ```bash
 > for((n=1; n<=10; n++)) 

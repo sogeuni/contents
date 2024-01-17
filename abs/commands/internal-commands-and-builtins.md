@@ -55,7 +55,7 @@ echo "This line uses the \"echo\" builtin."
 /bin/echo "This line uses the /bin/echo system command."
 ```
 
-A _keyword_ is a _reserved_ word, token or operator. Keywords have a special meaning to the shell, and indeed are the building blocks of the shell's syntax. As examples, _for_, _while_, _do_, and _!_ are keywords. Similar to a [[internal-commands-and-builtins|builtin]], a keyword is hard-coded into Bash, but unlike a _builtin_, a keyword is not in itself a command, but _a subunit of a command construct_. [^2]
+A _keyword_ is a _reserved_ word, token or operator. Keywords have a special meaning to the shell, and indeed are the building blocks of the shell's syntax. As examples, _for_, _while_, _do_, and _!_ are keywords. Similar to a [[internal-commands-and-builtins|builtin]], a keyword is hard-coded into Bash, but unlike a _builtin_, a keyword is not in itself a command, but _a subunit of a command construct_. [^2] ^keywordref
 
 **I/O**
 

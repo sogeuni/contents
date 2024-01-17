@@ -4,7 +4,7 @@ title: 7.1. Test Constructs
 
 - An **if/then** construct tests whether the [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of a list of commands is 0 (since 0 means "success" by UNIX convention), and if so, executes one or more commands.
 - There exists a dedicated command called **[[special-characters#^LEFTBRACKET|** ([left bracket]] special character). It is a synonym for **test**, and a [[internal-commands-and-builtins|builtin]] for efficiency reasons. This command considers its arguments as comparison expressions or file tests and returns an exit status corresponding to the result of the comparison (0 for true, 1 for false).
-- With version 2.02, Bash introduced the [[test-constructs#^DBLBRACKETS|[[ ... ]]]] _extended test command_, which performs comparisons in a manner more familiar to programmers from other languages. Note that **[[internal-commands-and-builtins#^KEYWORDREF|[** is a [keyword]], not a command.
+- With version 2.02, Bash introduced the [[test-constructs#^DBLBRACKETS|[[ ... ]]]] _extended test command_, which performs comparisons in a manner more familiar to programmers from other languages. Note that **[[internal-commands-and-builtins#^keywordref|[** is a [keyword]], not a command.
     Bash sees **[[ $a -lt $b ]]** as a single element, which returns an exit status.
 - The [[double-parentheses-construct.html|(( ... ))]] and [[internal-commands-and-builtins#^LETREF|let ...]] constructs return an [[exit-and-exit-status#^EXITSTATUSREF|exit status]], _according to whether the arithmetic expressions they evaluate expand to a non-zero value_. These [[arithmetic-expansion#^ARITHEXPREF|arithmetic-expansion]] constructs may therefore be used to perform [[other-comparison-operators#^ICOMPARISON1|arithmetic comparisons]].
 
@@ -227,7 +227,7 @@ fi
 ```
 
 > [!note] 
-> When _if_ and _then_ are on same line in a condition test, a semicolon must terminate the _if_ statement. Both _if_ and _then_ are [[internal-commands-and-builtins#^KEYWORDREF|keywords]]. Keywords (or commands) begin statements, and before a new statement on the same line begins, the old one must terminate.
+> When _if_ and _then_ are on same line in a condition test, a semicolon must terminate the _if_ statement. Both _if_ and _then_ are [[internal-commands-and-builtins#^keywordref|keywords]]. Keywords (or commands) begin statements, and before a new statement on the same line begins, the old one must terminate.
 >
 > ```bash
 > if [ -x "$filename" ]; then
@@ -465,4 +465,4 @@ fi     # 5 is greater than 4
 exit 0
 ```
 
-[^1]: A _token_ is a symbol or short string with a special meaning attached to it (a [[brief-introduction-to-regular-expressions#^METAMEANINGREF|meta-meaning]]). In Bash, certain tokens, such as **[[special-characters#^DOTREF|** and [. (dot-command)]], may expand to _keywords_ and commands.
+[^1]: A _token_ is a symbol or short string with a special meaning attached to it (a [[brief-introduction-to-regular-expressions#^metameaningref|meta-meaning]]). In Bash, certain tokens, such as **[[special-characters#^DOTREF|** and [. (dot-command)]], may expand to _keywords_ and commands.
