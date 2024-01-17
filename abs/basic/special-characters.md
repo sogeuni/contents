@@ -5,7 +5,7 @@ What makes a character _special_? If it has a meaning beyond its _literal meanin
 
 ## Special Characters Found In Scripts and Elsewhere
 
-### \#
+### \# {#comments}
 
 **Comments.** Lines beginning with a # (with the exception of [[starting-off-with-a-sha-bang#^magnumref|#!]]) are comments and will _not_ be executed.
 

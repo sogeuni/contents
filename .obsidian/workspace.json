@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "abs/basic/special-characters.md",
-                "mode": "source",
+                "mode": "preview",
                 "backlinks": true,
                 "source": false
               }
@@ -79,7 +79,7 @@
       {
         "id": "32f9c6e90e464116",
         "type": "tabs",
-        "dimension": 65.9033078880407,
+        "dimension": 65.90330788804071,
         "children": [
           {
             "id": "ade310b5ef1a5481",
@@ -145,7 +145,7 @@
       {
         "id": "bcb36eecbba39704",
         "type": "tabs",
-        "dimension": 34.096692111959285,
+        "dimension": 34.09669211195929,
         "children": [
           {
             "id": "4272eec0c40732e3",
@@ -186,7 +186,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 314.5
+    "width": 638.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -199,7 +199,7 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "66be20fd1a89cad5",
+  "active": "7c4dde10a3995f5d",
   "lastOpenFiles": [
     "abs/basic/special-characters.md",
     "abs/advanced-topics/brief-introduction-to-regular-expressions.md",
