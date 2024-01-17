@@ -93,7 +93,7 @@ exit $?   # In this case, exit code = 99, since that is function return.
     See [[contributed-scripts#^SAMORSE|Example A-53]] for an interesting usage of an _associative array_.
     
 > [!caution]
-> Elements of the _index_ array may include embedded [[special-characters#^WHITESPACEREF|space characters]], or even leading and/or trailing space characters. However, index array elements containing _only_ _whitespace_ are _not_ permitted.
+> Elements of the _index_ array may include embedded [[special-characters#Whitespace|space characters]], or even leading and/or trailing space characters. However, index array elements containing _only_ _whitespace_ are _not_ permitted.
 >
 > ```bash
 > address[   ]="Blank"   # Error!

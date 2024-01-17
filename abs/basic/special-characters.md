@@ -7,7 +7,7 @@ What makes a character _special_? If it has a meaning beyond its _literal meanin
 
 ### \#
 
-**Comments.** Lines beginning with a # (with the exception of [[starting-off-with-a-sha-bang#^MAGNUMREF|#!]]) are comments and will _not_ be executed.
+**Comments.** Lines beginning with a # (with the exception of [[starting-off-with-a-sha-bang#^magnumref|#!]]) are comments and will _not_ be executed.
 
 ```bash
 # This line is a comment.
@@ -20,7 +20,7 @@ echo "A comment will follow." # Comment here.
 #                            ^ Note whitespace before #
 ```
 
-Comments may also follow [[special-characters#^WHITESPACEREF|whitespace]] at the beginning of a line.
+Comments may also follow [[#Whitespace|whitespace]] at the beginning of a line
 
 ```bash
     # A tab precedes this comment.
@@ -1364,7 +1364,7 @@ echo <Ctl-V><Ctl-J>
     
 - **Ctl-W**
     
-    When typing text on the console or in an xterm window, **Ctl-W** erases from the character under the cursor backwards to the first instance of [[special-characters#^WHITESPACEREF|whitespace]]. In some settings, **Ctl-W** erases backwards to first non-alphanumeric character.
+    When typing text on the console or in an xterm window, **Ctl-W** erases from the character under the cursor backwards to the first instance of [[#Whitespace|whitespace]]. In some settings, **Ctl-W** erases backwards to first non-alphanumeric character.
     
 - **Ctl-X**
     

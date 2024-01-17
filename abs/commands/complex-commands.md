@@ -74,7 +74,7 @@ find /etc -type f -exec cat '{}' \; | tr -c '.[:digit:]' '\n' \
 > [!note]
 > The -exec option to **find** should not be confused with the [[internal#^EXECREF|exec]] shell builtin.
 
-###### Example 16-3. *Badname*, eliminate file names in current directory containing bad characters and [[special-chars#^WHITESPACEREF|whitespace]].
+###### Example 16-3. *Badname*, eliminate file names in current directory containing bad characters and [[special-characters#Whitespace|whitespace]].
 
 ```bash
 #!/bin/bash

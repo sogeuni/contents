@@ -79,7 +79,7 @@
       {
         "id": "32f9c6e90e464116",
         "type": "tabs",
-        "dimension": 44.510978043912175,
+        "dimension": 65.9033078880407,
         "children": [
           {
             "id": "ade310b5ef1a5481",
@@ -145,7 +145,7 @@
       {
         "id": "bcb36eecbba39704",
         "type": "tabs",
-        "dimension": 55.489021956087825,
+        "dimension": 34.096692111959285,
         "children": [
           {
             "id": "4272eec0c40732e3",
@@ -195,7 +195,8 @@
       "canvas:새 캔버스 만들기": false,
       "daily-notes:오늘의 데일리 노트 열기": false,
       "templates:템플릿 삽입": false,
-      "command-palette:명령어 팔레트 열기": false
+      "command-palette:명령어 팔레트 열기": false,
+      "webpage-html-export:Export Vault to HTML": false
     }
   },
   "active": "66be20fd1a89cad5",

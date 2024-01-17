@@ -227,7 +227,7 @@ exit 0
 > [!note]
 > As _Peggy Russell_ points out:
 >
-> It is often necessary to include an [[internal-commands-and-builtins#^EVALREF|eval]] to correctly process [[special-characters#^WHITESPACEREF|whitespace]] and _quotes_.
+> It is often necessary to include an [[internal-commands-and-builtins#^EVALREF|eval]] to correctly process [[special-characters#Whitespace|whitespace]] and _quotes_.
 >
 > ```bash
 > args=$(getopt -o a:bc:d -- "$@")

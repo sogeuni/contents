@@ -4,7 +4,7 @@ title: C.2. Awk
 
 _Awk_ [^1] is a full-featured text processing language with a syntax reminiscent of _C_. While it possesses an extensive set of operators and capabilities, we will cover only a few of these here - the ones most useful in shell scripts.
 
-Awk breaks each line of input passed to it into [[special-characters#^FIELDREF|fields]]. By default, a field is a string of consecutive characters delimited by [[special-characters#^WHITESPACEREF|whitespace]], though there are options for changing this. Awk parses and operates on each separate field. This makes it ideal for handling structured text files -- especially tables -- data organized into consistent chunks, such as rows and columns.
+Awk breaks each line of input passed to it into [[special-characters#^FIELDREF|fields]]. By default, a field is a string of consecutive characters delimited by [[special-characters#Whitespace|whitespace]], though there are options for changing this. Awk parses and operates on each separate field. This makes it ideal for handling structured text files -- especially tables -- data organized into consistent chunks, such as rows and columns.
 
 [[varsubn#^SNGLQUO|Strong quoting]] and [[special-characters#^CODEBLOCKREF|curly brackets]] enclose blocks of awk code within a shell script.
 

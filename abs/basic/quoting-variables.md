@@ -4,7 +4,7 @@ title: 5.1. Quoting Variables
 
 When referencing a variable, it is generally advisable to enclose its name in double quotes. This prevents reinterpretation of all special characters within the quoted string -- except `$`, ` `` (backquote), and `\`(escape). [^1] Keeping $ as a special character within double quotes permits referencing a quoted variable (_"$variable"_), that is, replacing the variable with its value (see [[varsubn#^EX9|Example 4-1]], above).
 
-Use double quotes to prevent word splitting. [^2] An argument enclosed in double quotes presents itself as a single word, even if it contains [[special-characters#^WHITESPACEREF|whitespace]] separators.
+Use double quotes to prevent word splitting. [^2] An argument enclosed in double quotes presents itself as a single word, even if it contains [[special-characters#Whitespace|whitespace]] separators.
 
 ```bash
 List="one two three"
@@ -49,7 +49,7 @@ COMMAND "$variable2 $variable2 $variable2"
 # Thanks, Stéphane Chazelas.
 ```
 
-> [!tip] Enclosing the arguments to an **echo** statement in double quotes is necessary only when word splitting or preservation of [[special-characters#^WHITESPACEREF|whitespace]] is an issue.
+> [!tip] Enclosing the arguments to an **echo** statement in double quotes is necessary only when word splitting or preservation of [[special-characters#Whitespace|whitespace]] is an issue.
 
 ###### Example 5-1. Echoing Weird Variables
 

@@ -91,7 +91,7 @@ Normally, each **echo** command prints a terminal newline, but the -n option sup
 
 Be aware that **echo `command`** deletes any linefeeds that the output of _command_ generates.
 
-The [[internal-variables#^IFSREF|$IFS]] (internal field separator) variable normally contains \n (linefeed) as one of its set of [[special-characters#^WHITESPACEREF|whitespace]] characters. Bash therefore splits the output of _command_ at linefeeds into arguments to **echo**. Then **echo** outputs these arguments, separated by spaces.
+The [[internal-variables#^IFSREF|$IFS]] (internal field separator) variable normally contains \n (linefeed) as one of its set of [[special-characters#Whitespace|whitespace]] characters. Bash therefore splits the output of _command_ at linefeeds into arguments to **echo**. Then **echo** outputs these arguments, separated by spaces.
 
 ```bash
 
@@ -527,7 +527,7 @@ The -t option to **read** permits timed input (see [[internal-variables#^TOUT|Ex
 
 The -u option takes the [[io-redirection#^FDREF|file descriptor]] of the target file.
 
-The **read** command may also "read" its variable value from a file [[io-redirection|redirected]] to stdin. If the file contains more than one line, only the first line is assigned to the variable. If **read** has more than one parameter, then each of these variables gets assigned a successive [[special-characters#^WHITESPACEREF|whitespace-delineated]] string. Caution!
+The **read** command may also "read" its variable value from a file [[io-redirection|redirected]] to stdin. If the file contains more than one line, only the first line is assigned to the variable. If **read** has more than one parameter, then each of these variables gets assigned a successive [[special-characters#Whitespace|whitespace-delineated]] string. Caution!
 
 ###### Example 15-7. Using *read* with [[io-redirection|file redirection]]
 

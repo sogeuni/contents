@@ -60,7 +60,7 @@ do_something do_something
 # All this is legal, but highly confusing.
 ```
     
-- Using [[special-characters#^WHITESPACEREF|whitespace]] inappropriately. In contrast to other programming languages, Bash can be quite finicky about whitespace.
+- Using [[special-characters#Whitespace|whitespace]] inappropriately. In contrast to other programming languages, Bash can be quite finicky about whitespace.
     
 ```bash
 var1 = 23   # 'var1=23' is correct.

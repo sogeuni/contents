@@ -75,7 +75,7 @@ is equal to
 **if [ "$a" = "$b" ]**
 
 > [!caution]
-> Note the [[special-characters#^WHITESPACEREF|whitespace]] framing the **=**.
+> Note the [[special-characters#Whitespace|whitespace]] framing the **=**.
 >
 > **if [ "$a"="$b" ]** is _not_ equivalent to the above.
 

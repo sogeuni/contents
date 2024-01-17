@@ -979,7 +979,7 @@ tr -d 0-9 <filename
 # Deletes all digits from the file "filename".
 ```
 
-The --squeeze-repeats (or -s) option deletes all but the first instance of a string of consecutive characters. This option is useful for removing excess [[special-characters#^WHITESPACEREF|whitespace]].
+The --squeeze-repeats (or -s) option deletes all but the first instance of a string of consecutive characters. This option is useful for removing excess [[special-characters#Whitespace|whitespace]].
 
 ```bash
 bash$ echo "XXXXX" | tr --squeeze-repeats 'X'

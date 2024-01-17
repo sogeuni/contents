@@ -59,7 +59,7 @@ t2.sh
 See also [[loops#^LISTGLOB|Example 11-5]].
 
 > [!caution]
-> Filenames with embedded [[special-characters#^WHITESPACEREF|whitespace]] can cause _globbing_ to choke. [David Wheeler](http://www.dwheeler.com/essays/filenames-in-shell.html) shows how to avoid many such pitfalls.
+> Filenames with embedded [[special-characters#Whitespace|whitespace]] can cause _globbing_ to choke. [David Wheeler](http://www.dwheeler.com/essays/filenames-in-shell.html) shows how to avoid many such pitfalls.
 
 ```bash
 IFS="$(printf '\n\t')"   # Remove space.
