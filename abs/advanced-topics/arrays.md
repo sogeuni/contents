@@ -111,7 +111,7 @@ base64_charset=( {A..Z} {a..z} {0..9} + / = )
 > # Thank you, Michael Zick, for pointing this out.
 > ```
 >
-> Once again this demonstrates that [[untyped#^BVUNTYPED|Bash variables are untyped]].
+> Once again this demonstrates that [[variables-and-parameters#^BVUNTYPED|Bash variables are untyped]].
 
 ###### Example 27-2. Formatting a poem
 
