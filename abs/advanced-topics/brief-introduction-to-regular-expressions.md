@@ -154,7 +154,7 @@ People who read seem to be better informed than those who do not.
 - **[:xdigit:]** matches hexadecimal digits. This is equivalent to **0-9A-Fa-f**.
     
 > [!important]
-> POSIX character classes generally require quoting or [[test-constructs#^DBLBRACKETS|double brackets]] ([[ ]]).
+> POSIX character classes generally require quoting or [[tests#^DBLBRACKETS|double brackets]] ([[ ]]).
 
 ```bash
 bash$ grep [[:digit:]] test.file

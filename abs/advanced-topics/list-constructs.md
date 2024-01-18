@@ -179,7 +179,7 @@ done
 > [!important]
 > The [[exit-and-exit-status#^EXITSTATUSREF|exit status]] of an **and list** or an **or list** is the exit status of the last command executed.
 
-Clever combinations of _and_ and _or_ lists are possible, but the logic may easily become convoluted and require close attention to [[operator-precedence#^OPPRECEDENCE1|operator precedence rules]], and possibly extensive debugging.
+Clever combinations of _and_ and _or_ lists are possible, but the logic may easily become convoluted and require close attention to [[operations-and-related-topics#^OPPRECEDENCE1|operator precedence rules]], and possibly extensive debugging.
 
 ```bash
 false && true | echo false         # false
@@ -196,4 +196,4 @@ false && ( true | echo false )     # (nothing echoed)
 #  Thanks, S.C.
 ```
 
-See [contributed-scripts#^DAYSBETWEEN|Example A-7]] and [[file-test-operators#^BROKENLINK|Example 7-4]] for illustrations of using **and / or list** constructs to test variables.
+See [contributed-scripts#^DAYSBETWEEN|Example A-7]] and [[tests#^BROKENLINK|Example 7-4]] for illustrations of using **and / or list** constructs to test variables.

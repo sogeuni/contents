@@ -101,7 +101,7 @@ export SUM=0; for f in $(find src -name "*.java");
 do export SUM=$(($SUM + $(wc -l $f | awk '{ print $1 }'))); done; echo $SUM
 ```
 
-Hint: First, break the script up into bite-sized sections. Then, carefully examine its use of [[double-parentheses-construct.html|double-parentheses]] arithmetic, the [[internal-commands-and-builtins#^EXPORTREF|export]] command, the [[complex-commands#^FINDREF|find]] command, the [[text-processing-commands#^WCREF|wc]] command, and [[awk#^AWKREF|awk]].
+Hint: First, break the script up into bite-sized sections. Then, carefully examine its use of [[operations-and-related-topics.html|double-parentheses]] arithmetic, the [[internal-commands-and-builtins#^EXPORTREF|export]] command, the [[complex-commands#^FINDREF|find]] command, the [[text-processing-commands#^WCREF|wc]] command, and [[awk#^AWKREF|awk]].
 
 ---
 

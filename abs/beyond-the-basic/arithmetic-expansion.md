@@ -12,7 +12,7 @@ Arithmetic expansion with [[command-substitution#^BACKQUOTESREF|backticks]] (oft
 z=`expr $z + 3`          # The 'expr' command performs the expansion.
 ```
 
-Arithmetic expansion with [[double-parentheses-construct|double parentheses]], and using [[internal-commands-and-builtins#^LETREF|let]]
+Arithmetic expansion with [[operations-and-related-topics|double parentheses]], and using [[internal-commands-and-builtins#^LETREF|let]]
 
 The use of _backticks_ (_backquotes_) in arithmetic expansion has been superseded by _double parentheses_ -- **((...))** and **$((...))** -- and also by the very convenient [[internal-commands-and-builtins#^LETREF|let]] construction.
 

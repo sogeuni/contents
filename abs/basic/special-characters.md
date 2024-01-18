@@ -39,7 +39,7 @@ initial=( `cat "$startfile" | sed -e '/#/d' | tr -d '\n' |\
 > A command may not follow a comment on the same line. There is no method of terminating the comment, in order for "live code" to begin on the same line. Use a new line for the next command.
 
 > [!note]
-> Of course, a [[quoting#^QUOTINGREF|quoted]] or an [[quoting#^ESCP|escaped]] # in an [[internal-commands-and-builtins#^ECHOREF|echo]] statement does *not* begin a comment. Likewise, a # appears in [[parameter-substitution#^PSUB2|certain parameter-substitution constructs]] and in [[numerical-constants#^NUMCONSTANTS|numerical constant expressions]].
+> Of course, a [[quoting#^QUOTINGREF|quoted]] or an [[quoting#^ESCP|escaped]] # in an [[internal-commands-and-builtins#^ECHOREF|echo]] statement does *not* begin a comment. Likewise, a # appears in [[parameter-substitution#^PSUB2|certain parameter-substitution constructs]] and in [[operations-and-related-topics#^NUMCONSTANTS|numerical constant expressions]].
 >
 > ```bash
 > echo "The # here does not begin a comment."
@@ -159,7 +159,7 @@ Copy all the "junk" files to [[internal-variables#^PWDREF|$PWD]].
 
 ### , (comma)
 
-**[[operators#^COMMAOP|comma operator]].** The *comma operator* [^1] links together a series of arithmetic operations. All are evaluated, but only the last one is returned.
+**[[operations-and-related-topics#^COMMAOP|comma operator]].** The *comma operator* [^1] links together a series of arithmetic operations. All are evaluated, but only the last one is returned.
 
 ```bash
 let "t2 = ((a = 9, 15 / 3))"
@@ -204,7 +204,7 @@ See [[Chapter 5. Quoting|Chapter 5]] for an in-depth explanation of escaped char
 
 **Filename path separator [forward slash].** Separates the components of a filename (as in /home/bozo/projects/Makefile).
 
-This is also the division [[operators#^AROPS1|arithmetic operator]].
+This is also the division [[operations-and-related-topics#^AROPS1|arithmetic operator]].
 
 ### \` (backtick)
 
@@ -247,7 +247,7 @@ else     # Or else ...
 fi
 ```
 
-Provide a placeholder where a binary operation is expected, see [[operators#^ARITHOPS|Example 8-2]] and [[parameter-substitution#^DEFPARAM|default parameters]].
+Provide a placeholder where a binary operation is expected, see [[operations-and-related-topics#^ARITHOPS|Example 8-2]] and [[parameter-substitution#^DEFPARAM|default parameters]].
 
 ```bash
 : ${username=`whoami`}
@@ -347,9 +347,9 @@ The * also represents [[brief-introduction-to-regular-expressions#^ASTERISKREG|a
 
 *
 
-**[[operators#^AROPS1|arithmetic operator]].** In the context of arithmetic operations, the * denotes multiplication.
+**[[operations-and-related-topics#^AROPS1|arithmetic operator]].** In the context of arithmetic operations, the * denotes multiplication.
 
-** A double asterisk can represent the [[operators#^EXPONENTIATIONREF|exponentiation]] operator or [[bash-version-4#^GLOBSTARREF|extended file-match]] *globbing*.
+** A double asterisk can represent the [[operations-and-related-topics#^EXPONENTIATIONREF|exponentiation]] operator or [[bash-version-4#^GLOBSTARREF|extended file-match]] *globbing*.
 
 ### ? (question mark)
 
@@ -357,7 +357,7 @@ The * also represents [[brief-introduction-to-regular-expressions#^ASTERISKREG|a
 
 **test operator.** Within certain expressions, the ? indicates a test for a condition.
 
-In a [[double-parentheses-construct.html|double-parentheses construct]], the ? can serve as an element of a C-style *trinary* operator. [^2]
+In a [[operations-and-related-topics.html|double-parentheses construct]], the ? can serve as an element of a C-style *trinary* operator. [^2]
 
 condition**?**result-if-true**:**result-if-false
 
@@ -613,7 +613,7 @@ ls . | xargs -i -t cp ./{} $1
 
 **test.**
 
-[[tests#^IFTHEN|Test]] expression between **`[ ]`**. Note that **[** is part of the shell *builtin* [[test-constructs#^TTESTREF|test]] (and a synonym for it), *not* a link to the external command /usr/bin/test.
+[[tests#^IFTHEN|Test]] expression between **`[ ]`**. Note that **[** is part of the shell *builtin* [[tests#^TTESTREF|test]] (and a synonym for it), *not* a link to the external command /usr/bin/test.
 
 ### \[\[ \]\]
 
@@ -621,7 +621,7 @@ ls . | xargs -i -t cp ./{} $1
 
 Test expression between `[[[ ]]`. More flexible than the single-bracket [ ] test, this is a shell [internal#^keywordref|keyword]].
 
-See the discussion on the [[test-constructs#^DBLBRACKETS|`[[ ... ]]` construct]].
+See the discussion on the [[tests#^DBLBRACKETS|`[[ ... ]]` construct]].
 
 ### \[ ]
 
@@ -654,7 +654,7 @@ echo $[$a+$b]   # 10
 echo $[$a*$b]   # 21
 ```
 
-Note that this usage is *deprecated*, and has been replaced by the [[double-parentheses-construct.html|(( ... ))]] construct.
+Note that this usage is *deprecated*, and has been replaced by the [[operations-and-related-topics.html|(( ... ))]] construct.
 
 ### (( ))
 
@@ -662,7 +662,7 @@ Note that this usage is *deprecated*, and has been replaced by the [[double-pare
 
 Expand and evaluate integer expression between (( )).
 
-See the discussion on the [[double-parentheses-construct.html|(( ... )) construct]].
+See the discussion on the [[operations-and-related-topics.html|(( ... )) construct]].
 
 ### > &> >& >> < <>
 
@@ -814,7 +814,7 @@ bash$ ls -l | ./uppercase.sh
 
 ### ||
 
-**[[operators#^ORREF|OR logical operator]].** In a [[test-constructs#^TESTCONSTRUCTS1|test construct]], the || operator causes a return of 0 (success) if *either* of the linked test conditions is true.
+**[[operations-and-related-topics#^ORREF|OR logical operator]].** In a [[tests#^TESTCONSTRUCTS1|test construct]], the || operator causes a return of 0 (success) if *either* of the linked test conditions is true.
 
 ### &
 
@@ -880,7 +880,7 @@ exit 0
 
 ### &&
 
-**[[operators#^LOGOPS1|AND logical operator]].** In a [[test-constructs#^TESTCONSTRUCTS1|test construct]], the && operator causes a return of 0 (success) only if *both* the linked test conditions are true.
+**[[operations-and-related-topics#^LOGOPS1|AND logical operator]].** In a [[tests#^TESTCONSTRUCTS1|test construct]], the && operator causes a return of 0 (success) only if *both* the linked test conditions are true.
 
 ### -
 
@@ -1106,7 +1106,7 @@ exit 0
 
 ### -
 
-**Minus.** Minus sign in an [[operators#^AROPS1|arithmetic operation]].
+**Minus.** Minus sign in an [[operations-and-related-topics#^AROPS1|arithmetic operation]].
 
 ### =
 
@@ -1121,7 +1121,7 @@ In a [[other-comparison-operators#^EQUALSIGNREF|different context]], the "=" is 
 
 ### +
 
-**Plus.** Addition [[operators#^AROPS1|arithmetic operator]].
+**Plus.** Addition [[operations-and-related-topics#^AROPS1|arithmetic operator]].
 
 In a [[brief-introduction-to-regular-expressions#^PLUSREF|different context]], the + is a [[regexp.html|Regular Expression]] operator.
 
@@ -1133,7 +1133,7 @@ Certain commands and [[internal-commands-and-builtins|builtins]] use the + to en
 
 ### %
 
-**[[operators#^MODULOREF|modulo]].** Modulo (remainder of a division) [[operators#^AROPS1|arithmetic operation]].
+**[[operations-and-related-topics#^MODULOREF|modulo]].** Modulo (remainder of a division) [[operations-and-related-topics#^AROPS1|arithmetic operation]].
 
 ```bash
 let "z = 5 % 3"
@@ -1406,7 +1406,7 @@ To preserve *whitespace* within a string or in a variable, use [[quoting#^QUOTIN
 
 UNIX [[special-characters#^FILTERDEF|filters]] can target and operate on *whitespace* using the [[brief-introduction-to-regular-expressions#^POSIXREF|POSIX]] character class [[brief-introduction-to-regular-expressions#^WSPOSIX|[:space:]]].
 
-[^1]: An *operator* is an agent that carries out an *operation*. Some examples are the common [[operators#^AROPS1|arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of *operator* and [[internal-commands-and-builtins#^keywordref|keyword]].
+[^1]: An *operator* is an agent that carries out an *operation*. Some examples are the common [[operations-and-related-topics#^AROPS1|arithmetic operators]], **+ - * /**. In Bash, there is some overlap between the concepts of *operator* and [[internal-commands-and-builtins#^keywordref|keyword]].
 
 [^2]: This is more commonly known as the *ternary* operator. Unfortunately, *ternary* is an ugly word. It doesn't roll off the tongue, and it doesn't elucidate. It obfuscates. *Trinary* is by far the more elegant usage.
 

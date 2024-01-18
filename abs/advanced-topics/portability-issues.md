@@ -20,8 +20,8 @@ Bash has certain features that the traditional [[shell-programming#^BASHDEF|Bour
 - [[command-substitution#^COMMANDSUBREF|Command substitution]] using **$( )** notation
 - [[bash-version-3#^BRACEEXPREF3|Brace expansion]]
 - Certain [[arrays#^ARRAYREF|array]] operations, and [[bash-version-4#^ASSOCARR|associative arrays]]
-- The [[test-constructs#^DBLBRACKETS|double brackets]] extended test construct
-- The [[double-parentheses-construct#^DBLPARENSREF|double-parentheses]] arithmetic-evaluation construct
+- The [[tests#^DBLBRACKETS|double brackets]] extended test construct
+- The [[operations-and-related-topics#^DBLPARENSREF|double-parentheses]] arithmetic-evaluation construct
 - Certain [[manipulating-strings#^STRINGMANIP|string manipulation]] operations
 - [[process-substitution#^PROCESSSUBREF|Process substitution]]
 - A Regular Expression [[bash-version-3#^REGEXMATCHREF|matching operator]]

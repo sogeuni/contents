@@ -88,7 +88,7 @@ exit 113   # Will return 113 to shell.
 
 > [!note] The [[special-characters#^NOTREF|!]], the _logical not_ qualifier, reverses the outcome of a test or command, and this affects its [[exit-and-exit-status#^EXITSTATUSREF|exit status]].
 >
-> **Example 6-2. Negating a condition using !**
+> ###### Example 6-2. Negating a condition using `!`
 >
 > ```bash
 > true    # The "true" builtin.

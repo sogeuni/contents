@@ -53,7 +53,7 @@ case $- in
 # (Courtesy of "UNIX F.A.Q.," 1993)
 ```
 
-However, John Lange describes an alternative method, using the [[file-test-operators#^TERMTEST|-t _test_ operator]].
+However, John Lange describes an alternative method, using the [[tests#^TERMTEST|-t _test_ operator]].
 
 ```bash
 # Test for a terminal!

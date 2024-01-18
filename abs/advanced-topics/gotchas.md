@@ -234,7 +234,7 @@ fi
     
 - In certain contexts, a misleading [[exit-and-exit-status#^EXITSTATUSREF|exit status]] may be returned. This may occur when [[local-variables#^EXITVALANOMALY01|setting a local variable within a function]] or when [[internal-commands-and-builtins#^EXITVALANOMALY02|assigning an arithmetic value to a variable]].
     
-- The [[test-constructs#^ARXS|exit status of an arithmetic expression]] is _not_ equivalent to an _error code_.
+- The [[tests#^ARXS|exit status of an arithmetic expression]] is _not_ equivalent to an _error code_.
 
 ```bash
 var=1 && ((--var)) && echo $var
@@ -513,4 +513,4 @@ tail -f /var/log/messages | grep "$ERROR_MSG" >> error.log
 >
 > --<cite>A.J. Lamb and H.W. Petrie</cite>
 
-[^1]: Setting the [[file-test-operators#^SUIDREF|suid]] permission on the script itself has no effect in Linux and most other UNIX flavors.
+[^1]: Setting the [[tests#^SUIDREF|suid]] permission on the script itself has no effect in Linux and most other UNIX flavors.

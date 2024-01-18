@@ -2,7 +2,7 @@
 title: "36.3. Tests and Comparisons: Alternatives"
 ---
 
-For tests, the [[test-constructs#^DBLBRACKETS|[[ ]]]] construct may be more appropriate than **[[other-comparison-operators#^ICOMPARISON1| ]**. Likewise, [arithmetic comparisons]] might benefit from the [[double-parentheses-construct.html|(( ))]] construct.
+For tests, the [[tests#^DBLBRACKETS|[[ ]]]] construct may be more appropriate than **[[other-comparison-operators#^ICOMPARISON1| ]**. Likewise, [arithmetic comparisons]] might benefit from the [[operations-and-related-topics.html|(( ))]] construct.
 
 ```bash
 a=8

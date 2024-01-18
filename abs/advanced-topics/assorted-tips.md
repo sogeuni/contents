@@ -260,7 +260,7 @@ echo ""
 exit
 ```
 
-- A particularly clever use of [[test-constructs#^TESTCONSTRUCTS1|if-test]] constructs is for comment blocks.
+- A particularly clever use of [[tests#^TESTCONSTRUCTS1|if-test]] constructs is for comment blocks.
 
 ```bash
 #!/bin/bash
@@ -515,7 +515,7 @@ exit 0
 
 For a more elaborate example of passing arrays to functions, see [[contributed-scripts#^LIFESLOW|Example A-10]].
 
-- Using the [[double-parentheses-construct|double-parentheses construct]], it is possible to use C-style syntax for setting and incrementing/decrementing variables and in [[loops#^FORLOOPREF1|for]] and [[loops#^WHILELOOPREF|while]] loops. See [[loops#^FORLOOPC|Example 11-13]] and [[loops#^WHLOOPC|Example 11-18]].
+- Using the [[operations-and-related-topics|double-parentheses construct]], it is possible to use C-style syntax for setting and incrementing/decrementing variables and in [[loops#^FORLOOPREF1|for]] and [[loops#^WHILELOOPREF|while]] loops. See [[loops#^FORLOOPC|Example 11-13]] and [[loops#^WHLOOPC|Example 11-18]].
 
 - Setting the [[internal-variables#^PATHREF|path]] and [[system-and-administrative-commands#^UMASKREF|umask]] at the beginning of a script makes it more [[portability-issues|portable]] -- more likely to run on a "foreign" machine whose user may have bollixed up the $PATH and **umask**.
 
@@ -610,7 +610,7 @@ else                         #  Otherwise,
 fi
 ```
 
-- An [[test-constructs#^IFGREPREF|if-grep test]] may not return expected results in an error case, when text is output to stderr, rather that stdout.
+- An [[tests#^IFGREPREF|if-grep test]] may not return expected results in an error case, when text is output to stderr, rather that stdout.
 
 ```bash
 if ls -l nonexistent_filename | grep -q 'No such file or directory'

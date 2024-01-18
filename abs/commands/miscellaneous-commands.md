@@ -388,7 +388,7 @@ Mixed.msg BOZO
 
 This command checks the validity of a filename. If the filename exceeds the maximum allowable length (255 characters) or one or more of the directories in its path is not searchable, then an error message results.
 
-Unfortunately, **pathchk** does not return a recognizable error code, and it is therefore pretty much useless in a script. Consider instead the [[file-test-operators#^RTIF|file test operators]].
+Unfortunately, **pathchk** does not return a recognizable error code, and it is therefore pretty much useless in a script. Consider instead the [[tests#^RTIF|file test operators]].
 
 **dd**
 

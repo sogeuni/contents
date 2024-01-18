@@ -41,7 +41,7 @@ The following reference cards provide a useful _summary_ of certain scripting co
 ||||-z|String is empty|
 ||||-n|String is not empty|
 ||||||
-|Arithmetic Comparison|[[test-constructs#^DBLPRX|within double parentheses]] (( ... ))||||
+|Arithmetic Comparison|[[tests#^DBLPRX|within double parentheses]] (( ... ))||||
 |>|Greater than||||
 |>=|Greater than or equal to||||
 |<|Less than||||
@@ -135,7 +135,7 @@ The following reference cards provide a useful _summary_ of certain scripting co
 |||
 |[[brief-introduction-to-regular-expressions#^BRACKETSREF|Brackets]]||
 |if [[special-characters#^LEFTBRACKET| CONDITION ]|[Test construct]]|
-|if [[test-constructs#^DBLBRACKETS|[ CONDITION ]]|[Extended test construct]]|
+|if [[tests#^DBLBRACKETS|[ CONDITION ]]|[Extended test construct]]|
 |Array[[arrays#^ARRAYREF|1]=element1|[Array initialization]]|
 |[[brief-introduction-to-regular-expressions#^BRACKETSREF|a-z]|[Range of characters]] within a [[regexp#^REGEXREF|Regular Expression]]|
 |||
@@ -154,11 +154,11 @@ The following reference cards provide a useful _summary_ of certain scripting co
 |result=$(COMMAND)|[[command-substitution#^CSPARENS|Command substitutio[Process substitution](Chapter%2023.%20Process%20Substitution.md#^PROCESSSUBREF)SUBREF|Process substitution]]|
 |<(COMMAND)|Process substitution|
 |||
-|[[double-parentheses-construct.html|Double Parentheses]]||
-|(( var = 78 ))|[[double-parentheses-construct#^DBLPARENSREF|Integer arithmetic]]|
+|[[operations-and-related-topics.html|Double Parentheses]]||
+|(( var = 78 ))|[[operations-and-related-topics#^DBLPARENSREF|Integer arithmetic]]|
 |var=$(( 20 + 5 ))|Integer arithmetic, with variable assignment|
-|(( var++ ))|_C-style_ [[double-parentheses-construct#^PLUSPLUSREF|variable increment]]|
-|(( var-- ))|_C-style_ [[double-parentheses-construct#^PLUSPLUSREF|variable decrement]]|
+|(( var++ ))|_C-style_ [[operations-and-related-topics#^PLUSPLUSREF|variable increment]]|
+|(( var-- ))|_C-style_ [[operations-and-related-topics#^PLUSPLUSREF|variable decrement]]|
 |(( var0 = var1<98?9:21 ))|_C-style_ [[special-characters#^CSTRINARY|ternary]] operation|
 |||
 |[[quoting#^QUOTINGREF|Quoting]]||

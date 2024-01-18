@@ -98,7 +98,7 @@ do
 done
 ```
 
-- The **=~** [[regexp#^REGEXREF|Regular Expression]] matching operator within a [[test-constructs#^DBLBRACKETS|double brackets]] test expression. (Perl has a similar operator.)
+- The **=~** [[regexp#^REGEXREF|Regular Expression]] matching operator within a [[tests#^DBLBRACKETS|double brackets]] test expression. (Perl has a similar operator.)
 
 ```bash
 #!/bin/bash
@@ -199,7 +199,7 @@ This is pretty much a bugfix update.
 
 - The --wordexp option disables [[process-substitution#^PROCESSSUBREF|process substitution]].
 
-- The **=~** [[bash-version-3#^REGEXMATCHREF|Regular Expression match operator]] no longer requires [[Chapter 5. Quoting#^QUOTINGREF|quoting]] of the _pattern_ within [[test-constructs#^DBLBRACKETS|[[ ... ]]]].
+- The **=~** [[bash-version-3#^REGEXMATCHREF|Regular Expression match operator]] no longer requires [[Chapter 5. Quoting#^QUOTINGREF|quoting]] of the _pattern_ within [[tests#^DBLBRACKETS|[[ ... ]]]].
 
 > [!caution]
 > In fact, quoting in this context is _not_ advisable as it may cause _regex_ evaluation to fail. Chet Ramey states in the [[biblio#^BASHFAQ|Bash FAQ]] that quoting explicitly disables regex evaluation. See also the [Ubuntu Bug List](https://bugs.launchpad.net/ubuntu-website/+bug/109931) and [Wikinerds on Bash syntax](http://en.wikinerds.org/index.php/Bash_syntax_and_semantics).

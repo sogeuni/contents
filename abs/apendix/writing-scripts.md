@@ -289,7 +289,7 @@ do
    (( loopcnt++ ))     # Update loop counter.
 done|
 
-It's a simple enough recipe, and _seems_ at first glance easy enough to convert into a working Bash script. The problem, though, is that Bash has [[operators#^NOFLOATINGPOINT|no native support for floating point numbers]]. So, the script writer needs to use [[math-commands#^BCREF|bc]] or possibly [[awk#^AWKREF|awk]] to convert the numbers and do the calculations. It could get rather messy . . .
+It's a simple enough recipe, and _seems_ at first glance easy enough to convert into a working Bash script. The problem, though, is that Bash has [[operations-and-related-topics#^NOFLOATINGPOINT|no native support for floating point numbers]]. So, the script writer needs to use [[math-commands#^BCREF|bc]] or possibly [[awk#^AWKREF|awk]] to convert the numbers and do the calculations. It could get rather messy . . .
 
 **Logging File Accesses**
 

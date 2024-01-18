@@ -1,7 +1,7 @@
 ---
 title: 5. Quoting
 ---
-Quoting means just that, bracketing a string in quotes. This has the effect of protecting [[special-characters|special characters]] in the string from reinterpretation or expansion by the shell or shell script. (A character is "special" if it has an interpretation other than its literal meaning. For example, the [[special-characters#^ASTERISKREF|asterisk *]] represents a _wild card_ character in [[globbing|globbing]] and [[regexp#^REGEXREF|Regular Expressions]]).
+Quoting means just that, bracketing a string in quotes. This has the effect of protecting [[special-characters|special characters]] in the string from reinterpretation or expansion by the shell or shell script. (A character is "special" if it has an interpretation other than its literal meaning. For example, the [[special-characters#^ASTERISKREF|asterisk *]] represents a *wild card* character in [[globbing|globbing]] and [[regexp#^REGEXREF|Regular Expressions]]).
 
 ```bash
 bash$ ls -l [Vv]*
@@ -13,7 +13,7 @@ bash$ ls -l '[Vv]*'
 ls: [Vv]*: No such file or directory
 ```
 
-> In everyday speech or writing, when we "quote" a phrase, we set it apart and give it special meaning. In a Bash script, when we _quote_ a string, we set it apart and protect its _literal_ meaning.|
+> In everyday speech or writing, when we "quote" a phrase, we set it apart and give it special meaning. In a Bash script, when we *quote* a string, we set it apart and protect its *literal* meaning.|
 
 Certain programs and utilities reinterpret or expand special characters in a quoted string. An important use of quoting is protecting a command-line parameter from the shell, but still letting the calling program expand it.
 
@@ -40,7 +40,7 @@ total 8
 
 ## Quoting Variables
 
-When referencing a variable, it is generally advisable to enclose its name in double quotes. This prevents reinterpretation of all special characters within the quoted string -- except `$`, ` `` (backquote), and `\`(escape). [^2] Keeping $ as a special character within double quotes permits referencing a quoted variable (_"$variable"_), that is, replacing the variable with its value (see [[varsubn#^EX9|Example 4-1]], above).
+When referencing a variable, it is generally advisable to enclose its name in double quotes. This prevents reinterpretation of all special characters within the quoted string -- except `$`, ` `` (backquote), and `\`(escape). [^2] Keeping $ as a special character within double quotes permits referencing a quoted variable (*"$variable"*), that is, replacing the variable with its value (see [[varsubn#^EX9|Example 4-1]], above).
 
 Use double quotes to prevent word splitting. [^3] An argument enclosed in double quotes presents itself as a single word, even if it contains [[special-characters#Whitespace|whitespace]] separators.
 
@@ -144,7 +144,7 @@ fi
 # ************************************************************ #
 ```
 
-Single quotes (' ') operate similarly to double quotes, but do not permit referencing variables, since the special meaning of $ is turned off. Within single quotes, _every_ special character except ' gets interpreted literally. Consider single quotes ("full quoting") to be a stricter method of quoting than double quotes ("partial quoting").
+Single quotes (' ') operate similarly to double quotes, but do not permit referencing variables, since the special meaning of $ is turned off. Within single quotes, *every* special character except ' gets interpreted literally. Consider single quotes ("full quoting") to be a stricter method of quoting than double quotes ("partial quoting").
 
 > [!note]
 > Since even the escape character (\) gets a literal interpretation within single quotes, trying to enclose a single quote within single quotes will not yield the expected result.
@@ -164,7 +164,7 @@ Single quotes (' ') operate similarly to double quotes, but do not permit refere
 
 ## Escaping
 
-_Escaping_ is a method of quoting single characters. The escape (\) preceding a character tells the shell to interpret that character literally.
+*Escaping* is a method of quoting single characters. The escape (\) preceding a character tells the shell to interpret that character literally.
 
 > [!caution] With certain commands and utilities, such as [[internal-commands-and-builtins#^ECHOREF|echo]] and [[sedawk#^SEDREF|sed]], escaping a character may have the opposite effect - it can toggle on a special meaning for that character.
 
@@ -194,11 +194,11 @@ means backspace
 
 \a
 
-means _alert_ (beep or flash)
+means *alert* (beep or flash)
 
 \0xx
 
-translates to the octal [[special-characters#^ASCIIDEF|ASCII]] equivalent of _0nn_, where _nn_ is a string of digits
+translates to the octal [[special-characters#^ASCIIDEF|ASCII]] equivalent of *0nn*, where *nn* is a string of digits
 
 > [!important] The **$' ...[quoted](Chapter%205.%20Quoting.md#^QUOTINGREF)oted]] string-expansion construct is a mechanism that uses escaped octal or hex values to assign ASCII characters to variables, e.g., **quote=$'\042'**.|
 
@@ -535,7 +535,7 @@ ls -l /usr/X11R6/bin/xsetroot\ /sbin/dump\ $file_list
 #        because the two escaped spaces prevent argument (word) splitting.
 ```
 
-The escape also provides a means of writing a multi-line command. Normally, each separate line constitutes a different command, but an escape at the end of a line _escapes the newline character_, and the command sequence continues on to the next line.
+The escape also provides a means of writing a multi-line command. Normally, each separate line constitutes a different command, but an escape at the end of a line *escapes the newline character*, and the command sequence continues on to the next line.
 
 ```bash
 (cd /source/directory && tar cf - . ) | \
@@ -587,11 +587,11 @@ bar'     # Escape character \ taken literally because of strong quoting.
 # Examples suggested by Stéphane Chazelas.
 ```
 
-[^1]: Unless there is a file named first in the current working directory. Yet another reason to _quote_. (Thank you, Harald Koenig, for pointing this out.)
+[^1]: Unless there is a file named first in the current working directory. Yet another reason to *quote*. (Thank you, Harald Koenig, for pointing this out.)
 
-[^2]: Encapsulating "!" within double quotes gives an error when used _from the command line_. This is interpreted as a [[history-commands|history command]]. Within a script, though, this problem does not occur, since the Bash history mechanism is disabled then.
+[^2]: Encapsulating "!" within double quotes gives an error when used *from the command line*. This is interpreted as a [[history-commands|history command]]. Within a script, though, this problem does not occur, since the Bash history mechanism is disabled then.
     
-    Of more concern is the _apparently_ inconsistent behavior of _\_ within double quotes, and especially following an **echo -e** command.
+    Of more concern is the *apparently* inconsistent behavior of *\* within double quotes, and especially following an **echo -e** command.
     
     ```bash
     bash$ echo hello\!
@@ -622,7 +622,7 @@ bar'     # Escape character \ taken literally because of strong quoting.
     
     ```
     
-    Double quotes following an _echo_ _sometimes_ escape _\_. Moreover, the -e option to _echo_ causes the "\t" to be interpreted as a _tab_.
+    Double quotes following an *echo* *sometimes* escape *\*. Moreover, the -e option to *echo* causes the "\t" to be interpreted as a *tab*.
     
     (Thank you, Wayne Pollock, for pointing this out, and Geoff Lee and Daniel Barclay for explaining it.)
 

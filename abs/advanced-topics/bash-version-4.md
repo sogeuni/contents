@@ -449,7 +449,7 @@ Version 4.1 of Bash, released in May, 2010, was primarily a bugfix update.
 
 - The [[internal-commands-and-builtins#^PRINTFREF|printf]] command now accepts a -v option for setting [[arrays#^ARRAYREF|array]] indices.
     
-- Within [[test-constructs#^DBLBRACKETS|double brackets]], the **>** and **<** string comparison operators now conform to the [[localization#^LOCALEREF|locale]]. Since the locale setting may affect the sorting order of string expressions, this has side-effects on comparison tests within _[[ ... ]]_ expressions.
+- Within [[tests#^DBLBRACKETS|double brackets]], the **>** and **<** string comparison operators now conform to the [[localization#^LOCALEREF|locale]]. Since the locale setting may affect the sorting order of string expressions, this has side-effects on comparison tests within _[[ ... ]]_ expressions.
     
 - The [[internal-commands-and-builtins#^READREF|read]] builtin now takes a -N option (_read -N chars_), which causes the _read_ to terminate after _chars_ characters.
     
