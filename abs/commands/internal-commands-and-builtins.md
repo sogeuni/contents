@@ -68,7 +68,7 @@ echo Hello
 echo $a
 ```
 
-An **echo** requires the -e option to print escaped characters. See [[escaping#^ESCAPED|Example 5-2]].
+An **echo** requires the -e option to print escaped characters. See [[quoting#^ESCAPED|Example 5-2]].
 
 Normally, each **echo** command prints a terminal newline, but the -n option suppresses this.
 

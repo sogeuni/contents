@@ -568,7 +568,7 @@ echo
 ```
 
 > [!note]
-> The above example uses the [[escaping#^STRQ|**$' ... '**]] _string-expansion_ construct.
+> The above example uses the [[quoting#^STRQ|**$' ... '**]] _string-expansion_ construct.
     
 - When the _lastpipe_ shell option is set, the last command in a [[special-characters#^PIPEREF|pipe]] _doesn't run in a subshell_.
     

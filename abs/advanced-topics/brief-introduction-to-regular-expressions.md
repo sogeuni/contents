@@ -30,10 +30,10 @@ The main uses for Regular Expressions (_RE_s) are text searches and string manip
     
     Combined sequences of bracketed characters match common word patterns. "[Yy][Ee][Ss]" matches _yes_, _Yes_, _YES_, _yEs_, and so forth. "[0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]" matches any Social Security number.
     
-- The backslash -- \ -- [[escaping#^ESCP|escapes]] a special character, which means that character gets interpreted literally (and is therefore no longer _special_).
+- The backslash -- \ -- [[quoting#^ESCP|escapes]] a special character, which means that character gets interpreted literally (and is therefore no longer _special_).
     A "\$" reverts back to its literal meaning of "$", rather than its RE meaning of end-of-line. Likewise a "\\" has the literal meaning of "\".
     
-- [[escaping#^ESCP|Escaped]] "angle brackets" -- \<...\> -- mark word boundaries.
+- [[quoting#^ESCP|Escaped]] "angle brackets" -- \<...\> -- mark word boundaries.
     The angle brackets must be escaped, since otherwise they have only their literal character meaning.
     "\<the\>" matches the word "the," but not the words "them," "there," "other," etc.
     
@@ -98,7 +98,7 @@ echo a111b \| gawk '/a1+b/'
 # Thanks, S.C.
 ```
     
-- [[escaping#^ESCP|Escaped]] "curly brackets" -- \{ \} -- indicate the number of occurrences of a preceding RE to match.
+- [[quoting#^ESCP|Escaped]] "curly brackets" -- \{ \} -- indicate the number of occurrences of a preceding RE to match.
     
     It is necessary to escape the curly brackets since they have only their literal character meaning otherwise. This usage is technically not part of the basic RE set.
     

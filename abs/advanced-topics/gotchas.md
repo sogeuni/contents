@@ -192,7 +192,7 @@ echo "$a"   # 0
     
 - Sometimes variables within "test" brackets ([ ]) need to be quoted (double quotes). Failure to do so may cause unexpected behavior. See [[other-comparison-operators#^STRTEST|Example 7-6]], [[redirecting-code-blocks#^REDIR2|Example 20-5]], and [[internal-variables#^ARGLIST|Example 9-6]].
     
-- Quoting a variable containing whitespace [[quoting-variables#^WSQUO|prevents splitting]]. Sometimes this produces [[quoting-variables#^VARSPLITTING|unintended consequences]].
+- Quoting a variable containing whitespace [[quoting#^WSQUO|prevents splitting]]. Sometimes this produces [[quoting#^VARSPLITTING|unintended consequences]].
     
 - Commands issued from a script may fail to execute because the script owner lacks execute permission for them. If a user cannot invoke a command from the command-line, then putting it into a script will likewise fail. Try changing the attributes of the command in question, perhaps even setting the suid bit (as _root_, of course).
     

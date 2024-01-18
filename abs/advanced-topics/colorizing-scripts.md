@@ -236,7 +236,7 @@ exit 0
 # Add the option of printing text within the drawn box.
 ```
 
-The simplest, and perhaps most useful ANSI escape sequence is bold text, **\033[1m ... \033[0m**. The \033 represents an [[escaping#^ESCP|escape]], the "[1" turns on the bold attribute, while the "[0" switches it off. The "m" terminates each term of the escape sequence.
+The simplest, and perhaps most useful ANSI escape sequence is bold text, **\033[1m ... \033[0m**. The \033 represents an [[quoting#^ESCP|escape]], the "[1" turns on the bold attribute, while the "[0" switches it off. The "m" terminates each term of the escape sequence.
 
 ```bash
 bash$ echo -e "\033[1mThis is bold text.\033[0m"

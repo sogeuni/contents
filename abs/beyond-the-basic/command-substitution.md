@@ -42,7 +42,7 @@ echo $textfile_listing2
 > Command substitution invokes a [[subshells#^SUBSHELLSREF|subshell]].
 
 > [!caution]
-> Command substitution may result in [[quoting-variables#^WSPLITREF|word splitting]].
+> Command substitution may result in [[quoting#^WSPLITREF|word splitting]].
 >
 > ```bash
 > COMMAND `echo a b`     # 2 args: a and b

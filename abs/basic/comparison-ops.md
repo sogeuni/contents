@@ -116,7 +116,7 @@ is less than, in [[special-characters#^ASCIIDEF|ASCII]] alphabetical order
 
 **if [ "$a" \< "$b" ]**
 
-Note that the "<" needs to be [[escaping#^ESCP|escaped]] within a **[ ]** construct.
+Note that the "<" needs to be [[quoting#^ESCP|escaped]] within a **[ ]** construct.
 
 >
 
