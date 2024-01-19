@@ -12,7 +12,7 @@ Show all logged on users. This is the approximate equivalent of **who -q**.
 
 ## groups
 
-Lists the current user and the groups she belongs to. This corresponds to the [[internal-variables#^GROUPSREF|$GROUPS]] internal variable, but gives the group names, rather than the numbers.
+Lists the current user and the groups she belongs to. This corresponds to the [[another-look-at-variables#^GROUPSREF|$GROUPS]] internal variable, but gives the group names, rather than the numbers.
 
 ```bash
 bash$ groups
@@ -55,7 +55,7 @@ Modify a given group. The group name and/or ID number may be changed using this 
 
 ## id
 
-The **id** command lists the real and effective user IDs and the group IDs of the user associated with the current process. This is the counterpart to the [[internal-variables#^UIDREF|$UID]], [[internal-variables#^EUIDREF|$EUID]], and [[internal-variables#^GROUPSREF|$GROUPS]] internal Bash variables.
+The **id** command lists the real and effective user IDs and the group IDs of the user associated with the current process. This is the counterpart to the [[another-look-at-variables#^UIDREF|$UID]], [[another-look-at-variables#^EUIDREF|$EUID]], and [[another-look-at-variables#^GROUPSREF|$GROUPS]] internal Bash variables.
 
 ```bash
 bash$ id
@@ -68,7 +68,7 @@ bash$ echo $UID
 > [!note]
 > The **id** command shows the _effective_ IDs only when they differ from the _real_ ones.
 
-Also see [[internal-variables#^AMIROOT|Example 9-5]].
+Also see [[another-look-at-variables#^AMIROOT|Example 9-5]].
 
 ## lid
 
@@ -359,7 +359,7 @@ stty "$old_tty_settings"      # Restore old settings.
 exit 0
 ```
 
-Also see [[internal-variables#^TIMEOUT|Example 9-3]] and [[contributed-scripts#^STOPWATCH|Example A-43]].
+Also see [[another-look-at-variables#^TIMEOUT|Example 9-3]] and [[contributed-scripts#^STOPWATCH|Example A-43]].
 
 > **terminals and modes**
 >
@@ -846,7 +846,7 @@ bash$ uptime
 
 **hostname**
 
-Lists the system's host name. This command sets the host name in an /etc/rc.d setup script (/etc/rc.d/rc.sysinit or similar). It is equivalent to **uname -n**, and a counterpart to the [[internal-variables#^HOSTNAMEREF|$HOSTNAME]] internal variable.
+Lists the system's host name. This command sets the host name in an /etc/rc.d setup script (/etc/rc.d/rc.sysinit or similar). It is equivalent to **uname -n**, and a counterpart to the [[another-look-at-variables#^HOSTNAMEREF|$HOSTNAME]] internal variable.
 
 ```bash
 bash$ hostname
@@ -1037,7 +1037,7 @@ Keeps a command running even after user logs off. The command will run as a fore
 
 **pidof**
 
-Identifies _process ID (PID)_ of a running job. Since job control commands, such as [[job-control-commands#^KILLREF|kill]] and [[system-and-administrative-commands#^NICE2REF|renice]] act on the _PID_ of a process (not its name), it is sometimes necessary to identify that _PID_. The **pidof** command is the approximate counterpart to the [[internal-variables#^PPIDREF|$PPID]] internal variable.
+Identifies _process ID (PID)_ of a running job. Since job control commands, such as [[job-control-commands#^KILLREF|kill]] and [[system-and-administrative-commands#^NICE2REF|renice]] act on the _PID_ of a process (not its name), it is sometimes necessary to identify that _PID_. The **pidof** command is the approximate counterpart to the [[another-look-at-variables#^PPIDREF|$PPID]] internal variable.
 
 ```bash
 bash$ pidof xclock
@@ -1620,7 +1620,7 @@ Creates an _ISO9660_ filesystem suitable for a CDR image.
 
 **chroot**
 
-CHange ROOT directory. Normally commands are fetched from [[internal-variables#^PATHREF|$PATH]], relative to /, the default _root directory_. This changes the _root_ directory to a different one (and also changes the working directory to there). This is useful for security purposes, for instance when the system administrator wishes to restrict certain users, such as those [[communications-commands#^TELNETREF|telnetting]] in, to a secured portion of the filesystem (this is sometimes referred to as confining a guest user to a "chroot jail"). Note that after a **chroot**, the execution path for system binaries is no longer valid.
+CHange ROOT directory. Normally commands are fetched from [[another-look-at-variables#^PATHREF|$PATH]], relative to /, the default _root directory_. This changes the _root_ directory to a different one (and also changes the working directory to there). This is useful for security purposes, for instance when the system administrator wishes to restrict certain users, such as those [[communications-commands#^TELNETREF|telnetting]] in, to a secured portion of the filesystem (this is sometimes referred to as confining a guest user to a "chroot jail"). Note that after a **chroot**, the execution path for system binaries is no longer valid.
 
 A **chroot /opt** would cause references to /usr/bin to be translated to /opt/usr/bin. Likewise, **chroot /aaa/bbb /bin/ls** would redirect future instances of **ls** to /aaa/bbb as the base directory, rather than / as is normally the case. An **alias XX 'chroot /aaa/bbb ls'** in a user's [[sample-bashrc-and-bash-profile-files.html|~/.bashrc]] effectively restricts which portion of the filesystem she may run command "XX" on.
 

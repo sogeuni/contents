@@ -8,7 +8,7 @@ Functions may process arguments passed to them and return an [[exit-and-exit-sta
 function_name $arg1 $arg2
 ```
 
-The function refers to the passed arguments by position (as if they were [[internal-variables#^POSPARAMREF|positional parameters]]), that is, $1, $2, and so forth.
+The function refers to the passed arguments by position (as if they were [[another-look-at-variables#^POSPARAMREF|positional parameters]]), that is, $1, $2, and so forth.
 
 ###### Example 24-2. Function Taking Parameters
 
@@ -212,11 +212,11 @@ exit 0
 
 **exit status**
 
-Functions return a value, called an _exit status_. This is analogous to the [[exit-and-exit-status#^EXITSTATUSREF|exit status]] returned by a command. The exit status may be explicitly specified by a **return** statement, otherwise it is the exit status of the last command in the function (0 if successful, and a non-zero error code if not). This [[exit-and-exit-status#^EXITSTATUSREF|exit status]] may be used in the script by referencing it as [[internal-variables#^XSTATVARREF|$?]]. This mechanism effectively permits script functions to have a "return value" similar to C functions.
+Functions return a value, called an _exit status_. This is analogous to the [[exit-and-exit-status#^EXITSTATUSREF|exit status]] returned by a command. The exit status may be explicitly specified by a **return** statement, otherwise it is the exit status of the last command in the function (0 if successful, and a non-zero error code if not). This [[exit-and-exit-status#^EXITSTATUSREF|exit status]] may be used in the script by referencing it as [[another-look-at-variables#^XSTATVARREF|$?]]. This mechanism effectively permits script functions to have a "return value" similar to C functions.
 
 **return**
 
-Terminates a function. A **return** command [^1] optionally takes an _integer_ argument, which is returned to the calling script as the "exit status" of the function, and this exit status is assigned to the variable [[internal-variables#^XSTATVARREF|$?]].
+Terminates a function. A **return** command [^1] optionally takes an _integer_ argument, which is returned to the calling script as the "exit status" of the function, and this exit status is assigned to the variable [[another-look-at-variables#^XSTATVARREF|$?]].
 
 ###### Example 24-7. Maximum of two numbers
 

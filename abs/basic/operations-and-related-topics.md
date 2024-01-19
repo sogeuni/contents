@@ -76,7 +76,7 @@ bash$ expr 5 % 3
 
 _5/3 = 1, with remainder 2_
 
-This operator finds use in, among other things, generating numbers within a specific range (see [[generate-random-integer#EX21|Example 9-11]] and [[generate-random-integer#RANDOMTEST|Example 9-15]]) and formatting program output (see [[arrays#^QFUNCTION|Example 27-16]] and [[contributed-scripts#COLLATZ|Example A-6]]). It can even be used to generate prime numbers, (see [[contributed-scripts#PRIMES|Example A-15]]). Modulo turns up surprisingly often in numerical recipes.
+This operator finds use in, among other things, generating numbers within a specific range (see [[another-look-at-variables#EX21|Example 9-11]] and [[another-look-at-variables#RANDOMTEST|Example 9-15]]) and formatting program output (see [[arrays#^QFUNCTION|Example 27-16]] and [[contributed-scripts#COLLATZ|Example A-6]]). It can even be used to generate prime numbers, (see [[contributed-scripts#PRIMES|Example A-15]]). Modulo turns up surprisingly often in numerical recipes.
 
 ###### Example 8-1. Greatest common divisor
 

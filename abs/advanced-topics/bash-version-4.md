@@ -418,7 +418,7 @@ allmyfiles/my_pictures/picnic-with-Melissa.png
 filelist.bash4
 ```
     
-- The new [[internal-variables#^BASHPIDREF|$BASHPID]] internal variable.
+- The new [[another-look-at-variables#^BASHPIDREF|$BASHPID]] internal variable.
     
 - There is a new [[internal-commands-and-builtins|builtin]] error-handling function named **command_not_found_handle**.
     

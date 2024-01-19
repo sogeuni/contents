@@ -217,7 +217,7 @@ echo "This statement echoes only if the \"assert\" does not fail."
 exit $?
 ```
     
-5. Using the [[internal-variables#^LINENOREF|$LINENO]] variable and the [[internal-commands-and-builtins#^CALLERREF|caller]] builtin.
+5. Using the [[another-look-at-variables#^LINENOREF|$LINENO]] variable and the [[internal-commands-and-builtins#^CALLERREF|caller]] builtin.
     
 6. Trapping at exit.
     
@@ -613,11 +613,11 @@ SCRIPT_AUTHOR_COMMENTS
 	
 ```
 
-> [[bashver3#^BASH3REF|Version 3]] of Bash adds the following [[internal-variables#^INTERNALVARIABLES1|internal variables]] for use by the debugger.
+> [[bashver3#^BASH3REF|Version 3]] of Bash adds the following [[another-look-at-variables#^INTERNALVARIABLES1|internal variables]] for use by the debugger.
 >
 > 1. $BASH_ARGC
 >     
->     Number of command-line arguments passed to script, similar to [[internal-variables#^CLACOUNTREF|$#]].
+>     Number of command-line arguments passed to script, similar to [[another-look-at-variables#^CLACOUNTREF|$#]].
 >     
 > 2. $BASH_ARGV
 >     
@@ -643,6 +643,6 @@ SCRIPT_AUTHOR_COMMENTS
 >     
 >     This is the name of the script, usually the same as [[othertypesv#^ARG0|$0]].
 >     
-> 8. [[internal-variables#^BASHSUBSHELLREF|$BASH_SUBSHELL]]|
+> 8. [[another-look-at-variables#^BASHSUBSHELLREF|$BASH_SUBSHELL]]|
 
 [^1]: By convention, _signal 0_ is assigned to [[exit-and-exit-status|exit]].

@@ -103,7 +103,7 @@ ${string:position}
 
 Extracts substring from _$string_ at _$position_.
 
-If the $string parameter is "*" or "@", then this extracts the [[internal-variables#^POSPARAMREF|positional parameters]], [^1] starting at $position.
+If the $string parameter is "*" or "@", then this extracts the [[another-look-at-variables#^POSPARAMREF|positional parameters]], [^1] starting at $position.
 
 ${string:position:length}
 

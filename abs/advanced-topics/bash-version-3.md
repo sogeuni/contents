@@ -145,7 +145,7 @@ For additional examples of using the **=~** operator, see [[contributed-scripts#
 > [!caution]
 > The update to version 3 of Bash breaks a few scripts that worked under earlier versions. _Test critical legacy scripts to make sure they still work!_
 
-As it happens, a couple of the scripts in the _Advanced Bash Scripting Guide_ had to be fixed up (see [[internal-variables#^TOUT|Example 9-4]], for instance).|
+As it happens, a couple of the scripts in the _Advanced Bash Scripting Guide_ had to be fixed up (see [[another-look-at-variables#^TOUT|Example 9-4]], for instance).|
 
 ## 37.2.1. Bash, version 3.1
 

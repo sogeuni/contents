@@ -28,7 +28,7 @@ Init and startup scripts are necessarily non-interactive, since they must run wi
 
 Non-interactive scripts can run in the background, but interactive ones hang, waiting for input that never comes. Handle that difficulty by having an **expect** script or embedded [[here-documents#^HEREDOCREF|here document]] feed input to an interactive script running as a background job. In the simplest case, redirect a file to supply input to a **read** statement (**read variable <file**). These particular workarounds make possible general purpose scripts that run in either interactive or non-interactive modes.
 
-If a script needs to test whether it is running in an interactive shell, it is simply a matter of finding whether the _prompt_ variable, [[internal-variables#^PS1REF|$PS1]] is set. (If the user is being prompted for input, then the script needs to display a prompt.)
+If a script needs to test whether it is running in an interactive shell, it is simply a matter of finding whether the _prompt_ variable, [[another-look-at-variables#^PS1REF|$PS1]] is set. (If the user is being prompted for input, then the script needs to display a prompt.)
 
 ```bash
 if [ -z $PS1 ] # no prompt?
@@ -42,7 +42,7 @@ else
 fi
 ```
 
-Alternatively, the script can test for the presence of option "i" in the [[internal-variables#^FLPREF|$-]] flag.
+Alternatively, the script can test for the presence of option "i" in the [[another-look-at-variables#^FLPREF|$-]] flag.
 
 ```bash
 case $- in

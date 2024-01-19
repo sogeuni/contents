@@ -17,7 +17,7 @@ Filesystem           1k-blocks      Used Available Use%
 
 Among other things, the /dev directory contains _loopback_ devices, such as /dev/loop0. A loopback device is a gimmick that allows an ordinary file to be accessed as if it were a block device. [^2] This permits mounting an entire filesystem within a single large file. See [[system-and-administrative-commands#^CREATEFS|Example 17-8]] and [[system-and-administrative-commands#^ISOMOUNTREF|Example 17-7]].
 
-A few of the pseudo-devices in /dev have other specialized uses, such as [[of-zeros-and-nulls#^ZEROSREF|/dev/null]], [[of-zeros-and-nulls#^ZEROSREF1|/dev/zero]], [[generate-random-integer#^URANDOMREF|/dev/urandom]], /dev/sda1 (hard drive partition), /dev/udp (_User Datagram Packet_ port), and [[dev#^DEVTCP|/dev/tcp]].
+A few of the pseudo-devices in /dev have other specialized uses, such as [[of-zeros-and-nulls#^ZEROSREF|/dev/null]], [[of-zeros-and-nulls#^ZEROSREF1|/dev/zero]], [[another-look-at-variables#^URANDOMREF|/dev/urandom]], /dev/sda1 (hard drive partition), /dev/udp (_User Datagram Packet_ port), and [[dev#^DEVTCP|/dev/tcp]].
 
 For instance:
 

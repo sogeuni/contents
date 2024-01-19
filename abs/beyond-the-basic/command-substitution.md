@@ -336,7 +336,7 @@ Examples of command substitution in shell scripts:
 
 1. [[loops#^BINGREP|Example 11-8]]
 2. [[testing-and-branching#^CASECMD|Example 11-27]]
-3. [[generate-random-integer#^SEEDINGRANDOM|Example 9-16]]
+3. [[another-look-at-variables#^SEEDINGRANDOM|Example 9-16]]
 4. [[complex-commands#^EX57|Example 16-3]]
 5. [[text-processing-commands#^LOWERCASE|Example 16-22]]
 6. [[text-processing-commands#^GRP|Example 16-17]]

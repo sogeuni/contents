@@ -607,7 +607,7 @@ echo "Elements in array10:  ${array10[@]}"
 exit
 ```
 
-The relationship of **`${array_name[@]}`** and **`${array_name[*]}`** is analogous to that between [[internal-variables#^APPREF|$@ and $*]]. This powerful array notation has a number of uses.
+The relationship of **`${array_name[@]}`** and **`${array_name[*]}`** is analogous to that between [[another-look-at-variables#^APPREF|$@ and $*]]. This powerful array notation has a number of uses.
 
 ```bash
 # Copying an array.

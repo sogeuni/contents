@@ -119,7 +119,7 @@ This section covers the following commands:
 - [[text-processing-commands#^GREPREF|grep]]
 - [[text-processing-commands#^GROFFREF|groff]]
 - [[system-and-administrative-commands#^GROUPMODREF|groupmod]]
-- [[system-and-administrative-commands#^GROUPSCMDREF|groups]] (Related topic: the [[internal-variables#^GROUPSREF|$GROUPS]] variable)
+- [[system-and-administrative-commands#^GROUPSCMDREF|groups]] (Related topic: the [[another-look-at-variables#^GROUPSREF|$GROUPS]] variable)
 - [[text-processing-commands#^GSREF|gs]]
 - [[file-and-archiving-commands#^GZIPREF|gzip]]
 - [[system-and-administrative-commands#^HALTREF|halt]]
@@ -130,10 +130,10 @@ This section covers the following commands:
 - [[miscellaneous-commands#^HEXDUMPREF|hexdump]]
 - [[communications-commands#^HOSTREF|host]]
 - [[system-and-administrative-commands#^HOSTIDREF|hostid]]
-- [[system-and-administrative-commands#^HNAMEREF|hostname]] (Related topic: the [[internal-variables#^HOSTNAMEREF|$HOSTNAME]] variable)
+- [[system-and-administrative-commands#^HNAMEREF|hostname]] (Related topic: the [[another-look-at-variables#^HOSTNAMEREF|$HOSTNAME]] variable)
 - [[time-date-commands#^HWCLOCKREF|hwclock]]
 - [[text-processing-commands#^ICONVREF|iconv]]
-- [[system-and-administrative-commands#^IDREF|id]] (Related topic: the [[internal-variables#^UIDREF|$UID]] variable)
+- [[system-and-administrative-commands#^IDREF|id]] (Related topic: the [[another-look-at-variables#^UIDREF|$UID]] variable)
 - [[system-and-administrative-commands#^IFCONFIGREF|ifconfig]]
 - [[basic-commands#^INFOREF|info]]
 - [[terminal-control-commands#^INFOCMPREF|infocmp]]
@@ -237,7 +237,7 @@ This section covers the following commands:
 - [[system-and-administrative-commands#^PSTREEREF|pstree]]
 - [[file-and-archiving-commands#^PTXREF|ptx]]
 - [[internal-commands-and-builtins#^DIRSD|pushd]]
-- [[internal-commands-and-builtins#^PWD2REF|pwd]] (Related topic: the [[internal-variables#^PWDREF|$PWD]] variable)
+- [[internal-commands-and-builtins#^PWD2REF|pwd]] (Related topic: the [[another-look-at-variables#^PWDREF|$PWD]] variable)
 - [[system-and-administrative-commands#^QUOTAREF|quota]]
 - [[communications-commands#^RCPREF|rcp]]
 - [[system-and-administrative-commands#^RDEVREF|rdev]]

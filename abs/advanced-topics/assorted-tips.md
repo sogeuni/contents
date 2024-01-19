@@ -291,7 +291,7 @@ exit 0
 
 Compare this with [[here-documents#^CBLOCK1|using here documents to comment out code blocks]].
 
-- Using the [[internal-variables#^XSTATVARREF|$? exit status variable]], a script may test if a parameter contains only digits, so it can be treated as an integer.
+- Using the [[another-look-at-variables#^XSTATVARREF|$? exit status variable]], a script may test if a parameter contains only digits, so it can be treated as an integer.
 
 ```bash
 #!/bin/bash
@@ -517,7 +517,7 @@ For a more elaborate example of passing arrays to functions, see [[contributed-s
 
 - Using the [[operations-and-related-topics|double-parentheses construct]], it is possible to use C-style syntax for setting and incrementing/decrementing variables and in [[loops#^FORLOOPREF1|for]] and [[loops#^WHILELOOPREF|while]] loops. See [[loops#^FORLOOPC|Example 11-13]] and [[loops#^WHLOOPC|Example 11-18]].
 
-- Setting the [[internal-variables#^PATHREF|path]] and [[system-and-administrative-commands#^UMASKREF|umask]] at the beginning of a script makes it more [[portability-issues|portable]] -- more likely to run on a "foreign" machine whose user may have bollixed up the $PATH and **umask**.
+- Setting the [[another-look-at-variables#^PATHREF|path]] and [[system-and-administrative-commands#^UMASKREF|umask]] at the beginning of a script makes it more [[portability-issues|portable]] -- more likely to run on a "foreign" machine whose user may have bollixed up the $PATH and **umask**.
 
 ```bash
 #!/bin/bash

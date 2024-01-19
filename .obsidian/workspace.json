@@ -11,8 +11,11 @@
             "id": "2225eecba0c0eae2",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "diff-view",
+              "state": {
+                "file": "abs/beyond-the-basic/another-look-at-variables.md",
+                "staged": false
+              }
             }
           }
         ]

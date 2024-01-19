@@ -132,12 +132,12 @@ exit 0
 #+ to modify or access the subshell variables?
 ```
 
-See also [[internal-variables#^BASHPIDREF|$BASHPID]] and [[gotchas#^SUBPIT|Example 34-2]].
+See also [[another-look-at-variables#^BASHPIDREF|$BASHPID]] and [[gotchas#^SUBPIT|Example 34-2]].
 
 > **Definition:** The _scope_ of a variable is the context in which it has meaning, in which it has a _value_ that can be referenced. For example, the scope of a [[local-variables#^LOCALREF1|local variable]] lies only within the function, block of code, or subshell within which it is defined, while the scope of a _global_ variable is the entire script in which it appears.
 
 > [!note]
-> While the [[internal-variables#^BASHSUBSHELLREF|$BASH_SUBSHELL]] internal variable indicates the nesting level of a subshell, the [[internal-variables#^SHLVLREF|$SHLVL]] variable _shows no change_ within a subshell.
+> While the [[another-look-at-variables#^BASHSUBSHELLREF|$BASH_SUBSHELL]] internal variable indicates the nesting level of a subshell, the [[another-look-at-variables#^SHLVLREF|$SHLVL]] variable _shows no change_ within a subshell.
 >
 > ```bash
 > echo " \$BASH_SUBSHELL outside subshell       = $BASH_SUBSHELL"           # 0

@@ -136,7 +136,7 @@ For simpler examples of awk within shell scripts, see:
 8. [[proc#^CONSTAT|Example 29-4]]
 9. [[loops#^FILEINFO|Example 11-3]]
 10. [[miscellaneous-commands#^BLOTOUT|Example 16-61]]
-11. [[generate-random-integer#^SEEDINGRANDOM|Example 9-16]]
+11. [[another-look-at-variables#^SEEDINGRANDOM|Example 9-16]]
 12. [[complex-commands#^IDELETE|Example 16-4]]
 13. [[manipulating-strings#^SUBSTRINGEX|Example 10-6]]
 14. [[assorted-tips#^SUMPRODUCT|Example 36-19]]

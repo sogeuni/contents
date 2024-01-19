@@ -707,7 +707,7 @@ head -c4 /dev/urandom | od -N4 -tu4 | sed -ne '1s/.* //p'
 # From rnd.sh example script, by Stéphane Chazelas
 ```
 
-See also [[generate-random-integer#^SEEDINGRANDOM|Example 9-16]] and [[contributed-scripts#^INSERTIONSORT|Example A-36]].
+See also [[another-look-at-variables#^SEEDINGRANDOM|Example 9-16]] and [[contributed-scripts#^INSERTIONSORT|Example A-36]].
 
 **hexdump**
 

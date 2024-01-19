@@ -19,7 +19,7 @@ Lists the jobs running in the background, giving the _job number_. Not as useful
 > [1]+  Running                 sleep 100 &
 > ```
 >
-> "1" is the job number (jobs are maintained by the current shell). "1384" is the [[internal-variables#^PPIDREF|PID]] or _process ID number_ (processes are maintained by the system). To kill this job/process, either a **kill %1** or a **kill 1384** works.
+> "1" is the job number (jobs are maintained by the current shell). "1384" is the [[another-look-at-variables#^PPIDREF|PID]] or _process ID number_ (processes are maintained by the system). To kill this job/process, either a **kill %1** or a **kill 1384** works.
 >
 > _Thanks, S.C._
 

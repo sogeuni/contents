@@ -91,7 +91,7 @@ Normally, each **echo** command prints a terminal newline, but the -n option sup
 
 Be aware that **echo `command`** deletes any linefeeds that the output of _command_ generates.
 
-The [[internal-variables#^IFSREF|$IFS]] (internal field separator) variable normally contains \n (linefeed) as one of its set of [[special-characters#Whitespace|whitespace]] characters. Bash therefore splits the output of _command_ at linefeeds into arguments to **echo**. Then **echo** outputs these arguments, separated by spaces.
+The [[another-look-at-variables#^IFSREF|$IFS]] (internal field separator) variable normally contains \n (linefeed) as one of its set of [[special-characters#Whitespace|whitespace]] characters. Bash therefore splits the output of _command_ at linefeeds into arguments to **echo**. Then **echo** outputs these arguments, separated by spaces.
 
 ```bash
 
@@ -278,7 +278,7 @@ echo "var2 = $var2      var3 = $var3"
 exit 0
 ```
 
-A **read** without an associated variable assigns its input to the dedicated variable [[internal-variables#^REPLYREF|$REPLY]].
+A **read** without an associated variable assigns its input to the dedicated variable [[another-look-at-variables#^REPLYREF|$REPLY]].
 
 ###### Example 15-4. What happens when *read* has no variable
 
@@ -523,7 +523,7 @@ done
 > [!note]
 > The -n option to **read** will not detect the **ENTER** (newline) key.
 
-The -t option to **read** permits timed input (see [[internal-variables#^TOUT|Example 9-4]] and [[contributed-scripts#^QKY|Example A-41]]).
+The -t option to **read** permits timed input (see [[another-look-at-variables#^TOUT|Example 9-4]] and [[contributed-scripts#^QKY|Example A-41]]).
 
 The -u option takes the [[io-redirection#^FDREF|file descriptor]] of the target file.
 
@@ -679,7 +679,7 @@ The familiar **cd** change directory command finds use in scripts where executio
 
 The -P (physical) option to **cd** causes it to ignore symbolic links.
 
-**cd -** changes to [[internal-variables#^OLDPWD|$OLDPWD]], the previous working directory.
+**cd -** changes to [[another-look-at-variables#^OLDPWD|$OLDPWD]], the previous working directory.
 
 > [!caution]
 > The **cd** command does not function as expected when presented with two forward slashes.
@@ -695,17 +695,17 @@ The -P (physical) option to **cd** causes it to ignore symbolic links.
 
 **pwd**
 
-Print Working Directory. This gives the user's (or script's) current directory (see [[internal-commands-and-builtins#^EX37|Example 15-9]]). The effect is identical to reading the value of the builtin variable [[internal-variables#^PWDREF|$PWD]].
+Print Working Directory. This gives the user's (or script's) current directory (see [[internal-commands-and-builtins#^EX37|Example 15-9]]). The effect is identical to reading the value of the builtin variable [[another-look-at-variables#^PWDREF|$PWD]].
 
 **pushd**, **popd**, **dirs**
 
-This command set is a mechanism for bookmarking working directories, a means of moving back and forth through directories in an orderly manner. A pushdown [[internal-variables#^STACKDEFREF|stack]] is used to keep track of directory names. Options allow various manipulations of the directory stack.
+This command set is a mechanism for bookmarking working directories, a means of moving back and forth through directories in an orderly manner. A pushdown [[another-look-at-variables#^STACKDEFREF|stack]] is used to keep track of directory names. Options allow various manipulations of the directory stack.
 
 **pushd dir-name** pushes the path _dir-name_ onto the directory stack (to the _top_ of the stack) and simultaneously changes the current working directory to _dir-name_
 
 **popd** removes (pops) the top directory path name off the directory stack and simultaneously changes the current working directory to the directory now at the _top_ of the stack.
 
-**dirs** lists the contents of the directory stack (compare this with the [[internal-variables#^DIRSTACKREF|$DIRSTACK]] variable). A successful **pushd** or **popd** will automatically invoke **dirs**.
+**dirs** lists the contents of the directory stack (compare this with the [[another-look-at-variables#^DIRSTACKREF|$DIRSTACK]] variable). A successful **pushd** or **popd** will automatically invoke **dirs**.
 
 Scripts that require various changes to the current working directory without hard-coding the directory name changes can make good use of these commands. Note that the implicit $DIRSTACK array variable, accessible from within a script, holds the contents of the directory stack.
 
@@ -1089,7 +1089,7 @@ eval var=\$$var
 
 **set**
 
-The **set** command changes the value of internal script variables/options. One use for this is to toggle [[options#^OPTIONSREF|option flags]] which help determine the behavior of the script. Another application for it is to reset the [[internal-variables#^POSPARAMREF|positional parameters]] that a script sees as the result of a command (**set `command`**). The script can then parse the [[special-characters#^FIELDREF|fields]] of the command output.
+The **set** command changes the value of internal script variables/options. One use for this is to toggle [[options#^OPTIONSREF|option flags]] which help determine the behavior of the script. Another application for it is to reset the [[another-look-at-variables#^POSPARAMREF|positional parameters]] that a script sees as the result of a command (**set `command`**). The script can then parse the [[special-characters#^FIELDREF|fields]] of the command output.
 
 ###### Example 15-16. Using *set* with positional parameters
 
@@ -1800,7 +1800,7 @@ The **type** command can be useful for [[special-characters#^DEVNULLREDIRECT|tes
 
 **hash [cmds]**
 
-Records the _path_ name of specified commands -- in the shell _hash table_ [^8] -- so the shell or script will not need to search the [[internal-variables#^PATHREF|$PATH]] on subsequent calls to those commands. When **hash** is called with no arguments, it simply lists the commands that have been hashed. The -r option resets the hash table.
+Records the _path_ name of specified commands -- in the shell _hash table_ [^8] -- so the shell or script will not need to search the [[another-look-at-variables#^PATHREF|$PATH]] on subsequent calls to those commands. When **hash** is called with no arguments, it simply lists the commands that have been hashed. The -r option resets the hash table.
 
 **bind**
 

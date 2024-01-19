@@ -375,7 +375,7 @@ Arguments passed to the script from the command line [^2] : $0, $1, $2, $3 . . .
 
 $0 is the name of the script itself, $1 is the first argument, $2 the second, $3 the third, and so forth. [^3] After $9, the arguments must be enclosed in brackets, for example, ${10}, ${11}, ${12}.
 
-The special variables [[internal-variables#^APPREF|$* and $@]] denote *all* the positional parameters.
+The special variables [[another-look-at-variables#^APPREF|$* and $@]] denote *all* the positional parameters.
 
 ###### Example 4-5. Positional Parameters
 
