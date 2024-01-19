@@ -1,5 +1,6 @@
 ---
 title: 6. Exit and Exit Status
+share: true
 ---
 
 > ... there are dark corners in the Bourne shell, and people use all of them.
@@ -57,7 +58,7 @@ Likewise, [[functions|functions]] within a script and the script itself return a
 > # Will exit with status of last command.
 > ```
 
-$? reads the exit status of the last command executed. After a function returns, $? gives the exit status of the last command executed in the function. This is Bash's way of giving functions a "return value." [^1]
+`$?` reads the exit status of the last command executed. After a function returns, `$?` gives the exit status of the last command executed in the function. This is Bash's way of giving functions a "return value." [^1]
 
 Following the execution of a [[special-characters#^PIPEREF|pipe]], a $? gives the exit status of the last command executed.
 

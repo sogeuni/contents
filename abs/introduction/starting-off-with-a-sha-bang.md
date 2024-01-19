@@ -1,5 +1,6 @@
 ---
 title: 2. Starting Off With a Sha-Bang
+share: true
 ---
 > Shell programming is a 1950s juke box . . .
 >
@@ -23,6 +24,7 @@ There is nothing unusual here, only a set of commands that could just as easily 
 
 ###### Example 2-2. *cleanup*: An improved clean-up script
 
+Example 2-2. *cleanup*: An improved clean-up script
 ```bash
 #!/bin/bash
 # Proper header for a Bash script.
@@ -46,6 +48,7 @@ exit #  The right and proper method of "exiting" from a script.
      #  A bare "exit" (no parameter) returns the exit status
      #+ of the preceding command. 
 ```
+^111
 
 Now *that's* beginning to look like a real script. But we can go even farther...
 

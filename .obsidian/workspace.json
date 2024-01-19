@@ -13,7 +13,20 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/basic/exit-status.md",
+                "file": "abs/introduction/shell-programming.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5f8eed0e56a3098b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -87,7 +100,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/basic/exit-status.md",
+                "file": "abs/introduction/shell-programming.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +117,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/basic/exit-status.md",
+                "file": "abs/introduction/shell-programming.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -127,7 +140,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/basic/exit-status.md"
+                "file": "abs/introduction/shell-programming.md"
               }
             }
           },
@@ -153,7 +166,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/basic/exit-status.md",
+                "file": "abs/introduction/shell-programming.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -201,32 +214,32 @@
   },
   "active": "c2c8fbc7cf6b85f9",
   "lastOpenFiles": [
-    "abs/basic/special-characters.md",
-    "abs/advanced-topics/brief-introduction-to-regular-expressions.md",
-    "abs/commands/system-and-administrative-commands.md",
     "abs/introduction/starting-off-with-a-sha-bang.md",
-    "abs/commands/time-date-commands.md",
-    "abs/commands/basic-commands.md",
-    "abs/advanced-topics/recursion-without-local-variables.md",
-    "abs/advanced-topics/portability-issues.md",
     "abs/introduction/shell-programming.md",
-    "abs/advanced-topics/recurnolocvar.md",
-    "abs/introduction/preliminary-exercises.md",
-    "abs/advanced-topics/aliases.md",
-    "abs/apendix/ascii-table.md",
-    "abs/apendix/copyright.md",
-    "abs/apendix/Appendix T. ASCII Table.md",
-    "abs/apendix/Appendix S. Copyright.md",
-    "abs/apendix/todolist.md",
-    "abs/apendix/download-and-mirror-sites.md",
-    "abs/apendix/mirrorsites.md",
-    "abs/apendix/revision-history.md",
-    "abs/apendix/revisionhistory.md",
-    "abs/apendix/writing-scripts.md",
-    "abs/apendix/writingscripts.md",
-    "abs/apendix/analyzing-scripts.md",
-    "abs/apendix/scriptanalysis.md",
-    "abs/apendix/exercises.md",
+    "abs/introduction/index.md",
+    "abs/basic/exit-status.md",
+    "abs/advanced-topics/list-constructs.md",
+    "abs/advanced-topics/io-redirection.md",
+    "abs/advanced-topics/interactive-and-non-interactive-shell-and-scripts.md",
+    "abs/advanced-topics/indirect-references.md",
+    "abs/advanced-topics/index.md",
+    "abs/advanced-topics/here-strings.md",
+    "abs/advanced-topics/here-documents.md",
+    "abs/advanced-topics/gotchas.md",
+    "abs/advanced-topics/globbing.md",
+    "abs/advanced-topics/functions.md",
+    "abs/advanced-topics/dev.md",
+    "abs/advanced-topics/debugging.md",
+    "abs/advanced-topics/complex-functions-and-function-complexities.md",
+    "abs/advanced-topics/colorizing-scripts.md",
+    "abs/advanced-topics/brief-introduction-to-regular-expressions.md",
+    "abs/advanced-topics/bash-version-4.md",
+    "abs/advanced-topics/bash-version-3.md",
+    "abs/advanced-topics/bash-version-2-3-and-4.md",
+    "abs/advanced-topics/bash-version-2.md",
+    "abs/advanced-topics/assorted-tips.md",
+    "abs/advanced-topics/arrays.md",
+    "abs/advanced-topics/applications.md",
     "_abs",
     "git",
     "abs/apendix",

@@ -1,5 +1,6 @@
 ---
 title: Part 1. Introduction
+share: true
 ---
 > Script: A writing; a written document. \[Obs.]
 >

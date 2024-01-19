@@ -1,7 +1,7 @@
 {
   "github": {
-    "user": "",
-    "repo": "",
+    "user": "sogeuni",
+    "repo": "test",
     "branch": "main",
     "automaticallyMergePR": true,
     "tokenPath": "%configDir%/plugins/%pluginID%/env",
@@ -14,12 +14,12 @@
       "name": ""
     },
     "otherRepo": [],
-    "verifiedRepo": false,
-    "rateLimit": 0
+    "verifiedRepo": true,
+    "rateLimit": 4999
   },
   "upload": {
-    "behavior": "yaml",
-    "defaultName": "",
+    "behavior": "obsidian",
+    "defaultName": "docs",
     "rootFolder": "",
     "yamlFolderKey": "",
     "frontmatterTitle": {
@@ -29,7 +29,7 @@
     "replaceTitle": [],
     "replacePath": [],
     "autoclean": {
-      "enable": false,
+      "enable": true,
       "excluded": []
     },
     "folderNote": {
@@ -52,7 +52,7 @@
       "fields": []
     },
     "links": {
-      "internal": false,
+      "internal": true,
       "unshared": false,
       "wiki": false,
       "slugify": false
@@ -69,8 +69,8 @@
   },
   "plugin": {
     "shareKey": "share",
-    "fileMenu": false,
-    "editorMenu": false,
+    "fileMenu": true,
+    "editorMenu": true,
     "excludedFolder": [],
     "copyLink": {
       "enable": false,
@@ -80,7 +80,11 @@
     },
     "noticeError": false,
     "displayModalRepoEditing": false,
-    "migrated": true
+    "migrated": true,
+    "shareAll": {
+      "enable": true,
+      "excludedFileName": "DRAFT"
+    }
   },
-  "tabsID": "help"
+  "tabsID": "plugin-settings"
 }

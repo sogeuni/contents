@@ -1,5 +1,6 @@
 ---
 title: 1. Shell Programming!
+share: true
 ---
 
 > No programming language is perfect. There is not even a single best language; there are only languages well suited or perhaps poorly suited for particular purposes.
@@ -50,6 +51,8 @@ Unless otherwise noted, [the author](mailto:thegrendel.abs@gmail.com) of this bo
 > His countenance was bold and bashed not.
 >
 > --<cite>Edmund Spenser</cite>
+
+![[starting-off-with-a-sha-bang#^111]]
 
 [^1]: These are referred to as [[internal-commands-and-builtins|builtins]], features internal to the shell.
 
