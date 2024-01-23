@@ -1,5 +1,7 @@
 [
   "obsidian-git",
   "obsidian-mkdocs-publisher",
-  "webpage-html-export"
+  "webpage-html-export",
+  "dataview",
+  "translate"
 ]

@@ -21,7 +21,7 @@
             }
           },
           {
-            "id": "5f8eed0e56a3098b",
+            "id": "61131537373bbf20",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -32,8 +32,33 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "6b527a782f619e5f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "abs/introduction/shell-programming.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "5f8eed0e56a3098b",
+            "type": "leaf",
+            "state": {
+              "type": "diff-view",
+              "state": {
+                "file": ".obsidian/community-plugins.json",
+                "staged": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -100,7 +125,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/introduction/shell-programming.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +141,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/introduction/shell-programming.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,9 +162,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "abs/introduction/shell-programming.md"
-              }
+              "state": {}
             }
           },
           {
@@ -166,7 +187,6 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/introduction/shell-programming.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -189,7 +209,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.5087618855792595,
+                  "scale": 0.2588386562181631,
                   "close": true
                 }
               }
@@ -203,6 +223,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "translate:Open translation view": false,
       "switcher:퀵 스위처 열기": false,
       "graph:그래프 뷰 열기": false,
       "canvas:새 캔버스 만들기": false,
@@ -212,8 +233,9 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "c2c8fbc7cf6b85f9",
+  "active": "5f8eed0e56a3098b",
   "lastOpenFiles": [
+    "abs/introduction/Example 2-1.md",
     "abs/introduction/starting-off-with-a-sha-bang.md",
     "abs/introduction/shell-programming.md",
     "abs/introduction/index.md",
@@ -239,7 +261,6 @@
     "abs/advanced-topics/bash-version-2.md",
     "abs/advanced-topics/assorted-tips.md",
     "abs/advanced-topics/arrays.md",
-    "abs/advanced-topics/applications.md",
     "_abs",
     "git",
     "abs/apendix",
