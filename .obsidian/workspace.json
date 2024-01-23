@@ -50,10 +50,12 @@
             "id": "5f8eed0e56a3098b",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": ".obsidian/community-plugins.json",
-                "staged": false
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
               }
             }
           }
@@ -125,6 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -141,6 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +166,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md"
+              }
             }
           },
           {
@@ -187,6 +193,7 @@
             "state": {
               "type": "localgraph",
               "state": {
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -235,9 +242,10 @@
   },
   "active": "5f8eed0e56a3098b",
   "lastOpenFiles": [
+    "abs/introduction/shell-programming.md",
+    "journals/2024-01-23.md",
     "abs/introduction/Example 2-1.md",
     "abs/introduction/starting-off-with-a-sha-bang.md",
-    "abs/introduction/shell-programming.md",
     "abs/introduction/index.md",
     "abs/basic/exit-status.md",
     "abs/advanced-topics/list-constructs.md",
@@ -260,7 +268,6 @@
     "abs/advanced-topics/bash-version-2-3-and-4.md",
     "abs/advanced-topics/bash-version-2.md",
     "abs/advanced-topics/assorted-tips.md",
-    "abs/advanced-topics/arrays.md",
     "_abs",
     "git",
     "abs/apendix",

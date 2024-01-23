@@ -8,6 +8,7 @@ share: true
 
 In the simplest case, a script is nothing more than a list of system commands stored in a file. At the very least, this saves the effort of retyping that particular sequence of commands each time it is invoked.
 
+![[Example 2-1]]
 ###### Example 2-1. *cleanup*: A script to clean up log files in `/var/log`
 
 ```bash
@@ -24,8 +25,6 @@ There is nothing unusual here, only a set of commands that could just as easily 
 
 ###### Example 2-2. *cleanup*: An improved clean-up script
 
-<div id="222">
-Example 2-2. *cleanup*: An improved clean-up script
 ```bash
 #!/bin/bash
 # Proper header for a Bash script.
@@ -49,7 +48,6 @@ exit #  The right and proper method of "exiting" from a script.
      #  A bare "exit" (no parameter) returns the exit status
      #+ of the preceding command. 
 ```
-</div>
 ^111
 
 Now *that's* beginning to look like a real script. But we can go even farther...
