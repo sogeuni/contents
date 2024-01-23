@@ -58,9 +58,22 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "fda65603c651854f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "abs/introduction/Example 2-1.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": true
+              }
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -127,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
+                "file": "abs/introduction/Example 2-1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,7 +157,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
+                "file": "abs/introduction/Example 2-1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -167,7 +180,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/introduction/starting-off-with-a-sha-bang.md"
+                "file": "abs/introduction/Example 2-1.md"
               }
             }
           },
@@ -193,7 +206,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
+                "file": "abs/introduction/Example 2-1.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -240,12 +253,12 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "5f8eed0e56a3098b",
+  "active": "fda65603c651854f",
   "lastOpenFiles": [
+    "abs/introduction/starting-off-with-a-sha-bang.md",
+    "abs/introduction/Example 2-1.md",
     "abs/introduction/shell-programming.md",
     "journals/2024-01-23.md",
-    "abs/introduction/Example 2-1.md",
-    "abs/introduction/starting-off-with-a-sha-bang.md",
     "abs/introduction/index.md",
     "abs/basic/exit-status.md",
     "abs/advanced-topics/list-constructs.md",
