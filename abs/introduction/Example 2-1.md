@@ -1,5 +1,5 @@
 ---
-title: "Example 2-1. *cleanup*: A script to clean up log files in `/var/log`"
+title: "Example 2-1. cleanup: A script to clean up log files in /var/log"
 ---
 ```bash
 # Cleanup
