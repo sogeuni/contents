@@ -65,7 +65,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "abs/introduction/Example 2-1.md",
+                "file": "abs/examples/example 2-3.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
@@ -73,7 +73,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -140,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "abs/introduction/Example 2-1.md",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -157,7 +157,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "abs/introduction/Example 2-1.md",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -180,7 +180,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "abs/introduction/Example 2-1.md"
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md"
               }
             }
           },
@@ -206,7 +206,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "abs/introduction/Example 2-1.md",
+                "file": "abs/introduction/starting-off-with-a-sha-bang.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -253,10 +253,13 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "fda65603c651854f",
+  "active": "61131537373bbf20",
   "lastOpenFiles": [
+    "abs/examples/example 2-3.md",
     "abs/introduction/starting-off-with-a-sha-bang.md",
-    "abs/introduction/Example 2-1.md",
+    "abs/examples/example 2-2.md",
+    "abs/examples/example 2-1.md",
+    "abs/examples",
     "abs/introduction/shell-programming.md",
     "journals/2024-01-23.md",
     "abs/introduction/index.md",
@@ -279,8 +282,6 @@
     "abs/advanced-topics/bash-version-4.md",
     "abs/advanced-topics/bash-version-3.md",
     "abs/advanced-topics/bash-version-2-3-and-4.md",
-    "abs/advanced-topics/bash-version-2.md",
-    "abs/advanced-topics/assorted-tips.md",
     "_abs",
     "git",
     "abs/apendix",
@@ -289,7 +290,6 @@
     "abs/commands",
     "abs/beyond-the-basic",
     "abs/basic",
-    "abs/introduction",
-    "abs"
+    "abs/introduction"
   ]
 }
