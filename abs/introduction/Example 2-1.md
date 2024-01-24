@@ -1,7 +1,8 @@
 ---
 title: "Example 2-1. cleanup: A script to clean up log files in /var/log"
 ---
-```bash
+**Example 2-1. *cleanup*: A script to clean up log files in `/var/log`**
+```bash title="Example 2-1. *cleanup*: A script to clean up log files in /var/log"
 # Cleanup
 # Run as root, of course.
 
